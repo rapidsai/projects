@@ -5,5 +5,5 @@ Welcome to RAPIDS documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   cudf/en/latest/index.html
-   cuml/en/latest/index.html
+   `cuDF <https://rapidsai.github.io/projects/cudf/en/latest>`_.
+   `cuML <https://rapidsai.github.io/projects/cuml/en/latest>`_.
