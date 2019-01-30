@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to cuDF’s documentation! &mdash; cudf 0.4.0 documentation</title>
+  <title>Welcome to cuDF’s documentation! &mdash; cudf 0.5.0 documentation</title>
   
 
   
@@ -57,7 +57,7 @@
             
             
               <div class="version">
-                0.4.0
+                0.5.0
               </div>
             
           
@@ -84,8 +84,8 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10min.html">10 Minutes to cuDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer Documentation</a></li>
 </ul>
 
             
@@ -150,7 +150,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-cudf-s-documentation">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="welcome-to-cudf-s-documentation">
 <h1>Welcome to cuDF’s documentation!<a class="headerlink" href="#welcome-to-cudf-s-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
@@ -163,26 +187,44 @@
 <li class="toctree-l2"><a class="reference internal" href="api.html#gpuarrowreader">GpuArrowReader</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="10min.html">10 Minutes to cuDF</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Object-Creation">Object Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Viewing-Data">Viewing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Getting">Getting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Selection-by-Label">Selection by Label</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Selection-by-Position">Selection by Position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Boolean-Indexing">Boolean Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Setting">Setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Missing-Data">Missing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Stats">Stats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Applymap">Applymap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Histogramming">Histogramming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#String-Methods">String Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Merge">Merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Concat">Concat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Join">Join</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Append">Append</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Grouping">Grouping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Reshaping">Reshaping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Time-Series">Time Series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Categoricals">Categoricals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Plotting">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Converting-Data-Representation">Converting Data Representation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Pandas">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Numpy">Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Arrow">Arrow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Getting-Data-In/Out">Getting Data In/Out</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#CSV">CSV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Parquet">Parquet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#ORC">ORC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="10min.html#Gotchas">Gotchas</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="developer.html">Developer Documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="developer.html#code-organization">Code Organization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="developer.html#code-that-should-move-to-libgdf">Code that should move to libgdf</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="10min.html">10 Minutes to cuDF</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="10min.html#object-creation">Object Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10min.html#viewing-data">Viewing Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10min.html#selection">Selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10min.html#missing-data">Missing Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10min.html#operations">Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10min.html#merge">Merge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10min.html#grouping">Grouping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10min.html#reshaping">Reshaping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10min.html#time-series">Time Series</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10min.html#categoricals">Categoricals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10min.html#plotting">Plotting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10min.html#converting-data-representation">Converting Data Representation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10min.html#getting-data-in-out">Getting Data In/Out</a></li>
-<li class="toctree-l2"><a class="reference internal" href="10min.html#gotchas">Gotchas</a></li>
 </ul>
 </li>
 </ul>
@@ -240,6 +282,7 @@
         <script type="text/javascript" src="_static/jquery.js"></script>
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
     
 
   
