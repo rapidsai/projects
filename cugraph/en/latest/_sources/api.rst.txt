@@ -32,12 +32,6 @@ Louvain
     :members: nvLouvain
     :undoc-members: nvLouvain
     
-Grmat
----------
-.. automodule:: cugraph
-    :members: grmat_gen
-    :undoc-members: grmat_gen
-    
 Spectral Clustering
 -------------------
 .. automodule:: cugraph
@@ -61,4 +55,11 @@ Sssp
 .. automodule:: cugraph
     :members: sssp
     :undoc-members: sssp
+    
+.. test module, do not doc
+  Grmat
+  ---------
+  .. automodule:: cugraph
+      :members: grmat_gen
+      :undoc-members: grmat_gen
     
