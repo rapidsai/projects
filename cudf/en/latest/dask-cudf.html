@@ -185,8 +185,8 @@
 </style>
 <div class="section" id="multi-gpu-with-dask-cudf">
 <h1>Multi-GPU with Dask-cuDF<a class="headerlink" href="#multi-gpu-with-dask-cudf" title="Permalink to this headline">¶</a></h1>
-<p>cuDF is a single-GPU library. However, it’s possible to implement multi-GPU cuDF solutions via threading and multi-process communication. Instead of building such a system ourselves, we rely on <a class="reference external" href="https://dask.org/">Dask</a>, and the <a class="reference external" href="https://github.com/rapidsai/dask-cudf">dask-cudf</a> extension.</p>
-<p>Comprised of a scheduler and workers, Dask DataFrame normally assumes that its workers are processing individual partitions of a Pandas DataFrame, and thus expects their Python objects to support the Pandas API. Because cuDF currently implements only a subset of Pandas’s API, not all of Dask DataFrame operations work with cuDF.</p>
+<p>cuDF is a single-GPU library. For Multi-GPU cuDF solutions we use <a class="reference external" href="https://dask.org/">Dask</a> and the <a class="reference external" href="https://github.com/rapidsai/dask-cudf">dask-cudf package</a>, which is able to scale cuDF across multiple GPUs on a single machine, or multiple GPUs across many machines in a cluster.</p>
+<p><a class="reference external" href="http://docs.dask.org/en/latest/dataframe.html">Dask DataFrame</a> was originally designed to scale Pandas, orchestrating many Pandas DataFrames spread across many CPUs into a cohesive parallel DataFrame. Because cuDF currently implements only a subset of Pandas’s API, not all Dask DataFrame operations work with cuDF.</p>
 <p>The following is tested and expected to work:</p>
 <div class="section" id="what-works">
 <h2>What works<a class="headerlink" href="#what-works" title="Permalink to this headline">¶</a></h2>
@@ -208,17 +208,17 @@ Parquet and other formats this is often decently fast)</li>
 </li>
 <li>Reductions<ul>
 <li>Like <code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code>, and so on on <code class="docutils literal notranslate"><span class="pre">Series</span></code> objects</li>
-<li>~~Support for reductions on full dataframes~~</li>
-<li>~~<code class="docutils literal notranslate"><span class="pre">std</span></code>~~</li>
+<li><strike>Support for reductions on full dataframes</strike></li>
+<li><strike><code class="docutils literal notranslate"><span class="pre">std</span></code></strike></li>
 <li>Custom reductions with <a class="reference external" href="http://docs.dask.org/en/latest/dataframe-api.html#dask.dataframe.Series.reduction">dask.dataframe.reduction</a></li>
 </ul>
 </li>
 <li>Groupby aggregations<ul>
 <li>On single columns: <code class="docutils literal notranslate"><span class="pre">df.groupby('x').y.max()</span></code></li>
 <li>With custom aggregations:</li>
-<li>~~groupby standard deviation~~</li>
-<li>~~grouping on multiple columns~~</li>
-<li>~~groupby agg for multiple outputs~~</li>
+<li><strike>groupby standard deviation</strike></li>
+<li><strike>grouping on multiple columns</strike></li>
+<li><strike>groupby agg for multiple outputs</strike></li>
 </ul>
 </li>
 <li>Joins:<ul>
@@ -227,7 +227,7 @@ Parquet and other formats this is often decently fast)</li>
 <li>On large and small dataframes: <code class="docutils literal notranslate"><span class="pre">left.merge(cudf_df,</span> <span class="pre">on='id')</span></code> (fast)</li>
 </ul>
 </li>
-<li>~~Rolling operations~~</li>
+<li><strike>Rolling operations</strike></li>
 <li>Converting to and from other forms<ul>
 <li>Dask + Pandas to Dask + cuDF <code class="docutils literal notranslate"><span class="pre">df.map_partitions(cudf.from_pandas)</span></code></li>
 <li>Dask + cuDF to Dask + Pandas <code class="docutils literal notranslate"><span class="pre">df.map_partitions(lambda</span> <span class="pre">df:</span> <span class="pre">df.to_pandas())</span></code></li>
