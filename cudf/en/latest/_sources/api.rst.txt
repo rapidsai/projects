@@ -6,14 +6,23 @@ API Reference
 DataFrame
 ---------
 .. autoclass:: DataFrame
-    :exclude-members: replace
+    :members:
+
+..
+  For cudf.concat function
+..
+.. automodule:: cudf.multi
+    :members:
+
+..
+  For cudf.melt
+..
+.. automodule:: cudf.reshape.general
     :members:
 
 Series
 ------
-
 .. autoclass:: Series
-    :exclude-members: replace
     :members:
  
 Groupby
@@ -35,19 +44,19 @@ Groupby
 .. automethod:: Groupby.var
 .. automethod:: Groupby.sum_of_squares
 
-..
-  For cudf.concat function
-..
-.. automodule:: cudf.multi
-    :members:
-
-.. automodule:: cudf.reshape.general
-    :members:
-
-
 IO
 --
 .. automodule:: cudf.io.csv
+    :members:
+.. automodule:: cudf.io.parquet
+    :members:
+.. automodule:: cudf.io.orc
+    :members:
+.. automodule:: cudf.io.json
+    :members:
+.. automodule:: cudf.io.feather
+    :members:
+.. automodule:: cudf.io.hdf
     :members:
 
 GpuArrowReader
