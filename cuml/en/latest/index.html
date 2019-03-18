@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to cuML’s documentation! &mdash; cuml 0.5.0 documentation</title>
+  <title>Welcome to cuML’s documentation! &mdash; cuml 0.5.1 documentation</title>
   
 
   
@@ -17,33 +17,35 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="cuML API Reference" href="api.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -57,7 +59,7 @@
             
             
               <div class="version">
-                0.5
+                0.6
               </div>
             
           
@@ -150,18 +152,31 @@
             
   <div class="section" id="welcome-to-cuml-s-documentation">
 <h1>Welcome to cuML’s documentation!<a class="headerlink" href="#welcome-to-cuml-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>cuML is a suite of fast GPU accelerated machine learning algorithms
+designed for data science and analytical tasks. Our API mirrors Sklearn’s,
+and we provide practitioners with the easy fit-predict-transform paradigm
+without ever having to program on a GPU.</p>
+<p>As data gets larger, algorithms running on a CPU becomes slow and cumbersome.
+RAPIDS provides users a streamlined approach where data is intially loaded
+in the GPU, and compute tasks can be performed on it directly.</p>
+<p>cuML is fully open source, and the RAPIDS team welcomes new and seasoned
+contributors, users and hobbyists! Thank you for your wonderful support!</p>
+<p>An installation requirement for cuML is that your system must be linux-like.
+Support for Windows is possible in the near future.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="api.html">cuML API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="api.html#linear-regression">Linear Regression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#ridge-regression">Ridge Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#kalman-filter">Kalman Filter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#k-nearest-neighbors">K-Nearest Neighbors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#k-means">K-Means</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#stochastic-gradient-descent">Stochastic Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#nearest-neighbors">Nearest Neighbors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#k-means-clustering">K-Means Clustering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#dbscan">DBSCAN</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api.html#pca">PCA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#kalman-filter">Kalman Filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#principal-component-analysis">Principal Component Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#truncated-svd">Truncated SVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#umap">UMAP</a></li>
 </ul>
 </li>
 </ul>
@@ -211,26 +226,16 @@
   
 
 
-  
-
-    
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
