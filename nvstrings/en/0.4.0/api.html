@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>nvstrings API Reference &mdash; nvstrings 0.4.0.dev0 documentation</title>
+  <title>nvstrings API Reference &mdash; nvstrings 0.7.0.dev0 documentation</title>
   
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.4
+                0.7
               </div>
             
           
@@ -89,6 +89,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">nvstrings API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#nvstrings">nvstrings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nvcategory">nvcategory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nvtext">nvtext</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="unicode.html">nvstrings Unicode Features</a></li>
@@ -169,206 +170,206 @@
 device memory. Strings in the list are immutable.
 Methods that modify any string will create a new nvstrings instance.</p>
 <p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-center">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.capitalize" title="nvstrings.nvstrings.capitalize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">capitalize</span></code></a>()</td>
-<td>Capitalize first character of each string.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.capitalize" title="nvstrings.nvstrings.capitalize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">capitalize</span></code></a>(self)</p></td>
+<td><p>Capitalize first character of each string.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.cat" title="nvstrings.nvstrings.cat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cat</span></code></a>([others,&nbsp;sep,&nbsp;na_rep])</td>
-<td>Appends the given strings to this list of strings and returns as new nvstrings.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.cat" title="nvstrings.nvstrings.cat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cat</span></code></a>(self[, others, sep, na_rep])</p></td>
+<td><p>Appends the given strings to this list of strings and returns as new nvstrings.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.center" title="nvstrings.nvstrings.center"><code class="xref py py-obj docutils literal notranslate"><span class="pre">center</span></code></a>(width[,&nbsp;fillchar])</td>
-<td>Pad the beginning and end of each string to the minimum width.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.center" title="nvstrings.nvstrings.center"><code class="xref py py-obj docutils literal notranslate"><span class="pre">center</span></code></a>(self, width[, fillchar])</p></td>
+<td><p>Pad the beginning and end of each string to the minimum width.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.compare" title="nvstrings.nvstrings.compare"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compare</span></code></a>(str[,&nbsp;devptr])</td>
-<td>Compare each string to the supplied string.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.compare" title="nvstrings.nvstrings.compare"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compare</span></code></a>(self, str[, devptr])</p></td>
+<td><p>Compare each string to the supplied string.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.contains" title="nvstrings.nvstrings.contains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contains</span></code></a>(pat[,&nbsp;regex,&nbsp;devptr])</td>
-<td>Find the specified string within each string.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.contains" title="nvstrings.nvstrings.contains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contains</span></code></a>(self, pat[, regex, devptr])</p></td>
+<td><p>Find the specified string within each string.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.count" title="nvstrings.nvstrings.count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">count</span></code></a>(pat[,&nbsp;devptr])</td>
-<td>Count occurrences of pattern in each string.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.count" title="nvstrings.nvstrings.count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">count</span></code></a>(self, pat[, devptr])</p></td>
+<td><p>Count occurrences of pattern in each string.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.endswith" title="nvstrings.nvstrings.endswith"><code class="xref py py-obj docutils literal notranslate"><span class="pre">endswith</span></code></a>(pat[,&nbsp;devptr])</td>
-<td>Return array of boolean values with True for the strings where the specified string is at the end.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.endswith" title="nvstrings.nvstrings.endswith"><code class="xref py py-obj docutils literal notranslate"><span class="pre">endswith</span></code></a>(self, pat[, devptr])</p></td>
+<td><p>Return array of boolean values with True for the strings where the specified string is at the end.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.extract" title="nvstrings.nvstrings.extract"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract</span></code></a>(pat)</td>
-<td>Extract string from the first match of regular expression pat.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.extract" title="nvstrings.nvstrings.extract"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract</span></code></a>(self, pat)</p></td>
+<td><p>Extract string from the first match of regular expression pat.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.extract_column" title="nvstrings.nvstrings.extract_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract_column</span></code></a>(pat)</td>
-<td>Extract string from the first match of regular expression pat.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.extract_column" title="nvstrings.nvstrings.extract_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract_column</span></code></a>(self, pat)</p></td>
+<td><p>Extract string from the first match of regular expression pat.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.find" title="nvstrings.nvstrings.find"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find</span></code></a>(sub[,&nbsp;start,&nbsp;end,&nbsp;devptr])</td>
-<td>Find the specified string sub within each string.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.find" title="nvstrings.nvstrings.find"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find</span></code></a>(self, sub[, start, end, devptr])</p></td>
+<td><p>Find the specified string sub within each string.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.find_from" title="nvstrings.nvstrings.find_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_from</span></code></a>(sub[,&nbsp;starts,&nbsp;ends,&nbsp;devptr])</td>
-<td>Find the specified string within each string starting at the specified character positions.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.find_from" title="nvstrings.nvstrings.find_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_from</span></code></a>(self, sub[, starts, ends, devptr])</p></td>
+<td><p>Find the specified string within each string starting at the specified character positions.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.find_multiple" title="nvstrings.nvstrings.find_multiple"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_multiple</span></code></a>(strs[,&nbsp;devptr])</td>
-<td>Return a ‘matrix’ of find results for each of the string in the strs parameter.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.find_multiple" title="nvstrings.nvstrings.find_multiple"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_multiple</span></code></a>(self, strs[, devptr])</p></td>
+<td><p>Return a ‘matrix’ of find results for each of the string in the strs parameter.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.findall" title="nvstrings.nvstrings.findall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">findall</span></code></a>(pat)</td>
-<td>Find all occurrences of regular expression pattern in each string.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.findall" title="nvstrings.nvstrings.findall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">findall</span></code></a>(self, pat)</p></td>
+<td><p>Find all occurrences of regular expression pattern in each string.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.findall_column" title="nvstrings.nvstrings.findall_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">findall_column</span></code></a>(pat)</td>
-<td>A new set of nvstrings is created by organizing substring results vertically.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.findall_column" title="nvstrings.nvstrings.findall_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">findall_column</span></code></a>(self, pat)</p></td>
+<td><p>A new set of nvstrings is created by organizing substring results vertically.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.get" title="nvstrings.nvstrings.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>(i)</td>
-<td>Returns the character specified in each string as a new string.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.get" title="nvstrings.nvstrings.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>(self, i)</p></td>
+<td><p>Returns the character specified in each string as a new string.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.hash" title="nvstrings.nvstrings.hash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hash</span></code></a>([devptr])</td>
-<td>Returns hash values represented by each string.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.hash" title="nvstrings.nvstrings.hash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hash</span></code></a>(self[, devptr])</p></td>
+<td><p>Returns hash values represented by each string.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.index" title="nvstrings.nvstrings.index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code></a>(sub[,&nbsp;start,&nbsp;end,&nbsp;devptr])</td>
-<td>Same as find but throws an error if arg is not found in all strings.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.index" title="nvstrings.nvstrings.index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code></a>(self, sub[, start, end, devptr])</p></td>
+<td><p>Same as find but throws an error if arg is not found in all strings.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.isalnum" title="nvstrings.nvstrings.isalnum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isalnum</span></code></a>([devptr])</td>
-<td>Return array of boolean values with True for strings that contain only alpha-numeric characters.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isalnum" title="nvstrings.nvstrings.isalnum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isalnum</span></code></a>(self[, devptr])</p></td>
+<td><p>Return array of boolean values with True for strings that contain only alpha-numeric characters.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.isalpha" title="nvstrings.nvstrings.isalpha"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isalpha</span></code></a>([devptr])</td>
-<td>Return array of boolean values with True for strings that contain only alphabetic characters.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isalpha" title="nvstrings.nvstrings.isalpha"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isalpha</span></code></a>(self[, devptr])</p></td>
+<td><p>Return array of boolean values with True for strings that contain only alphabetic characters.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.isdecimal" title="nvstrings.nvstrings.isdecimal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isdecimal</span></code></a>([devptr])</td>
-<td>Return array of boolean values with True for strings that contain only decimal characters – those that can be used to extract base10 numbers.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isdecimal" title="nvstrings.nvstrings.isdecimal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isdecimal</span></code></a>(self[, devptr])</p></td>
+<td><p>Return array of boolean values with True for strings that contain only decimal characters – those that can be used to extract base10 numbers.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.isdigit" title="nvstrings.nvstrings.isdigit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isdigit</span></code></a>([devptr])</td>
-<td>Return array of boolean values with True for strings that contain only decimal and digit characters.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isdigit" title="nvstrings.nvstrings.isdigit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isdigit</span></code></a>(self[, devptr])</p></td>
+<td><p>Return array of boolean values with True for strings that contain only decimal and digit characters.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.islower" title="nvstrings.nvstrings.islower"><code class="xref py py-obj docutils literal notranslate"><span class="pre">islower</span></code></a>([devptr])</td>
-<td>Return array of boolean values with True for strings that contain only lowercase characters.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.islower" title="nvstrings.nvstrings.islower"><code class="xref py py-obj docutils literal notranslate"><span class="pre">islower</span></code></a>(self[, devptr])</p></td>
+<td><p>Return array of boolean values with True for strings that contain only lowercase characters.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.isnumeric" title="nvstrings.nvstrings.isnumeric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnumeric</span></code></a>([devptr])</td>
-<td>Return array of boolean values with True for strings that contain only numeric characters.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isnumeric" title="nvstrings.nvstrings.isnumeric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnumeric</span></code></a>(self[, devptr])</p></td>
+<td><p>Return array of boolean values with True for strings that contain only numeric characters.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.isspace" title="nvstrings.nvstrings.isspace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isspace</span></code></a>([devptr])</td>
-<td>Return array of boolean values with True for strings that contain only whitespace characters.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isspace" title="nvstrings.nvstrings.isspace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isspace</span></code></a>(self[, devptr])</p></td>
+<td><p>Return array of boolean values with True for strings that contain only whitespace characters.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.isupper" title="nvstrings.nvstrings.isupper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isupper</span></code></a>([devptr])</td>
-<td>Return array of boolean values with True for strings that contain only uppercase characters.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isupper" title="nvstrings.nvstrings.isupper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isupper</span></code></a>(self[, devptr])</p></td>
+<td><p>Return array of boolean values with True for strings that contain only uppercase characters.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.join" title="nvstrings.nvstrings.join"><code class="xref py py-obj docutils literal notranslate"><span class="pre">join</span></code></a>([sep])</td>
-<td>Concatentate this list of strings into a single string.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.join" title="nvstrings.nvstrings.join"><code class="xref py py-obj docutils literal notranslate"><span class="pre">join</span></code></a>(self[, sep])</p></td>
+<td><p>Concatentate this list of strings into a single string.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.len" title="nvstrings.nvstrings.len"><code class="xref py py-obj docutils literal notranslate"><span class="pre">len</span></code></a>([devptr])</td>
-<td>Returns the number of characters of each string.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.len" title="nvstrings.nvstrings.len"><code class="xref py py-obj docutils literal notranslate"><span class="pre">len</span></code></a>(self[, devptr])</p></td>
+<td><p>Returns the number of characters of each string.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.ljust" title="nvstrings.nvstrings.ljust"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ljust</span></code></a>(width[,&nbsp;fillchar])</td>
-<td>Pad the end of each string to the minimum width.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.ljust" title="nvstrings.nvstrings.ljust"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ljust</span></code></a>(self, width[, fillchar])</p></td>
+<td><p>Pad the end of each string to the minimum width.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.lower" title="nvstrings.nvstrings.lower"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lower</span></code></a>()</td>
-<td>Convert each string to lowercase.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.lower" title="nvstrings.nvstrings.lower"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lower</span></code></a>(self)</p></td>
+<td><p>Convert each string to lowercase.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.lstrip" title="nvstrings.nvstrings.lstrip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lstrip</span></code></a>([to_strip])</td>
-<td>Strip leading characters from each string.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.lstrip" title="nvstrings.nvstrings.lstrip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lstrip</span></code></a>(self[, to_strip])</p></td>
+<td><p>Strip leading characters from each string.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.match" title="nvstrings.nvstrings.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(pat[,&nbsp;devptr])</td>
-<td>Return array of boolean values where True is set if the specified pattern matches the beginning of the corresponding string.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.match" title="nvstrings.nvstrings.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, pat[, devptr])</p></td>
+<td><p>Return array of boolean values where True is set if the specified pattern matches the beginning of the corresponding string.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.order" title="nvstrings.nvstrings.order"><code class="xref py py-obj docutils literal notranslate"><span class="pre">order</span></code></a>(stype[,&nbsp;asc,&nbsp;devptr])</td>
-<td>Sort this list by name (2) or length (1) or both (3).</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.order" title="nvstrings.nvstrings.order"><code class="xref py py-obj docutils literal notranslate"><span class="pre">order</span></code></a>(self, stype[, asc, devptr])</p></td>
+<td><p>Sort this list by name (2) or length (1) or both (3).</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.pad" title="nvstrings.nvstrings.pad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pad</span></code></a>(width[,&nbsp;side,&nbsp;fillchar])</td>
-<td>Add specified padding to each string.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.pad" title="nvstrings.nvstrings.pad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pad</span></code></a>(self, width[, side, fillchar])</p></td>
+<td><p>Add specified padding to each string.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.partition" title="nvstrings.nvstrings.partition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">partition</span></code></a>([delimiter])</td>
-<td>Each string is split into two strings on the first delimiter found.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.partition" title="nvstrings.nvstrings.partition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">partition</span></code></a>(self[, delimiter])</p></td>
+<td><p>Each string is split into two strings on the first delimiter found.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.remove_strings" title="nvstrings.nvstrings.remove_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_strings</span></code></a>(indexes[,&nbsp;count])</td>
-<td>Remove the specified strings and return a new instance.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.remove_strings" title="nvstrings.nvstrings.remove_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_strings</span></code></a>(self, indexes[, count])</p></td>
+<td><p>Remove the specified strings and return a new instance.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.repeat" title="nvstrings.nvstrings.repeat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">repeat</span></code></a>(repeats)</td>
-<td>Appends each string with itself the specified number of times.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.repeat" title="nvstrings.nvstrings.repeat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">repeat</span></code></a>(self, repeats)</p></td>
+<td><p>Appends each string with itself the specified number of times.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.replace" title="nvstrings.nvstrings.replace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace</span></code></a>(pat,&nbsp;repl[,&nbsp;n,&nbsp;regex])</td>
-<td>Replace a string (pat) in each string with another string (repl).</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.replace" title="nvstrings.nvstrings.replace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace</span></code></a>(self, pat, repl[, n, regex])</p></td>
+<td><p>Replace a string (pat) in each string with another string (repl).</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.rfind" title="nvstrings.nvstrings.rfind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfind</span></code></a>(sub[,&nbsp;start,&nbsp;end,&nbsp;devptr])</td>
-<td>Find the specified string within each string.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rfind" title="nvstrings.nvstrings.rfind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfind</span></code></a>(self, sub[, start, end, devptr])</p></td>
+<td><p>Find the specified string within each string.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.rindex" title="nvstrings.nvstrings.rindex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rindex</span></code></a>(sub[,&nbsp;start,&nbsp;end,&nbsp;devptr])</td>
-<td>Same as rfind but throws an error if arg is not found in all strings.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rindex" title="nvstrings.nvstrings.rindex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rindex</span></code></a>(self, sub[, start, end, devptr])</p></td>
+<td><p>Same as rfind but throws an error if arg is not found in all strings.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.rjust" title="nvstrings.nvstrings.rjust"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rjust</span></code></a>(width[,&nbsp;fillchar])</td>
-<td>Pad the beginning of each string to the minimum width.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rjust" title="nvstrings.nvstrings.rjust"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rjust</span></code></a>(self, width[, fillchar])</p></td>
+<td><p>Pad the beginning of each string to the minimum width.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.rpartition" title="nvstrings.nvstrings.rpartition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rpartition</span></code></a>([delimiter])</td>
-<td>Each string is split into two strings on the first delimiter found.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rpartition" title="nvstrings.nvstrings.rpartition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rpartition</span></code></a>(self[, delimiter])</p></td>
+<td><p>Each string is split into two strings on the first delimiter found.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.rsplit" title="nvstrings.nvstrings.rsplit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsplit</span></code></a>([delimiter,&nbsp;n])</td>
-<td>Returns an array of nvstrings each representing the split of each individual string.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rsplit" title="nvstrings.nvstrings.rsplit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsplit</span></code></a>(self[, delimiter, n])</p></td>
+<td><p>Returns an array of nvstrings each representing the split of each individual string.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.rsplit_column" title="nvstrings.nvstrings.rsplit_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsplit_column</span></code></a>([delimiter,&nbsp;n])</td>
-<td>A new set of columns (nvstrings) is created by splitting the strings vertically.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rsplit_column" title="nvstrings.nvstrings.rsplit_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsplit_column</span></code></a>(self[, delimiter, n])</p></td>
+<td><p>A new set of columns (nvstrings) is created by splitting the strings vertically.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.rstrip" title="nvstrings.nvstrings.rstrip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rstrip</span></code></a>([to_strip])</td>
-<td>Strip trailing characters from each string.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rstrip" title="nvstrings.nvstrings.rstrip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rstrip</span></code></a>(self[, to_strip])</p></td>
+<td><p>Strip trailing characters from each string.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.size" title="nvstrings.nvstrings.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a>()</td>
-<td>The number of strings managed by this instance.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.size" title="nvstrings.nvstrings.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a>(self)</p></td>
+<td><p>The number of strings managed by this instance.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.slice" title="nvstrings.nvstrings.slice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice</span></code></a>(start[,&nbsp;stop,&nbsp;step])</td>
-<td>Returns a substring of each string.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.slice" title="nvstrings.nvstrings.slice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice</span></code></a>(self, start[, stop, step])</p></td>
+<td><p>Returns a substring of each string.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.slice_from" title="nvstrings.nvstrings.slice_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_from</span></code></a>([starts,&nbsp;stops])</td>
-<td>Return substring of each string using positions for each string.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.slice_from" title="nvstrings.nvstrings.slice_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_from</span></code></a>(self[, starts, stops])</p></td>
+<td><p>Return substring of each string using positions for each string.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.slice_replace" title="nvstrings.nvstrings.slice_replace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_replace</span></code></a>([start,&nbsp;stop,&nbsp;repl])</td>
-<td>Replace the specified section of each string with a new string.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.slice_replace" title="nvstrings.nvstrings.slice_replace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_replace</span></code></a>(self[, start, stop, repl])</p></td>
+<td><p>Replace the specified section of each string with a new string.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.sort" title="nvstrings.nvstrings.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code></a>(stype[,&nbsp;asc])</td>
-<td>Sort this list by name (2) or length (1) or both (3).</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.sort" title="nvstrings.nvstrings.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code></a>(self, stype[, asc])</p></td>
+<td><p>Sort this list by name (2) or length (1) or both (3).</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.split" title="nvstrings.nvstrings.split"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split</span></code></a>([delimiter,&nbsp;n])</td>
-<td>Returns an array of nvstrings each representing the split of each individual string.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.split" title="nvstrings.nvstrings.split"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split</span></code></a>(self[, delimiter, n])</p></td>
+<td><p>Returns an array of nvstrings each representing the split of each individual string.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.split_column" title="nvstrings.nvstrings.split_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split_column</span></code></a>([delimiter,&nbsp;n])</td>
-<td>A new set of columns (nvstrings) is created by splitting the strings vertically.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.split_column" title="nvstrings.nvstrings.split_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split_column</span></code></a>(self[, delimiter, n])</p></td>
+<td><p>A new set of columns (nvstrings) is created by splitting the strings vertically.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.startswith" title="nvstrings.nvstrings.startswith"><code class="xref py py-obj docutils literal notranslate"><span class="pre">startswith</span></code></a>(pat[,&nbsp;devptr])</td>
-<td>Return array of boolean values with True for the strings where the specified string is at the beginning.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.startswith" title="nvstrings.nvstrings.startswith"><code class="xref py py-obj docutils literal notranslate"><span class="pre">startswith</span></code></a>(self, pat[, devptr])</p></td>
+<td><p>Return array of boolean values with True for the strings where the specified string is at the beginning.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.stof" title="nvstrings.nvstrings.stof"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stof</span></code></a>([devptr])</td>
-<td>Returns float values represented by each string.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.stof" title="nvstrings.nvstrings.stof"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stof</span></code></a>(self[, devptr])</p></td>
+<td><p>Returns float values represented by each string.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.stoi" title="nvstrings.nvstrings.stoi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stoi</span></code></a>([devptr])</td>
-<td>Returns integer value represented by each string.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.stoi" title="nvstrings.nvstrings.stoi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stoi</span></code></a>(self[, devptr])</p></td>
+<td><p>Returns integer value represented by each string.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.strip" title="nvstrings.nvstrings.strip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strip</span></code></a>([to_strip])</td>
-<td>Strip leading and trailing characters from each string.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.strip" title="nvstrings.nvstrings.strip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strip</span></code></a>(self[, to_strip])</p></td>
+<td><p>Strip leading and trailing characters from each string.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.sublist" title="nvstrings.nvstrings.sublist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sublist</span></code></a>(indexes[,&nbsp;count])</td>
-<td>Return a sublist of strings from this instance.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.sublist" title="nvstrings.nvstrings.sublist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sublist</span></code></a>(self, indexes[, count])</p></td>
+<td><p>Return a sublist of strings from this instance.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.swapcase" title="nvstrings.nvstrings.swapcase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">swapcase</span></code></a>()</td>
-<td>Change each lowercase character to uppercase and vice versa.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.swapcase" title="nvstrings.nvstrings.swapcase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">swapcase</span></code></a>(self)</p></td>
+<td><p>Change each lowercase character to uppercase and vice versa.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.title" title="nvstrings.nvstrings.title"><code class="xref py py-obj docutils literal notranslate"><span class="pre">title</span></code></a>()</td>
-<td>Uppercase the first letter of each letter after a space and lowercase the rest.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.title" title="nvstrings.nvstrings.title"><code class="xref py py-obj docutils literal notranslate"><span class="pre">title</span></code></a>(self)</p></td>
+<td><p>Uppercase the first letter of each letter after a space and lowercase the rest.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.to_host" title="nvstrings.nvstrings.to_host"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_host</span></code></a>()</td>
-<td>Copies strings back to CPU memory into a Python array.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.to_host" title="nvstrings.nvstrings.to_host"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_host</span></code></a>(self)</p></td>
+<td><p>Copies strings back to CPU memory into a Python array.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.translate" title="nvstrings.nvstrings.translate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">translate</span></code></a>(table)</td>
-<td>Translate individual characters to new characters using the provided table.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.translate" title="nvstrings.nvstrings.translate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">translate</span></code></a>(self, table)</p></td>
+<td><p>Translate individual characters to new characters using the provided table.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.upper" title="nvstrings.nvstrings.upper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">upper</span></code></a>()</td>
-<td>Convert each string to uppercase.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.upper" title="nvstrings.nvstrings.upper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">upper</span></code></a>(self)</p></td>
+<td><p>Convert each string to uppercase.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvstrings.nvstrings.wrap" title="nvstrings.nvstrings.wrap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wrap</span></code></a>(width)</td>
-<td>This will place new-line characters in whitespace so each line is no more than width characters.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.wrap" title="nvstrings.nvstrings.wrap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wrap</span></code></a>(self, width)</p></td>
+<td><p>This will place new-line characters in whitespace so each line is no more than width characters.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvstrings.nvstrings.zfill" title="nvstrings.nvstrings.zfill"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zfill</span></code></a>(width)</td>
-<td>Pads the strings with leading zeros.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.zfill" title="nvstrings.nvstrings.zfill"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zfill</span></code></a>(self, width)</p></td>
+<td><p>Pads the strings with leading zeros.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="nvstrings.nvstrings.capitalize">
-<code class="descname">capitalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.capitalize" title="Permalink to this definition">¶</a></dt>
+<code class="descname">capitalize</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.capitalize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Capitalize first character of each string.
 This only applies to ASCII characters at this time.</p>
 <p class="rubric">Examples</p>
@@ -386,37 +387,30 @@ This only applies to ASCII characters at this time.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.cat">
-<code class="descname">cat</code><span class="sig-paren">(</span><em>others=None</em>, <em>sep=None</em>, <em>na_rep=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.cat" title="Permalink to this definition">¶</a></dt>
+<code class="descname">cat</code><span class="sig-paren">(</span><em>self</em>, <em>others=None</em>, <em>sep=None</em>, <em>na_rep=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.cat" title="Permalink to this definition">¶</a></dt>
 <dd><p>Appends the given strings to this list of strings and
 returns as new nvstrings.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>others</strong> <span class="classifier-delimiter">:</span> <span class="classifier">List of str</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>others</strong><span class="classifier">List of str</span></dt><dd><blockquote>
 <div><p>Strings to be appended.
 The number of strings must match size() of this instance.
 This must be either a Python array of strings or another
 nvstrings instance.</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>sep <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">If specified, this separator will be appended to each string
+<dl class="simple">
+<dt>sep<span class="classifier">str</span></dt><dd><p>If specified, this separator will be appended to each string
 before appending the others.</p>
 </dd>
-<dt>na_rep <span class="classifier-delimiter">:</span> <span class="classifier">char</span></dt>
-<dd><p class="first last">This character will take the place of any null strings
+<dt>na_rep<span class="classifier">char</span></dt><dd><p>This character will take the place of any null strings
 (not empty strings) in either list.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -434,31 +428,25 @@ before appending the others.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.center">
-<code class="descname">center</code><span class="sig-paren">(</span><em>width</em>, <em>fillchar=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.center" title="Permalink to this definition">¶</a></dt>
+<code class="descname">center</code><span class="sig-paren">(</span><em>self</em>, <em>width</em>, <em>fillchar=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.center" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pad the beginning and end of each string to the minimum width.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>width</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>width</strong><span class="classifier">int</span></dt><dd><blockquote>
 <div><p>The minimum width of characters of the new string.
 If the width is smaller than the existing string,
 no padding is performed.</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>fillchar <span class="classifier-delimiter">:</span> <span class="classifier">char</span></dt>
-<dd><p class="first last">The character used to do the padding.
+<dl class="simple">
+<dt>fillchar<span class="classifier">char</span></dt><dd><p>The character used to do the padding.
 Default is space character. Only the first character is used.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -475,34 +463,28 @@ Default is space character. Only the first character is used.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.compare">
-<code class="descname">compare</code><span class="sig-paren">(</span><em>str</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.compare" title="Permalink to this definition">¶</a></dt>
+<code class="descname">compare</code><span class="sig-paren">(</span><em>self</em>, <em>str</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.compare" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compare each string to the supplied string.
 Returns value of 0 for strings that match str.
 Returns &lt; 0 when first different character is lower
 than argument string or argument string is shorter.
 Returns &gt; 0 when first different character is greater
 than the argument string or the argument string is longer.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>str</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>str</strong><span class="classifier">str</span></dt><dd><blockquote>
 <div><p>String to compare all strings in this instance.</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>devptr <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Where string result values will be written.
+<dl class="simple">
+<dt>devptr<span class="classifier">GPU memory pointer</span></dt><dd><p>Where string result values will be written.
 Must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
@@ -518,36 +500,29 @@ Must be able to hold at least size() of int32 values.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.contains">
-<code class="descname">contains</code><span class="sig-paren">(</span><em>pat</em>, <em>regex=True</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.contains" title="Permalink to this definition">¶</a></dt>
+<code class="descname">contains</code><span class="sig-paren">(</span><em>self</em>, <em>pat</em>, <em>regex=True</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.contains" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the specified string within each string.</p>
 <p>Default expects regex pattern.
 Returns an array of boolean values where
 True if <cite>pat</cite> is found, False if not.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>pat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>pat</strong><span class="classifier">str</span></dt><dd><blockquote>
 <div><p>Pattern or string to search for in each string of this instance.</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>regex <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">If <cite>True</cite>, pat is interpreted as a regex string.
+<dl class="simple">
+<dt>regex<span class="classifier">bool</span></dt><dd><p>If <cite>True</cite>, pat is interpreted as a regex string.
 If <cite>False</cite>, pat is a string to be searched for in each instance.</p>
 </dd>
-<dt>devptr <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Optional device memory pointer to hold the results.
+<dt>devptr<span class="classifier">GPU memory pointer</span></dt><dd><p>Optional device memory pointer to hold the results.
 Must be able to hold at least size() of np.byte values.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
@@ -563,57 +538,45 @@ Must be able to hold at least size() of np.byte values.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.count">
-<code class="descname">count</code><span class="sig-paren">(</span><em>pat</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.count" title="Permalink to this definition">¶</a></dt>
+<code class="descname">count</code><span class="sig-paren">(</span><em>self</em>, <em>pat</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Count occurrences of pattern in each string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>pat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>pat</strong><span class="classifier">str</span></dt><dd><blockquote>
 <div><p>Pattern to find</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>devptr <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Optional device memory pointer to hold the results.
+<dl class="simple">
+<dt>devptr<span class="classifier">GPU memory pointer</span></dt><dd><p>Optional device memory pointer to hold the results.
 Memory must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.endswith">
-<code class="descname">endswith</code><span class="sig-paren">(</span><em>pat</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.endswith" title="Permalink to this definition">¶</a></dt>
+<code class="descname">endswith</code><span class="sig-paren">(</span><em>self</em>, <em>pat</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.endswith" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return array of boolean values with True for the strings
 where the specified string is at the end.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>pat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>pat</strong><span class="classifier">str</span></dt><dd><blockquote>
 <div><p>Pattern to find. Regular expressions are not accepted.</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>devptr <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Optional device memory pointer to hold the results.
+<dl class="simple">
+<dt>devptr<span class="classifier">GPU memory pointer</span></dt><dd><p>Optional device memory pointer to hold the results.
 Memory must be able to hold at least size() of np.byte values.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
@@ -629,22 +592,17 @@ Memory must be able to hold at least size() of np.byte values.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.extract">
-<code class="descname">extract</code><span class="sig-paren">(</span><em>pat</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.extract" title="Permalink to this definition">¶</a></dt>
+<code class="descname">extract</code><span class="sig-paren">(</span><em>self</em>, <em>pat</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.extract" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract string from the first match of regular expression pat.
 A new array of nvstrings is created for each string in this instance.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>pat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The regex pattern with group capture syntax</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pat</strong><span class="classifier">str</span></dt><dd><p>The regex pattern with group capture syntax</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -663,23 +621,18 @@ A new array of nvstrings is created for each string in this instance.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.extract_column">
-<code class="descname">extract_column</code><span class="sig-paren">(</span><em>pat</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.extract_column" title="Permalink to this definition">¶</a></dt>
+<code class="descname">extract_column</code><span class="sig-paren">(</span><em>self</em>, <em>pat</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.extract_column" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract string from the first match of regular expression pat.
 A new array of nvstrings is created by organizing group results
 vertically.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>pat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The regex pattern with group capture syntax</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pat</strong><span class="classifier">str</span></dt><dd><p>The regex pattern with group capture syntax</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -698,37 +651,29 @@ vertically.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.find">
-<code class="descname">find</code><span class="sig-paren">(</span><em>sub</em>, <em>start=0</em>, <em>end=None</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.find" title="Permalink to this definition">¶</a></dt>
+<code class="descname">find</code><span class="sig-paren">(</span><em>self</em>, <em>sub</em>, <em>start=0</em>, <em>end=None</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.find" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the specified string sub within each string.
 Return -1 for those strings where sub is not found.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>sub</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>sub</strong><span class="classifier">str</span></dt><dd><blockquote>
 <div><p>String to find</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>start <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Beginning of section to replace.
+<dl class="simple">
+<dt>start<span class="classifier">int</span></dt><dd><p>Beginning of section to replace.
 Default is beginning of each string.</p>
 </dd>
-<dt>end <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">End of section to replace. Default is end of each string.</p>
+<dt>end<span class="classifier">int</span></dt><dd><p>End of section to replace. Default is end of each string.</p>
 </dd>
-<dt>devptr <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Optional device memory pointer to hold the results.
+<dt>devptr<span class="classifier">GPU memory pointer</span></dt><dd><p>Optional device memory pointer to hold the results.
 Memory size must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
@@ -744,41 +689,33 @@ Memory size must be able to hold at least size() of int32 values.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.find_from">
-<code class="descname">find_from</code><span class="sig-paren">(</span><em>sub</em>, <em>starts=0</em>, <em>ends=0</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.find_from" title="Permalink to this definition">¶</a></dt>
+<code class="descname">find_from</code><span class="sig-paren">(</span><em>self</em>, <em>sub</em>, <em>starts=0</em>, <em>ends=0</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.find_from" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the specified string within each string starting at the
 specified character positions.</p>
 <p>The starts and ends parameters are device memory pointers.
 If specified, each must contain size() of int32 values.</p>
 <p>Returns -1 for those strings where sub is not found.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>sub</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>sub</strong><span class="classifier">str</span></dt><dd><blockquote>
 <div><p>String to find</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>starts <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Pointer to GPU array of int32 values of beginning of sections to
+<dl class="simple">
+<dt>starts<span class="classifier">GPU memory pointer</span></dt><dd><p>Pointer to GPU array of int32 values of beginning of sections to
 search, one per string.</p>
 </dd>
-<dt>ends <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Pointer to GPU array of int32 values of end of sections to search.
+<dt>ends<span class="classifier">GPU memory pointer</span></dt><dd><p>Pointer to GPU array of int32 values of end of sections to search.
 Use -1 to specify to the end of that string.</p>
 </dd>
-<dt>devptr <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Optional device memory pointer to hold the results.
+<dt>devptr<span class="classifier">GPU memory pointer</span></dt><dd><p>Optional device memory pointer to hold the results.
 Memory size must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -797,33 +734,27 @@ Memory size must be able to hold at least size() of int32 values.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.find_multiple">
-<code class="descname">find_multiple</code><span class="sig-paren">(</span><em>strs</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.find_multiple" title="Permalink to this definition">¶</a></dt>
+<code class="descname">find_multiple</code><span class="sig-paren">(</span><em>self</em>, <em>strs</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.find_multiple" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a ‘matrix’ of find results for each of the string in the
 strs parameter.</p>
 <p>Each row is an array of integers identifying the first location
 of the corresponding provided string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>strs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">nvstrings</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>strs</strong><span class="classifier">nvstrings</span></dt><dd><blockquote>
 <div><p>Strings to find in each of the strings in this instance.</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>devptr <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first">Optional device memory pointer to hold the results.</p>
-<p class="last">Memory size must be able to hold at least size()*strs.size()
+<dl>
+<dt>devptr<span class="classifier">GPU memory pointer</span></dt><dd><p>Optional device memory pointer to hold the results.</p>
+<p>Memory size must be able to hold at least size()*strs.size()
 of int32 values.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -840,22 +771,17 @@ of int32 values.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.findall">
-<code class="descname">findall</code><span class="sig-paren">(</span><em>pat</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.findall" title="Permalink to this definition">¶</a></dt>
+<code class="descname">findall</code><span class="sig-paren">(</span><em>self</em>, <em>pat</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.findall" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find all occurrences of regular expression pattern in each string.
 A new array of nvstrings is created for each string in this instance.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>pat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The regex pattern used to search for substrings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pat</strong><span class="classifier">str</span></dt><dd><p>The regex pattern used to search for substrings</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -874,22 +800,17 @@ A new array of nvstrings is created for each string in this instance.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.findall_column">
-<code class="descname">findall_column</code><span class="sig-paren">(</span><em>pat</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.findall_column" title="Permalink to this definition">¶</a></dt>
+<code class="descname">findall_column</code><span class="sig-paren">(</span><em>self</em>, <em>pat</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.findall_column" title="Permalink to this definition">¶</a></dt>
 <dd><p>A new set of nvstrings is created by organizing substring
 results vertically.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>pat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The regex pattern to search for substrings</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pat</strong><span class="classifier">str</span></dt><dd><p>The regex pattern to search for substrings</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -908,23 +829,18 @@ results vertically.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.get">
-<code class="descname">get</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.get" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get</code><span class="sig-paren">(</span><em>self</em>, <em>i</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the character specified in each string as a new string.</p>
 <p>The nvstrings returned contains a list of single character strings.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>i</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The character position identifying the character
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>i</strong><span class="classifier">int</span></dt><dd><p>The character position identifying the character
 in each string to return.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -940,22 +856,17 @@ in each string to return.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.hash">
-<code class="descname">hash</code><span class="sig-paren">(</span><em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.hash" title="Permalink to this definition">¶</a></dt>
+<code class="descname">hash</code><span class="sig-paren">(</span><em>self</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.hash" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns hash values represented by each string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>devptr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Where string hash values will be written.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>devptr</strong><span class="classifier">GPU memory pointer</span></dt><dd><p>Where string hash values will be written.
 Must be able to hold at least size() of uint32 values.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
@@ -970,36 +881,28 @@ Must be able to hold at least size() of uint32 values.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.index">
-<code class="descname">index</code><span class="sig-paren">(</span><em>sub</em>, <em>start=0</em>, <em>end=None</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.index" title="Permalink to this definition">¶</a></dt>
+<code class="descname">index</code><span class="sig-paren">(</span><em>self</em>, <em>sub</em>, <em>start=0</em>, <em>end=None</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as find but throws an error if arg is not found in all strings.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>sub</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>sub</strong><span class="classifier">str</span></dt><dd><blockquote>
 <div><p>String to find</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>start <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Beginning of section to replace.
+<dl class="simple">
+<dt>start<span class="classifier">int</span></dt><dd><p>Beginning of section to replace.
 Default is beginning of each string.</p>
 </dd>
-<dt>end <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">End of section to replace. Default is end of each string.</p>
+<dt>end<span class="classifier">int</span></dt><dd><p>End of section to replace. Default is end of each string.</p>
 </dd>
-<dt>devptr <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Optional device memory pointer to hold the results.
+<dt>devptr<span class="classifier">GPU memory pointer</span></dt><dd><p>Optional device memory pointer to hold the results.
 Memory size must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
@@ -1015,7 +918,7 @@ Memory size must be able to hold at least size() of int32 values.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.isalnum">
-<code class="descname">isalnum</code><span class="sig-paren">(</span><em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.isalnum" title="Permalink to this definition">¶</a></dt>
+<code class="descname">isalnum</code><span class="sig-paren">(</span><em>self</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.isalnum" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return array of boolean values with True for strings that contain
 only alpha-numeric characters.
 Equivalent to: isalpha() or isdigit() or isnumeric() or isdecimal()</p>
@@ -1034,7 +937,7 @@ Equivalent to: isalpha() or isdigit() or isnumeric() or isdecimal()</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.isalpha">
-<code class="descname">isalpha</code><span class="sig-paren">(</span><em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.isalpha" title="Permalink to this definition">¶</a></dt>
+<code class="descname">isalpha</code><span class="sig-paren">(</span><em>self</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.isalpha" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return array of boolean values with True for strings that contain
 only alphabetic characters.</p>
 <p class="rubric">Examples</p>
@@ -1052,7 +955,7 @@ only alphabetic characters.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.isdecimal">
-<code class="descname">isdecimal</code><span class="sig-paren">(</span><em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.isdecimal" title="Permalink to this definition">¶</a></dt>
+<code class="descname">isdecimal</code><span class="sig-paren">(</span><em>self</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.isdecimal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return array of boolean values with True for strings that contain only
 decimal characters – those that can be used to extract base10 numbers.</p>
 <p class="rubric">Examples</p>
@@ -1070,7 +973,7 @@ decimal characters – those that can be used to extract base10 numbers.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.isdigit">
-<code class="descname">isdigit</code><span class="sig-paren">(</span><em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.isdigit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">isdigit</code><span class="sig-paren">(</span><em>self</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.isdigit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return array of boolean values with True for strings that contain
 only decimal and digit characters.</p>
 <p class="rubric">Examples</p>
@@ -1088,7 +991,7 @@ only decimal and digit characters.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.islower">
-<code class="descname">islower</code><span class="sig-paren">(</span><em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.islower" title="Permalink to this definition">¶</a></dt>
+<code class="descname">islower</code><span class="sig-paren">(</span><em>self</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.islower" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return array of boolean values with True for strings that contain
 only lowercase characters.</p>
 <p class="rubric">Examples</p>
@@ -1106,7 +1009,7 @@ only lowercase characters.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.isnumeric">
-<code class="descname">isnumeric</code><span class="sig-paren">(</span><em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.isnumeric" title="Permalink to this definition">¶</a></dt>
+<code class="descname">isnumeric</code><span class="sig-paren">(</span><em>self</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.isnumeric" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return array of boolean values with True for strings that contain
 only numeric characters. These include digit and numeric characters.</p>
 <p class="rubric">Examples</p>
@@ -1124,7 +1027,7 @@ only numeric characters. These include digit and numeric characters.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.isspace">
-<code class="descname">isspace</code><span class="sig-paren">(</span><em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.isspace" title="Permalink to this definition">¶</a></dt>
+<code class="descname">isspace</code><span class="sig-paren">(</span><em>self</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.isspace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return array of boolean values with True for strings that contain
 only whitespace characters.</p>
 <p class="rubric">Examples</p>
@@ -1142,7 +1045,7 @@ only whitespace characters.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.isupper">
-<code class="descname">isupper</code><span class="sig-paren">(</span><em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.isupper" title="Permalink to this definition">¶</a></dt>
+<code class="descname">isupper</code><span class="sig-paren">(</span><em>self</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.isupper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return array of boolean values with True for strings that contain
 only uppercase characters.</p>
 <p class="rubric">Examples</p>
@@ -1160,22 +1063,17 @@ only uppercase characters.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.join">
-<code class="descname">join</code><span class="sig-paren">(</span><em>sep=''</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.join" title="Permalink to this definition">¶</a></dt>
+<code class="descname">join</code><span class="sig-paren">(</span><em>self</em>, <em>sep=''</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.join" title="Permalink to this definition">¶</a></dt>
 <dd><p>Concatentate this list of strings into a single string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>sep</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">This separator will be appended to each string before
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>sep</strong><span class="classifier">str</span></dt><dd><p>This separator will be appended to each string before
 appending the next.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -1191,22 +1089,17 @@ appending the next.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.len">
-<code class="descname">len</code><span class="sig-paren">(</span><em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.len" title="Permalink to this definition">¶</a></dt>
+<code class="descname">len</code><span class="sig-paren">(</span><em>self</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.len" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the number of characters of each string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>devptr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Where string length values will be written.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>devptr</strong><span class="classifier">GPU memory pointer</span></dt><dd><p>Where string length values will be written.
 Must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -1228,31 +1121,25 @@ Must be able to hold at least size() of int32 values.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.ljust">
-<code class="descname">ljust</code><span class="sig-paren">(</span><em>width</em>, <em>fillchar=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.ljust" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ljust</code><span class="sig-paren">(</span><em>self</em>, <em>width</em>, <em>fillchar=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.ljust" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pad the end of each string to the minimum width.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>width</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>width</strong><span class="classifier">int</span></dt><dd><blockquote>
 <div><p>The minimum width of characters of the new string.
 If the width is smaller than the existing string,
 no padding is performed.</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>fillchar <span class="classifier-delimiter">:</span> <span class="classifier">char</span></dt>
-<dd><p class="first last">The character used to do the padding.
+<dl class="simple">
+<dt>fillchar<span class="classifier">char</span></dt><dd><p>The character used to do the padding.
 Default is space character. Only the first character is used.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -1268,7 +1155,7 @@ Default is space character. Only the first character is used.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.lower">
-<code class="descname">lower</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.lower" title="Permalink to this definition">¶</a></dt>
+<code class="descname">lower</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.lower" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert each string to lowercase.
 This only applies to ASCII characters at this time.</p>
 <p class="rubric">Examples</p>
@@ -1286,21 +1173,16 @@ This only applies to ASCII characters at this time.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.lstrip">
-<code class="descname">lstrip</code><span class="sig-paren">(</span><em>to_strip=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.lstrip" title="Permalink to this definition">¶</a></dt>
+<code class="descname">lstrip</code><span class="sig-paren">(</span><em>self</em>, <em>to_strip=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.lstrip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Strip leading characters from each string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>to_strip</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Characters to be removed from leading edge of each string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>to_strip</strong><span class="classifier">str</span></dt><dd><p>Characters to be removed from leading edge of each string</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -1316,31 +1198,25 @@ This only applies to ASCII characters at this time.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.match">
-<code class="descname">match</code><span class="sig-paren">(</span><em>pat</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.match" title="Permalink to this definition">¶</a></dt>
+<code class="descname">match</code><span class="sig-paren">(</span><em>self</em>, <em>pat</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.match" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return array of boolean values where True is set if the specified
 pattern matches the beginning of the corresponding string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>pat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>pat</strong><span class="classifier">str</span></dt><dd><blockquote>
 <div><p>Pattern to find</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>devptr <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Optional device memory pointer to hold the results.
+<dl class="simple">
+<dt>devptr<span class="classifier">GPU memory pointer</span></dt><dd><p>Optional device memory pointer to hold the results.
 Memory size must be able to hold at least size() of
 np.byte values.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
@@ -1356,38 +1232,31 @@ np.byte values.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.order">
-<code class="descname">order</code><span class="sig-paren">(</span><em>stype</em>, <em>asc=True</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.order" title="Permalink to this definition">¶</a></dt>
+<code class="descname">order</code><span class="sig-paren">(</span><em>self</em>, <em>stype</em>, <em>asc=True</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.order" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sort this list by name (2) or length (1) or both (3).
 This sort only provides the new indexes and does not reorder the
 managed strings.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>stype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>stype</strong><span class="classifier">int</span></dt><dd><blockquote>
 <div><p>Type of sort to use.</p>
 <p>If stype is 1, strings will be sorted by length</p>
 <p>If stype is 2, strings will be sorted alphabetically by name</p>
 <p>If stype is 3, strings will be sorted by length and then
 alphabetically</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>asc <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Whether to sort ascending (True) or descending (False)</p>
+<dl class="simple">
+<dt>asc<span class="classifier">bool</span></dt><dd><p>Whether to sort ascending (True) or descending (False)</p>
 </dd>
-<dt>devptr <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Where index values will be written.
+<dt>devptr<span class="classifier">GPU memory pointer</span></dt><dd><p>Where index values will be written.
 Must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -1403,34 +1272,28 @@ Must be able to hold at least size() of int32 values.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.pad">
-<code class="descname">pad</code><span class="sig-paren">(</span><em>width</em>, <em>side='left'</em>, <em>fillchar=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.pad" title="Permalink to this definition">¶</a></dt>
+<code class="descname">pad</code><span class="sig-paren">(</span><em>self</em>, <em>width</em>, <em>side='left'</em>, <em>fillchar=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.pad" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add specified padding to each string.
 Side:{‘left’,’right’,’both’}, default is ‘left’.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>fillchar</strong> <span class="classifier-delimiter">:</span> <span class="classifier">char</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>fillchar</strong><span class="classifier">char</span></dt><dd><blockquote>
 <div><p>The character used to do the padding.
 Default is space character. Only the first character is used.</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>side <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first">Either one of “left”, “right”, “both”. The default is “left”</p>
+<dl>
+<dt>side<span class="classifier">str</span></dt><dd><p>Either one of “left”, “right”, “both”. The default is “left”</p>
 <p>“left” performs a padding on the left – same as rjust()</p>
 <p>“right” performs a padding on the right – same as ljust()</p>
-<p class="last">“both” performs equal padding on left and right
+<p>“both” performs equal padding on left and right
 – same as center()</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -1446,24 +1309,19 @@ Default is space character. Only the first character is used.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.partition">
-<code class="descname">partition</code><span class="sig-paren">(</span><em>delimiter=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.partition" title="Permalink to this definition">¶</a></dt>
+<code class="descname">partition</code><span class="sig-paren">(</span><em>self</em>, <em>delimiter=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.partition" title="Permalink to this definition">¶</a></dt>
 <dd><p>Each string is split into two strings on the first delimiter found.</p>
 <p>Three strings are returned for each string:
 beginning, delimiter, end.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>delimiter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The character used to locate the split points of each
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>delimiter</strong><span class="classifier">str</span></dt><dd><p>The character used to locate the split points of each
 string. Default is space.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -1482,31 +1340,25 @@ string. Default is space.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.remove_strings">
-<code class="descname">remove_strings</code><span class="sig-paren">(</span><em>indexes</em>, <em>count=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.remove_strings" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove_strings</code><span class="sig-paren">(</span><em>self</em>, <em>indexes</em>, <em>count=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.remove_strings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove the specified strings and return a new instance.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>indexes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">List of ints</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>indexes</strong><span class="classifier">List of ints</span></dt><dd><blockquote>
 <div><p>0-based indexes of strings to remove from an nvstrings object
 If this parameter is pointer to device memory, count parm is
 required.</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>count <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of ints if indexes parm is a device pointer.
+<dl class="simple">
+<dt>count<span class="classifier">int</span></dt><dd><p>Number of ints if indexes parm is a device pointer.
 Otherwise it is ignored.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
@@ -1522,23 +1374,18 @@ Otherwise it is ignored.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.repeat">
-<code class="descname">repeat</code><span class="sig-paren">(</span><em>repeats</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.repeat" title="Permalink to this definition">¶</a></dt>
+<code class="descname">repeat</code><span class="sig-paren">(</span><em>self</em>, <em>repeats</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.repeat" title="Permalink to this definition">¶</a></dt>
 <dd><p>Appends each string with itself the specified number of times.
 This returns a nvstrings instance with the new strings.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>repeats</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The number of times each string should be repeated.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>repeats</strong><span class="classifier">int</span></dt><dd><p>The number of times each string should be repeated.
 Repeat count of 0 or 1 will just return copy of each string.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -1554,25 +1401,19 @@ Repeat count of 0 or 1 will just return copy of each string.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.replace">
-<code class="descname">replace</code><span class="sig-paren">(</span><em>pat</em>, <em>repl</em>, <em>n=-1</em>, <em>regex=True</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.replace" title="Permalink to this definition">¶</a></dt>
+<code class="descname">replace</code><span class="sig-paren">(</span><em>self</em>, <em>pat</em>, <em>repl</em>, <em>n=-1</em>, <em>regex=True</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.replace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replace a string (pat) in each string with another string (repl).</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>pat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">String to be replaced.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pat</strong><span class="classifier">str</span></dt><dd><p>String to be replaced.
 This can also be a regex expression – not a compiled regex.</p>
 </dd>
-<dt><strong>repl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">String to replace <cite>strng</cite> with</p>
+<dt><strong>repl</strong><span class="classifier">str</span></dt><dd><p>String to replace <cite>strng</cite> with</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -1588,37 +1429,29 @@ This can also be a regex expression – not a compiled regex.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.rfind">
-<code class="descname">rfind</code><span class="sig-paren">(</span><em>sub</em>, <em>start=0</em>, <em>end=None</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.rfind" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rfind</code><span class="sig-paren">(</span><em>self</em>, <em>sub</em>, <em>start=0</em>, <em>end=None</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.rfind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the specified string within each string.
 Search from the end of the string.</p>
 <p>Return -1 for those strings where sub is not found.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>sub</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>sub</strong><span class="classifier">str</span></dt><dd><blockquote>
 <div><p>String to find</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>start <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Beginning of section to replace.
+<dl class="simple">
+<dt>start<span class="classifier">int</span></dt><dd><p>Beginning of section to replace.
 Default is beginning of each string.</p>
 </dd>
-<dt>end <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">End of section to replace. Default is end of each string.</p>
+<dt>end<span class="classifier">int</span></dt><dd><p>End of section to replace. Default is end of each string.</p>
 </dd>
-<dt>devptr <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Optional device memory pointer to hold the results.</p>
+<dt>devptr<span class="classifier">GPU memory pointer</span></dt><dd><p>Optional device memory pointer to hold the results.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
@@ -1634,36 +1467,28 @@ Default is beginning of each string.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.rindex">
-<code class="descname">rindex</code><span class="sig-paren">(</span><em>sub</em>, <em>start=0</em>, <em>end=None</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.rindex" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rindex</code><span class="sig-paren">(</span><em>self</em>, <em>sub</em>, <em>start=0</em>, <em>end=None</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.rindex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as rfind but throws an error if arg is not found in all strings.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>sub</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>sub</strong><span class="classifier">str</span></dt><dd><blockquote>
 <div><p>String to find</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>start <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Beginning of section to replace.
+<dl class="simple">
+<dt>start<span class="classifier">int</span></dt><dd><p>Beginning of section to replace.
 Default is beginning of each string.</p>
 </dd>
-<dt>end <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">End of section to replace. Default is end of each string.</p>
+<dt>end<span class="classifier">int</span></dt><dd><p>End of section to replace. Default is end of each string.</p>
 </dd>
-<dt>devptr <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Optional device memory pointer to hold the results.
+<dt>devptr<span class="classifier">GPU memory pointer</span></dt><dd><p>Optional device memory pointer to hold the results.
 Memory size must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
@@ -1679,31 +1504,25 @@ Memory size must be able to hold at least size() of int32 values.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.rjust">
-<code class="descname">rjust</code><span class="sig-paren">(</span><em>width</em>, <em>fillchar=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.rjust" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rjust</code><span class="sig-paren">(</span><em>self</em>, <em>width</em>, <em>fillchar=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.rjust" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pad the beginning of each string to the minimum width.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>width</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>width</strong><span class="classifier">int</span></dt><dd><blockquote>
 <div><p>The minimum width of characters of the new string.
 If the width is smaller than the existing string,
 no padding is performed.</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>fillchar <span class="classifier-delimiter">:</span> <span class="classifier">char</span></dt>
-<dd><p class="first last">The character used to do the padding.
+<dl class="simple">
+<dt>fillchar<span class="classifier">char</span></dt><dd><p>The character used to do the padding.
 Default is space character. Only the first character is used.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -1719,24 +1538,19 @@ Default is space character. Only the first character is used.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.rpartition">
-<code class="descname">rpartition</code><span class="sig-paren">(</span><em>delimiter=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.rpartition" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rpartition</code><span class="sig-paren">(</span><em>self</em>, <em>delimiter=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.rpartition" title="Permalink to this definition">¶</a></dt>
 <dd><p>Each string is split into two strings on the first delimiter found.
 Delimiter is searched for from the end.</p>
 <p>Three strings are returned for each string: beginning, delimiter, end.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>delimiter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The character used to locate the split points of each string.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>delimiter</strong><span class="classifier">str</span></dt><dd><p>The character used to locate the split points of each string.
 Default is space.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -1755,31 +1569,25 @@ Default is space.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.rsplit">
-<code class="descname">rsplit</code><span class="sig-paren">(</span><em>delimiter=None</em>, <em>n=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.rsplit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rsplit</code><span class="sig-paren">(</span><em>self</em>, <em>delimiter=None</em>, <em>n=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.rsplit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an array of nvstrings each representing the split of each
 individual string. The delimiter is searched for from the end of
 each string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>delimiter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>delimiter</strong><span class="classifier">str</span></dt><dd><blockquote>
 <div><p>The character used to locate the split points of each
 string. Default is space.</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>n <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Maximum number of strings to return for each split.</p>
+<dl class="simple">
+<dt>n<span class="classifier">int</span></dt><dd><p>Maximum number of strings to return for each split.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -1798,23 +1606,18 @@ string. Default is space.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.rsplit_column">
-<code class="descname">rsplit_column</code><span class="sig-paren">(</span><em>delimiter=' '</em>, <em>n=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.rsplit_column" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rsplit_column</code><span class="sig-paren">(</span><em>self</em>, <em>delimiter=' '</em>, <em>n=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.rsplit_column" title="Permalink to this definition">¶</a></dt>
 <dd><p>A new set of columns (nvstrings) is created by splitting
 the strings vertically. Delimiter is searched from the end.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>delimiter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The character used to locate the split points of each string.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>delimiter</strong><span class="classifier">str</span></dt><dd><p>The character used to locate the split points of each string.
 Default is space.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -1832,21 +1635,16 @@ Default is space.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.rstrip">
-<code class="descname">rstrip</code><span class="sig-paren">(</span><em>to_strip=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.rstrip" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rstrip</code><span class="sig-paren">(</span><em>self</em>, <em>to_strip=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.rstrip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Strip trailing characters from each string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>to_strip</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Characters to be removed from trailing edge of each string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>to_strip</strong><span class="classifier">str</span></dt><dd><p>Characters to be removed from trailing edge of each string</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -1862,20 +1660,15 @@ Default is space.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.size">
-<code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.size" title="Permalink to this definition">¶</a></dt>
+<code class="descname">size</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.size" title="Permalink to this definition">¶</a></dt>
 <dd><p>The number of strings managed by this instance.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>int: number of strings</strong></dt>
-<dd></dd>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int: number of strings</dt><dd></dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
@@ -1890,30 +1683,23 @@ Default is space.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.slice">
-<code class="descname">slice</code><span class="sig-paren">(</span><em>start</em>, <em>stop=None</em>, <em>step=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.slice" title="Permalink to this definition">¶</a></dt>
+<code class="descname">slice</code><span class="sig-paren">(</span><em>self</em>, <em>start</em>, <em>stop=None</em>, <em>step=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.slice" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a substring of each string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>start</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Beginning position of the string to extract.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>start</strong><span class="classifier">int</span></dt><dd><p>Beginning position of the string to extract.
 Default is beginning of the each string.</p>
 </dd>
-<dt><strong>stop</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Ending position of the string to extract.
+<dt><strong>stop</strong><span class="classifier">int</span></dt><dd><p>Ending position of the string to extract.
 Default is end of each string.</p>
 </dd>
-<dt><strong>step</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Characters that are to be captured within the specified section.
+<dt><strong>step</strong><span class="classifier">str</span></dt><dd><p>Characters that are to be captured within the specified section.
 Default is every character.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -1929,29 +1715,23 @@ Default is every character.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.slice_from">
-<code class="descname">slice_from</code><span class="sig-paren">(</span><em>starts=0</em>, <em>stops=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.slice_from" title="Permalink to this definition">¶</a></dt>
+<code class="descname">slice_from</code><span class="sig-paren">(</span><em>self</em>, <em>starts=0</em>, <em>stops=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.slice_from" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return substring of each string using positions for each string.</p>
 <p>The starts and stops parameters are device memory pointers.
 If specified, each must contain size() of int32 values.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>starts</strong> <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Beginning position of each the string to extract.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>starts</strong><span class="classifier">GPU memory pointer</span></dt><dd><p>Beginning position of each the string to extract.
 Default is beginning of the each string.</p>
 </dd>
-<dt><strong>stops</strong> <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Ending position of the each string to extract.
+<dt><strong>stops</strong><span class="classifier">GPU memory pointer</span></dt><dd><p>Ending position of the each string to extract.
 Default is end of each string.
 Use -1 to specify to the end of that string.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -1970,29 +1750,22 @@ Use -1 to specify to the end of that string.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.slice_replace">
-<code class="descname">slice_replace</code><span class="sig-paren">(</span><em>start=None</em>, <em>stop=None</em>, <em>repl=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.slice_replace" title="Permalink to this definition">¶</a></dt>
+<code class="descname">slice_replace</code><span class="sig-paren">(</span><em>self</em>, <em>start=None</em>, <em>stop=None</em>, <em>repl=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.slice_replace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replace the specified section of each string with a new string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>start</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Beginning position of the string to replace.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>start</strong><span class="classifier">int</span></dt><dd><p>Beginning position of the string to replace.
 Default is beginning of the each string.</p>
 </dd>
-<dt><strong>stop</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Ending position of the string to replace.
+<dt><strong>stop</strong><span class="classifier">int</span></dt><dd><p>Ending position of the string to replace.
 Default is end of each string.</p>
 </dd>
-<dt><strong>repl</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">String to insert into the specified position values.</p>
+<dt><strong>repl</strong><span class="classifier">str</span></dt><dd><p>String to insert into the specified position values.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
@@ -2009,33 +1782,27 @@ print(strs.slice_replace(2,5,’z’))</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.sort">
-<code class="descname">sort</code><span class="sig-paren">(</span><em>stype</em>, <em>asc=True</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.sort" title="Permalink to this definition">¶</a></dt>
+<code class="descname">sort</code><span class="sig-paren">(</span><em>self</em>, <em>stype</em>, <em>asc=True</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.sort" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sort this list by name (2) or length (1) or both (3).
 Sorting can help improve performance for other operations.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>stype</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>stype</strong><span class="classifier">int</span></dt><dd><blockquote>
 <div><p>Type of sort to use.</p>
 <p>If stype is 1, strings will be sorted by length</p>
 <p>If stype is 2, strings will be sorted alphabetically by name</p>
 <p>If stype is 3, strings will be sorted by length and then
 alphabetically</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>asc <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Whether to sort ascending (True) or descending (False)</p>
+<dl class="simple">
+<dt>asc<span class="classifier">bool</span></dt><dd><p>Whether to sort ascending (True) or descending (False)</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -2051,30 +1818,24 @@ alphabetically</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.split">
-<code class="descname">split</code><span class="sig-paren">(</span><em>delimiter=None</em>, <em>n=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.split" title="Permalink to this definition">¶</a></dt>
+<code class="descname">split</code><span class="sig-paren">(</span><em>self</em>, <em>delimiter=None</em>, <em>n=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.split" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an array of nvstrings each representing the split
 of each individual string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>delimiter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>delimiter</strong><span class="classifier">str</span></dt><dd><blockquote>
 <div><p>The character used to locate the split points of
 each string. Default is space.</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>n <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Maximum number of strings to return for each split.</p>
+<dl class="simple">
+<dt>n<span class="classifier">int</span></dt><dd><p>Maximum number of strings to return for each split.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -2093,23 +1854,18 @@ each string. Default is space.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.split_column">
-<code class="descname">split_column</code><span class="sig-paren">(</span><em>delimiter=' '</em>, <em>n=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.split_column" title="Permalink to this definition">¶</a></dt>
+<code class="descname">split_column</code><span class="sig-paren">(</span><em>self</em>, <em>delimiter=' '</em>, <em>n=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.split_column" title="Permalink to this definition">¶</a></dt>
 <dd><p>A new set of columns (nvstrings) is created by splitting
 the strings vertically.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>delimiter</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">The character used to locate the split points of each string.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>delimiter</strong><span class="classifier">str</span></dt><dd><p>The character used to locate the split points of each string.
 Default is space.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -2127,30 +1883,24 @@ Default is space.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.startswith">
-<code class="descname">startswith</code><span class="sig-paren">(</span><em>pat</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.startswith" title="Permalink to this definition">¶</a></dt>
+<code class="descname">startswith</code><span class="sig-paren">(</span><em>self</em>, <em>pat</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.startswith" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return array of boolean values with True for the strings where the
 specified string is at the beginning.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>pat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>pat</strong><span class="classifier">str</span></dt><dd><blockquote>
 <div><p>Pattern to find. Regular expressions are not accepted.</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>devptr <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Optional device memory pointer to hold the results.
+<dl class="simple">
+<dt>devptr<span class="classifier">GPU memory pointer</span></dt><dd><p>Optional device memory pointer to hold the results.
 Memory must be able to hold at least size() of np.byte values.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
@@ -2166,22 +1916,17 @@ Memory must be able to hold at least size() of np.byte values.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.stof">
-<code class="descname">stof</code><span class="sig-paren">(</span><em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.stof" title="Permalink to this definition">¶</a></dt>
+<code class="descname">stof</code><span class="sig-paren">(</span><em>self</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.stof" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns float values represented by each string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>devptr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Where resulting float values will be written.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>devptr</strong><span class="classifier">GPU memory pointer</span></dt><dd><p>Where resulting float values will be written.
 Memory must be able to hold at least size() of float32 values</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -2199,22 +1944,17 @@ Memory must be able to hold at least size() of float32 values</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.stoi">
-<code class="descname">stoi</code><span class="sig-paren">(</span><em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.stoi" title="Permalink to this definition">¶</a></dt>
+<code class="descname">stoi</code><span class="sig-paren">(</span><em>self</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.stoi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns integer value represented by each string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>devptr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Where resulting integer values will be written.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>devptr</strong><span class="classifier">GPU memory pointer</span></dt><dd><p>Where resulting integer values will be written.
 Memory must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -2230,21 +1970,16 @@ Memory must be able to hold at least size() of int32 values.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.strip">
-<code class="descname">strip</code><span class="sig-paren">(</span><em>to_strip=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.strip" title="Permalink to this definition">¶</a></dt>
+<code class="descname">strip</code><span class="sig-paren">(</span><em>self</em>, <em>to_strip=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.strip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Strip leading and trailing characters from each string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>to_strip</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">Characters to be removed from both ends of each string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>to_strip</strong><span class="classifier">str</span></dt><dd><p>Characters to be removed from both ends of each string</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -2260,29 +1995,23 @@ Memory must be able to hold at least size() of int32 values.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.sublist">
-<code class="descname">sublist</code><span class="sig-paren">(</span><em>indexes</em>, <em>count=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.sublist" title="Permalink to this definition">¶</a></dt>
+<code class="descname">sublist</code><span class="sig-paren">(</span><em>self</em>, <em>indexes</em>, <em>count=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.sublist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a sublist of strings from this instance.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>indexes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">List of ints or GPU memory pointer</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>indexes</strong><span class="classifier">List of ints or GPU memory pointer</span></dt><dd><blockquote>
 <div><p>0-based indexes of strings to return from an nvstrings object</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>count <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of ints if indexes parm is a device pointer.
+<dl class="simple">
+<dt>count<span class="classifier">int</span></dt><dd><p>Number of ints if indexes parm is a device pointer.
 Otherwise it is ignored.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
@@ -2298,7 +2027,7 @@ Otherwise it is ignored.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.swapcase">
-<code class="descname">swapcase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.swapcase" title="Permalink to this definition">¶</a></dt>
+<code class="descname">swapcase</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.swapcase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change each lowercase character to uppercase and vice versa.
 This only applies to ASCII characters at this time.</p>
 <p class="rubric">Examples</p>
@@ -2316,7 +2045,7 @@ This only applies to ASCII characters at this time.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.title">
-<code class="descname">title</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.title" title="Permalink to this definition">¶</a></dt>
+<code class="descname">title</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.title" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uppercase the first letter of each letter after a space
 and lowercase the rest.
 This only applies to ASCII characters at this time.</p>
@@ -2335,20 +2064,15 @@ This only applies to ASCII characters at this time.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.to_host">
-<code class="descname">to_host</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.to_host" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to_host</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.to_host" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copies strings back to CPU memory into a Python array.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>A list of strings</strong></dt>
-<dd></dd>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>A list of strings</dt><dd></dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
@@ -2365,23 +2089,18 @@ This only applies to ASCII characters at this time.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.translate">
-<code class="descname">translate</code><span class="sig-paren">(</span><em>table</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.translate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">translate</code><span class="sig-paren">(</span><em>self</em>, <em>table</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.translate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Translate individual characters to new characters using
 the provided table.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>pat</strong> <span class="classifier-delimiter">:</span> <span class="classifier">dict</span></dt>
-<dd><p class="first last">Use str.maketrans() to build the mapping table.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pat</strong><span class="classifier">dict</span></dt><dd><p>Use str.maketrans() to build the mapping table.
 Unspecified characters are unchanged.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -2397,7 +2116,7 @@ Unspecified characters are unchanged.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.upper">
-<code class="descname">upper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.upper" title="Permalink to this definition">¶</a></dt>
+<code class="descname">upper</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.upper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert each string to uppercase.
 This only applies to ASCII characters at this time.</p>
 <p class="rubric">Examples</p>
@@ -2415,24 +2134,19 @@ This only applies to ASCII characters at this time.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.wrap">
-<code class="descname">wrap</code><span class="sig-paren">(</span><em>width</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.wrap" title="Permalink to this definition">¶</a></dt>
+<code class="descname">wrap</code><span class="sig-paren">(</span><em>self</em>, <em>width</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.wrap" title="Permalink to this definition">¶</a></dt>
 <dd><p>This will place new-line characters in whitespace so each line
 is no more than width characters. Lines will not be truncated.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>width</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The maximum width of characters per newline in the new string.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>width</strong><span class="classifier">int</span></dt><dd><p>The maximum width of characters per newline in the new string.
 If the width is smaller than the existing string, no newlines
 will be inserted.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -2448,25 +2162,20 @@ will be inserted.</p>
 
 <dl class="method">
 <dt id="nvstrings.nvstrings.zfill">
-<code class="descname">zfill</code><span class="sig-paren">(</span><em>width</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.zfill" title="Permalink to this definition">¶</a></dt>
+<code class="descname">zfill</code><span class="sig-paren">(</span><em>self</em>, <em>width</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.zfill" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pads the strings with leading zeros.
 It will handle prefix sign characters correctly for strings
 containing leading number characters.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>width</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">The minimum width of characters of the new string.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>width</strong><span class="classifier">int</span></dt><dd><p>The minimum width of characters of the new string.
 If the width is smaller than the existing string,
 no padding is performed.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvstrings</span>
 
@@ -2491,66 +2200,61 @@ no padding is performed.</p>
 <dd><p>Instance manages a dictionary of strings (keys) in device memory
 and a mapping of indexes (values).</p>
 <p class="rubric">Methods</p>
-<table border="1" class="longtable docutils">
+<table class="longtable docutils align-center">
 <colgroup>
-<col width="10%" />
-<col width="90%" />
+<col style="width: 10%" />
+<col style="width: 90%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#nvcategory.nvcategory.add_strings" title="nvcategory.nvcategory.add_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_strings</span></code></a>(nvs)</td>
-<td>Create new category incorporating specified strings.</td>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.add_strings" title="nvcategory.nvcategory.add_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_strings</span></code></a>(self, nvs)</p></td>
+<td><p>Create new category incorporating specified strings.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvcategory.nvcategory.gather_strings" title="nvcategory.nvcategory.gather_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gather_strings</span></code></a>(indexes[,&nbsp;count])</td>
-<td>Return nvstrings instance represented using the specified indexes.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.gather_strings" title="nvcategory.nvcategory.gather_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gather_strings</span></code></a>(self, indexes[, count])</p></td>
+<td><p>Return nvstrings instance represented using the specified indexes.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvcategory.nvcategory.indexes_for_key" title="nvcategory.nvcategory.indexes_for_key"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indexes_for_key</span></code></a>(key[,&nbsp;devptr])</td>
-<td>Return all index values for given key.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.indexes_for_key" title="nvcategory.nvcategory.indexes_for_key"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indexes_for_key</span></code></a>(self, key[, devptr])</p></td>
+<td><p>Return all index values for given key.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvcategory.nvcategory.keys" title="nvcategory.nvcategory.keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code></a>()</td>
-<td>Return the unique strings for this category as nvstrings instance.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.keys" title="nvcategory.nvcategory.keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code></a>(self)</p></td>
+<td><p>Return the unique strings for this category as nvstrings instance.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvcategory.nvcategory.keys_size" title="nvcategory.nvcategory.keys_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys_size</span></code></a>()</td>
-<td>The number of keys.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.keys_size" title="nvcategory.nvcategory.keys_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys_size</span></code></a>(self)</p></td>
+<td><p>The number of keys.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvcategory.nvcategory.remove_strings" title="nvcategory.nvcategory.remove_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_strings</span></code></a>(nvs)</td>
-<td>Create new category without the specified strings.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.remove_strings" title="nvcategory.nvcategory.remove_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_strings</span></code></a>(self, nvs)</p></td>
+<td><p>Create new category without the specified strings.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvcategory.nvcategory.size" title="nvcategory.nvcategory.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a>()</td>
-<td>The number of values.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.size" title="nvcategory.nvcategory.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a>(self)</p></td>
+<td><p>The number of values.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvcategory.nvcategory.to_strings" title="nvcategory.nvcategory.to_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_strings</span></code></a>()</td>
-<td>Return nvstrings instance represented by the values in this instance.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.to_strings" title="nvcategory.nvcategory.to_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_strings</span></code></a>(self)</p></td>
+<td><p>Return nvstrings instance represented by the values in this instance.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvcategory.nvcategory.value" title="nvcategory.nvcategory.value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code></a>(str)</td>
-<td>Return the category value for the given string.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.value" title="nvcategory.nvcategory.value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code></a>(self, str)</p></td>
+<td><p>Return the category value for the given string.</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#nvcategory.nvcategory.value_for_index" title="nvcategory.nvcategory.value_for_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_for_index</span></code></a>(idx)</td>
-<td>Return the category value for the given index.</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.value_for_index" title="nvcategory.nvcategory.value_for_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_for_index</span></code></a>(self, idx)</p></td>
+<td><p>Return the category value for the given index.</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#nvcategory.nvcategory.values" title="nvcategory.nvcategory.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a>([devptr])</td>
-<td>Return all values for this instance.</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.values" title="nvcategory.nvcategory.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a>(self[, devptr])</p></td>
+<td><p>Return all values for this instance.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="nvcategory.nvcategory.add_strings">
-<code class="descname">add_strings</code><span class="sig-paren">(</span><em>nvs</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.add_strings" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_strings</code><span class="sig-paren">(</span><em>self</em>, <em>nvs</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.add_strings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create new category incorporating specified strings.
 This will return a new nvcategory with new key values.
 The index values will appear as if appended.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>nvs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">nvstrings</span></dt>
-<dd><p class="first last">New strings to be added.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>nvs</strong><span class="classifier">nvstrings</span></dt><dd><p>New strings to be added.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvcategory</span><span class="o">,</span> <span class="nn">nvstrings</span>
 <span class="n">s1</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
@@ -2568,35 +2272,28 @@ The index values will appear as if appended.</p>
 
 <dl class="method">
 <dt id="nvcategory.nvcategory.gather_strings">
-<code class="descname">gather_strings</code><span class="sig-paren">(</span><em>indexes</em>, <em>count=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.gather_strings" title="Permalink to this definition">¶</a></dt>
+<code class="descname">gather_strings</code><span class="sig-paren">(</span><em>self</em>, <em>indexes</em>, <em>count=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.gather_strings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return nvstrings instance represented using the specified indexes.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><strong>indexes</strong> <span class="classifier-delimiter">:</span> <span class="classifier">List of ints or GPU memory pointer</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>indexes</strong><span class="classifier">List of ints or GPU memory pointer</span></dt><dd><blockquote>
 <div><p>0-based indexes of keys to return as an nvstrings object</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>count <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of ints if indexes parm is a device pointer.
+<dl class="simple">
+<dt>count<span class="classifier">int</span></dt><dd><p>Number of ints if indexes parm is a device pointer.
 Otherwise it is ignored.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>nvstrings: strings list based on indexes</strong></dt>
-<dd></dd>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>nvstrings: strings list based on indexes</dt><dd></dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
@@ -2615,29 +2312,23 @@ Otherwise it is ignored.</p>
 
 <dl class="method">
 <dt id="nvcategory.nvcategory.indexes_for_key">
-<code class="descname">indexes_for_key</code><span class="sig-paren">(</span><em>key</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.indexes_for_key" title="Permalink to this definition">¶</a></dt>
+<code class="descname">indexes_for_key</code><span class="sig-paren">(</span><em>self</em>, <em>key</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.indexes_for_key" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all index values for given key.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>key</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><blockquote class="first">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>key</strong><span class="classifier">str</span></dt><dd><blockquote>
 <div><p>key whose values should be returned</p>
 </div></blockquote>
-<dl class="last docutils">
-<dt>devptr <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Where index values will be written.
+<dl class="simple">
+<dt>devptr<span class="classifier">GPU memory pointer</span></dt><dd><p>Where index values will be written.
 Must be able to hold int32 values for this key.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
@@ -2654,20 +2345,15 @@ Must be able to hold int32 values for this key.</p>
 
 <dl class="method">
 <dt id="nvcategory.nvcategory.keys">
-<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.keys" title="Permalink to this definition">¶</a></dt>
+<code class="descname">keys</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the unique strings for this category as nvstrings instance.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>nvstrings: keys</strong></dt>
-<dd></dd>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>nvstrings: keys</dt><dd></dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
@@ -2682,20 +2368,15 @@ Must be able to hold int32 values for this key.</p>
 
 <dl class="method">
 <dt id="nvcategory.nvcategory.keys_size">
-<code class="descname">keys_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.keys_size" title="Permalink to this definition">¶</a></dt>
+<code class="descname">keys_size</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.keys_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>The number of keys.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>int: number of keys</strong></dt>
-<dd></dd>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int: number of keys</dt><dd></dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
@@ -2712,22 +2393,17 @@ Must be able to hold int32 values for this key.</p>
 
 <dl class="method">
 <dt id="nvcategory.nvcategory.remove_strings">
-<code class="descname">remove_strings</code><span class="sig-paren">(</span><em>nvs</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.remove_strings" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove_strings</code><span class="sig-paren">(</span><em>self</em>, <em>nvs</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.remove_strings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create new category without the specified strings.
 The returned category will have new set of key values and indexes.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>nvs</strong> <span class="classifier-delimiter">:</span> <span class="classifier">nvstrings</span></dt>
-<dd><p class="first last">strings to be removed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>nvs</strong><span class="classifier">nvstrings</span></dt><dd><p>strings to be removed.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvcategory</span><span class="o">,</span> <span class="nn">nvstrings</span>
 <span class="n">s1</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
@@ -2745,20 +2421,15 @@ The returned category will have new set of key values and indexes.</p>
 
 <dl class="method">
 <dt id="nvcategory.nvcategory.size">
-<code class="descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.size" title="Permalink to this definition">¶</a></dt>
+<code class="descname">size</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.size" title="Permalink to this definition">¶</a></dt>
 <dd><p>The number of values.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>int: number of values</strong></dt>
-<dd></dd>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int: number of values</dt><dd></dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
@@ -2775,20 +2446,15 @@ The returned category will have new set of key values and indexes.</p>
 
 <dl class="method">
 <dt id="nvcategory.nvcategory.to_strings">
-<code class="descname">to_strings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.to_strings" title="Permalink to this definition">¶</a></dt>
+<code class="descname">to_strings</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.to_strings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return nvstrings instance represented by the values in this instance.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>nvstrings: full strings list based on values indexes</strong></dt>
-<dd></dd>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>nvstrings: full strings list based on values indexes</dt><dd></dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
@@ -2807,21 +2473,16 @@ The returned category will have new set of key values and indexes.</p>
 
 <dl class="method">
 <dt id="nvcategory.nvcategory.value">
-<code class="descname">value</code><span class="sig-paren">(</span><em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.value" title="Permalink to this definition">¶</a></dt>
+<code class="descname">value</code><span class="sig-paren">(</span><em>self</em>, <em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the category value for the given string.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>str</strong> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">key to retrieve</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>str</strong><span class="classifier">str</span></dt><dd><p>key to retrieve</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
@@ -2838,21 +2499,16 @@ The returned category will have new set of key values and indexes.</p>
 
 <dl class="method">
 <dt id="nvcategory.nvcategory.value_for_index">
-<code class="descname">value_for_index</code><span class="sig-paren">(</span><em>idx</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.value_for_index" title="Permalink to this definition">¶</a></dt>
+<code class="descname">value_for_index</code><span class="sig-paren">(</span><em>self</em>, <em>idx</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.value_for_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the category value for the given index.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>idx</strong> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">index value to retrieve</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>idx</strong><span class="classifier">int</span></dt><dd><p>index value to retrieve</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
@@ -2867,22 +2523,17 @@ The returned category will have new set of key values and indexes.</p>
 
 <dl class="method">
 <dt id="nvcategory.nvcategory.values">
-<code class="descname">values</code><span class="sig-paren">(</span><em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.values" title="Permalink to this definition">¶</a></dt>
+<code class="descname">values</code><span class="sig-paren">(</span><em>self</em>, <em>devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return all values for this instance.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><strong>devptr</strong> <span class="classifier-delimiter">:</span> <span class="classifier">GPU memory pointer</span></dt>
-<dd><p class="first last">Where index values will be written.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>devptr</strong><span class="classifier">GPU memory pointer</span></dt><dd><p>Where index values will be written.
 Must be able to hold size() of int32 values.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
@@ -2897,6 +2548,9 @@ Must be able to hold size() of int32 values.</p>
 
 </dd></dl>
 
+</div>
+<div class="section" id="nvtext">
+<h2>nvtext<a class="headerlink" href="#nvtext" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
