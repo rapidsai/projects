@@ -98,12 +98,16 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8c8dfed2413c0d21a95c1880cf7f630f"><td class="memItemLeft" align="right" valign="top"><a id="a8c8dfed2413c0d21a95c1880cf7f630f"></a>
-CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memItemRight" valign="bottom"><b>wrapper</b> (T v)</td></tr>
-<tr class="separator:a8c8dfed2413c0d21a95c1880cf7f630f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc10094e848bc5bcd7e0def088946abe"><td class="memItemLeft" align="right" valign="top"><a id="afc10094e848bc5bcd7e0def088946abe"></a>
+CUDA_HOST_DEVICE_CALLABLE constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>wrapper</b> (T v)</td></tr>
+<tr class="separator:afc10094e848bc5bcd7e0def088946abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa339ce3a23ed19183c4da6de271a2b11"><td class="memItemLeft" align="right" valign="top"><a id="aa339ce3a23ed19183c4da6de271a2b11"></a>
 CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memItemRight" valign="bottom"><b>operator value_type</b> () const</td></tr>
 <tr class="separator:aa339ce3a23ed19183c4da6de271a2b11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50ad70c08ff9b62355d886b16f14d567"><td class="memTemplParams" colspan="2"><a id="a50ad70c08ff9b62355d886b16f14d567"></a>
+template&lt;gdf_dtype the_type = type_id, typename T_out , typename std::enable_if&lt;(the_type==GDF_BOOL8) &amp;&amp;std::is_arithmetic&lt; T_out &gt;::value, int &gt;::type *  = nullptr&gt; </td></tr>
+<tr class="memitem:a50ad70c08ff9b62355d886b16f14d567"><td class="memTemplItemLeft" align="right" valign="top">CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator T_out</b> () const</td></tr>
+<tr class="separator:a50ad70c08ff9b62355d886b16f14d567"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bb3ed25c664b5bfa8fa352b124c8d3e"><td class="memItemLeft" align="right" valign="top"><a id="a7bb3ed25c664b5bfa8fa352b124c8d3e"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>wrapper</b> (<a class="el" href="structcudf_1_1detail_1_1wrapper.html">wrapper</a> const &amp;w)=default</td></tr>
 <tr class="separator:a7bb3ed25c664b5bfa8fa352b124c8d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>

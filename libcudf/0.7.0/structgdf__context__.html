@@ -97,10 +97,32 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgdf__context__.html#ac694627cbc70f39bc249a99876baf8de">flag_sort_inplace</a></td></tr>
 <tr class="memdesc:ac694627cbc70f39bc249a99876baf8de"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 = No sort in place allowed, 1 = else <br /></td></tr>
 <tr class="separator:ac694627cbc70f39bc249a99876baf8de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad363cb6249b3826b0eb27dd0f331eff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgdf__context__.html#aad363cb6249b3826b0eb27dd0f331eff">flag_groupby_include_nulls</a></td></tr>
+<tr class="separator:aad363cb6249b3826b0eb27dd0f331eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30b3766af2c946c785c53afb38f96dd9"><td class="memItemLeft" align="right" valign="top"><a id="a30b3766af2c946c785c53afb38f96dd9"></a>
+gdf_null_sort_behavior&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgdf__context__.html#a30b3766af2c946c785c53afb38f96dd9">flag_null_sort_behavior</a></td></tr>
+<tr class="memdesc:a30b3766af2c946c785c53afb38f96dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates how nulls are treated in group_by/order_by operations. <br /></td></tr>
+<tr class="separator:a30b3766af2c946c785c53afb38f96dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This struct holds various information about how an operation should be performed as well as additional information about the input data. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="aad363cb6249b3826b0eb27dd0f331eff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad363cb6249b3826b0eb27dd0f331eff">&#9670;&nbsp;</a></span>flag_groupby_include_nulls</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool gdf_context_::flag_groupby_include_nulls</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>false = Nulls are ignored in group by keys (Pandas style), true = Nulls are treated as values in group by keys where NULL == NULL (SQL style) </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="types_8h_source.html">types.h</a></li>
 </ul>
 </div><!-- contents -->

@@ -88,8 +88,27 @@ $(function() {
 <li>concurrent_unordered_multimap()
 : <a class="el" href="classconcurrent__unordered__multimap.html#a64bb89fd2300aeffcca835008c5e2a2f">concurrent_unordered_multimap&lt; Key, Element, size_type, unused_key, unused_element, Hasher, Equality, Allocator, count_collisions &gt;</a>
 </li>
-<li>copy_row()
-: <a class="el" href="classgdf__table.html#a7863d39c881729803a2d522a47b5f763">gdf_table&lt; T, byte_t &gt;</a>
+<li>create()
+: <a class="el" href="classdevice__table.html#aa122b7f414960ff7aa0e2afb2c6928dc">device_table</a>
+</li>
+<li>Create()
+: <a class="el" href="classHostDecompressor.html#aaa0cda6af702a44068725b9bbacd3f1c">HostDecompressor</a>
+</li>
+</ul>
+
+
+<h3><a id="index_d"></a>- d -</h3><ul>
+<li>DataSource()
+: <a class="el" href="classDataSource.html#a65dab0c773371c6514029a6bd9dbed84">DataSource</a>
+</li>
+<li>Decompress()
+: <a class="el" href="classorc_1_1OrcDecompressor.html#a1c44becb5bc4601ae999cffa868e00a0">orc::OrcDecompressor</a>
+</li>
+<li>destroy()
+: <a class="el" href="classdevice__table.html#ad01f25b401518dfb05817a40e277815c">device_table</a>
+</li>
+<li>device_table()
+: <a class="el" href="classdevice__table.html#a25e7c41387937831d6413dc2621009d6">device_table</a>
 </li>
 </ul>
 
@@ -109,6 +128,9 @@ $(function() {
 
 
 <h3><a id="index_g"></a>- g -</h3><ul>
+<li>get_buffer()
+: <a class="el" href="classDataSource.html#af745a3a15edc0d6ff64516448f30b75a">DataSource</a>
+</li>
 <li>get_column()
 : <a class="el" href="structcudf_1_1table.html#af38ad458bb6f1362beeb7b24fe9f38a4">cudf::table</a>
 </li>
@@ -121,20 +143,17 @@ $(function() {
 <li>get_hash()
 : <a class="el" href="classconcurrent__unordered__multimap.html#a9b7febd400b3cde90ea74581da354aa6">concurrent_unordered_multimap&lt; Key, Element, size_type, unused_key, unused_element, Hasher, Equality, Allocator, count_collisions &gt;</a>
 </li>
-<li>get_packed_row_values()
-: <a class="el" href="classgdf__table.html#aa989261eb50a7d030e41e0029c03df96">gdf_table&lt; T, byte_t &gt;</a>
+<li>get_index_column_name()
+: <a class="el" href="structParquetMetadata.html#a133b0e722c2d9298d2a6c628411a5c5f">ParquetMetadata</a>
 </li>
 <li>get_partition()
 : <a class="el" href="classconcurrent__unordered__multimap.html#a392b7f4bfeccc4d9565f15db2a648b8a">concurrent_unordered_multimap&lt; Key, Element, size_type, unused_key, unused_element, Hasher, Equality, Allocator, count_collisions &gt;</a>
 </li>
-<li>get_row_size_bytes()
-: <a class="el" href="classgdf__table.html#af6928592137c6e6a7232602ba5c6bb2a">gdf_table&lt; T, byte_t &gt;</a>
-</li>
-<li>get_row_valids()
-: <a class="el" href="classgdf__table.html#adb016387813fa24797e521e72baeed11">gdf_table&lt; T, byte_t &gt;</a>
-</li>
 <li>get_valid()
 : <a class="el" href="classBitMask.html#a1b1c4436f589a0f1277522ed83a0f607">BitMask</a>
+</li>
+<li>grid_config_1d()
+: <a class="el" href="classcudf_1_1util_1_1cuda_1_1grid__config__1d.html#a813d68eda67019526ce4c032188488a1">cudf::util::cuda::grid_config_1d</a>
 </li>
 </ul>
 
@@ -144,13 +163,13 @@ $(function() {
 : <a class="el" href="structIdentityHash.html#aa0e3de5cc511d4a45bbe687af3a210aa">IdentityHash&lt; Key &gt;</a>
 , <a class="el" href="structMurmurHash3__32.html#a99e1f7adad5b1be8b5e90f274d13c481">MurmurHash3_32&lt; Key &gt;</a>
 </li>
-<li>hash_row()
-: <a class="el" href="classgdf__table.html#a4be9130fdd35e9450574553af57aa76d">gdf_table&lt; T, byte_t &gt;</a>
-</li>
 </ul>
 
 
 <h3><a id="index_i"></a>- i -</h3><ul>
+<li>InitSchema()
+: <a class="el" href="classparquet_1_1CompactProtocolReader.html#a6625ec889444f0aaed50aef8c8700c3e">parquet::CompactProtocolReader</a>
+</li>
 <li>insert()
 : <a class="el" href="classconcurrent__unordered__map.html#aafd1df34675cc31a4197ff66c7c78d57">concurrent_unordered_map&lt; Key, Element, unused_key, Hasher, Equality, Allocator, count_collisions &gt;</a>
 , <a class="el" href="classconcurrent__unordered__multimap.html#a6851b566c937c2a85c9703e66491d9aa">concurrent_unordered_multimap&lt; Key, Element, size_type, unused_key, unused_element, Hasher, Equality, Allocator, count_collisions &gt;</a>
@@ -181,6 +200,19 @@ $(function() {
 <li>length()
 : <a class="el" href="classBitMask.html#a6d632170cc2f108ed1d650ae31c7d0ba">BitMask</a>
 </li>
+<li>lowest()
+: <a class="el" href="structstd_1_1numeric__limits_3_01cudf_1_1detail_1_1wrapper_3_01T_00_01type__id_01_4_01_4.html#aa07315cdd27fd0e0faf662a610887b31">std::numeric_limits&lt; cudf::detail::wrapper&lt; T, type_id &gt; &gt;</a>
+</li>
+</ul>
+
+
+<h3><a id="index_m"></a>- m -</h3><ul>
+<li>max()
+: <a class="el" href="structstd_1_1numeric__limits_3_01cudf_1_1detail_1_1wrapper_3_01T_00_01type__id_01_4_01_4.html#ad1e39a19122aedffc60a7d4f7f673ba5">std::numeric_limits&lt; cudf::detail::wrapper&lt; T, type_id &gt; &gt;</a>
+</li>
+<li>min()
+: <a class="el" href="structstd_1_1numeric__limits_3_01cudf_1_1detail_1_1wrapper_3_01T_00_01type__id_01_4_01_4.html#a0e88d475e6cccf2f67ecc3c4283e84cb">std::numeric_limits&lt; cudf::detail::wrapper&lt; T, type_id &gt; &gt;</a>
+</li>
 </ul>
 
 
@@ -200,34 +232,46 @@ $(function() {
 <h3><a id="index_o"></a>- o -</h3><ul>
 <li>operator()()
 : <a class="el" href="structConvertFunctor.html#a03f67f1bec072aa0442642850afb7aeb">ConvertFunctor</a>
-, <a class="el" href="structrow__comparator.html#ae0f76d6b7a0a8986b00d39dcdcdb41ae">row_comparator&lt; map_type, size_type &gt;</a>
-, <a class="el" href="structrow__masker.html#aee5254445a691ad2e4bc663741bcbd2a">row_masker&lt; size_type &gt;</a>
+, <a class="el" href="structrow__comparator.html#a34ba09e0cf5563cdddc65140b0aac1c5">row_comparator&lt; map_type &gt;</a>
+</li>
+<li>OrcDecompressor()
+: <a class="el" href="classorc_1_1OrcDecompressor.html#a6f8a2de1ae99ade0fac52e76370648a7">orc::OrcDecompressor</a>
 </li>
 </ul>
 
 
 <h3><a id="index_r"></a>- r -</h3><ul>
 <li>row_comparator()
-: <a class="el" href="structrow__comparator.html#a30203956e7d237c1b235f002ca372fb7">row_comparator&lt; map_type, size_type &gt;</a>
-</li>
-<li>rows_equal()
-: <a class="el" href="classgdf__table.html#ae3c4c3db410744ce43e5e038d7595002">gdf_table&lt; T, byte_t &gt;</a>
+: <a class="el" href="structrow__comparator.html#ae5fcc41c68f1c76039bdc0bed3992f17">row_comparator&lt; map_type &gt;</a>
 </li>
 </ul>
 
 
 <h3><a id="index_s"></a>- s -</h3><ul>
+<li>select_columns()
+: <a class="el" href="classOrcMetadata.html#a5a30d151ceb71c2e02812eb0714b9d40">OrcMetadata</a>
+, <a class="el" href="structParquetMetadata.html#aa837c8cc5daa3d6faa0094ac7df6c69b">ParquetMetadata</a>
+</li>
+<li>select_row_groups()
+: <a class="el" href="structParquetMetadata.html#a9e589cb613cb2d9c72f2ba0bb3a57a5f">ParquetMetadata</a>
+</li>
+<li>select_stripes()
+: <a class="el" href="classOrcMetadata.html#ac99d8a645db7b485d389923433fcc8f2">OrcMetadata</a>
+</li>
 <li>set_bit()
 : <a class="el" href="classBitMask.html#a781ddd52abf6c4bb976b5c379641825d">BitMask</a>
 </li>
 <li>set_bit_unsafe()
 : <a class="el" href="classBitMask.html#a21b1ef306c6c83a13d8a8650c458d1f7">BitMask</a>
 </li>
-<li>set_column_length()
-: <a class="el" href="classgdf__table.html#a3da6532e3c7a4fc42513f32753571143">gdf_table&lt; T, byte_t &gt;</a>
-</li>
 <li>set_element_host()
 : <a class="el" href="classBitMask.html#ad767ab585eb25dc80ca3b82ad68cf254">BitMask</a>
+</li>
+<li>size()
+: <a class="el" href="classDataSource.html#a03de3eab17acc72df60f6bd50b000acb">DataSource</a>
+</li>
+<li>skip_struct_field()
+: <a class="el" href="classparquet_1_1CompactProtocolReader.html#abab8cf29003d31d662ec9770a631c862">parquet::CompactProtocolReader</a>
 </li>
 </ul>
 
@@ -235,6 +279,13 @@ $(function() {
 <h3><a id="index_t"></a>- t -</h3><ul>
 <li>table()
 : <a class="el" href="structcudf_1_1table.html#a8db2758bf56971a9155eb73b51b30ae7">cudf::table</a>
+</li>
+</ul>
+
+
+<h3><a id="index_w"></a>- w -</h3><ul>
+<li>WalkSchema()
+: <a class="el" href="classparquet_1_1CompactProtocolReader.html#a64f54787055085f1cc6a6f88713076a9">parquet::CompactProtocolReader</a>
 </li>
 </ul>
 </div><!-- contents -->

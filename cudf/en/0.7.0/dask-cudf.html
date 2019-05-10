@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Multi-GPU with Dask-cuDF &mdash; cudf 0.7.0.dev0+64.g3368170 documentation</title>
+  <title>Multi-GPU with Dask-cuDF &mdash; cudf 0.7.0.dev0+1568.g56dd51b documentation</title>
   
 
   
@@ -191,48 +191,54 @@
 <div class="section" id="what-works">
 <h2>What works<a class="headerlink" href="#what-works" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Data ingestion<ul>
-<li><code class="docutils literal notranslate"><span class="pre">dask_cudf.read_csv</span></code></li>
-<li>Use standard Dask ingestion with Pandas, then convert to cuDF (For
-Parquet and other formats this is often decently fast)</li>
+<li><p>Data ingestion</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">dask_cudf.read_csv</span></code></p></li>
+<li><p>Use standard Dask ingestion with Pandas, then convert to cuDF (For
+Parquet and other formats this is often decently fast)</p></li>
 </ul>
 </li>
-<li>Linear operations<ul>
-<li>Element-wise operations:  <code class="docutils literal notranslate"><span class="pre">df.x</span> <span class="pre">+</span> <span class="pre">df.y</span></code>, <code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">**</span> <span class="pre">2</span></code></li>
-<li>Assignment: <code class="docutils literal notranslate"><span class="pre">df['z']</span> <span class="pre">=</span> <span class="pre">df.x</span> <span class="pre">+</span> <span class="pre">df.y</span></code></li>
-<li>Row-wise selections:  <code class="docutils literal notranslate"><span class="pre">df[df.x</span> <span class="pre">&gt;</span> <span class="pre">0]</span></code></li>
-<li>Loc:  <code class="docutils literal notranslate"><span class="pre">df.loc['2001-01-01':</span> <span class="pre">'2005-02-02']</span></code></li>
-<li>Date time/string accessors:  <code class="docutils literal notranslate"><span class="pre">df.timestamp.dt.dayofweek</span></code></li>
-<li>… and most similar operations in this category that are already implemented in cuDF</li>
+<li><p>Linear operations</p>
+<ul>
+<li><p>Element-wise operations:  <code class="docutils literal notranslate"><span class="pre">df.x</span> <span class="pre">+</span> <span class="pre">df.y</span></code>, <code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">**</span> <span class="pre">2</span></code></p></li>
+<li><p>Assignment: <code class="docutils literal notranslate"><span class="pre">df['z']</span> <span class="pre">=</span> <span class="pre">df.x</span> <span class="pre">+</span> <span class="pre">df.y</span></code></p></li>
+<li><p>Row-wise selections:  <code class="docutils literal notranslate"><span class="pre">df[df.x</span> <span class="pre">&gt;</span> <span class="pre">0]</span></code></p></li>
+<li><p>Loc:  <code class="docutils literal notranslate"><span class="pre">df.loc['2001-01-01':</span> <span class="pre">'2005-02-02']</span></code></p></li>
+<li><p>Date time/string accessors:  <code class="docutils literal notranslate"><span class="pre">df.timestamp.dt.dayofweek</span></code></p></li>
+<li><p>… and most similar operations in this category that are already implemented in cuDF</p></li>
 </ul>
 </li>
-<li>Reductions<ul>
-<li>Like <code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code>, and so on on <code class="docutils literal notranslate"><span class="pre">Series</span></code> objects</li>
-<li><strike>Support for reductions on full dataframes</strike></li>
-<li><strike><code class="docutils literal notranslate"><span class="pre">std</span></code></strike></li>
-<li>Custom reductions with <a class="reference external" href="http://docs.dask.org/en/latest/dataframe-api.html#dask.dataframe.Series.reduction">dask.dataframe.reduction</a></li>
+<li><p>Reductions</p>
+<ul>
+<li><p>Like <code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code>, and so on on <code class="docutils literal notranslate"><span class="pre">Series</span></code> objects</p></li>
+<li><p><strike>Support for reductions on full dataframes</strike></p></li>
+<li><p><strike><code class="docutils literal notranslate"><span class="pre">std</span></code></strike></p></li>
+<li><p>Custom reductions with <a class="reference external" href="http://docs.dask.org/en/latest/dataframe-api.html#dask.dataframe.Series.reduction">dask.dataframe.reduction</a></p></li>
 </ul>
 </li>
-<li>Groupby aggregations<ul>
-<li>On single columns: <code class="docutils literal notranslate"><span class="pre">df.groupby('x').y.max()</span></code></li>
-<li>With custom aggregations:</li>
-<li><strike>groupby standard deviation</strike></li>
-<li><strike>grouping on multiple columns</strike></li>
-<li><strike>groupby agg for multiple outputs</strike></li>
+<li><p>Groupby aggregations</p>
+<ul>
+<li><p>On single columns: <code class="docutils literal notranslate"><span class="pre">df.groupby('x').y.max()</span></code></p></li>
+<li><p>With custom aggregations:</p></li>
+<li><p><strike>groupby standard deviation</strike></p></li>
+<li><p><strike>grouping on multiple columns</strike></p></li>
+<li><p><strike>groupby agg for multiple outputs</strike></p></li>
 </ul>
 </li>
-<li>Joins:<ul>
-<li>On full unsorted columns: <code class="docutils literal notranslate"><span class="pre">left.merge(right,</span> <span class="pre">on='id')</span></code> (expensive)</li>
-<li>On sorted indexes: <code class="docutils literal notranslate"><span class="pre">left.merge(right,</span> <span class="pre">left_index=True,</span> <span class="pre">right_index=True)</span></code> (fast)</li>
-<li>On large and small dataframes: <code class="docutils literal notranslate"><span class="pre">left.merge(cudf_df,</span> <span class="pre">on='id')</span></code> (fast)</li>
+<li><p>Joins:</p>
+<ul>
+<li><p>On full unsorted columns: <code class="docutils literal notranslate"><span class="pre">left.merge(right,</span> <span class="pre">on='id')</span></code> (expensive)</p></li>
+<li><p>On sorted indexes: <code class="docutils literal notranslate"><span class="pre">left.merge(right,</span> <span class="pre">left_index=True,</span> <span class="pre">right_index=True)</span></code> (fast)</p></li>
+<li><p>On large and small dataframes: <code class="docutils literal notranslate"><span class="pre">left.merge(cudf_df,</span> <span class="pre">on='id')</span></code> (fast)</p></li>
 </ul>
 </li>
-<li><strike>Rolling operations</strike></li>
-<li>Converting to and from other forms<ul>
-<li>Dask + Pandas to Dask + cuDF <code class="docutils literal notranslate"><span class="pre">df.map_partitions(cudf.from_pandas)</span></code></li>
-<li>Dask + cuDF to Dask + Pandas <code class="docutils literal notranslate"><span class="pre">df.map_partitions(lambda</span> <span class="pre">df:</span> <span class="pre">df.to_pandas())</span></code></li>
-<li>cuDF to Dask + cuDF: <code class="docutils literal notranslate"><span class="pre">dask.dataframe.from_pandas(df,</span> <span class="pre">npartitions=20)</span></code></li>
-<li>Dask + cuDF to cuDF: <code class="docutils literal notranslate"><span class="pre">df.compute()</span></code></li>
+<li><p><strike>Rolling operations</strike></p></li>
+<li><p>Converting to and from other forms</p>
+<ul>
+<li><p>Dask + Pandas to Dask + cuDF <code class="docutils literal notranslate"><span class="pre">df.map_partitions(cudf.from_pandas)</span></code></p></li>
+<li><p>Dask + cuDF to Dask + Pandas <code class="docutils literal notranslate"><span class="pre">df.map_partitions(lambda</span> <span class="pre">df:</span> <span class="pre">df.to_pandas())</span></code></p></li>
+<li><p>cuDF to Dask + cuDF: <code class="docutils literal notranslate"><span class="pre">dask.dataframe.from_pandas(df,</span> <span class="pre">npartitions=20)</span></code></p></li>
+<li><p>Dask + cuDF to cuDF: <code class="docutils literal notranslate"><span class="pre">df.compute()</span></code></p></li>
 </ul>
 </li>
 </ul>
@@ -243,7 +249,8 @@ Parquet and other formats this is often decently fast)</li>
 <h2>Developing the API<a class="headerlink" href="#developing-the-api" title="Permalink to this headline">¶</a></h2>
 <p>Above we mention the following:</p>
 <blockquote>
-<div>and most similar operations in this category that are already implemented in cuDF</div></blockquote>
+<div><p>and most similar operations in this category that are already implemented in cuDF</p>
+</div></blockquote>
 <p>This is because it is difficult to create a comprehensive list of operations in
 the cuDF and Pandas libraries.  The API is large enough to be difficult to track
 effectively.  For any operation that operates row-wise like <code class="docutils literal notranslate"><span class="pre">fillna</span></code> or

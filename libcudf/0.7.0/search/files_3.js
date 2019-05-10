@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wrapper_5ftypes_2ehpp',['wrapper_types.hpp',['../wrapper__types_8hpp.html',1,'']]]
+  ['device_5fatomics_2ecuh',['device_atomics.cuh',['../device__atomics_8cuh.html',1,'']]]
 ];

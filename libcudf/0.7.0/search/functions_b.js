@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['operator_28_29',['operator()',['../structrow__masker.html#aee5254445a691ad2e4bc663741bcbd2a',1,'row_masker::operator()()'],['../structrow__comparator.html#ae0f76d6b7a0a8986b00d39dcdcdb41ae',1,'row_comparator::operator()()'],['../structConvertFunctor.html#a03f67f1bec072aa0442642850afb7aeb',1,'ConvertFunctor::operator()(const char *csvData, void *gdfColumnData, long rowIndex, long start, long end, const ParseOptions &amp;opts)'],['../structConvertFunctor.html#a03f67f1bec072aa0442642850afb7aeb',1,'ConvertFunctor::operator()(const char *csvData, void *gdfColumnData, long rowIndex, long start, long end, const ParseOptions &amp;opts)']]]
+  ['max',['max',['../structstd_1_1numeric__limits_3_01cudf_1_1detail_1_1wrapper_3_01T_00_01type__id_01_4_01_4.html#ad1e39a19122aedffc60a7d4f7f673ba5',1,'std::numeric_limits&lt; cudf::detail::wrapper&lt; T, type_id &gt; &gt;']]],
+  ['min',['min',['../structstd_1_1numeric__limits_3_01cudf_1_1detail_1_1wrapper_3_01T_00_01type__id_01_4_01_4.html#a0e88d475e6cccf2f67ecc3c4283e84cb',1,'std::numeric_limits&lt; cudf::detail::wrapper&lt; T, type_id &gt; &gt;']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['row_5fcomparator',['row_comparator',['../structrow__comparator.html#a30203956e7d237c1b235f002ca372fb7',1,'row_comparator']]],
-  ['rows_5fequal',['rows_equal',['../classgdf__table.html#ae3c4c3db410744ce43e5e038d7595002',1,'gdf_table']]]
+  ['num_5fcolumns',['num_columns',['../structcudf_1_1table.html#ad5fe6162e8df88c383975f8752a78020',1,'cudf::table']]],
+  ['num_5felements',['num_elements',['../classBitMask.html#a80d7ae3c9487a4d1cb479a324b9195a5',1,'BitMask']]],
+  ['num_5frows',['num_rows',['../structcudf_1_1table.html#a4d674ea49e1147d80e1b2d9e5a3762c2',1,'cudf::table']]]
 ];

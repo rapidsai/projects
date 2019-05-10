@@ -79,6 +79,20 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1cuda__error.html">cuda_error</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when a CUDA error is encountered.  <a href="structcudf_1_1cuda__error.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1DeviceAnd.html">DeviceAnd</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1DeviceMax.html">DeviceMax</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1DeviceMin.html">DeviceMin</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1DeviceOr.html">DeviceOr</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1DeviceProduct.html">DeviceProduct</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1DeviceSum.html">DeviceSum</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1DeviceXor.html">DeviceXor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1logic__error.html">logic_error</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when logical precondition is violated.  <a href="structcudf_1_1logic__error.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -103,15 +117,40 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>date32</b> = <a clas
 <tr class="memitem:a5da9e96ba9d677a713403fb3704600ef"><td class="memItemLeft" align="right" valign="top"><a id="a5da9e96ba9d677a713403fb3704600ef"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>date64</b> = <a class="el" href="structcudf_1_1detail_1_1wrapper.html">detail::wrapper</a>&lt; gdf_date64, GDF_DATE64 &gt;</td></tr>
 <tr class="separator:a5da9e96ba9d677a713403fb3704600ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2916a984683be11ca496ae1535849cb3"><td class="memItemLeft" align="right" valign="top"><a id="a2916a984683be11ca496ae1535849cb3"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>bool8</b> = <a class="el" href="structcudf_1_1detail_1_1wrapper.html">detail::wrapper</a>&lt; gdf_bool8, GDF_BOOL8 &gt;</td></tr>
+<tr class="separator:a2916a984683be11ca496ae1535849cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aec006bc00092dd8ec47f2c7ca6fe01d4"><td class="memItemLeft" align="right" valign="top">rmm::device_vector&lt; bit_mask::bit_mask_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aec006bc00092dd8ec47f2c7ca6fe01d4">row_bitmask</a> (<a class="el" href="structcudf_1_1table.html">cudf::table</a> const  &amp;<a class="el" href="structcudf_1_1table.html">table</a>, cudaStream_t stream=0)</td></tr>
+<tr class="memdesc:aec006bc00092dd8ec47f2c7ca6fe01d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a bitmask indicating the presence of NULL values in rows of a table.  <a href="#aec006bc00092dd8ec47f2c7ca6fe01d4">More...</a><br /></td></tr>
+<tr class="separator:aec006bc00092dd8ec47f2c7ca6fe01d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03f762fbe22ea8e824e426d3880b085a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a03f762fbe22ea8e824e426d3880b085a">gather</a> (<a class="el" href="structcudf_1_1table.html">table</a> const  *source_table, gdf_index_type const gather_map[], <a class="el" href="structcudf_1_1table.html">table</a> *destination_table)</td></tr>
 <tr class="memdesc:a03f762fbe22ea8e824e426d3880b085a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gathers the rows (including null values) of a set of source columns into a set of destination columns.  <a href="#a03f762fbe22ea8e824e426d3880b085a">More...</a><br /></td></tr>
 <tr class="separator:a03f762fbe22ea8e824e426d3880b085a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac30995b318ebee41f1ab8e79dc2527c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ac30995b318ebee41f1ab8e79dc2527c0">scatter</a> (<a class="el" href="structcudf_1_1table.html">table</a> const  *source_table, gdf_index_type const scatter_map[], <a class="el" href="structcudf_1_1table.html">table</a> *destination_table)</td></tr>
 <tr class="memdesc:ac30995b318ebee41f1ab8e79dc2527c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scatters the rows (including null values) of a set of source columns into a set of destination columns.  <a href="#ac30995b318ebee41f1ab8e79dc2527c0">More...</a><br /></td></tr>
 <tr class="separator:ac30995b318ebee41f1ab8e79dc2527c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16d269210347c80b2a841daef1a0d136"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__scalar.html">gdf_scalar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a16d269210347c80b2a841daef1a0d136">reduction</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> *col, gdf_reduction_op op, gdf_dtype output_dtype)</td></tr>
+<tr class="memdesc:a16d269210347c80b2a841daef1a0d136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the reduction of the values in all rows of a column This function does not detect overflows in reductions. Using a higher precision <code>dtype</code> may prevent overflow. Only <code>min</code> and <code>max</code> ops are supported for reduction of non-arithmetic types (date32, timestamp, category...). The null values are skipped for the operation. If the column is empty, the member is_valid of the output <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a> will contain <code>false</code>.  <a href="#a16d269210347c80b2a841daef1a0d136">More...</a><br /></td></tr>
+<tr class="separator:a16d269210347c80b2a841daef1a0d136"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65546aa9c42e87334fb5e1e3f274bc6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a65546aa9c42e87334fb5e1e3f274bc6b">scan</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> *input, <a class="el" href="structgdf__column__.html">gdf_column</a> *output, gdf_scan_op op, bool inclusive)</td></tr>
+<tr class="memdesc:a65546aa9c42e87334fb5e1e3f274bc6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the scan (a.k.a. prefix sum) of a column. The null values are skipped for the operation, and if an input element at <code>i</code> is null, then the output element at <code>i</code> will also be null.  <a href="#a65546aa9c42e87334fb5e1e3f274bc6b">More...</a><br /></td></tr>
+<tr class="separator:a65546aa9c42e87334fb5e1e3f274bc6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affd8efbc412d65aa608e7ac19eeb3574"><td class="memItemLeft" align="right" valign="top"><a id="affd8efbc412d65aa608e7ac19eeb3574"></a>
+<a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>rolling_window</b> (const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;input_col, gdf_size_type window, gdf_size_type min_periods, gdf_size_type forward_window, gdf_agg_op agg_type, const gdf_size_type *window_col, const gdf_size_type *min_periods_col, const gdf_size_type *forward_window_col, cudaStream_t stream)</td></tr>
+<tr class="separator:affd8efbc412d65aa608e7ac19eeb3574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2f973d94c67ab3dc1a183c5adb3753d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; gdf_dtype &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ad2f973d94c67ab3dc1a183c5adb3753d">column_dtypes</a> (<a class="el" href="structcudf_1_1table.html">cudf::table</a> const  &amp;<a class="el" href="structcudf_1_1table.html">table</a>)</td></tr>
+<tr class="memdesc:ad2f973d94c67ab3dc1a183c5adb3753d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns vector of the dtypes of the columns in a table.  <a href="#ad2f973d94c67ab3dc1a183c5adb3753d">More...</a><br /></td></tr>
+<tr class="separator:ad2f973d94c67ab3dc1a183c5adb3753d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada393acb565321d740f2b9950ffe2941"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ada393acb565321d740f2b9950ffe2941">has_nulls</a> (<a class="el" href="structcudf_1_1table.html">cudf::table</a> const  &amp;<a class="el" href="structcudf_1_1table.html">table</a>)</td></tr>
+<tr class="memdesc:ada393acb565321d740f2b9950ffe2941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if a table contains any null values.  <a href="#ada393acb565321d740f2b9950ffe2941">More...</a><br /></td></tr>
+<tr class="separator:ada393acb565321d740f2b9950ffe2941"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae62151c46119cd04dc146c9e4175375f"><td class="memTemplParams" colspan="2">template&lt;typename T , typename BinaryOp &gt; </td></tr>
+<tr class="memitem:ae62151c46119cd04dc146c9e4175375f"><td class="memTemplItemLeft" align="right" valign="top">__forceinline__ __device__ T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ae62151c46119cd04dc146c9e4175375f">genericAtomicOperation</a> (T *address, T const &amp;update_value, <a class="el" href="structBinaryOp.html">BinaryOp</a> op)</td></tr>
+<tr class="memdesc:ae62151c46119cd04dc146c9e4175375f"><td class="mdescLeft">&#160;</td><td class="mdescRight">reads the <code>old</code> located at the <code>address</code> in global or shared memory, computes '<a class="el" href="structBinaryOp.html">BinaryOp</a>'('old', 'update_value'), and stores the result back to memory at the same address. These three operations are performed in one atomic transaction.  <a href="#ae62151c46119cd04dc146c9e4175375f">More...</a><br /></td></tr>
+<tr class="separator:ae62151c46119cd04dc146c9e4175375f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c70f497e88c7cf01dff98c594f0ec51"><td class="memTemplParams" colspan="2"><a id="a9c70f497e88c7cf01dff98c594f0ec51"></a>
 template&lt;class functor_t , typename... Ts&gt; </td></tr>
 <tr class="memitem:a9c70f497e88c7cf01dff98c594f0ec51"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto) CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memTemplItemRight" valign="bottom"><b>type_dispatcher</b> (gdf_dtype dtype, functor_t f, Ts &amp;&amp;... args)</td></tr>
@@ -144,6 +183,10 @@ template&lt;&gt; </td></tr>
 template&lt;&gt; </td></tr>
 <tr class="memitem:aa02973e71d09dc7a3636d2a836968dac"><td class="memTemplItemLeft" align="right" valign="top">constexpr gdf_dtype&#160;</td><td class="memTemplItemRight" valign="bottom"><b>gdf_dtype_of&lt; double &gt;</b> ()</td></tr>
 <tr class="separator:aa02973e71d09dc7a3636d2a836968dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab49efe66b146dc87425669653bde18f5"><td class="memTemplParams" colspan="2"><a id="ab49efe66b146dc87425669653bde18f5"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:ab49efe66b146dc87425669653bde18f5"><td class="memTemplItemLeft" align="right" valign="top">constexpr gdf_dtype&#160;</td><td class="memTemplItemRight" valign="bottom"><b>gdf_dtype_of&lt; cudf::bool8 &gt;</b> ()</td></tr>
+<tr class="separator:ab49efe66b146dc87425669653bde18f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e1b828c8f1b2b46e015afb85902ba52"><td class="memTemplParams" colspan="2"><a id="a1e1b828c8f1b2b46e015afb85902ba52"></a>
 template&lt;&gt; </td></tr>
 <tr class="memitem:a1e1b828c8f1b2b46e015afb85902ba52"><td class="memTemplItemLeft" align="right" valign="top">constexpr gdf_dtype&#160;</td><td class="memTemplItemRight" valign="bottom"><b>gdf_dtype_of&lt; cudf::date32 &gt;</b> ()</td></tr>
@@ -196,6 +239,33 @@ typedef".</p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whatever is returned by the functor's "operator()". </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="ad2f973d94c67ab3dc1a183c5adb3753d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2f973d94c67ab3dc1a183c5adb3753d">&#9670;&nbsp;</a></span>column_dtypes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; gdf_dtype &gt; cudf::column_dtypes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcudf_1_1table.html">cudf::table</a> const &amp;&#160;</td>
+          <td class="paramname"><em>table</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns vector of the dtypes of the columns in a table. </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>The table to get the column dtypes from <h2>std::vector&lt;gdf_dtype&gt; </h2>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a03f762fbe22ea8e824e426d3880b085a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a03f762fbe22ea8e824e426d3880b085a">&#9670;&nbsp;</a></span>gather()</h2>
 
@@ -275,6 +345,219 @@ template&lt;typename T &gt; </div>
 <p>Maps a C++ type to it's corresponding gdf_dtype. </p>
 <p>------------------------------------------------------------------------&mdash;* When explicitly passed a template argument of a given type, returns the appropriate <code>gdf_dtype</code> for the specified C++ type.</p>
 <p>For example: </p><div class="fragment"><div class="line"><span class="keywordflow">return</span> gdf_dtype_of&lt;int32_t&gt;();        <span class="comment">// Returns GDF_INT32</span></div><div class="line"><span class="keywordflow">return</span> gdf_dtype_of&lt;cudf::category&gt;(); <span class="comment">// Returns GDF_CATEGORY</span></div></div><!-- fragment --><h2>T The type to map to a <code>gdf_dtype</code> </h2>
+
+</div>
+</div>
+<a id="ae62151c46119cd04dc146c9e4175375f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae62151c46119cd04dc146c9e4175375f">&#9670;&nbsp;</a></span>genericAtomicOperation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename BinaryOp &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">__forceinline__ __device__ T cudf::genericAtomicOperation </td>
+          <td>(</td>
+          <td class="paramtype">T *&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T const &amp;&#160;</td>
+          <td class="paramname"><em>update_value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structBinaryOp.html">BinaryOp</a>&#160;</td>
+          <td class="paramname"><em>op</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>reads the <code>old</code> located at the <code>address</code> in global or shared memory, computes '<a class="el" href="structBinaryOp.html">BinaryOp</a>'('old', 'update_value'), and stores the result back to memory at the same address. These three operations are performed in one atomic transaction. </p>
+<p>----------------------------------------------------------------------&mdash;* The supported cudf types for <code>genericAtomicOperation</code> are: int8_t, int16_t, int32_t, int64_t, float, double, cudf::date32, cudf::date64, cudf::timestamp, cudf::category.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>The address of old value in global or shared memory </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>The value to be added</td></tr>
+  </table>
+  </dd>
+</dl>
+<h2>The old value at <code>address</code> </h2>
+
+</div>
+</div>
+<a id="ada393acb565321d740f2b9950ffe2941"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada393acb565321d740f2b9950ffe2941">&#9670;&nbsp;</a></span>has_nulls()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cudf::has_nulls </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcudf_1_1table.html">cudf::table</a> const &amp;&#160;</td>
+          <td class="paramname"><em>table</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates if a table contains any null values. </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>The table to check for null values </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true If the table contains one or more null values <h2>false If the table contains zero null values </h2>
+</dd></dl>
+
+</div>
+</div>
+<a id="a16d269210347c80b2a841daef1a0d136"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16d269210347c80b2a841daef1a0d136">&#9670;&nbsp;</a></span>reduction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgdf__scalar.html">gdf_scalar</a> cudf::reduction </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_reduction_op&#160;</td>
+          <td class="paramname"><em>op</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_dtype&#160;</td>
+          <td class="paramname"><em>output_dtype</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the reduction of the values in all rows of a column This function does not detect overflows in reductions. Using a higher precision <code>dtype</code> may prevent overflow. Only <code>min</code> and <code>max</code> ops are supported for reduction of non-arithmetic types (date32, timestamp, category...). The null values are skipped for the operation. If the column is empty, the member is_valid of the output <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a> will contain <code>false</code>. </p>
+<p>-----------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">col</td><td>Input column </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">op</td><td>The operator applied by the reduction </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dtype</td><td>The computation and output precision. <code>dtype</code> must be a data type that is convertible from the input dtype. If the input column has arithmetic type, any arithmetic type can be specified. If the input column has non-arithmetic type (date32, timestamp, category...), the same type must be specified.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a> the result value If the reduction fails, the member is_valid of the output <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a> <h2>will contain <code>false</code>. </h2>
+</dd></dl>
+
+</div>
+</div>
+<a id="aec006bc00092dd8ec47f2c7ca6fe01d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec006bc00092dd8ec47f2c7ca6fe01d4">&#9670;&nbsp;</a></span>row_bitmask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rmm::device_vector&lt; bit_mask::bit_mask_t &gt; cudf::row_bitmask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcudf_1_1table.html">cudf::table</a> const &amp;&#160;</td>
+          <td class="paramname"><em>table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cudaStream_t&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes a bitmask indicating the presence of NULL values in rows of a table. </p>
+<p>------------------------------------------------------------------------&mdash;* If a row <code>i</code> in <code>table</code> contains one or more NULL values, then bit <code>i</code> in the returned bitmask will be 0.</p>
+<p>Otherwise, bit <code>i</code> will be 1.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">table</td><td>The table to compute the row bitmask of. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bit_mask::bit_mask_t* The bitmask indicating the presence of NULLs in <h2>a row </h2>
+</dd></dl>
+
+</div>
+</div>
+<a id="a65546aa9c42e87334fb5e1e3f274bc6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65546aa9c42e87334fb5e1e3f274bc6b">&#9670;&nbsp;</a></span>scan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cudf::scan </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_scan_op&#160;</td>
+          <td class="paramname"><em>op</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inclusive</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the scan (a.k.a. prefix sum) of a column. The null values are skipped for the operation, and if an input element at <code>i</code> is null, then the output element at <code>i</code> will also be null. </p>
+<p>-----------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>The input column for the san </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>The pre-allocated output column </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">op</td><td>The operation of the scan </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inclusive</td><td>The flag for applying an inclusive scan if true, <h2>an exclusive scan if false. </h2>
+</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

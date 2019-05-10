@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['elements_5fare_5fequal',['elements_are_equal',['../structgdf__table_1_1elements__are__equal.html',1,'gdf_table']]],
-  ['equal_5fto',['equal_to',['../structequal__to.html',1,'']]],
-  ['example_5fclass',['example_class',['../classexample__class.html',1,'']]]
+  ['fast_5fmodulo_5fpartitioner',['fast_modulo_partitioner',['../structfast__modulo__partitioner.html',1,'']]],
+  ['fielddesc',['FieldDesc',['../structIpcParser_1_1FieldDesc.html',1,'IpcParser']]],
+  ['file_5fender_5fs',['file_ender_s',['../structparquet_1_1file__ender__s.html',1,'parquet']]],
+  ['file_5fheader_5fs',['file_header_s',['../structparquet_1_1file__header__s.html',1,'parquet']]],
+  ['filefooter',['FileFooter',['../structorc_1_1FileFooter.html',1,'orc']]],
+  ['filemetadata',['FileMetaData',['../structparquet_1_1FileMetaData.html',1,'parquet']]]
 ];
