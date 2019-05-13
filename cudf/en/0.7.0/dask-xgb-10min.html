@@ -82,14 +82,24 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="10min.html">10 Minutes to cuDF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dask-cudf.html">Multi-GPU with Dask-cuDF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer Documentation</a></li>
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">10 Minutes to Dask-XGBoost</a><ul>
+<li><a class="reference internal" href="#Disable-NCCL-P2P.-Only-necessary-for-versions-of-NCCL-&lt;-2.4">Disable NCCL P2P. Only necessary for versions of NCCL &lt; 2.4</a></li>
+<li><a class="reference internal" href="#Import-necessary-modules-and-initialize-the-Dask-cuDF-Cluster">Import necessary modules and initialize the Dask-cuDF Cluster</a></li>
+<li><a class="reference internal" href="#Initialize-a-Random-Dataset">Initialize a Random Dataset</a></li>
+<li><a class="reference internal" href="#Define-Parameters-and-Train-with-XGBoost">Define Parameters and Train with XGBoost</a><ul>
+<li><a class="reference internal" href="#Inputs-for-dask_xgboost.train">Inputs for <code class="docutils literal notranslate"><span class="pre">dask_xgboost.train</span></code></a></li>
 </ul>
-
+</li>
+<li><a class="reference internal" href="#Compute-Predictions-and-the-RMSE-Metric-for-the-Model">Compute Predictions and the RMSE Metric for the Model</a><ul>
+<li><a class="reference internal" href="#How-to-run-prediction-via-dask_xgboost.predict">How to run prediction via <code class="docutils literal notranslate"><span class="pre">dask_xgboost.predict</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
             
           
         </div>
@@ -440,7 +450,7 @@ env: NCCL_P2P_DISABLE=1
 <td style="vertical-align: top; border: 0px solid white">
 <h3>Client</h3>
 <ul>
-  <li><b>Scheduler: </b>tcp://172.17.0.2:35975
+  <li><b>Scheduler: </b>tcp://172.17.0.2:45110
   <li><b>Dashboard: </b><a href='http://172.17.0.2:8787/status' target='_blank'>http://172.17.0.2:8787/status</a>
 </ul>
 </td>
@@ -563,7 +573,7 @@ env: NCCL_P2P_DISABLE=1
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
 /conda/envs/gdf/lib/python3.7/site-packages/distributed/worker.py:3101: UserWarning: Large object of size 2.00 MB detected in task graph:
-  (&#39;squared_error&#39;, 2, 0, &#39;x&#39;, [&#39;x&#39;], None, &#39;_predic ... b574dbc4d9e46&#39;)
+  (&#39;squared_error&#39;, 2, 0, &#39;x&#39;, [&#39;x&#39;], None, &#39;_predic ... 47aea5a2c4289&#39;)
 Consider scattering large objects ahead of time
 with client.scatter to reduce scheduler burden and
 keep data on workers
@@ -580,7 +590,7 @@ keep data on workers
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-rmse value: 2.290920938065011
+rmse value: 2.290114683164898
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">

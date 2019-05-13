@@ -34,9 +34,7 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Multi-GPU with Dask-cuDF" href="dask-cudf.html" />
-    <link rel="prev" title="API Reference" href="api.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,48 +82,45 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">10 Minutes to cuDF</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Object-Creation">Object Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Viewing-Data">Viewing Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Selection">Selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Getting">Getting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Selection-by-Label">Selection by Label</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Selection-by-Position">Selection by Position</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Boolean-Indexing">Boolean Indexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Setting">Setting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Missing-Data">Missing Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Operations">Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Stats">Stats</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Applymap">Applymap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Histogramming">Histogramming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#String-Methods">String Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Merge">Merge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Concat">Concat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Join">Join</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Append">Append</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Grouping">Grouping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Reshaping">Reshaping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Time-Series">Time Series</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Categoricals">Categoricals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Plotting">Plotting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Converting-Data-Representation">Converting Data Representation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Pandas">Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Numpy">Numpy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Arrow">Arrow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Getting-Data-In/Out">Getting Data In/Out</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#CSV">CSV</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Parquet">Parquet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ORC">ORC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Gotchas">Gotchas</a></li>
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">10 Minutes to cuDF</a><ul>
+<li><a class="reference internal" href="#Object-Creation">Object Creation</a></li>
+<li><a class="reference internal" href="#Viewing-Data">Viewing Data</a></li>
+<li><a class="reference internal" href="#Selection">Selection</a></li>
+<li><a class="reference internal" href="#Getting">Getting</a></li>
+<li><a class="reference internal" href="#Selection-by-Label">Selection by Label</a></li>
+<li><a class="reference internal" href="#Selection-by-Position">Selection by Position</a></li>
+<li><a class="reference internal" href="#Boolean-Indexing">Boolean Indexing</a></li>
+<li><a class="reference internal" href="#Setting">Setting</a></li>
+<li><a class="reference internal" href="#Missing-Data">Missing Data</a></li>
+<li><a class="reference internal" href="#Operations">Operations</a></li>
+<li><a class="reference internal" href="#Stats">Stats</a></li>
+<li><a class="reference internal" href="#Applymap">Applymap</a></li>
+<li><a class="reference internal" href="#Histogramming">Histogramming</a></li>
+<li><a class="reference internal" href="#String-Methods">String Methods</a></li>
+<li><a class="reference internal" href="#Merge">Merge</a></li>
+<li><a class="reference internal" href="#Concat">Concat</a></li>
+<li><a class="reference internal" href="#Join">Join</a></li>
+<li><a class="reference internal" href="#Append">Append</a></li>
+<li><a class="reference internal" href="#Grouping">Grouping</a></li>
+<li><a class="reference internal" href="#Reshaping">Reshaping</a></li>
+<li><a class="reference internal" href="#Time-Series">Time Series</a></li>
+<li><a class="reference internal" href="#Categoricals">Categoricals</a></li>
+<li><a class="reference internal" href="#Plotting">Plotting</a></li>
+<li><a class="reference internal" href="#Converting-Data-Representation">Converting Data Representation</a></li>
+<li><a class="reference internal" href="#Pandas">Pandas</a></li>
+<li><a class="reference internal" href="#Numpy">Numpy</a></li>
+<li><a class="reference internal" href="#Arrow">Arrow</a></li>
+<li><a class="reference internal" href="#Getting-Data-In/Out">Getting Data In/Out</a></li>
+<li><a class="reference internal" href="#CSV">CSV</a></li>
+<li><a class="reference internal" href="#Parquet">Parquet</a></li>
+<li><a class="reference internal" href="#ORC">ORC</a></li>
+<li><a class="reference internal" href="#Gotchas">Gotchas</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dask-cudf.html">Multi-GPU with Dask-cuDF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developer.html">Developer Documentation</a></li>
 </ul>
-
+</div>
             
           
         </div>
@@ -1287,15 +1282,6 @@ agg_col2: int64
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="dask-cudf.html" class="btn btn-neutral float-right" title="Multi-GPU with Dask-cuDF" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="api.html" class="btn btn-neutral float-left" title="API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
