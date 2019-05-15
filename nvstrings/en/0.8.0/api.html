@@ -2991,22 +2991,21 @@ Edit distance is how many character changes between strings.</p>
 
 <dl class="function">
 <dt id="nvtext.ngrams">
-<code class="descclassname">nvtext.</code><code class="descname">ngrams</code><span class="sig-paren">(</span><em>strs</em>, <em>N=2</em>, <em>sep='_'</em><span class="sig-paren">)</span><a class="headerlink" href="#nvtext.ngrams" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate the n-grams of an nvstrings array.</p>
+<code class="descclassname">nvtext.</code><code class="descname">ngrams</code><span class="sig-paren">(</span><em>tokens</em>, <em>N=2</em>, <em>sep='_'</em><span class="sig-paren">)</span><a class="headerlink" href="#nvtext.ngrams" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the n-grams from a set of tokens.
+You can generate tokens from an nvstrings instance using
+the tokenize() function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>strs</strong><span class="classifier">nvstrings</span></dt><dd><p>The strings for this operation.</p>
+<dt><strong>tokens</strong><span class="classifier">nvstrings</span></dt><dd><p>The tokens for this operation.</p>
 </dd>
-<dt><strong>N</strong><span class="classifier">int</span></dt><dd><p>The degree of the n-gram (number of consecutive tokens). Default of 2
-for bigrams.</p>
+<dt><strong>N</strong><span class="classifier">int</span></dt><dd><p>The degree of the n-gram (number of consecutive tokens).
+Default of 2 for bigrams.</p>
 </dd>
-<dt><strong>sep</strong><span class="classifier">The separator to use between within an n-gram. Default of ‘_’.</span></dt><dd></dd>
-</dl>
+<dt><strong>sep</strong><span class="classifier">str</span></dt><dd><p>The separator to use between within an n-gram.
+Default is ‘_’.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>ngrams_object</strong><span class="classifier">nvstrings</span></dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -3079,15 +3078,15 @@ Default is space.</p>
 <dl class="function">
 <dt id="nvtext.tokenize">
 <code class="descclassname">nvtext.</code><code class="descname">tokenize</code><span class="sig-paren">(</span><em>strs</em>, <em>delimiter=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvtext.tokenize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Each string is split into tokens using the provided delimiter.
+<dd><p>Each string is split into tokens using the provided delimiter(s).
 The nvstrings instance returned contains the tokens in the order
-the were found.</p>
+they were found.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>strs</strong><span class="classifier">nvstrings</span></dt><dd><p>The strings for this operation</p>
 </dd>
-<dt><strong>delimiter</strong><span class="classifier">str or nvstrings</span></dt><dd><p>The string used to locate the split points of each string.
+<dt><strong>delimiter</strong><span class="classifier">str or nvstrings or list of strs</span></dt><dd><p>The string used to locate the split points of each string.
 Default is whitespace.</p>
 </dd>
 </dl>
