@@ -252,7 +252,7 @@ regression task (predicting a continuous variable).</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id7"><span class="problematic" id="id8">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id5"><span class="problematic" id="id6">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -435,7 +435,7 @@ prediction, stock market analysis and much more.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id9"><span class="problematic" id="id10">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id7"><span class="problematic" id="id8">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -533,13 +533,51 @@ prediction, stock market analysis and much more.</p>
 <em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">SGD</code><a class="headerlink" href="#cuml.SGD" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stochastic Gradient Descent is a very common machine learning algorithm where one optimizes
 some cost function via gradient steps. This makes SGD very attractive for large problems
-when the exact solution is hard or even impossible to find.</p>
-<p>cuML’s SGD algorithm accepts a numpy matrix or a cuDF DataFrame as the input dataset.
-The SGD algorithm currently works with linear regression, ridge regression and SVM models.</p>
+when the exact solution is hard or even impossible to find.
+cuML’s SGD algorithm accepts a numpy matrix or a cuDF DataFrame as the input dataset.
+The SGD algorithm currently works with linear regression, ridge regression and SVM models.
+Examples
+———
+.. code-block:: python</p>
+<blockquote>
+<div><p>import numpy as np
+import cudf
+from cuml.solvers import SGD as cumlSGD
+X = cudf.DataFrame()
+X[‘col1’] = np.array([1,1,2,2], dtype = np.float32)
+X[‘col2’] = np.array([1,2,2,3], dtype = np.float32)
+y = cudf.Series(np.array([1, 1, 2, 2], dtype=np.float32))
+pred_data = cudf.DataFrame()
+pred_data[‘col1’] = np.asarray([3, 2], dtype=datatype)
+pred_data[‘col2’] = np.asarray([5, 5], dtype=datatype)
+cu_sgd = cumlSGD(learning_rate=lrate, eta0=0.005, epochs=2000,</p>
+<blockquote>
+<div><p>fit_intercept=True, batch_size=2,
+tol=0.0, penalty=penalty, loss=loss)</p>
+</div></blockquote>
+<p>cu_sgd.fit(X, y)
+cu_pred = cu_sgd.predict(pred_data).to_array()
+print(” cuML intercept : “, <a href="#id9"><span class="problematic" id="id10">cu_sgd.intercept_</span></a>)
+print(” cuML coef : “, <a href="#id11"><span class="problematic" id="id12">cu_sgd.coef_</span></a>)
+print(“cuML predictions : “, cu_pred)</p>
+</div></blockquote>
+<p>Output:
+.. code-block:: python</p>
+<blockquote>
+<div><p>cuML intercept :  0.004561662673950195
+cuML coef :  0      0.9834546</p>
+<blockquote>
+<div><blockquote>
+<div><p>1    0.010128272</p>
+</div></blockquote>
+<p>dtype: float32</p>
+</div></blockquote>
+<p>cuML predictions :  [3.0055666 2.0221121]</p>
+</div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>loss</strong><span class="classifier">‘hinge’, ‘log’, ‘squared_loss’ (default = ‘squared_loss’)</span></dt><dd><p>‘hinge’ uses linear SVM
+<dt><strong>loss</strong><span class="classifier">‘hinge’, ‘log’, ‘squared_loss’ (default = ‘squared_loss’)</span></dt><dd><p>‘hinge’ uses linear SVM   
 ‘log’ uses logistic regression
 ‘squared_loss’ uses linear regression</p>
 </dd>
@@ -571,43 +609,12 @@ The old learning rate is generally divide by 5</p>
 </dd>
 <dt><strong>n_iter_no_change</strong><span class="classifier">int (default = 5)</span></dt><dd><p>the number of epochs to train without any imporvement in the model</p>
 </dd>
+<dt><strong>Notes</strong></dt><dd></dd>
+<dt><strong>——</strong></dt><dd></dd>
+<dt><strong>For additional docs, see `scikitlearn’s OLS &lt;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html&gt;</strong></dt><dd></dd>
 </dl>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
-<p>For additional docs, see <a href="#id1"><span class="problematic" id="id2">`</span></a>scikitlearn’s OLS &lt;<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html">https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html</a>&gt;</p>
-<p class="rubric">Examples</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">cudf</span>
-<span class="kn">from</span> <span class="nn">cuml.solvers</span> <span class="kn">import</span> <span class="n">SGD</span> <span class="k">as</span> <span class="n">cumlSGD</span>
-
-<span class="n">X</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-<span class="n">X</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
-<span class="n">X</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span>
-<span class="n">pred_data</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-<span class="n">pred_data</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">datatype</span><span class="p">)</span>
-<span class="n">pred_data</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">datatype</span><span class="p">)</span>
-
-<span class="n">cu_sgd</span> <span class="o">=</span> <span class="n">cumlSGD</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="n">lrate</span><span class="p">,</span> <span class="n">eta0</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span>
-                <span class="n">fit_intercept</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-                <span class="n">tol</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">penalty</span><span class="o">=</span><span class="n">penalty</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="n">loss</span><span class="p">)</span>
-
-<span class="n">cu_sgd</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">cu_pred</span> <span class="o">=</span> <span class="n">cu_sgd</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">pred_data</span><span class="p">)</span><span class="o">.</span><span class="n">to_array</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot; cuML intercept : &quot;</span><span class="p">,</span> <span class="n">cu_sgd</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot; cuML coef : &quot;</span><span class="p">,</span> <span class="n">cu_sgd</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;cuML predictions : &quot;</span><span class="p">,</span> <span class="n">cu_pred</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Output:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cuML</span> <span class="n">intercept</span> <span class="p">:</span>  <span class="mf">0.004561662673950195</span>
-<span class="n">cuML</span> <span class="n">coef</span> <span class="p">:</span>  <span class="mi">0</span>      <span class="mf">0.9834546</span>
-            <span class="mi">1</span>    <span class="mf">0.010128272</span>
-           <span class="n">dtype</span><span class="p">:</span> <span class="n">float32</span>
-<span class="n">cuML</span> <span class="n">predictions</span> <span class="p">:</span>  <span class="p">[</span><span class="mf">3.0055666</span> <span class="mf">2.0221121</span><span class="p">]</span>
-</pre></div>
-</div>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-center">
 <colgroup>
@@ -629,15 +636,15 @@ The old learning rate is generally divide by 5</p>
 <dl class="attribute">
 <dt id="cuml.SGD.fit">
 <code class="descname">fit</code><span class="sig-paren">(</span><em>self</em>, <em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.SGD.fit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fit the model with X and y.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
-</dd>
-<dt><strong>y: cuDF DataFrame</strong></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
-</dd>
-</dl>
+<dd><p>Fit the model with X and y.
+Parameters
+———-
+X : cuDF DataFrame</p>
+<blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -645,19 +652,15 @@ The old learning rate is generally divide by 5</p>
 <dl class="attribute">
 <dt id="cuml.SGD.predict">
 <code class="descname">predict</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.SGD.predict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Predicts the y for X.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
+<dd><p>Predicts the y for X.
+Parameters
+———-
+X : cuDF DataFrame</p>
+<blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
+</div></blockquote>
+<dl class="simple">
 <dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
-</dd>
-</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -665,19 +668,15 @@ The old learning rate is generally divide by 5</p>
 <dl class="attribute">
 <dt id="cuml.SGD.predictClass">
 <code class="descname">predictClass</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.SGD.predictClass" title="Permalink to this definition">¶</a></dt>
-<dd><p>Predicts the y for X.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
+<dd><p>Predicts the y for X.
+Parameters
+———-
+X : cuDF DataFrame</p>
+<blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
+</div></blockquote>
+<dl class="simple">
 <dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
-</dd>
-</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -691,7 +690,7 @@ The old learning rate is generally divide by 5</p>
 <dt id="cuml.NearestNeighbors">
 <em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">NearestNeighbors</code><a class="headerlink" href="#cuml.NearestNeighbors" title="Permalink to this definition">¶</a></dt>
 <dd><p>NearestNeighbors is a unsupervised algorithm where if one wants to find the “closest”
-datapoint(s) to new unseen data, one can calculate a suitable “distance” between 
+datapoint(s) to new unseen data, one can calculate a suitable “distance” between
 each and every point, and return the top K datapoints which have the smallest distance to it.</p>
 <p>cuML’s KNN expects a cuDF DataFrame or a Numpy Array (where automatic chunking will be done
 in to a Numpy Array in a future release), and fits a special data structure first to
@@ -788,11 +787,11 @@ used in data visualization and regression / classification tasks.</p>
 <td><p>Fit GPU index for performing nearest neighbor queries.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.NearestNeighbors.kneighbors" title="cuml.NearestNeighbors.kneighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kneighbors</span></code></a>(self, X[, k])</p></td>
-<td><p>Query the GPU index for the k nearest neighbors of row vectors in X.</p></td>
+<td><p>Query the GPU index for the k nearest neighbors of column vectors in X.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="method">
+<dl class="attribute">
 <dt id="cuml.NearestNeighbors.fit">
 <code class="descname">fit</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit GPU index for performing nearest neighbor queries.</p>
@@ -806,16 +805,22 @@ used in data visualization and regression / classification tasks.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="attribute">
 <dt id="cuml.NearestNeighbors.kneighbors">
 <code class="descname">kneighbors</code><span class="sig-paren">(</span><em>self</em>, <em>X</em>, <em>k=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.kneighbors" title="Permalink to this definition">¶</a></dt>
-<dd><p>Query the GPU index for the k nearest neighbors of row vectors in X.</p>
+<dd><p>Query the GPU index for the k nearest neighbors of column vectors in X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame or numpy ndarray</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
+<dt><strong>X_ctype</strong><span class="classifier">Ctypes pointer (row-major)</span></dt><dd><p>Pointer to input data</p>
 </dd>
-<dt><strong>k: Integer</strong></dt><dd><p>The number of neighbors</p>
+<dt><strong>N: Intetger</strong></dt><dd><p>The number of rows in X</p>
+</dd>
+<dt><strong>k: Integer</strong></dt><dd><p>Number of neighbors to search</p>
+</dd>
+<dt><strong>I_ptr: Ctypes pointer (row-major)</strong></dt><dd><p>Pointer to N*k array for output indices</p>
+</dd>
+<dt><strong>D_ptr: Ctypes pointer (row-major)</strong></dt><dd><p>Pointer to N*k array for output distances</p>
 </dd>
 </dl>
 </dd>
@@ -1294,7 +1299,7 @@ this variable.</p>
 <dt><strong>P</strong><span class="classifier">numba device array, numpy array or cuDF dataframe(dim_x, dim_x)</span></dt><dd><p>Current state covariance matrix. Any call to update() or predict()
 updates this variable.</p>
 </dd>
-<dt><strong>x_prior</strong><span class="classifier">numba device array, numpy array or cuDF series(dim_x, 1)</span></dt><dd><p>Prior (predicted) state estimate. The <a href="#id3"><span class="problematic" id="id4">*</span></a>_prior and <a href="#id5"><span class="problematic" id="id6">*</span></a>_post attributes
+<dt><strong>x_prior</strong><span class="classifier">numba device array, numpy array or cuDF series(dim_x, 1)</span></dt><dd><p>Prior (predicted) state estimate. The <a href="#id1"><span class="problematic" id="id2">*</span></a>_prior and <a href="#id3"><span class="problematic" id="id4">*</span></a>_post attributes
 are for convienence; they store the  prior and posterior of the
 current epoch. Read Only.</p>
 </dd>
@@ -1941,7 +1946,7 @@ in the optimization process. Increasing this value will result
 in greater repulsive force being applied, greater optimization
 cost, but slightly more accuracy.</p>
 </dd>
-<dt><strong>transform_queue_size: float (optional, default 4.0)</strong></dt><dd><p>For transform operations (embedding new points using a trained <a href="#id11"><span class="problematic" id="id12">model_</span></a>
+<dt><strong>transform_queue_size: float (optional, default 4.0)</strong></dt><dd><p>For transform operations (embedding new points using a trained <a href="#id13"><span class="problematic" id="id14">model_</span></a>
 this will control how aggressively to search for nearest neighbors.
 Larger values will result in slower performance but more accurate
 nearest neighbor evaluation.</p>
@@ -1991,20 +1996,20 @@ UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.UMAP.fit" title="cuml.UMAP.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.UMAP.fit" title="cuml.UMAP.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, y])</p></td>
 <td><p>Fit X into an embedded space.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.UMAP.fit_transform" title="cuml.UMAP.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.UMAP.fit_transform" title="cuml.UMAP.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X[, y])</p></td>
 <td><p>Fit X into an embedded space and return that transformed output.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.UMAP.transform" title="cuml.UMAP.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.UMAP.transform" title="cuml.UMAP.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X)</p></td>
 <td><p>Transform X into the existing embedded space and return that transformed output.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="method">
+<dl class="attribute">
 <dt id="cuml.UMAP.fit">
-<code class="descname">fit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">fit</code><span class="sig-paren">(</span><em>self</em>, <em>X</em>, <em>y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit X into an embedded space.
 Parameters
 ———-
@@ -2018,9 +2023,9 @@ X : array, shape (n_samples, n_features)</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="attribute">
 <dt id="cuml.UMAP.fit_transform">
-<code class="descname">fit_transform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="descname">fit_transform</code><span class="sig-paren">(</span><em>self</em>, <em>X</em>, <em>y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit X into an embedded space and return that transformed
 output.
 Parameters
@@ -2035,9 +2040,9 @@ X : array, shape (n_samples, n_features) or (n_samples, n_samples)</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="attribute">
 <dt id="cuml.UMAP.transform">
-<code class="descname">transform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.transform" title="Permalink to this definition">¶</a></dt>
+<code class="descname">transform</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform X into the existing embedded space and return that
 transformed output.</p>
 <p>Please refer to the reference UMAP implementation for information
