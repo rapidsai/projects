@@ -169,39 +169,44 @@
 <dl class="class">
 <dt id="cuml.LinearRegression">
 <em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">LinearRegression</code><a class="headerlink" href="#cuml.LinearRegression" title="Permalink to this definition">¶</a></dt>
-<dd><p>LinearRegression is a simple machine learning model where the response y is modelled by a
-linear combination of the predictors in X.</p>
-<p>cuML’s LinearRegression expects either a cuDF DataFrame or a NumPy matrix and provides 2
-algorithms SVD and Eig to fit a linear model. SVD is more stable, but Eig (default)
-is much more faster.</p>
+<dd><p>LinearRegression is a simple machine learning model where the response y is
+modelled by a linear combination of the predictors in X.</p>
+<p>cuML’s LinearRegression expects either a cuDF DataFrame or a NumPy matrix
+and provides 2 algorithms SVD and Eig to fit a linear model. SVD is more
+stable, but Eig (default) is much faster.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>algorithm</strong><span class="classifier">‘eig’ or ‘svd’ (default = ‘eig’)</span></dt><dd><p>Eig uses a eigendecomposition of the covariance matrix, and is much faster.
-SVD is slower, but is guaranteed to be stable.</p>
+<dt><strong>algorithm</strong><span class="classifier">‘eig’ or ‘svd’ (default = ‘eig’)</span></dt><dd><p>Eig uses a eigendecomposition of the covariance matrix, and is much
+faster.
+SVD is slower, but guaranteed to be stable.</p>
 </dd>
 <dt><strong>fit_intercept</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>If True, LinearRegression tries to correct for the global mean of y.
 If False, the model expects that you have centered the data.</p>
 </dd>
-<dt><strong>normalize</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>If True, the predictors in X will be normalized by dividing by it’s L2 norm.
+<dt><strong>normalize</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>If True, the predictors in X will be normalized by dividing by it’s
+L2 norm.
 If False, no scaling will be done.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>LinearRegression suffers from multicollinearity (when columns are correlated with each other),
-and variance explosions from outliers. Consider using Ridge Regression to fix the multicollinearity
-problem,and consider maybe first DBSCAN to remove the outliers, or using leverage statistics to
-filter possible outliers.</p>
+<p>LinearRegression suffers from multicollinearity (when columns are
+correlated with each other), and variance explosions from outliers.
+Consider using Ridge Regression to fix the multicollinearity problem, and
+consider maybe first DBSCAN to remove the outliers, or statistical analysis
+to filter possible outliers.</p>
 <p><strong>Applications of LinearRegression</strong></p>
 <blockquote>
-<div><p>LinearRegression is used in regression tasks where one wants to predict say sales or house prices.
-It is also used in extrapolation or time series tasks, dynamic systems modelling and many other
-machine learning tasks. This model should be first tried if the machine learning problem is a
-regression task (predicting a continuous variable).</p>
+<div><p>LinearRegression is used in regression tasks where one wants to predict
+say sales or house prices. It is also used in extrapolation or time
+series tasks, dynamic systems modelling and many other machine learning
+tasks. This model should be first tried if the machine learning problem
+is a regression task (predicting a continuous variable).</p>
 </div></blockquote>
 <p>For additional docs, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">scikitlearn’s OLS</a>.</p>
+<p>For an additional example see <a class="reference external" href="https://github.com/rapidsai/cuml/blob/master/python/notebooks/linear_regression_demo.ipynb">the OLS notebook</a>.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">cudf</span>
@@ -210,7 +215,8 @@ regression task (predicting a continuous variable).</p>
 <span class="kn">from</span> <span class="nn">cuml</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
 <span class="kn">from</span> <span class="nn">cuml.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
 
-<span class="n">lr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">(</span><span class="n">fit_intercept</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">normalize</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span> <span class="n">algorithm</span> <span class="o">=</span> <span class="s2">&quot;eig&quot;</span><span class="p">)</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">(</span><span class="n">fit_intercept</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">normalize</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span>
+                      <span class="n">algorithm</span> <span class="o">=</span> <span class="s2">&quot;eig&quot;</span><span class="p">)</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 <span class="n">X</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
@@ -348,42 +354,48 @@ regression task (predicting a continuous variable).</p>
 <dl class="class">
 <dt id="cuml.Ridge">
 <em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">Ridge</code><a class="headerlink" href="#cuml.Ridge" title="Permalink to this definition">¶</a></dt>
-<dd><p>Ridge extends LinearRegression by providing L2 regularization on the coefficients when
-predicting response y with a linear combination of the predictors in X. It can reduce
-the variance of the predictors, and improves the conditioning of the problem.</p>
-<p>cuML’s Ridge expects a cuDF DataFrame, and provides 3 algorithms SVD, Eig and CD to
-fit a linear model. SVD is more stable, but Eig (default) is much more faster. CD uses
-Coordinate Descent and can be faster if the data is large.</p>
+<dd><p>Ridge extends LinearRegression by providing L2 regularization on the
+coefficients when predicting response y with a linear combination of the
+predictors in X. It can reduce the variance of the predictors, and improves
+the conditioning of the problem.</p>
+<p>cuML’s Ridge expects a cuDF DataFrame, and provides 3 algorithms SVD, Eig
+and CD to fit a linear model. SVD is more stable, but Eig (default) is much
+faster. CD uses Coordinate Descent and can be faster when data is large.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>alpha</strong><span class="classifier">float or double</span></dt><dd><p>Regularization strength - must be a positive float. Larger values specify
-stronger regularization. Array input will be supported later.</p>
+<dt><strong>alpha</strong><span class="classifier">float or double</span></dt><dd><p>Regularization strength - must be a positive float. Larger values
+specify stronger regularization. Array input will be supported later.</p>
 </dd>
-<dt><strong>solver</strong><span class="classifier">‘eig’ or ‘svd’ or ‘cd’ (default = ‘eig’)</span></dt><dd><p>Eig uses a eigendecomposition of the covariance matrix, and is much faster.
-SVD is slower, but is guaranteed to be stable.
-CD or Coordinate Descent is very fast and is suitable for large problems.</p>
+<dt><strong>solver</strong><span class="classifier">‘eig’ or ‘svd’ or ‘cd’ (default = ‘eig’)</span></dt><dd><p>Eig uses a eigendecomposition of the covariance matrix, and is much
+faster.
+SVD is slower, but guaranteed to be stable.
+CD or Coordinate Descent is very fast and is suitable for large
+problems.</p>
 </dd>
 <dt><strong>fit_intercept</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>If True, Ridge tries to correct for the global mean of y.
 If False, the model expects that you have centered the data.</p>
 </dd>
-<dt><strong>normalize</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>If True, the predictors in X will be normalized by dividing by it’s L2 norm.
+<dt><strong>normalize</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>If True, the predictors in X will be normalized by dividing by it’s L2
+norm.
 If False, no scaling will be done.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>Ridge provides L2 regularization. This means that the coefficients can shrink to become
-very very small, but not zero. This can cause issues of interpretabiliy on the coefficients.
+<p>Ridge provides L2 regularization. This means that the coefficients can
+shrink to become very small, but not zero. This can cause issues of
+interpretabiliy on the coefficients.
 Consider using Lasso, or thresholding small coefficients to zero.</p>
 <p><strong>Applications of Ridge</strong></p>
 <blockquote>
-<div><p>Ridge Regression is used in the same way as LinearRegression, but is used more frequently
-as it does not suffer from multicollinearity issues. Ridge is used in insurance premium
-prediction, stock market analysis and much more.</p>
+<div><p>Ridge Regression is used in the same way as LinearRegression, but is
+used frequently as it does not suffer from multicollinearity issues.
+Ridge is used in insurance premium prediction, stock market analysis
+and much more.</p>
 </div></blockquote>
-<p>For additional docs, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html">scikitlearn’s Ridge</a>.</p>
+<p>For additional docs, see <a class="reference external" href="https://github.com/rapidsai/notebooks/blob/master/cuml/ridge_regression_demo.ipynb">scikitlearn’s Ridge</a>.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">cudf</span>
@@ -393,7 +405,8 @@ prediction, stock market analysis and much more.</p>
 <span class="kn">from</span> <span class="nn">cuml.linear_model</span> <span class="kn">import</span> <span class="n">Ridge</span>
 
 <span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">])</span>
-<span class="n">ridge</span> <span class="o">=</span> <span class="n">Ridge</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">fit_intercept</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">normalize</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span> <span class="n">solver</span> <span class="o">=</span> <span class="s2">&quot;eig&quot;</span><span class="p">)</span>
+<span class="n">ridge</span> <span class="o">=</span> <span class="n">Ridge</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">fit_intercept</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">normalize</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span>
+              <span class="n">solver</span> <span class="o">=</span> <span class="s2">&quot;eig&quot;</span><span class="p">)</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 <span class="n">X</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
@@ -531,36 +544,64 @@ prediction, stock market analysis and much more.</p>
 <dl class="class">
 <dt id="cuml.SGD">
 <em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">SGD</code><a class="headerlink" href="#cuml.SGD" title="Permalink to this definition">¶</a></dt>
-<dd><p>Stochastic Gradient Descent is a very common machine learning algorithm where one optimizes
-some cost function via gradient steps. This makes SGD very attractive for large problems
-when the exact solution is hard or even impossible to find.
-cuML’s SGD algorithm accepts a numpy matrix or a cuDF DataFrame as the input dataset.
-The SGD algorithm currently works with linear regression, ridge regression and SVM models.
-Examples
-———
-.. code-block:: python</p>
-<blockquote>
-<div><p>import numpy as np
-import cudf
-from cuml.solvers import SGD as cumlSGD
-X = cudf.DataFrame()
-X[‘col1’] = np.array([1,1,2,2], dtype = np.float32)
-X[‘col2’] = np.array([1,2,2,3], dtype = np.float32)
-y = cudf.Series(np.array([1, 1, 2, 2], dtype=np.float32))
-pred_data = cudf.DataFrame()
-pred_data[‘col1’] = np.asarray([3, 2], dtype=datatype)
-pred_data[‘col2’] = np.asarray([5, 5], dtype=datatype)
-cu_sgd = cumlSGD(learning_rate=lrate, eta0=0.005, epochs=2000,</p>
-<blockquote>
-<div><p>fit_intercept=True, batch_size=2,
-tol=0.0, penalty=penalty, loss=loss)</p>
+<dd><p>Stochastic Gradient Descent is a very common machine learning algorithm
+where one optimizes some cost function via gradient steps. This makes SGD
+very attractive for large problems when the exact solution is hard or even
+impossible to find.</p>
+<p>cuML’s SGD algorithm accepts a numpy matrix or a cuDF DataFrame as the
+input dataset. The SGD algorithm currently works with linear regression,
+ridge regression and SVM models.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>loss</strong><span class="classifier">‘hinge’, ‘log’, ‘squared_loss’ (default = ‘squared_loss’)</span></dt><dd><p>‘hinge’ uses linear SVM
+‘log’ uses logistic regression
+‘squared_loss’ uses linear regression</p>
+</dd>
+<dt><strong>penalty: ‘none’, ‘l1’, ‘l2’, ‘elasticnet’ (default = ‘none’)</strong></dt><dd><p>‘none’ does not perform any regularization
+‘l1’ performs L1 norm (Lasso) which minimizes the sum of the abs value
+of coefficients
+‘l2’ performs L2 norm (Ridge) which minimizes the sum of the square of
+the coefficients
+‘elasticnet’ performs Elastic Net regularization which is a weighted
+average of L1 and L2 norms</p>
+</dd>
+<dt><strong>alpha: float (default = 0.0001)</strong></dt><dd><p>The constant value which decides the degree of regularization</p>
+</dd>
+<dt><strong>fit_intercept</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>If True, the model tries to correct for the global mean of y.
+If False, the model expects that you have centered the data.</p>
+</dd>
+<dt><strong>epochs</strong><span class="classifier">int (default = 1000)</span></dt><dd><p>The number of times the model should iterate through the entire dataset
+during training (default = 1000)</p>
+</dd>
+<dt><strong>tol</strong><span class="classifier">float (default = 1e-3)</span></dt><dd><p>The training process will stop if current_loss &gt; previous_loss - tol</p>
+</dd>
+<dt><strong>shuffle</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>True, shuffles the training data after each epoch
+False, does not shuffle the training data after each epoch</p>
+</dd>
+<dt><strong>eta0</strong><span class="classifier">float (default = 0.0)</span></dt><dd><p>Initial learning rate</p>
+</dd>
+<dt><strong>power_t</strong><span class="classifier">float (default = 0.5)</span></dt><dd><p>The exponent used for calculating the invscaling learning rate</p>
+</dd>
+<dt><strong>learning_rate</strong><span class="classifier">‘optimal’, ‘constant’, ‘invscaling’,</span></dt><dd><blockquote>
+<div><p>‘adaptive’ (default = ‘constant’)</p>
 </div></blockquote>
-<p>cu_sgd.fit(X, y)
-cu_pred = cu_sgd.predict(pred_data).to_array()
-print(” cuML intercept : “, <a href="#id9"><span class="problematic" id="id10">cu_sgd.intercept_</span></a>)
-print(” cuML coef : “, <a href="#id11"><span class="problematic" id="id12">cu_sgd.coef_</span></a>)
-print(“cuML predictions : “, cu_pred)</p>
-</div></blockquote>
+<p>optimal option supported in the next version
+constant keeps the learning rate constant
+adaptive changes the learning rate if the training loss or the
+validation accuracy does not improve for n_iter_no_change epochs.
+The old learning rate is generally divide by 5</p>
+</dd>
+<dt><strong>n_iter_no_change</strong><span class="classifier">int (default = 5)</span></dt><dd><p>the number of epochs to train without any imporvement in the model</p>
+</dd>
+<dt><strong>Notes</strong></dt><dd></dd>
+<dt><strong>——</strong></dt><dd></dd>
+<dt><strong>For additional docs, see `scikitlearn’s OLS</strong></dt><dd></dd>
+<dt><strong>&lt;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html&gt;</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
 <p>Output:
 .. code-block:: python</p>
 <blockquote>
@@ -574,47 +615,6 @@ cuML coef :  0      0.9834546</p>
 </div></blockquote>
 <p>cuML predictions :  [3.0055666 2.0221121]</p>
 </div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>loss</strong><span class="classifier">‘hinge’, ‘log’, ‘squared_loss’ (default = ‘squared_loss’)</span></dt><dd><p>‘hinge’ uses linear SVM   
-‘log’ uses logistic regression
-‘squared_loss’ uses linear regression</p>
-</dd>
-<dt><strong>penalty: ‘none’, ‘l1’, ‘l2’, ‘elasticnet’ (default = ‘none’)</strong></dt><dd><p>‘none’ does not perform any regularization
-‘l1’ performs L1 norm (Lasso) which minimizes the sum of the abs value of coefficients
-‘l2’ performs L2 norm (Ridge) which minimizes the sum of the square of the coefficients
-‘elasticnet’ performs Elastic Net regularization which is a weighted average of L1 and L2 norms</p>
-</dd>
-<dt><strong>alpha: float (default = 0.0001)</strong></dt><dd><p>The constant value which decides the degree of regularization</p>
-</dd>
-<dt><strong>fit_intercept</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>If True, the model tries to correct for the global mean of y.
-If False, the model expects that you have centered the data.</p>
-</dd>
-<dt><strong>epochs</strong><span class="classifier">int (default = 1000)</span></dt><dd><p>The number of times the model should iterate through the entire dataset during training (default = 1000)</p>
-</dd>
-<dt><strong>tol</strong><span class="classifier">float (default = 1e-3)</span></dt><dd><p>The training process will stop if current_loss &gt; previous_loss - tol</p>
-</dd>
-<dt><strong>shuffle</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>True, shuffles the training data after each epoch
-False, does not shuffle the training data after each epoch</p>
-</dd>
-<dt><strong>eta0</strong><span class="classifier">float (default = 0.0)</span></dt><dd><p>Initial learning rate</p>
-</dd>
-<dt><strong>power_t</strong><span class="classifier">float (default = 0.5)</span></dt><dd><p>The exponent used for calculating the invscaling learning rate</p>
-</dd>
-<dt><strong>learning_rate</strong><span class="classifier">‘optimal’, ‘constant’, ‘invscaling’, ‘adaptive’ (default = ‘constant’)</span></dt><dd><p>optimal option supported in the next version
-constant keeps the learning rate constant
-adaptive changes the learning rate if the training loss or the validation accuracy does not improve for n_iter_no_change epochs.
-The old learning rate is generally divide by 5</p>
-</dd>
-<dt><strong>n_iter_no_change</strong><span class="classifier">int (default = 5)</span></dt><dd><p>the number of epochs to train without any imporvement in the model</p>
-</dd>
-<dt><strong>Notes</strong></dt><dd></dd>
-<dt><strong>——</strong></dt><dd></dd>
-<dt><strong>For additional docs, see `scikitlearn’s OLS &lt;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html&gt;</strong></dt><dd></dd>
-</dl>
-</dd>
-</dl>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-center">
 <colgroup>
@@ -689,34 +689,37 @@ X : cuDF DataFrame</p>
 <dl class="class">
 <dt id="cuml.NearestNeighbors">
 <em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">NearestNeighbors</code><a class="headerlink" href="#cuml.NearestNeighbors" title="Permalink to this definition">¶</a></dt>
-<dd><p>NearestNeighbors is a unsupervised algorithm where if one wants to find the “closest”
-datapoint(s) to new unseen data, one can calculate a suitable “distance” between
-each and every point, and return the top K datapoints which have the smallest distance to it.</p>
-<p>cuML’s KNN expects a cuDF DataFrame or a Numpy Array (where automatic chunking will be done
-in to a Numpy Array in a future release), and fits a special data structure first to
-approximate the distance calculations, allowing our querying times to be O(plogn)
-and not the brute force O(np) [where p = no(features)]:</p>
+<dd><p>NearestNeighbors is a unsupervised algorithm where if one wants to find the
+“closest” datapoint(s) to new unseen data, one can calculate a suitable
+“distance” between each and every point, and return the top K datapoints
+which have the smallest distance to it.</p>
+<p>cuML’s KNN expects a cuDF DataFrame or a Numpy Array (where automatic
+chunking will be done in to a Numpy Array in a future release), and fits a
+special data structure first to approximate the distance calculations,
+allowing our querying times to be O(plogn) and not the brute force O(np)
+[where p = no(features)]:</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>n_neighbors: int (default = 5)</strong></dt><dd><p>The top K closest datapoints you want the algorithm to return. If this number is large,
-then expect the algorithm to run slower.</p>
+<dt><strong>n_neighbors: int (default = 5)</strong></dt><dd><p>The top K closest datapoints you want the algorithm to return.
+If this number is large, then expect the algorithm to run slower.</p>
 </dd>
-<dt><strong>should_downcast</strong><span class="classifier">bool (default = False)</span></dt><dd><p>Currently only single precision is supported in the underlying undex. Setting this to
-true will allow single-precision input arrays to be automatically downcasted to single
-precision. Default = False.</p>
+<dt><strong>should_downcast</strong><span class="classifier">bool (default = False)</span></dt><dd><p>Currently only single precision is supported in the underlying undex.
+Setting this to true will allow single-precision input arrays to be
+automatically downcasted to single precision.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>NearestNeighbors is a generative model. This means the data X has to be stored in order
-for inference to occur.</p>
+<p>NearestNeighbors is a generative model. This means the data X has to be
+stored in order for inference to occur.</p>
 <p><strong>Applications of NearestNeighbors</strong></p>
 <blockquote>
-<div><p>Applications of NearestNeighbors include recommendation systems where content or colloborative
-filtering is used. Since NearestNeighbors is a relatively simple generative model, it is also
-used in data visualization and regression / classification tasks.</p>
+<div><p>Applications of NearestNeighbors include recommendation systems where
+content or colloborative filtering is used. Since NearestNeighbors is a
+relatively simple generative model, it is also used in data
+visualization and regression / classification tasks.</p>
 </div></blockquote>
 <p>For an additional example see <a class="reference external" href="https://github.com/rapidsai/notebook/blob/master/python/notebooks/knn_demo.ipynb">the NearestNeighbors notebook</a>.</p>
 <p>For additional docs, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html#sklearn.neighbors.NearestNeighbors">scikitlearn’s NearestNeighbors</a>.</p>
@@ -741,7 +744,8 @@ used in data visualization and regression / classification tasks.</p>
 
 <span class="n">nn_float</span> <span class="o">=</span> <span class="n">NearestNeighbors</span><span class="p">()</span>
 <span class="n">nn_float</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
-<span class="n">distances</span><span class="p">,</span><span class="n">indices</span> <span class="o">=</span> <span class="n">nn_float</span><span class="o">.</span><span class="n">kneighbors</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="c1">#get 3 nearest neighbors</span>
+<span class="c1"># get 3 nearest neighbors</span>
+<span class="n">distances</span><span class="p">,</span><span class="n">indices</span> <span class="o">=</span> <span class="n">nn_float</span><span class="o">.</span><span class="n">kneighbors</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span>
@@ -826,7 +830,8 @@ used in data visualization and regression / classification tasks.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>distances: cuDF DataFrame or numpy ndarray</dt><dd><p>The distances of the k-nearest neighbors for each column vector in X</p>
+<dt>distances: cuDF DataFrame or numpy ndarray</dt><dd><p>The distances of the k-nearest neighbors for each column vector
+in X</p>
 </dd>
 <dt>indices: cuDF DataFrame of numpy ndarray</dt><dd><p>The indices of the k-nearest neighbors for each column vector in X</p>
 </dd>
@@ -1399,54 +1404,62 @@ one call, otherwise self.H will be used.</p>
 <dl class="class">
 <dt id="cuml.PCA">
 <em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">PCA</code><a class="headerlink" href="#cuml.PCA" title="Permalink to this definition">¶</a></dt>
-<dd><p>PCA (Principal Component Analysis) is a fundamental dimensionality reduction technique used to
-combine features in X in linear combinations such that each new component captures the most
-information or variance of the data. N_components is usually small, say at 3, where it can be
-used for data visualization, data compression and exploratory analysis.</p>
-<p>cuML’s PCA expects a cuDF DataFrame, and provides 2 algorithms Full and Jacobi.
-Full (default) uses a full eigendecomposition then selects the top K eigenvectors.
-The Jacobi algorithm is much faster as it iteratively tries to correct the top K eigenvectors,
-but might be less accurate.</p>
+<dd><p>PCA (Principal Component Analysis) is a fundamental dimensionality
+reduction technique used to combine features in X in linear combinations
+such that each new component captures the most information or variance of
+the data. N_components is usually small, say at 3, where it can be used for
+data visualization, data compression and exploratory analysis.</p>
+<p>cuML’s PCA expects a cuDF DataFrame, and provides 2 algorithms Full and
+Jacobi. Full (default) uses a full eigendecomposition then selects the top
+K eigenvectors. The Jacobi algorithm is much faster as it iteratively tries
+to correct the top K eigenvectors, but might be less accurate.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>copy</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>If True, then copies data then removes mean from data. False might cause data to be
-overwritten with its mean centered version.</p>
+<dt><strong>copy</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>If True, then copies data then removes mean from data. False might
+cause data to be overwritten with its mean centered version.</p>
 </dd>
 <dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class</p>
 </dd>
-<dt><strong>iterated_power</strong><span class="classifier">int (default = 15)</span></dt><dd><p>Used in Jacobi solver. The more iterations, the more accurate, but the slower.</p>
+<dt><strong>iterated_power</strong><span class="classifier">int (default = 15)</span></dt><dd><p>Used in Jacobi solver. The more iterations, the more accurate, but
+slower.</p>
 </dd>
-<dt><strong>n_components</strong><span class="classifier">int (default = 1)</span></dt><dd><p>The number of top K singular vectors / values you want. Must be &lt;= number(columns).</p>
+<dt><strong>n_components</strong><span class="classifier">int (default = 1)</span></dt><dd><p>The number of top K singular vectors / values you want.
+Must be &lt;= number(columns).</p>
 </dd>
-<dt><strong>random_state</strong><span class="classifier">int / None (default = None)</span></dt><dd><p>If you want results to be the same when you restart Python, select a state.</p>
+<dt><strong>random_state</strong><span class="classifier">int / None (default = None)</span></dt><dd><p>If you want results to be the same when you restart Python, select a
+state.</p>
 </dd>
-<dt><strong>svd_solver</strong><span class="classifier">‘full’ or ‘jacobi’ or ‘auto’ (default = ‘full’)</span></dt><dd><p>Full uses a eigendecomposition of the covariance matrix then discards components.
+<dt><strong>svd_solver</strong><span class="classifier">‘full’ or ‘jacobi’ or ‘auto’ (default = ‘full’)</span></dt><dd><p>Full uses a eigendecomposition of the covariance matrix then discards
+components.
 Jacobi is much faster as it iteratively corrects, but is less accurate.</p>
 </dd>
-<dt><strong>tol</strong><span class="classifier">float (default = 1e-7)</span></dt><dd><p>Used if algorithm = “jacobi”. The smaller the tolerance, the more accurate,
-but the more slower the algorithm will get to converge.</p>
+<dt><strong>tol</strong><span class="classifier">float (default = 1e-7)</span></dt><dd><p>Used if algorithm = “jacobi”. Smaller tolerance can increase accuracy,
+but but will slow down the algorithm’s convergence.</p>
 </dd>
 <dt><strong>verbose</strong><span class="classifier">bool</span></dt><dd><p>Whether to print debug spews</p>
 </dd>
-<dt><strong>whiten</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>If True, de-correlates the components. This is done by dividing them by the corresponding
-singular values then multiplying by sqrt(n_samples). Whitening allows each component
-to have unit variance and removes multi-collinearity. It might be beneficial for downstream
+<dt><strong>whiten</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>If True, de-correlates the components. This is done by dividing them by
+the corresponding singular values then multiplying by sqrt(n_samples).
+Whitening allows each component to have unit variance and removes
+multi-collinearity. It might be beneficial for downstream
 tasks like LinearRegression where correlated features cause problems.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>PCA considers linear combinations of features, specifically those that maximise global
-variance structure. This means PCA is fantastic for global structure analyses, but weak
-for local relationships. Consider UMAP or T-SNE for a locally important embedding.</p>
+<p>PCA considers linear combinations of features, specifically those that
+maximise global variance structure. This means PCA is fantastic for global
+structure analyses, but weak for local relationships. Consider UMAP or
+T-SNE for a locally important embedding.</p>
 <p><strong>Applications of PCA</strong></p>
 <blockquote>
-<div><p>PCA is used extensively in practice for data visualization and data compression. It has been used
-to visualize extremely large word embeddings like Word2Vec and GloVe in 2 or 3 dimensions, large
-datasets of everyday objects and images, and used to distinguish between cancerous cells from
-healthy cells.</p>
+<div><p>PCA is used extensively in practice for data visualization and data
+compression. It has been used to visualize extremely large word
+embeddings like Word2Vec and GloVe in 2 or 3 dimensions, large
+datasets of everyday objects and images, and used to distinguish
+between cancerous cells from healthy cells.</p>
 </div></blockquote>
 <p>For an additional example see <a class="reference external" href="https://github.com/rapidsai/notebooks/blob/master/cuml/pca_demo.ipynb">the PCA notebook</a>.
 For additional docs, see <a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html">scikitlearn’s PCA</a>.</p>
@@ -1468,7 +1481,8 @@ For additional docs, see <a class="reference external" href="http://scikit-learn
 
 <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;components: {pca_float.components_}&#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;explained variance: {pca_float.explained_variance_}&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;explained variance ratio: {pca_float.explained_variance_ratio_}&#39;</span><span class="p">)</span>
+<span class="n">exp_var</span> <span class="o">=</span> <span class="n">pca_float</span><span class="o">.</span><span class="n">explained_variance_ratio_</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;explained variance ratio: {exp_var}&#39;</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;singular values: {pca_float.singular_values_}&#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;mean: {pca_float.mean_}&#39;</span><span class="p">)</span>
@@ -1594,7 +1608,8 @@ estimated covariance of X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_features)</span></dt><dd><p>training data (floats or doubles), where n_samples is the number of samples, and n_features is the number of features.</p>
+<dt><strong>X</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_features)</span></dt><dd><p>training data (floats or doubles), where n_samples is the number of
+samples, and n_features is the number of features.</p>
 </dd>
 <dt><strong>y</strong><span class="classifier">ignored</span></dt><dd></dd>
 </dl>
@@ -1620,7 +1635,8 @@ estimated covariance of X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_components)</span></dt><dd><p>New data (floats or doubles), where n_samples is the number of samples and n_components is the number of components.</p>
+<dt><strong>X</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_components)</span></dt><dd><p>New data (floats or doubles), where n_samples is the number of
+samples and n_components is the number of components.</p>
 </dd>
 </dl>
 </dd>
@@ -1636,11 +1652,13 @@ estimated covariance of X.</p>
 <dt id="cuml.PCA.transform">
 <code class="descname">transform</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.PCA.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply dimensionality reduction to X.</p>
-<p>X is projected on the first principal components previously extracted from a training set.</p>
+<p>X is projected on the first principal components previously extracted
+from a training set.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_features)</span></dt><dd><p>New data (floats or doubles), where n_samples is the number of samples and n_features is the number of features.</p>
+<dt><strong>X</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_features)</span></dt><dd><p>New data (floats or doubles), where n_samples is the number of
+samples and n_features is the number of features.</p>
 </dd>
 </dl>
 </dd>
@@ -1660,29 +1678,34 @@ estimated covariance of X.</p>
 <dl class="class">
 <dt id="cuml.TruncatedSVD">
 <em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">TruncatedSVD</code><a class="headerlink" href="#cuml.TruncatedSVD" title="Permalink to this definition">¶</a></dt>
-<dd><p>TruncatedSVD is used to compute the top K singular values and vectors of a large matrix X.
-It is much faster when n_components is small, such as in the use of PCA when 3 components is
-used for 3D visualization.</p>
-<p>cuML’s TruncatedSVD expects a cuDF DataFrame, and provides 2 algorithms Full and Jacobi.
-Full (default) uses a full eigendecomposition then selects the top K singular vectors.
-The Jacobi algorithm is much faster as it iteratively tries to correct the top K singular
-vectors, but might be less accurate.</p>
+<dd><p>TruncatedSVD is used to compute the top K singular values and vectors of a
+large matrix X. It is much faster when n_components is small, such as in
+the use of PCA when 3 components is used for 3D visualization.</p>
+<p>cuML’s TruncatedSVD expects a cuDF DataFrame, and provides 2 algorithms
+Full and Jacobi. Full (default) uses a full eigendecomposition then selects
+the top K singular vectors. The Jacobi algorithm is much faster as it
+iteratively tries to correct the top K singular vectors, but might be
+less accurate.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>algorithm</strong><span class="classifier">‘full’ or ‘jacobi’ or ‘auto’ (default = ‘full’)</span></dt><dd><p>Full uses a eigendecomposition of the covariance matrix then discards components.
+<dt><strong>algorithm</strong><span class="classifier">‘full’ or ‘jacobi’ or ‘auto’ (default = ‘full’)</span></dt><dd><p>Full uses a eigendecomposition of the covariance matrix then discards
+components.
 Jacobi is much faster as it iteratively corrects, but is less accurate.</p>
 </dd>
 <dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class</p>
 </dd>
-<dt><strong>n_components</strong><span class="classifier">int (default = 1)</span></dt><dd><p>The number of top K singular vectors / values you want. Must be &lt;= number(columns).</p>
+<dt><strong>n_components</strong><span class="classifier">int (default = 1)</span></dt><dd><p>The number of top K singular vectors / values you want.
+Must be &lt;= number(columns).</p>
 </dd>
-<dt><strong>n_iter</strong><span class="classifier">int (default = 15)</span></dt><dd><p>Used in Jacobi solver. The more iterations, the more accurate, but the slower.</p>
+<dt><strong>n_iter</strong><span class="classifier">int (default = 15)</span></dt><dd><p>Used in Jacobi solver. The more iterations, the more accurate, but
+slower.</p>
 </dd>
-<dt><strong>random_state</strong><span class="classifier">int / None (default = None)</span></dt><dd><p>If you want results to be the same when you restart Python, select a state.</p>
+<dt><strong>random_state</strong><span class="classifier">int / None (default = None)</span></dt><dd><p>If you want results to be the same when you restart Python, select a
+state.</p>
 </dd>
-<dt><strong>tol</strong><span class="classifier">float (default = 1e-7)</span></dt><dd><p>Used if algorithm = “jacobi”. The smaller the tolerance, the more accurate,
-but the more slower the algorithm will get to converge.</p>
+<dt><strong>tol</strong><span class="classifier">float (default = 1e-7)</span></dt><dd><p>Used if algorithm = “jacobi”. Smaller tolerance can increase accuracy,
+but but will slow down the algorithm’s convergence.</p>
 </dd>
 <dt><strong>verbose</strong><span class="classifier">bool</span></dt><dd><p>Whether to print debug spews</p>
 </dd>
@@ -1690,16 +1713,18 @@ but the more slower the algorithm will get to converge.</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>TruncatedSVD (the randomized version [Jacobi]) is fantastic when the number of components
-you want is much smaller than the number of features. The approximation to the largest
-singular values and vectors is very robust, however, this method loses a lot of accuracy
-when you want many many components.</p>
+<p>TruncatedSVD (the randomized version [Jacobi]) is fantastic when the number
+of components you want is much smaller than the number of features. The
+approximation to the largest singular values and vectors is very robust,
+however, this method loses a lot of accuracy when you want many many
+components.</p>
 <p><strong>Applications of TruncatedSVD</strong></p>
 <blockquote>
-<div><p>TruncatedSVD is also known as Latent Semantic Indexing (LSI) which tries to find topics of a
-word count matrix. If X previously was centered with mean removal, TruncatedSVD is the
-same as TruncatedPCA. TruncatedSVD is also used in information retrieval tasks, recommendation
-systems and data compression.</p>
+<div><p>TruncatedSVD is also known as Latent Semantic Indexing (LSI) which
+tries to find topics of a word count matrix. If X previously was
+centered with mean removal, TruncatedSVD is the same as TruncatedPCA.
+TruncatedSVD is also used in information retrieval tasks,
+recommendation systems and data compression.</p>
 </div></blockquote>
 <p>For additional examples, see <a class="reference external" href="https://github.com/rapidsai/notebooks/blob/master/cuml/tsvd_demo.ipynb">the Truncated SVD  notebook</a>.
 For additional documentation, see <a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html">scikitlearn’s TruncatedSVD docs</a>.</p>
@@ -1716,12 +1741,14 @@ For additional documentation, see <a class="reference external" href="http://sci
 <span class="n">gdf_float</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mf">4.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">gdf_float</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mf">4.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
-<span class="n">tsvd_float</span> <span class="o">=</span> <span class="n">TruncatedSVD</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">algorithm</span> <span class="o">=</span> <span class="s2">&quot;jacobi&quot;</span><span class="p">,</span> <span class="n">n_iter</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-9</span><span class="p">)</span>
+<span class="n">tsvd_float</span> <span class="o">=</span> <span class="n">TruncatedSVD</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">algorithm</span> <span class="o">=</span> <span class="s2">&quot;jacobi&quot;</span><span class="p">,</span>
+                          <span class="n">n_iter</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-9</span><span class="p">)</span>
 <span class="n">tsvd_float</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;components: {tsvd_float.components_}&#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;explained variance: {tsvd_float.explained_variance_}&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;explained variance ratio: {tsvd_float.explained_variance_ratio_}&#39;</span><span class="p">)</span>
+<span class="n">exp_var</span> <span class="o">=</span> <span class="n">tsvd_float</span><span class="o">.</span><span class="n">explained_variance_ratio_</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;explained variance ratio: {exp_var}&#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;singular values: {tsvd_float.singular_values_}&#39;</span><span class="p">)</span>
 
 <span class="n">trans_gdf_float</span> <span class="o">=</span> <span class="n">tsvd_float</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
@@ -1747,9 +1774,11 @@ For additional documentation, see <a class="reference external" href="http://sci
 <span class="mi">0</span>  <span class="mf">7.439024</span>
 <span class="mi">1</span> <span class="mf">4.0817795</span>
 
-<span class="n">Transformed</span> <span class="n">matrix</span><span class="p">:</span>           <span class="mi">0</span>            <span class="mi">1</span>
-<span class="mi">0</span> <span class="mf">5.1659107</span>    <span class="o">-</span><span class="mf">2.512643</span>
-<span class="mi">1</span> <span class="mf">3.4638448</span> <span class="o">-</span><span class="mf">0.042223275</span>                                                                                                                     <span class="mi">2</span> <span class="mf">4.0809603</span>    <span class="mf">3.2164836</span>
+<span class="n">Transformed</span> <span class="n">Matrix</span><span class="p">:</span>
+<span class="mi">0</span>           <span class="mi">1</span>         <span class="mi">2</span>
+<span class="mi">0</span>   <span class="mf">5.1659107</span>    <span class="o">-</span><span class="mf">2.512643</span>
+<span class="mi">1</span>   <span class="mf">3.4638448</span>    <span class="o">-</span><span class="mf">0.042223275</span>
+<span class="mi">2</span>    <span class="mf">4.0809603</span>   <span class="mf">3.2164836</span>
 
 <span class="n">Input</span> <span class="n">matrix</span><span class="p">:</span>           <span class="mi">0</span>         <span class="mi">1</span>         <span class="mi">2</span>
 <span class="mi">0</span>       <span class="mf">1.0</span>  <span class="mf">4.000001</span>  <span class="mf">4.000001</span>
@@ -1822,7 +1851,7 @@ For additional documentation, see <a class="reference external" href="http://sci
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>X_new</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_components)</span></dt><dd><p>Reduced version of X. This will always be a dense cuDF DataFrame</p>
+<dt><strong>X_new</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_components)</span></dt><dd><p>Reduced version of X as a dense cuDF DataFrame</p>
 </dd>
 </dl>
 </dd>
@@ -1921,8 +1950,9 @@ result on a more even dispersal of points. The value should be set
 relative to the <code class="docutils literal notranslate"><span class="pre">spread</span></code> value, which determines the scale at which
 embedded points will be spread out.</p>
 </dd>
-<dt><strong>spread: float (optional, default 1.0)</strong></dt><dd><p>The effective scale of embedded points. In combination with <code class="docutils literal notranslate"><span class="pre">min_dist</span></code>
-this determines how clustered/clumped the embedded points are.</p>
+<dt><strong>spread: float (optional, default 1.0)</strong></dt><dd><p>The effective scale of embedded points. In combination with
+<code class="docutils literal notranslate"><span class="pre">min_dist</span></code> this determines how clustered/clumped the embedded
+points are.</p>
 </dd>
 <dt><strong>set_op_mix_ratio: float (optional, default 1.0)</strong></dt><dd><p>Interpolate between (fuzzy) union and intersection as the set operation
 used to combine local fuzzy simplicial sets to obtain a global fuzzy
@@ -1946,7 +1976,7 @@ in the optimization process. Increasing this value will result
 in greater repulsive force being applied, greater optimization
 cost, but slightly more accuracy.</p>
 </dd>
-<dt><strong>transform_queue_size: float (optional, default 4.0)</strong></dt><dd><p>For transform operations (embedding new points using a trained <a href="#id13"><span class="problematic" id="id14">model_</span></a>
+<dt><strong>transform_queue_size: float (optional, default 4.0)</strong></dt><dd><p>For transform operations (embedding new points using a trained <a href="#id9"><span class="problematic" id="id10">model_</span></a>
 this will control how aggressively to search for nearest neighbors.
 Larger values will result in slower performance but more accurate
 nearest neighbor evaluation.</p>
@@ -1986,7 +2016,8 @@ kNN.</p>
 <p class="rubric">References</p>
 <ul class="simple">
 <li><p>Leland McInnes, John Healy, James Melville
-UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction
+UMAP: Uniform Manifold Approximation and Projection for Dimension
+Reduction
 <a class="reference external" href="https://arxiv.org/abs/1802.03426">https://arxiv.org/abs/1802.03426</a></p></li>
 </ul>
 <p class="rubric">Methods</p>
@@ -2046,7 +2077,8 @@ X : array, shape (n_samples, n_features) or (n_samples, n_samples)</p>
 <dd><p>Transform X into the existing embedded space and return that
 transformed output.</p>
 <p>Please refer to the reference UMAP implementation for information
-on the differences between fit_transform() and running fit() transform().</p>
+on the differences between fit_transform() and running fit()
+transform().</p>
 <p>Specifically, the transform() function is stochastic:
 <a class="reference external" href="https://github.com/lmcinnes/umap/issues/158">https://github.com/lmcinnes/umap/issues/158</a></p>
 <dl class="field-list simple">
