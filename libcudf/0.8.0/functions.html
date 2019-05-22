@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.7</span>
+   &#160;<span id="projectnumber">0.8</span>
    </div>
   </td>
  </tr>
@@ -63,13 +63,6 @@ $(function() {
 
 <div class="contents">
 <div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
-
-<h3><a id="index_a"></a>- a -</h3><ul>
-<li>asc_desc_comparison()
-: <a class="el" href="structLesserRTTI.html#a2f39aeae6ff44daeb676080f0933add0">LesserRTTI&lt; IndexT &gt;</a>
-</li>
-</ul>
-
 
 <h3><a id="index_b"></a>- b -</h3><ul>
 <li>b08
@@ -117,6 +110,9 @@ $(function() {
 <li>compression
 : <a class="el" href="structcsv__read__arg.html#ae1f3e5ee7f08808863f66deae5924677">csv_read_arg</a>
 , <a class="el" href="structjson__read__arg.html#a8859968fb4399845af5758d275c745c4">json_read_arg</a>
+</li>
+<li>concurrent_unordered_map()
+: <a class="el" href="classconcurrent__unordered__map.html#a2ca1341ccf26b8ec8d3b52fa07724407">concurrent_unordered_map&lt; Key, Element, Hasher, Equality, Allocator &gt;</a>
 </li>
 <li>concurrent_unordered_multimap()
 : <a class="el" href="classconcurrent__unordered__multimap.html#a64bb89fd2300aeffcca835008c5e2a2f">concurrent_unordered_multimap&lt; Key, Element, size_type, unused_key, unused_element, Hasher, Equality, Allocator, count_collisions &gt;</a>
@@ -205,7 +201,8 @@ $(function() {
 : <a class="el" href="structcsv__read__arg.html#aa2c43a3229c5829188cc2f24f2699eaf">csv_read_arg</a>
 </li>
 <li>find()
-: <a class="el" href="classconcurrent__unordered__multimap.html#ad83fe57fe7025326ecc6436f6f97e14f">concurrent_unordered_multimap&lt; Key, Element, size_type, unused_key, unused_element, Hasher, Equality, Allocator, count_collisions &gt;</a>
+: <a class="el" href="classconcurrent__unordered__map.html#af0639cdcc2dbd60d21393b642073275b">concurrent_unordered_map&lt; Key, Element, Hasher, Equality, Allocator &gt;</a>
+, <a class="el" href="classconcurrent__unordered__multimap.html#ad83fe57fe7025326ecc6436f6f97e14f">concurrent_unordered_multimap&lt; Key, Element, size_type, unused_key, unused_element, Hasher, Equality, Allocator, count_collisions &gt;</a>
 </li>
 <li>flag_distinct
 : <a class="el" href="structgdf__context__.html#ad37c154f7eb77796490dd56f74f5485c">gdf_context_</a>
@@ -296,7 +293,7 @@ $(function() {
 : <a class="el" href="structcsv__read__arg.html#adf3a23fd53fbf0417e372cbb5e9d90a7">csv_read_arg</a>
 </li>
 <li>insert()
-: <a class="el" href="classconcurrent__unordered__map.html#aafd1df34675cc31a4197ff66c7c78d57">concurrent_unordered_map&lt; Key, Element, unused_key, Hasher, Equality, Allocator, count_collisions &gt;</a>
+: <a class="el" href="classconcurrent__unordered__map.html#a4489faf19027e2748341167811ef6b1c">concurrent_unordered_map&lt; Key, Element, Hasher, Equality, Allocator &gt;</a>
 , <a class="el" href="classconcurrent__unordered__multimap.html#a6851b566c937c2a85c9703e66491d9aa">concurrent_unordered_multimap&lt; Key, Element, size_type, unused_key, unused_element, Hasher, Equality, Allocator, count_collisions &gt;</a>
 </li>
 <li>insert_part()
@@ -380,8 +377,7 @@ $(function() {
 : <a class="el" href="structgdf__column__.html#a728baf018dbceb2b251332fd313478ec">gdf_column_</a>
 </li>
 <li>num_cols
-: <a class="el" href="structcsv__read__arg.html#adf9ce0492da45bdbaa63f95bc2313957">csv_read_arg</a>
-, <a class="el" href="structjson__read__arg.html#adbe734330960ac4fde8b0da2ebce6ca3">json_read_arg</a>
+: <a class="el" href="structjson__read__arg.html#adbe734330960ac4fde8b0da2ebce6ca3">json_read_arg</a>
 </li>
 <li>num_cols_out
 : <a class="el" href="structcsv__read__arg.html#a14d86f0cfad2d55094fb5f43d27b7aee">csv_read_arg</a>
@@ -392,6 +388,9 @@ $(function() {
 <li>num_columns()
 : <a class="el" href="structcudf_1_1table.html#ad5fe6162e8df88c383975f8752a78020">cudf::table</a>
 </li>
+<li>num_dtype
+: <a class="el" href="structcsv__read__arg.html#aca02f44b79211c203bf9e43ab64b14ee">csv_read_arg</a>
+</li>
 <li>num_elements()
 : <a class="el" href="classBitMask.html#a80d7ae3c9487a4d1cb479a324b9195a5">BitMask</a>
 </li>
@@ -400,6 +399,9 @@ $(function() {
 </li>
 <li>num_na_values
 : <a class="el" href="structcsv__read__arg.html#a369a049883d022bcfc3d8110e7e360e7">csv_read_arg</a>
+</li>
+<li>num_names
+: <a class="el" href="structcsv__read__arg.html#ab56ef8df4e43d09767e409903979eaec">csv_read_arg</a>
 </li>
 <li>num_rows()
 : <a class="el" href="structcudf_1_1table.html#a4d674ea49e1147d80e1b2d9e5a3762c2">cudf::table</a>
@@ -422,6 +424,8 @@ $(function() {
 <li>operator()()
 : <a class="el" href="structConvertFunctor.html#a03f67f1bec072aa0442642850afb7aeb">ConvertFunctor</a>
 , <a class="el" href="structrow__comparator.html#a34ba09e0cf5563cdddc65140b0aac1c5">row_comparator&lt; map_type &gt;</a>
+, <a class="el" href="structrow__equality__comparator.html#aa02720f15cdc22f8398b45929a0958f9">row_equality_comparator&lt; nullable &gt;</a>
+, <a class="el" href="structrow__inequality__comparator.html#a6831c8eb8ee40c432ff48892498889bc">row_inequality_comparator&lt; nullable &gt;</a>
 </li>
 <li>OrcDecompressor()
 : <a class="el" href="classorc_1_1OrcDecompressor.html#a6f8a2de1ae99ade0fac52e76370648a7">orc::OrcDecompressor</a>
@@ -454,8 +458,14 @@ $(function() {
 <li>row_comparator()
 : <a class="el" href="structrow__comparator.html#ae5fcc41c68f1c76039bdc0bed3992f17">row_comparator&lt; map_type &gt;</a>
 </li>
+<li>row_equality_comparator()
+: <a class="el" href="structrow__equality__comparator.html#a2620a7281af2532b2643c2f0031a7cde">row_equality_comparator&lt; nullable &gt;</a>
+</li>
 <li>row_group
 : <a class="el" href="structpq__read__arg.html#ac32f7e3f2cf8c2bba7ad71afe81c9ea8">pq_read_arg</a>
+</li>
+<li>row_inequality_comparator()
+: <a class="el" href="structrow__inequality__comparator.html#aa1a623e565b1d6151bfc126279c792b6">row_inequality_comparator&lt; nullable &gt;</a>
 </li>
 </ul>
 
@@ -541,7 +551,7 @@ $(function() {
 
 <h3><a id="index_t"></a>- t -</h3><ul>
 <li>table()
-: <a class="el" href="structcudf_1_1table.html#a8db2758bf56971a9155eb73b51b30ae7">cudf::table</a>
+: <a class="el" href="structcudf_1_1table.html#a9e4b67d3faebe8c996825a47dd94a7de">cudf::table</a>
 </li>
 <li>thousands
 : <a class="el" href="structcsv__read__arg.html#a61219b4c6bf1f023ec0f8126914f3d6f">csv_read_arg</a>

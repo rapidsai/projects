@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.7</span>
+   &#160;<span id="projectnumber">0.8</span>
    </div>
   </td>
  </tr>
@@ -126,12 +126,36 @@ Functions</h2></td></tr>
 <tr class="memitem:aec006bc00092dd8ec47f2c7ca6fe01d4"><td class="memItemLeft" align="right" valign="top">rmm::device_vector&lt; bit_mask::bit_mask_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aec006bc00092dd8ec47f2c7ca6fe01d4">row_bitmask</a> (<a class="el" href="structcudf_1_1table.html">cudf::table</a> const  &amp;<a class="el" href="structcudf_1_1table.html">table</a>, cudaStream_t stream=0)</td></tr>
 <tr class="memdesc:aec006bc00092dd8ec47f2c7ca6fe01d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a bitmask indicating the presence of NULL values in rows of a table.  <a href="#aec006bc00092dd8ec47f2c7ca6fe01d4">More...</a><br /></td></tr>
 <tr class="separator:aec006bc00092dd8ec47f2c7ca6fe01d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a206ad1cc4b21f7f14c5d5f7d304efbda"><td class="memItemLeft" align="right" valign="top"><a id="a206ad1cc4b21f7f14c5d5f7d304efbda"></a>
+<a class="el" href="structgdf__column__.html">gdf_column</a>&#160;</td><td class="memItemRight" valign="bottom"><b>empty_like</b> (<a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;input)</td></tr>
+<tr class="separator:a206ad1cc4b21f7f14c5d5f7d304efbda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29ad9c7f685b0dab321f4e55acfb0776"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__column__.html">gdf_column</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a29ad9c7f685b0dab321f4e55acfb0776">allocate_like</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> const  &amp;input, cudaStream_t stream=0)</td></tr>
+<tr class="memdesc:a29ad9c7f685b0dab321f4e55acfb0776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a new column of the same size and type as the input.  <a href="#a29ad9c7f685b0dab321f4e55acfb0776">More...</a><br /></td></tr>
+<tr class="separator:a29ad9c7f685b0dab321f4e55acfb0776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7e6bf39cb5dd5cdb370d0a562675922"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__column__.html">gdf_column</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aa7e6bf39cb5dd5cdb370d0a562675922">copy</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> const  &amp;input, cudaStream_t stream=0)</td></tr>
+<tr class="memdesc:aa7e6bf39cb5dd5cdb370d0a562675922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new column that is a copy of input.  <a href="#aa7e6bf39cb5dd5cdb370d0a562675922">More...</a><br /></td></tr>
+<tr class="separator:aa7e6bf39cb5dd5cdb370d0a562675922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3588fc0b833a8f2d7213651a05f48c80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1table.html">table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a3588fc0b833a8f2d7213651a05f48c80">empty_like</a> (<a class="el" href="structcudf_1_1table.html">table</a> const  &amp;t)</td></tr>
+<tr class="memdesc:a3588fc0b833a8f2d7213651a05f48c80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a table of empty columns with the same types as the inputs.  <a href="#a3588fc0b833a8f2d7213651a05f48c80">More...</a><br /></td></tr>
+<tr class="separator:a3588fc0b833a8f2d7213651a05f48c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8927039e4f9ea22fc66feeb9b5f13e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1table.html">table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#af8927039e4f9ea22fc66feeb9b5f13e8">allocate_like</a> (<a class="el" href="structcudf_1_1table.html">table</a> const  &amp;t, cudaStream_t stream=0)</td></tr>
+<tr class="memdesc:af8927039e4f9ea22fc66feeb9b5f13e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a table of columns with the same type and allocation size as the input.  <a href="#af8927039e4f9ea22fc66feeb9b5f13e8">More...</a><br /></td></tr>
+<tr class="separator:af8927039e4f9ea22fc66feeb9b5f13e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fae65b5e23d13aec03edef7a8aeacb0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1table.html">table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a9fae65b5e23d13aec03edef7a8aeacb0">copy</a> (<a class="el" href="structcudf_1_1table.html">table</a> const  &amp;t, cudaStream_t stream=0)</td></tr>
+<tr class="memdesc:a9fae65b5e23d13aec03edef7a8aeacb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a table of columns and deep copies the data from an input table.  <a href="#a9fae65b5e23d13aec03edef7a8aeacb0">More...</a><br /></td></tr>
+<tr class="separator:a9fae65b5e23d13aec03edef7a8aeacb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03f762fbe22ea8e824e426d3880b085a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a03f762fbe22ea8e824e426d3880b085a">gather</a> (<a class="el" href="structcudf_1_1table.html">table</a> const  *source_table, gdf_index_type const gather_map[], <a class="el" href="structcudf_1_1table.html">table</a> *destination_table)</td></tr>
 <tr class="memdesc:a03f762fbe22ea8e824e426d3880b085a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gathers the rows (including null values) of a set of source columns into a set of destination columns.  <a href="#a03f762fbe22ea8e824e426d3880b085a">More...</a><br /></td></tr>
 <tr class="separator:a03f762fbe22ea8e824e426d3880b085a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac30995b318ebee41f1ab8e79dc2527c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ac30995b318ebee41f1ab8e79dc2527c0">scatter</a> (<a class="el" href="structcudf_1_1table.html">table</a> const  *source_table, gdf_index_type const scatter_map[], <a class="el" href="structcudf_1_1table.html">table</a> *destination_table)</td></tr>
 <tr class="memdesc:ac30995b318ebee41f1ab8e79dc2527c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scatters the rows (including null values) of a set of source columns into a set of destination columns.  <a href="#ac30995b318ebee41f1ab8e79dc2527c0">More...</a><br /></td></tr>
 <tr class="separator:ac30995b318ebee41f1ab8e79dc2527c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31f4a85729765c154b21d8102be5a9d5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structgdf__column__.html">gdf_column</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a31f4a85729765c154b21d8102be5a9d5">slice</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;input_column, gdf_index_type const  *indices, gdf_size_type num_indices)</td></tr>
+<tr class="memdesc:a31f4a85729765c154b21d8102be5a9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slices a column (including null values) into a set of columns according to a set of indices.  <a href="#a31f4a85729765c154b21d8102be5a9d5">More...</a><br /></td></tr>
+<tr class="separator:a31f4a85729765c154b21d8102be5a9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69299f48fdcd25864a2f560e55d18ea9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structgdf__column__.html">gdf_column</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a69299f48fdcd25864a2f560e55d18ea9">split</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;input_column, gdf_index_type const  *indices, gdf_size_type num_indices)</td></tr>
+<tr class="memdesc:a69299f48fdcd25864a2f560e55d18ea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a column (including null values) into a set of columns according to a set of indices.  <a href="#a69299f48fdcd25864a2f560e55d18ea9">More...</a><br /></td></tr>
+<tr class="separator:a69299f48fdcd25864a2f560e55d18ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16d269210347c80b2a841daef1a0d136"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__scalar.html">gdf_scalar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a16d269210347c80b2a841daef1a0d136">reduction</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> *col, gdf_reduction_op op, gdf_dtype output_dtype)</td></tr>
 <tr class="memdesc:a16d269210347c80b2a841daef1a0d136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the reduction of the values in all rows of a column This function does not detect overflows in reductions. Using a higher precision <code>dtype</code> may prevent overflow. Only <code>min</code> and <code>max</code> ops are supported for reduction of non-arithmetic types (date32, timestamp, category...). The null values are skipped for the operation. If the column is empty, the member is_valid of the output <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a> will contain <code>false</code>.  <a href="#a16d269210347c80b2a841daef1a0d136">More...</a><br /></td></tr>
 <tr class="separator:a16d269210347c80b2a841daef1a0d136"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,6 +165,12 @@ Functions</h2></td></tr>
 <tr class="memitem:affd8efbc412d65aa608e7ac19eeb3574"><td class="memItemLeft" align="right" valign="top"><a id="affd8efbc412d65aa608e7ac19eeb3574"></a>
 <a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>rolling_window</b> (const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;input_col, gdf_size_type window, gdf_size_type min_periods, gdf_size_type forward_window, gdf_agg_op agg_type, const gdf_size_type *window_col, const gdf_size_type *min_periods_col, const gdf_size_type *forward_window_col, cudaStream_t stream)</td></tr>
 <tr class="separator:affd8efbc412d65aa608e7ac19eeb3574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fba636792abcf96032c639873d14870"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__column__.html">gdf_column</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a5fba636792abcf96032c639873d14870">apply_boolean_mask</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;input, <a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;boolean_mask)</td></tr>
+<tr class="memdesc:a5fba636792abcf96032c639873d14870"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters a column using a column of boolean values as a mask.  <a href="#a5fba636792abcf96032c639873d14870">More...</a><br /></td></tr>
+<tr class="separator:a5fba636792abcf96032c639873d14870"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cb8b53ebafc4439711c5fbb4d31a89b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__column__.html">gdf_column</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a2cb8b53ebafc4439711c5fbb4d31a89b">drop_nulls</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;input)</td></tr>
+<tr class="memdesc:a2cb8b53ebafc4439711c5fbb4d31a89b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters a column to remove null elements.  <a href="#a2cb8b53ebafc4439711c5fbb4d31a89b">More...</a><br /></td></tr>
+<tr class="separator:a2cb8b53ebafc4439711c5fbb4d31a89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2f973d94c67ab3dc1a183c5adb3753d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; gdf_dtype &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ad2f973d94c67ab3dc1a183c5adb3753d">column_dtypes</a> (<a class="el" href="structcudf_1_1table.html">cudf::table</a> const  &amp;<a class="el" href="structcudf_1_1table.html">table</a>)</td></tr>
 <tr class="memdesc:ad2f973d94c67ab3dc1a183c5adb3753d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns vector of the dtypes of the columns in a table.  <a href="#ad2f973d94c67ab3dc1a183c5adb3753d">More...</a><br /></td></tr>
 <tr class="separator:ad2f973d94c67ab3dc1a183c5adb3753d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,8 +179,12 @@ Functions</h2></td></tr>
 <tr class="separator:ada393acb565321d740f2b9950ffe2941"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae62151c46119cd04dc146c9e4175375f"><td class="memTemplParams" colspan="2">template&lt;typename T , typename BinaryOp &gt; </td></tr>
 <tr class="memitem:ae62151c46119cd04dc146c9e4175375f"><td class="memTemplItemLeft" align="right" valign="top">__forceinline__ __device__ T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ae62151c46119cd04dc146c9e4175375f">genericAtomicOperation</a> (T *address, T const &amp;update_value, <a class="el" href="structBinaryOp.html">BinaryOp</a> op)</td></tr>
-<tr class="memdesc:ae62151c46119cd04dc146c9e4175375f"><td class="mdescLeft">&#160;</td><td class="mdescRight">reads the <code>old</code> located at the <code>address</code> in global or shared memory, computes '<a class="el" href="structBinaryOp.html">BinaryOp</a>'('old', 'update_value'), and stores the result back to memory at the same address. These three operations are performed in one atomic transaction.  <a href="#ae62151c46119cd04dc146c9e4175375f">More...</a><br /></td></tr>
+<tr class="memdesc:ae62151c46119cd04dc146c9e4175375f"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute atomic binary operation reads the <code>old</code> located at the <code>address</code> in global or shared memory, computes '<a class="el" href="structBinaryOp.html">BinaryOp</a>'('old', 'update_value'), and stores the result back to memory at the same address. These three operations are performed in one atomic transaction.  <a href="#ae62151c46119cd04dc146c9e4175375f">More...</a><br /></td></tr>
 <tr class="separator:ae62151c46119cd04dc146c9e4175375f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acafbd5dbae09b26c92b964e0122d5fc9"><td class="memTemplParams" colspan="2"><a id="acafbd5dbae09b26c92b964e0122d5fc9"></a>
+template&lt;typename BinaryOp &gt; </td></tr>
+<tr class="memitem:acafbd5dbae09b26c92b964e0122d5fc9"><td class="memTemplItemLeft" align="right" valign="top">__forceinline__ __device__ <a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::bool8</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>genericAtomicOperation</b> (<a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::bool8</a> *address, <a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::bool8</a> const &amp;update_value, <a class="el" href="structBinaryOp.html">BinaryOp</a> op)</td></tr>
+<tr class="separator:acafbd5dbae09b26c92b964e0122d5fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c70f497e88c7cf01dff98c594f0ec51"><td class="memTemplParams" colspan="2"><a id="a9c70f497e88c7cf01dff98c594f0ec51"></a>
 template&lt;class functor_t , typename... Ts&gt; </td></tr>
 <tr class="memitem:a9c70f497e88c7cf01dff98c594f0ec51"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto) CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memTemplItemRight" valign="bottom"><b>type_dispatcher</b> (gdf_dtype dtype, functor_t f, Ts &amp;&amp;... args)</td></tr>
@@ -239,6 +273,128 @@ typedef".</p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whatever is returned by the functor's "operator()". </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a29ad9c7f685b0dab321f4e55acfb0776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29ad9c7f685b0dab321f4e55acfb0776">&#9670;&nbsp;</a></span>allocate_like() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgdf__column__.html">gdf_column</a> cudf::allocate_like </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cudaStream_t&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocates a new column of the same size and type as the input. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The input column to emulate </td></tr>
+    <tr><td class="paramname">stream</td><td>Optional stream in which to perform copies </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>gdf_column An allocated column of same size and type of input </dd></dl>
+
+</div>
+</div>
+<a id="af8927039e4f9ea22fc66feeb9b5f13e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8927039e4f9ea22fc66feeb9b5f13e8">&#9670;&nbsp;</a></span>allocate_like() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcudf_1_1table.html">table</a> cudf::allocate_like </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcudf_1_1table.html">table</a> const &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cudaStream_t&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a table of columns with the same type and allocation size as the input. </p>
+<p>------------------------------------------------------------------------&mdash;* Creates the <code>gdf_column</code> objects, and allocates underlying device memory for each column matching the input columns</p>
+<dl class="section note"><dt>Note</dt><dd>It is the caller's responsibility to free each column's device memory allocation in addition to deleting the <code>gdf_column</code> object for every column in the new table.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>The table to emulate </td></tr>
+    <tr><td class="paramname">stream</td><td>Optional stream in which to perform allocations <h2>table A table of columns with same type and allocation size as input </h2>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5fba636792abcf96032c639873d14870"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fba636792abcf96032c639873d14870">&#9670;&nbsp;</a></span>apply_boolean_mask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgdf__column__.html">gdf_column</a> cudf::apply_boolean_mask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;&#160;</td>
+          <td class="paramname"><em>boolean_mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Filters a column using a column of boolean values as a mask. </p>
+<p>Given an input column and a mask column, an element <code>i</code> from the input column is copied to the output if the corresponding element <code>i</code> in the mask is non-null and <code>true</code>. This operation is stable: the input order is preserved.</p>
+<p>The input and mask columns must be of equal size.</p>
+<p>The output column has size equal to the number of elements in boolean_mask that are both non-null and <code>true</code>. Note that the output column memory is allocated by this function but must be freed by the caller when finished.</p>
+<dl class="section note"><dt>Note</dt><dd>that the <code>boolean_mask</code> may have just boolean data (no valid bitmask), or just a valid bitmask (no boolean data), or it may have both. The filter adapts to these three situations.</dd>
+<dd>
+if <code>input.size</code> is zero, there is no error, and an empty column is returned.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>The input column to filter </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">boolean_mask</td><td>A column of type GDF_BOOL8 used as a mask to filter the input column corresponding index passes the filter. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>gdf_column Column containing copy of all elements of <code>input</code> passing the filter defined by <code>boolean_mask</code>. </dd></dl>
+
+</div>
+</div>
 <a id="ad2f973d94c67ab3dc1a183c5adb3753d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad2f973d94c67ab3dc1a183c5adb3753d">&#9670;&nbsp;</a></span>column_dtypes()</h2>
 
@@ -259,6 +415,146 @@ typedef".</p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">table</td><td>The table to get the column dtypes from <h2>std::vector&lt;gdf_dtype&gt; </h2>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa7e6bf39cb5dd5cdb370d0a562675922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7e6bf39cb5dd5cdb370d0a562675922">&#9670;&nbsp;</a></span>copy() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgdf__column__.html">gdf_column</a> cudf::copy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cudaStream_t&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new column that is a copy of input. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The input column to copy </td></tr>
+    <tr><td class="paramname">stream</td><td>Optional stream in which to perform copies </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>gdf_column A copy of input </dd></dl>
+
+</div>
+</div>
+<a id="a9fae65b5e23d13aec03edef7a8aeacb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fae65b5e23d13aec03edef7a8aeacb0">&#9670;&nbsp;</a></span>copy() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcudf_1_1table.html">table</a> cudf::copy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcudf_1_1table.html">table</a> const &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cudaStream_t&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a table of columns and deep copies the data from an input table. </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>It is the caller's responsibility to free each column's device memory allocation in addition to deleting the <code>gdf_column</code> object for every column in the new table.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td></td></tr>
+    <tr><td class="paramname">stream</td><td><h2>table </h2>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2cb8b53ebafc4439711c5fbb4d31a89b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cb8b53ebafc4439711c5fbb4d31a89b">&#9670;&nbsp;</a></span>drop_nulls()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgdf__column__.html">gdf_column</a> cudf::drop_nulls </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Filters a column to remove null elements. </p>
+<p>Given an input column an element <code>i</code> from the input column is copied to the output if the corresponding element <code>i</code> in the input's valid bitmask is non-null.</p>
+<p>The output column has size equal to the number of elements in boolean_mask that are both non-null and <code>true</code>. Note that the output column memory is allocated by this function but must be freed by the caller when finished.</p>
+<p>If the input column is not nullable, this function just copies the input to the output.</p>
+<ul>
+<li><dl class="section note"><dt>Note</dt><dd>if <code>input.size</code> is zero, there is no error, and an empty column is returned.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>The input column to filter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>gdf_column Column containing copy of all non-null elements of <code>input</code>. </dd></dl>
+</li>
+</ul>
+
+</div>
+</div>
+<a id="a3588fc0b833a8f2d7213651a05f48c80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3588fc0b833a8f2d7213651a05f48c80">&#9670;&nbsp;</a></span>empty_like()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcudf_1_1table.html">table</a> cudf::empty_like </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcudf_1_1table.html">table</a> const &amp;&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a table of empty columns with the same types as the inputs. </p>
+<p>------------------------------------------------------------------------&mdash;* Creates the <code>gdf_column</code> objects, but does not allocate any underlying device memory for the column's data or bitmask.</p>
+<dl class="section note"><dt>Note</dt><dd>It is the caller's responsibility to delete the <code>gdf_column</code> object for every column in the new table.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>The input table to emulate <h2>table A table of empty columns of same type as input </h2>
 </td></tr>
   </table>
   </dd>
@@ -382,12 +678,13 @@ template&lt;typename T , typename BinaryOp &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>reads the <code>old</code> located at the <code>address</code> in global or shared memory, computes '<a class="el" href="structBinaryOp.html">BinaryOp</a>'('old', 'update_value'), and stores the result back to memory at the same address. These three operations are performed in one atomic transaction. </p>
-<p>----------------------------------------------------------------------&mdash;* The supported cudf types for <code>genericAtomicOperation</code> are: int8_t, int16_t, int32_t, int64_t, float, double, cudf::date32, cudf::date64, cudf::timestamp, cudf::category.</p>
+<p>compute atomic binary operation reads the <code>old</code> located at the <code>address</code> in global or shared memory, computes '<a class="el" href="structBinaryOp.html">BinaryOp</a>'('old', 'update_value'), and stores the result back to memory at the same address. These three operations are performed in one atomic transaction. </p>
+<p>----------------------------------------------------------------------&mdash;* The supported cudf types for <code>genericAtomicOperation</code> are: int8_t, int16_t, int32_t, int64_t, float, double, cudf::date32, cudf::date64, cudf::timestamp, cudf::category, cudf::nvstring_category, cudf::bool8</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>The address of old value in global or shared memory </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>The value to be added</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>The value to be computed </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">op</td><td>The binary operator used for compute</td></tr>
   </table>
   </dd>
 </dl>
@@ -602,6 +899,105 @@ template&lt;typename T , typename BinaryOp &gt; </div>
 <p>If the same index appears more than once in scatter_map, the result is undefined.</p>
 <p>[in] source_table The columns whose rows will be scattered [in] scatter_map An array that maps rows in the input columns to rows in the output columns. [out] destination_table A preallocated set of columns with a number of rows equal in size to the maximum index contained in scatter_map</p>
 <p>GDF_SUCCESS upon successful completion </p>
+
+</div>
+</div>
+<a id="a31f4a85729765c154b21d8102be5a9d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31f4a85729765c154b21d8102be5a9d5">&#9670;&nbsp;</a></span>slice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structgdf__column__.html">gdf_column</a> * &gt; cudf::slice </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;&#160;</td>
+          <td class="paramname"><em>input_column</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_index_type const *&#160;</td>
+          <td class="paramname"><em>indices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_size_type&#160;</td>
+          <td class="paramname"><em>num_indices</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Slices a column (including null values) into a set of columns according to a set of indices. </p>
+<p>The "slice" function divides part of the input column into multiple intervals of rows using the indices values and it stores the intervals into the output columns. Regarding the interval of indices, a pair of values are taken from the indices array in a consecutive manner. The pair of indices are left-closed and right-open.</p>
+<p>The pairs of indices in the array are required to comply with the following conditions: a, b belongs to Range[0, input column size] a &lt;= b, where the position of a is less or equal to the position of b.</p>
+<p>Exceptional cases for the indices array are: When the values in the pair are equal, the function returns an empty column. When the values in the pair are 'strictly decreasing', the outcome is undefined. When any of the values in the pair don't belong to the range[0, input column size), the outcome is undefined. When the indices array is empty, an empty vector of columns is returned.</p>
+<p>The output columns will be allocated by the function.</p>
+<p>Example: input: {10, 12, 14, 16, 18, 20, 22, 24, 26, 28} indices: {1, 3, 5, 9, 2, 4, 8, 8} output: {{12, 14}, {20, 22, 24, 26}, {14, 16}, {}}</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">input_column</td><td>The input column whose rows will be sliced. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">indices</td><td>An device array of indices that are used to take 'slices' of the input column. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A std::vector of gdf_column*, each of which may have a different number of rows. a different number of rows that are equal to the difference of two consecutive indices in the indices array. </dd></dl>
+
+</div>
+</div>
+<a id="a69299f48fdcd25864a2f560e55d18ea9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69299f48fdcd25864a2f560e55d18ea9">&#9670;&nbsp;</a></span>split()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structgdf__column__.html">gdf_column</a> * &gt; cudf::split </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;&#160;</td>
+          <td class="paramname"><em>input_column</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_index_type const *&#160;</td>
+          <td class="paramname"><em>indices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_size_type&#160;</td>
+          <td class="paramname"><em>num_indices</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Splits a column (including null values) into a set of columns according to a set of indices. </p>
+<p>The "split" function divides the input column into multiple intervals of rows using the indices values and it stores the intervals into the output columns. Regarding the interval of indices, a pair of values are taken from the indices array in a consecutive manner. The pair of indices are left-closed and right-open.</p>
+<p>The indices array ('indices') is require to be a monotonic non-decreasing set. The indices in the array are required to comply with the following conditions: a, b belongs to Range[0, input column size] a &lt;= b, where the position of a is less or equal to the position of b.</p>
+<p>The split function will take a pair of indices from the indices array ('indices') in a consecutive manner. For the first pair, the function will take the value 0 and the first element of the indices array. For the last pair, the function will take the last element of the indices array and the size of the input column.</p>
+<p>Exceptional cases for the indices array are: When the values in the pair are equal, the function return an empty column. When the values in the pair are 'strictly decreasing', the outcome is undefined. When any of the values in the pair don't belong to the range[0, input column size), the outcome is undefined. When the indices array is empty, an empty vector of columns is returned.</p>
+<p>It is required that the output columns will be preallocated. The size of each of the columns can be of different value. The number of columns must be equal to the number of indices in the array plus one. The datatypes of the input column and the output columns must be the same.</p>
+<p>Example: input: {10, 12, 14, 16, 18, 20, 22, 24, 26, 28} indices: {2, 5, 9} output: {{10, 12}, {14, 16, 18}, {20, 22, 24, 26}, {28}}</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">input_column</td><td>The input column whose rows will be split. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">indices</td><td>An device array of indices that are used to divide the input column into multiple columns. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A std::vector of gdf_column*, each of which may have a different size a different number of rows. </dd></dl>
 
 </div>
 </div>

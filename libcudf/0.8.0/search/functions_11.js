@@ -13,6 +13,8 @@ var searchData=
   ['setoutputarguments',['setOutputArguments',['../classJsonReader.html#a44764f692973beccabce01ce398416c8',1,'JsonReader']]],
   ['size',['size',['../classDataSource.html#a03de3eab17acc72df60f6bd50b000acb',1,'DataSource']]],
   ['skip_5fstruct_5ffield',['skip_struct_field',['../classparquet_1_1CompactProtocolReader.html#abab8cf29003d31d662ec9770a631c862',1,'parquet::CompactProtocolReader']]],
+  ['slice',['slice',['../namespacecudf.html#a31f4a85729765c154b21d8102be5a9d5',1,'cudf']]],
+  ['split',['split',['../namespacecudf.html#a69299f48fdcd25864a2f560e55d18ea9',1,'cudf']]],
   ['sumbrackets',['sumBrackets',['../parsing__utils_8cu.html#a89a461bfca75ab83fecf2335f193e50d',1,'parsing_utils.cu']]],
   ['sumbracketskernel',['sumBracketsKernel',['../parsing__utils_8cu.html#a4d604c4937fc5680977b22edabddc34f',1,'parsing_utils.cu']]]
 ];

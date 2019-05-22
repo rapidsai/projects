@@ -3,8 +3,6 @@ var searchData=
   ['b08',['b08',['../uniongdf__data.html#a4adaa7eea0bf9cd24694cee83fbcb36a',1,'gdf_data']]],
   ['begin',['begin',['../structcudf_1_1table.html#ad1321ab60db493f94fdd277925c2a252',1,'cudf::table::begin() const'],['../structcudf_1_1table.html#a73dfa535d78bfdd3f14f87444cefccbf',1,'cudf::table::begin()']]],
   ['binaryop',['BinaryOp',['../structBinaryOp.html',1,'']]],
-  ['bit_5fmask_5fpack_5fop',['bit_mask_pack_op',['../structbit__mask__pack__op.html',1,'']]],
-  ['bit_5for',['bit_or',['../structbit__or.html',1,'']]],
   ['bitmask',['BitMask',['../classBitMask.html',1,'']]],
   ['bitmask_5fops_2ehpp',['bitmask_ops.hpp',['../bitmask__ops_8hpp.html',1,'']]],
   ['bitwise_5fpartitioner',['bitwise_partitioner',['../structbitwise__partitioner.html',1,'']]],

@@ -1,8 +1,6 @@
 var searchData=
 [
   ['binaryop',['BinaryOp',['../structBinaryOp.html',1,'']]],
-  ['bit_5fmask_5fpack_5fop',['bit_mask_pack_op',['../structbit__mask__pack__op.html',1,'']]],
-  ['bit_5for',['bit_or',['../structbit__or.html',1,'']]],
   ['bitmask',['BitMask',['../classBitMask.html',1,'']]],
   ['bitwise_5fpartitioner',['bitwise_partitioner',['../structbitwise__partitioner.html',1,'']]],
   ['bitwiseopdispatcher',['BitwiseOpDispatcher',['../structBitwiseOpDispatcher.html',1,'']]],

@@ -3,5 +3,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="CmdLutElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structCmdLutElement.html"];
+  Node0 [label="column_data_",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structcolumn__data__.html"];
 }
