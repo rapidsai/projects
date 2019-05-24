@@ -86,18 +86,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a15a0f4b72e91b6955a5375cdfc227f88"><td class="memItemLeft" align="right" valign="top"><a id="a15a0f4b72e91b6955a5375cdfc227f88"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>OrcMetadata</b> (const <a class="el" href="classDataSource.html">DataSource</a> &amp;input_)</td></tr>
 <tr class="separator:a15a0f4b72e91b6955a5375cdfc227f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac99d8a645db7b485d389923433fcc8f2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOrcMetadata.html#ac99d8a645db7b485d389923433fcc8f2">select_stripes</a> (int row_start, int &amp;row_count)</td></tr>
-<tr class="memdesc:ac99d8a645db7b485d389923433fcc8f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters and reads the info of only a selection of stripes.  <a href="#ac99d8a645db7b485d389923433fcc8f2">More...</a><br /></td></tr>
-<tr class="separator:ac99d8a645db7b485d389923433fcc8f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339ce9d8111f89d43af97dc50f1ae9fa"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOrcMetadata.html#a339ce9d8111f89d43af97dc50f1ae9fa">select_stripes</a> (int stripe, int row_start, int &amp;row_count)</td></tr>
+<tr class="memdesc:a339ce9d8111f89d43af97dc50f1ae9fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters and reads the info of only a selection of stripes.  <a href="#a339ce9d8111f89d43af97dc50f1ae9fa">More...</a><br /></td></tr>
+<tr class="separator:a339ce9d8111f89d43af97dc50f1ae9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a30d151ceb71c2e02812eb0714b9d40"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOrcMetadata.html#a5a30d151ceb71c2e02812eb0714b9d40">select_columns</a> (const char **use_cols, int use_cols_len, bool &amp;has_timestamp_column)</td></tr>
 <tr class="memdesc:a5a30d151ceb71c2e02812eb0714b9d40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters and reduces down to a selection of columns.  <a href="#a5a30d151ceb71c2e02812eb0714b9d40">More...</a><br /></td></tr>
 <tr class="separator:a5a30d151ceb71c2e02812eb0714b9d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a354fb8b03bded7cf350da31e85810352"><td class="memItemLeft" align="right" valign="top"><a id="a354fb8b03bded7cf350da31e85810352"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>get_total_rows</b> () const</td></tr>
 <tr class="separator:a354fb8b03bded7cf350da31e85810352"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af72e843e3dfa4c4ed611df35caa5bf04"><td class="memItemLeft" align="right" valign="top"><a id="af72e843e3dfa4c4ed611df35caa5bf04"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>get_num_rowgroups</b> () const</td></tr>
-<tr class="separator:af72e843e3dfa4c4ed611df35caa5bf04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a923070449bab6e53f394e757b823a57e"><td class="memItemLeft" align="right" valign="top"><a id="a923070449bab6e53f394e757b823a57e"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>get_num_stripes</b> () const</td></tr>
+<tr class="separator:a923070449bab6e53f394e757b823a57e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9857cd925eac1af07b6b58a989f5fa89"><td class="memItemLeft" align="right" valign="top"><a id="a9857cd925eac1af07b6b58a989f5fa89"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>get_num_columns</b> () const</td></tr>
 <tr class="separator:a9857cd925eac1af07b6b58a989f5fa89"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -110,6 +110,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a721b7d922c111408d84103f517a54aea"><td class="memItemLeft" align="right" valign="top"><a id="a721b7d922c111408d84103f517a54aea"></a>
 <a class="el" href="structorc_1_1FileFooter.html">orc::FileFooter</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ff</b></td></tr>
 <tr class="separator:a721b7d922c111408d84103f517a54aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeac00b14346c0d564a74d447f1646ae6"><td class="memItemLeft" align="right" valign="top"><a id="aeac00b14346c0d564a74d447f1646ae6"></a>
+std::vector&lt; <a class="el" href="structorc_1_1StripeFooter.html">orc::StripeFooter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>stripefooters</b></td></tr>
+<tr class="separator:aeac00b14346c0d564a74d447f1646ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1024509450cef4c2394b71be89413a72"><td class="memItemLeft" align="right" valign="top"><a id="a1024509450cef4c2394b71be89413a72"></a>
 std::unique_ptr&lt; <a class="el" href="classorc_1_1OrcDecompressor.html">orc::OrcDecompressor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>decompressor</b></td></tr>
 <tr class="separator:a1024509450cef4c2394b71be89413a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,8 +173,8 @@ std::unique_ptr&lt; <a class="el" href="classorc_1_1OrcDecompressor.html">orc::O
 
 </div>
 </div>
-<a id="ac99d8a645db7b485d389923433fcc8f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac99d8a645db7b485d389923433fcc8f2">&#9670;&nbsp;</a></span>select_stripes()</h2>
+<a id="a339ce9d8111f89d43af97dc50f1ae9fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a339ce9d8111f89d43af97dc50f1ae9fa">&#9670;&nbsp;</a></span>select_stripes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,6 +185,12 @@ std::unique_ptr&lt; <a class="el" href="classorc_1_1OrcDecompressor.html">orc::O
         <tr>
           <td class="memname">auto OrcMetadata::select_stripes </td>
           <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>stripe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>row_start</em>, </td>
         </tr>
@@ -207,6 +216,7 @@ std::unique_ptr&lt; <a class="el" href="classorc_1_1OrcDecompressor.html">orc::O
 <p>Filters and reads the info of only a selection of stripes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">stripe</td><td>Index of the stripe to select </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">row_start</td><td>Starting row of the selection </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">row_count</td><td>Total number of rows selected</td></tr>
   </table>

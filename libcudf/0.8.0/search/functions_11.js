@@ -4,7 +4,7 @@ var searchData=
   ['scatter',['scatter',['../namespacecudf.html#ac30995b318ebee41f1ab8e79dc2527c0',1,'cudf']]],
   ['select_5fcolumns',['select_columns',['../classOrcMetadata.html#a5a30d151ceb71c2e02812eb0714b9d40',1,'OrcMetadata::select_columns()'],['../structParquetMetadata.html#aa837c8cc5daa3d6faa0094ac7df6c69b',1,'ParquetMetadata::select_columns()']]],
   ['select_5frow_5fgroups',['select_row_groups',['../structParquetMetadata.html#a9e589cb613cb2d9c72f2ba0bb3a57a5f',1,'ParquetMetadata']]],
-  ['select_5fstripes',['select_stripes',['../classOrcMetadata.html#ac99d8a645db7b485d389923433fcc8f2',1,'OrcMetadata']]],
+  ['select_5fstripes',['select_stripes',['../classOrcMetadata.html#a339ce9d8111f89d43af97dc50f1ae9fa',1,'OrcMetadata']]],
   ['serializedtriecontains',['serializedTrieContains',['../trie_8cuh.html#af8de08a98a954c441e90ec47b216549b',1,'trie.cuh']]],
   ['set_5fbit',['set_bit',['../classBitMask.html#a781ddd52abf6c4bb976b5c379641825d',1,'BitMask']]],
   ['set_5fbit_5funsafe',['set_bit_unsafe',['../classBitMask.html#a21b1ef306c6c83a13d8a8650c458d1f7',1,'BitMask']]],

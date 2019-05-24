@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.8.0a1+132.g2f36e57.dirty documentation</title>
+  <title>API Reference &mdash; cudf 0.8.0a1+172.g2c6888e.dirty documentation</title>
   
 
   
@@ -3688,61 +3688,58 @@ on the grouped chunk.</p>
 <dt id="cudf.groupby.legacy_groupby.Groupby.apply_grouped">
 <code class="descclassname">Groupby.</code><code class="descname">apply_grouped</code><span class="sig-paren">(</span><em>self</em>, <em>function</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.groupby.legacy_groupby.Groupby.apply_grouped" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply a transformation function over the grouped chunk.</p>
-<p>This uses numba’s CUDA JIT compiler to convert the Python
+<blockquote>
+<div><p>This uses numba’s CUDA JIT compiler to convert the Python
 transformation function into a CUDA kernel, thus will have a
 compilation overhead during the first run.</p>
-<dl class="field-list simple">
+</div></blockquote>
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>func</strong><span class="classifier">function</span></dt><dd><p>The transformation function that will be executed on the CUDA GPU.</p>
+<dd class="field-odd"><dl>
+<dt><strong>func</strong><span class="classifier">function</span></dt><dd><blockquote>
+<div><p>The transformation function that will be executed on the CUDA GPU.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>incols: list</dt><dd><p>A list of names of input columns.</p>
 </dd>
-<dt><strong>incols: list</strong></dt><dd><p>A list of names of input columns.</p>
+<dt>outcols: list</dt><dd><p>A dictionary of output column names and their dtype.</p>
 </dd>
-<dt><strong>outcols: list</strong></dt><dd><p>A dictionary of output column names and their dtype.</p>
-</dd>
-<dt><strong>kwargs</strong><span class="classifier">dict</span></dt><dd><p>name-value of extra arguments. These values are passed directly into
+<dt>kwargs<span class="classifier">dict</span></dt><dd><p>name-value of extra arguments. These values are passed directly into
 the function.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<p class="rubric">Examples</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cudf</span> <span class="kn">import</span> <span class="n">DataFrame</span>
-<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">cuda</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">()</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;val&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-<span class="n">groups</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;key&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;cudf&#39;</span><span class="p">)</span>
-
-<span class="c1"># Define a function to apply to each group</span>
-<span class="k">def</span> <span class="nf">mult_add</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">out1</span><span class="p">,</span> <span class="n">out2</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cuda</span><span class="o">.</span><span class="n">threadIdx</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="n">cuda</span><span class="o">.</span><span class="n">blockDim</span><span class="o">.</span><span class="n">x</span><span class="p">):</span>
-        <span class="n">out1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">out2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-
-<span class="n">result</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">apply_grouped</span><span class="p">(</span><span class="n">mult_add</span><span class="p">,</span>
-                              <span class="n">incols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;val&#39;</span><span class="p">],</span>
-                              <span class="n">outcols</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;out1&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span>
-                                       <span class="s1">&#39;out2&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">},</span>
-                              <span class="c1"># threads per block</span>
-                              <span class="n">tpb</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Output:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="n">key</span>  <span class="n">val</span> <span class="n">out1</span> <span class="n">out2</span>
-<span class="mi">0</span>    <span class="mi">0</span>    <span class="mi">0</span>    <span class="mi">0</span>    <span class="mi">0</span>
-<span class="mi">1</span>    <span class="mi">0</span>    <span class="mi">1</span>    <span class="mi">0</span>    <span class="mi">1</span>
-<span class="mi">2</span>    <span class="mi">1</span>    <span class="mi">2</span>    <span class="mi">2</span>    <span class="mi">3</span>
-<span class="mi">3</span>    <span class="mi">1</span>    <span class="mi">3</span>    <span class="mi">3</span>    <span class="mi">4</span>
-<span class="mi">4</span>    <span class="mi">2</span>    <span class="mi">4</span>    <span class="mi">8</span>    <span class="mi">6</span>
-<span class="mi">5</span>    <span class="mi">2</span>    <span class="mi">5</span>   <span class="mi">10</span>    <span class="mi">7</span>
-<span class="mi">6</span>    <span class="mi">2</span>    <span class="mi">6</span>   <span class="mi">12</span>    <span class="mi">8</span>
-</pre></div>
-</div>
+</dd>
+</dl>
+<p>“, results)</p>
+<blockquote>
+<div><blockquote>
+<div><p># Note this gives the same result as its pandas equivalent
+pdf = df.to_pandas()
+pd_results = pdf.groupby(‘cat’)[‘val’].rolling(3).mean()</p>
+</div></blockquote>
+<p>Output:
+.. code-block:: python</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Results:</dt><dd><p>cat  val                 avg</p>
+</dd>
+</dl>
+<p>0    1   16
+1    1   45
+2    1   62                41.0
+3    1   45  50.666666666666664
+4    1   26  44.333333333333336
+5    2    5
+6    2   51
+7    2   77  44.333333333333336
+8    2    1                43.0
+9    2   46  41.333333333333336
+[5 more rows]</p>
+</div></blockquote>
+<p>This is functionally equivalent to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html">pandas.DataFrame.Rolling</a></p>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -4036,7 +4033,7 @@ Passing False can improve performance.</p>
 </div>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cudf</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">num_rows</span><span class="p">,</span> <span class="n">num_row_groups</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">read_parquet_metadata</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">num_rows</span><span class="p">,</span> <span class="n">num_row_groups</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_parquet_metadata</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="p">[</span><span class="n">cudf</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">row_group</span><span class="o">=</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">row_groups</span><span class="p">)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
@@ -4081,7 +4078,7 @@ Columns are partitioned in the order they are given</p>
 
 <span class="target" id="module-cudf.io.orc"></span><dl class="function">
 <dt id="cudf.io.orc.read_orc">
-<code class="descclassname">cudf.io.orc.</code><code class="descname">read_orc</code><span class="sig-paren">(</span><em>path</em>, <em>engine='cudf'</em>, <em>columns=None</em>, <em>skip_rows=None</em>, <em>num_rows=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.orc.read_orc" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">cudf.io.orc.</code><code class="descname">read_orc</code><span class="sig-paren">(</span><em>path</em>, <em>engine='cudf'</em>, <em>columns=None</em>, <em>stripe=None</em>, <em>skip_rows=None</em>, <em>num_rows=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.orc.read_orc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an ORC object from the file path, returning a DataFrame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -4091,6 +4088,8 @@ Columns are partitioned in the order they are given</p>
 <dt><strong>engine</strong><span class="classifier">{ ‘cudf’, ‘pyarrow’ }, default ‘cudf’</span></dt><dd><p>Parser engine to use.</p>
 </dd>
 <dt><strong>columns</strong><span class="classifier">list, default None</span></dt><dd><p>If not None, only these columns will be read from the file.</p>
+</dd>
+<dt><strong>stripe: int, default None</strong></dt><dd><p>If not None, only the stripe with the specified index will be read.</p>
 </dd>
 <dt><strong>skip_rows</strong><span class="classifier">int, default None</span></dt><dd><p>If not None, the number of rows to skip from the start of the file.</p>
 </dd>
@@ -4115,6 +4114,45 @@ Columns are partitioned in the order they are given</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cudf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">read_orc</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">  num1                datetime text</span>
+<span class="go">0  123 2018-11-13T12:00:00.000 5451</span>
+<span class="go">1  456 2018-11-14T12:35:01.000 5784</span>
+<span class="go">2  789 2018-11-15T18:02:59.000 6117</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="cudf.io.orc.read_orc_metadata">
+<code class="descclassname">cudf.io.orc.</code><code class="descname">read_orc_metadata</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.orc.read_orc_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read an ORC file’s metadata and schema</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>path</strong><span class="classifier">string or path object</span></dt><dd><p>Path of file to be read</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Total number of rows</dt><dd></dd>
+<dt>Number of stripes</dt><dd></dd>
+<dt>List of column names</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#cudf.io.orc.read_orc" title="cudf.io.orc.read_orc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cudf.io.orc.read_orc</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cudf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">num_rows</span><span class="p">,</span> <span class="n">stripes</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_orc_metadata</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="p">[</span><span class="n">cudf</span><span class="o">.</span><span class="n">read_orc</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">stripe</span><span class="o">=</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stripes</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
 <span class="go">  num1                datetime text</span>
 <span class="go">0  123 2018-11-13T12:00:00.000 5451</span>
