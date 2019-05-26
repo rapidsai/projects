@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.8.0a1+179.g178173e.dirty documentation</title>
+  <title>API Reference &mdash; cudf 0.8.0a1+184.gf10b340.dirty documentation</title>
   
 
   
@@ -296,7 +296,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.copy" title="cudf.dataframe.DataFrame.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>(self[, deep])</p></td>
 <td><p>Returns a copy of this dataframe</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">count</span></code>(self)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">count</span></code>(self, \*\*kwargs)</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.describe" title="cudf.dataframe.DataFrame.describe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code></a>(self[, percentiles, include, exclude])</p></td>
@@ -341,7 +341,7 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.label_encoding" title="cudf.dataframe.DataFrame.label_encoding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_encoding</span></code></a>(self, column, prefix, cats[, …])</p></td>
 <td><p>Encode labels in a column with label encoding.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.mean" title="cudf.dataframe.DataFrame.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>(self[, axis, skipna, level, numeric_only])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.mean" title="cudf.dataframe.DataFrame.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>(self[, numeric_only])</p></td>
 <td><p>Return the mean of the values for the requested axis.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.melt" title="cudf.dataframe.DataFrame.melt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">melt</span></code></a>(self, \*\*kwargs)</p></td>
@@ -1216,7 +1216,7 @@ column names when avoiding conflicts.</p>
 
 <dl class="method">
 <dt id="cudf.dataframe.DataFrame.mean">
-<code class="descname">mean</code><span class="sig-paren">(</span><em>self</em>, <em>axis=None</em>, <em>skipna=None</em>, <em>level=None</em>, <em>numeric_only=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.DataFrame.mean" title="Permalink to this definition">¶</a></dt>
+<code class="descname">mean</code><span class="sig-paren">(</span><em>self</em>, <em>numeric_only=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.DataFrame.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the mean of the values for the requested axis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
