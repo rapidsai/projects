@@ -3,5 +3,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="JsonReader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classJsonReader.html",tooltip="Class used to parse Json input and convert it into gdf columns. "];
+  Node0 [label="json_read_arg",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structjson__read__arg.html",tooltip="Input and output arguments to the read_json interface. "];
 }

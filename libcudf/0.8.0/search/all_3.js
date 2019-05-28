@@ -46,6 +46,7 @@ var searchData=
   ['devicemin',['DeviceMin',['../structcudf_1_1DeviceMin.html',1,'cudf']]],
   ['devicemul',['DeviceMul',['../structDeviceMul.html',1,'']]],
   ['devicene',['DeviceNe',['../structDeviceNe.html',1,'']]],
+  ['devicenot',['DeviceNot',['../structDeviceNot.html',1,'']]],
   ['deviceor',['DeviceOr',['../structcudf_1_1DeviceOr.html',1,'cudf']]],
   ['deviceproduct',['DeviceProduct',['../structcudf_1_1DeviceProduct.html',1,'cudf']]],
   ['devicesin',['DeviceSin',['../structDeviceSin.html',1,'']]],

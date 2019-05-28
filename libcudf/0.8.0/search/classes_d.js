@@ -9,5 +9,5 @@ var searchData=
   ['numerictraits_3c_20cudf_3a_3adate64_20_3e',['NumericTraits&lt; cudf::date64 &gt;',['../structcub_1_1NumericTraits_3_01cudf_1_1date64_01_4.html',1,'cub']]],
   ['numerictraits_3c_20cudf_3a_3anvstring_5fcategory_20_3e',['NumericTraits&lt; cudf::nvstring_category &gt;',['../structcub_1_1NumericTraits_3_01cudf_1_1nvstring__category_01_4.html',1,'cub']]],
   ['numerictraits_3c_20cudf_3a_3atimestamp_20_3e',['NumericTraits&lt; cudf::timestamp &gt;',['../structcub_1_1NumericTraits_3_01cudf_1_1timestamp_01_4.html',1,'cub']]],
-  ['nvstrdesc_5fs',['nvstrdesc_s',['../structparquet_1_1gpu_1_1nvstrdesc__s.html',1,'parquet::gpu::nvstrdesc_s'],['../structorc_1_1gpu_1_1nvstrdesc__s.html',1,'orc::gpu::nvstrdesc_s']]]
+  ['nvstrdesc_5fs',['nvstrdesc_s',['../structorc_1_1gpu_1_1nvstrdesc__s.html',1,'orc::gpu::nvstrdesc_s'],['../structparquet_1_1gpu_1_1nvstrdesc__s.html',1,'parquet::gpu::nvstrdesc_s']]]
 ];
