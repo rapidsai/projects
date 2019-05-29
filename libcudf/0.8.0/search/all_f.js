@@ -9,6 +9,7 @@ var searchData=
   ['parseoptions',['ParseOptions',['../structParseOptions.html',1,'']]],
   ['parsing_5futils_2ecu',['parsing_utils.cu',['../parsing__utils_8cu.html',1,'']]],
   ['parsing_5futils_2ecuh',['parsing_utils.cuh',['../parsing__utils_8cuh.html',1,'']]],
+  ['point_5fin_5fpolygon',['point_in_polygon',['../namespacecudf.html#a30c6e502e3755eefe9a720cdf0f3ed5e',1,'cudf']]],
   ['postscript',['PostScript',['../structorc_1_1PostScript.html',1,'orc']]],
   ['pq_5fread_5farg',['pq_read_arg',['../structpq__read__arg.html',1,'']]],
   ['prefetch_5fqueue_5fs',['prefetch_queue_s',['../structprefetch__queue__s.html',1,'']]],

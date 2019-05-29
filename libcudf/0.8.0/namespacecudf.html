@@ -156,6 +156,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a69299f48fdcd25864a2f560e55d18ea9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structgdf__column__.html">gdf_column</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a69299f48fdcd25864a2f560e55d18ea9">split</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;input_column, gdf_index_type const  *indices, gdf_size_type num_indices)</td></tr>
 <tr class="memdesc:a69299f48fdcd25864a2f560e55d18ea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a column (including null values) into a set of columns according to a set of indices.  <a href="#a69299f48fdcd25864a2f560e55d18ea9">More...</a><br /></td></tr>
 <tr class="separator:a69299f48fdcd25864a2f560e55d18ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30c6e502e3755eefe9a720cdf0f3ed5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__column__.html">gdf_column</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a30c6e502e3755eefe9a720cdf0f3ed5e">point_in_polygon</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;polygon_latitudes, <a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;polygon_longitudes, <a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;query_point_latitudes, <a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;query_point_longitudes)</td></tr>
+<tr class="memdesc:a30c6e502e3755eefe9a720cdf0f3ed5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether or not coordinates (query points) are completely inside a static polygon.  <a href="#a30c6e502e3755eefe9a720cdf0f3ed5e">More...</a><br /></td></tr>
+<tr class="separator:a30c6e502e3755eefe9a720cdf0f3ed5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16d269210347c80b2a841daef1a0d136"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__scalar.html">gdf_scalar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a16d269210347c80b2a841daef1a0d136">reduction</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> *col, gdf_reduction_op op, gdf_dtype output_dtype)</td></tr>
 <tr class="memdesc:a16d269210347c80b2a841daef1a0d136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the reduction of the values in all rows of a column This function does not detect overflows in reductions. Using a higher precision <code>dtype</code> may prevent overflow. Only <code>min</code> and <code>max</code> ops are supported for reduction of non-arithmetic types (date32, timestamp, category...). The null values are skipped for the operation. If the column is empty, the member is_valid of the output <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a> will contain <code>false</code>.  <a href="#a16d269210347c80b2a841daef1a0d136">More...</a><br /></td></tr>
 <tr class="separator:a16d269210347c80b2a841daef1a0d136"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -717,6 +720,65 @@ template&lt;typename T , typename BinaryOp &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true If the table contains one or more null values <h2>false If the table contains zero null values </h2>
 </dd></dl>
+
+</div>
+</div>
+<a id="a30c6e502e3755eefe9a720cdf0f3ed5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c6e502e3755eefe9a720cdf0f3ed5e">&#9670;&nbsp;</a></span>point_in_polygon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgdf__column__.html">gdf_column</a> cudf::point_in_polygon </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;&#160;</td>
+          <td class="paramname"><em>polygon_latitudes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;&#160;</td>
+          <td class="paramname"><em>polygon_longitudes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;&#160;</td>
+          <td class="paramname"><em>query_point_latitudes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;&#160;</td>
+          <td class="paramname"><em>query_point_longitudes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determine whether or not coordinates (query points) are completely inside a static polygon. </p>
+<p>Note: The polygon must not have holes or intersect with itself, but it is not required to be convex.</p>
+<p>The polygon is defined by a set of coordinates (latitudes and longitudes), where the first and last coordinates must have the same value (closed).</p>
+<p>This function supports clockwise and counter-clockwise polygons.</p>
+<p>If a query point is colinear with two contiguous polygon coordinates then this query point isn't inside.</p>
+<p>polygon_latitudes and polygon_longitudes must have equal size.</p>
+<p>point_latitudes and point_longitudes must have equal size.</p>
+<p>All input params must have equal datatypes (for numeric operations).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">polygon_latitudes</td><td>column with latitudes of a polygon </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">polygon_longitudes</td><td>column with longitudes of a polygon </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">query_point_latitudes</td><td>column with latitudes of query points </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">query_point_longitudes</td><td>column with longitudes of query points</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>gdf_column of type GDF_BOOL8 indicating whether the i-th query point is inside (true) or not (false) </dd></dl>
 
 </div>
 </div>
