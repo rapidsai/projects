@@ -168,7 +168,7 @@
 <h2>Linear Regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cuml.LinearRegression">
-<em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">LinearRegression</code><a class="headerlink" href="#cuml.LinearRegression" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">LinearRegression</code><a class="headerlink" href="#cuml.LinearRegression" title="Permalink to this definition">¶</a></dt>
 <dd><p>LinearRegression is a simple machine learning model where the response y is
 modelled by a linear combination of the predictors in X.</p>
 <p>cuML’s LinearRegression expects either a cuDF DataFrame or a NumPy matrix
@@ -264,7 +264,7 @@ is a regression task (predicting a continuous variable).</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-center">
+<table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -286,7 +286,7 @@ is a regression task (predicting a continuous variable).</p>
 </table>
 <dl class="attribute">
 <dt id="cuml.LinearRegression.fit">
-<code class="descname">fit</code><span class="sig-paren">(</span><em>self</em>, <em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LinearRegression.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LinearRegression.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model with X and y.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -302,7 +302,7 @@ is a regression task (predicting a continuous variable).</p>
 
 <dl class="attribute">
 <dt id="cuml.LinearRegression.get_params">
-<code class="descname">get_params</code><span class="sig-paren">(</span><em>self</em>, <em>deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LinearRegression.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LinearRegression.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sklearn style return parameter state</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -315,7 +315,7 @@ is a regression task (predicting a continuous variable).</p>
 
 <dl class="attribute">
 <dt id="cuml.LinearRegression.predict">
-<code class="descname">predict</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LinearRegression.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LinearRegression.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the y for X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -335,7 +335,7 @@ is a regression task (predicting a continuous variable).</p>
 
 <dl class="attribute">
 <dt id="cuml.LinearRegression.set_params">
-<code class="descname">set_params</code><span class="sig-paren">(</span><em>self</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LinearRegression.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LinearRegression.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sklearn style set parameter state to dictionary of params.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -353,7 +353,7 @@ is a regression task (predicting a continuous variable).</p>
 <h2>Ridge Regression<a class="headerlink" href="#ridge-regression" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cuml.Ridge">
-<em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">Ridge</code><a class="headerlink" href="#cuml.Ridge" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">Ridge</code><a class="headerlink" href="#cuml.Ridge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ridge extends LinearRegression by providing L2 regularization on the
 coefficients when predicting response y with a linear combination of the
 predictors in X. It can reduce the variance of the predictors, and improves
@@ -454,7 +454,7 @@ and much more.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-center">
+<table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -476,7 +476,7 @@ and much more.</p>
 </table>
 <dl class="attribute">
 <dt id="cuml.Ridge.fit">
-<code class="descname">fit</code><span class="sig-paren">(</span><em>self</em>, <em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Ridge.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Ridge.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model with X and y.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -492,7 +492,7 @@ and much more.</p>
 
 <dl class="attribute">
 <dt id="cuml.Ridge.get_params">
-<code class="descname">get_params</code><span class="sig-paren">(</span><em>self</em>, <em>deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Ridge.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Ridge.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sklearn style return parameter state</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -505,7 +505,7 @@ and much more.</p>
 
 <dl class="attribute">
 <dt id="cuml.Ridge.predict">
-<code class="descname">predict</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Ridge.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Ridge.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the y for X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -525,7 +525,7 @@ and much more.</p>
 
 <dl class="attribute">
 <dt id="cuml.Ridge.set_params">
-<code class="descname">set_params</code><span class="sig-paren">(</span><em>self</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Ridge.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Ridge.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sklearn style set parameter state to dictionary of params.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -543,7 +543,7 @@ and much more.</p>
 <h2>Stochastic Gradient Descent<a class="headerlink" href="#stochastic-gradient-descent" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cuml.SGD">
-<em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">SGD</code><a class="headerlink" href="#cuml.SGD" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">SGD</code><a class="headerlink" href="#cuml.SGD" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stochastic Gradient Descent is a very common machine learning algorithm
 where one optimizes some cost function via gradient steps. This makes SGD
 very attractive for large problems when the exact solution is hard or even
@@ -616,7 +616,7 @@ cuML coef :  0      0.9834546</p>
 <p>cuML predictions :  [3.0055666 2.0221121]</p>
 </div></blockquote>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-center">
+<table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -635,7 +635,7 @@ cuML coef :  0      0.9834546</p>
 </table>
 <dl class="attribute">
 <dt id="cuml.SGD.fit">
-<code class="descname">fit</code><span class="sig-paren">(</span><em>self</em>, <em>X</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.SGD.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.SGD.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model with X and y.
 Parameters
 ———-
@@ -651,7 +651,7 @@ X : cuDF DataFrame</p>
 
 <dl class="attribute">
 <dt id="cuml.SGD.predict">
-<code class="descname">predict</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.SGD.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.SGD.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the y for X.
 Parameters
 ———-
@@ -667,7 +667,7 @@ X : cuDF DataFrame</p>
 
 <dl class="attribute">
 <dt id="cuml.SGD.predictClass">
-<code class="descname">predictClass</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.SGD.predictClass" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predictClass</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.SGD.predictClass" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the y for X.
 Parameters
 ———-
@@ -688,7 +688,7 @@ X : cuDF DataFrame</p>
 <h2>Nearest Neighbors<a class="headerlink" href="#nearest-neighbors" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cuml.NearestNeighbors">
-<em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">NearestNeighbors</code><a class="headerlink" href="#cuml.NearestNeighbors" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">NearestNeighbors</code><a class="headerlink" href="#cuml.NearestNeighbors" title="Permalink to this definition">¶</a></dt>
 <dd><p>NearestNeighbors is a unsupervised algorithm where if one wants to find the
 “closest” datapoint(s) to new unseen data, one can calculate a suitable
 “distance” between each and every point, and return the top K datapoints
@@ -781,7 +781,7 @@ visualization and regression / classification tasks.</p>
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-center">
+<table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -797,7 +797,7 @@ visualization and regression / classification tasks.</p>
 </table>
 <dl class="attribute">
 <dt id="cuml.NearestNeighbors.fit">
-<code class="descname">fit</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit GPU index for performing nearest neighbor queries.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -811,7 +811,7 @@ visualization and regression / classification tasks.</p>
 
 <dl class="attribute">
 <dt id="cuml.NearestNeighbors.kneighbors">
-<code class="descname">kneighbors</code><span class="sig-paren">(</span><em>self</em>, <em>X</em>, <em>k=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.kneighbors" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kneighbors</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">k=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.kneighbors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Query the GPU index for the k nearest neighbors of column vectors in X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -847,7 +847,7 @@ in X</p>
 <h2>K-Means Clustering<a class="headerlink" href="#k-means-clustering" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cuml.KMeans">
-<em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">KMeans</code><a class="headerlink" href="#cuml.KMeans" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">KMeans</code><a class="headerlink" href="#cuml.KMeans" title="Permalink to this definition">¶</a></dt>
 <dd><p>KMeans is a basic but powerful clustering method which is optimized via
 Expectation Maximization. It randomnly selects K data points in X, and
 computes which samples are close to these points.
@@ -979,7 +979,7 @@ each data cluster.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-center">
+<table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1010,7 +1010,7 @@ each data cluster.</p>
 </table>
 <dl class="attribute">
 <dt id="cuml.KMeans.fit">
-<code class="descname">fit</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute k-means clustering with X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1024,7 +1024,7 @@ each data cluster.</p>
 
 <dl class="attribute">
 <dt id="cuml.KMeans.fit_predict">
-<code class="descname">fit_predict</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.fit_predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.fit_predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute cluster centers and predict cluster index for each sample.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1039,7 +1039,7 @@ each data cluster.</p>
 
 <dl class="attribute">
 <dt id="cuml.KMeans.fit_transform">
-<code class="descname">fit_transform</code><span class="sig-paren">(</span><em>self</em>, <em>input_gdf</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">input_gdf</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute clustering and transform input_gdf to cluster-distance space.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1054,7 +1054,7 @@ each data cluster.</p>
 
 <dl class="attribute">
 <dt id="cuml.KMeans.get_params">
-<code class="descname">get_params</code><span class="sig-paren">(</span><em>self</em>, <em>deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.get_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sklearn style return parameter state</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1067,7 +1067,7 @@ each data cluster.</p>
 
 <dl class="attribute">
 <dt id="cuml.KMeans.predict">
-<code class="descname">predict</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict the closest cluster each sample in X belongs to.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1082,7 +1082,7 @@ each data cluster.</p>
 
 <dl class="attribute">
 <dt id="cuml.KMeans.set_params">
-<code class="descname">set_params</code><span class="sig-paren">(</span><em>self</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.set_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sklearn style set parameter state to dictionary of params.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1095,7 +1095,7 @@ each data cluster.</p>
 
 <dl class="attribute">
 <dt id="cuml.KMeans.transform">
-<code class="descname">transform</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform X to a cluster-distance space.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1115,7 +1115,7 @@ each data cluster.</p>
 <h2>DBSCAN<a class="headerlink" href="#dbscan" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cuml.DBSCAN">
-<em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">DBSCAN</code><a class="headerlink" href="#cuml.DBSCAN" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">DBSCAN</code><a class="headerlink" href="#cuml.DBSCAN" title="Permalink to this definition">¶</a></dt>
 <dd><p>DBSCAN is a very powerful yet fast clustering technique that finds clusters
 where data is concentrated. This allows DBSCAN to generalize to many
 problems if the datapoints tend to congregate in larger groups.</p>
@@ -1196,7 +1196,7 @@ For additional docs, see <a class="reference external" href="http://scikit-learn
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-center">
+<table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1215,7 +1215,7 @@ For additional docs, see <a class="reference external" href="http://scikit-learn
 </table>
 <dl class="attribute">
 <dt id="cuml.DBSCAN.fit">
-<code class="descname">fit</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.DBSCAN.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.DBSCAN.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform DBSCAN clustering from features.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1230,7 +1230,7 @@ n_features)</p>
 
 <dl class="attribute">
 <dt id="cuml.DBSCAN.fit_predict">
-<code class="descname">fit_predict</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.DBSCAN.fit_predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.DBSCAN.fit_predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs clustering on input_gdf and returns cluster labels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1250,7 +1250,7 @@ n_features)</p>
 
 <dl class="attribute">
 <dt id="cuml.DBSCAN.get_param_names">
-<code class="descname">get_param_names</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.DBSCAN.get_param_names" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_param_names</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.DBSCAN.get_param_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1260,7 +1260,7 @@ n_features)</p>
 <h2>Kalman Filter<a class="headerlink" href="#kalman-filter" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cuml.KalmanFilter">
-<em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">KalmanFilter</code><a class="headerlink" href="#cuml.KalmanFilter" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">KalmanFilter</code><a class="headerlink" href="#cuml.KalmanFilter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implements a Kalman filter. You are responsible for setting the
 various state variables to reasonable values; defaults  will
 not give you a functional filter.
@@ -1334,7 +1334,7 @@ current epoch. Read Only.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-center">
+<table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1350,7 +1350,7 @@ current epoch. Read Only.</p>
 </table>
 <dl class="attribute">
 <dt id="cuml.KalmanFilter.predict">
-<code class="descname">predict</code><span class="sig-paren">(</span><em>self</em>, <em>B=None</em>, <em>F=None</em>, <em>Q=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KalmanFilter.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">B=None</em>, <em class="sig-param">F=None</em>, <em class="sig-param">Q=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KalmanFilter.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict next state (prior) using the Kalman filter state propagation
 equations.
 Parameters
@@ -1375,7 +1375,7 @@ filter to use <cite>self.Q</cite>.</p>
 
 <dl class="attribute">
 <dt id="cuml.KalmanFilter.update">
-<code class="descname">update</code><span class="sig-paren">(</span><em>self</em>, <em>z</em>, <em>R=None</em>, <em>H=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KalmanFilter.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">z</em>, <em class="sig-param">R=None</em>, <em class="sig-param">H=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KalmanFilter.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a new measurement (z) to the Kalman filter.
 If z is None, nothing is computed. However, x_post and P_post are
 updated with the prior (x_prior, P_prior), and self.z is set to None.
@@ -1403,7 +1403,7 @@ one call, otherwise self.H will be used.</p>
 <h2>Principal Component Analysis<a class="headerlink" href="#principal-component-analysis" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cuml.PCA">
-<em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">PCA</code><a class="headerlink" href="#cuml.PCA" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">PCA</code><a class="headerlink" href="#cuml.PCA" title="Permalink to this definition">¶</a></dt>
 <dd><p>PCA (Principal Component Analysis) is a fundamental dimensionality
 reduction technique used to combine features in X in linear combinations
 such that each new component captures the most information or variance of
@@ -1559,7 +1559,7 @@ estimated covariance of X.</p>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-center">
+<table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1584,7 +1584,7 @@ estimated covariance of X.</p>
 </table>
 <dl class="attribute">
 <dt id="cuml.PCA.fit">
-<code class="descname">fit</code><span class="sig-paren">(</span><em>self</em>, <em>X</em>, <em>_transform=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.PCA.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">_transform=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.PCA.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model with X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1603,7 +1603,7 @@ estimated covariance of X.</p>
 
 <dl class="attribute">
 <dt id="cuml.PCA.fit_transform">
-<code class="descname">fit_transform</code><span class="sig-paren">(</span><em>self</em>, <em>X</em>, <em>y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.PCA.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.PCA.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model with X and apply the dimensionality reduction on X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1624,12 +1624,12 @@ samples, and n_features is the number of features.</p>
 
 <dl class="attribute">
 <dt id="cuml.PCA.get_param_names">
-<code class="descname">get_param_names</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.PCA.get_param_names" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_param_names</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.PCA.get_param_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.PCA.inverse_transform">
-<code class="descname">inverse_transform</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.PCA.inverse_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.PCA.inverse_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform data back to its original space.</p>
 <p>In other words, return an input X_original whose transform would be X.</p>
 <dl class="field-list simple">
@@ -1650,7 +1650,7 @@ samples and n_components is the number of components.</p>
 
 <dl class="attribute">
 <dt id="cuml.PCA.transform">
-<code class="descname">transform</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.PCA.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.PCA.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply dimensionality reduction to X.</p>
 <p>X is projected on the first principal components previously extracted
 from a training set.</p>
@@ -1677,7 +1677,7 @@ samples and n_features is the number of features.</p>
 <h2>Truncated SVD<a class="headerlink" href="#truncated-svd" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cuml.TruncatedSVD">
-<em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">TruncatedSVD</code><a class="headerlink" href="#cuml.TruncatedSVD" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">TruncatedSVD</code><a class="headerlink" href="#cuml.TruncatedSVD" title="Permalink to this definition">¶</a></dt>
 <dd><p>TruncatedSVD is used to compute the top K singular values and vectors of a
 large matrix X. It is much faster when n_components is small, such as in
 the use of PCA when 3 components is used for 3D visualization.</p>
@@ -1801,7 +1801,7 @@ For additional documentation, see <a class="reference external" href="http://sci
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-center">
+<table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1826,7 +1826,7 @@ For additional documentation, see <a class="reference external" href="http://sci
 </table>
 <dl class="attribute">
 <dt id="cuml.TruncatedSVD.fit">
-<code class="descname">fit</code><span class="sig-paren">(</span><em>self</em>, <em>X</em>, <em>_transform=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">_transform=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit LSI model on training cudf DataFrame X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1840,7 +1840,7 @@ For additional documentation, see <a class="reference external" href="http://sci
 
 <dl class="attribute">
 <dt id="cuml.TruncatedSVD.fit_transform">
-<code class="descname">fit_transform</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit LSI model to X and perform dimensionality reduction on X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1860,12 +1860,12 @@ For additional documentation, see <a class="reference external" href="http://sci
 
 <dl class="attribute">
 <dt id="cuml.TruncatedSVD.get_param_names">
-<code class="descname">get_param_names</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.get_param_names" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_param_names</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.get_param_names" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.TruncatedSVD.inverse_transform">
-<code class="descname">inverse_transform</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.inverse_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.inverse_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform X back to its original space.</p>
 <p>Returns a cuDF DataFrame X_original whose transform would be X.</p>
 <dl class="field-list simple">
@@ -1886,7 +1886,7 @@ For additional documentation, see <a class="reference external" href="http://sci
 
 <dl class="attribute">
 <dt id="cuml.TruncatedSVD.transform">
-<code class="descname">transform</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform dimensionality reduction on X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1911,7 +1911,7 @@ For additional documentation, see <a class="reference external" href="http://sci
 <h2>UMAP<a class="headerlink" href="#umap" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cuml.UMAP">
-<em class="property">class </em><code class="descclassname">cuml.</code><code class="descname">UMAP</code><a class="headerlink" href="#cuml.UMAP" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">UMAP</code><a class="headerlink" href="#cuml.UMAP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uniform Manifold Approximation and Projection
 Finds a low dimensional embedding of the data that approximates
 an underlying manifold.</p>
@@ -2021,7 +2021,7 @@ Reduction
 <a class="reference external" href="https://arxiv.org/abs/1802.03426">https://arxiv.org/abs/1802.03426</a></p></li>
 </ul>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-center">
+<table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -2040,7 +2040,7 @@ Reduction
 </table>
 <dl class="attribute">
 <dt id="cuml.UMAP.fit">
-<code class="descname">fit</code><span class="sig-paren">(</span><em>self</em>, <em>X</em>, <em>y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit X into an embedded space.
 Parameters
 ———-
@@ -2056,7 +2056,7 @@ X : array, shape (n_samples, n_features)</p>
 
 <dl class="attribute">
 <dt id="cuml.UMAP.fit_transform">
-<code class="descname">fit_transform</code><span class="sig-paren">(</span><em>self</em>, <em>X</em>, <em>y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit X into an embedded space and return that transformed
 output.
 Parameters
@@ -2073,7 +2073,7 @@ X : array, shape (n_samples, n_features) or (n_samples, n_samples)</p>
 
 <dl class="attribute">
 <dt id="cuml.UMAP.transform">
-<code class="descname">transform</code><span class="sig-paren">(</span><em>self</em>, <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform X into the existing embedded space and return that
 transformed output.</p>
 <p>Please refer to the reference UMAP implementation for information
