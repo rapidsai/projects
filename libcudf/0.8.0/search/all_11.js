@@ -1,6 +1,8 @@
 var searchData=
 [
   ['raw_5fcsv_5f',['raw_csv_',['../structraw__csv__.html',1,'']]],
+  ['read',['read',['../classcudf_1_1JsonReader_1_1Impl.html#ab552f3ff7bd6624419a63c5a16c0e5c9',1,'cudf::JsonReader::Impl::read()'],['../classcudf_1_1JsonReader.html#abb5c5bad406e6daacc8ff1cc9de965bf',1,'cudf::JsonReader::read()']]],
+  ['read_5fbyte_5frange',['read_byte_range',['../classcudf_1_1JsonReader_1_1Impl.html#a5b49ab8be6824668eb9665c847a385f1',1,'cudf::JsonReader::Impl::read_byte_range()'],['../classcudf_1_1JsonReader.html#ad54c9afbc508c3119da134badcecb724',1,'cudf::JsonReader::read_byte_range()']]],
   ['reduction',['reduction',['../namespacecudf.html#a16d269210347c80b2a841daef1a0d136',1,'cudf']]],
   ['reductionmax',['ReductionMax',['../structcudf_1_1reductions_1_1ReductionMax.html',1,'cudf::reductions']]],
   ['reductionmin',['ReductionMin',['../structcudf_1_1reductions_1_1ReductionMin.html',1,'cudf::reductions']]],

@@ -11,10 +11,11 @@ var searchData=
   ['blocksumarray',['BlockSumArray',['../structBlockSumArray.html',1,'']]],
   ['blocksumpyramid',['BlockSumPyramid',['../classBlockSumPyramid.html',1,'']]],
   ['brotli_5fdictionary_5fs',['brotli_dictionary_s',['../structbrotli__dictionary__s.html',1,'']]],
-  ['buffer_5fsize',['buffer_size',['../structcsv__read__arg.html#af495562c6d61625c78bc981804ba7617',1,'csv_read_arg::buffer_size()'],['../structorc__read__arg.html#a7d6fc03d4f1903afe8f56c2f3c03b082',1,'orc_read_arg::buffer_size()'],['../structpq__read__arg.html#a317b41dda9d93b56b0092d6638548cd9',1,'pq_read_arg::buffer_size()'],['../structjson__read__arg.html#ae97455cccb0b6c27e01460647f3619c8',1,'json_read_arg::buffer_size()']]],
+  ['buffer_5fsize',['buffer_size',['../structcsv__read__arg.html#af495562c6d61625c78bc981804ba7617',1,'csv_read_arg::buffer_size()'],['../structorc__read__arg.html#a7d6fc03d4f1903afe8f56c2f3c03b082',1,'orc_read_arg::buffer_size()'],['../structpq__read__arg.html#a317b41dda9d93b56b0092d6638548cd9',1,'pq_read_arg::buffer_size()']]],
   ['bufferdesc',['BufferDesc',['../structIpcParser_1_1BufferDesc.html',1,'IpcParser']]],
-  ['byte_5frange_5foffset',['byte_range_offset',['../structcsv__read__arg.html#a345f9c845cc2c61269a171a3caf90ead',1,'csv_read_arg::byte_range_offset()'],['../structjson__read__arg.html#a03d236ec92b39783faf5609d25a70723',1,'json_read_arg::byte_range_offset()']]],
-  ['byte_5frange_5fsize',['byte_range_size',['../structcsv__read__arg.html#a138b7c7e28e0f671d75a98ad90e9c3d6',1,'csv_read_arg::byte_range_size()'],['../structjson__read__arg.html#a631786b2721631dc8bce88906bfd5a89',1,'json_read_arg::byte_range_size()']]],
+  ['byte_5frange_5foffset',['byte_range_offset',['../structcsv__read__arg.html#a345f9c845cc2c61269a171a3caf90ead',1,'csv_read_arg']]],
+  ['byte_5frange_5fsize',['byte_range_size',['../structcsv__read__arg.html#a138b7c7e28e0f671d75a98ad90e9c3d6',1,'csv_read_arg']]],
   ['byte_5fstream_5fs',['byte_stream_s',['../structparquet_1_1gpu_1_1byte__stream__s.html',1,'parquet::gpu']]],
+  ['byte_5fwidth',['byte_width',['../namespacecudf.html#aaf37d87f3ef5bb0736ad2dfeeac3e766',1,'cudf']]],
   ['bz2_5ffile_5fheader_5fs',['bz2_file_header_s',['../structbz2__file__header__s.html',1,'']]]
 ];

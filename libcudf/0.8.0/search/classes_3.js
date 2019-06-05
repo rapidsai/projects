@@ -20,6 +20,7 @@ var searchData=
   ['devicecast',['DeviceCast',['../structDeviceCast.html',1,'']]],
   ['deviceceil',['DeviceCeil',['../structDeviceCeil.html',1,'']]],
   ['devicecos',['DeviceCos',['../structDeviceCos.html',1,'']]],
+  ['devicecount',['DeviceCount',['../structcudf_1_1DeviceCount.html',1,'cudf']]],
   ['devicediv',['DeviceDiv',['../structDeviceDiv.html',1,'']]],
   ['deviceeq',['DeviceEq',['../structDeviceEq.html',1,'']]],
   ['deviceexp',['DeviceExp',['../structDeviceExp.html',1,'']]],

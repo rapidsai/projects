@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['read',['read',['../classcudf_1_1JsonReader_1_1Impl.html#ab552f3ff7bd6624419a63c5a16c0e5c9',1,'cudf::JsonReader::Impl::read()'],['../classcudf_1_1JsonReader.html#abb5c5bad406e6daacc8ff1cc9de965bf',1,'cudf::JsonReader::read()']]],
+  ['read_5fbyte_5frange',['read_byte_range',['../classcudf_1_1JsonReader_1_1Impl.html#a5b49ab8be6824668eb9665c847a385f1',1,'cudf::JsonReader::Impl::read_byte_range()'],['../classcudf_1_1JsonReader.html#ad54c9afbc508c3119da134badcecb724',1,'cudf::JsonReader::read_byte_range()']]],
   ['reduction',['reduction',['../namespacecudf.html#a16d269210347c80b2a841daef1a0d136',1,'cudf']]],
   ['row_5fbitmask',['row_bitmask',['../namespacecudf.html#aec006bc00092dd8ec47f2c7ca6fe01d4',1,'cudf']]],
   ['row_5fcomparator',['row_comparator',['../structrow__comparator.html#ae5fcc41c68f1c76039bdc0bed3992f17',1,'row_comparator']]],

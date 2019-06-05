@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['walkschema',['WalkSchema',['../classparquet_1_1CompactProtocolReader.html#a64f54787055085f1cc6a6f88713076a9',1,'parquet::CompactProtocolReader']]]
+  ['validate',['validate',['../namespacecudf.html#afa70e889e2b83eba15ed8e8e864dd3ff',1,'cudf']]]
 ];

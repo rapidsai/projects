@@ -1,7 +1,7 @@
 var searchData=
 [
   ['d_5fsums',['d_sums',['../structBlockSumArray.html#ad62d39263d9b8a1deaa6a774a45fe8a5',1,'BlockSumArray']]],
-  ['data',['data',['../structcsv__read__arg.html#a07311a60d8ccd7dc263693b7ad47b6bd',1,'csv_read_arg::data()'],['../structorc__read__arg.html#a665647a9ea83ba96b38d1d101c278a69',1,'orc_read_arg::data()'],['../structpq__read__arg.html#a7c8e3f60e9fae14b99f6165f4e516846',1,'pq_read_arg::data()'],['../structjson__read__arg.html#ad50a7bbd3ce2130f639eef30cacf50e5',1,'json_read_arg::data()'],['../structgdf__scalar.html#aa3111e8e7c1d06542999df1b65e25816',1,'gdf_scalar::data()'],['../structgdf__column__.html#af1b8c6631a36f6af309c26d1e40accac',1,'gdf_column_::data()']]],
+  ['data',['data',['../structcsv__read__arg.html#a07311a60d8ccd7dc263693b7ad47b6bd',1,'csv_read_arg::data()'],['../structorc__read__arg.html#a665647a9ea83ba96b38d1d101c278a69',1,'orc_read_arg::data()'],['../structpq__read__arg.html#a7c8e3f60e9fae14b99f6165f4e516846',1,'pq_read_arg::data()'],['../structgdf__scalar.html#aa3111e8e7c1d06542999df1b65e25816',1,'gdf_scalar::data()'],['../structgdf__column__.html#af1b8c6631a36f6af309c26d1e40accac',1,'gdf_column_::data()']]],
   ['datapageheader',['DataPageHeader',['../structparquet_1_1DataPageHeader.html',1,'parquet']]],
   ['datasource',['DataSource',['../classDataSource.html',1,'DataSource'],['../classDataSource.html#a65dab0c773371c6514029a6bd9dbed84',1,'DataSource::DataSource(const char *filepath)'],['../classDataSource.html#a2431c6713e1152261bc0d355878fc15c',1,'DataSource::DataSource(const char *bufferpath, size_t length)'],['../classDataSource.html#a59533f7169de4af45c2e8ffe756239b6',1,'DataSource::DataSource(std::shared_ptr&lt; arrow::io::RandomAccessFile &gt; file)']]],
   ['dayfirst',['dayfirst',['../structcsv__read__arg.html#a473154c9d5d410c8090e29bcbc22e9bb',1,'csv_read_arg']]],
@@ -12,6 +12,7 @@ var searchData=
   ['delim_5fwhitespace',['delim_whitespace',['../structcsv__read__arg.html#a4b7dc9783c0216f800f8fc8a4443bd17',1,'csv_read_arg']]],
   ['delimiter',['delimiter',['../structcsv__read__arg.html#a0a57c07fa15c344435a9e0c4922a4732',1,'csv_read_arg']]],
   ['destroy',['destroy',['../classdevice__table.html#ad01f25b401518dfb05817a40e277815c',1,'device_table']]],
+  ['detectjsondatatypes',['detectJsonDataTypes',['../namespacecudf.html#a08fe31ebcf8c4f0cde01ce0e4c34f387',1,'cudf']]],
   ['device_5fatomics_2ecuh',['device_atomics.cuh',['../device__atomics_8cuh.html',1,'']]],
   ['device_5fbuffer',['device_buffer',['../classdevice__buffer.html',1,'']]],
   ['device_5fbuffer_3c_20char_20_3e',['device_buffer&lt; char &gt;',['../classdevice__buffer.html',1,'']]],
@@ -30,6 +31,7 @@ var searchData=
   ['devicecast',['DeviceCast',['../structDeviceCast.html',1,'']]],
   ['deviceceil',['DeviceCeil',['../structDeviceCeil.html',1,'']]],
   ['devicecos',['DeviceCos',['../structDeviceCos.html',1,'']]],
+  ['devicecount',['DeviceCount',['../structcudf_1_1DeviceCount.html',1,'cudf']]],
   ['devicediv',['DeviceDiv',['../structDeviceDiv.html',1,'']]],
   ['deviceeq',['DeviceEq',['../structDeviceEq.html',1,'']]],
   ['deviceexp',['DeviceExp',['../structDeviceExp.html',1,'']]],
@@ -65,7 +67,7 @@ var searchData=
   ['dst_5ftransition_5fs',['dst_transition_s',['../structdst__transition__s.html',1,'']]],
   ['dt32',['dt32',['../uniongdf__data.html#aaa925f226476d7ebec284b2f31d50363',1,'gdf_data']]],
   ['dt64',['dt64',['../uniongdf__data.html#ad6a883d72582b53b3ddad0410580850b',1,'gdf_data']]],
-  ['dtype',['dtype',['../structcsv__read__arg.html#abbdd5cb96e423e646e0f648182706d48',1,'csv_read_arg::dtype()'],['../structjson__read__arg.html#aa8d37339462c750017297ff4e9d4f6e6',1,'json_read_arg::dtype()'],['../structgdf__scalar.html#a4d97d95e84d4479937237349777e694c',1,'gdf_scalar::dtype()'],['../structgdf__column__.html#a3e4d04127fb96d0c7debbe8d4e9d577f',1,'gdf_column_::dtype()']]],
+  ['dtype',['dtype',['../structcudf_1_1json__reader__args.html#a2ad49cae6cbe042b1213f9a82d729071',1,'cudf::json_reader_args::dtype()'],['../structcsv__read__arg.html#abbdd5cb96e423e646e0f648182706d48',1,'csv_read_arg::dtype()'],['../structgdf__scalar.html#a4d97d95e84d4479937237349777e694c',1,'gdf_scalar::dtype()'],['../structgdf__column__.html#a3e4d04127fb96d0c7debbe8d4e9d577f',1,'gdf_column_::dtype()']]],
   ['dtype_5finfo',['dtype_info',['../structgdf__column__.html#ab38a744b851e4e6827e69475a25cbbf9',1,'gdf_column_']]],
   ['dtypedesc',['DTypeDesc',['../structIpcParser_1_1DTypeDesc.html',1,'IpcParser']]]
 ];

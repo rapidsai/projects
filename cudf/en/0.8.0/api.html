@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.8.0a1+371.g7f1707c.dirty documentation</title>
+  <title>API Reference &mdash; cudf 0.8.0a1+484.gd2faef8.dirty documentation</title>
   
 
   
@@ -1284,7 +1284,7 @@ default: ‘value’</p>
 
 <dl class="method">
 <dt id="cudf.dataframe.DataFrame.merge">
-<code class="sig-name descname">merge</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">right</em>, <em class="sig-param">on=None</em>, <em class="sig-param">how='inner'</em>, <em class="sig-param">left_on=None</em>, <em class="sig-param">right_on=None</em>, <em class="sig-param">left_index=False</em>, <em class="sig-param">right_index=False</em>, <em class="sig-param">lsuffix=None</em>, <em class="sig-param">rsuffix=None</em>, <em class="sig-param">type=''</em>, <em class="sig-param">method='hash'</em>, <em class="sig-param">indicator=False</em>, <em class="sig-param">suffixes=('_x'</em>, <em class="sig-param">'_y')</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.DataFrame.merge" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">merge</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">right</em>, <em class="sig-param">on=None</em>, <em class="sig-param">how='inner'</em>, <em class="sig-param">left_on=None</em>, <em class="sig-param">right_on=None</em>, <em class="sig-param">left_index=False</em>, <em class="sig-param">right_index=False</em>, <em class="sig-param">sort=False</em>, <em class="sig-param">lsuffix=None</em>, <em class="sig-param">rsuffix=None</em>, <em class="sig-param">type=''</em>, <em class="sig-param">method='hash'</em>, <em class="sig-param">indicator=False</em>, <em class="sig-param">suffixes=('_x'</em>, <em class="sig-param">'_y')</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.DataFrame.merge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Merge GPU DataFrame objects by performing a database-style join
 operation by columns or indexes.</p>
 <dl class="field-list">
@@ -1296,6 +1296,23 @@ both DataFrames.</p>
 <p>If on is None and not merging on indexes then
 this defaults to the intersection of the columns
 in both DataFrames.</p>
+</dd>
+<dt><strong>how</strong><span class="classifier">{‘left’, ‘outer’, ‘inner’}, default ‘inner’</span></dt><dd><dl>
+<dt>Type of merge to be performed.</dt><dd><dl class="simple">
+<dt>left: use only keys from left frame, similar to a SQL left</dt><dd><p>outer join; preserve key order.</p>
+</dd>
+</dl>
+<p>right: not supported.
+outer: use union of keys from both frames, similar to a SQL</p>
+<blockquote>
+<div><p>full outer join; sort keys lexicographically.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>inner: use intersection of keys from both frames, similar to</dt><dd><p>a SQL inner join; preserve the order of the left keys.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd>
 <dt><strong>left_on</strong><span class="classifier">label or list, or array-like</span></dt><dd><p>Column or index level names to join on in the left DataFrame.
 Can also be an array or list of arrays of the length of the
@@ -1309,14 +1326,15 @@ right DataFrame. These arrays are treated as if they are columns.</p>
 </dd>
 <dt><strong>right_index</strong><span class="classifier">bool, default False</span></dt><dd><p>Use the index from the right DataFrame as the join key.</p>
 </dd>
-<dt><strong>how</strong><span class="classifier">str, defaults to ‘left’</span></dt><dd><p>Only accepts ‘left’
-left: use only keys from left frame, similar to
-a SQL left outer join; preserve key order</p>
+<dt><strong>sort</strong><span class="classifier">bool, default False</span></dt><dd><p>Sort the join keys lexicographically in the result DataFrame.
+If False, the order of the join keys depends on the join type
+(see the <cite>how</cite> keyword).</p>
 </dd>
 <dt><strong>suffixes: Tuple[str, str], defaults to (‘_x’, ‘_y’)</strong></dt><dd><p>Suffixes applied to overlapping column names on the left and right
 sides</p>
 </dd>
-<dt><strong>type</strong><span class="classifier">str, defaults to ‘hash’</span></dt><dd></dd>
+<dt><strong>method</strong><span class="classifier">{‘hash’, ‘sort’}, default ‘hash’</span></dt><dd><p>The implementation method to be used for the operation.</p>
+</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -1550,7 +1568,7 @@ the column axis’ values.</p>
 </dd>
 <dt><strong>copy</strong><span class="classifier">boolean, default True</span></dt><dd><p>Also copy underlying data</p>
 </dd>
-<dt><strong>inplace: boolean, default False</strong></dt><dd><p>Retrun new DataFrame.  If True, assign columns without copy</p>
+<dt><strong>inplace: boolean, default False</strong></dt><dd><p>Return new DataFrame.  If True, assign columns without copy</p>
 </dd>
 </dl>
 </dd>

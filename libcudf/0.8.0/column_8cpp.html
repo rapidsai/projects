@@ -79,6 +79,7 @@ $(function() {
 <code>#include &quot;utilities/cudf_utils.h&quot;</code><br />
 <code>#include &quot;utilities/error_utils.hpp&quot;</code><br />
 <code>#include &quot;rmm/rmm.h&quot;</code><br />
+<code>#include &lt;utilities/column_utils.hpp&gt;</code><br />
 <code>#include &quot;utilities/type_dispatcher.hpp&quot;</code><br />
 <code>#include &quot;string/nvcategory_util.hpp&quot;</code><br />
 <code>#include &quot;bitmask/legacy_bitmask.hpp&quot;</code><br />
@@ -114,11 +115,6 @@ gdf_error&#160;</td><td class="memItemRight" valign="bottom"><b>gdf_mask_concat<
 <tr class="memitem:afa150e61d61d55a9ac5a8e1e4c4e78fe"><td class="memItemLeft" align="right" valign="top">gdf_error&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="column_8cpp.html#afa150e61d61d55a9ac5a8e1e4c4e78fe">gdf_column_free</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> *column)</td></tr>
 <tr class="memdesc:afa150e61d61d55a9ac5a8e1e4c4e78fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the CUDA device memory of a gdf_column.  <a href="#afa150e61d61d55a9ac5a8e1e4c4e78fe">More...</a><br /></td></tr>
 <tr class="separator:afa150e61d61d55a9ac5a8e1e4c4e78fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8881b750d65648f38ec25cf750d6420a"><td class="memItemLeft" align="right" valign="top">gdf_size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="column_8cpp.html#a8881b750d65648f38ec25cf750d6420a">gdf_dtype_size</a> (gdf_dtype dtype)</td></tr>
-<tr class="memdesc:a8881b750d65648f38ec25cf750d6420a"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the size in bytes of the specified gdf_dtype  <a href="#a8881b750d65648f38ec25cf750d6420a">More...</a><br /></td></tr>
-<tr class="separator:a8881b750d65648f38ec25cf750d6420a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2843b44e974ef17991af21c671a00747"><td class="memItemLeft" align="right" valign="top">gdf_error&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="column_8cpp.html#a2843b44e974ef17991af21c671a00747">get_column_byte_width</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> *col, int *width)</td></tr>
-<tr class="separator:a2843b44e974ef17991af21c671a00747"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Operations on GDF columns. </p>
@@ -346,69 +342,6 @@ gdf_error&#160;</td><td class="memItemRight" valign="bottom"><b>gdf_mask_concat<
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>gdf_error returns GDF_SUCCESS upon successful creation. </dd></dl>
-
-</div>
-</div>
-<a id="a8881b750d65648f38ec25cf750d6420a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8881b750d65648f38ec25cf750d6420a">&#9670;&nbsp;</a></span>gdf_dtype_size()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">gdf_size_type gdf_dtype_size </td>
-          <td>(</td>
-          <td class="paramtype">gdf_dtype&#160;</td>
-          <td class="paramname"><em>dtype</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>returns the size in bytes of the specified gdf_dtype </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dtype</td><td>the data type for which to return the size </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>gdf_size_type size in bytes </dd></dl>
-
-</div>
-</div>
-<a id="a2843b44e974ef17991af21c671a00747"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2843b44e974ef17991af21c671a00747">&#9670;&nbsp;</a></span>get_column_byte_width()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">gdf_error get_column_byte_width </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td>
-          <td class="paramname"><em>col</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>width</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">gdf_column</td><td>whose data type's byte width will be determined </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">the</td><td>byte width of the data type</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>gdf_error GDF_SUCCESS, or GDF_UNSUPPORTED_DTYPE if col has an invalid datatype </dd></dl>
 
 </div>
 </div>

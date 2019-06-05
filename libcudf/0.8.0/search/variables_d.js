@@ -11,8 +11,8 @@ var searchData=
   ['skipfooter',['skipfooter',['../structraw__csv__.html#abafc02aa99d8f2cffda8f425afbc649e',1,'raw_csv_::skipfooter()'],['../structcsv__read__arg.html#a5884681e269f7696cf7cab881056589d',1,'csv_read_arg::skipfooter()']]],
   ['skipinitialspace',['skipinitialspace',['../structcsv__read__arg.html#af45abee5cdab1f0a42def17c9b9cea94',1,'csv_read_arg']]],
   ['skiprows',['skiprows',['../structraw__csv__.html#aa64100c71fa9a3c3a80de75a111a4792',1,'raw_csv_::skiprows()'],['../structcsv__read__arg.html#ac4e846360b19413d1a48f2b816c2692d',1,'csv_read_arg::skiprows()']]],
-  ['source',['source',['../structorc__read__arg.html#a0888c4696245b14dbee3a9c55e02ff6a',1,'orc_read_arg::source()'],['../structpq__read__arg.html#ab12c633379001dd3706ee6543029aa92',1,'pq_read_arg::source()'],['../structjson__read__arg.html#a273e5ea148b28ad18f28268261f02328',1,'json_read_arg::source()']]],
-  ['source_5ftype',['source_type',['../structorc__read__arg.html#af2833ffca4d8510ac5dafe9b80238210',1,'orc_read_arg::source_type()'],['../structpq__read__arg.html#a8a34bfb7d7aefde3b01db850e3e92b9e',1,'pq_read_arg::source_type()'],['../structjson__read__arg.html#a66a598be0ed8bcb1f3df6a98617cd74a',1,'json_read_arg::source_type()']]],
+  ['source',['source',['../structcudf_1_1json__reader__args.html#a31c42856d332a1995410bbef1a6a132a',1,'cudf::json_reader_args::source()'],['../structorc__read__arg.html#a0888c4696245b14dbee3a9c55e02ff6a',1,'orc_read_arg::source()'],['../structpq__read__arg.html#ab12c633379001dd3706ee6543029aa92',1,'pq_read_arg::source()']]],
+  ['source_5ftype',['source_type',['../structcudf_1_1json__reader__args.html#ad3ef9c791dbb80239eb6dd388a5e7850',1,'cudf::json_reader_args::source_type()'],['../structorc__read__arg.html#af2833ffca4d8510ac5dafe9b80238210',1,'orc_read_arg::source_type()'],['../structpq__read__arg.html#a8a34bfb7d7aefde3b01db850e3e92b9e',1,'pq_read_arg::source_type()']]],
   ['strings_5fto_5fcategorical',['strings_to_categorical',['../structpq__read__arg.html#ab29cc1433bb4d25a8d47ea83d74424ae',1,'pq_read_arg']]],
   ['stripe',['stripe',['../structorc__read__arg.html#a238c4400882b6b8c638689925292f412',1,'orc_read_arg']]]
 ];

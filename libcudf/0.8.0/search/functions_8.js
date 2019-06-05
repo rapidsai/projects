@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['impl',['Impl',['../classcudf_1_1JsonReader_1_1Impl.html#a54bacd460fd4b7189d64df7eb01fd243',1,'cudf::JsonReader::Impl']]],
+  ['infercompressiontype',['inferCompressionType',['../namespacecudf.html#a9f498ceaf6b3695a39284db2a0c681f0',1,'cudf']]],
   ['initschema',['InitSchema',['../classparquet_1_1CompactProtocolReader.html#a6625ec889444f0aaed50aef8c8700c3e',1,'parquet::CompactProtocolReader']]],
   ['insert',['insert',['../classconcurrent__unordered__map.html#a4489faf19027e2748341167811ef6b1c',1,'concurrent_unordered_map::insert(const value_type &amp;x, aggregation_type op, comparison_type keys_equal=key_equal(), bool precomputed_hash=false, hash_value_type precomputed_hash_value=0)'],['../classconcurrent__unordered__map.html#afc67451d9ec7643eb22d9a06703974e3',1,'concurrent_unordered_map::insert(value_type const &amp;insert_pair)'],['../classconcurrent__unordered__multimap.html#a6851b566c937c2a85c9703e66491d9aa',1,'concurrent_unordered_multimap::insert()']]],
   ['insert_5fpart',['insert_part',['../classconcurrent__unordered__multimap.html#a4d67762b3f22d37e28c38ca9c29322b9',1,'concurrent_unordered_multimap']]],

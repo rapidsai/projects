@@ -76,10 +76,18 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1ColumnInfo.html">ColumnInfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1ConvertFunctor.html">ConvertFunctor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><h2>Functor for converting plain text data to cuDF data type value. </h2>
+ <a href="structcudf_1_1ConvertFunctor.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1cuda__error.html">cuda_error</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when a CUDA error is encountered.  <a href="structcudf_1_1cuda__error.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1DeviceAnd.html">DeviceAnd</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1DeviceCount.html">DeviceCount</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1DeviceMax.html">DeviceMax</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -93,6 +101,13 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1DeviceXor.html">DeviceXor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1json__reader__args.html">json_reader_args</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><h2>Arguments to the read_json interface. </h2>
+ <a href="structcudf_1_1json__reader__args.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1JsonReader.html">JsonReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class used to parse Json input and convert it into gdf columns.  <a href="classcudf_1_1JsonReader.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1logic__error.html">logic_error</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when logical precondition is violated.  <a href="structcudf_1_1logic__error.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -102,6 +117,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:aa79c8fb8912174ea99b556ee889c093c"><td class="memItemLeft" align="right" valign="top"><a id="aa79c8fb8912174ea99b556ee889c093c"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>string_pair</b> = std::pair&lt; const char *, size_t &gt;</td></tr>
+<tr class="separator:aa79c8fb8912174ea99b556ee889c093c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c6e344a72404039eef838a8cb39295b"><td class="memItemLeft" align="right" valign="top"><a id="a8c6e344a72404039eef838a8cb39295b"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>category</b> = <a class="el" href="structcudf_1_1detail_1_1wrapper.html">detail::wrapper</a>&lt; gdf_category, GDF_CATEGORY &gt;</td></tr>
 <tr class="separator:a8c6e344a72404039eef838a8cb39295b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,15 +177,36 @@ Functions</h2></td></tr>
 <tr class="memitem:a30c6e502e3755eefe9a720cdf0f3ed5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__column__.html">gdf_column</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a30c6e502e3755eefe9a720cdf0f3ed5e">point_in_polygon</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;polygon_latitudes, <a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;polygon_longitudes, <a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;query_point_latitudes, <a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;query_point_longitudes)</td></tr>
 <tr class="memdesc:a30c6e502e3755eefe9a720cdf0f3ed5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether or not coordinates (query points) are completely inside a static polygon.  <a href="#a30c6e502e3755eefe9a720cdf0f3ed5e">More...</a><br /></td></tr>
 <tr class="separator:a30c6e502e3755eefe9a720cdf0f3ed5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27b690332af800c0629992b1c18dfe0c"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a27b690332af800c0629992b1c18dfe0c">calculateMaxRowSize</a> (int num_columns=0) noexcept</td></tr>
+<tr class="memdesc:a27b690332af800c0629992b1c18dfe0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimates the maximum expected length or a row, based on the number of columns.  <a href="#a27b690332af800c0629992b1c18dfe0c">More...</a><br /></td></tr>
+<tr class="separator:a27b690332af800c0629992b1c18dfe0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f498ceaf6b3695a39284db2a0c681f0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a9f498ceaf6b3695a39284db2a0c681f0">inferCompressionType</a> (const std::string &amp;compression_arg, gdf_input_type source_type, const std::string &amp;source)</td></tr>
+<tr class="memdesc:a9f498ceaf6b3695a39284db2a0c681f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Infer the compression type from the compression parameter and the input data.  <a href="#a9f498ceaf6b3695a39284db2a0c681f0">More...</a><br /></td></tr>
+<tr class="separator:a9f498ceaf6b3695a39284db2a0c681f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d54f414a2829c0c09ddf7c32b2a9e87"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a3d54f414a2829c0c09ddf7c32b2a9e87">getNamesFromJsonObject</a> (const std::vector&lt; char &gt; &amp;json_obj, const <a class="el" href="structParseOptions.html">ParseOptions</a> &amp;opts)</td></tr>
+<tr class="memdesc:a3d54f414a2829c0c09ddf7c32b2a9e87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract value names from a JSON object.  <a href="#a3d54f414a2829c0c09ddf7c32b2a9e87">More...</a><br /></td></tr>
+<tr class="separator:a3d54f414a2829c0c09ddf7c32b2a9e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a139af29310abc011563f33c1fe1763db"><td class="memItemLeft" align="right" valign="top">__device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a139af29310abc011563f33c1fe1763db">limitRangeToBrackets</a> (const char *data, long &amp;start, long &amp;stop)</td></tr>
+<tr class="memdesc:a139af29310abc011563f33c1fe1763db"><td class="mdescLeft">&#160;</td><td class="mdescRight">CUDA Kernel that modifies the start and stop offsets to exclude the sections outside of the top level brackets.  <a href="#a139af29310abc011563f33c1fe1763db">More...</a><br /></td></tr>
+<tr class="separator:a139af29310abc011563f33c1fe1763db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8640887c443d43dca79288fc281fc8e2"><td class="memItemLeft" align="right" valign="top">__device__ long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a8640887c443d43dca79288fc281fc8e2">seekFieldNameEnd</a> (const char *data, const <a class="el" href="structParseOptions.html">ParseOptions</a> opts, long start, long stop)</td></tr>
+<tr class="memdesc:a8640887c443d43dca79288fc281fc8e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">CUDA kernel that finds the end position of the next field name, including the colon that separates the name from the field value.  <a href="#a8640887c443d43dca79288fc281fc8e2">More...</a><br /></td></tr>
+<tr class="separator:a8640887c443d43dca79288fc281fc8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65ffb898f41cf93e3bee70529f04e8ef"><td class="memItemLeft" align="right" valign="top">__global__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a65ffb898f41cf93e3bee70529f04e8ef">convertJsonToGdf</a> (const char *data, size_t data_size, const uint64_t *rec_starts, gdf_size_type num_records, const gdf_dtype *dtypes, <a class="el" href="structParseOptions.html">ParseOptions</a> opts, void *const *gdf_columns, int num_columns, gdf_valid_type *const *valid_fields, gdf_size_type *num_valid_fields)</td></tr>
+<tr class="memdesc:a65ffb898f41cf93e3bee70529f04e8ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">CUDA kernel that parses and converts plain text data into cuDF column data.  <a href="#a65ffb898f41cf93e3bee70529f04e8ef">More...</a><br /></td></tr>
+<tr class="separator:a65ffb898f41cf93e3bee70529f04e8ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08fe31ebcf8c4f0cde01ce0e4c34f387"><td class="memItemLeft" align="right" valign="top">__global__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a08fe31ebcf8c4f0cde01ce0e4c34f387">detectJsonDataTypes</a> (const char *data, size_t data_size, const <a class="el" href="structParseOptions.html">ParseOptions</a> opts, int num_columns, const uint64_t *rec_starts, gdf_size_type num_records, <a class="el" href="structcudf_1_1ColumnInfo.html">ColumnInfo</a> *column_infos)</td></tr>
+<tr class="memdesc:a08fe31ebcf8c4f0cde01ce0e4c34f387"><td class="mdescLeft">&#160;</td><td class="mdescRight">CUDA kernel that parses and converts data into cuDF column data.  <a href="#a08fe31ebcf8c4f0cde01ce0e4c34f387">More...</a><br /></td></tr>
+<tr class="separator:a08fe31ebcf8c4f0cde01ce0e4c34f387"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16d269210347c80b2a841daef1a0d136"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__scalar.html">gdf_scalar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a16d269210347c80b2a841daef1a0d136">reduction</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> *col, gdf_reduction_op op, gdf_dtype output_dtype)</td></tr>
 <tr class="memdesc:a16d269210347c80b2a841daef1a0d136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the reduction of the values in all rows of a column This function does not detect overflows in reductions. Using a higher precision <code>dtype</code> may prevent overflow. Only <code>min</code> and <code>max</code> ops are supported for reduction of non-arithmetic types (date32, timestamp, category...). The null values are skipped for the operation. If the column is empty, the member is_valid of the output <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a> will contain <code>false</code>.  <a href="#a16d269210347c80b2a841daef1a0d136">More...</a><br /></td></tr>
 <tr class="separator:a16d269210347c80b2a841daef1a0d136"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65546aa9c42e87334fb5e1e3f274bc6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a65546aa9c42e87334fb5e1e3f274bc6b">scan</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> *input, <a class="el" href="structgdf__column__.html">gdf_column</a> *output, gdf_scan_op op, bool inclusive)</td></tr>
 <tr class="memdesc:a65546aa9c42e87334fb5e1e3f274bc6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the scan (a.k.a. prefix sum) of a column. The null values are skipped for the operation, and if an input element at <code>i</code> is null, then the output element at <code>i</code> will also be null.  <a href="#a65546aa9c42e87334fb5e1e3f274bc6b">More...</a><br /></td></tr>
 <tr class="separator:a65546aa9c42e87334fb5e1e3f274bc6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affd8efbc412d65aa608e7ac19eeb3574"><td class="memItemLeft" align="right" valign="top"><a id="affd8efbc412d65aa608e7ac19eeb3574"></a>
-<a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>rolling_window</b> (const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;input_col, gdf_size_type window, gdf_size_type min_periods, gdf_size_type forward_window, gdf_agg_op agg_type, const gdf_size_type *window_col, const gdf_size_type *min_periods_col, const gdf_size_type *forward_window_col, cudaStream_t stream)</td></tr>
-<tr class="separator:affd8efbc412d65aa608e7ac19eeb3574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d88717a2c068bbfac0f10352296c09"><td class="memItemLeft" align="right" valign="top"><a id="aa9d88717a2c068bbfac0f10352296c09"></a>
+<a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>rolling_window</b> (const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;input_col, gdf_size_type window, gdf_size_type min_periods, gdf_size_type forward_window, gdf_agg_op agg_type, const gdf_size_type *window_col, const gdf_size_type *min_periods_col, const gdf_size_type *forward_window_col)</td></tr>
+<tr class="separator:aa9d88717a2c068bbfac0f10352296c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fba636792abcf96032c639873d14870"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__column__.html">gdf_column</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a5fba636792abcf96032c639873d14870">apply_boolean_mask</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;input, <a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;boolean_mask)</td></tr>
 <tr class="memdesc:a5fba636792abcf96032c639873d14870"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters a column using a column of boolean values as a mask.  <a href="#a5fba636792abcf96032c639873d14870">More...</a><br /></td></tr>
 <tr class="separator:a5fba636792abcf96032c639873d14870"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,6 +219,49 @@ Functions</h2></td></tr>
 <tr class="memitem:ada393acb565321d740f2b9950ffe2941"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ada393acb565321d740f2b9950ffe2941">has_nulls</a> (<a class="el" href="structcudf_1_1table.html">cudf::table</a> const  &amp;<a class="el" href="structcudf_1_1table.html">table</a>)</td></tr>
 <tr class="memdesc:ada393acb565321d740f2b9950ffe2941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if a table contains any null values.  <a href="#ada393acb565321d740f2b9950ffe2941">More...</a><br /></td></tr>
 <tr class="separator:ada393acb565321d740f2b9950ffe2941"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa70e889e2b83eba15ed8e8e864dd3ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#afa70e889e2b83eba15ed8e8e864dd3ff">validate</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;column)</td></tr>
+<tr class="memdesc:afa70e889e2b83eba15ed8e8e864dd3ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensures a gdf_column is valid, i.e. that its fields are consistent with each other, and logical in themselves, in representing a proper column.  <a href="#afa70e889e2b83eba15ed8e8e864dd3ff">More...</a><br /></td></tr>
+<tr class="separator:afa70e889e2b83eba15ed8e8e864dd3ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9985a7fc88fb9b13d429e29405e12ae"><td class="memItemLeft" align="right" valign="top"><a id="ab9985a7fc88fb9b13d429e29405e12ae"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>validate</b> (const <a class="el" href="structgdf__column__.html">gdf_column</a> *column_ptr)</td></tr>
+<tr class="separator:ab9985a7fc88fb9b13d429e29405e12ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d288a83fd8de580d2274f825997cbf3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a0d288a83fd8de580d2274f825997cbf3">have_same_type</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;validated_column_1, const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;validated_column_2, bool ignore_extra_type_info=false) noexcept</td></tr>
+<tr class="memdesc:a0d288a83fd8de580d2274f825997cbf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensures two (valid!) columns have the same type.  <a href="#a0d288a83fd8de580d2274f825997cbf3">More...</a><br /></td></tr>
+<tr class="separator:a0d288a83fd8de580d2274f825997cbf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11851549cdd993a7a09c280a6d015135"><td class="memItemLeft" align="right" valign="top"><a id="a11851549cdd993a7a09c280a6d015135"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>have_same_type</b> (const <a class="el" href="structgdf__column__.html">gdf_column</a> *validated_column_ptr_1, const <a class="el" href="structgdf__column__.html">gdf_column</a> *validated_column_ptr_2, bool ignore_extra_type_info) noexcept</td></tr>
+<tr class="separator:a11851549cdd993a7a09c280a6d015135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40f193177256b121627a35887dc9f816"><td class="memTemplParams" colspan="2"><a id="a40f193177256b121627a35887dc9f816"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a40f193177256b121627a35887dc9f816"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><b>get_data</b> (const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;column) noexcept</td></tr>
+<tr class="separator:a40f193177256b121627a35887dc9f816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52b3e096195676e94b7c8398747459ff"><td class="memTemplParams" colspan="2"><a id="a52b3e096195676e94b7c8398747459ff"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a52b3e096195676e94b7c8398747459ff"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><b>get_data</b> (const <a class="el" href="structgdf__column__.html">gdf_column</a> *column) noexcept</td></tr>
+<tr class="separator:a52b3e096195676e94b7c8398747459ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a571f2362be95df8c2348bcce96fc522b"><td class="memItemLeft" align="right" valign="top"><a id="a571f2362be95df8c2348bcce96fc522b"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_an_integer</b> (gdf_dtype element_type) noexcept</td></tr>
+<tr class="separator:a571f2362be95df8c2348bcce96fc522b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d1090d2083c2700bef73bb07b29f8eb"><td class="memItemLeft" align="right" valign="top"><a id="a8d1090d2083c2700bef73bb07b29f8eb"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_integral</b> (const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;column) noexcept</td></tr>
+<tr class="separator:a8d1090d2083c2700bef73bb07b29f8eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49a3589a60ac4e16c069ae1852d80264"><td class="memItemLeft" align="right" valign="top"><a id="a49a3589a60ac4e16c069ae1852d80264"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_integral</b> (const <a class="el" href="structgdf__column__.html">gdf_column</a> *column) noexcept</td></tr>
+<tr class="separator:a49a3589a60ac4e16c069ae1852d80264"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2db5b2cb45e0e4d7f9f1d7cb25ca32ae"><td class="memItemLeft" align="right" valign="top"><a id="a2db5b2cb45e0e4d7f9f1d7cb25ca32ae"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_nullable</b> (const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;column) noexcept</td></tr>
+<tr class="separator:a2db5b2cb45e0e4d7f9f1d7cb25ca32ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83a4a65a257d9746a9d65f8a8a6de1a5"><td class="memItemLeft" align="right" valign="top"><a id="a83a4a65a257d9746a9d65f8a8a6de1a5"></a>
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>has_nulls</b> (const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;column) noexcept</td></tr>
+<tr class="separator:a83a4a65a257d9746a9d65f8a8a6de1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea3dfde6d57f821aa1825a90a8cdddcb"><td class="memItemLeft" align="right" valign="top"><a id="aea3dfde6d57f821aa1825a90a8cdddcb"></a>
+constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aea3dfde6d57f821aa1825a90a8cdddcb">size_of</a> (gdf_dtype element_type)</td></tr>
+<tr class="memdesc:aea3dfde6d57f821aa1825a90a8cdddcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size in bytes of values of a column element type. <br /></td></tr>
+<tr class="separator:aea3dfde6d57f821aa1825a90a8cdddcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf37d87f3ef5bb0736ad2dfeeac3e766"><td class="memItemLeft" align="right" valign="top"><a id="aaf37d87f3ef5bb0736ad2dfeeac3e766"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aaf37d87f3ef5bb0736ad2dfeeac3e766">byte_width</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;col) noexcept</td></tr>
+<tr class="memdesc:aaf37d87f3ef5bb0736ad2dfeeac3e766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size in bytes of each element of a column (a.k.a. the column's width) <br /></td></tr>
+<tr class="separator:aaf37d87f3ef5bb0736ad2dfeeac3e766"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae62151c46119cd04dc146c9e4175375f"><td class="memTemplParams" colspan="2">template&lt;typename T , typename BinaryOp &gt; </td></tr>
 <tr class="memitem:ae62151c46119cd04dc146c9e4175375f"><td class="memTemplItemLeft" align="right" valign="top">__forceinline__ __device__ T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ae62151c46119cd04dc146c9e4175375f">genericAtomicOperation</a> (T *address, T const &amp;update_value, <a class="el" href="structBinaryOp.html">BinaryOp</a> op)</td></tr>
 <tr class="memdesc:ae62151c46119cd04dc146c9e4175375f"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute atomic binary operation reads the <code>old</code> located at the <code>address</code> in global or shared memory, computes '<a class="el" href="structBinaryOp.html">BinaryOp</a>'('old', 'update_value'), and stores the result back to memory at the same address. These three operations are performed in one atomic transaction.  <a href="#ae62151c46119cd04dc146c9e4175375f">More...</a><br /></td></tr>
@@ -188,10 +270,10 @@ Functions</h2></td></tr>
 template&lt;typename BinaryOp &gt; </td></tr>
 <tr class="memitem:acafbd5dbae09b26c92b964e0122d5fc9"><td class="memTemplItemLeft" align="right" valign="top">__forceinline__ __device__ <a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::bool8</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>genericAtomicOperation</b> (<a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::bool8</a> *address, <a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::bool8</a> const &amp;update_value, <a class="el" href="structBinaryOp.html">BinaryOp</a> op)</td></tr>
 <tr class="separator:acafbd5dbae09b26c92b964e0122d5fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c70f497e88c7cf01dff98c594f0ec51"><td class="memTemplParams" colspan="2"><a id="a9c70f497e88c7cf01dff98c594f0ec51"></a>
+<tr class="memitem:a0d210161ecb8636ef5a5fca8cdcee3c9"><td class="memTemplParams" colspan="2"><a id="a0d210161ecb8636ef5a5fca8cdcee3c9"></a>
 template&lt;class functor_t , typename... Ts&gt; </td></tr>
-<tr class="memitem:a9c70f497e88c7cf01dff98c594f0ec51"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto) CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memTemplItemRight" valign="bottom"><b>type_dispatcher</b> (gdf_dtype dtype, functor_t f, Ts &amp;&amp;... args)</td></tr>
-<tr class="separator:a9c70f497e88c7cf01dff98c594f0ec51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d210161ecb8636ef5a5fca8cdcee3c9"><td class="memTemplItemLeft" align="right" valign="top">CUDA_HOST_DEVICE_CALLABLEdecltype(auto) constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><b>type_dispatcher</b> (gdf_dtype dtype, functor_t f, Ts &amp;&amp;... args)</td></tr>
+<tr class="separator:a0d210161ecb8636ef5a5fca8cdcee3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7b0f1bc518e47eaa2cfdd0ec88e3989"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ad7b0f1bc518e47eaa2cfdd0ec88e3989"><td class="memTemplItemLeft" align="right" valign="top">constexpr gdf_dtype&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ad7b0f1bc518e47eaa2cfdd0ec88e3989">gdf_dtype_of</a> ()</td></tr>
 <tr class="memdesc:ad7b0f1bc518e47eaa2cfdd0ec88e3989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a C++ type to it's corresponding gdf_dtype.  <a href="#ad7b0f1bc518e47eaa2cfdd0ec88e3989">More...</a><br /></td></tr>
@@ -398,6 +480,42 @@ if <code>input.size</code> is zero, there is no error, and an empty column is re
 
 </div>
 </div>
+<a id="a27b690332af800c0629992b1c18dfe0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27b690332af800c0629992b1c18dfe0c">&#9670;&nbsp;</a></span>calculateMaxRowSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t cudf::calculateMaxRowSize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_columns</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Estimates the maximum expected length or a row, based on the number of columns. </p>
+<p>------------------------------------------------------------------------&mdash;* If the number of columns is not available, it will return a value large enough for most use cases</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_columns</td><td>Number of columns in the JSON file (optional)</td></tr>
+  </table>
+  </dd>
+</dl>
+<h2>Estimated maximum size of a row, in bytes </h2>
+
+</div>
+</div>
 <a id="ad2f973d94c67ab3dc1a183c5adb3753d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad2f973d94c67ab3dc1a183c5adb3753d">&#9670;&nbsp;</a></span>column_dtypes()</h2>
 
@@ -422,6 +540,101 @@ if <code>input.size</code> is zero, there is no error, and an empty column is re
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a65ffb898f41cf93e3bee70529f04e8ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65ffb898f41cf93e3bee70529f04e8ef">&#9670;&nbsp;</a></span>convertJsonToGdf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__global__ void cudf::convertJsonToGdf </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>data_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint64_t *&#160;</td>
+          <td class="paramname"><em>rec_starts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_size_type&#160;</td>
+          <td class="paramname"><em>num_records</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const gdf_dtype *&#160;</td>
+          <td class="paramname"><em>dtypes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structParseOptions.html">ParseOptions</a>&#160;</td>
+          <td class="paramname"><em>opts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *const *&#160;</td>
+          <td class="paramname"><em>gdf_columns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_columns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_valid_type *const *&#160;</td>
+          <td class="paramname"><em>valid_fields</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_size_type *&#160;</td>
+          <td class="paramname"><em>num_valid_fields</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CUDA kernel that parses and converts plain text data into cuDF column data. </p>
+<p>------------------------------------------------------------------------&mdash;* Data is processed one record at a time</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The entire data to read </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_size</td><td>Size of the data buffer, in bytes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rec_starts</td><td>The start of each data record </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_records</td><td>The number of lines/rows </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dtypes</td><td>The data type of each column </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">opts</td><td>A set of parsing options </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">gdf_columns</td><td>The output column data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_columns</td><td>The number of columns </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">valid_fields</td><td>The bitmaps indicating whether column fields are valid </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">num_valid_fields</td><td>The numbers of valid fields in columns</td></tr>
+  </table>
+  </dd>
+</dl>
+<h2>void </h2>
 
 </div>
 </div>
@@ -499,6 +712,80 @@ if <code>input.size</code> is zero, there is no error, and an empty column is re
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a08fe31ebcf8c4f0cde01ce0e4c34f387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08fe31ebcf8c4f0cde01ce0e4c34f387">&#9670;&nbsp;</a></span>detectJsonDataTypes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__global__ void cudf::detectJsonDataTypes </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>data_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structParseOptions.html">ParseOptions</a>&#160;</td>
+          <td class="paramname"><em>opts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_columns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint64_t *&#160;</td>
+          <td class="paramname"><em>rec_starts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_size_type&#160;</td>
+          <td class="paramname"><em>num_records</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcudf_1_1ColumnInfo.html">ColumnInfo</a> *&#160;</td>
+          <td class="paramname"><em>column_infos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CUDA kernel that parses and converts data into cuDF column data. </p>
+<p>------------------------------------------------------------------------&mdash;* Data is processed in one row/record at a time, so the number of total threads (tid) is equal to the number of rows.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The entire plain text data to read </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_size</td><td>Size of the data buffer, in bytes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">opts</td><td>A set of parsing options </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_columns</td><td>The number of columns of input data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rec_starts</td><td>The start the input data of interest </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_records</td><td>The number of lines/rows of input data </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">column_infos</td><td>The count for each column data type</td></tr>
+  </table>
+  </dd>
+</dl>
+<h2>void </h2>
 
 </div>
 </div>
@@ -695,6 +982,44 @@ template&lt;typename T , typename BinaryOp &gt; </div>
 
 </div>
 </div>
+<a id="a3d54f414a2829c0c09ddf7c32b2a9e87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d54f414a2829c0c09ddf7c32b2a9e87">&#9670;&nbsp;</a></span>getNamesFromJsonObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; cudf::getNamesFromJsonObject </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; char &gt; &amp;&#160;</td>
+          <td class="paramname"><em>json_obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structParseOptions.html">ParseOptions</a> &amp;&#160;</td>
+          <td class="paramname"><em>opts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extract value names from a JSON object. </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">json_obj</td><td>Host vector containing the JSON object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">opts</td><td>Parsing options (e.g. delimiter and quotation character)</td></tr>
+  </table>
+  </dd>
+</dl>
+<h2>std::vector&lt;std::string&gt; names of JSON object values </h2>
+
+</div>
+</div>
 <a id="ada393acb565321d740f2b9950ffe2941"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ada393acb565321d740f2b9950ffe2941">&#9670;&nbsp;</a></span>has_nulls()</h2>
 
@@ -720,6 +1045,150 @@ template&lt;typename T , typename BinaryOp &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true If the table contains one or more null values <h2>false If the table contains zero null values </h2>
 </dd></dl>
+
+</div>
+</div>
+<a id="a0d288a83fd8de580d2274f825997cbf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d288a83fd8de580d2274f825997cbf3">&#9670;&nbsp;</a></span>have_same_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cudf::have_same_type </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;&#160;</td>
+          <td class="paramname"><em>validated_column_1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;&#160;</td>
+          <td class="paramname"><em>validated_column_2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>ignore_extra_type_info</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ensures two (valid!) columns have the same type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">validated_column_1</td><td>A column which would pass <a class="el" href="namespacecudf.html#afa70e889e2b83eba15ed8e8e864dd3ff">validate()</a> . </td></tr>
+    <tr><td class="paramname">validated_column_2</td><td>A column which would pass <a class="el" href="namespacecudf.html#afa70e889e2b83eba15ed8e8e864dd3ff">validate()</a> . </td></tr>
+    <tr><td class="paramname">ignore_extra_type_info</td><td>For some column element types, a column carries some qualifying information which applies to all elements (and thus not repeated for each one). Generally, this information should not be ignored, so that for two columns to have the same type, they must also share it. However, for potential practical reasons (with this being a utility rather than an API function), we allow the extra information to be ignored by setting this parameter to <code>true</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9f498ceaf6b3695a39284db2a0c681f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f498ceaf6b3695a39284db2a0c681f0">&#9670;&nbsp;</a></span>inferCompressionType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string cudf::inferCompressionType </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>compression_arg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_input_type&#160;</td>
+          <td class="paramname"><em>source_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>source</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Infer the compression type from the compression parameter and the input data. </p>
+<p>------------------------------------------------------------------------&mdash;* Returns "none" if the input is not compressed. Throws if the input is not not valid.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">compression_arg</td><td>Input string that is potentially describing the compression type. Can also be "none" or "infer". </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">source_type</td><td>Enum describing the type of the data source </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>If source_type is FILE_PATH, contains the filepath. If source_type is HOST_BUFFER, contains the input JSON data.</td></tr>
+  </table>
+  </dd>
+</dl>
+<h2>string representing the compression type. </h2>
+
+</div>
+</div>
+<a id="a139af29310abc011563f33c1fe1763db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a139af29310abc011563f33c1fe1763db">&#9670;&nbsp;</a></span>limitRangeToBrackets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__device__ void cudf::limitRangeToBrackets </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long &amp;&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long &amp;&#160;</td>
+          <td class="paramname"><em>stop</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CUDA Kernel that modifies the start and stop offsets to exclude the sections outside of the top level brackets. </p>
+<p>------------------------------------------------------------------------&mdash;* The top level brackets characters are excluded from the resulting range. Parameter stop has the same semantics as end() in STL containers (one past the last element)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Pointer to the device buffer containing the data to process </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">start</td><td>Offset of the first character in the range </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">stop</td><td>Offset of the first character after the range</td></tr>
+  </table>
+  </dd>
+</dl>
+<h2>void </h2>
 
 </div>
 </div>
@@ -964,6 +1433,59 @@ template&lt;typename T , typename BinaryOp &gt; </div>
 
 </div>
 </div>
+<a id="a8640887c443d43dca79288fc281fc8e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8640887c443d43dca79288fc281fc8e2">&#9670;&nbsp;</a></span>seekFieldNameEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__device__ long cudf::seekFieldNameEnd </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structParseOptions.html">ParseOptions</a>&#160;</td>
+          <td class="paramname"><em>opts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>stop</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CUDA kernel that finds the end position of the next field name, including the colon that separates the name from the field value. </p>
+<p>------------------------------------------------------------------------&mdash;* Returns the position after the colon that preceeds the value token.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Pointer to the device buffer containing the data to process </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">opts</td><td>Parsing options (e.g. delimiter and quotation character) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">start</td><td>Offset of the first character in the range </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">stop</td><td>Offset of the first character after the range</td></tr>
+  </table>
+  </dd>
+</dl>
+<h2>long Position of the first character after the field name. </h2>
+
+</div>
+</div>
 <a id="a31f4a85729765c154b21d8102be5a9d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a31f4a85729765c154b21d8102be5a9d5">&#9670;&nbsp;</a></span>slice()</h2>
 
@@ -1060,6 +1582,27 @@ template&lt;typename T , typename BinaryOp &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A std::vector of gdf_column*, each of which may have a different size a different number of rows. </dd></dl>
+
+</div>
+</div>
+<a id="afa70e889e2b83eba15ed8e8e864dd3ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa70e889e2b83eba15ed8e8e864dd3ff">&#9670;&nbsp;</a></span>validate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cudf::validate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;&#160;</td>
+          <td class="paramname"><em>column</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ensures a gdf_column is valid, i.e. that its fields are consistent with each other, and logical in themselves, in representing a proper column. </p>
+<p>Ensure the input is in a valid state representing a proper column. Specifically, ensures all fields have valid (rather than junk, uninitialized or declared-invalid values), and that they are consistent with each other. </p>
 
 </div>
 </div>
