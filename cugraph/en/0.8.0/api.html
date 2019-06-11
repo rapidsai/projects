@@ -166,10 +166,10 @@
 <h2>Graph<a class="headerlink" href="#graph" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cugraph.Graph">
-<em class="property">class </em><code class="descclassname">cugraph.</code><code class="descname">Graph</code><a class="headerlink" href="#cugraph.Graph" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cugraph.</code><code class="sig-name descname">Graph</code><a class="headerlink" href="#cugraph.Graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>cuGraph graph class containing basic graph creation and transformation operations.</p>
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-center">
+<table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -227,7 +227,7 @@
 </table>
 <dl class="attribute">
 <dt id="cugraph.Graph.add_adj_list">
-<code class="descname">add_adj_list</code><span class="sig-paren">(</span><em>self</em>, <em>offset_col</em>, <em>index_col</em>, <em>value_col=None</em>, <em>copy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.add_adj_list" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_adj_list</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">offset_col</em>, <em class="sig-param">index_col</em>, <em class="sig-param">value_col=None</em>, <em class="sig-param">copy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.add_adj_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create the adjacency list representation of a Graph. The passed
 offset_col and index_col arguments wrap gdf_column objects that
 represent a graph using the adjacency list format. If value_col is
@@ -283,7 +283,7 @@ number.</p>
 
 <dl class="attribute">
 <dt id="cugraph.Graph.add_edge_list">
-<code class="descname">add_edge_list</code><span class="sig-paren">(</span><em>self</em>, <em>source_col</em>, <em>dest_col</em>, <em>value_col=None</em>, <em>copy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.add_edge_list" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_edge_list</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">source_col</em>, <em class="sig-param">dest_col</em>, <em class="sig-param">value_col=None</em>, <em class="sig-param">copy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.add_edge_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create the edge list representation of a Graph. The passed source_col
 and dest_col arguments wrap gdf_column objects that represent a graph
 using the edge list format. If value_col is None, an unweighted graph
@@ -336,14 +336,14 @@ number.</p>
 
 <dl class="attribute">
 <dt id="cugraph.Graph.add_transposed_adj_list">
-<code class="descname">add_transposed_adj_list</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.add_transposed_adj_list" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_transposed_adj_list</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.add_transposed_adj_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the transposed adjacency list from the edge list and add it to
 the existing graph.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cugraph.Graph.degree">
-<code class="descname">degree</code><span class="sig-paren">(</span><em>self</em>, <em>vertex_subset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.degree" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">degree</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">vertex_subset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.degree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates and returns the degree of vertices. Vertex degree
 is the number of edges adjacent to that vertex.
 Parameters
@@ -378,25 +378,25 @@ Examples
 
 <dl class="attribute">
 <dt id="cugraph.Graph.delete_adj_list">
-<code class="descname">delete_adj_list</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.delete_adj_list" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">delete_adj_list</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.delete_adj_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete the adjacency list.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cugraph.Graph.delete_edge_list">
-<code class="descname">delete_edge_list</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.delete_edge_list" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">delete_edge_list</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.delete_edge_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete the edge list.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cugraph.Graph.delete_transposed_adj_list">
-<code class="descname">delete_transposed_adj_list</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.delete_transposed_adj_list" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">delete_transposed_adj_list</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.delete_transposed_adj_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete the transposed adjacency list.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cugraph.Graph.get_two_hop_neighbors">
-<code class="descname">get_two_hop_neighbors</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.get_two_hop_neighbors" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_two_hop_neighbors</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.get_two_hop_neighbors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a dataframe containing vertex pairs such that each pair of vertices is
 connected by a path of two hops in the graph. The resulting pairs are
 returned in sorted order.</p>
@@ -408,7 +408,7 @@ df[‘second’] the second vertex id of a pair</p>
 
 <dl class="attribute">
 <dt id="cugraph.Graph.in_degree">
-<code class="descname">in_degree</code><span class="sig-paren">(</span><em>self</em>, <em>vertex_subset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.in_degree" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">in_degree</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">vertex_subset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.in_degree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates and returns the in-degree of vertices. Vertex in-degree
 is the number of edges pointing in to the vertex.
 Parameters
@@ -443,19 +443,19 @@ Examples
 
 <dl class="attribute">
 <dt id="cugraph.Graph.number_of_edges">
-<code class="descname">number_of_edges</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.number_of_edges" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">number_of_edges</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.number_of_edges" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of edges in the graph</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cugraph.Graph.number_of_vertices">
-<code class="descname">number_of_vertices</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.number_of_vertices" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">number_of_vertices</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.number_of_vertices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of vertices in the graph</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cugraph.Graph.out_degree">
-<code class="descname">out_degree</code><span class="sig-paren">(</span><em>self</em>, <em>vertex_subset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.out_degree" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">out_degree</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">vertex_subset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.out_degree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates and returns the out-degree of vertices. Vertex out-degree
 is the number of edges pointing out from the vertex.
 Parameters
@@ -490,7 +490,7 @@ Examples
 
 <dl class="attribute">
 <dt id="cugraph.Graph.renumber">
-<code class="descname">renumber</code><span class="sig-paren">(</span><em>self</em>, <em>source_col</em>, <em>dest_col</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.renumber" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">renumber</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">source_col</em>, <em class="sig-param">dest_col</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.renumber" title="Permalink to this definition">¶</a></dt>
 <dd><p>Take a (potentially sparse) set of source and destination vertex
 ids and renumber the vertices to create a dense set of vertex ids
 using all values contiguously from 0 to the number of unique vertices
@@ -538,19 +538,19 @@ Destination indices must be an integer type.</p>
 
 <dl class="attribute">
 <dt id="cugraph.Graph.view_adj_list">
-<code class="descname">view_adj_list</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.view_adj_list" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">view_adj_list</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.view_adj_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the adjacency list. Compute it if needed.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cugraph.Graph.view_edge_list">
-<code class="descname">view_edge_list</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.view_edge_list" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">view_edge_list</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.view_edge_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the edge list. Compute it if needed.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cugraph.Graph.view_transposed_adj_list">
-<code class="descname">view_transposed_adj_list</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.view_transposed_adj_list" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">view_transposed_adj_list</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.view_transposed_adj_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the transposed adjacency list. Compute it if needed.</p>
 </dd></dl>
 
@@ -561,7 +561,7 @@ Destination indices must be an integer type.</p>
 <span id="pagerank"></span><h2>Pagerank<a class="headerlink" href="#module-cugraph" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="cugraph.pagerank">
-<code class="descclassname">cugraph.</code><code class="descname">pagerank</code><span class="sig-paren">(</span><em>G</em>, <em>alpha=0.85</em>, <em>max_iter=100</em>, <em>tol=1.0e-5</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.pagerank" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cugraph.</code><code class="sig-name descname">pagerank</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">alpha=0.85</em>, <em class="sig-param">personalization=None</em>, <em class="sig-param">max_iter=100</em>, <em class="sig-param">tol=1.0e-5</em>, <em class="sig-param">nstart=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.pagerank" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the PageRank vertex values for a graph. cuGraph computes an approximation of the Pagerank eigenvector using the power method. 
 The number of iterations depends on the properties of the network itself; it increases when the tolerance descreases and/or alpha increases toward the limiting value of 1.
 The user is free to use default values or to provide inputs for the initial guess, tolerance and maximum number of iterations.</p>
@@ -574,12 +574,20 @@ The transposed adjacency list will be computed if not already present.</p>
 <dt><strong>alpha</strong><span class="classifier">float</span></dt><dd><p>The damping factor alpha represents the probability to follow an outgoing edge, standard value is 0.85. 
 Thus, 1.0-alpha is the probability to “teleport” to a random vertex. Alpha should be greater than 0.0 and strictly lower than 1.0.</p>
 </dd>
+<dt><strong>personalization</strong><span class="classifier">cudf.Dataframe</span></dt><dd><p>GPU Dataframe containing the personalizatoin information.
+personalization[‘vertex’]: Subset of vertices of graph for personalization
+personalization[‘values’]: Personalization values for vertices</p>
+</dd>
+<dt><strong>max_iter</strong><span class="classifier">int</span></dt><dd><p>The maximum number of iterations before an answer is returned. This can be used to limit the execution time and do an early exit before the solver reaches the convergence tolerance. 
+If this value is lower or equal to 0 cuGraph will use the default value, which is 100.</p>
+</dd>
 <dt><strong>tolerance</strong><span class="classifier">float</span></dt><dd><p>Set the tolerance the approximation, this parameter should be a small magnitude value. 
 The lower the tolerance the better the approximation. If this value is 0.0f, cuGraph will use the default value which is 1.0E-5. 
 Setting too small a tolerance can lead to non-convergence due to numerical roundoff. Usually values between 0.01 and 0.00001 are acceptable.</p>
 </dd>
-<dt><strong>max_iter</strong><span class="classifier">int</span></dt><dd><p>The maximum number of iterations before an answer is returned. This can be used to limit the execution time and do an early exit before the solver reaches the convergence tolerance. 
-If this value is lower or equal to 0 cuGraph will use the default value, which is 100.</p>
+<dt><strong>nstart</strong><span class="classifier">cudf.Dataframe</span></dt><dd><p>GPU Dataframe containing the initial guess for pagerank.
+nstart[‘vertex’]: Subset of vertices of graph for initial guess for pagerank values
+nstart[‘values’]: Pagerank values for vertices</p>
 </dd>
 </dl>
 </dd>
@@ -606,7 +614,7 @@ If this value is lower or equal to 0 cuGraph will use the default value, which i
 <span id="bfs"></span><h2>Bfs<a class="headerlink" href="#module-cugraph" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="cugraph.bfs">
-<code class="descclassname">cugraph.</code><code class="descname">bfs</code><span class="sig-paren">(</span><em>G</em>, <em>start</em>, <em>directed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.bfs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cugraph.</code><code class="sig-name descname">bfs</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">start</em>, <em class="sig-param">directed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.bfs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the distances and predecessors for a breadth first traversal of a graph.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -650,7 +658,7 @@ df[‘predecessor’][i] gives for the i’th vertex the vertex it was reached f
 <span id="louvain"></span><h2>Louvain<a class="headerlink" href="#module-cugraph" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="cugraph.nvLouvain">
-<code class="descclassname">cugraph.</code><code class="descname">nvLouvain</code><span class="sig-paren">(</span><em>input_graph</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.nvLouvain" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cugraph.</code><code class="sig-name descname">nvLouvain</code><span class="sig-paren">(</span><em class="sig-param">input_graph</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.nvLouvain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the modularity optimizing partition of the input graph using the Louvain heuristic</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -687,7 +695,7 @@ The adjacency list will be computed if not already present.</p>
 <span id="grmat"></span><h2>Grmat<a class="headerlink" href="#module-cugraph" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="cugraph.grmat_gen">
-<code class="descclassname">cugraph.</code><code class="descname">grmat_gen</code><span class="sig-paren">(</span><em>argv</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.grmat_gen" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cugraph.</code><code class="sig-name descname">grmat_gen</code><span class="sig-paren">(</span><em class="sig-param">argv</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.grmat_gen" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -695,7 +703,7 @@ The adjacency list will be computed if not already present.</p>
 <span id="spectral-clustering"></span><h2>Spectral Clustering<a class="headerlink" href="#module-cugraph" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="cugraph.spectralBalancedCutClustering">
-<code class="descclassname">cugraph.</code><code class="descname">spectralBalancedCutClustering</code><span class="sig-paren">(</span><em>G</em>, <em>num_clusters</em>, <em>num_eigen_vects=2</em>, <em>evs_tolerance=.00001</em>, <em>evs_max_iter=100</em>, <em>kmean_tolerance=.00001</em>, <em>kmean_max_iter=100</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.spectralBalancedCutClustering" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cugraph.</code><code class="sig-name descname">spectralBalancedCutClustering</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">num_clusters</em>, <em class="sig-param">num_eigen_vects=2</em>, <em class="sig-param">evs_tolerance=.00001</em>, <em class="sig-param">evs_max_iter=100</em>, <em class="sig-param">kmean_tolerance=.00001</em>, <em class="sig-param">kmean_max_iter=100</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.spectralBalancedCutClustering" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute a clustering/partitioning of the given graph using the spectral balanced
 cut method.</p>
 <dl class="field-list simple">
@@ -732,7 +740,7 @@ DF[‘cluster’] contains the cluster assignments</p>
 
 <span class="target" id="module-cugraph"></span><dl class="function">
 <dt id="cugraph.spectralModularityMaximizationClustering">
-<code class="descclassname">cugraph.</code><code class="descname">spectralModularityMaximizationClustering</code><span class="sig-paren">(</span><em>G</em>, <em>num_clusters</em>, <em>num_eigen_vects=2</em>, <em>evs_tolerance=.00001</em>, <em>evs_max_iter=100</em>, <em>kmean_tolerance=.00001</em>, <em>kmean_max_iter=100</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.spectralModularityMaximizationClustering" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cugraph.</code><code class="sig-name descname">spectralModularityMaximizationClustering</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">num_clusters</em>, <em class="sig-param">num_eigen_vects=2</em>, <em class="sig-param">evs_tolerance=.00001</em>, <em class="sig-param">evs_max_iter=100</em>, <em class="sig-param">kmean_tolerance=.00001</em>, <em class="sig-param">kmean_max_iter=100</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.spectralModularityMaximizationClustering" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute a clustering/partitioning of the given graph using the spectral modularity
 maximization method.</p>
 <dl class="field-list simple">
@@ -769,7 +777,7 @@ DF[‘cluster’] contains the cluster assignments</p>
 
 <span class="target" id="module-cugraph"></span><dl class="function">
 <dt id="cugraph.analyzeClustering_modularity">
-<code class="descclassname">cugraph.</code><code class="descname">analyzeClustering_modularity</code><span class="sig-paren">(</span><em>G</em>, <em>n_clusters</em>, <em>clustering</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.analyzeClustering_modularity" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cugraph.</code><code class="sig-name descname">analyzeClustering_modularity</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">n_clusters</em>, <em class="sig-param">clustering</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.analyzeClustering_modularity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the modularity score for a partitioning/clustering</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -791,7 +799,7 @@ DF[‘cluster’] contains the cluster assignments</p>
 
 <span class="target" id="module-cugraph"></span><dl class="function">
 <dt id="cugraph.analyzeClustering_edge_cut">
-<code class="descclassname">cugraph.</code><code class="descname">analyzeClustering_edge_cut</code><span class="sig-paren">(</span><em>G</em>, <em>n_clusters</em>, <em>clustering</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.analyzeClustering_edge_cut" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cugraph.</code><code class="sig-name descname">analyzeClustering_edge_cut</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">n_clusters</em>, <em class="sig-param">clustering</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.analyzeClustering_edge_cut" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the edge cut score for a partitioning/clustering</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -813,7 +821,7 @@ DF[‘cluster’] contains the cluster assignments</p>
 
 <span class="target" id="module-cugraph"></span><dl class="function">
 <dt id="cugraph.analyzeClustering_ratio_cut">
-<code class="descclassname">cugraph.</code><code class="descname">analyzeClustering_ratio_cut</code><span class="sig-paren">(</span><em>G</em>, <em>n_clusters</em>, <em>clustering</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.analyzeClustering_ratio_cut" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cugraph.</code><code class="sig-name descname">analyzeClustering_ratio_cut</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">n_clusters</em>, <em class="sig-param">clustering</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.analyzeClustering_ratio_cut" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the ratio cut score for a partitioning/clustering</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -838,7 +846,7 @@ DF[‘cluster’] contains the cluster assignments</p>
 <span id="sssp"></span><h2>Sssp<a class="headerlink" href="#module-cugraph" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="cugraph.sssp">
-<code class="descclassname">cugraph.</code><code class="descname">sssp</code><span class="sig-paren">(</span><em>G</em>, <em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.sssp" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cugraph.</code><code class="sig-name descname">sssp</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">source</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.sssp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the distance from the specified source to all vertices in the connected component.  The distances column will
 store the distance from the source to each vertex.</p>
 <dl class="field-list simple">
