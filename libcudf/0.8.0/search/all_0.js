@@ -8,7 +8,7 @@ var searchData=
   ['append_5ffull_5fjoin_5findices',['append_full_join_indices',['../full__join_8cuh.html#ac234d83f65cafbba0a2fa151f43558f9',1,'full_join.cuh']]],
   ['apply_5fbitmask_5fto_5fbitmask',['apply_bitmask_to_bitmask',['../bitmask__ops_8hpp.html#a4400e7c480cc83d4c66a6b82a75ec45d',1,'bitmask_ops.cu']]],
   ['apply_5fboolean_5fmask',['apply_boolean_mask',['../namespacecudf.html#a5fba636792abcf96032c639873d14870',1,'cudf']]],
-  ['arithop',['ArithOp',['../structArithOp.html',1,'']]],
+  ['arithop',['ArithOp',['../structcudf_1_1binops_1_1compiled_1_1ArithOp.html',1,'cudf::binops::compiled']]],
   ['assignlevels',['assignLevels',['../parsing__utils_8cu.html#ab39e56733eb09844785a9daf2e553ac2',1,'parsing_utils.cu']]],
   ['assignlevelskernel',['assignLevelsKernel',['../parsing__utils_8cu.html#a362343132e9dee84fd714e7abafce4d9',1,'parsing_utils.cu']]],
   ['atomicadd',['atomicAdd',['../device__atomics_8cuh.html#ae5d56a957e435f0b5d4a3d7abc53b5a7',1,'device_atomics.cuh']]],

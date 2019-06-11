@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['binaryop',['BinaryOp',['../structBinaryOp.html',1,'']]],
+  ['binaryop',['BinaryOp',['../structcudf_1_1binops_1_1compiled_1_1BinaryOp.html',1,'cudf::binops::compiled']]],
   ['bitmask',['BitMask',['../classBitMask.html',1,'']]],
   ['bitwise_5fpartitioner',['bitwise_partitioner',['../structbitwise__partitioner.html',1,'']]],
+  ['bitwiseop',['BitwiseOp',['../structcudf_1_1binops_1_1compiled_1_1BitwiseOp.html',1,'cudf::binops::compiled']]],
   ['bitwiseopdispatcher',['BitwiseOpDispatcher',['../structBitwiseOpDispatcher.html',1,'']]],
   ['blocksumarray',['BlockSumArray',['../structBlockSumArray.html',1,'']]],
   ['blocksumpyramid',['BlockSumPyramid',['../classBlockSumPyramid.html',1,'']]],

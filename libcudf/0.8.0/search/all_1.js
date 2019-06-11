@@ -2,10 +2,12 @@ var searchData=
 [
   ['b08',['b08',['../uniongdf__data.html#a4adaa7eea0bf9cd24694cee83fbcb36a',1,'gdf_data']]],
   ['begin',['begin',['../structcudf_1_1table.html#ad1321ab60db493f94fdd277925c2a252',1,'cudf::table::begin() const'],['../structcudf_1_1table.html#a73dfa535d78bfdd3f14f87444cefccbf',1,'cudf::table::begin()']]],
-  ['binaryop',['BinaryOp',['../structBinaryOp.html',1,'']]],
+  ['binary_5foperation',['binary_operation',['../namespacecudf.html#ae942e9a8d320f23d61bee22ddc06df55',1,'cudf::binary_operation(gdf_column *out, gdf_scalar *lhs, gdf_column *rhs, gdf_binary_operator ope)'],['../namespacecudf.html#aa02af1454978d7d7f7b9f651437b3ab5',1,'cudf::binary_operation(gdf_column *out, gdf_column *lhs, gdf_scalar *rhs, gdf_binary_operator ope)'],['../namespacecudf.html#ad01e2e81bc2b671dfb8963a7be22e3b0',1,'cudf::binary_operation(gdf_column *out, gdf_column *lhs, gdf_column *rhs, gdf_binary_operator ope)']]],
+  ['binaryop',['BinaryOp',['../structcudf_1_1binops_1_1compiled_1_1BinaryOp.html',1,'cudf::binops::compiled']]],
   ['bitmask',['BitMask',['../classBitMask.html',1,'']]],
   ['bitmask_5fops_2ehpp',['bitmask_ops.hpp',['../bitmask__ops_8hpp.html',1,'']]],
   ['bitwise_5fpartitioner',['bitwise_partitioner',['../structbitwise__partitioner.html',1,'']]],
+  ['bitwiseop',['BitwiseOp',['../structcudf_1_1binops_1_1compiled_1_1BitwiseOp.html',1,'cudf::binops::compiled']]],
   ['bitwiseopdispatcher',['BitwiseOpDispatcher',['../structBitwiseOpDispatcher.html',1,'']]],
   ['block_5fsize',['block_size',['../structBlockSumArray.html#a1d278705f6112181ad427b162832b4e5',1,'BlockSumArray']]],
   ['blocksumarray',['BlockSumArray',['../structBlockSumArray.html',1,'']]],

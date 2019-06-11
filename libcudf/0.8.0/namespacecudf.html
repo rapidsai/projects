@@ -141,6 +141,15 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>bool8</b> = <a class
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ae942e9a8d320f23d61bee22ddc06df55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ae942e9a8d320f23d61bee22ddc06df55">binary_operation</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> *out, <a class="el" href="structgdf__scalar.html">gdf_scalar</a> *lhs, <a class="el" href="structgdf__column__.html">gdf_column</a> *rhs, gdf_binary_operator ope)</td></tr>
+<tr class="memdesc:ae942e9a8d320f23d61bee22ddc06df55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a binary operation between a <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a> and a gdf_column.  <a href="#ae942e9a8d320f23d61bee22ddc06df55">More...</a><br /></td></tr>
+<tr class="separator:ae942e9a8d320f23d61bee22ddc06df55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa02af1454978d7d7f7b9f651437b3ab5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aa02af1454978d7d7f7b9f651437b3ab5">binary_operation</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> *out, <a class="el" href="structgdf__column__.html">gdf_column</a> *lhs, <a class="el" href="structgdf__scalar.html">gdf_scalar</a> *rhs, gdf_binary_operator ope)</td></tr>
+<tr class="memdesc:aa02af1454978d7d7f7b9f651437b3ab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a binary operation between a gdf_column and a <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a>.  <a href="#aa02af1454978d7d7f7b9f651437b3ab5">More...</a><br /></td></tr>
+<tr class="separator:aa02af1454978d7d7f7b9f651437b3ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad01e2e81bc2b671dfb8963a7be22e3b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ad01e2e81bc2b671dfb8963a7be22e3b0">binary_operation</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> *out, <a class="el" href="structgdf__column__.html">gdf_column</a> *lhs, <a class="el" href="structgdf__column__.html">gdf_column</a> *rhs, gdf_binary_operator ope)</td></tr>
+<tr class="memdesc:ad01e2e81bc2b671dfb8963a7be22e3b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a binary operation between two gdf_columns.  <a href="#ad01e2e81bc2b671dfb8963a7be22e3b0">More...</a><br /></td></tr>
+<tr class="separator:ad01e2e81bc2b671dfb8963a7be22e3b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec006bc00092dd8ec47f2c7ca6fe01d4"><td class="memItemLeft" align="right" valign="top">rmm::device_vector&lt; bit_mask::bit_mask_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aec006bc00092dd8ec47f2c7ca6fe01d4">row_bitmask</a> (<a class="el" href="structcudf_1_1table.html">cudf::table</a> const  &amp;<a class="el" href="structcudf_1_1table.html">table</a>, cudaStream_t stream=0)</td></tr>
 <tr class="memdesc:aec006bc00092dd8ec47f2c7ca6fe01d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a bitmask indicating the presence of NULL values in rows of a table.  <a href="#aec006bc00092dd8ec47f2c7ca6fe01d4">More...</a><br /></td></tr>
 <tr class="separator:aec006bc00092dd8ec47f2c7ca6fe01d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -263,12 +272,12 @@ std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="memdesc:aaf37d87f3ef5bb0736ad2dfeeac3e766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size in bytes of each element of a column (a.k.a. the column's width) <br /></td></tr>
 <tr class="separator:aaf37d87f3ef5bb0736ad2dfeeac3e766"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae62151c46119cd04dc146c9e4175375f"><td class="memTemplParams" colspan="2">template&lt;typename T , typename BinaryOp &gt; </td></tr>
-<tr class="memitem:ae62151c46119cd04dc146c9e4175375f"><td class="memTemplItemLeft" align="right" valign="top">__forceinline__ __device__ T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ae62151c46119cd04dc146c9e4175375f">genericAtomicOperation</a> (T *address, T const &amp;update_value, <a class="el" href="structBinaryOp.html">BinaryOp</a> op)</td></tr>
-<tr class="memdesc:ae62151c46119cd04dc146c9e4175375f"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute atomic binary operation reads the <code>old</code> located at the <code>address</code> in global or shared memory, computes '<a class="el" href="structBinaryOp.html">BinaryOp</a>'('old', 'update_value'), and stores the result back to memory at the same address. These three operations are performed in one atomic transaction.  <a href="#ae62151c46119cd04dc146c9e4175375f">More...</a><br /></td></tr>
+<tr class="memitem:ae62151c46119cd04dc146c9e4175375f"><td class="memTemplItemLeft" align="right" valign="top">__forceinline__ __device__ T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ae62151c46119cd04dc146c9e4175375f">genericAtomicOperation</a> (T *address, T const &amp;update_value, BinaryOp op)</td></tr>
+<tr class="memdesc:ae62151c46119cd04dc146c9e4175375f"><td class="mdescLeft">&#160;</td><td class="mdescRight">compute atomic binary operation reads the <code>old</code> located at the <code>address</code> in global or shared memory, computes 'BinaryOp'('old', 'update_value'), and stores the result back to memory at the same address. These three operations are performed in one atomic transaction.  <a href="#ae62151c46119cd04dc146c9e4175375f">More...</a><br /></td></tr>
 <tr class="separator:ae62151c46119cd04dc146c9e4175375f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acafbd5dbae09b26c92b964e0122d5fc9"><td class="memTemplParams" colspan="2"><a id="acafbd5dbae09b26c92b964e0122d5fc9"></a>
 template&lt;typename BinaryOp &gt; </td></tr>
-<tr class="memitem:acafbd5dbae09b26c92b964e0122d5fc9"><td class="memTemplItemLeft" align="right" valign="top">__forceinline__ __device__ <a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::bool8</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>genericAtomicOperation</b> (<a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::bool8</a> *address, <a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::bool8</a> const &amp;update_value, <a class="el" href="structBinaryOp.html">BinaryOp</a> op)</td></tr>
+<tr class="memitem:acafbd5dbae09b26c92b964e0122d5fc9"><td class="memTemplItemLeft" align="right" valign="top">__forceinline__ __device__ <a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::bool8</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>genericAtomicOperation</b> (<a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::bool8</a> *address, <a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::bool8</a> const &amp;update_value, BinaryOp op)</td></tr>
 <tr class="separator:acafbd5dbae09b26c92b964e0122d5fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d210161ecb8636ef5a5fca8cdcee3c9"><td class="memTemplParams" colspan="2"><a id="a0d210161ecb8636ef5a5fca8cdcee3c9"></a>
 template&lt;class functor_t , typename... Ts&gt; </td></tr>
@@ -477,6 +486,165 @@ if <code>input.size</code> is zero, there is no error, and an empty column is re
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>gdf_column Column containing copy of all elements of <code>input</code> passing the filter defined by <code>boolean_mask</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ae942e9a8d320f23d61bee22ddc06df55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae942e9a8d320f23d61bee22ddc06df55">&#9670;&nbsp;</a></span>binary_operation() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cudf::binary_operation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgdf__scalar.html">gdf_scalar</a> *&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_binary_operator&#160;</td>
+          <td class="paramname"><em>ope</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Performs a binary operation between a <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a> and a gdf_column. </p>
+<p>The desired output type must be specified in out-&gt;dtype.</p>
+<p>If the valid field in the gdf_column output is not nullptr, then it will be filled with the bitwise AND of the valid mask of rhs gdf_column and is_valid bool of lhs <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>(gdf_column) Output of the operation. </td></tr>
+    <tr><td class="paramname">lhs</td><td>(<a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a>) First operand of the operation. </td></tr>
+    <tr><td class="paramname">rhs</td><td>(gdf_column) Second operand of the operation. </td></tr>
+    <tr><td class="paramname">ope</td><td>(enum) The binary operator to use </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa02af1454978d7d7f7b9f651437b3ab5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa02af1454978d7d7f7b9f651437b3ab5">&#9670;&nbsp;</a></span>binary_operation() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cudf::binary_operation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgdf__scalar.html">gdf_scalar</a> *&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_binary_operator&#160;</td>
+          <td class="paramname"><em>ope</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Performs a binary operation between a gdf_column and a <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a>. </p>
+<p>The desired output type must be specified in out-&gt;dtype.</p>
+<p>If the valid field in the gdf_column output is not nullptr, then it will be filled with the bitwise AND of the valid mask of lhs gdf_column and is_valid bool of rhs <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>(gdf_column) Output of the operation. </td></tr>
+    <tr><td class="paramname">lhs</td><td>(gdf_column) First operand of the operation. </td></tr>
+    <tr><td class="paramname">rhs</td><td>(<a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a>) Second operand of the operation. </td></tr>
+    <tr><td class="paramname">ope</td><td>(enum) The binary operator to use </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad01e2e81bc2b671dfb8963a7be22e3b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad01e2e81bc2b671dfb8963a7be22e3b0">&#9670;&nbsp;</a></span>binary_operation() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cudf::binary_operation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_binary_operator&#160;</td>
+          <td class="paramname"><em>ope</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Performs a binary operation between two gdf_columns. </p>
+<p>The desired output type must be specified in out-&gt;dtype.</p>
+<p>If the valid field in the gdf_column output is not nullptr, then it will be filled with the bitwise AND of the valid masks of lhs and rhs gdf_columns</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>(gdf_column) Output of the operation. </td></tr>
+    <tr><td class="paramname">lhs</td><td>(gdf_column) First operand of the operation. </td></tr>
+    <tr><td class="paramname">rhs</td><td>(gdf_column) Second operand of the operation. </td></tr>
+    <tr><td class="paramname">ope</td><td>(enum) The binary operator to use </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -957,7 +1125,7 @@ template&lt;typename T , typename BinaryOp &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structBinaryOp.html">BinaryOp</a>&#160;</td>
+          <td class="paramtype">BinaryOp&#160;</td>
           <td class="paramname"><em>op</em>&#160;</td>
         </tr>
         <tr>
@@ -968,7 +1136,7 @@ template&lt;typename T , typename BinaryOp &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>compute atomic binary operation reads the <code>old</code> located at the <code>address</code> in global or shared memory, computes '<a class="el" href="structBinaryOp.html">BinaryOp</a>'('old', 'update_value'), and stores the result back to memory at the same address. These three operations are performed in one atomic transaction. </p>
+<p>compute atomic binary operation reads the <code>old</code> located at the <code>address</code> in global or shared memory, computes 'BinaryOp'('old', 'update_value'), and stores the result back to memory at the same address. These three operations are performed in one atomic transaction. </p>
 <p>----------------------------------------------------------------------&mdash;* The supported cudf types for <code>genericAtomicOperation</code> are: int8_t, int16_t, int32_t, int64_t, float, double, cudf::date32, cudf::date64, cudf::timestamp, cudf::category, cudf::nvstring_category, cudf::bool8</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
