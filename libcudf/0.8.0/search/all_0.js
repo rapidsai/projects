@@ -4,7 +4,7 @@ var searchData=
   ['aggregatesumkernel',['aggregateSumKernel',['../parsing__utils_8cu.html#a8a0f4f2fbf02bec75bdc92800a9e2800',1,'parsing_utils.cu']]],
   ['aggregation_5foperations_2ehpp',['aggregation_operations.hpp',['../aggregation__operations_8hpp.html',1,'']]],
   ['all_5fbitmask_5fon',['all_bitmask_on',['../bitmask__ops_8hpp.html#a4ead89eef8e7c2342a8074ed0b55e72e',1,'bitmask_ops.cu']]],
-  ['allocate_5flike',['allocate_like',['../namespacecudf.html#a29ad9c7f685b0dab321f4e55acfb0776',1,'cudf::allocate_like(gdf_column const  &amp;input, cudaStream_t stream=0)'],['../namespacecudf.html#af8927039e4f9ea22fc66feeb9b5f13e8',1,'cudf::allocate_like(table const  &amp;t, cudaStream_t stream=0)']]],
+  ['allocate_5flike',['allocate_like',['../namespacecudf.html#ae08cb8501fe52a732913af1ac7b25ace',1,'cudf::allocate_like(gdf_column const  &amp;input, bool allocate_mask_if_exists=true, cudaStream_t stream=0)'],['../namespacecudf.html#af3a1a6bea8f1e1dd224f4316bbd23fbc',1,'cudf::allocate_like(table const  &amp;t, bool allocate_mask_if_exists=true, cudaStream_t stream=0)']]],
   ['append_5ffull_5fjoin_5findices',['append_full_join_indices',['../full__join_8cuh.html#ac234d83f65cafbba0a2fa151f43558f9',1,'full_join.cuh']]],
   ['apply_5fbitmask_5fto_5fbitmask',['apply_bitmask_to_bitmask',['../bitmask__ops_8hpp.html#a4400e7c480cc83d4c66a6b82a75ec45d',1,'bitmask_ops.cu']]],
   ['apply_5fboolean_5fmask',['apply_boolean_mask',['../namespacecudf.html#a5fba636792abcf96032c639873d14870',1,'cudf']]],

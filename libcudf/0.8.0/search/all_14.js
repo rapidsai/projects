@@ -14,5 +14,6 @@ var searchData=
   ['use_5fcols_5fint',['use_cols_int',['../structcsv__read__arg.html#aee1f530bc563ef08fafbd26cc9b9bcce',1,'csv_read_arg']]],
   ['use_5fcols_5fint_5flen',['use_cols_int_len',['../structcsv__read__arg.html#a45489b296d1ac016858678e928690f61',1,'csv_read_arg']]],
   ['use_5fcols_5flen',['use_cols_len',['../structorc__read__arg.html#a5d940c1520a98dcbf617dc076e515543',1,'orc_read_arg::use_cols_len()'],['../structpq__read__arg.html#aecbfbd623db9aa2ccdca4ae56ab41784',1,'pq_read_arg::use_cols_len()']]],
+  ['use_5findex',['use_index',['../structorc__read__arg.html#a20748f157de2578d8127a0c539fbad2a',1,'orc_read_arg']]],
   ['usermetadataitem',['UserMetadataItem',['../structorc_1_1UserMetadataItem.html',1,'orc']]]
 ];

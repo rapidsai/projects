@@ -9,10 +9,12 @@ var searchData=
   ['reductionproduct',['ReductionProduct',['../structcudf_1_1reductions_1_1ReductionProduct.html',1,'cudf::reductions']]],
   ['reductionsum',['ReductionSum',['../structcudf_1_1reductions_1_1ReductionSum.html',1,'cudf::reductions']]],
   ['reductionsumofsquares',['ReductionSumOfSquares',['../structcudf_1_1reductions_1_1ReductionSumOfSquares.html',1,'cudf::reductions']]],
+  ['replace_5fnulls',['replace_nulls',['../namespacecudf.html#a85645250c7ada0b73a61e9a691931b36',1,'cudf::replace_nulls(const gdf_column &amp;input, const gdf_column &amp;replacement)'],['../namespacecudf.html#ad66cc66793473e7fc90ad3ed4cd1b450',1,'cudf::replace_nulls(const gdf_column &amp;input, const gdf_scalar &amp;replacement)']]],
   ['row_5fbitmask',['row_bitmask',['../namespacecudf.html#aec006bc00092dd8ec47f2c7ca6fe01d4',1,'cudf']]],
   ['row_5fcomparator',['row_comparator',['../structrow__comparator.html',1,'row_comparator&lt; map_type &gt;'],['../structrow__comparator.html#ae5fcc41c68f1c76039bdc0bed3992f17',1,'row_comparator::row_comparator()']]],
   ['row_5fequality_5fcomparator',['row_equality_comparator',['../structrow__equality__comparator.html',1,'row_equality_comparator&lt; nullable &gt;'],['../structrow__equality__comparator.html#a2620a7281af2532b2643c2f0031a7cde',1,'row_equality_comparator::row_equality_comparator(device_table const &amp;lhs, bool nulls_are_equal=false)'],['../structrow__equality__comparator.html#af3d9d71d421ccb5052bc4e4ffec74078',1,'row_equality_comparator::row_equality_comparator(device_table const &amp;lhs, device_table const &amp;rhs, bool nulls_are_equal=false)']]],
   ['row_5fgroup',['row_group',['../structpq__read__arg.html#ac32f7e3f2cf8c2bba7ad71afe81c9ea8',1,'pq_read_arg']]],
   ['row_5finequality_5fcomparator',['row_inequality_comparator',['../structrow__inequality__comparator.html',1,'row_inequality_comparator&lt; nullable &gt;'],['../structrow__inequality__comparator.html#aa1a623e565b1d6151bfc126279c792b6',1,'row_inequality_comparator::row_inequality_comparator(device_table const &amp;lhs, bool nulls_are_smallest=true, int8_t *const asc_desc_flags=nullptr)'],['../structrow__inequality__comparator.html#a0f467c9b15dcfebfef51013800376ee3',1,'row_inequality_comparator::row_inequality_comparator(device_table const &amp;lhs, device_table const &amp;rhs, bool nulls_are_smallest=true, int8_t *const asc_desc_flags=nullptr)']]],
-  ['rowgroup',['RowGroup',['../structparquet_1_1RowGroup.html',1,'parquet']]]
+  ['rowgroup',['RowGroup',['../structparquet_1_1RowGroup.html',1,'parquet::RowGroup'],['../structorc_1_1gpu_1_1RowGroup.html',1,'orc::gpu::RowGroup']]],
+  ['rowindex_5fstate_5fs',['rowindex_state_s',['../structorc_1_1gpu_1_1rowindex__state__s.html',1,'orc::gpu']]]
 ];

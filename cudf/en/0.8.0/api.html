@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.8.0a1+606.g878f02e.dirty documentation</title>
+  <title>API Reference &mdash; cudf 0.8.0a1+701.gbeac92b.dirty documentation</title>
   
 
   
@@ -4578,7 +4578,7 @@ Columns are partitioned in the order they are given</p>
 
 <span class="target" id="module-cudf.io.orc"></span><dl class="function">
 <dt id="cudf.io.orc.read_orc">
-<code class="sig-prename descclassname">cudf.io.orc.</code><code class="sig-name descname">read_orc</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">engine='cudf'</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">stripe=None</em>, <em class="sig-param">skip_rows=None</em>, <em class="sig-param">num_rows=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.orc.read_orc" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cudf.io.orc.</code><code class="sig-name descname">read_orc</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">engine='cudf'</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">stripe=None</em>, <em class="sig-param">skip_rows=None</em>, <em class="sig-param">num_rows=None</em>, <em class="sig-param">use_index=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.orc.read_orc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an ORC object from the file path, returning a DataFrame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -4594,6 +4594,8 @@ Columns are partitioned in the order they are given</p>
 <dt><strong>skip_rows</strong><span class="classifier">int, default None</span></dt><dd><p>If not None, the number of rows to skip from the start of the file.</p>
 </dd>
 <dt><strong>num_rows</strong><span class="classifier">int, default None</span></dt><dd><p>If not None, the total number of rows to read.</p>
+</dd>
+<dt><strong>use_index</strong><span class="classifier">bool, default True</span></dt><dd><p>If True, use row index if available for faster seeking.</p>
 </dd>
 <dt><strong>kwargs are passed to the engine</strong></dt><dd></dd>
 </dl>
