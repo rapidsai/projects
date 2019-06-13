@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.8.0a1+701.gbeac92b.dirty documentation</title>
+  <title>API Reference &mdash; cudf 0.8.0a1+739.g27688a0.dirty documentation</title>
   
 
   
@@ -395,34 +395,37 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_arrow" title="cudf.dataframe.DataFrame.to_arrow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_arrow</span></code></a>(self[, preserve_index])</p></td>
 <td><p>Convert to a PyArrow Table.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_dlpack" title="cudf.dataframe.DataFrame.to_dlpack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dlpack</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_csv" title="cudf.dataframe.DataFrame.to_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_csv</span></code></a>(self[, path, sep, na_rep, columns, …])</p></td>
+<td><p>Write a dataframe to csv file format.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_dlpack" title="cudf.dataframe.DataFrame.to_dlpack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dlpack</span></code></a>(self)</p></td>
 <td><p>Converts a cuDF object into a DLPack tensor.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_feather" title="cudf.dataframe.DataFrame.to_feather"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_feather</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_feather" title="cudf.dataframe.DataFrame.to_feather"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_feather</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
 <td><p>Write a DataFrame to the feather format.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_gpu_matrix" title="cudf.dataframe.DataFrame.to_gpu_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_gpu_matrix</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_gpu_matrix" title="cudf.dataframe.DataFrame.to_gpu_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_gpu_matrix</span></code></a>(self)</p></td>
 <td><p>Convert to a numba gpu ndarray</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_hdf" title="cudf.dataframe.DataFrame.to_hdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdf</span></code></a>(self, path_or_buf, key, \*args, …)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_hdf" title="cudf.dataframe.DataFrame.to_hdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdf</span></code></a>(self, path_or_buf, key, \*args, …)</p></td>
 <td><p>Write the contained data to an HDF5 file using HDFStore.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_json" title="cudf.dataframe.DataFrame.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>(self[, path_or_buf])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_json" title="cudf.dataframe.DataFrame.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>(self[, path_or_buf])</p></td>
 <td><p>Convert the cuDF object to a JSON string.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_pandas" title="cudf.dataframe.DataFrame.to_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pandas</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_pandas" title="cudf.dataframe.DataFrame.to_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pandas</span></code></a>(self)</p></td>
 <td><p>Convert to a Pandas DataFrame.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_parquet" title="cudf.dataframe.DataFrame.to_parquet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_parquet</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_parquet" title="cudf.dataframe.DataFrame.to_parquet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_parquet</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
 <td><p>Write a DataFrame to the parquet format.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_records" title="cudf.dataframe.DataFrame.to_records"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_records</span></code></a>(self[, index])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_records" title="cudf.dataframe.DataFrame.to_records"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_records</span></code></a>(self[, index])</p></td>
 <td><p>Convert to a numpy recarray</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_string" title="cudf.dataframe.DataFrame.to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_string</span></code></a>(self[, nrows, ncols])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_string" title="cudf.dataframe.DataFrame.to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_string</span></code></a>(self[, nrows, ncols])</p></td>
 <td><p>Convert to string</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.transpose" title="cudf.dataframe.DataFrame.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.transpose" title="cudf.dataframe.DataFrame.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>(self)</p></td>
 <td><p>Transpose index and columns.</p></td>
 </tr>
 </tbody>
@@ -1801,6 +1804,52 @@ by.</p>
 <span class="go">None: int64</span>
 <span class="go">a: int64</span>
 <span class="go">b: int64</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="cudf.dataframe.DataFrame.to_csv">
+<code class="sig-name descname">to_csv</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">path=None</em>, <em class="sig-param">sep='</em>, <em class="sig-param">'</em>, <em class="sig-param">na_rep=''</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">header=True</em>, <em class="sig-param">index=True</em>, <em class="sig-param">line_terminator='n'</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.DataFrame.to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a dataframe to csv file format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>df</strong><span class="classifier">DataFrame</span></dt><dd><p>DataFrame object to be written to csv</p>
+</dd>
+<dt><strong>path</strong><span class="classifier">str, default None</span></dt><dd><p>Path of file where DataFrame will be written</p>
+</dd>
+<dt><strong>sep</strong><span class="classifier">char, default ‘,’</span></dt><dd><p>Delimiter to be used.</p>
+</dd>
+<dt><strong>na_rep</strong><span class="classifier">str, default ‘’</span></dt><dd><p>String to use for null entries</p>
+</dd>
+<dt><strong>columns</strong><span class="classifier">list of str, optional</span></dt><dd><p>Columns to write</p>
+</dd>
+<dt><strong>header</strong><span class="classifier">bool, default True</span></dt><dd><p>Write out the column names</p>
+</dd>
+<dt><strong>index</strong><span class="classifier">bool, default True</span></dt><dd><p>Write out the index as a column</p>
+</dd>
+<dt><strong>line_terminator: char, default ‘n’</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#cudf.io.csv.read_csv" title="cudf.io.csv.read_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cudf.io.csv.read_csv</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Follows the standard of Pandas csv.QUOTE_NONNUMERIC for all output.</p>
+<p class="rubric">Examples</p>
+<p>Write a dataframe to csv.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cudf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;foo.csv&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="go">                         &#39;y&#39;: [1.0, 3.3, 2.2, 4.4],</span>
+<span class="go">                         &#39;z&#39;: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cudf</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -4435,6 +4484,12 @@ Passing False can improve performance.</p>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#cudf.io.csv.to_csv" title="cudf.io.csv.to_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cudf.io.csv.to_csv</span></code></a></dt><dd></dd>
+</dl>
+</div>
 <p class="rubric">Examples</p>
 <p>Create a test csv file</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cudf</span>
@@ -4455,6 +4510,52 @@ Passing False can improve performance.</p>
 <span class="go">0  123 2018-11-13T12:00:00.000 5451</span>
 <span class="go">1  456 2018-11-14T12:35:01.000 5784</span>
 <span class="go">2  789 2018-11-15T18:02:59.000 6117</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="cudf.io.csv.to_csv">
+<code class="sig-prename descclassname">cudf.io.csv.</code><code class="sig-name descname">to_csv</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">path=None</em>, <em class="sig-param">sep='</em>, <em class="sig-param">'</em>, <em class="sig-param">na_rep=''</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">header=True</em>, <em class="sig-param">index=True</em>, <em class="sig-param">line_terminator='n'</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.csv.to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a dataframe to csv file format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>df</strong><span class="classifier">DataFrame</span></dt><dd><p>DataFrame object to be written to csv</p>
+</dd>
+<dt><strong>path</strong><span class="classifier">str, default None</span></dt><dd><p>Path of file where DataFrame will be written</p>
+</dd>
+<dt><strong>sep</strong><span class="classifier">char, default ‘,’</span></dt><dd><p>Delimiter to be used.</p>
+</dd>
+<dt><strong>na_rep</strong><span class="classifier">str, default ‘’</span></dt><dd><p>String to use for null entries</p>
+</dd>
+<dt><strong>columns</strong><span class="classifier">list of str, optional</span></dt><dd><p>Columns to write</p>
+</dd>
+<dt><strong>header</strong><span class="classifier">bool, default True</span></dt><dd><p>Write out the column names</p>
+</dd>
+<dt><strong>index</strong><span class="classifier">bool, default True</span></dt><dd><p>Write out the index as a column</p>
+</dd>
+<dt><strong>line_terminator: char, default ‘n’</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#cudf.io.csv.read_csv" title="cudf.io.csv.read_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cudf.io.csv.read_csv</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Follows the standard of Pandas csv.QUOTE_NONNUMERIC for all output.</p>
+<p class="rubric">Examples</p>
+<p>Write a dataframe to csv.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cudf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;foo.csv&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="go">                         &#39;y&#39;: [1.0, 3.3, 2.2, 4.4],</span>
+<span class="go">                         &#39;z&#39;: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cudf</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
