@@ -85,10 +85,13 @@ $(function() {
 : <a class="el" href="classconcurrent__unordered__multimap.html#a64bb89fd2300aeffcca835008c5e2a2f">concurrent_unordered_multimap&lt; Key, Element, size_type, unused_key, unused_element, Hasher, Equality, Allocator, count_collisions &gt;</a>
 </li>
 <li>create()
-: <a class="el" href="classdevice__table.html#aa122b7f414960ff7aa0e2afb2c6928dc">device_table</a>
+: <a class="el" href="classdevice__table.html#a23a5d82de003cd01601d5ea1dd0a9caf">device_table</a>
 </li>
 <li>Create()
 : <a class="el" href="classHostDecompressor.html#aaa0cda6af702a44068725b9bbacd3f1c">HostDecompressor</a>
+</li>
+<li>CsvReader()
+: <a class="el" href="classcudf_1_1CsvReader.html#a26c8ed7da3a7f0e4f4d7ad85978e1007">cudf::CsvReader</a>
 </li>
 </ul>
 
@@ -165,7 +168,8 @@ $(function() {
 
 <h3><a id="index_i"></a>- i -</h3><ul>
 <li>Impl()
-: <a class="el" href="classcudf_1_1JsonReader_1_1Impl.html#a54bacd460fd4b7189d64df7eb01fd243">cudf::JsonReader::Impl</a>
+: <a class="el" href="classcudf_1_1CsvReader_1_1Impl.html#afa4f793292300d3d7108ec0ac10b9474">cudf::CsvReader::Impl</a>
+, <a class="el" href="classcudf_1_1JsonReader_1_1Impl.html#a54bacd460fd4b7189d64df7eb01fd243">cudf::JsonReader::Impl</a>
 </li>
 <li>InitSchema()
 : <a class="el" href="classparquet_1_1CompactProtocolReader.html#a6625ec889444f0aaed50aef8c8700c3e">parquet::CompactProtocolReader</a>
@@ -191,7 +195,7 @@ $(function() {
 : <a class="el" href="structcudf_1_1json__reader__args.html#a972a7a9e44ecdf5a59b893f8a8bc7dc3">cudf::json_reader_args</a>
 </li>
 <li>JsonReader()
-: <a class="el" href="classcudf_1_1JsonReader.html#a9e469e7cf35d9b86b585383eb66f4165">cudf::JsonReader</a>
+: <a class="el" href="classcudf_1_1JsonReader.html#a61c91a5042d6b9d0eb359d9e09f47a25">cudf::JsonReader</a>
 </li>
 </ul>
 
@@ -241,8 +245,7 @@ $(function() {
 
 <h3><a id="index_o"></a>- o -</h3><ul>
 <li>operator()()
-: <a class="el" href="structConvertFunctor.html#a03f67f1bec072aa0442642850afb7aeb">ConvertFunctor</a>
-, <a class="el" href="structcudf_1_1ConvertFunctor.html#af661fa487fb716942ae513358305d406">cudf::ConvertFunctor</a>
+: <a class="el" href="structcudf_1_1ConvertFunctor.html#a600ee7fab806ae40bda1a9a67daa225d">cudf::ConvertFunctor</a>
 , <a class="el" href="structrow__comparator.html#a34ba09e0cf5563cdddc65140b0aac1c5">row_comparator&lt; map_type &gt;</a>
 , <a class="el" href="structrow__equality__comparator.html#aa02720f15cdc22f8398b45929a0958f9">row_equality_comparator&lt; nullable &gt;</a>
 , <a class="el" href="structrow__inequality__comparator.html#a6831c8eb8ee40c432ff48892498889bc">row_inequality_comparator&lt; nullable &gt;</a>
@@ -255,12 +258,20 @@ $(function() {
 
 <h3><a id="index_r"></a>- r -</h3><ul>
 <li>read()
-: <a class="el" href="classcudf_1_1JsonReader_1_1Impl.html#ab552f3ff7bd6624419a63c5a16c0e5c9">cudf::JsonReader::Impl</a>
+: <a class="el" href="classcudf_1_1CsvReader_1_1Impl.html#ac0ab7f351df986272828dc3710254e19">cudf::CsvReader::Impl</a>
+, <a class="el" href="classcudf_1_1CsvReader.html#a63fa517fc82bd2a0c87c1c4996ef3769">cudf::CsvReader</a>
+, <a class="el" href="classcudf_1_1JsonReader_1_1Impl.html#ab552f3ff7bd6624419a63c5a16c0e5c9">cudf::JsonReader::Impl</a>
 , <a class="el" href="classcudf_1_1JsonReader.html#abb5c5bad406e6daacc8ff1cc9de965bf">cudf::JsonReader</a>
 </li>
 <li>read_byte_range()
-: <a class="el" href="classcudf_1_1JsonReader_1_1Impl.html#a5b49ab8be6824668eb9665c847a385f1">cudf::JsonReader::Impl</a>
+: <a class="el" href="classcudf_1_1CsvReader_1_1Impl.html#ab01d6b0efb03ffe83d133ae30fa92a4c">cudf::CsvReader::Impl</a>
+, <a class="el" href="classcudf_1_1CsvReader.html#ac454a8842619cb8a2e6de20ec6f4513b">cudf::CsvReader</a>
+, <a class="el" href="classcudf_1_1JsonReader_1_1Impl.html#a5b49ab8be6824668eb9665c847a385f1">cudf::JsonReader::Impl</a>
 , <a class="el" href="classcudf_1_1JsonReader.html#ad54c9afbc508c3119da134badcecb724">cudf::JsonReader</a>
+</li>
+<li>read_rows()
+: <a class="el" href="classcudf_1_1CsvReader_1_1Impl.html#ad88d89640018810dbca1cc8ac79a17ca">cudf::CsvReader::Impl</a>
+, <a class="el" href="classcudf_1_1CsvReader.html#a7a7a0888f73da8010b490f602d3559de">cudf::CsvReader</a>
 </li>
 <li>row_comparator()
 : <a class="el" href="structrow__comparator.html#ae5fcc41c68f1c76039bdc0bed3992f17">row_comparator&lt; map_type &gt;</a>

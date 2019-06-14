@@ -22,10 +22,12 @@ digraph "wrapper_types.hpp"
   Node39 -> Node40 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node40 [label="wrapper_utils.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wrapper__utils_8hpp_source.html"];
   Node40 -> Node41 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node41 [label="json_reader_impl.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$json__reader__impl_8hpp_source.html"];
+  Node41 [label="csv_reader_impl.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$csv__reader__impl_8hpp_source.html"];
   Node40 -> Node42 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node42 [label="parsing_utils.cuh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$parsing__utils_8cuh.html"];
-  Node42 -> Node43 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node43 [label="parsing_utils.cu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$parsing__utils_8cu.html"];
+  Node42 [label="json_reader_impl.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$json__reader__impl_8hpp_source.html"];
   Node40 -> Node43 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node43 [label="parsing_utils.cuh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$parsing__utils_8cuh.html"];
+  Node43 -> Node44 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node44 [label="parsing_utils.cu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$parsing__utils_8cu.html"];
+  Node40 -> Node44 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

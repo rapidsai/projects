@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['raw_5fcsv_5f',['raw_csv_',['../structraw__csv__.html',1,'']]],
   ['reductionmax',['ReductionMax',['../structcudf_1_1reductions_1_1ReductionMax.html',1,'cudf::reductions']]],
   ['reductionmin',['ReductionMin',['../structcudf_1_1reductions_1_1ReductionMin.html',1,'cudf::reductions']]],
   ['reductionproduct',['ReductionProduct',['../structcudf_1_1reductions_1_1ReductionProduct.html',1,'cudf::reductions']]],

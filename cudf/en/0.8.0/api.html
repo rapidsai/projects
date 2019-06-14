@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.8.0a1+739.g27688a0.dirty documentation</title>
+  <title>API Reference &mdash; cudf 0.8.0a1+815.gdff2b20.dirty documentation</title>
   
 
   
@@ -4237,58 +4237,123 @@ on the grouped chunk.</p>
 <dt id="cudf.groupby.legacy_groupby.Groupby.apply_grouped">
 <code class="sig-prename descclassname">Groupby.</code><code class="sig-name descname">apply_grouped</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">function</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.groupby.legacy_groupby.Groupby.apply_grouped" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply a transformation function over the grouped chunk.</p>
-<blockquote>
-<div><p>This uses numba’s CUDA JIT compiler to convert the Python
+<p>This uses numba’s CUDA JIT compiler to convert the Python
 transformation function into a CUDA kernel, thus will have a
 compilation overhead during the first run.</p>
-</div></blockquote>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
-<dt><strong>func</strong><span class="classifier">function</span></dt><dd><blockquote>
-<div><p>The transformation function that will be executed on the CUDA GPU.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>incols: list</dt><dd><p>A list of names of input columns.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>func</strong><span class="classifier">function</span></dt><dd><p>The transformation function that will be executed on the CUDA GPU.</p>
 </dd>
-<dt>outcols: list</dt><dd><p>A dictionary of output column names and their dtype.</p>
+<dt><strong>incols: list</strong></dt><dd><p>A list of names of input columns.</p>
 </dd>
-<dt>kwargs<span class="classifier">dict</span></dt><dd><p>name-value of extra arguments. These values are passed directly into
+<dt><strong>outcols: list</strong></dt><dd><p>A dictionary of output column names and their dtype.</p>
+</dd>
+<dt><strong>kwargs</strong><span class="classifier">dict</span></dt><dd><p>name-value of extra arguments. These values are passed directly into
 the function.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</dd>
-</dl>
-<p>“, results)</p>
-<blockquote>
-<div><blockquote>
-<div><p># Note this gives the same result as its pandas equivalent
-pdf = df.to_pandas()
-pd_results = pdf.groupby(‘cat’)[‘val’].rolling(3).mean()</p>
-</div></blockquote>
-<p>Output:
-.. code-block:: python</p>
-<blockquote>
-<div><dl class="simple">
-<dt>Results:</dt><dd><p>cat  val                 avg</p>
-</dd>
-</dl>
-<p>0    1   16
-1    1   45
-2    1   62                41.0
-3    1   45  50.666666666666664
-4    1   26  44.333333333333336
-5    2    5
-6    2   51
-7    2   77  44.333333333333336
-8    2    1                43.0
-9    2   46  41.333333333333336
-[5 more rows]</p>
-</div></blockquote>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cudf</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">cuda</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;val&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">groups</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;key&#39;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;cudf&#39;</span><span class="p">)</span>
+
+<span class="c1"># Define a function to apply to each group</span>
+<span class="k">def</span> <span class="nf">mult_add</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">out1</span><span class="p">,</span> <span class="n">out2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cuda</span><span class="o">.</span><span class="n">threadIdx</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="n">cuda</span><span class="o">.</span><span class="n">blockDim</span><span class="o">.</span><span class="n">x</span><span class="p">):</span>
+        <span class="n">out1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">out2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">apply_grouped</span><span class="p">(</span><span class="n">mult_add</span><span class="p">,</span>
+                              <span class="n">incols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;val&#39;</span><span class="p">],</span>
+                              <span class="n">outcols</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;out1&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span>
+                                       <span class="s1">&#39;out2&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">},</span>
+                              <span class="c1"># threads per block</span>
+                              <span class="n">tpb</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="n">key</span>  <span class="n">val</span> <span class="n">out1</span> <span class="n">out2</span>
+<span class="mi">0</span>    <span class="mi">0</span>    <span class="mi">0</span>    <span class="mi">0</span>    <span class="mi">0</span>
+<span class="mi">1</span>    <span class="mi">0</span>    <span class="mi">1</span>    <span class="mi">0</span>    <span class="mi">1</span>
+<span class="mi">2</span>    <span class="mi">1</span>    <span class="mi">2</span>    <span class="mi">2</span>    <span class="mi">3</span>
+<span class="mi">3</span>    <span class="mi">1</span>    <span class="mi">3</span>    <span class="mi">3</span>    <span class="mi">4</span>
+<span class="mi">4</span>    <span class="mi">2</span>    <span class="mi">4</span>    <span class="mi">8</span>    <span class="mi">6</span>
+<span class="mi">5</span>    <span class="mi">2</span>    <span class="mi">5</span>   <span class="mi">10</span>    <span class="mi">7</span>
+<span class="mi">6</span>    <span class="mi">2</span>    <span class="mi">6</span>   <span class="mi">12</span>    <span class="mi">8</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">cuda</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="c1"># Create a random 15 row dataframe with one categorical</span>
+<span class="c1"># feature and one random integer valued feature</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;cat&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="s2">&quot;val&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">)],</span>
+        <span class="p">}</span>
+     <span class="p">)</span>
+
+<span class="c1"># Group the dataframe by its categorical feature</span>
+<span class="n">groups</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;cudf&quot;</span><span class="p">)</span>
+
+<span class="c1"># Define a kernel which takes the moving average of a</span>
+<span class="c1"># sliding window</span>
+<span class="k">def</span> <span class="nf">rolling_avg</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">avg</span><span class="p">):</span>
+    <span class="n">win_size</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">for</span> <span class="n">row</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">cuda</span><span class="o">.</span><span class="n">threadIdx</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+                                  <span class="nb">len</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> <span class="n">cuda</span><span class="o">.</span><span class="n">blockDim</span><span class="o">.</span><span class="n">x</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">win_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c1"># If there is not enough data to fill the window,</span>
+            <span class="c1"># take the average to be NaN</span>
+            <span class="n">avg</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">win_size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">total</span> <span class="o">+=</span> <span class="n">val</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">avg</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">total</span> <span class="o">/</span> <span class="n">win_size</span>
+
+<span class="c1"># Compute moving avgs on all groups</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">apply_grouped</span><span class="p">(</span><span class="n">rolling_avg</span><span class="p">,</span>
+                               <span class="n">incols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;val&#39;</span><span class="p">],</span>
+                               <span class="n">outcols</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">avg</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Results:&quot;</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span>
+
+<span class="c1"># Note this gives the same result as its pandas equivalent</span>
+<span class="n">pdf</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+<span class="n">pd_results</span> <span class="o">=</span> <span class="n">pdf</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">)[</span><span class="s1">&#39;val&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Results</span><span class="p">:</span>
+     <span class="n">cat</span>  <span class="n">val</span>                 <span class="n">avg</span>
+<span class="mi">0</span>    <span class="mi">1</span>   <span class="mi">16</span>
+<span class="mi">1</span>    <span class="mi">1</span>   <span class="mi">45</span>
+<span class="mi">2</span>    <span class="mi">1</span>   <span class="mi">62</span>                <span class="mf">41.0</span>
+<span class="mi">3</span>    <span class="mi">1</span>   <span class="mi">45</span>  <span class="mf">50.666666666666664</span>
+<span class="mi">4</span>    <span class="mi">1</span>   <span class="mi">26</span>  <span class="mf">44.333333333333336</span>
+<span class="mi">5</span>    <span class="mi">2</span>    <span class="mi">5</span>
+<span class="mi">6</span>    <span class="mi">2</span>   <span class="mi">51</span>
+<span class="mi">7</span>    <span class="mi">2</span>   <span class="mi">77</span>  <span class="mf">44.333333333333336</span>
+<span class="mi">8</span>    <span class="mi">2</span>    <span class="mi">1</span>                <span class="mf">43.0</span>
+<span class="mi">9</span>    <span class="mi">2</span>   <span class="mi">46</span>  <span class="mf">41.333333333333336</span>
+<span class="p">[</span><span class="mi">5</span> <span class="n">more</span> <span class="n">rows</span><span class="p">]</span>
+</pre></div>
+</div>
 <p>This is functionally equivalent to <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html">pandas.DataFrame.Rolling</a></p>
-</div></blockquote>
 </dd></dl>
 
 <dl class="method">

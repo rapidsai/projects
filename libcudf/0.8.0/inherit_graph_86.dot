@@ -3,7 +3,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node109 [label="logic_error",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node109 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node0 [label="cudf::logic_error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structcudf_1_1logic__error.html",tooltip="Exception thrown when logical precondition is violated. "];
+  Node0 [label="cudf::JsonReader::Impl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcudf_1_1JsonReader_1_1Impl.html",tooltip="Class used to parse Json input and convert it into gdf columns. "];
 }

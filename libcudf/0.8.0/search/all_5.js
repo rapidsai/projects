@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['false_5fvalues',['false_values',['../structcsv__read__arg.html#af0c32a31f8e26251428207dc939aecff',1,'csv_read_arg']]],
+  ['false_5fvalues',['false_values',['../structcudf_1_1csv__reader__args.html#ab3f88e3fffed7b1a651125c2e47b82b0',1,'cudf::csv_reader_args']]],
   ['fast_5fmodulo_5fpartitioner',['fast_modulo_partitioner',['../structfast__modulo__partitioner.html',1,'']]],
   ['fielddesc',['FieldDesc',['../structIpcParser_1_1FieldDesc.html',1,'IpcParser']]],
   ['file_5fender_5fs',['file_ender_s',['../structparquet_1_1file__ender__s.html',1,'parquet']]],
   ['file_5fheader_5fs',['file_header_s',['../structparquet_1_1file__header__s.html',1,'parquet']]],
   ['filefooter',['FileFooter',['../structorc_1_1FileFooter.html',1,'orc']]],
   ['filemetadata',['FileMetaData',['../structparquet_1_1FileMetaData.html',1,'parquet']]],
-  ['filepath_5for_5fbuffer',['filepath_or_buffer',['../structcsv__read__arg.html#aa2c43a3229c5829188cc2f24f2699eaf',1,'csv_read_arg']]],
+  ['filepath_5for_5fbuffer',['filepath_or_buffer',['../structcudf_1_1csv__reader__args.html#a31ff486be6853dc87f9fe0ed45d8c54a',1,'cudf::csv_reader_args']]],
   ['find',['find',['../classconcurrent__unordered__map.html#af0639cdcc2dbd60d21393b642073275b',1,'concurrent_unordered_map::find()'],['../classconcurrent__unordered__multimap.html#ad83fe57fe7025326ecc6436f6f97e14f',1,'concurrent_unordered_multimap::find()']]],
   ['findallfromset',['findAllFromSet',['../parsing__utils_8cu.html#a875fcc5bd06c95e5d755ca66f6527e9b',1,'findAllFromSet(const char *h_data, size_t h_size, const std::vector&lt; char &gt; &amp;keys, uint64_t result_offset, T *positions):&#160;parsing_utils.cu'],['../parsing__utils_8cuh.html#a875fcc5bd06c95e5d755ca66f6527e9b',1,'findAllFromSet(const char *h_data, size_t h_size, const std::vector&lt; char &gt; &amp;keys, uint64_t result_offset, T *positions):&#160;parsing_utils.cu']]],
   ['flag_5fdistinct',['flag_distinct',['../structgdf__context__.html#ad37c154f7eb77796490dd56f74f5485c',1,'gdf_context_']]],

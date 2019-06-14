@@ -2,7 +2,7 @@ var searchData=
 [
   ['managed',['managed',['../structmanaged.html',1,'']]],
   ['managed_5fallocator',['managed_allocator',['../structmanaged__allocator.html',1,'']]],
-  ['mangle_5fdupe_5fcols',['mangle_dupe_cols',['../structcsv__read__arg.html#af1b327239e34fba5e73a8547ed3fc94c',1,'csv_read_arg']]],
+  ['mangle_5fdupe_5fcols',['mangle_dupe_cols',['../structcudf_1_1csv__reader__args.html#a71bb1d116eefdd859d0edc0ddf210c4d',1,'cudf::csv_reader_args']]],
   ['mappedfile',['MappedFile',['../classMappedFile.html',1,'']]],
   ['mathopdispatcher',['MathOpDispatcher',['../structMathOpDispatcher.html',1,'']]],
   ['max',['max',['../structstd_1_1numeric__limits_3_01cudf_1_1detail_1_1wrapper_3_01T_00_01type__id_01_4_01_4.html#ad1e39a19122aedffc60a7d4f7f673ba5',1,'std::numeric_limits&lt; cudf::detail::wrapper&lt; T, type_id &gt; &gt;']]],

@@ -12,6 +12,6 @@ var searchData=
   ['postscript',['PostScript',['../structorc_1_1PostScript.html',1,'orc']]],
   ['pq_5fread_5farg',['pq_read_arg',['../structpq__read__arg.html',1,'']]],
   ['prefetch_5fqueue_5fs',['prefetch_queue_s',['../structprefetch__queue__s.html',1,'']]],
-  ['prefix',['prefix',['../structraw__csv__.html#ab27ebe80a758ae264891369602ec3995',1,'raw_csv_::prefix()'],['../structcsv__read__arg.html#a6e71498ed93845d85c18b38f22534912',1,'csv_read_arg::prefix()']]],
+  ['prefix',['prefix',['../structcudf_1_1csv__reader__args.html#a782867790faa2b6d04e24bc21fe16407',1,'cudf::csv_reader_args']]],
   ['protobufreader',['ProtobufReader',['../classorc_1_1ProtobufReader.html',1,'orc']]]
 ];

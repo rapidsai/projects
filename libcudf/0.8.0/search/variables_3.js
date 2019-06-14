@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['false_5fvalues',['false_values',['../structcsv__read__arg.html#af0c32a31f8e26251428207dc939aecff',1,'csv_read_arg']]],
-  ['filepath_5for_5fbuffer',['filepath_or_buffer',['../structcsv__read__arg.html#aa2c43a3229c5829188cc2f24f2699eaf',1,'csv_read_arg']]],
+  ['false_5fvalues',['false_values',['../structcudf_1_1csv__reader__args.html#ab3f88e3fffed7b1a651125c2e47b82b0',1,'cudf::csv_reader_args']]],
+  ['filepath_5for_5fbuffer',['filepath_or_buffer',['../structcudf_1_1csv__reader__args.html#a31ff486be6853dc87f9fe0ed45d8c54a',1,'cudf::csv_reader_args']]],
   ['flag_5fdistinct',['flag_distinct',['../structgdf__context__.html#ad37c154f7eb77796490dd56f74f5485c',1,'gdf_context_']]],
   ['flag_5fgroupby_5finclude_5fnulls',['flag_groupby_include_nulls',['../structgdf__context__.html#aad363cb6249b3826b0eb27dd0f331eff',1,'gdf_context_']]],
   ['flag_5fmethod',['flag_method',['../structgdf__context__.html#a835f25957aee3644e44dae95fcee9824',1,'gdf_context_']]],

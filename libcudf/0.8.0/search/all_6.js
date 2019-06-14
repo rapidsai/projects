@@ -9,6 +9,7 @@ var searchData=
   ['gdf_5fcolumn_5fview_5faugmented',['gdf_column_view_augmented',['../column_8cpp.html#af426d852e849de819215a81cf395e523',1,'column.cpp']]],
   ['gdf_5fcolumn_5fwrapper',['gdf_column_wrapper',['../classgdf__column__wrapper.html',1,'']]],
   ['gdf_5fcontext_5f',['gdf_context_',['../structgdf__context__.html',1,'']]],
+  ['gdf_5fcsv_5fquote_5fstyle',['gdf_csv_quote_style',['../namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062',1,'cudf']]],
   ['gdf_5fdata',['gdf_data',['../uniongdf__data.html',1,'']]],
   ['gdf_5fdtype_5fextra_5finfo',['gdf_dtype_extra_info',['../structgdf__dtype__extra__info.html',1,'']]],
   ['gdf_5fdtype_5fof',['gdf_dtype_of',['../namespacecudf.html#ad7b0f1bc518e47eaa2cfdd0ec88e3989',1,'cudf']]],

@@ -7,7 +7,7 @@ var searchData=
   ['length',['length',['../structBlockSumArray.html#a2b9b50037f253271720da42753bcf927',1,'BlockSumArray::length()'],['../classBitMask.html#a6d632170cc2f108ed1d650ae31c7d0ba',1,'BitMask::length()']]],
   ['limitrangetobrackets',['limitRangeToBrackets',['../namespacecudf.html#a139af29310abc011563f33c1fe1763db',1,'cudf']]],
   ['lines',['lines',['../structcudf_1_1json__reader__args.html#a832f3874679c07aa0c7929b2ba83d137',1,'cudf::json_reader_args']]],
-  ['lineterminator',['lineterminator',['../structcsv__read__arg.html#adf76239d00694c506ceaaf3d45650bc7',1,'csv_read_arg']]],
+  ['lineterminator',['lineterminator',['../structcudf_1_1csv__reader__args.html#a1075e3c94ee370627595397f746206d3',1,'cudf::csv_reader_args']]],
   ['localtime_5ftype_5frecord_5fs',['localtime_type_record_s',['../structlocaltime__type__record__s.html',1,'']]],
   ['logic_5ferror',['logic_error',['../structcudf_1_1logic__error.html',1,'cudf']]],
   ['logicalop',['LogicalOp',['../structcudf_1_1binops_1_1compiled_1_1LogicalOp.html',1,'cudf::binops::compiled']]],

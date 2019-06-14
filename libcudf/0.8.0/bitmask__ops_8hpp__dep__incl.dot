@@ -33,10 +33,12 @@ digraph "bitmask_ops.hpp"
   Node29 -> Node30 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node30 [label="wrapper_utils.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wrapper__utils_8hpp_source.html"];
   Node30 -> Node31 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node31 [label="json_reader_impl.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$json__reader__impl_8hpp_source.html"];
+  Node31 [label="csv_reader_impl.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$csv__reader__impl_8hpp_source.html"];
   Node30 -> Node32 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node32 [label="parsing_utils.cuh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$parsing__utils_8cuh.html"];
-  Node32 -> Node33 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node33 [label="parsing_utils.cu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$parsing__utils_8cu.html"];
+  Node32 [label="json_reader_impl.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$json__reader__impl_8hpp_source.html"];
   Node30 -> Node33 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node33 [label="parsing_utils.cuh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$parsing__utils_8cuh.html"];
+  Node33 -> Node34 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node34 [label="parsing_utils.cu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$parsing__utils_8cu.html"];
+  Node30 -> Node34 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

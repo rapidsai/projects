@@ -74,12 +74,21 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><h2>Functor for converting plain text data to cuDF data type value. </h2>
+<p><h2>Functor for converting CSV data to cuDF data type value. </h2>
  
  <a href="structcudf_1_1ConvertFunctor.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a600ee7fab806ae40bda1a9a67daa225d"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if_t&lt; std::is_integral&lt; T &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:a600ee7fab806ae40bda1a9a67daa225d"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ __forceinline__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1ConvertFunctor.html#a600ee7fab806ae40bda1a9a67daa225d">operator()</a> (const char *csvData, void *gdfColumnData, long rowIndex, long start, long end, const <a class="el" href="structParseOptions.html">ParseOptions</a> &amp;opts)</td></tr>
+<tr class="memdesc:a600ee7fab806ae40bda1a9a67daa225d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template specialization for operator() for types whose values can be convertible to a 0 or 1 to represent false/true. The converting is done by checking against the default and user-specified true/false values list.  <a href="#a600ee7fab806ae40bda1a9a67daa225d">More...</a><br /></td></tr>
+<tr class="separator:a600ee7fab806ae40bda1a9a67daa225d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a600ee7fab806ae40bda1a9a67daa225d"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if_t&lt;!std::is_integral&lt; T &gt;::value &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:a600ee7fab806ae40bda1a9a67daa225d"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ __forceinline__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1ConvertFunctor.html#a600ee7fab806ae40bda1a9a67daa225d">operator()</a> (const char *csvData, void *gdfColumnData, long rowIndex, long start, long end, const <a class="el" href="structParseOptions.html">ParseOptions</a> &amp;opts)</td></tr>
+<tr class="memdesc:a600ee7fab806ae40bda1a9a67daa225d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default template operator() dispatch specialization all data types </p><h2>(including wrapper types) that is not covered by above. </h2>
+ <a href="#a600ee7fab806ae40bda1a9a67daa225d">More...</a><br /></td></tr>
+<tr class="separator:a600ee7fab806ae40bda1a9a67daa225d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af661fa487fb716942ae513358305d406"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if_t&lt; std::is_integral&lt; T &gt;::value &gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:af661fa487fb716942ae513358305d406"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ __forceinline__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1ConvertFunctor.html#af661fa487fb716942ae513358305d406">operator()</a> (const char *data, void *gdf_columns, long row, long start, long end, const <a class="el" href="structParseOptions.html">ParseOptions</a> &amp;opts)</td></tr>
 <tr class="memdesc:af661fa487fb716942ae513358305d406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template specialization for operator() for types whose values can be convertible to a 0 or 1 to represent false/true. The converting is done by checking against the default and user-specified true/false values list.  <a href="#af661fa487fb716942ae513358305d406">More...</a><br /></td></tr>
@@ -91,11 +100,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af661fa487fb716942ae513358305d406"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h2>Functor for converting plain text data to cuDF data type value. </h2>
+<div class="textblock"><h2>Functor for converting CSV data to cuDF data type value. </h2>
+<h2>Functor for converting plain text data to cuDF data type value. </h2>
 <p>------------------------------------------------------------------------&mdash;* </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="af661fa487fb716942ae513358305d406"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af661fa487fb716942ae513358305d406">&#9670;&nbsp;</a></span>operator()() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af661fa487fb716942ae513358305d406">&#9670;&nbsp;</a></span>operator()() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,7 +170,7 @@ template&lt;typename T , typename std::enable_if_t&lt; std::is_integral&lt; T &g
 </div>
 </div>
 <a id="af661fa487fb716942ae513358305d406"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af661fa487fb716942ae513358305d406">&#9670;&nbsp;</a></span>operator()() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af661fa487fb716942ae513358305d406">&#9670;&nbsp;</a></span>operator()() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,7 +235,139 @@ template&lt;typename T , typename std::enable_if_t&lt;!std::is_integral&lt; T &g
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a id="a600ee7fab806ae40bda1a9a67daa225d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a600ee7fab806ae40bda1a9a67daa225d">&#9670;&nbsp;</a></span>operator()() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename std::enable_if_t&lt; std::is_integral&lt; T &gt;::value &gt; *  = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ __device__ __forceinline__ void cudf::ConvertFunctor::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>csvData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>gdfColumnData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>rowIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structParseOptions.html">ParseOptions</a> &amp;&#160;</td>
+          <td class="paramname"><em>opts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Template specialization for operator() for types whose values can be convertible to a 0 or 1 to represent false/true. The converting is done by checking against the default and user-specified true/false values list. </p>
+<p>------------------------------------------------------------------------&mdash;* It is handled here rather than within convertStrToValue() as that function </p><h2>is used by other types (ex. timestamp) that aren't 'booleable'. </h2>
+
+</div>
+</div>
+<a id="a600ee7fab806ae40bda1a9a67daa225d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a600ee7fab806ae40bda1a9a67daa225d">&#9670;&nbsp;</a></span>operator()() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename std::enable_if_t&lt;!std::is_integral&lt; T &gt;::value &gt; *  = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__host__ __device__ __forceinline__ void cudf::ConvertFunctor::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>csvData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>gdfColumnData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>rowIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structParseOptions.html">ParseOptions</a> &amp;&#160;</td>
+          <td class="paramname"><em>opts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default template operator() dispatch specialization all data types </p><h2>(including wrapper types) that is not covered by above. </h2>
+</p>
+<p>------------------------------------------------------------------------&mdash;* </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>csv_reader_impl.cu</li>
 <li>json_reader_impl.cu</li>
 </ul>
 </div><!-- contents -->

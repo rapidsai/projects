@@ -65,6 +65,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">cudf Namespace Reference</div>  </div>
@@ -76,11 +77,19 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1column__data__t.html">column_data_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1ColumnInfo.html">ColumnInfo</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1ConvertFunctor.html">ConvertFunctor</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><h2>Functor for converting plain text data to cuDF data type value. </h2>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><h2>Functor for converting CSV data to cuDF data type value. </h2>
  <a href="structcudf_1_1ConvertFunctor.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1csv__reader__args.html">csv_reader_args</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This struct contains all input parameters to the read_csv function.  <a href="structcudf_1_1csv__reader__args.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1CsvReader.html">CsvReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class used to parse Json input and convert it into gdf columns.  <a href="classcudf_1_1CsvReader.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1cuda__error.html">cuda_error</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when a CUDA error is encountered.  <a href="structcudf_1_1cuda__error.html#details">More...</a><br /></td></tr>
@@ -117,9 +126,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:aa79c8fb8912174ea99b556ee889c093c"><td class="memItemLeft" align="right" valign="top"><a id="aa79c8fb8912174ea99b556ee889c093c"></a>
+<tr class="memitem:a47b62e1217015ad17de6a7486691ccd2"><td class="memItemLeft" align="right" valign="top"><a id="a47b62e1217015ad17de6a7486691ccd2"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>string_pair</b> = std::pair&lt; const char *, size_t &gt;</td></tr>
-<tr class="separator:aa79c8fb8912174ea99b556ee889c093c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a47b62e1217015ad17de6a7486691ccd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c6e344a72404039eef838a8cb39295b"><td class="memItemLeft" align="right" valign="top"><a id="a8c6e344a72404039eef838a8cb39295b"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>category</b> = <a class="el" href="structcudf_1_1detail_1_1wrapper.html">detail::wrapper</a>&lt; gdf_category, GDF_CATEGORY &gt;</td></tr>
 <tr class="separator:a8c6e344a72404039eef838a8cb39295b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,6 +147,17 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>date64</b> = <a clas
 <tr class="memitem:a2916a984683be11ca496ae1535849cb3"><td class="memItemLeft" align="right" valign="top"><a id="a2916a984683be11ca496ae1535849cb3"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>bool8</b> = <a class="el" href="structcudf_1_1detail_1_1wrapper.html">detail::wrapper</a>&lt; gdf_bool8, GDF_BOOL8 &gt;</td></tr>
 <tr class="separator:a2916a984683be11ca496ae1535849cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a3f6094e0fe7ac27a7dc56d41251ba062"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062">gdf_csv_quote_style</a> { <a class="el" href="namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062ac0ef5f2c7edc850e629c89869ab512b1">QUOTE_MINIMAL</a>, 
+<a class="el" href="namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062a59b4ae6e9efc18a8396af290bdfbcabe">QUOTE_ALL</a>, 
+<a class="el" href="namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062a61548a26e258802a50debf442f5cafc5">QUOTE_NONNUMERIC</a>, 
+<a class="el" href="namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062ad9eb6a0d1b7639405e567725267b901f">QUOTE_NONE</a>
+ }</td></tr>
+<tr class="memdesc:a3f6094e0fe7ac27a7dc56d41251ba062"><td class="mdescLeft">&#160;</td><td class="mdescRight"><h2>Enumeration of quoting behavior for CSV readers/writers </h2>
+ <a href="namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062">More...</a><br /></td></tr>
+<tr class="separator:a3f6094e0fe7ac27a7dc56d41251ba062"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -186,12 +206,25 @@ Functions</h2></td></tr>
 <tr class="memitem:a30c6e502e3755eefe9a720cdf0f3ed5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__column__.html">gdf_column</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a30c6e502e3755eefe9a720cdf0f3ed5e">point_in_polygon</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;polygon_latitudes, <a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;polygon_longitudes, <a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;query_point_latitudes, <a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;query_point_longitudes)</td></tr>
 <tr class="memdesc:a30c6e502e3755eefe9a720cdf0f3ed5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether or not coordinates (query points) are completely inside a static polygon.  <a href="#a30c6e502e3755eefe9a720cdf0f3ed5e">More...</a><br /></td></tr>
 <tr class="separator:a30c6e502e3755eefe9a720cdf0f3ed5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a009078485c87066bd868fe49bc3f2851"><td class="memItemLeft" align="right" valign="top">__global__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a009078485c87066bd868fe49bc3f2851">convertCsvToGdf</a> (char *raw_csv, const <a class="el" href="structParseOptions.html">ParseOptions</a> opts, gdf_size_type num_records, int num_columns, bool *parseCol, uint64_t *recStart, gdf_dtype *dtype, void **<a class="el" href="uniongdf__data.html">gdf_data</a>, gdf_valid_type **valid, gdf_size_type *num_valid)</td></tr>
+<tr class="memdesc:a009078485c87066bd868fe49bc3f2851"><td class="mdescLeft">&#160;</td><td class="mdescRight">CUDA kernel that parses and converts CSV data into cuDF column data.  <a href="#a009078485c87066bd868fe49bc3f2851">More...</a><br /></td></tr>
+<tr class="separator:a009078485c87066bd868fe49bc3f2851"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e9773754c63f7c68651bb2e4cd832d6"><td class="memItemLeft" align="right" valign="top">__global__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a7e9773754c63f7c68651bb2e4cd832d6">dataTypeDetection</a> (char *raw_csv, const <a class="el" href="structParseOptions.html">ParseOptions</a> opts, gdf_size_type num_records, int num_columns, bool *parseCol, uint64_t *recStart, <a class="el" href="structcudf_1_1column__data__t.html">column_data_t</a> *d_columnData)</td></tr>
+<tr class="memdesc:a7e9773754c63f7c68651bb2e4cd832d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">CUDA kernel that parses and converts CSV data into cuDF column data.  <a href="#a7e9773754c63f7c68651bb2e4cd832d6">More...</a><br /></td></tr>
+<tr class="separator:a7e9773754c63f7c68651bb2e4cd832d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27b690332af800c0629992b1c18dfe0c"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a27b690332af800c0629992b1c18dfe0c">calculateMaxRowSize</a> (int num_columns=0) noexcept</td></tr>
 <tr class="memdesc:a27b690332af800c0629992b1c18dfe0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimates the maximum expected length or a row, based on the number of columns.  <a href="#a27b690332af800c0629992b1c18dfe0c">More...</a><br /></td></tr>
 <tr class="separator:a27b690332af800c0629992b1c18dfe0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f498ceaf6b3695a39284db2a0c681f0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a9f498ceaf6b3695a39284db2a0c681f0">inferCompressionType</a> (const std::string &amp;compression_arg, gdf_input_type source_type, const std::string &amp;source)</td></tr>
-<tr class="memdesc:a9f498ceaf6b3695a39284db2a0c681f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Infer the compression type from the compression parameter and the input data.  <a href="#a9f498ceaf6b3695a39284db2a0c681f0">More...</a><br /></td></tr>
-<tr class="separator:a9f498ceaf6b3695a39284db2a0c681f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac065e74d4c89b03538cefbcb0b2ed385"><td class="memItemLeft" align="right" valign="top"><a id="ac065e74d4c89b03538cefbcb0b2ed385"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ac065e74d4c89b03538cefbcb0b2ed385">removeQuotes</a> (string str, char quotechar)</td></tr>
+<tr class="memdesc:ac065e74d4c89b03538cefbcb0b2ed385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the first and Last quote in the string. <br /></td></tr>
+<tr class="separator:ac065e74d4c89b03538cefbcb0b2ed385"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcaa3abcef29306b7b544e847ae5da46"><td class="memItemLeft" align="right" valign="top"><a id="abcaa3abcef29306b7b544e847ae5da46"></a>
+gdf_dtype&#160;</td><td class="memItemRight" valign="bottom"><b>convertStringToDtype</b> (const std::string &amp;dtype)</td></tr>
+<tr class="separator:abcaa3abcef29306b7b544e847ae5da46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb570307357da1e8c28cee58d653b5cb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#acb570307357da1e8c28cee58d653b5cb">inferCompressionType</a> (const std::string &amp;compression_arg, gdf_input_type source_type, const std::string &amp;source, const std::map&lt; std::string, std::string &gt; &amp;ext_to_compression)</td></tr>
+<tr class="memdesc:acb570307357da1e8c28cee58d653b5cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Infer the compression type from the compression parameter and the input data.  <a href="#acb570307357da1e8c28cee58d653b5cb">More...</a><br /></td></tr>
+<tr class="separator:acb570307357da1e8c28cee58d653b5cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d54f414a2829c0c09ddf7c32b2a9e87"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a3d54f414a2829c0c09ddf7c32b2a9e87">getNamesFromJsonObject</a> (const std::vector&lt; char &gt; &amp;json_obj, const <a class="el" href="structParseOptions.html">ParseOptions</a> &amp;opts)</td></tr>
 <tr class="memdesc:a3d54f414a2829c0c09ddf7c32b2a9e87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract value names from a JSON object.  <a href="#a3d54f414a2829c0c09ddf7c32b2a9e87">More...</a><br /></td></tr>
 <tr class="separator:a3d54f414a2829c0c09ddf7c32b2a9e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -372,7 +405,36 @@ typedef".</p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whatever is returned by the functor's "operator()". </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a3f6094e0fe7ac27a7dc56d41251ba062"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f6094e0fe7ac27a7dc56d41251ba062">&#9670;&nbsp;</a></span>gdf_csv_quote_style</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062">cudf::gdf_csv_quote_style</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><h2>Enumeration of quoting behavior for CSV readers/writers </h2>
+</p>
+<p>------------------------------------------------------------------------&mdash;* </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3f6094e0fe7ac27a7dc56d41251ba062ac0ef5f2c7edc850e629c89869ab512b1"></a>QUOTE_MINIMAL&#160;</td><td class="fielddoc"><p>Only quote those fields which contain special characters; enable quotation when parsing. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3f6094e0fe7ac27a7dc56d41251ba062a59b4ae6e9efc18a8396af290bdfbcabe"></a>QUOTE_ALL&#160;</td><td class="fielddoc"><p>Quote all fields; enable quotation when parsing. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3f6094e0fe7ac27a7dc56d41251ba062a61548a26e258802a50debf442f5cafc5"></a>QUOTE_NONNUMERIC&#160;</td><td class="fielddoc"><p>Quote all non-numeric fields; enable quotation when parsing. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3f6094e0fe7ac27a7dc56d41251ba062ad9eb6a0d1b7639405e567725267b901f"></a>QUOTE_NONE&#160;</td><td class="fielddoc"><p>Never quote fields; disable quotation when parsing. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="ae08cb8501fe52a732913af1ac7b25ace"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae08cb8501fe52a732913af1ac7b25ace">&#9670;&nbsp;</a></span>allocate_like() <span class="overload">[1/2]</span></h2>
 
@@ -696,6 +758,14 @@ if <code>input.size</code> is zero, there is no error, and an empty column is re
 <p>------------------------------------------------------------------------&mdash;* If the number of columns is not available, it will return a value large enough for most use cases</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_columns</td><td>Number of columns in the CSV file (optional)</td></tr>
+  </table>
+  </dd>
+</dl>
+<h2>Estimated maximum size of a row, in bytes </h2>
+<p>------------------------------------------------------------------------&mdash;* If the number of columns is not available, it will return a value large enough for most use cases</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">num_columns</td><td>Number of columns in the JSON file (optional)</td></tr>
   </table>
   </dd>
@@ -728,6 +798,101 @@ if <code>input.size</code> is zero, there is no error, and an empty column is re
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a009078485c87066bd868fe49bc3f2851"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a009078485c87066bd868fe49bc3f2851">&#9670;&nbsp;</a></span>convertCsvToGdf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__global__ void cudf::convertCsvToGdf </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>raw_csv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structParseOptions.html">ParseOptions</a>&#160;</td>
+          <td class="paramname"><em>opts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_size_type&#160;</td>
+          <td class="paramname"><em>num_records</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_columns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>parseCol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t *&#160;</td>
+          <td class="paramname"><em>recStart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_dtype *&#160;</td>
+          <td class="paramname"><em>dtype</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **&#160;</td>
+          <td class="paramname"><em>gdf_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_valid_type **&#160;</td>
+          <td class="paramname"><em>valid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_size_type *&#160;</td>
+          <td class="paramname"><em>num_valid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CUDA kernel that parses and converts CSV data into cuDF column data. </p>
+<p>------------------------------------------------------------------------&mdash;* Data is processed one record at a time</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">raw_csv</td><td>The entire CSV data to read </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">opts</td><td>A set of parsing options </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_records</td><td>The number of lines/rows of CSV data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_columns</td><td>The number of columns of CSV data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">parseCol</td><td>Whether to parse or skip a column </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">recStart</td><td>The start the CSV data of interest </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dtype</td><td>The data type of the column </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname"><a class="el" href="uniongdf__data.html" title="Union used to store single value for scalar type. ">gdf_data</a></td><td>The output column data </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">valid</td><td>The bitmaps indicating whether column fields are valid </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">num_valid</td><td>The numbers of valid fields in columns</td></tr>
+  </table>
+  </dd>
+</dl>
+<h2>void </h2>
 
 </div>
 </div>
@@ -900,6 +1065,80 @@ if <code>input.size</code> is zero, there is no error, and an empty column is re
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a7e9773754c63f7c68651bb2e4cd832d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e9773754c63f7c68651bb2e4cd832d6">&#9670;&nbsp;</a></span>dataTypeDetection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__global__ void cudf::dataTypeDetection </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>raw_csv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structParseOptions.html">ParseOptions</a>&#160;</td>
+          <td class="paramname"><em>opts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_size_type&#160;</td>
+          <td class="paramname"><em>num_records</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_columns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>parseCol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t *&#160;</td>
+          <td class="paramname"><em>recStart</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcudf_1_1column__data__t.html">column_data_t</a> *&#160;</td>
+          <td class="paramname"><em>d_columnData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CUDA kernel that parses and converts CSV data into cuDF column data. </p>
+<p>------------------------------------------------------------------------&mdash;* Data is processed in one row/record at a time, so the number of total threads (tid) is equal to the number of rows.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">raw_csv</td><td>The entire CSV data to read </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">opts</td><td>A set of parsing options </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_records</td><td>The number of lines/rows of CSV data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">num_columns</td><td>The number of columns of CSV data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">parseCol</td><td>Whether to parse or skip a column </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">recStart</td><td>The start the CSV data of interest </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">d_columnData</td><td>The count for each column data type</td></tr>
+  </table>
+  </dd>
+</dl>
+<h2>GDF_SUCCESS upon successful computation </h2>
 
 </div>
 </div>
@@ -1288,8 +1527,8 @@ template&lt;typename T , typename BinaryOp &gt; </div>
 
 </div>
 </div>
-<a id="a9f498ceaf6b3695a39284db2a0c681f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f498ceaf6b3695a39284db2a0c681f0">&#9670;&nbsp;</a></span>inferCompressionType()</h2>
+<a id="acb570307357da1e8c28cee58d653b5cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb570307357da1e8c28cee58d653b5cb">&#9670;&nbsp;</a></span>inferCompressionType()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1310,7 +1549,13 @@ template&lt;typename T , typename BinaryOp &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>source</em>&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::map&lt; std::string, std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ext_to_compression</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1321,12 +1566,24 @@ template&lt;typename T , typename BinaryOp &gt; </div>
 </div><div class="memdoc">
 
 <p>Infer the compression type from the compression parameter and the input data. </p>
+<p>Infer the compression type from the compression parameter and the input file extension.</p>
 <p>------------------------------------------------------------------------&mdash;* Returns "none" if the input is not compressed. Throws if the input is not not valid.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">compression_arg</td><td>Input string that is potentially describing the compression type. Can also be "none" or "infer". </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">source_type</td><td>Enum describing the type of the data source </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>If source_type is FILE_PATH, contains the filepath. If source_type is HOST_BUFFER, contains the input JSON data.</td></tr>
+  </table>
+  </dd>
+</dl>
+<h2>string representing the compression type. </h2>
+<p>------------------------------------------------------------------------&mdash;* Returns "none" if the input is not compressed. Throws if the input is not valid.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">compression_arg</td><td>Input string that is potentially describing the compression type. Can also be "none" or "infer". </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">source_type</td><td>Enum describing the type of the data source. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>If source_type is FILE_PATH, contains the filepath. If source_type is HOST_BUFFER, contains the input data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ext_to_compression</td><td>Map between file extensions and compression types.</td></tr>
   </table>
   </dd>
 </dl>

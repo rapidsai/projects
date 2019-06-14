@@ -1,14 +1,15 @@
 var searchData=
 [
-  ['raw_5fcsv_5f',['raw_csv_',['../structraw__csv__.html',1,'']]],
-  ['read',['read',['../classcudf_1_1JsonReader_1_1Impl.html#ab552f3ff7bd6624419a63c5a16c0e5c9',1,'cudf::JsonReader::Impl::read()'],['../classcudf_1_1JsonReader.html#abb5c5bad406e6daacc8ff1cc9de965bf',1,'cudf::JsonReader::read()']]],
-  ['read_5fbyte_5frange',['read_byte_range',['../classcudf_1_1JsonReader_1_1Impl.html#a5b49ab8be6824668eb9665c847a385f1',1,'cudf::JsonReader::Impl::read_byte_range()'],['../classcudf_1_1JsonReader.html#ad54c9afbc508c3119da134badcecb724',1,'cudf::JsonReader::read_byte_range()']]],
+  ['read',['read',['../classcudf_1_1CsvReader_1_1Impl.html#ac0ab7f351df986272828dc3710254e19',1,'cudf::CsvReader::Impl::read()'],['../classcudf_1_1JsonReader_1_1Impl.html#ab552f3ff7bd6624419a63c5a16c0e5c9',1,'cudf::JsonReader::Impl::read()'],['../classcudf_1_1JsonReader.html#abb5c5bad406e6daacc8ff1cc9de965bf',1,'cudf::JsonReader::read()'],['../classcudf_1_1CsvReader.html#a63fa517fc82bd2a0c87c1c4996ef3769',1,'cudf::CsvReader::read()']]],
+  ['read_5fbyte_5frange',['read_byte_range',['../classcudf_1_1CsvReader_1_1Impl.html#ab01d6b0efb03ffe83d133ae30fa92a4c',1,'cudf::CsvReader::Impl::read_byte_range()'],['../classcudf_1_1JsonReader_1_1Impl.html#a5b49ab8be6824668eb9665c847a385f1',1,'cudf::JsonReader::Impl::read_byte_range()'],['../classcudf_1_1JsonReader.html#ad54c9afbc508c3119da134badcecb724',1,'cudf::JsonReader::read_byte_range()'],['../classcudf_1_1CsvReader.html#ac454a8842619cb8a2e6de20ec6f4513b',1,'cudf::CsvReader::read_byte_range()']]],
+  ['read_5frows',['read_rows',['../classcudf_1_1CsvReader_1_1Impl.html#ad88d89640018810dbca1cc8ac79a17ca',1,'cudf::CsvReader::Impl::read_rows()'],['../classcudf_1_1CsvReader.html#a7a7a0888f73da8010b490f602d3559de',1,'cudf::CsvReader::read_rows()']]],
   ['reduction',['reduction',['../namespacecudf.html#a16d269210347c80b2a841daef1a0d136',1,'cudf']]],
   ['reductionmax',['ReductionMax',['../structcudf_1_1reductions_1_1ReductionMax.html',1,'cudf::reductions']]],
   ['reductionmin',['ReductionMin',['../structcudf_1_1reductions_1_1ReductionMin.html',1,'cudf::reductions']]],
   ['reductionproduct',['ReductionProduct',['../structcudf_1_1reductions_1_1ReductionProduct.html',1,'cudf::reductions']]],
   ['reductionsum',['ReductionSum',['../structcudf_1_1reductions_1_1ReductionSum.html',1,'cudf::reductions']]],
   ['reductionsumofsquares',['ReductionSumOfSquares',['../structcudf_1_1reductions_1_1ReductionSumOfSquares.html',1,'cudf::reductions']]],
+  ['removequotes',['removeQuotes',['../namespacecudf.html#ac065e74d4c89b03538cefbcb0b2ed385',1,'cudf']]],
   ['replace_5fnulls',['replace_nulls',['../namespacecudf.html#a85645250c7ada0b73a61e9a691931b36',1,'cudf::replace_nulls(const gdf_column &amp;input, const gdf_column &amp;replacement)'],['../namespacecudf.html#ad66cc66793473e7fc90ad3ed4cd1b450',1,'cudf::replace_nulls(const gdf_column &amp;input, const gdf_scalar &amp;replacement)']]],
   ['row_5fbitmask',['row_bitmask',['../namespacecudf.html#aec006bc00092dd8ec47f2c7ca6fe01d4',1,'cudf']]],
   ['row_5fcomparator',['row_comparator',['../structrow__comparator.html',1,'row_comparator&lt; map_type &gt;'],['../structrow__comparator.html#ae5fcc41c68f1c76039bdc0bed3992f17',1,'row_comparator::row_comparator()']]],
