@@ -184,26 +184,32 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#cugraph.Graph.add_transposed_adj_list" title="cugraph.Graph.add_transposed_adj_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_transposed_adj_list</span></code></a>(self)</p></td>
 <td><p>Compute the transposed adjacency list from the edge list and add it to the existing graph.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cugraph.Graph.degree" title="cugraph.Graph.degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degree</span></code></a>(self[, vertex_subset])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cugraph.Graph.clear" title="cugraph.Graph.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>(self)</p></td>
+<td><p>Empty this graph.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cugraph.Graph.degree" title="cugraph.Graph.degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degree</span></code></a>(self[, vertex_subset])</p></td>
 <td><p>Calculates and returns the degree of vertices.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cugraph.Graph.delete_adj_list" title="cugraph.Graph.delete_adj_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_adj_list</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cugraph.Graph.delete_adj_list" title="cugraph.Graph.delete_adj_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_adj_list</span></code></a>(self)</p></td>
 <td><p>Delete the adjacency list.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cugraph.Graph.delete_edge_list" title="cugraph.Graph.delete_edge_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_edge_list</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cugraph.Graph.delete_edge_list" title="cugraph.Graph.delete_edge_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_edge_list</span></code></a>(self)</p></td>
 <td><p>Delete the edge list.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cugraph.Graph.delete_transposed_adj_list" title="cugraph.Graph.delete_transposed_adj_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_transposed_adj_list</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cugraph.Graph.delete_transposed_adj_list" title="cugraph.Graph.delete_transposed_adj_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_transposed_adj_list</span></code></a>(self)</p></td>
 <td><p>Delete the transposed adjacency list.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cugraph.Graph.get_two_hop_neighbors" title="cugraph.Graph.get_two_hop_neighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_two_hop_neighbors</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cugraph.Graph.get_two_hop_neighbors" title="cugraph.Graph.get_two_hop_neighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_two_hop_neighbors</span></code></a>(self)</p></td>
 <td><p>Return a dataframe containing vertex pairs such that each pair of vertices is connected by a path of two hops in the graph.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cugraph.Graph.in_degree" title="cugraph.Graph.in_degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">in_degree</span></code></a>(self[, vertex_subset])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cugraph.Graph.in_degree" title="cugraph.Graph.in_degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">in_degree</span></code></a>(self[, vertex_subset])</p></td>
 <td><p>Calculates and returns the in-degree of vertices.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cugraph.Graph.number_of_edges" title="cugraph.Graph.number_of_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">number_of_edges</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cugraph.Graph.number_of_edges" title="cugraph.Graph.number_of_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">number_of_edges</span></code></a>(self)</p></td>
 <td><p>Get the number of edges in the graph</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cugraph.Graph.number_of_nodes" title="cugraph.Graph.number_of_nodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">number_of_nodes</span></code></a>(self)</p></td>
+<td><p>An alias of number_of_vertices().</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cugraph.Graph.number_of_vertices" title="cugraph.Graph.number_of_vertices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">number_of_vertices</span></code></a>(self)</p></td>
 <td><p>Get the number of vertices in the graph</p></td>
@@ -253,7 +259,7 @@ The gdf column contains the destination index for each edge.
 Destination indices must be in the range [0, V) (V: number of
 vertices).</p>
 </dd>
-<dt>value_col (optional)<span class="classifier">cudf.Series</span></dt><dd><p>This pointer can be <code class="docutils literal notranslate"><span class="pre">none</span></code>.
+<dt>value_col(optional)<span class="classifier">cudf.Series</span></dt><dd><p>This pointer can be <code class="docutils literal notranslate"><span class="pre">none</span></code>.
 If not, this cudf.Series wraps a gdf_column of size E (E: number of
 edges).
 The gdf column contains the weight value for each edge.
@@ -307,7 +313,7 @@ The gdf column contains the destination index for each edge.
 Destination indices must be in the range [0, V) (V: number of
 vertices).</p>
 </dd>
-<dt>value_col (optional)<span class="classifier">cudf.Series</span></dt><dd><p>This pointer can be <code class="docutils literal notranslate"><span class="pre">none</span></code>.
+<dt>value_col(optional)<span class="classifier">cudf.Series</span></dt><dd><p>This pointer can be <code class="docutils literal notranslate"><span class="pre">none</span></code>.
 If not, this cudf.Series wraps a gdf_column of size E (E: number of
 edges).
 The gdf column contains the weight value for each edge.
@@ -339,6 +345,12 @@ number.</p>
 <code class="sig-name descname">add_transposed_adj_list</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.add_transposed_adj_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the transposed adjacency list from the edge list and add it to
 the existing graph.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cugraph.Graph.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Empty this graph. This function is added for NetworkX compatibility.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -445,6 +457,13 @@ Examples
 <dt id="cugraph.Graph.number_of_edges">
 <code class="sig-name descname">number_of_edges</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.number_of_edges" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of edges in the graph</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cugraph.Graph.number_of_nodes">
+<code class="sig-name descname">number_of_nodes</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.number_of_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>An alias of number_of_vertices(). This function is added for NetworkxX
+compatibility.</p>
 </dd></dl>
 
 <dl class="attribute">
