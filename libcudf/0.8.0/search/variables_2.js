@@ -1,7 +1,7 @@
 var searchData=
 [
   ['d_5fsums',['d_sums',['../structBlockSumArray.html#ad62d39263d9b8a1deaa6a774a45fe8a5',1,'BlockSumArray']]],
-  ['data',['data',['../structorc__read__arg.html#a665647a9ea83ba96b38d1d101c278a69',1,'orc_read_arg::data()'],['../structpq__read__arg.html#a7c8e3f60e9fae14b99f6165f4e516846',1,'pq_read_arg::data()'],['../structgdf__scalar.html#aa3111e8e7c1d06542999df1b65e25816',1,'gdf_scalar::data()'],['../structgdf__column__.html#af1b8c6631a36f6af309c26d1e40accac',1,'gdf_column_::data()']]],
+  ['data',['data',['../structpq__read__arg.html#a7c8e3f60e9fae14b99f6165f4e516846',1,'pq_read_arg::data()'],['../structgdf__scalar.html#aa3111e8e7c1d06542999df1b65e25816',1,'gdf_scalar::data()'],['../structgdf__column__.html#af1b8c6631a36f6af309c26d1e40accac',1,'gdf_column_::data()']]],
   ['dayfirst',['dayfirst',['../structcudf_1_1csv__reader__args.html#abae0a621230e10ff2c01aa3243ebd1d3',1,'cudf::csv_reader_args']]],
   ['decimal',['decimal',['../structcudf_1_1csv__reader__args.html#ac4587fd4d709c7baab674d3225721253',1,'cudf::csv_reader_args']]],
   ['delim_5fwhitespace',['delim_whitespace',['../structcudf_1_1csv__reader__args.html#ad6c4a3d0492d7a64bdf549e0ec77a591',1,'cudf::csv_reader_args']]],

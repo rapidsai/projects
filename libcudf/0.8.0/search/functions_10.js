@@ -1,13 +1,23 @@
 var searchData=
 [
-  ['read',['read',['../classcudf_1_1CsvReader_1_1Impl.html#ac0ab7f351df986272828dc3710254e19',1,'cudf::CsvReader::Impl::read()'],['../classcudf_1_1JsonReader_1_1Impl.html#ab552f3ff7bd6624419a63c5a16c0e5c9',1,'cudf::JsonReader::Impl::read()'],['../classcudf_1_1JsonReader.html#abb5c5bad406e6daacc8ff1cc9de965bf',1,'cudf::JsonReader::read()'],['../classcudf_1_1CsvReader.html#a63fa517fc82bd2a0c87c1c4996ef3769',1,'cudf::CsvReader::read()']]],
-  ['read_5fbyte_5frange',['read_byte_range',['../classcudf_1_1CsvReader_1_1Impl.html#ab01d6b0efb03ffe83d133ae30fa92a4c',1,'cudf::CsvReader::Impl::read_byte_range()'],['../classcudf_1_1JsonReader_1_1Impl.html#a5b49ab8be6824668eb9665c847a385f1',1,'cudf::JsonReader::Impl::read_byte_range()'],['../classcudf_1_1JsonReader.html#ad54c9afbc508c3119da134badcecb724',1,'cudf::JsonReader::read_byte_range()'],['../classcudf_1_1CsvReader.html#ac454a8842619cb8a2e6de20ec6f4513b',1,'cudf::CsvReader::read_byte_range()']]],
-  ['read_5frows',['read_rows',['../classcudf_1_1CsvReader_1_1Impl.html#ad88d89640018810dbca1cc8ac79a17ca',1,'cudf::CsvReader::Impl::read_rows()'],['../classcudf_1_1CsvReader.html#a7a7a0888f73da8010b490f602d3559de',1,'cudf::CsvReader::read_rows()']]],
-  ['reduction',['reduction',['../namespacecudf.html#a16d269210347c80b2a841daef1a0d136',1,'cudf']]],
-  ['removequotes',['removeQuotes',['../namespacecudf.html#ac065e74d4c89b03538cefbcb0b2ed385',1,'cudf']]],
-  ['replace_5fnulls',['replace_nulls',['../namespacecudf.html#a85645250c7ada0b73a61e9a691931b36',1,'cudf::replace_nulls(const gdf_column &amp;input, const gdf_column &amp;replacement)'],['../namespacecudf.html#ad66cc66793473e7fc90ad3ed4cd1b450',1,'cudf::replace_nulls(const gdf_column &amp;input, const gdf_scalar &amp;replacement)']]],
-  ['row_5fbitmask',['row_bitmask',['../namespacecudf.html#aec006bc00092dd8ec47f2c7ca6fe01d4',1,'cudf']]],
-  ['row_5fcomparator',['row_comparator',['../structrow__comparator.html#ae5fcc41c68f1c76039bdc0bed3992f17',1,'row_comparator']]],
-  ['row_5fequality_5fcomparator',['row_equality_comparator',['../structrow__equality__comparator.html#a2620a7281af2532b2643c2f0031a7cde',1,'row_equality_comparator::row_equality_comparator(device_table const &amp;lhs, bool nulls_are_equal=false)'],['../structrow__equality__comparator.html#af3d9d71d421ccb5052bc4e4ffec74078',1,'row_equality_comparator::row_equality_comparator(device_table const &amp;lhs, device_table const &amp;rhs, bool nulls_are_equal=false)']]],
-  ['row_5finequality_5fcomparator',['row_inequality_comparator',['../structrow__inequality__comparator.html#aa1a623e565b1d6151bfc126279c792b6',1,'row_inequality_comparator::row_inequality_comparator(device_table const &amp;lhs, bool nulls_are_smallest=true, int8_t *const asc_desc_flags=nullptr)'],['../structrow__inequality__comparator.html#a0f467c9b15dcfebfef51013800376ee3',1,'row_inequality_comparator::row_inequality_comparator(device_table const &amp;lhs, device_table const &amp;rhs, bool nulls_are_smallest=true, int8_t *const asc_desc_flags=nullptr)']]]
+  ['scan',['scan',['../namespacecudf.html#a65546aa9c42e87334fb5e1e3f274bc6b',1,'cudf']]],
+  ['scatter',['scatter',['../namespacecudf.html#ac30995b318ebee41f1ab8e79dc2527c0',1,'cudf']]],
+  ['seekfieldnameend',['seekFieldNameEnd',['../namespacecudf.html#a8640887c443d43dca79288fc281fc8e2',1,'cudf']]],
+  ['select_5fcolumns',['select_columns',['../classcudf_1_1OrcMetadata.html#a2e21c09fe0d73293d0ddf2c62e5dc60e',1,'cudf::OrcMetadata::select_columns()'],['../structParquetMetadata.html#aa837c8cc5daa3d6faa0094ac7df6c69b',1,'ParquetMetadata::select_columns()']]],
+  ['select_5frow_5fgroups',['select_row_groups',['../structParquetMetadata.html#a9e589cb613cb2d9c72f2ba0bb3a57a5f',1,'ParquetMetadata']]],
+  ['select_5fstripes',['select_stripes',['../classcudf_1_1OrcMetadata.html#ae9e8a3240833480c48d26af99997f38e',1,'cudf::OrcMetadata']]],
+  ['serializedtriecontains',['serializedTrieContains',['../trie_8cuh.html#af8de08a98a954c441e90ec47b216549b',1,'trie.cuh']]],
+  ['set_5fbit',['set_bit',['../classBitMask.html#a781ddd52abf6c4bb976b5c379641825d',1,'BitMask']]],
+  ['set_5fbit_5funsafe',['set_bit_unsafe',['../classBitMask.html#a21b1ef306c6c83a13d8a8650c458d1f7',1,'BitMask']]],
+  ['set_5felement_5fhost',['set_element_host',['../classBitMask.html#ad767ab585eb25dc80ca3b82ad68cf254',1,'BitMask']]],
+  ['setelement',['setElement',['../parsing__utils_8cu.html#a3b1720be10e4765219021d6f1bbfe969',1,'setElement(T *array, gdf_size_type idx, const T &amp;t, const V &amp;v):&#160;parsing_utils.cu'],['../parsing__utils_8cu.html#abe254b0f10561000c3a6401285f7818b',1,'setElement(thrust::pair&lt; T, V &gt; *array, gdf_size_type idx, const T &amp;t, const V &amp;v):&#160;parsing_utils.cu'],['../parsing__utils_8cu.html#ad44d11e2e89b52a5bd983bec741c1eee',1,'setElement(void *array, gdf_size_type idx, const T &amp;t, const V &amp;v):&#160;parsing_utils.cu']]],
+  ['setkernelinst',['setKernelInst',['../classcudf_1_1binops_1_1jit_1_1Launcher.html#adf107234246879078b3519ceab69d53f',1,'cudf::binops::jit::Launcher']]],
+  ['setprogram',['setProgram',['../classcudf_1_1binops_1_1jit_1_1Launcher.html#a8132873faedfe2fcc55935582f2a35da',1,'cudf::binops::jit::Launcher']]],
+  ['size',['size',['../classDataSource.html#a03de3eab17acc72df60f6bd50b000acb',1,'DataSource']]],
+  ['size_5fof',['size_of',['../namespacecudf.html#aea3dfde6d57f821aa1825a90a8cdddcb',1,'cudf']]],
+  ['skip_5fstruct_5ffield',['skip_struct_field',['../classparquet_1_1CompactProtocolReader.html#abab8cf29003d31d662ec9770a631c862',1,'parquet::CompactProtocolReader']]],
+  ['slice',['slice',['../namespacecudf.html#a31f4a85729765c154b21d8102be5a9d5',1,'cudf']]],
+  ['split',['split',['../namespacecudf.html#a69299f48fdcd25864a2f560e55d18ea9',1,'cudf']]],
+  ['sumbrackets',['sumBrackets',['../parsing__utils_8cu.html#a89a461bfca75ab83fecf2335f193e50d',1,'parsing_utils.cu']]],
+  ['sumbracketskernel',['sumBracketsKernel',['../parsing__utils_8cu.html#a4d604c4937fc5680977b22edabddc34f',1,'parsing_utils.cu']]]
 ];

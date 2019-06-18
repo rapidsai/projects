@@ -1,7 +1,7 @@
 var searchData=
 [
   ['d_5fsums',['d_sums',['../structBlockSumArray.html#ad62d39263d9b8a1deaa6a774a45fe8a5',1,'BlockSumArray']]],
-  ['data',['data',['../structorc__read__arg.html#a665647a9ea83ba96b38d1d101c278a69',1,'orc_read_arg::data()'],['../structpq__read__arg.html#a7c8e3f60e9fae14b99f6165f4e516846',1,'pq_read_arg::data()'],['../structgdf__scalar.html#aa3111e8e7c1d06542999df1b65e25816',1,'gdf_scalar::data()'],['../structgdf__column__.html#af1b8c6631a36f6af309c26d1e40accac',1,'gdf_column_::data()']]],
+  ['data',['data',['../structpq__read__arg.html#a7c8e3f60e9fae14b99f6165f4e516846',1,'pq_read_arg::data()'],['../structgdf__scalar.html#aa3111e8e7c1d06542999df1b65e25816',1,'gdf_scalar::data()'],['../structgdf__column__.html#af1b8c6631a36f6af309c26d1e40accac',1,'gdf_column_::data()']]],
   ['datapageheader',['DataPageHeader',['../structparquet_1_1DataPageHeader.html',1,'parquet']]],
   ['datasource',['DataSource',['../classDataSource.html',1,'DataSource'],['../classDataSource.html#a65dab0c773371c6514029a6bd9dbed84',1,'DataSource::DataSource(const char *filepath)'],['../classDataSource.html#a2431c6713e1152261bc0d355878fc15c',1,'DataSource::DataSource(const char *bufferpath, size_t length)'],['../classDataSource.html#a59533f7169de4af45c2e8ffe756239b6',1,'DataSource::DataSource(std::shared_ptr&lt; arrow::io::RandomAccessFile &gt; file)']]],
   ['datatypedetection',['dataTypeDetection',['../namespacecudf.html#a7e9773754c63f7c68651bb2e4cd832d6',1,'cudf']]],

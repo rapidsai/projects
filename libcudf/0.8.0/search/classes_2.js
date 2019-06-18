@@ -26,5 +26,6 @@ var searchData=
   ['csv_5fwrite_5farg',['csv_write_arg',['../structcsv__write__arg.html',1,'']]],
   ['csvreader',['CsvReader',['../classcudf_1_1CsvReader.html',1,'cudf']]],
   ['cuda_5ferror',['cuda_error',['../structcudf_1_1cuda__error.html',1,'cudf']]],
+  ['cudfjitcache',['cudfJitCache',['../classcudf_1_1jit_1_1cudfJitCache.html',1,'cudf::jit']]],
   ['cycle_5fiterator_5fadapter',['cycle_iterator_adapter',['../classcycle__iterator__adapter.html',1,'']]]
 ];

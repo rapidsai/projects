@@ -1,7 +1,7 @@
 var searchData=
 [
   ['launch',['launch',['../classcudf_1_1binops_1_1jit_1_1Launcher.html#a74dc5440783c944662bb703357eb75a1',1,'cudf::binops::jit::Launcher::launch(gdf_column *out, gdf_column *lhs, gdf_scalar *rhs)'],['../classcudf_1_1binops_1_1jit_1_1Launcher.html#af05e5dd9db188eccf8e713fff63523ee',1,'cudf::binops::jit::Launcher::launch(gdf_column *out, gdf_column *lhs, gdf_column *rhs)']]],
-  ['launcher',['Launcher',['../classcudf_1_1binops_1_1jit_1_1Launcher.html',1,'cudf::binops::jit::Launcher'],['../structcudf_1_1unary_1_1Launcher.html',1,'cudf::unary::Launcher&lt; T, Tout, F &gt;']]],
+  ['launcher',['Launcher',['../structcudf_1_1unary_1_1Launcher.html',1,'cudf::unary::Launcher&lt; T, Tout, F &gt;'],['../classcudf_1_1binops_1_1jit_1_1Launcher.html',1,'cudf::binops::jit::Launcher']]],
   ['layoutdesc',['LayoutDesc',['../structIpcParser_1_1LayoutDesc.html',1,'IpcParser']]],
   ['legacy_5fallocator',['legacy_allocator',['../structlegacy__allocator.html',1,'']]],
   ['length',['length',['../structBlockSumArray.html#a2b9b50037f253271720da42753bcf927',1,'BlockSumArray::length()'],['../classBitMask.html#a6d632170cc2f108ed1d650ae31c7d0ba',1,'BitMask::length()']]],

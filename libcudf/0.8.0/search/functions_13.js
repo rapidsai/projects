@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['unwrap',['unwrap',['../wrapper__types_8hpp.html#a35af9b9eea930e00a8bdc42510c944a0',1,'cudf::detail::unwrap(wrapper&lt; T, type_id &gt; &amp;wrapped)'],['../wrapper__types_8hpp.html#ae53ec1eabb2ca1c2002702bb727cec0e',1,'cudf::detail::unwrap(wrapper&lt; T, type_id &gt; const &amp;wrapped)'],['../wrapper__types_8hpp.html#a9abc1682cd53aec2b2dd789da6beb50e',1,'cudf::detail::unwrap(T &amp;value)'],['../wrapper__types_8hpp.html#a9be48c812dc04511ae2c6af38f2c1bb7',1,'cudf::detail::unwrap(T const &amp;value)']]]
+  ['validate',['validate',['../namespacecudf.html#afa70e889e2b83eba15ed8e8e864dd3ff',1,'cudf']]],
+  ['value_5faccessor',['value_accessor',['../structcudf_1_1value__accessor_3_01ElementType_00_01ResultType_00_01true_01_4.html#a41895ae13439d9d29ae26beb1f92e30e',1,'cudf::value_accessor&lt; ElementType, ResultType, true &gt;::value_accessor()'],['../structcudf_1_1value__accessor_3_01ElementType_00_01ResultType_00_01false_01_4.html#a13eb6daa3d858dc4b390d82461e5a4a1',1,'cudf::value_accessor&lt; ElementType, ResultType, false &gt;::value_accessor()']]]
 ];

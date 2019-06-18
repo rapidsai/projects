@@ -123,6 +123,20 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1meanvar.html">meanvar</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">intermediate struct to calculate mean and variance This is an example case to output a struct from column input.  <a href="structcudf_1_1meanvar.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1OrcMetadata.html">OrcMetadata</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper class for ORC file metadata. Provides some additional convenience methods for initializing and accessing metadata.  <a href="classcudf_1_1OrcMetadata.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1OrcReader.html">OrcReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><h2>Class to read Apache ORC data into cuDF columns </h2>
+ <a href="classcudf_1_1OrcReader.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1OrcReaderOptions.html">OrcReaderOptions</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><h2>Options for the ORC reader </h2>
+ <a href="structcudf_1_1OrcReaderOptions.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1OrcStreamInfo.html">OrcStreamInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct that maps ORC streams to columns.  <a href="structcudf_1_1OrcStreamInfo.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1pair__accessor.html">pair_accessor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">pair accessor with/without null bitmask A unary function returns <code>thrust::pair&lt;ResultType, bool&gt;</code>. If the element at index <code>i</code> is valid, returns <code>ResultType{data[i]}</code> and <code>true</code> indicating the value was valid. If the element at <code>i</code> is null, returns <code>ResultType{identity}</code> and <code>false</code> indicating the element was null.  <a href="structcudf_1_1pair__accessor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -263,6 +277,13 @@ gdf_dtype&#160;</td><td class="memItemRight" valign="bottom"><b>convertStringToD
 <tr class="memitem:a08fe31ebcf8c4f0cde01ce0e4c34f387"><td class="memItemLeft" align="right" valign="top">__global__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a08fe31ebcf8c4f0cde01ce0e4c34f387">detectJsonDataTypes</a> (const char *data, size_t data_size, const <a class="el" href="structParseOptions.html">ParseOptions</a> opts, int num_columns, const uint64_t *rec_starts, gdf_size_type num_records, <a class="el" href="structcudf_1_1ColumnInfo.html">ColumnInfo</a> *column_infos)</td></tr>
 <tr class="memdesc:a08fe31ebcf8c4f0cde01ce0e4c34f387"><td class="mdescLeft">&#160;</td><td class="mdescRight">CUDA kernel that parses and converts data into cuDF column data.  <a href="#a08fe31ebcf8c4f0cde01ce0e4c34f387">More...</a><br /></td></tr>
 <tr class="separator:a08fe31ebcf8c4f0cde01ce0e4c34f387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1d67f6d252ddc18af82ab6531f02c47"><td class="memItemLeft" align="right" valign="top"><a id="af1d67f6d252ddc18af82ab6531f02c47"></a>
+constexpr std::pair&lt; gdf_dtype, <a class="el" href="structgdf__dtype__extra__info.html">gdf_dtype_extra_info</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#af1d67f6d252ddc18af82ab6531f02c47">to_dtype</a> (const <a class="el" href="structorc_1_1SchemaType.html">orc::SchemaType</a> &amp;schema)</td></tr>
+<tr class="memdesc:af1d67f6d252ddc18af82ab6531f02c47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that translates ORC datatype to GDF dtype. <br /></td></tr>
+<tr class="separator:af1d67f6d252ddc18af82ab6531f02c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfa1727fbabc1b1ad89907e2b72db7a9"><td class="memItemLeft" align="right" valign="top"><a id="acfa1727fbabc1b1ad89907e2b72db7a9"></a>
+constexpr std::pair&lt; orc::gpu::StreamIndexType, uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_index_type_and_pos</b> (const orc::StreamKind kind, uint32_t skip_count, bool non_child)</td></tr>
+<tr class="separator:acfa1727fbabc1b1ad89907e2b72db7a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5315ca38e017e2ed42a400483bba3b56"><td class="memTemplParams" colspan="2">template&lt;bool has_nulls, typename ElementType , typename ResultType  = ElementType, typename Iterator_Index  = thrust::counting_iterator&lt;gdf_index_type&gt;&gt; </td></tr>
 <tr class="memitem:a5315ca38e017e2ed42a400483bba3b56"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a5315ca38e017e2ed42a400483bba3b56">make_iterator</a> (const ElementType *data, const bit_mask::bit_mask_t *valid=nullptr, ResultType identity=ResultType{0}, Iterator_Index const it=Iterator_Index(0))</td></tr>
 <tr class="memdesc:a5315ca38e017e2ed42a400483bba3b56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an iterator over the elements of a column.  <a href="#a5315ca38e017e2ed42a400483bba3b56">More...</a><br /></td></tr>
@@ -293,6 +314,9 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
 <tr class="memitem:a65546aa9c42e87334fb5e1e3f274bc6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a65546aa9c42e87334fb5e1e3f274bc6b">scan</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> *input, <a class="el" href="structgdf__column__.html">gdf_column</a> *output, gdf_scan_op op, bool inclusive)</td></tr>
 <tr class="memdesc:a65546aa9c42e87334fb5e1e3f274bc6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the scan (a.k.a. prefix sum) of a column. The null values are skipped for the operation, and if an input element at <code>i</code> is null, then the output element at <code>i</code> will also be null.  <a href="#a65546aa9c42e87334fb5e1e3f274bc6b">More...</a><br /></td></tr>
 <tr class="separator:a65546aa9c42e87334fb5e1e3f274bc6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68e93b1c814e07e108ad015d27ca2372"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__column__.html">gdf_column</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a68e93b1c814e07e108ad015d27ca2372">find_and_replace_all</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;input_col, const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;values_to_replace, const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;replacement_values)</td></tr>
+<tr class="memdesc:a68e93b1c814e07e108ad015d27ca2372"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace elements from <code>input_col</code> according to the mapping <code>values_to_replace</code> to <code>replacement_values</code>, that is, replace all <code>values_to_replace[i]</code> present in <code>input_col</code> with <code>replacement_values[i]</code>.  <a href="#a68e93b1c814e07e108ad015d27ca2372">More...</a><br /></td></tr>
+<tr class="separator:a68e93b1c814e07e108ad015d27ca2372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85645250c7ada0b73a61e9a691931b36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__column__.html">gdf_column</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a85645250c7ada0b73a61e9a691931b36">replace_nulls</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;input, const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;replacement)</td></tr>
 <tr class="memdesc:a85645250c7ada0b73a61e9a691931b36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces all null values in a column with corresponding values of another column.  <a href="#a85645250c7ada0b73a61e9a691931b36">More...</a><br /></td></tr>
 <tr class="separator:a85645250c7ada0b73a61e9a691931b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1323,6 +1347,61 @@ if <code>input.size</code> is zero, there is no error, and an empty column is re
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a68e93b1c814e07e108ad015d27ca2372"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68e93b1c814e07e108ad015d27ca2372">&#9670;&nbsp;</a></span>find_and_replace_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structgdf__column__.html">gdf_column</a> cudf::find_and_replace_all </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;&#160;</td>
+          <td class="paramname"><em>input_col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;&#160;</td>
+          <td class="paramname"><em>values_to_replace</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;&#160;</td>
+          <td class="paramname"><em>replacement_values</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replace elements from <code>input_col</code> according to the mapping <code>values_to_replace</code> to <code>replacement_values</code>, that is, replace all <code>values_to_replace[i]</code> present in <code>input_col</code> with <code>replacement_values[i]</code>. </p>
+<p>Replace elements from <code>input_col</code> according to the mapping <code>old_values</code> to <code>new_values</code>, that is, replace all <code>old_values[i]</code> present in <code>col</code> with <code>new_values[i]</code> and return a new gdf_column <code>output</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">col</td><td>gdf_column with the data to be modified </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">values_to_replace</td><td>gdf_column with the old values to be replaced </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">replacement_values</td><td>gdf_column with the new values</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>output gdf_column with the modified data</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">col</td><td>gdf_column with the data to be modified </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">values_to_replace</td><td>gdf_column with the old values to be replaced </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">replacement_values</td><td>gdf_column with the new replacement values</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>output gdf_column with the modified data </dd></dl>
 
 </div>
 </div>

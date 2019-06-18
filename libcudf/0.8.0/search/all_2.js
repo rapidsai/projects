@@ -46,5 +46,6 @@ var searchData=
   ['csvreader',['CsvReader',['../classcudf_1_1CsvReader.html',1,'cudf::CsvReader'],['../classcudf_1_1CsvReader.html#a26c8ed7da3a7f0e4f4d7ad85978e1007',1,'cudf::CsvReader::CsvReader()']]],
   ['cuda_5ferror',['cuda_error',['../structcudf_1_1cuda__error.html',1,'cudf']]],
   ['cudf',['cudf',['../namespacecudf.html',1,'']]],
+  ['cudfjitcache',['cudfJitCache',['../classcudf_1_1jit_1_1cudfJitCache.html',1,'cudf::jit']]],
   ['cycle_5fiterator_5fadapter',['cycle_iterator_adapter',['../classcycle__iterator__adapter.html',1,'']]]
 ];
