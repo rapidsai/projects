@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.8.0a1+823.g6e27237.dirty documentation</title>
+  <title>API Reference &mdash; cudf 0.8.0a1+938.g1ebf10f.dirty documentation</title>
   
 
   
@@ -377,55 +377,58 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.replace" title="cudf.dataframe.DataFrame.replace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace</span></code></a>(self, to_replace, value)</p></td>
 <td><p>Replace values given in <em>to_replace</em> with <em>value</em>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.select_dtypes" title="cudf.dataframe.DataFrame.select_dtypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_dtypes</span></code></a>(self[, include, exclude])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.rolling" title="cudf.dataframe.DataFrame.rolling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rolling</span></code></a>(self, window[, min_periods, center])</p></td>
+<td><p>Rolling window calculations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.select_dtypes" title="cudf.dataframe.DataFrame.select_dtypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_dtypes</span></code></a>(self[, include, exclude])</p></td>
 <td><p>Return a subset of the DataFrame’s columns based on the column dtypes.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.set_index" title="cudf.dataframe.DataFrame.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_index</span></code></a>(self, index)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.set_index" title="cudf.dataframe.DataFrame.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_index</span></code></a>(self, index)</p></td>
 <td><p>Return a new DataFrame with a new index</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.sort_index" title="cudf.dataframe.DataFrame.sort_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_index</span></code></a>(self[, ascending])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.sort_index" title="cudf.dataframe.DataFrame.sort_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_index</span></code></a>(self[, ascending])</p></td>
 <td><p>Sort by the index</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.sort_values" title="cudf.dataframe.DataFrame.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_values</span></code></a>(self, by[, ascending, na_position])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.sort_values" title="cudf.dataframe.DataFrame.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_values</span></code></a>(self, by[, ascending, na_position])</p></td>
 <td><p>Sort by the values row-wise.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.tail" title="cudf.dataframe.DataFrame.tail"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tail</span></code></a>(self[, n])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.tail" title="cudf.dataframe.DataFrame.tail"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tail</span></code></a>(self[, n])</p></td>
 <td><p>Returns the last n rows as a new DataFrame</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_arrow" title="cudf.dataframe.DataFrame.to_arrow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_arrow</span></code></a>(self[, preserve_index])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_arrow" title="cudf.dataframe.DataFrame.to_arrow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_arrow</span></code></a>(self[, preserve_index])</p></td>
 <td><p>Convert to a PyArrow Table.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_csv" title="cudf.dataframe.DataFrame.to_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_csv</span></code></a>(self[, path, sep, na_rep, columns, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_csv" title="cudf.dataframe.DataFrame.to_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_csv</span></code></a>(self[, path, sep, na_rep, columns, …])</p></td>
 <td><p>Write a dataframe to csv file format.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_dlpack" title="cudf.dataframe.DataFrame.to_dlpack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dlpack</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_dlpack" title="cudf.dataframe.DataFrame.to_dlpack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dlpack</span></code></a>(self)</p></td>
 <td><p>Converts a cuDF object into a DLPack tensor.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_feather" title="cudf.dataframe.DataFrame.to_feather"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_feather</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_feather" title="cudf.dataframe.DataFrame.to_feather"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_feather</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
 <td><p>Write a DataFrame to the feather format.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_gpu_matrix" title="cudf.dataframe.DataFrame.to_gpu_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_gpu_matrix</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_gpu_matrix" title="cudf.dataframe.DataFrame.to_gpu_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_gpu_matrix</span></code></a>(self)</p></td>
 <td><p>Convert to a numba gpu ndarray</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_hdf" title="cudf.dataframe.DataFrame.to_hdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdf</span></code></a>(self, path_or_buf, key, \*args, …)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_hdf" title="cudf.dataframe.DataFrame.to_hdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdf</span></code></a>(self, path_or_buf, key, \*args, …)</p></td>
 <td><p>Write the contained data to an HDF5 file using HDFStore.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_json" title="cudf.dataframe.DataFrame.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>(self[, path_or_buf])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_json" title="cudf.dataframe.DataFrame.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>(self[, path_or_buf])</p></td>
 <td><p>Convert the cuDF object to a JSON string.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_pandas" title="cudf.dataframe.DataFrame.to_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pandas</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_pandas" title="cudf.dataframe.DataFrame.to_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pandas</span></code></a>(self)</p></td>
 <td><p>Convert to a Pandas DataFrame.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_parquet" title="cudf.dataframe.DataFrame.to_parquet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_parquet</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_parquet" title="cudf.dataframe.DataFrame.to_parquet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_parquet</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
 <td><p>Write a DataFrame to the parquet format.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_records" title="cudf.dataframe.DataFrame.to_records"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_records</span></code></a>(self[, index])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_records" title="cudf.dataframe.DataFrame.to_records"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_records</span></code></a>(self[, index])</p></td>
 <td><p>Convert to a numpy recarray</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_string" title="cudf.dataframe.DataFrame.to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_string</span></code></a>(self[, nrows, ncols])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_string" title="cudf.dataframe.DataFrame.to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_string</span></code></a>(self[, nrows, ncols])</p></td>
 <td><p>Convert to string</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.transpose" title="cudf.dataframe.DataFrame.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.transpose" title="cudf.dataframe.DataFrame.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>(self)</p></td>
 <td><p>Transpose index and columns.</p></td>
 </tr>
 </tbody>
@@ -1631,6 +1634,8 @@ the column axis’ values.</p>
 </ul>
 </dd>
 </dl>
+<p>Rename will not overwite column names. If a list with duplicates it
+passed, column names will be postfixed.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1684,6 +1689,110 @@ match in length).</p>
 </dl>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cudf.dataframe.DataFrame.rolling">
+<code class="sig-name descname">rolling</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">window</em>, <em class="sig-param">min_periods=None</em>, <em class="sig-param">center=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.DataFrame.rolling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rolling window calculations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>window</strong><span class="classifier">int or offset</span></dt><dd><p>Size of the window, i.e., the number of observations used
+to calculate the statistic.
+For datetime indexes, an offset can be provided instead
+of an int. The offset must be convertible to a timedelta.
+As opposed to a fixed window size, each window will be
+sized to accommodate observations within the time period
+specified by the offset.</p>
+</dd>
+<dt><strong>min_periods</strong><span class="classifier">int, optional</span></dt><dd><p>The minimum number of observations in the window that are
+required to be non-null, so that the result is non-null.
+If not provided or <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">min_periods</span></code> is equal to
+the window size.</p>
+</dd>
+<dt><strong>center</strong><span class="classifier">bool, optional</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the result is set at the center of the window.
+If <code class="docutils literal notranslate"><span class="pre">False</span></code> (default), the result is set at the right edge
+of the window.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Rolling</span></code> object.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cudf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Rolling sum with window size 2.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="go">0</span>
+<span class="go">1    3</span>
+<span class="go">2    5</span>
+<span class="go">3</span>
+<span class="go">4</span>
+<span class="go">dtype: int64</span>
+</pre></div>
+</div>
+<p>Rolling sum with window size 2 and min_periods 1.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="go">0    1</span>
+<span class="go">1    3</span>
+<span class="go">2    5</span>
+<span class="go">3    3</span>
+<span class="go">4    4</span>
+<span class="go">dtype: int64</span>
+</pre></div>
+</div>
+<p>Rolling count with window size 3.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+<span class="go">0    1</span>
+<span class="go">1    2</span>
+<span class="go">2    3</span>
+<span class="go">3    2</span>
+<span class="go">4    2</span>
+<span class="go">dtype: int64</span>
+</pre></div>
+</div>
+<p>Rolling count with window size 3, but with the result set at the
+center of the window.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+<span class="go">0    2</span>
+<span class="go">1    3</span>
+<span class="go">2    2</span>
+<span class="go">3    2</span>
+<span class="go">4    1 dtype: int64</span>
+</pre></div>
+</div>
+<p>Rolling max with variable window size specified by an offset;
+only valid for datetime index.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">index</span><span class="o">=</span><span class="p">[</span>
+<span class="gp">... </span>        <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;20190101 09:00:00&#39;</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;20190101 09:00:01&#39;</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;20190101 09:00:02&#39;</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;20190101 09:00:04&#39;</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;20190101 09:00:07&#39;</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;20190101 09:00:08&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="p">]</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="s1">&#39;2s&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="go">2019-01-01T09:00:00.000    1</span>
+<span class="go">2019-01-01T09:00:01.000    9</span>
+<span class="go">2019-01-01T09:00:02.000    9</span>
+<span class="go">2019-01-01T09:00:04.000    4</span>
+<span class="go">2019-01-01T09:00:07.000</span>
+<span class="go">2019-01-01T09:00:08.000    1</span>
+<span class="go">dtype: int64</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2483,85 +2592,88 @@ default: ‘value’</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rmul" title="cudf.dataframe.series.Series.rmul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rmul</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Multiplication of series and other, element-wise (binary operator rmul).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.round" title="cudf.dataframe.series.Series.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>(self[, decimals])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rolling" title="cudf.dataframe.series.Series.rolling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rolling</span></code></a>(self, window[, min_periods, center])</p></td>
+<td><p>Rolling window calculations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.round" title="cudf.dataframe.series.Series.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>(self[, decimals])</p></td>
 <td><p>Round a Series to a configurable number of decimal places.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rpow" title="cudf.dataframe.series.Series.rpow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rpow</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rpow" title="cudf.dataframe.series.Series.rpow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rpow</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Exponential power of series and other, element-wise (binary operator rpow).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rsub" title="cudf.dataframe.series.Series.rsub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsub</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rsub" title="cudf.dataframe.series.Series.rsub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsub</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Subtraction of series and other, element-wise (binary operator rsub).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rtruediv" title="cudf.dataframe.series.Series.rtruediv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rtruediv</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rtruediv" title="cudf.dataframe.series.Series.rtruediv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rtruediv</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Floating division of series and other, element-wise (binary operator rtruediv).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.scale" title="cudf.dataframe.series.Series.scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.scale" title="cudf.dataframe.series.Series.scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale</span></code></a>(self)</p></td>
 <td><p>Scale values to [0, 1] in float64</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.set_index" title="cudf.dataframe.series.Series.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_index</span></code></a>(self, index)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.set_index" title="cudf.dataframe.series.Series.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_index</span></code></a>(self, index)</p></td>
 <td><p>Returns a new Series with a different index.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.set_mask" title="cudf.dataframe.series.Series.set_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_mask</span></code></a>(self, mask[, null_count])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.set_mask" title="cudf.dataframe.series.Series.set_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_mask</span></code></a>(self, mask[, null_count])</p></td>
 <td><p>Create new Series by setting a mask array.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.shift" title="cudf.dataframe.series.Series.shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift</span></code></a>(self[, periods, freq, axis, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.shift" title="cudf.dataframe.series.Series.shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift</span></code></a>(self[, periods, freq, axis, fill_value])</p></td>
 <td><p>Shift values of an input array by periods positions and store the output in a new array.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.sort_index" title="cudf.dataframe.series.Series.sort_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_index</span></code></a>(self[, ascending])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.sort_index" title="cudf.dataframe.series.Series.sort_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_index</span></code></a>(self[, ascending])</p></td>
 <td><p>Sort by the index.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.sort_values" title="cudf.dataframe.series.Series.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_values</span></code></a>(self[, ascending, na_position])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.sort_values" title="cudf.dataframe.series.Series.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_values</span></code></a>(self[, ascending, na_position])</p></td>
 <td><p>Sort by the values.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.std" title="cudf.dataframe.series.Series.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>(self[, ddof, axis, skipna])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.std" title="cudf.dataframe.series.Series.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>(self[, ddof, axis, skipna])</p></td>
 <td><p>Compute the standard deviation of the series</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.sub" title="cudf.dataframe.series.Series.sub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sub</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.sub" title="cudf.dataframe.series.Series.sub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sub</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Subtraction of series and other, element-wise (binary operator sub).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.sum" title="cudf.dataframe.series.Series.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>(self[, axis, skipna, dtype])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.sum" title="cudf.dataframe.series.Series.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>(self[, axis, skipna, dtype])</p></td>
 <td><p>Compute the sum of the series</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.tail" title="cudf.dataframe.series.Series.tail"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tail</span></code></a>(self[, n])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.tail" title="cudf.dataframe.series.Series.tail"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tail</span></code></a>(self[, n])</p></td>
 <td><p>Returns the last n rows as a new Series</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.take" title="cudf.dataframe.series.Series.take"><code class="xref py py-obj docutils literal notranslate"><span class="pre">take</span></code></a>(self, indices[, ignore_index])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.take" title="cudf.dataframe.series.Series.take"><code class="xref py py-obj docutils literal notranslate"><span class="pre">take</span></code></a>(self, indices[, ignore_index])</p></td>
 <td><p>Return Series by taking values from the corresponding <em>indices</em>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_array" title="cudf.dataframe.series.Series.to_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_array</span></code></a>(self[, fillna])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_array" title="cudf.dataframe.series.Series.to_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_array</span></code></a>(self[, fillna])</p></td>
 <td><p>Get a dense numpy array for the data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_dlpack" title="cudf.dataframe.series.Series.to_dlpack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dlpack</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_dlpack" title="cudf.dataframe.series.Series.to_dlpack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dlpack</span></code></a>(self)</p></td>
 <td><p>Converts a cuDF object into a DLPack tensor.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_frame" title="cudf.dataframe.series.Series.to_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_frame</span></code></a>(self[, name])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_frame" title="cudf.dataframe.series.Series.to_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_frame</span></code></a>(self[, name])</p></td>
 <td><p>Convert Series into a DataFrame</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_gpu_array" title="cudf.dataframe.series.Series.to_gpu_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_gpu_array</span></code></a>(self[, fillna])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_gpu_array" title="cudf.dataframe.series.Series.to_gpu_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_gpu_array</span></code></a>(self[, fillna])</p></td>
 <td><p>Get a dense numba device array for the data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_hdf" title="cudf.dataframe.series.Series.to_hdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdf</span></code></a>(self, path_or_buf, key, \*args, …)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_hdf" title="cudf.dataframe.series.Series.to_hdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdf</span></code></a>(self, path_or_buf, key, \*args, …)</p></td>
 <td><p>Write the contained data to an HDF5 file using HDFStore.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_json" title="cudf.dataframe.series.Series.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>(self[, path_or_buf])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_json" title="cudf.dataframe.series.Series.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>(self[, path_or_buf])</p></td>
 <td><p>Convert the cuDF object to a JSON string.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_string" title="cudf.dataframe.series.Series.to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_string</span></code></a>(self[, nrows])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_string" title="cudf.dataframe.series.Series.to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_string</span></code></a>(self[, nrows])</p></td>
 <td><p>Convert to string</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.truediv" title="cudf.dataframe.series.Series.truediv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truediv</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.truediv" title="cudf.dataframe.series.Series.truediv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truediv</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Floating division of series and other, element-wise (binary operator truediv).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.unique" title="cudf.dataframe.series.Series.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a>(self[, method, sort])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.unique" title="cudf.dataframe.series.Series.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a>(self[, method, sort])</p></td>
 <td><p>Returns unique values of this Series.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.value_counts" title="cudf.dataframe.series.Series.value_counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_counts</span></code></a>(self[, method, sort])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.value_counts" title="cudf.dataframe.series.Series.value_counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_counts</span></code></a>(self[, method, sort])</p></td>
 <td><p>Returns unique values of this Series.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.values_to_string" title="cudf.dataframe.series.Series.values_to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values_to_string</span></code></a>(self[, nrows])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.values_to_string" title="cudf.dataframe.series.Series.values_to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values_to_string</span></code></a>(self[, nrows])</p></td>
 <td><p>Returns a list of string for each element.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.var" title="cudf.dataframe.series.Series.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">var</span></code></a>(self[, ddof, axis, skipna])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.var" title="cudf.dataframe.series.Series.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">var</span></code></a>(self[, ddof, axis, skipna])</p></td>
 <td><p>Compute the variance of the series</p></td>
 </tr>
 </tbody>
@@ -3578,6 +3690,110 @@ corresponding Series locations is null the result will be null</p>
 </dl>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cudf.dataframe.series.Series.rolling">
+<code class="sig-name descname">rolling</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">window</em>, <em class="sig-param">min_periods=None</em>, <em class="sig-param">center=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.series.Series.rolling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rolling window calculations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>window</strong><span class="classifier">int or offset</span></dt><dd><p>Size of the window, i.e., the number of observations used
+to calculate the statistic.
+For datetime indexes, an offset can be provided instead
+of an int. The offset must be convertible to a timedelta.
+As opposed to a fixed window size, each window will be
+sized to accommodate observations within the time period
+specified by the offset.</p>
+</dd>
+<dt><strong>min_periods</strong><span class="classifier">int, optional</span></dt><dd><p>The minimum number of observations in the window that are
+required to be non-null, so that the result is non-null.
+If not provided or <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">min_periods</span></code> is equal to
+the window size.</p>
+</dd>
+<dt><strong>center</strong><span class="classifier">bool, optional</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the result is set at the center of the window.
+If <code class="docutils literal notranslate"><span class="pre">False</span></code> (default), the result is set at the right edge
+of the window.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Rolling</span></code> object.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cudf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Rolling sum with window size 2.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="go">0</span>
+<span class="go">1    3</span>
+<span class="go">2    5</span>
+<span class="go">3</span>
+<span class="go">4</span>
+<span class="go">dtype: int64</span>
+</pre></div>
+</div>
+<p>Rolling sum with window size 2 and min_periods 1.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="go">0    1</span>
+<span class="go">1    3</span>
+<span class="go">2    5</span>
+<span class="go">3    3</span>
+<span class="go">4    4</span>
+<span class="go">dtype: int64</span>
+</pre></div>
+</div>
+<p>Rolling count with window size 3.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+<span class="go">0    1</span>
+<span class="go">1    2</span>
+<span class="go">2    3</span>
+<span class="go">3    2</span>
+<span class="go">4    2</span>
+<span class="go">dtype: int64</span>
+</pre></div>
+</div>
+<p>Rolling count with window size 3, but with the result set at the
+center of the window.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+<span class="go">0    2</span>
+<span class="go">1    3</span>
+<span class="go">2    2</span>
+<span class="go">3    2</span>
+<span class="go">4    1 dtype: int64</span>
+</pre></div>
+</div>
+<p>Rolling max with variable window size specified by an offset;
+only valid for datetime index.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">index</span><span class="o">=</span><span class="p">[</span>
+<span class="gp">... </span>        <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;20190101 09:00:00&#39;</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;20190101 09:00:01&#39;</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;20190101 09:00:02&#39;</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;20190101 09:00:04&#39;</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;20190101 09:00:07&#39;</span><span class="p">),</span>
+<span class="gp">... </span>        <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;20190101 09:00:08&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="p">]</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="s1">&#39;2s&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="go">2019-01-01T09:00:00.000    1</span>
+<span class="go">2019-01-01T09:00:01.000    9</span>
+<span class="go">2019-01-01T09:00:02.000    9</span>
+<span class="go">2019-01-01T09:00:04.000    4</span>
+<span class="go">2019-01-01T09:00:07.000</span>
+<span class="go">2019-01-01T09:00:08.000    1</span>
+<span class="go">dtype: int64</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">

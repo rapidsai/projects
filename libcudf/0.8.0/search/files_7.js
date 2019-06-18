@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['wrapper_5ftypes_2ehpp',['wrapper_types.hpp',['../wrapper__types_8hpp.html',1,'']]]
+  ['trie_2ecuh',['trie.cuh',['../trie_8cuh.html',1,'']]],
+  ['types_2ehpp',['types.hpp',['../types_8hpp.html',1,'']]]
 ];

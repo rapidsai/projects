@@ -33,6 +33,7 @@ var searchData=
   ['convertjsontogdf',['convertJsonToGdf',['../namespacecudf.html#a65ffb898f41cf93e3bee70529f04e8ef',1,'cudf']]],
   ['copy',['copy',['../namespacecudf.html#aa7e6bf39cb5dd5cdb370d0a562675922',1,'cudf::copy(gdf_column const  &amp;input, cudaStream_t stream=0)'],['../namespacecudf.html#a9fae65b5e23d13aec03edef7a8aeacb0',1,'cudf::copy(table const  &amp;t, cudaStream_t stream=0)']]],
   ['corresponding_5fcolumn_5ftype',['corresponding_column_type',['../structcudf_1_1detail_1_1wrapper.html#a363155d601be28d9979f088c3d846ecd',1,'cudf::detail::wrapper']]],
+  ['count',['count',['../structcudf_1_1meanvar.html#a3428275eb3f42c16329354c96e80ef76',1,'cudf::meanvar']]],
   ['count_5fop',['count_op',['../structcount__op.html',1,'']]],
   ['countallfromset',['countAllFromSet',['../parsing__utils_8cu.html#a4f78fa5ce08eb9ad8df0dea142b18b58',1,'countAllFromSet(const char *h_data, size_t h_size, const std::vector&lt; char &gt; &amp;keys):&#160;parsing_utils.cu'],['../parsing__utils_8cuh.html#a4f78fa5ce08eb9ad8df0dea142b18b58',1,'countAllFromSet(const char *h_data, size_t h_size, const std::vector&lt; char &gt; &amp;keys):&#160;parsing_utils.cu']]],
   ['countandsetpositions',['countAndSetPositions',['../parsing__utils_8cu.html#adae8a40054045ad7b9133be7dfaa680b',1,'parsing_utils.cu']]],

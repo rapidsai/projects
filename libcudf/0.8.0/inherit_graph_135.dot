@@ -3,5 +3,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="gdf_scalar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgdf__scalar.html",tooltip="A struct to hold a scalar (single) value and its type information. "];
+  Node0 [label="fast_modulo_partitioner\l\< hash_value_t, output\l_type \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structfast__modulo__partitioner.html",tooltip="Functor to map a hash value to a particular &#39;bin&#39; or partition number that uses the FAST modulo opera..."];
 }

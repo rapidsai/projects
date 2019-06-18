@@ -120,8 +120,31 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1logic__error.html">logic_error</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when logical precondition is violated.  <a href="structcudf_1_1logic__error.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1meanvar.html">meanvar</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">intermediate struct to calculate mean and variance This is an example case to output a struct from column input.  <a href="structcudf_1_1meanvar.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1pair__accessor.html">pair_accessor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">pair accessor with/without null bitmask A unary function returns <code>thrust::pair&lt;ResultType, bool&gt;</code>. If the element at index <code>i</code> is valid, returns <code>ResultType{data[i]}</code> and <code>true</code> indicating the value was valid. If the element at <code>i</code> is null, returns <code>ResultType{identity}</code> and <code>false</code> indicating the element was null.  <a href="structcudf_1_1pair__accessor.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1pair__accessor_3_01ElementType_00_01ResultType_00_01false_01_4.html">pair_accessor&lt; ElementType, ResultType, false &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1pair__accessor_3_01ElementType_00_01ResultType_00_01true_01_4.html">pair_accessor&lt; ElementType, ResultType, true &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1table.html">table</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for a set of gdf_columns of equal number of rows.  <a href="structcudf_1_1table.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1transformer__meanvar.html">transformer_meanvar</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses a scalar value to construct a <code>meanvar</code> object. This transforms <code>thrust::pair&lt;ElementType, bool&gt;</code> into <code>ResultType = meanvar&lt;ElementType&gt;</code> form.  <a href="structcudf_1_1transformer__meanvar.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1transformer__squared.html">transformer_squared</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a scalar by first casting to another type, and then squaring the result.  <a href="structcudf_1_1transformer__squared.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1value__accessor.html">value_accessor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">value accessor with/without null bitmask A unary function returns scalar value at <code>id</code>. <code>operator() (gdf_index_type id)</code> computes <code>data</code> value and valid flag at <code>id</code>  <a href="structcudf_1_1value__accessor.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1value__accessor_3_01ElementType_00_01ResultType_00_01false_01_4.html">value_accessor&lt; ElementType, ResultType, false &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1value__accessor_3_01ElementType_00_01ResultType_00_01true_01_4.html">value_accessor&lt; ElementType, ResultType, true &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -240,6 +263,30 @@ gdf_dtype&#160;</td><td class="memItemRight" valign="bottom"><b>convertStringToD
 <tr class="memitem:a08fe31ebcf8c4f0cde01ce0e4c34f387"><td class="memItemLeft" align="right" valign="top">__global__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a08fe31ebcf8c4f0cde01ce0e4c34f387">detectJsonDataTypes</a> (const char *data, size_t data_size, const <a class="el" href="structParseOptions.html">ParseOptions</a> opts, int num_columns, const uint64_t *rec_starts, gdf_size_type num_records, <a class="el" href="structcudf_1_1ColumnInfo.html">ColumnInfo</a> *column_infos)</td></tr>
 <tr class="memdesc:a08fe31ebcf8c4f0cde01ce0e4c34f387"><td class="mdescLeft">&#160;</td><td class="mdescRight">CUDA kernel that parses and converts data into cuDF column data.  <a href="#a08fe31ebcf8c4f0cde01ce0e4c34f387">More...</a><br /></td></tr>
 <tr class="separator:a08fe31ebcf8c4f0cde01ce0e4c34f387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5315ca38e017e2ed42a400483bba3b56"><td class="memTemplParams" colspan="2">template&lt;bool has_nulls, typename ElementType , typename ResultType  = ElementType, typename Iterator_Index  = thrust::counting_iterator&lt;gdf_index_type&gt;&gt; </td></tr>
+<tr class="memitem:a5315ca38e017e2ed42a400483bba3b56"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a5315ca38e017e2ed42a400483bba3b56">make_iterator</a> (const ElementType *data, const bit_mask::bit_mask_t *valid=nullptr, ResultType identity=ResultType{0}, Iterator_Index const it=Iterator_Index(0))</td></tr>
+<tr class="memdesc:a5315ca38e017e2ed42a400483bba3b56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an iterator over the elements of a column.  <a href="#a5315ca38e017e2ed42a400483bba3b56">More...</a><br /></td></tr>
+<tr class="separator:a5315ca38e017e2ed42a400483bba3b56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4644fa78d40f010ce935b4358d1a9e25"><td class="memTemplParams" colspan="2"><a id="a4644fa78d40f010ce935b4358d1a9e25"></a>
+template&lt;bool has_nulls, typename ElementType , typename ResultType  = ElementType, typename Iterator_Index  = thrust::counting_iterator&lt;gdf_index_type&gt;&gt; </td></tr>
+<tr class="memitem:a4644fa78d40f010ce935b4358d1a9e25"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>make_iterator</b> (const ElementType *data, const gdf_valid_type *valid=nullptr, ResultType identity=ResultType{0}, Iterator_Index const it=Iterator_Index(0))</td></tr>
+<tr class="separator:a4644fa78d40f010ce935b4358d1a9e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af06d674f7e1bd773e4166ef4d7fcf959"><td class="memTemplParams" colspan="2"><a id="af06d674f7e1bd773e4166ef4d7fcf959"></a>
+template&lt;bool has_nulls, typename ElementType , typename ResultType  = ElementType, typename Iterator_Index  = thrust::counting_iterator&lt;gdf_index_type&gt;&gt; </td></tr>
+<tr class="memitem:af06d674f7e1bd773e4166ef4d7fcf959"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>make_iterator</b> (const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;column, ResultType identity=ResultType{0}, Iterator_Index const it=Iterator_Index(0))</td></tr>
+<tr class="separator:af06d674f7e1bd773e4166ef4d7fcf959"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20b11ec1348ab46ae20792ea4e2c0ca4"><td class="memTemplParams" colspan="2">template&lt;bool has_nulls, typename ElementType , typename ResultType  = ElementType, typename Iterator_Index  = thrust::counting_iterator&lt;gdf_index_type&gt;&gt; </td></tr>
+<tr class="memitem:a20b11ec1348ab46ae20792ea4e2c0ca4"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a20b11ec1348ab46ae20792ea4e2c0ca4">make_pair_iterator</a> (const ElementType *data, const bit_mask::bit_mask_t *valid=nullptr, ResultType identity=ResultType{0}, Iterator_Index const it=Iterator_Index(0))</td></tr>
+<tr class="memdesc:a20b11ec1348ab46ae20792ea4e2c0ca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an iterator over the elements of a column Input iterator which can be used for cub and thrust.  <a href="#a20b11ec1348ab46ae20792ea4e2c0ca4">More...</a><br /></td></tr>
+<tr class="separator:a20b11ec1348ab46ae20792ea4e2c0ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fee5f476efe3d2ba71060aa0ffe202f"><td class="memTemplParams" colspan="2"><a id="a8fee5f476efe3d2ba71060aa0ffe202f"></a>
+template&lt;bool has_nulls, typename ElementType , typename ResultType  = ElementType, typename Iterator_Index  = thrust::counting_iterator&lt;gdf_index_type&gt;&gt; </td></tr>
+<tr class="memitem:a8fee5f476efe3d2ba71060aa0ffe202f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>make_pair_iterator</b> (const ElementType *data, const gdf_valid_type *valid=nullptr, ResultType identity=ResultType{0}, Iterator_Index const it=Iterator_Index(0))</td></tr>
+<tr class="separator:a8fee5f476efe3d2ba71060aa0ffe202f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a657f930d43783b2f9ff84a219b19d245"><td class="memTemplParams" colspan="2"><a id="a657f930d43783b2f9ff84a219b19d245"></a>
+template&lt;bool has_nulls, typename ElementType , typename ResultType  = ElementType, typename Iterator_Index  = thrust::counting_iterator&lt;gdf_index_type&gt;&gt; </td></tr>
+<tr class="memitem:a657f930d43783b2f9ff84a219b19d245"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>make_pair_iterator</b> (const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;column, ResultType identity=ResultType{0}, Iterator_Index const it=Iterator_Index(0))</td></tr>
+<tr class="separator:a657f930d43783b2f9ff84a219b19d245"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16d269210347c80b2a841daef1a0d136"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__scalar.html">gdf_scalar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a16d269210347c80b2a841daef1a0d136">reduction</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> *col, gdf_reduction_op op, gdf_dtype output_dtype)</td></tr>
 <tr class="memdesc:a16d269210347c80b2a841daef1a0d136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the reduction of the values in all rows of a column This function does not detect overflows in reductions. Using a higher precision <code>dtype</code> may prevent overflow. Only <code>min</code> and <code>max</code> ops are supported for reduction of non-arithmetic types (date32, timestamp, category...). The null values are skipped for the operation. If the column is empty, the member is_valid of the output <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a> will contain <code>false</code>.  <a href="#a16d269210347c80b2a841daef1a0d136">More...</a><br /></td></tr>
 <tr class="separator:a16d269210347c80b2a841daef1a0d136"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1634,6 +1681,133 @@ template&lt;typename T , typename BinaryOp &gt; </div>
   </dd>
 </dl>
 <h2>void </h2>
+
+</div>
+</div>
+<a id="a5315ca38e017e2ed42a400483bba3b56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5315ca38e017e2ed42a400483bba3b56">&#9670;&nbsp;</a></span>make_iterator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool has_nulls, typename ElementType , typename ResultType  = ElementType, typename Iterator_Index  = thrust::counting_iterator&lt;gdf_index_type&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto cudf::make_iterator </td>
+          <td>(</td>
+          <td class="paramtype">const ElementType *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bit_mask::bit_mask_t *&#160;</td>
+          <td class="paramname"><em>valid</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ResultType&#160;</td>
+          <td class="paramname"><em>identity</em> = <code>ResultType{0}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iterator_Index const&#160;</td>
+          <td class="paramname"><em>it</em> = <code>Iterator_Index(0)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs an iterator over the elements of a column. </p>
+<p>----------------------------------------------------------------------&mdash;* If the column contains no null values (indicated by <code>has_nulls == false</code>) then dereferencing an iterator <code>it</code> returned by this function as <code>*(it + n)</code> will return <code>ResultType{ static_cast&lt;ElementType*&gt;(data)[n] }</code>.</p>
+<p>If the column contains null values (indicated by <code>has_nulls == true</code>) then the result of de-referencing an iterator <code>it</code> returned by this function as <code>*(it+n)</code> will depend if element is valid or null. If the element is valid, it will return <code>ResultType{ static_cast&lt;ElementType*&gt;(data)[n] }</code>. If the element is null, it will return <code>ResultType{identity}</code>.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">has_nulls</td><td>Indicates if the column contains null values (<code>null_count &gt; 0</code>) </td></tr>
+    <tr><td class="paramname">ElementType</td><td>The cudf data type of input array </td></tr>
+    <tr><td class="paramname">ResultType</td><td>cudf data type of output and <code>identity</code> value which is used when null bitmaps flag is false. </td></tr>
+    <tr><td class="paramname">Iterator_Index</td><td>The base iterator which gives the index of array. The default is <code>thrust::counting_iterator</code></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The pointer of column data array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">valid</td><td>The pointer of null bitmask of column </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">identity</td><td>The identity value used when the mask value is false <h2>it The index iterator, <code>thrust::counting_iterator</code> by default </h2>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a20b11ec1348ab46ae20792ea4e2c0ca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20b11ec1348ab46ae20792ea4e2c0ca4">&#9670;&nbsp;</a></span>make_pair_iterator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool has_nulls, typename ElementType , typename ResultType  = ElementType, typename Iterator_Index  = thrust::counting_iterator&lt;gdf_index_type&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto cudf::make_pair_iterator </td>
+          <td>(</td>
+          <td class="paramtype">const ElementType *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bit_mask::bit_mask_t *&#160;</td>
+          <td class="paramname"><em>valid</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ResultType&#160;</td>
+          <td class="paramname"><em>identity</em> = <code>ResultType{0}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iterator_Index const&#160;</td>
+          <td class="paramname"><em>it</em> = <code>Iterator_Index(0)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs an iterator over the elements of a column Input iterator which can be used for cub and thrust. </p>
+<p>----------------------------------------------------------------------&mdash;* The iterator returns thrust::pair&lt;ResultType, bool&gt; This is useful for more complex logic that depends on the validity. e.g. group_by.count, mean_var, sort algorism.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">has_nulls</td><td>True if the data has valid bit mask, False else </td></tr>
+    <tr><td class="paramname">ElementType</td><td>The cudf data type of input array </td></tr>
+    <tr><td class="paramname">ResultType</td><td>cudf data type of output and <code>identity</code> value which is used when null bitmaps flag is false. </td></tr>
+    <tr><td class="paramname">Iterator_Index</td><td>The base iterator which gives the index of array. The default is <code>thrust::counting_iterator</code></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The pointer of column data array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">valid</td><td>The pointer of null bitmask of column </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">identity</td><td>The identity value used when the mask value is false <h2>it The index iterator, <code>thrust::counting_iterator</code> by default </h2>
+</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
