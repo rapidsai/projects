@@ -6,5 +6,6 @@ var searchData=
   ['destroy',['destroy',['../classdevice__table.html#ad01f25b401518dfb05817a40e277815c',1,'device_table']]],
   ['detectjsondatatypes',['detectJsonDataTypes',['../namespacecudf.html#a08fe31ebcf8c4f0cde01ce0e4c34f387',1,'cudf']]],
   ['device_5ftable',['device_table',['../classdevice__table.html#a25e7c41387937831d6413dc2621009d6',1,'device_table']]],
+  ['drop_5fduplicates',['drop_duplicates',['../namespacecudf.html#ad33dca48e0e06d182698cefb81b14be2',1,'cudf']]],
   ['drop_5fnulls',['drop_nulls',['../namespacecudf.html#a2cb8b53ebafc4439711c5fbb4d31a89b',1,'cudf']]]
 ];

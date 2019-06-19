@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['quote_5fall',['QUOTE_ALL',['../namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062a59b4ae6e9efc18a8396af290bdfbcabe',1,'cudf']]],
-  ['quote_5fminimal',['QUOTE_MINIMAL',['../namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062ac0ef5f2c7edc850e629c89869ab512b1',1,'cudf']]],
-  ['quote_5fnone',['QUOTE_NONE',['../namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062ad9eb6a0d1b7639405e567725267b901f',1,'cudf']]],
-  ['quote_5fnonnumeric',['QUOTE_NONNUMERIC',['../namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062a61548a26e258802a50debf442f5cafc5',1,'cudf']]]
+  ['keep_5ffirst',['KEEP_FIRST',['../namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa86ea4bfd2b3121412b0a63a3697926ec',1,'cudf']]],
+  ['keep_5flast',['KEEP_LAST',['../namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa1d1398f646d74e801389737f07d89d1c',1,'cudf']]],
+  ['keep_5fnone',['KEEP_NONE',['../namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa6fb3154b77231184b596b4add407aa2a',1,'cudf']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gdf_5fcsv_5fquote_5fstyle',['gdf_csv_quote_style',['../namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062',1,'cudf']]]
+  ['duplicate_5fkeep_5foption',['duplicate_keep_option',['../namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3a',1,'cudf']]]
 ];

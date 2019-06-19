@@ -195,6 +195,12 @@ Enumerations</h2></td></tr>
 <tr class="memdesc:a3f6094e0fe7ac27a7dc56d41251ba062"><td class="mdescLeft">&#160;</td><td class="mdescRight"><h2>Enumeration of quoting behavior for CSV readers/writers </h2>
  <a href="namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062">More...</a><br /></td></tr>
 <tr class="separator:a3f6094e0fe7ac27a7dc56d41251ba062"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69091647ea1f9c9d4cdcf7c8876bea3a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3a">duplicate_keep_option</a> { <a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa86ea4bfd2b3121412b0a63a3697926ec">KEEP_FIRST</a> = 0, 
+<a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa1d1398f646d74e801389737f07d89d1c">KEEP_LAST</a>, 
+<a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa6fb3154b77231184b596b4add407aa2a">KEEP_NONE</a>
+ }</td></tr>
+<tr class="memdesc:a69091647ea1f9c9d4cdcf7c8876bea3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choices for drop_duplicates API for retainment of duplicate rows.  <a href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3a">More...</a><br /></td></tr>
+<tr class="separator:a69091647ea1f9c9d4cdcf7c8876bea3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -332,6 +338,9 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
 <tr class="memitem:a2cb8b53ebafc4439711c5fbb4d31a89b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__column__.html">gdf_column</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a2cb8b53ebafc4439711c5fbb4d31a89b">drop_nulls</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;input)</td></tr>
 <tr class="memdesc:a2cb8b53ebafc4439711c5fbb4d31a89b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters a column to remove null elements.  <a href="#a2cb8b53ebafc4439711c5fbb4d31a89b">More...</a><br /></td></tr>
 <tr class="separator:a2cb8b53ebafc4439711c5fbb4d31a89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad33dca48e0e06d182698cefb81b14be2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1table.html">cudf::table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ad33dca48e0e06d182698cefb81b14be2">drop_duplicates</a> (const <a class="el" href="structcudf_1_1table.html">cudf::table</a> &amp;input_table, const <a class="el" href="structcudf_1_1table.html">cudf::table</a> &amp;key_columns, const <a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3a">duplicate_keep_option</a> keep, const bool nulls_are_equal=true)</td></tr>
+<tr class="memdesc:ad33dca48e0e06d182698cefb81b14be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new table without duplicate rows.  <a href="#ad33dca48e0e06d182698cefb81b14be2">More...</a><br /></td></tr>
+<tr class="separator:ad33dca48e0e06d182698cefb81b14be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2f973d94c67ab3dc1a183c5adb3753d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; gdf_dtype &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ad2f973d94c67ab3dc1a183c5adb3753d">column_dtypes</a> (<a class="el" href="structcudf_1_1table.html">cudf::table</a> const  &amp;<a class="el" href="structcudf_1_1table.html">table</a>)</td></tr>
 <tr class="memdesc:ad2f973d94c67ab3dc1a183c5adb3753d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns vector of the dtypes of the columns in a table.  <a href="#ad2f973d94c67ab3dc1a183c5adb3753d">More...</a><br /></td></tr>
 <tr class="separator:ad2f973d94c67ab3dc1a183c5adb3753d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -477,6 +486,30 @@ typedef".</p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whatever is returned by the functor's "operator()". </dd></dl>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a69091647ea1f9c9d4cdcf7c8876bea3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69091647ea1f9c9d4cdcf7c8876bea3a">&#9670;&nbsp;</a></span>duplicate_keep_option</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3a">cudf::duplicate_keep_option</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Choices for drop_duplicates API for retainment of duplicate rows. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a69091647ea1f9c9d4cdcf7c8876bea3aa86ea4bfd2b3121412b0a63a3697926ec"></a>KEEP_FIRST&#160;</td><td class="fielddoc"><p>Keeps first duplicate row and unique rows. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a69091647ea1f9c9d4cdcf7c8876bea3aa1d1398f646d74e801389737f07d89d1c"></a>KEEP_LAST&#160;</td><td class="fielddoc"><p>Keeps last duplicate row and unique rows. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a69091647ea1f9c9d4cdcf7c8876bea3aa6fb3154b77231184b596b4add407aa2a"></a>KEEP_NONE&#160;</td><td class="fielddoc"><p>Don't keep any duplicate rows, Keeps only unique rows. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="a3f6094e0fe7ac27a7dc56d41251ba062"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3f6094e0fe7ac27a7dc56d41251ba062">&#9670;&nbsp;</a></span>gdf_csv_quote_style</h2>
 
@@ -1284,6 +1317,64 @@ if <code>input.size</code> is zero, there is no error, and an empty column is re
   </dd>
 </dl>
 <h2>void </h2>
+
+</div>
+</div>
+<a id="ad33dca48e0e06d182698cefb81b14be2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad33dca48e0e06d182698cefb81b14be2">&#9670;&nbsp;</a></span>drop_duplicates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcudf_1_1table.html">cudf::table</a> cudf::drop_duplicates </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcudf_1_1table.html">cudf::table</a> &amp;&#160;</td>
+          <td class="paramname"><em>input_table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcudf_1_1table.html">cudf::table</a> &amp;&#160;</td>
+          <td class="paramname"><em>key_columns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3a">duplicate_keep_option</a>&#160;</td>
+          <td class="paramname"><em>keep</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>nulls_are_equal</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a new table without duplicate rows. </p>
+<p>Given an input table, each row is copied to output table if the corresponding row of key column table is unique, where the definition of unique depends on the value of <code>keep:</code> </p><ul>
+<li>KEEP_FIRST: only the first of a sequence of duplicate rows is copied</li>
+<li>KEEP_LAST: only the last of a sequence of duplicate rows is copied</li>
+<li>KEEP_NONE: no duplicate rows are copied</li>
+</ul>
+<p>The input table and key columns table should have same number of rows. Note that the memory for the output table columns is allocated by this function, so it must be freed by the caller when finished.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">input_table</td><td>input table to copy only unique rows </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_columns</td><td>columns to consider to identify duplicate rows </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">keep</td><td>keep first entry, last entry, or no entries if duplicates found </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nulls_are_equal</td><td>flag to denote nulls are equal if true, nulls are not equal if false</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>out_table with only unique rows </dd></dl>
 
 </div>
 </div>
