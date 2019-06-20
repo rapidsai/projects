@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.8.0a1+1115.ga235d64.dirty documentation</title>
+  <title>API Reference &mdash; cudf 0.8.0a1+1134.gf7631e7.dirty documentation</title>
   
 
   
@@ -2686,6 +2686,9 @@ default: ‘value’</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.var" title="cudf.dataframe.series.Series.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">var</span></code></a>(self[, ddof, axis, skipna])</p></td>
 <td><p>Compute the variance of the series</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.where" title="cudf.dataframe.series.Series.where"><code class="xref py py-obj docutils literal notranslate"><span class="pre">where</span></code></a>(self, cond[, other, axis])</p></td>
+<td><p>Replace values with other where the condition is False.</p></td>
+</tr>
 </tbody>
 </table>
 <table class="docutils align-default">
@@ -4315,6 +4318,28 @@ default=’sort’ will be changed to ‘hash’ when implemented.</p>
 <dt id="cudf.dataframe.series.Series.var">
 <code class="sig-name descname">var</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">ddof=1</em>, <em class="sig-param">axis=None</em>, <em class="sig-param">skipna=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.series.Series.var" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the variance of the series</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cudf.dataframe.series.Series.where">
+<code class="sig-name descname">where</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">cond</em>, <em class="sig-param">other=None</em>, <em class="sig-param">axis=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.series.Series.where" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace values with other where the condition is False.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cond</strong> – boolean
+Where cond is True, keep the original value. Where False,
+replace with corresponding value from other.</p></li>
+<li><p><strong>other</strong> – scalar, default None
+Entries where cond is False are replaced with
+corresponding value from other.</p></li>
+<li><p><strong>axis</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Series</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
