@@ -243,23 +243,22 @@ references to the passed objects pointed by offset_col and index_col.
 If copy is True, this funcion stores references to the deep-copies of
 the passed objects pointed by offset_col and index_col. If this class
 instance already stores a graph, invoking this function raises an
-error.
-Parameters
-———-
-offset_col : cudf.Series</p>
-<blockquote>
-<div><p>This cudf.Series wraps a gdf_column of size V + 1 (V: number of
+error. Undirected edges must be stored as directed edges in both 
+directions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>offset_col</strong><span class="classifier">cudf.Series</span></dt><dd><p>This cudf.Series wraps a gdf_column of size V + 1 (V: number of
 vertices).
 The gdf column contains the offsets for the vertices in this graph.
 Offsets must be in the range [0, E] (E: number of edges).</p>
-</div></blockquote>
-<dl class="simple">
-<dt>index_col<span class="classifier">cudf.Series</span></dt><dd><p>This cudf.Series wraps a gdf_column of size E (E: number of edges).
+</dd>
+<dt><strong>index_col</strong><span class="classifier">cudf.Series</span></dt><dd><p>This cudf.Series wraps a gdf_column of size E (E: number of edges).
 The gdf column contains the destination index for each edge.
 Destination indices must be in the range [0, V) (V: number of
 vertices).</p>
 </dd>
-<dt>value_col(optional)<span class="classifier">cudf.Series</span></dt><dd><p>This pointer can be <code class="docutils literal notranslate"><span class="pre">none</span></code>.
+<dt><strong>value_col(optional)</strong><span class="classifier">cudf.Series</span></dt><dd><p>This pointer can be <code class="docutils literal notranslate"><span class="pre">none</span></code>.
 If not, this cudf.Series wraps a gdf_column of size E (E: number of
 edges).
 The gdf column contains the weight value for each edge.
@@ -267,6 +266,9 @@ The expected type of the gdf_column element is floating point
 number.</p>
 </dd>
 </dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pytest</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.io</span> <span class="k">import</span> <span class="n">mmread</span>
@@ -292,28 +294,36 @@ number.</p>
 <code class="sig-name descname">add_edge_list</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">source_col</em>, <em class="sig-param">dest_col</em>, <em class="sig-param">value_col=None</em>, <em class="sig-param">copy=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.add_edge_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create the edge list representation of a Graph. The passed source_col
 and dest_col arguments wrap gdf_column objects that represent a graph
-using the edge list format. If value_col is None, an unweighted graph
-is created. If value_col is not None, an weighted graph is created. If
-copy is False, this function stores references to the passed objects
+using the edge list format. 
+Source and destination indices must be in the range [0, V) where V is 
+the number of vertices. They must be 32 bit integers. Please refer to 
+cuGraph’s renumbering feature if your input does not match these 
+requierments. When using cudf.read_csv to load a CSV edge list, 
+make sure to set dtype to int32 for the source and destination
+columns.
+Undirected edges must be stored as directed edges in both directions.
+If value_col is None, an unweighted graph is created. If value_col is 
+not None, an weighted graph is created. 
+If copy is False, this function stores references to the passed objects
 pointed by source_col and dest_col. If copy is True, this funcion
 stores references to the deep-copies of the passed objects pointed by
 source_col and dest_col. If this class instance already stores a graph,
-invoking this function raises an error.
-Parameters
-———-
-source_col : cudf.Series</p>
-<blockquote>
-<div><p>This cudf.Series wraps a gdf_column of size E (E: number of edges).
+invoking this function raises an error.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>source_col</strong><span class="classifier">cudf.Series</span></dt><dd><p>This cudf.Series wraps a gdf_column of size E (E: number of edges).
 The gdf column contains the source index for each edge.
-Source indices must be in the range [0, V) (V: number of vertices).</p>
-</div></blockquote>
-<dl class="simple">
-<dt>dest_col<span class="classifier">cudf.Series</span></dt><dd><p>This cudf.Series wraps a gdf_column of size E (E: number of edges).
+Source indices must be in the range [0, V) (V: number of vertices). 
+Source indices must be 32 bit integers.</p>
+</dd>
+<dt><strong>dest_col</strong><span class="classifier">cudf.Series</span></dt><dd><p>This cudf.Series wraps a gdf_column of size E (E: number of edges).
 The gdf column contains the destination index for each edge.
 Destination indices must be in the range [0, V) (V: number of
-vertices).</p>
+vertices).
+Destination indices must be 32 bit integers.</p>
 </dd>
-<dt>value_col(optional)<span class="classifier">cudf.Series</span></dt><dd><p>This pointer can be <code class="docutils literal notranslate"><span class="pre">none</span></code>.
+<dt><strong>value_col(optional)</strong><span class="classifier">cudf.Series</span></dt><dd><p>This pointer can be <code class="docutils literal notranslate"><span class="pre">none</span></code>.
 If not, this cudf.Series wraps a gdf_column of size E (E: number of
 edges).
 The gdf column contains the weight value for each edge.
@@ -321,6 +331,9 @@ The expected type of the gdf_column element is floating point
 number.</p>
 </dd>
 </dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pytest</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.io</span> <span class="k">import</span> <span class="n">mmread</span>
@@ -357,35 +370,42 @@ the existing graph.</p>
 <dt id="cugraph.Graph.degree">
 <code class="sig-name descname">degree</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">vertex_subset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.degree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates and returns the degree of vertices. Vertex degree
-is the number of edges adjacent to that vertex.
-Parameters
-———-
-vertex_subset(optional, default=all vertices) : cudf.Series or iterable container</p>
-<blockquote>
-<div><p>A container of vertices for displaying corresponding degree</p>
-</div></blockquote>
-<p>df  : cudf.DataFrame
-GPU data frame of size N (the default) or the size of the given vertices (vertex_subset)
-containing the degree. The ordering is relative to the adjacency list, or that
-given by the specified vertex_subset.</p>
-<p>df[‘vertex’]: The vertex IDs (will be identical to vertex_subset if specified)
-df[‘degree’]: The computed degree of the corresponding vertex
-Examples
-——–
-&gt;&gt;&gt; import numpy as np
-&gt;&gt;&gt; import pytest
-&gt;&gt;&gt; from scipy.io import mmread
-&gt;&gt;&gt;
-&gt;&gt;&gt; import cudf
-&gt;&gt;&gt; import cugraph
-&gt;&gt;&gt; mm_file = ‘/datasets/networks/karate.mtx’
-&gt;&gt;&gt; M = mmread(mm_file).asfptype()
-&gt;&gt;&gt; sources = cudf.Series(M.row)
-&gt;&gt;&gt; destinations = cudf.Series(M.col)
-&gt;&gt;&gt;
-&gt;&gt;&gt; G = cugraph.Graph()
-&gt;&gt;&gt; G.add_edge_list(sources, destinations)
-&gt;&gt;&gt; degree_df = G.degree([0,9,12])</p>
+is the number of edges adjacent to that vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>vertex_subset(optional, default=all vertices)</strong><span class="classifier">cudf.Series or iterable container</span></dt><dd><p>A container of vertices for displaying corresponding degree</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>df</strong><span class="classifier">cudf.DataFrame</span></dt><dd></dd>
+<dt>GPU data frame of size N (the default) or the size of the given vertices (vertex_subset)</dt><dd></dd>
+<dt>containing the degree. The ordering is relative to the adjacency list, or that</dt><dd></dd>
+<dt>given by the specified vertex_subset.</dt><dd></dd>
+<dt>df[‘vertex’]: The vertex IDs (will be identical to vertex_subset if specified)</dt><dd></dd>
+<dt>df[‘degree’]: The computed degree of the corresponding vertex</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pytest</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.io</span> <span class="k">import</span> <span class="n">mmread</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cudf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cugraph</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mm_file</span> <span class="o">=</span> <span class="s1">&#39;/datasets/networks/karate.mtx&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">mmread</span><span class="p">(</span><span class="n">mm_file</span><span class="p">)</span><span class="o">.</span><span class="n">asfptype</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sources</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">destinations</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">col</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge_list</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="n">destinations</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">degree_df</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -412,45 +432,57 @@ Examples
 <dd><p>Return a dataframe containing vertex pairs such that each pair of vertices is
 connected by a path of two hops in the graph. The resulting pairs are
 returned in sorted order.</p>
-<p>Returns:
-df : a cudf.DataFrame object
-df[‘first’] the first vertex id of a pair
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>Two hop neighbors</strong><span class="classifier">cudf.DataFrame</span></dt><dd><p>df[‘first’] the first vertex id of a pair
 df[‘second’] the second vertex id of a pair</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cugraph.Graph.in_degree">
 <code class="sig-name descname">in_degree</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">vertex_subset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.in_degree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates and returns the in-degree of vertices. Vertex in-degree
-is the number of edges pointing in to the vertex.
-Parameters
-———-
-vertex_subset(optional, default=all vertices) : cudf.Series or iterable container</p>
-<blockquote>
-<div><p>A container of vertices for displaying corresponding in-degree</p>
-</div></blockquote>
-<p>df  : cudf.DataFrame
-GPU data frame of size N (the default) or the size of the given vertices (vertex_subset)
-containing the in_degree. The ordering is relative to the adjacency list, or that
-given by the specified vertex_subset.</p>
-<p>df[‘vertex’]: The vertex IDs (will be identical to vertex_subset if specified)
-df[‘degree’]: The computed in-degree of the corresponding vertex
-Examples
-——–
-&gt;&gt;&gt; import numpy as np
-&gt;&gt;&gt; import pytest
-&gt;&gt;&gt; from scipy.io import mmread
-&gt;&gt;&gt;
-&gt;&gt;&gt; import cudf
-&gt;&gt;&gt; import cugraph
-&gt;&gt;&gt; mm_file = ‘/datasets/networks/karate.mtx’
-&gt;&gt;&gt; M = mmread(mm_file).asfptype()
-&gt;&gt;&gt; sources = cudf.Series(M.row)
-&gt;&gt;&gt; destinations = cudf.Series(M.col)
-&gt;&gt;&gt;
-&gt;&gt;&gt; G = cugraph.Graph()
-&gt;&gt;&gt; G.add_edge_list(sources, destinations)
-&gt;&gt;&gt; in_degree_df = G.in_degree([0,9,12])</p>
+is the number of edges pointing in to the vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>vertex_subset(optional, default=all vertices)</strong><span class="classifier">cudf.Series or iterable container</span></dt><dd><p>A container of vertices for displaying corresponding in-degree</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>df</strong><span class="classifier">cudf.DataFrame</span></dt><dd></dd>
+<dt>GPU data frame of size N (the default) or the size of the given vertices (vertex_subset)</dt><dd></dd>
+<dt>containing the in_degree. The ordering is relative to the adjacency list, or that</dt><dd></dd>
+<dt>given by the specified vertex_subset.</dt><dd></dd>
+<dt>df[‘vertex’]: The vertex IDs (will be identical to vertex_subset if specified)</dt><dd></dd>
+<dt>df[‘degree’]: The computed in-degree of the corresponding vertex</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pytest</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.io</span> <span class="k">import</span> <span class="n">mmread</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cudf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cugraph</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mm_file</span> <span class="o">=</span> <span class="s1">&#39;/datasets/networks/karate.mtx&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">mmread</span><span class="p">(</span><span class="n">mm_file</span><span class="p">)</span><span class="o">.</span><span class="n">asfptype</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sources</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">destinations</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">col</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge_list</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="n">destinations</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">in_degree_df</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">in_degree</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -476,35 +508,42 @@ compatibility.</p>
 <dt id="cugraph.Graph.out_degree">
 <code class="sig-name descname">out_degree</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">vertex_subset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.Graph.out_degree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates and returns the out-degree of vertices. Vertex out-degree
-is the number of edges pointing out from the vertex.
-Parameters
-———-
-vertex_subset(optional, default=all vertices) : cudf.Series or iterable container</p>
-<blockquote>
-<div><p>A container of vertices for displaying corresponding out-degree</p>
-</div></blockquote>
-<p>df  : cudf.DataFrame
-GPU data frame of size N (the default) or the size of the given vertices (vertex_subset)
-containing the out_degree. The ordering is relative to the adjacency list, or that
-given by the specified vertex_subset.</p>
-<p>df[‘vertex’]: The vertex IDs (will be identical to vertex_subset if specified)
-df[‘degree’]: The computed out-degree of the corresponding vertex
-Examples
-——–
-&gt;&gt;&gt; import numpy as np
-&gt;&gt;&gt; import pytest
-&gt;&gt;&gt; from scipy.io import mmread
-&gt;&gt;&gt;
-&gt;&gt;&gt; import cudf
-&gt;&gt;&gt; import cugraph
-&gt;&gt;&gt; mm_file = ‘/datasets/networks/karate.mtx’
-&gt;&gt;&gt; M = mmread(mm_file).asfptype()
-&gt;&gt;&gt; sources = cudf.Series(M.row)
-&gt;&gt;&gt; destinations = cudf.Series(M.col)
-&gt;&gt;&gt;
-&gt;&gt;&gt; G = cugraph.Graph()
-&gt;&gt;&gt; G.add_edge_list(sources, destinations)
-&gt;&gt;&gt; out_degree_df = G.out_degree([0,9,12])</p>
+is the number of edges pointing out from the vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>vertex_subset(optional, default=all vertices)</strong><span class="classifier">cudf.Series or iterable container</span></dt><dd><p>A container of vertices for displaying corresponding out-degree</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>df</strong><span class="classifier">cudf.DataFrame</span></dt><dd></dd>
+<dt>GPU data frame of size N (the default) or the size of the given vertices (vertex_subset)</dt><dd></dd>
+<dt>containing the out_degree. The ordering is relative to the adjacency list, or that</dt><dd></dd>
+<dt>given by the specified vertex_subset.</dt><dd></dd>
+<dt>df[‘vertex’]: The vertex IDs (will be identical to vertex_subset if specified)</dt><dd></dd>
+<dt>df[‘degree’]: The computed out-degree of the corresponding vertex</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pytest</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy.io</span> <span class="k">import</span> <span class="n">mmread</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cudf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cugraph</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mm_file</span> <span class="o">=</span> <span class="s1">&#39;/datasets/networks/karate.mtx&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">mmread</span><span class="p">(</span><span class="n">mm_file</span><span class="p">)</span><span class="o">.</span><span class="n">asfptype</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sources</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">row</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">destinations</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">col</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge_list</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="n">destinations</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">out_degree_df</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">out_degree</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -682,8 +721,9 @@ df[‘predecessor’][i] gives for the i’th vertex the vertex it was reached f
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>input_graph</strong><span class="classifier">cuGraph.Graph</span></dt><dd><p>cuGraph graph descriptor, should contain the connectivity information as an edge list (edge weights are not used for this algorithm).
-The adjacency list will be computed if not already present.</p>
+<dt><strong>input_graph</strong><span class="classifier">cuGraph.Graph</span></dt><dd><p>cuGraph graph descriptor, should contain the connectivity information as an edge list.
+The adjacency list will be computed if not already present. The graph should be undirected where 
+an undirected edge is represented by a directed edge in both direction.</p>
 </dd>
 </dl>
 </dd>
@@ -783,11 +823,8 @@ maximization method.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>DF</strong><span class="classifier">GPU data frame containing two cudf.Series of size V: the vertex identifiers and</span></dt><dd><dl class="simple">
-<dt>the corresponding cluster assignments.</dt><dd><p>DF[‘vertex’] contains the vertex identifiers
+<dt><strong>Clustering</strong><span class="classifier">cudf.DataFrame</span></dt><dd><p>DF[‘vertex’] contains the vertex identifiers
 DF[‘cluster’] contains the cluster assignments</p>
-</dd>
-</dl>
 </dd>
 </dl>
 </dd>
@@ -807,8 +844,10 @@ DF[‘cluster’] contains the cluster assignments</p>
 </dd>
 <dt><strong>clustering</strong><span class="classifier">cudf.Series</span></dt><dd><p>The cluster assignment to analyze.</p>
 </dd>
-<dt><strong>Returns</strong></dt><dd></dd>
-<dt><strong>——-</strong></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
 <dt><strong>score</strong><span class="classifier">float</span></dt><dd><p>The computed modularity score</p>
 </dd>
 </dl>
@@ -829,8 +868,10 @@ DF[‘cluster’] contains the cluster assignments</p>
 </dd>
 <dt><strong>clustering</strong><span class="classifier">cudf.Series</span></dt><dd><p>The cluster assignment to analyze.</p>
 </dd>
-<dt><strong>Returns</strong></dt><dd></dd>
-<dt><strong>——-</strong></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
 <dt><strong>score</strong><span class="classifier">float</span></dt><dd><p>The computed edge cut score</p>
 </dd>
 </dl>
@@ -851,8 +892,10 @@ DF[‘cluster’] contains the cluster assignments</p>
 </dd>
 <dt><strong>clustering</strong><span class="classifier">cudf.Series</span></dt><dd><p>The cluster assignment to analyze.</p>
 </dd>
-<dt><strong>Returns</strong></dt><dd></dd>
-<dt><strong>——-</strong></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
 <dt><strong>score</strong><span class="classifier">float</span></dt><dd><p>The computed ratio cut score</p>
 </dd>
 </dl>
