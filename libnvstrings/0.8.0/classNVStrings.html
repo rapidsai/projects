@@ -4738,7 +4738,7 @@ Create NVStrings instance from strings</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Copy the list of strings into the provided host memory. </p>
-<p>Each pointer must point to memory large enough to hold the bytes of each corresponding string. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Each pointer must point to memory large enough to hold the bytes of each corresponding string. Null strings should be identified using the set_null_bitarray method. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">list</td><td>The list of pointers to CPU memory to copy each string into. </td></tr>
     <tr><td class="paramdir"></td><td class="paramname">start</td><td>The 0-based index position of the string to copy first. </td></tr>
