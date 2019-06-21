@@ -508,10 +508,9 @@ returns as new nvstrings.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>others</strong><span class="classifier">List of str</span></dt><dd><p>Strings to be appended.
-The number of strings must match size() of this instance.
-This must be either a Python array of strings or another
-nvstrings instance.</p>
+<dt><strong>others</strong><span class="classifier">nvstrings or list of nvstrings</span></dt><dd><p>Strings to be appended.
+The number of strings in the arg(s) must match size() of
+this instance.</p>
 </dd>
 <dt><strong>sep</strong><span class="classifier">str</span></dt><dd><p>If specified, this separator will be appended to each string
 before appending the others.</p>
@@ -2406,7 +2405,7 @@ and a mapping of indexes (values).</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.add_keys" title="nvcategory.nvcategory.add_keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_keys</span></code></a>(self, strs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.add_keys" title="nvcategory.nvcategory.add_keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_keys</span></code></a>(self, keys[, nulls])</p></td>
 <td><p>Create new category adding the specified keys and remapping values to the new key indexes.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.add_strings" title="nvcategory.nvcategory.add_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_strings</span></code></a>(self, nvs)</p></td>
@@ -2418,20 +2417,26 @@ and a mapping of indexes (values).</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.gather_and_remap" title="nvcategory.nvcategory.gather_and_remap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gather_and_remap</span></code></a>(self, indexes[, count])</p></td>
 <td><p>Return nvcategory instance using the specified indexes to gather strings from this instance.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.gather_strings" title="nvcategory.nvcategory.gather_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gather_strings</span></code></a>(self, indexes[, count])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.gather_numbers" title="nvcategory.nvcategory.gather_numbers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gather_numbers</span></code></a>(self, indexes, narr[, nulls])</p></td>
+<td><p>Fill buffer with keys values specified by the given indexes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.gather_strings" title="nvcategory.nvcategory.gather_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gather_strings</span></code></a>(self, indexes[, count])</p></td>
 <td><p>Return nvstrings instance represented using the specified indexes.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.get_cpointer" title="nvcategory.nvcategory.get_cpointer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_cpointer</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.get_cpointer" title="nvcategory.nvcategory.get_cpointer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_cpointer</span></code></a>(self)</p></td>
 <td><p>Returns memory pointer to underlying C++ class instance.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.indexes_for_key" title="nvcategory.nvcategory.indexes_for_key"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indexes_for_key</span></code></a>(self, key[, devptr])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.indexes_for_key" title="nvcategory.nvcategory.indexes_for_key"><code class="xref py py-obj docutils literal notranslate"><span class="pre">indexes_for_key</span></code></a>(self, key[, devptr])</p></td>
 <td><p>Return all index values for given key.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.keys" title="nvcategory.nvcategory.keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code></a>(self)</p></td>
-<td><p>Return the unique strings for this category as nvstrings instance.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.keys" title="nvcategory.nvcategory.keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code></a>(self[, narr])</p></td>
+<td><p>Return the unique keys for this category.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.keys_size" title="nvcategory.nvcategory.keys_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys_size</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.keys_size" title="nvcategory.nvcategory.keys_size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys_size</span></code></a>(self)</p></td>
 <td><p>The number of keys.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.keys_type" title="nvcategory.nvcategory.keys_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys_type</span></code></a>(self)</p></td>
+<td><p>Return string with name of the keys type.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.merge_and_remap" title="nvcategory.nvcategory.merge_and_remap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge_and_remap</span></code></a>(self, nvcat)</p></td>
 <td><p>Create new category incorporating the specified category keys and values.</p></td>
@@ -2439,7 +2444,7 @@ and a mapping of indexes (values).</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.merge_category" title="nvcategory.nvcategory.merge_category"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge_category</span></code></a>(self, nvcat)</p></td>
 <td><p>Create new category incorporating the specified category keys and values.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.remove_keys" title="nvcategory.nvcategory.remove_keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_keys</span></code></a>(self, strs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.remove_keys" title="nvcategory.nvcategory.remove_keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_keys</span></code></a>(self, keys[, nulls])</p></td>
 <td><p>Create new category removing the specified keys and remapping values to the new key indexes.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.remove_strings" title="nvcategory.nvcategory.remove_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_strings</span></code></a>(self, nvs)</p></td>
@@ -2448,42 +2453,58 @@ and a mapping of indexes (values).</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.remove_unused_keys" title="nvcategory.nvcategory.remove_unused_keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_unused_keys</span></code></a>(self)</p></td>
 <td><p>Create new category removing any keys that have no corresponding values.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.set_keys" title="nvcategory.nvcategory.set_keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_keys</span></code></a>(self, strs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.set_keys" title="nvcategory.nvcategory.set_keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_keys</span></code></a>(self, keys[, nulls])</p></td>
 <td><p>Create new category using the specified keys and remapping values to the new key indexes.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.size" title="nvcategory.nvcategory.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a>(self)</p></td>
 <td><p>The number of values.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.to_strings" title="nvcategory.nvcategory.to_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_strings</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.to_numbers" title="nvcategory.nvcategory.to_numbers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_numbers</span></code></a>(self, narr[, nulls])</p></td>
+<td><p>Fill array with key numbers as represented by the values in this instance.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.to_strings" title="nvcategory.nvcategory.to_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_strings</span></code></a>(self)</p></td>
 <td><p>Return nvstrings instance represented by the values in this instance.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.value" title="nvcategory.nvcategory.value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code></a>(self, str)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.value" title="nvcategory.nvcategory.value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code></a>(self, str)</p></td>
 <td><p>Return the category value for the given string.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.value_for_index" title="nvcategory.nvcategory.value_for_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_for_index</span></code></a>(self, idx)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.value_for_index" title="nvcategory.nvcategory.value_for_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_for_index</span></code></a>(self, idx)</p></td>
 <td><p>Return the category value for the given index.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.values" title="nvcategory.nvcategory.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a>(self[, devptr])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.values" title="nvcategory.nvcategory.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a>(self[, devptr])</p></td>
 <td><p>Return all values for this instance.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvcategory.nvcategory.values_cpointer" title="nvcategory.nvcategory.values_cpointer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values_cpointer</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvcategory.nvcategory.values_cpointer" title="nvcategory.nvcategory.values_cpointer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values_cpointer</span></code></a>(self)</p></td>
 <td><p>Returns memory pointer to underlying device memory array of int32 values for this instance.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="nvcategory.nvcategory.add_keys">
-<code class="sig-name descname">add_keys</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">strs</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.add_keys" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_keys</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">keys</em>, <em class="sig-param">nulls=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.add_keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create new category adding the specified keys and remapping
 values to the new key indexes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>strs</strong><span class="classifier">nvstrings</span></dt><dd><p>keys to be added to existing keys</p>
+<dt><strong>keys</strong><span class="classifier">nvstrings or ndarray</span></dt><dd><p>keys to be added to existing keys</p>
+</dd>
+<dt><strong>nulls: bitmask</strong></dt><dd><p>ndarray of type uint8</p>
 </dd>
 </dl>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="go">[1, 2, 3, 4] [3, 0, 1, 2, 1, 0, 3]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">add_keys</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nc</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">nc</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="go">[0, 1, 2, 3, 4] [4, 1, 2, 3, 2, 1, 4]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2548,6 +2569,12 @@ Otherwise it is ignored.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">gather</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 <span class="go">[&#39;aa&#39;, &#39;bb&#39;, &#39;cc&#39;, &#39;ff&#39;] [1, 3, 2, 3, 1, 2]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">indexes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc1</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">indexes</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nc1</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">nc1</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="go">[1, 2, 4, 5] [1, 3, 2, 3, 1, 2]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -2587,6 +2614,44 @@ Otherwise it is ignored.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">gather</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 <span class="go">[&#39;bb&#39;, &#39;cc&#39;, &#39;ff&#39;] [0, 2, 1, 2, 0, 1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">indexes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc1</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">gather_and_remap</span><span class="p">(</span><span class="n">indexes</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nc1</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">nc1</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="go">[2, 4, 5] [0, 2, 1, 2, 0, 1]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="nvcategory.nvcategory.gather_numbers">
+<code class="sig-name descname">gather_numbers</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">indexes</em>, <em class="sig-param">narr</em>, <em class="sig-param">nulls=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.gather_numbers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill buffer with keys values specified by the given indexes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>indexes</strong><span class="classifier">ndarray of type int32</span></dt><dd><p>List of integers identifying keys to copy to the output.</p>
+</dd>
+<dt><strong>narr</strong><span class="classifier">ndarray</span></dt><dd><p>Type must match the keys for this instance and hold
+the number of values indicated by the indexes parameter.</p>
+</dd>
+<dt><strong>nulls</strong><span class="classifier">ndarray</span></dt><dd><p>Bits are set to indicate null and non-null entries in
+the narr output array.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">narr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">narr</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nbrs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">([</span><span class="n">idxs</span><span class="o">.</span><span class="n">size</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">narr</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span><span class="o">.</span><span class="n">gather_numbers</span><span class="p">(</span><span class="n">idxs</span><span class="p">,</span> <span class="n">nbrs</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nbrs</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="go">[1.0, 1.5, 1.0]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -2638,9 +2703,9 @@ Otherwise it is ignored.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>key</strong><span class="classifier">str</span></dt><dd><p>key whose values should be returned</p>
+<dt><strong>key</strong><span class="classifier">str or number</span></dt><dd><p>key whose values should be returned</p>
 </dd>
-<dt><strong>devptr</strong><span class="classifier">GPU memory pointer</span></dt><dd><p>Where index values will be written.
+<dt><strong>devptr</strong><span class="classifier">GPU memory pointer or ndarray</span></dt><dd><p>Where index values will be written.
 Must be able to hold int32 values for this key.</p>
 </dd>
 </dl>
@@ -2653,19 +2718,30 @@ Must be able to hold int32 values for this key.</p>
 <span class="go">[1]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">indexes_for_key</span><span class="p">(</span><span class="s1">&#39;eee&#39;</span><span class="p">))</span>
 <span class="go">[0, 2]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">narr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">narr</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">count</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">indexes_for_key</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">([</span><span class="n">count</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">count</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">indexes_for_key</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">idxs</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">idxs</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="go">[1, 4, 6, 7]</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="nvcategory.nvcategory.keys">
-<code class="sig-name descname">keys</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.keys" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the unique strings for this category as nvstrings instance.</p>
+<code class="sig-name descname">keys</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">narr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the unique keys for this category.
+String keys are returned as nvstrings instance.
+Numeric keys require a buffer to fill.
+Buffer must be able to hold at least keys_size() elements
+of type keys_type().</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt>nvstrings</dt><dd><p>Unique strings (keys)</p>
-</dd>
+<dt>nvstrings or None</dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -2674,6 +2750,13 @@ Must be able to hold int32 values for this key.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 <span class="go">[&#39;aaa&#39;,&#39;dddd&#39;,&#39;eee&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">narr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">narr</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">keys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">([</span><span class="n">cat</span><span class="o">.</span><span class="n">keys_size</span><span class="p">()],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">narr</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span><span class="o">.</span><span class="n">keys</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">keys</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="go">[1.0, 1.25, 1.5, 2.0]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -2702,20 +2785,49 @@ Must be able to hold int32 values for this key.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="nvcategory.nvcategory.keys_type">
+<code class="sig-name descname">keys_type</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.keys_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return string with name of the keys type.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">narr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">narr</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span><span class="o">.</span><span class="n">keys_type</span><span class="p">()</span>
+<span class="go">&#39;float64&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
 <dt id="nvcategory.nvcategory.merge_and_remap">
 <code class="sig-name descname">merge_and_remap</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">nvcat</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.merge_and_remap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create new category incorporating the specified category keys
 and values. This will return a new nvcategory with new key values.
 The index values will appear as if appended.
-Values will be remapped to the new keys.</p>
+Values are appended and will be remapped to the new keys.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>nvcat</strong><span class="classifier">nvcategory</span></dt><dd><p>New cateogry to be merged.</p>
+<dt><strong>nvcat</strong><span class="classifier">nvcategory</span></dt><dd><p>New category to be merged.</p>
 </dd>
 </dl>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cat1</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cat1</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">cat1</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="go">[1, 2, 3, 4] [3, 0, 1, 2, 1, 0, 3]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cat2</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cat2</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">cat2</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="go">[0, 2, 3, 4] [1, 3, 2, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span> <span class="o">=</span> <span class="n">cat1</span><span class="o">.</span><span class="n">merge_and_remap</span><span class="p">(</span><span class="n">cat2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nc</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">nc</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="go">[0, 1, 2, 3, 4] [4, 1, 2, 3, 2, 1, 4, 2, 4, 3, 0]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2728,7 +2840,7 @@ will preserve their values and any new keys will get new values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>nvcat</strong><span class="classifier">nvcategory</span></dt><dd><p>New cateogry to be merged.</p>
+<dt><strong>nvcat</strong><span class="classifier">nvcategory</span></dt><dd><p>New category to be merged.</p>
 </dd>
 </dl>
 </dd>
@@ -2737,18 +2849,31 @@ will preserve their values and any new keys will get new values.</p>
 
 <dl class="method">
 <dt id="nvcategory.nvcategory.remove_keys">
-<code class="sig-name descname">remove_keys</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">strs</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.remove_keys" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">remove_keys</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">keys</em>, <em class="sig-param">nulls=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.remove_keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create new category removing the specified keys and remapping
 values to the new key indexes. Values with removed keys are
 mapped to -1.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>strs</strong><span class="classifier">nvstrings</span></dt><dd><p>keys to be removed from existing keys</p>
+<dt><strong>keys</strong><span class="classifier">nvstrings or ndarray</span></dt><dd><p>keys to be removed from existing keys</p>
+</dd>
+<dt><strong>nulls: bitmask</strong></dt><dd><p>ndarray of type uint8</p>
 </dd>
 </dl>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="go">[1, 2, 3, 4] [3, 0, 1, 2, 1, 0, 3]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">remove_keys</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nc</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">nc</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="go">[1, 2, 3] [-1, 0, 1, 2, 1, 0, -1]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2787,22 +2912,49 @@ The returned category will have new set of key values and indexes.</p>
 <code class="sig-name descname">remove_unused_keys</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.remove_unused_keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create new category removing any keys that have no corresponding
 values. Values are remapped to match the new keyset.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="go">[1, 2, 3, 4] [3, 0, 1, 2, 1, 0, 3]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">add_keys</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nc</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">nc</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="go">[1, 2, 3] [-1, 0, 1, 2, 1, 0, -1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc1</span> <span class="o">=</span> <span class="n">nc</span><span class="o">.</span><span class="n">remove_unused_keys</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nc1</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">nc1</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="go">[1, 2, 3, 4] [3, 0, 1, 2, 1, 0, 3]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="nvcategory.nvcategory.set_keys">
-<code class="sig-name descname">set_keys</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">strs</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.set_keys" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_keys</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">keys</em>, <em class="sig-param">nulls=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.set_keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create new category using the specified keys and remapping
 values to the new key indexes. Matching names will have
 remapped values. Values with removed keys are mapped to -1.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>strs</strong><span class="classifier">nvstrings</span></dt><dd><p>keys to be used for new category</p>
+<dt><strong>strs</strong><span class="classifier">nvstrings or ndarray</span></dt><dd><p>keys to be used for new category</p>
+</dd>
+<dt><strong>nulls: bitmask</strong></dt><dd><p>ndarray of type uint8</p>
 </dd>
 </dl>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="go">[1, 2, 3, 4] [3, 0, 1, 2, 1, 0, 3]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">set_keys</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nc</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">nc</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="go">[0, 2, 3, 4] [3, -1, 1, 2, 1, -1, 3]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2824,6 +2976,37 @@ remapped values. Values with removed keys are mapped to -1.</p>
 <span class="go">[2, 0, 2, 1]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
 <span class="go">4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="nvcategory.nvcategory.to_numbers">
+<code class="sig-name descname">to_numbers</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">narr</em>, <em class="sig-param">nulls=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.to_numbers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill array with key numbers as represented by the values
+in this instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>narr</strong><span class="classifier">ndarray</span></dt><dd><p>Array to fill with numbers. Must be of the same type
+as the keys for this instance and must be able to hold
+size() values.</p>
+</dd>
+<dt><strong>nulls</strong><span class="classifier">ndarray</span></dt><dd><p>Array to fill with bits identifying null and non-null
+entries.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">narr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">narr</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nbrs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">([</span><span class="n">cat</span><span class="o">.</span><span class="n">size</span><span class="p">()],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">narr</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span><span class="o">.</span><span class="n">to_numbers</span><span class="p">(</span><span class="n">nbrs</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nbrs</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="go">[2.0, 1.0, 1.25, 1.5, 1.0, 1.25, 1.0, 1.0, 2.0]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -2915,6 +3098,13 @@ Must be able to hold size() of int32 values.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 <span class="go">[2, 0, 2, 1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">narr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">narr</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">([</span><span class="n">cat</span><span class="o">.</span><span class="n">size</span><span class="p">()],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="go">[3, 0, 1, 2, 0, 1, 0, 0, 3]</span>
 </pre></div>
 </div>
 </dd></dl>

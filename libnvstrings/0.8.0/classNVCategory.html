@@ -75,9 +75,27 @@ $(function() {
  <a href="classNVCategory.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="NVCategory_8h_source.html">NVCategory.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for NVCategory:</div>
+<div class="dyncontent">
+<div class="center"><img src="classNVCategory__inherit__graph.png" border="0" usemap="#NVCategory_inherit__map" alt="Inheritance graph"/></div>
+<map name="NVCategory_inherit__map" id="NVCategory_inherit__map">
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for NVCategory:</div>
+<div class="dyncontent">
+<div class="center"><img src="classNVCategory__coll__graph.png" border="0" usemap="#NVCategory_coll__map" alt="Collaboration graph"/></div>
+<map name="NVCategory_coll__map" id="NVCategory_coll__map">
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a058f0c5c8574e3cac43f5e65fdea072c"><td class="memItemLeft" align="right" valign="top"><a id="a058f0c5c8574e3cac43f5e65fdea072c"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVCategory.html#a058f0c5c8574e3cac43f5e65fdea072c">get_type_name</a> ()</td></tr>
+<tr class="memdesc:a058f0c5c8574e3cac43f5e65fdea072c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns string name of this category. <br /></td></tr>
+<tr class="separator:a058f0c5c8574e3cac43f5e65fdea072c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a597cd442ecce8a96af5e585683eae1e4"><td class="memItemLeft" align="right" valign="top"><a id="a597cd442ecce8a96af5e585683eae1e4"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVCategory.html#a597cd442ecce8a96af5e585683eae1e4">size</a> ()</td></tr>
 <tr class="memdesc:a597cd442ecce8a96af5e585683eae1e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of values. <br /></td></tr>
@@ -179,9 +197,9 @@ Create NVCategory instance from strings</h2></td></tr>
 <tr class="memitem:a6ecb7cd1bf614bbcd6007d8d0cf943c8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classNVCategory.html">NVCategory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVCategory.html#a6ecb7cd1bf614bbcd6007d8d0cf943c8">create_from_index</a> (std::pair&lt; const char *, size_t &gt; *strs, unsigned int count, bool devmem=true)</td></tr>
 <tr class="memdesc:a6ecb7cd1bf614bbcd6007d8d0cf943c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an instance from an array of string/length pairs.  <a href="#a6ecb7cd1bf614bbcd6007d8d0cf943c8">More...</a><br /></td></tr>
 <tr class="separator:a6ecb7cd1bf614bbcd6007d8d0cf943c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf5b5d571215f7085fe12c4cd472af8a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classNVCategory.html">NVCategory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVCategory.html#abf5b5d571215f7085fe12c4cd472af8a">create_from_offsets</a> (const char *strs, unsigned int count, const int *offsets, const unsigned char *nullbitmask=0, int nulls=0)</td></tr>
-<tr class="memdesc:abf5b5d571215f7085fe12c4cd472af8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an instance from single buffer of strings.  <a href="#abf5b5d571215f7085fe12c4cd472af8a">More...</a><br /></td></tr>
-<tr class="separator:abf5b5d571215f7085fe12c4cd472af8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a998deb14d5ca1050af7d540c6936dde8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classNVCategory.html">NVCategory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVCategory.html#a998deb14d5ca1050af7d540c6936dde8">create_from_offsets</a> (const char *strs, unsigned int count, const int *offsets, const unsigned char *nullbitmask=0, int nulls=0, bool devmem=true)</td></tr>
+<tr class="memdesc:a998deb14d5ca1050af7d540c6936dde8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an instance from single buffer of strings.  <a href="#a998deb14d5ca1050af7d540c6936dde8">More...</a><br /></td></tr>
+<tr class="separator:a998deb14d5ca1050af7d540c6936dde8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a506f8a1bd8b935383a9e3631162d2f0e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classNVCategory.html">NVCategory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVCategory.html#a506f8a1bd8b935383a9e3631162d2f0e">create_from_strings</a> (<a class="el" href="classNVStrings.html">NVStrings</a> &amp;strs)</td></tr>
 <tr class="memdesc:a506f8a1bd8b935383a9e3631162d2f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an instance from an <a class="el" href="classNVStrings.html" title="This class manages a list of strings stored in device memory. An instance of this class is a CPU (hos...">NVStrings</a> instance.  <a href="#a506f8a1bd8b935383a9e3631162d2f0e">More...</a><br /></td></tr>
 <tr class="separator:a506f8a1bd8b935383a9e3631162d2f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -444,8 +462,8 @@ Create NVCategory instance from strings</h2></td></tr>
 
 </div>
 </div>
-<a id="abf5b5d571215f7085fe12c4cd472af8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf5b5d571215f7085fe12c4cd472af8a">&#9670;&nbsp;</a></span>create_from_offsets()</h2>
+<a id="a998deb14d5ca1050af7d540c6936dde8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a998deb14d5ca1050af7d540c6936dde8">&#9670;&nbsp;</a></span>create_from_offsets()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -481,7 +499,13 @@ Create NVCategory instance from strings</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nulls</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>nulls</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>devmem</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -503,7 +527,8 @@ Create NVCategory instance from strings</h2></td></tr>
     <tr><td class="paramdir"></td><td class="paramname">count</td><td>The total number of strings in the buffer. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">offsets</td><td>Array of byte offsets to each string. This should be 1 more than the count value with the last value specifying the length of the buffer in bytes. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">nullbitmask</td><td>Each bit identifies which strings are to be considered null. The bits are organized as specified in the Arrow format. If no nulls, this parameter can be null. The size of this byte array should be at least (count+7)/8 bytes. </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">nulls</td><td>The number of nulls identified by the <code>nullbitmask</code>.</td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">nulls</td><td>The number of nulls identified by the <code>nullbitmask</code>. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">devmem</td><td>Set to true (default) if pointers are to device memory.</td></tr>
   </table>
   </dd>
 </dl>
