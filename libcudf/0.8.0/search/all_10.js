@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['quote_5fall',['QUOTE_ALL',['../namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062a59b4ae6e9efc18a8396af290bdfbcabe',1,'cudf']]],
-  ['quote_5fminimal',['QUOTE_MINIMAL',['../namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062ac0ef5f2c7edc850e629c89869ab512b1',1,'cudf']]],
-  ['quote_5fnone',['QUOTE_NONE',['../namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062ad9eb6a0d1b7639405e567725267b901f',1,'cudf']]],
-  ['quote_5fnonnumeric',['QUOTE_NONNUMERIC',['../namespacecudf.html#a3f6094e0fe7ac27a7dc56d41251ba062a61548a26e258802a50debf442f5cafc5',1,'cudf']]],
-  ['quotechar',['quotechar',['../structcudf_1_1csv__reader__args.html#a44a583574b4e049c16c33c327598d640',1,'cudf::csv_reader_args']]],
-  ['quoting',['quoting',['../structcudf_1_1csv__reader__args.html#a9c0c6895a29f9c75cc2e12624480e1ef',1,'cudf::csv_reader_args']]]
+  ['quote_5fall',['QUOTE_ALL',['../structcudf_1_1csv__read__arg.html#ac38936d9c26a6ba6e5d488f36afa0a4eaf90080bae75ba35601c87900887ab75d',1,'cudf::csv_read_arg']]],
+  ['quote_5fminimal',['QUOTE_MINIMAL',['../structcudf_1_1csv__read__arg.html#ac38936d9c26a6ba6e5d488f36afa0a4eaaee7131988c0281123a37aef8f2f6b49',1,'cudf::csv_read_arg']]],
+  ['quote_5fnone',['QUOTE_NONE',['../structcudf_1_1csv__read__arg.html#ac38936d9c26a6ba6e5d488f36afa0a4ea9b2ff4c8ffb04d079986e1f854051fce',1,'cudf::csv_read_arg']]],
+  ['quote_5fnonnumeric',['QUOTE_NONNUMERIC',['../structcudf_1_1csv__read__arg.html#ac38936d9c26a6ba6e5d488f36afa0a4eaa8f7f2fbd082c4312e8a4d0dbae0bfd1',1,'cudf::csv_read_arg']]],
+  ['quote_5fstyle',['quote_style',['../structcudf_1_1csv__read__arg.html#ac38936d9c26a6ba6e5d488f36afa0a4e',1,'cudf::csv_read_arg']]],
+  ['quotechar',['quotechar',['../structcudf_1_1io_1_1csv_1_1reader__options.html#afe9a6b6021443128f0472b206f201d4a',1,'cudf::io::csv::reader_options::quotechar()'],['../structcudf_1_1csv__read__arg.html#a58f8dcaaa06038f116b800851b59d205',1,'cudf::csv_read_arg::quotechar()']]],
+  ['quoting',['quoting',['../structcudf_1_1io_1_1csv_1_1reader__options.html#aed97da3c4e2b2064ac67abf3ab3db551',1,'cudf::io::csv::reader_options::quoting()'],['../structcudf_1_1csv__read__arg.html#a262059e03235b1572cd2562ccd6fd152',1,'cudf::csv_read_arg::quoting()']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['row_5fgroup',['row_group',['../structpq__read__arg.html#ac32f7e3f2cf8c2bba7ad71afe81c9ea8',1,'pq_read_arg']]]
+  ['row_5fgroup',['row_group',['../structcudf_1_1parquet__read__arg.html#a6efca93a08b886a018457bc02615f649',1,'cudf::parquet_read_arg']]]
 ];

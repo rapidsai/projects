@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.8.0a1+1134.gf7631e7.dirty documentation</title>
+  <title>API Reference &mdash; cudf 0.8.0a1+1182.gfe38a5c.dirty documentation</title>
   
 
   
@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10 Minutes to cuDF and Dask-cuDF" href="10min_dask_cudf.html" />
+    <link rel="next" title="10 Minutes to cuDF and Dask-cuDF" href="10min.html" />
     <link rel="prev" title="Welcome to cuDF’s documentation!" href="index.html" /> 
 </head>
 
@@ -94,7 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#gpuarrowreader">GpuArrowReader</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="10min_dask_cudf.html">10 Minutes to cuDF and Dask-cuDF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10min.html">10 Minutes to cuDF and Dask-cuDF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dask-cudf.html">Multi-GPU with Dask-cuDF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dask-xgb-10min.html">10 Minutes to Dask-XGBoost</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developer.html">Developer Documentation</a></li>
@@ -2327,6 +2327,44 @@ default range index instead.</p>
 </dd></dl>
 
 <span class="target" id="module-cudf.reshape.general"></span><dl class="function">
+<dt id="cudf.reshape.general.get_dummies">
+<code class="sig-prename descclassname">cudf.reshape.general.</code><code class="sig-name descname">get_dummies</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">prefix=''</em>, <em class="sig-param">prefix_sep='_'</em>, <em class="sig-param">dummy_na=False</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">cats={}</em>, <em class="sig-param">sparse=False</em>, <em class="sig-param">drop_first=False</em>, <em class="sig-param">dtype='float64'</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.reshape.general.get_dummies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dataframe whose columns are the one hot encodings of all
+columns in <cite>df</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>df</strong><span class="classifier">cudf.DataFrame</span></dt><dd><p>dataframe to encode</p>
+</dd>
+<dt><strong>prefix</strong><span class="classifier">str, dict, or sequence, optional</span></dt><dd><p>prefix to append. Either a str (to apply a constant prefix), dict
+mapping column names to prefixes, or sequence of prefixes to apply with
+the same length as the number of columns. If not supplied, defaults
+to the empty string</p>
+</dd>
+<dt><strong>prefix_sep</strong><span class="classifier">str, optional</span></dt><dd><p>separator to use when appending prefixes</p>
+</dd>
+<dt><strong>dummy_na</strong><span class="classifier">boolean, optional</span></dt><dd><p>Right now this is NON-FUNCTIONAL argument in rapids.</p>
+</dd>
+<dt><strong>cats</strong><span class="classifier">dict, optional</span></dt><dd><p>dictionary mapping column names to sequences of integers representing
+that column’s category. See <cite>cudf.DataFrame.one_hot_encoding</cite> for more
+information. if not supplied, it will be computed</p>
+</dd>
+<dt><strong>sparse</strong><span class="classifier">boolean, optional</span></dt><dd><p>Right now this is NON-FUNCTIONAL argument in rapids.</p>
+</dd>
+<dt><strong>drop_first</strong><span class="classifier">boolean, optional</span></dt><dd><p>Right now this is NON-FUNCTIONAL argument in rapids.</p>
+</dd>
+<dt><strong>columns</strong><span class="classifier">sequence of str, optional</span></dt><dd><p>Names of columns to encode. If not provided, will attempt to encode all
+columns. Note this is different from pandas default behavior, which
+encodes all columns with dtype object or categorical</p>
+</dd>
+<dt><strong>dtype</strong><span class="classifier">str, optional</span></dt><dd><p>output dtype, default ‘float64’</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
 <dt id="cudf.reshape.general.melt">
 <code class="sig-prename descclassname">cudf.reshape.general.</code><code class="sig-name descname">melt</code><span class="sig-paren">(</span><em class="sig-param">frame</em>, <em class="sig-param">id_vars=None</em>, <em class="sig-param">value_vars=None</em>, <em class="sig-param">var_name=None</em>, <em class="sig-param">value_name='value'</em>, <em class="sig-param">col_level=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.reshape.general.melt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unpivots a DataFrame from wide format to long format,
@@ -5522,7 +5560,7 @@ of options.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="10min_dask_cudf.html" class="btn btn-neutral float-right" title="10 Minutes to cuDF and Dask-cuDF" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="10min.html" class="btn btn-neutral float-right" title="10 Minutes to cuDF and Dask-cuDF" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="Welcome to cuDF’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

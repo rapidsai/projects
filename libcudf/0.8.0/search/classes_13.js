@@ -6,5 +6,5 @@ var searchData=
   ['unsnap_5fstate_5fs',['unsnap_state_s',['../structunsnap__state__s.html',1,'']]],
   ['unwrapped_5ftype',['unwrapped_type',['../structcudf_1_1detail_1_1unwrapped__type.html',1,'cudf::detail']]],
   ['upcasting',['UpCasting',['../structUpCasting.html',1,'']]],
-  ['usermetadataitem',['UserMetadataItem',['../structorc_1_1UserMetadataItem.html',1,'orc']]]
+  ['usermetadataitem',['UserMetadataItem',['../structcudf_1_1io_1_1orc_1_1UserMetadataItem.html',1,'cudf::io::orc']]]
 ];

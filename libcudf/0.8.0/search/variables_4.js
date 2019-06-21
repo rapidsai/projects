@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['false_5fvalues',['false_values',['../structcudf_1_1csv__reader__args.html#ab3f88e3fffed7b1a651125c2e47b82b0',1,'cudf::csv_reader_args']]],
-  ['filepath_5for_5fbuffer',['filepath_or_buffer',['../structcudf_1_1csv__reader__args.html#a31ff486be6853dc87f9fe0ed45d8c54a',1,'cudf::csv_reader_args']]],
+  ['false_5fvalues',['false_values',['../structcudf_1_1io_1_1csv_1_1reader__options.html#a5d8f06ae4358a11971c896715670012f',1,'cudf::io::csv::reader_options::false_values()'],['../structcudf_1_1csv__read__arg.html#a3fe90c681e13d50c46d5c310ac7bbfad',1,'cudf::csv_read_arg::false_values()']]],
+  ['filepath_5for_5fbuffer',['filepath_or_buffer',['../structcudf_1_1io_1_1csv_1_1reader__options.html#ac9878d61b963c6610c1bf288974e8ad3',1,'cudf::io::csv::reader_options']]],
   ['flag_5fdistinct',['flag_distinct',['../structgdf__context__.html#ad37c154f7eb77796490dd56f74f5485c',1,'gdf_context_']]],
   ['flag_5fgroupby_5finclude_5fnulls',['flag_groupby_include_nulls',['../structgdf__context__.html#aad363cb6249b3826b0eb27dd0f331eff',1,'gdf_context_']]],
   ['flag_5fmethod',['flag_method',['../structgdf__context__.html#a835f25957aee3644e44dae95fcee9824',1,'gdf_context_']]],

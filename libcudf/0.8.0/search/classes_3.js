@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['datapageheader',['DataPageHeader',['../structparquet_1_1DataPageHeader.html',1,'parquet']]],
+  ['datapageheader',['DataPageHeader',['../structcudf_1_1io_1_1parquet_1_1DataPageHeader.html',1,'cudf::io::parquet']]],
   ['datasource',['DataSource',['../classDataSource.html',1,'']]],
   ['debrotli_5fhuff_5ftree_5fgroup_5fs',['debrotli_huff_tree_group_s',['../structdebrotli__huff__tree__group__s.html',1,'']]],
   ['debrotli_5fstate_5fs',['debrotli_state_s',['../structdebrotli__state__s.html',1,'']]],
@@ -45,8 +45,8 @@ var searchData=
   ['devicesum',['DeviceSum',['../structcudf_1_1DeviceSum.html',1,'cudf']]],
   ['devicetan',['DeviceTan',['../structDeviceTan.html',1,'']]],
   ['devicexor',['DeviceXor',['../structcudf_1_1DeviceXor.html',1,'cudf']]],
-  ['dictionaryentry',['DictionaryEntry',['../structorc_1_1gpu_1_1DictionaryEntry.html',1,'orc::gpu']]],
-  ['dictionarypageheader',['DictionaryPageHeader',['../structparquet_1_1DictionaryPageHeader.html',1,'parquet']]],
+  ['dictionaryentry',['DictionaryEntry',['../structcudf_1_1io_1_1orc_1_1gpu_1_1DictionaryEntry.html',1,'cudf::io::orc::gpu']]],
+  ['dictionarypageheader',['DictionaryPageHeader',['../structcudf_1_1io_1_1parquet_1_1DictionaryPageHeader.html',1,'cudf::io::parquet']]],
   ['diff',['Diff',['../structDiff.html',1,'']]],
   ['diff_3c_20index_5ftype_2c_20jointype_3a_3ainner_5fjoin_20_3e',['Diff&lt; index_type, JoinType::INNER_JOIN &gt;',['../structDiff_3_01index__type_00_01JoinType_1_1INNER__JOIN_01_4.html',1,'']]],
   ['downcasting',['DownCasting',['../structDownCasting.html',1,'']]],

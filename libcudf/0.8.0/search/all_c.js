@@ -4,7 +4,7 @@ var searchData=
   ['make_5fpair_5fiterator',['make_pair_iterator',['../namespacecudf.html#a20b11ec1348ab46ae20792ea4e2c0ca4',1,'cudf']]],
   ['managed',['managed',['../structmanaged.html',1,'']]],
   ['managed_5fallocator',['managed_allocator',['../structmanaged__allocator.html',1,'']]],
-  ['mangle_5fdupe_5fcols',['mangle_dupe_cols',['../structcudf_1_1csv__reader__args.html#a71bb1d116eefdd859d0edc0ddf210c4d',1,'cudf::csv_reader_args']]],
+  ['mangle_5fdupe_5fcols',['mangle_dupe_cols',['../structcudf_1_1io_1_1csv_1_1reader__options.html#a45956615100d4f904dfeeb95bfde8776',1,'cudf::io::csv::reader_options::mangle_dupe_cols()'],['../structcudf_1_1csv__read__arg.html#a420e5e20a282626ef112fa80bc4116fc',1,'cudf::csv_read_arg::mangle_dupe_cols()']]],
   ['mappedfile',['MappedFile',['../classMappedFile.html',1,'']]],
   ['mathopdispatcher',['MathOpDispatcher',['../structMathOpDispatcher.html',1,'']]],
   ['max',['max',['../structstd_1_1numeric__limits_3_01cudf_1_1detail_1_1wrapper_3_01T_00_01type__id_01_4_01_4.html#ad1e39a19122aedffc60a7d4f7f673ba5',1,'std::numeric_limits&lt; cudf::detail::wrapper&lt; T, type_id &gt; &gt;']]],
