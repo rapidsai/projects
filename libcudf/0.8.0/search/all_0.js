@@ -18,5 +18,6 @@ var searchData=
   ['atomicmin',['atomicMin',['../device__atomics_8cuh.html#a7ecae095df404a4cb13e7245eaa7fa0c',1,'device_atomics.cuh']]],
   ['atomicor',['atomicOr',['../device__atomics_8cuh.html#a82b1ef76ea95088682c36d9515dc7268',1,'device_atomics.cuh']]],
   ['atomicxor',['atomicXor',['../device__atomics_8cuh.html#a4383ce29404055418f85f9e81f34afde',1,'device_atomics.cuh']]],
-  ['avg_5fop',['avg_op',['../structavg__op.html',1,'']]]
+  ['avg_5fop',['avg_op',['../structavg__op.html',1,'']]],
+  ['avg_5fresult_5ftype',['avg_result_type',['../structcudf_1_1groupby_1_1hash_1_1avg__result__type.html',1,'cudf::groupby::hash']]]
 ];

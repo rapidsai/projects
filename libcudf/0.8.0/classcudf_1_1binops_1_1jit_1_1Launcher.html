@@ -81,6 +81,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a6e7a3e3640f8982d2212d941042f4720"><td class="memItemLeft" align="right" valign="top"><a id="a6e7a3e3640f8982d2212d941042f4720"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Launcher</b> (const std::string &amp;ptx)</td></tr>
+<tr class="separator:a6e7a3e3640f8982d2212d941042f4720"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af46e5690d534dce8fe6fc51dbf22f59e"><td class="memItemLeft" align="right" valign="top"><a id="af46e5690d534dce8fe6fc51dbf22f59e"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Launcher</b> (<a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a> &amp;&amp;)</td></tr>
 <tr class="separator:af46e5690d534dce8fe6fc51dbf22f59e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -100,6 +103,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8132873faedfe2fcc55935582f2a35da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html#a8132873faedfe2fcc55935582f2a35da">setProgram</a> (std::string prog_file_name)</td></tr>
 <tr class="memdesc:a8132873faedfe2fcc55935582f2a35da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Program for this launcher.  <a href="#a8132873faedfe2fcc55935582f2a35da">More...</a><br /></td></tr>
 <tr class="separator:a8132873faedfe2fcc55935582f2a35da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a062ba7a21477b960df9536335fa22df6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html#a062ba7a21477b960df9536335fa22df6">setProgram</a> (std::string prog_file_name, std::string ptx)</td></tr>
+<tr class="memdesc:a062ba7a21477b960df9536335fa22df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Program for this launcher.  <a href="#a062ba7a21477b960df9536335fa22df6">More...</a><br /></td></tr>
+<tr class="separator:a062ba7a21477b960df9536335fa22df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74dc5440783c944662bb703357eb75a1"><td class="memItemLeft" align="right" valign="top">gdf_error&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html#a74dc5440783c944662bb703357eb75a1">launch</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> *out, <a class="el" href="structgdf__column__.html">gdf_column</a> *lhs, <a class="el" href="structgdf__scalar.html">gdf_scalar</a> *rhs)</td></tr>
 <tr class="memdesc:a74dc5440783c944662bb703357eb75a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle the Jitify API to instantiate and launch using information contained in the members of <code>this</code>  <a href="#a74dc5440783c944662bb703357eb75a1">More...</a><br /></td></tr>
 <tr class="separator:a74dc5440783c944662bb703357eb75a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -269,7 +275,7 @@ template&lt;typename ... Args&gt; </div>
 </div>
 </div>
 <a id="a8132873faedfe2fcc55935582f2a35da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8132873faedfe2fcc55935582f2a35da">&#9670;&nbsp;</a></span>setProgram()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8132873faedfe2fcc55935582f2a35da">&#9670;&nbsp;</a></span>setProgram() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -292,6 +298,44 @@ template&lt;typename ... Args&gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a062ba7a21477b960df9536335fa22df6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a062ba7a21477b960df9536335fa22df6">&#9670;&nbsp;</a></span>setProgram() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a> &amp; cudf::binops::jit::Launcher::setProgram </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>prog_file_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>ptx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Program for this launcher. </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prog_file_name</td><td>Name to give to the program held by this <a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html" title="Class used to handle compilation and execution of JIT kernels. ">Launcher</a>.</td></tr>
+    <tr><td class="paramname">ptx</td><td>Additional ptx code that contains a user defined function to be used.</td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html" title="Class used to handle compilation and execution of JIT kernels. ">Launcher</a>&amp; ref to this launcher object </h2>
 
 </div>
 </div>

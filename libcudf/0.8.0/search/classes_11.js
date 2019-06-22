@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['scalar',['scalar',['../structcudf_1_1detail_1_1scalar__factory_1_1scalar.html',1,'cudf::detail::scalar_factory']]],
+  ['scalar_5ffactory',['scalar_factory',['../structcudf_1_1detail_1_1scalar__factory.html',1,'cudf::detail']]],
   ['schemaelement',['SchemaElement',['../structcudf_1_1io_1_1parquet_1_1SchemaElement.html',1,'cudf::io::parquet']]],
   ['schematype',['SchemaType',['../structcudf_1_1io_1_1orc_1_1SchemaType.html',1,'cudf::io::orc']]],
   ['scoped_5fstream',['scoped_stream',['../structcudf_1_1util_1_1cuda_1_1scoped__stream.html',1,'cudf::util::cuda']]],

@@ -11,7 +11,7 @@ var searchData=
   ['set_5felement_5fhost',['set_element_host',['../classBitMask.html#ad767ab585eb25dc80ca3b82ad68cf254',1,'BitMask']]],
   ['setelement',['setElement',['../parsing__utils_8cu.html#a3b1720be10e4765219021d6f1bbfe969',1,'setElement(T *array, gdf_size_type idx, const T &amp;t, const V &amp;v):&#160;parsing_utils.cu'],['../parsing__utils_8cu.html#abe254b0f10561000c3a6401285f7818b',1,'setElement(thrust::pair&lt; T, V &gt; *array, gdf_size_type idx, const T &amp;t, const V &amp;v):&#160;parsing_utils.cu'],['../parsing__utils_8cu.html#ad44d11e2e89b52a5bd983bec741c1eee',1,'setElement(void *array, gdf_size_type idx, const T &amp;t, const V &amp;v):&#160;parsing_utils.cu']]],
   ['setkernelinst',['setKernelInst',['../classcudf_1_1binops_1_1jit_1_1Launcher.html#adf107234246879078b3519ceab69d53f',1,'cudf::binops::jit::Launcher']]],
-  ['setprogram',['setProgram',['../classcudf_1_1binops_1_1jit_1_1Launcher.html#a8132873faedfe2fcc55935582f2a35da',1,'cudf::binops::jit::Launcher']]],
+  ['setprogram',['setProgram',['../classcudf_1_1binops_1_1jit_1_1Launcher.html#a8132873faedfe2fcc55935582f2a35da',1,'cudf::binops::jit::Launcher::setProgram(std::string prog_file_name)'],['../classcudf_1_1binops_1_1jit_1_1Launcher.html#a062ba7a21477b960df9536335fa22df6',1,'cudf::binops::jit::Launcher::setProgram(std::string prog_file_name, std::string ptx)']]],
   ['size',['size',['../classDataSource.html#a03de3eab17acc72df60f6bd50b000acb',1,'DataSource']]],
   ['size_5fof',['size_of',['../namespacecudf.html#aea3dfde6d57f821aa1825a90a8cdddcb',1,'cudf']]],
   ['skip_5fstruct_5ffield',['skip_struct_field',['../classcudf_1_1io_1_1parquet_1_1CompactProtocolReader.html#ae7736da3127ce592144213a6d0c2a3fb',1,'cudf::io::parquet::CompactProtocolReader']]],

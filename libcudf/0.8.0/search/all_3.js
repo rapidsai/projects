@@ -18,6 +18,7 @@ var searchData=
   ['device_5fbuffer_3c_20uint64_5ft_20_3e',['device_buffer&lt; uint64_t &gt;',['../classdevice__buffer.html',1,'']]],
   ['device_5foperators_2ecuh',['device_operators.cuh',['../device__operators_8cuh.html',1,'']]],
   ['device_5ftable',['device_table',['../classdevice__table.html',1,'device_table'],['../classdevice__table.html#a25e7c41387937831d6413dc2621009d6',1,'device_table::device_table()']]],
+  ['device_5fvector',['device_vector',['../classthrust_1_1device__vector.html',1,'thrust']]],
   ['deviceabs',['DeviceAbs',['../structDeviceAbs.html',1,'']]],
   ['deviceadd',['DeviceAdd',['../structcudf_1_1binops_1_1compiled_1_1DeviceAdd.html',1,'cudf::binops::compiled']]],
   ['deviceand',['DeviceAnd',['../structcudf_1_1DeviceAnd.html',1,'cudf']]],

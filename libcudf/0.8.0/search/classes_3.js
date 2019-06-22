@@ -8,6 +8,7 @@ var searchData=
   ['device_5fbuffer_3c_20char_20_3e',['device_buffer&lt; char &gt;',['../classdevice__buffer.html',1,'']]],
   ['device_5fbuffer_3c_20uint64_5ft_20_3e',['device_buffer&lt; uint64_t &gt;',['../classdevice__buffer.html',1,'']]],
   ['device_5ftable',['device_table',['../classdevice__table.html',1,'']]],
+  ['device_5fvector',['device_vector',['../classthrust_1_1device__vector.html',1,'thrust']]],
   ['deviceabs',['DeviceAbs',['../structDeviceAbs.html',1,'']]],
   ['deviceadd',['DeviceAdd',['../structcudf_1_1binops_1_1compiled_1_1DeviceAdd.html',1,'cudf::binops::compiled']]],
   ['deviceand',['DeviceAnd',['../structcudf_1_1DeviceAnd.html',1,'cudf']]],
