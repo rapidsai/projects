@@ -33,6 +33,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/params.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Welcome to cuML’s documentation!" href="index.html" /> 
@@ -93,11 +94,13 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#regression-and-classification">Regression and Classification</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#linear-regression">Linear Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logistic-regression">Logistic Regression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ridge-regression">Ridge Regression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lasso-regression">Lasso Regression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#elasticnet-regression">ElasticNet Regression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#stochastic-gradient-descent">Stochastic Gradient Descent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#random-forest">Random Forest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quasi-newton">Quasi-Newton</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#clustering">Clustering</a><ul>
@@ -515,6 +518,170 @@ is a regression task (predicting a continuous variable).</p>
 </dd></dl>
 
 </div>
+<div class="section" id="logistic-regression">
+<h3>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.LogisticRegression">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">LogisticRegression</code><a class="headerlink" href="#cuml.LogisticRegression" title="Permalink to this definition">¶</a></dt>
+<dd><p>LogisticRegression is a linear model that is used to model probability of
+occurrence of certain events, for example probability of success or fail of
+an event.</p>
+<p>cuML’s LogisticRegression can take array-like objects, either in host as
+NumPy arrays or in device (as Numba or __cuda_array_interface__ compliant).
+It provides both single-class (using sigmoid loss) and multiple-class
+(using softmax loss) variants, depending on the input variables.</p>
+<p>Only one solver option is currently available: Quasi-Newton (QN)
+algorithms. Even though it is presented as a single option, this solver
+resolves to two different algorithms underneath:</p>
+<ul class="simple">
+<li><p>Orthant-Wise Limited Memory Quasi-Newton (OWL-QN) if there is l1</p></li>
+</ul>
+<p>regularization
+- Limited Memory BFGS (L-BFGS) otherwise.</p>
+<p>Note that, just like in Scikit-learn, the bias will not be regularized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>penalty: ‘none’, ‘l1’, ‘l2’, ‘elasticnet’ (default = ‘l2’)</strong></dt><dd><p>Used to specify the norm used in the penalization.
+If ‘none’ or ‘l2’ are selected, then L-BFGS solver will be used.
+If ‘l1’ is selected, solver OWL-QN will be used.
+If ‘elasticnet’ is selected, OWL-QN will be used if l1_ratio &gt; 0,
+otherwise L-BFGS will be used.</p>
+</dd>
+<dt><strong>tol: float (default = 1e-4)</strong></dt><dd><p>The training process will stop if current_loss &gt; previous_loss - tol</p>
+</dd>
+<dt><strong>C: float (default = 1.0)</strong></dt><dd><p>Inverse of regularization strength; must be a positive float.</p>
+</dd>
+<dt><strong>fit_intercept: boolean (default = True)</strong></dt><dd><p>If True, the model tries to correct for the global mean of y.
+If False, the model expects that you have centered the data.</p>
+</dd>
+<dt><strong>class_weight: None</strong></dt><dd><p>Custom class weighs are currently not supported.</p>
+</dd>
+<dt><strong>max_iter: int (default = 1000)</strong></dt><dd><p>Maximum number of iterations taken for the solvers to converge.</p>
+</dd>
+<dt><strong>verbose: bool (optional, default False)</strong></dt><dd><p>Controls verbosity of logging.</p>
+</dd>
+<dt><strong>l1_ratio: float or None, optional (default=None)</strong></dt><dd><p>The Elastic-Net mixing parameter, with <cite>0 &lt;= l1_ratio &lt;= 1</cite></p>
+</dd>
+<dt><strong>solver: ‘qn’, ‘lbfgs’, ‘owl’ (default=qn).</strong></dt><dd><p>Algorithm to use in the optimization problem. Currently only <cite>qn</cite> is
+supported, which automatically selects either L-BFGS or OWL-QN
+depending on the condictions of the l1 regularization described
+above. Options ‘lbfgs’ and ‘owl’ are just convenience values that
+end up using the same solver following the same rules.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>cuML’s LogisticRegression uses a different solver that the equivalent
+Scikit-learn except when there is no penalty and <cite>solver=lbfgs</cite> is
+chosen in Scikit-learn. This can cause (smaller) differences in the
+coefficients and predictions of the model, similar to difference when
+using different solvers in Scikit-learn.</p>
+<p>For additional docs, see Scikit-learn’s LogistRegression
+&lt;<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html">https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html</a>&gt;`_.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c1"># Both import methods supported</span>
+<span class="c1"># from cuml import LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">cuml.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">X</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">X</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">reg</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Intercept:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">intercept_</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
+
+<span class="n">X_new</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="n">preds</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Predictions:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>coef_: device array, shape (n_classes, n_features)</strong></dt><dd><p>The estimated coefficients for the linear regression model.</p>
+</dd>
+<dt><strong>intercept_: device array (n_classes, 1)</strong></dt><dd><p>The independent term. If <a href="#id9"><span class="problematic" id="id10">fit_intercept_</span></a> is False, will be 0.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LogisticRegression.fit" title="cuml.LogisticRegression.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<td><p>Fit the model with X and y.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.LogisticRegression.predict" title="cuml.LogisticRegression.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<td><p>Predicts the y for X.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cuml.LogisticRegression.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LogisticRegression.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model with X and y.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1).
+Acceptable formats: cuDF Series, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.LogisticRegression.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LogisticRegression.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the y for X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="ridge-regression">
 <h3>Ridge Regression<a class="headerlink" href="#ridge-regression" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
@@ -616,7 +783,7 @@ and much more.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id9"><span class="problematic" id="id10">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id11"><span class="problematic" id="id12">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -802,7 +969,7 @@ convergence especially when tol is higher than 1e-4.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id11"><span class="problematic" id="id12">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id13"><span class="problematic" id="id14">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 <dt><strong>For additional docs, see `scikitlearn’s Lasso</strong></dt><dd></dd>
 <dt><strong>&lt;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html&gt;`_.</strong></dt><dd></dd>
@@ -995,7 +1162,7 @@ convergence especially when tol is higher than 1e-4.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id13"><span class="problematic" id="id14">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id15"><span class="problematic" id="id16">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 <dt><strong>For additional docs, see `scikitlearn’s ElasticNet</strong></dt><dd></dd>
 <dt><strong>&lt;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html&gt;`_.</strong></dt><dd></dd>
@@ -1443,6 +1610,162 @@ the sklearn set_params.
 Parameters
 ———–
 params : dict of new params</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="quasi-newton">
+<h3>Quasi-Newton<a class="headerlink" href="#quasi-newton" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.QN">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">QN</code><a class="headerlink" href="#cuml.QN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quasi-Newton methods are used to either find zeroes or local maxima
+and minima of functions, and used by this class to optimize a cost
+function.</p>
+<p>Two algorithms are implemented underneath cuML’s QN class, and which one
+is executed depends on the following rule:</p>
+<ul class="simple">
+<li><p>Orthant-Wise Limited Memory Quasi-Newton (OWL-QN) if there is l1</p></li>
+</ul>
+<p>regularization
+- Limited Memory BFGS (L-BFGS) otherwise.</p>
+<p>cuML’s QN class can take array-like objects, either in host as
+NumPy arrays or in device (as Numba or __cuda_array_interface__ compliant).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>loss: ‘sigmoid’, ‘softmax’, ‘squared_loss’ (default = ‘squared_loss’)</strong></dt><dd><p>‘sigmoid’ loss used for single class logistic regression
+‘softmax’ loss used for multiclass logistic regression
+‘normal’ used for normal/square loss</p>
+</dd>
+<dt><strong>fit_intercept: boolean (default = True)</strong></dt><dd><p>If True, the model tries to correct for the global mean of y.
+If False, the model expects that you have centered the data.</p>
+</dd>
+<dt><strong>l1_strength: float (default = 0.0)</strong></dt><dd><p>l1 regularization strength (if non-zero, will run OWL-QN, else L-BFGS).
+Note, that as in Scikit-learn, the bias will not be regularized.</p>
+</dd>
+<dt><strong>l2_strength: float (default = 0.0)</strong></dt><dd><p>l2 regularization strength. Note, that as in Scikit-learn, the bias
+will not be regularized.</p>
+</dd>
+<dt><strong>max_iter: int (default = 1000)</strong></dt><dd><p>Maximum number of iterations taken for the solvers to converge.</p>
+</dd>
+<dt><strong>tol: float (default = 1e-3)</strong></dt><dd><p>The training process will stop if current_loss &gt; previous_loss - tol</p>
+</dd>
+<dt><strong>linesearch_max_iter: int (default = 50)</strong></dt><dd><p>Max number of linesearch iterations per outer iteration of the
+algorithm.</p>
+</dd>
+<dt><strong>lbfgs_memory: int (default = 5)</strong></dt><dd><p>Rank of the lbfgs inverse-Hessian approximation. Method will use
+O(lbfgs_memory * D) memory.</p>
+</dd>
+<dt><strong>verbose: bool (optional, default False)</strong></dt><dd><p>Controls verbosity of logging.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This class contains implementations of two popular Quasi-Newton methods:
+- Limited-memory Broyden Fletcher Goldfarb Shanno (L-BFGS) [Nocedal,
+Wright - Numerical Optimization (1999)]
+- Orthant-wise limited-memory quasi-newton (OWL-QN) [Andrew, Gao - ICML
+2007]
+&lt;<a class="reference external" href="https://www.microsoft.com/en-us/research/publication/scalable-training-of-l1-regularized-log-linear-models/">https://www.microsoft.com/en-us/research/publication/scalable-training-of-l1-regularized-log-linear-models/</a>&gt;</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c1"># Both import methods supported</span>
+<span class="c1"># from cuml import QN</span>
+<span class="kn">from</span> <span class="nn">cuml.solvers</span> <span class="kn">import</span> <span class="n">QN</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">X</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">X</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">solver</span> <span class="o">=</span> <span class="n">QN</span><span class="p">()</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Note: for now, the coefficients also include the intercept in the</span>
+<span class="c1"># last position if fit_intercept=True</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">coef_</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Intercept:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">intercept_</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
+
+<span class="n">X_new</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="n">preds</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Predictions:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>coef_</strong><span class="classifier">array, shape (n_classes, n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.
+Note: shape is (n_classes, n_features + 1) if fit_intercept = True.</p>
+</dd>
+<dt><strong>intercept_</strong><span class="classifier">array (n_classes, 1)</span></dt><dd><p>The independent term. If <a href="#id17"><span class="problematic" id="id18">fit_intercept_</span></a> is False, will be 0.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.QN.fit" title="cuml.QN.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<td><p>Fit the model with X and y.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.QN.predict" title="cuml.QN.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<td><p>Predicts the y for X.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cuml.QN.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.QN.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model with X and y.
+Parameters
+———-
+X : array-like (device or host) shape = (n_samples, n_features)</p>
+<blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</div></blockquote>
+<dl class="simple">
+<dt>y<span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1).
+Acceptable formats: cuDF Series, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.QN.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.QN.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the y for X.
+Parameters
+———-
+X : array-like (device or host) shape = (n_samples, n_features)</p>
+<blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</div></blockquote>
+<dl class="simple">
+<dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -2473,7 +2796,7 @@ in the optimization process. Increasing this value will result
 in greater repulsive force being applied, greater optimization
 cost, but slightly more accuracy.</p>
 </dd>
-<dt><strong>transform_queue_size: float (optional, default 4.0)</strong></dt><dd><p>For transform operations (embedding new points using a trained <a href="#id15"><span class="problematic" id="id16">model_</span></a>
+<dt><strong>transform_queue_size: float (optional, default 4.0)</strong></dt><dd><p>For transform operations (embedding new points using a trained <a href="#id19"><span class="problematic" id="id20">model_</span></a>
 this will control how aggressively to search for nearest neighbors.
 Larger values will result in slower performance but more accurate
 nearest neighbor evaluation.</p>
