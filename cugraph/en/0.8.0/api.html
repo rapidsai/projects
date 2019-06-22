@@ -909,13 +909,14 @@ DF[‘cluster’] contains the cluster assignments</p>
 <dl class="function">
 <dt id="cugraph.sssp">
 <code class="sig-prename descclassname">cugraph.</code><code class="sig-name descname">sssp</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">source</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.sssp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the distance from the specified source to all vertices in the connected component.  The distances column will
-store the distance from the source to each vertex.</p>
+<dd><p>Compute the distance and predecessors for shortest paths from the specified source to all the vertices in the graph. The distances column will
+store the distance from the source to each vertex. The predecessors column will store each vertex’s predecessor in the shortest path. Vertices
+that are unreachable will have a distance of infinity denoted by the maximum value of the data type and the predecessor set as -1. The source vertex’s 
+predecessor is also set to -1. Graphs with negative weight cycles are not supported.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>graph</strong><span class="classifier">cuGraph.Graph</span></dt><dd><p>cuGraph graph descriptor, should contain the connectivity information as an edge list (edge weights are not used for this algorithm). 
-The transposed adjacency list will be computed if not already present.</p>
+<dt><strong>graph</strong><span class="classifier">cuGraph.Graph</span></dt><dd><p>cuGraph graph descriptor with connectivity information. Edge weights, if present, should be single or double precision floating point values</p>
 </dd>
 <dt><strong>source</strong><span class="classifier">int</span></dt><dd><p>Index of the source vertex</p>
 </dd>
@@ -923,7 +924,9 @@ The transposed adjacency list will be computed if not already present.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>distances :</dt><dd><p>GPU data frame containing two cudf.Series of size V: the vertex identifiers and the corresponding SSSP distances.</p>
+<dt><strong>df</strong><span class="classifier">cudf.DataFrame</span></dt><dd><p>df[‘vertex’][i] gives the vertex id of the i’th vertex
+df[‘distance’][i] gives the path distance for the i’th vertex from the starting vertex
+df[‘predecessor’][i] gives the vertex id of the vertex that was reached before the i’th vertex in the traversal</p>
 </dd>
 </dl>
 </dd>
