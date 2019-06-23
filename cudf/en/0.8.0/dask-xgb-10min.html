@@ -465,7 +465,7 @@ env: NCCL_P2P_DISABLE=1
 <td style="vertical-align: top; border: 0px solid white">
 <h3>Client</h3>
 <ul>
-  <li><b>Scheduler: </b>tcp://172.17.0.3:40100
+  <li><b>Scheduler: </b>tcp://172.17.0.3:46027
   <li><b>Dashboard: </b><a href='http://172.17.0.3:8787/status' target='_blank'>http://172.17.0.3:8787/status</a>
 </ul>
 </td>
@@ -582,30 +582,12 @@ env: NCCL_P2P_DISABLE=1
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/conda/envs/gdf/lib/python3.6/site-packages/distributed/worker.py:3159: UserWarning: Large object of size 2.00 MB detected in task graph:
-  (&#39;squared_error&#39;, 2, 0, &#39;x&#39;, [&#39;x&#39;], None, &#39;_predic ... 03218e0208b5c&#39;)
-Consider scattering large objects ahead of time
-with client.scatter to reduce scheduler burden and
-keep data on workers
-
-    future = client.submit(func, big_data)    # bad
-
-    big_future = client.scatter(big_data)     # good
-    future = client.submit(func, big_future)  # good
-  % (format_bytes(len(b)), s)
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-rmse value: 2.29323606400989
+rmse value: 2.28811433423648
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
