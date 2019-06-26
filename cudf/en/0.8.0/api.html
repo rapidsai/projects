@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.8.0a1+1497.g4d85b87.dirty documentation</title>
+  <title>API Reference &mdash; cudf 0.8.0a1+1525.g9269d65.dirty documentation</title>
   
 
   
@@ -1076,18 +1076,17 @@ If None, the default index is used.</p>
 
 <dl class="method">
 <dt id="cudf.dataframe.DataFrame.groupby">
-<code class="sig-name descname">groupby</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">by=None</em>, <em class="sig-param">sort=False</em>, <em class="sig-param">as_index=True</em>, <em class="sig-param">method='hash'</em>, <em class="sig-param">level=None</em>, <em class="sig-param">group_keys=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.DataFrame.groupby" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">groupby</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">by=None</em>, <em class="sig-param">sort=True</em>, <em class="sig-param">as_index=True</em>, <em class="sig-param">method='hash'</em>, <em class="sig-param">level=None</em>, <em class="sig-param">group_keys=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.DataFrame.groupby" title="Permalink to this definition">¶</a></dt>
 <dd><p>Groupby</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>by</strong><span class="classifier">list-of-str or str</span></dt><dd><p>Column name(s) to form that groups by.</p>
 </dd>
-<dt><strong>sort</strong><span class="classifier">bool</span></dt><dd><p>Force sorting group keys.
-Depends on the underlying algorithm.</p>
+<dt><strong>sort</strong><span class="classifier">bool, default True</span></dt><dd><p>Force sorting group keys.</p>
 </dd>
-<dt><strong>as_index</strong><span class="classifier">bool; defaults to False</span></dt><dd><p>Must be False.  Provided to be API compatible with pandas.
-The keys are always left as regular columns in the result.</p>
+<dt><strong>as_index</strong><span class="classifier">bool, default True</span></dt><dd><p>Indicates whether the grouped by columns become the index
+of the returned DataFrame</p>
 </dd>
 <dt><strong>method</strong><span class="classifier">str, optional</span></dt><dd><p>A string indicating the method to use to perform the group by.
 Valid values are “hash” or “cudf”.
@@ -1103,15 +1102,8 @@ the only method supporting group UDFs via the <cite>apply</cite> function.</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>Unlike pandas, this groupby operation behaves like a SQL groupby.
-No empty rows are returned.  (For categorical keys, pandas returns
+<p>No empty rows are returned.  (For categorical keys, pandas returns
 rows for all categories even if they are no corresponding values.)</p>
-<p>Only a minimal number of operations is implemented so far.</p>
-<ul class="simple">
-<li><p>Only <em>by</em> argument is supported.</p></li>
-<li><p>Since we don’t support multiindex, the <em>by</em> columns are stored
-as regular columns.</p></li>
-</ul>
 </dd></dl>
 
 <dl class="method">
@@ -4388,7 +4380,7 @@ corresponding value from other.</p></li>
 <h2>Groupby<a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="cudf.groupby.groupby.Groupby">
-<em class="property">class </em><code class="sig-prename descclassname">cudf.groupby.groupby.</code><code class="sig-name descname">Groupby</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">by</em>, <em class="sig-param">method='hash'</em>, <em class="sig-param">as_index=True</em>, <em class="sig-param">level=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.groupby.groupby.Groupby" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cudf.groupby.groupby.</code><code class="sig-name descname">Groupby</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">by</em>, <em class="sig-param">method='hash'</em>, <em class="sig-param">as_index=True</em>, <em class="sig-param">level=None</em>, <em class="sig-param">sort=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.groupby.groupby.Groupby" title="Permalink to this definition">¶</a></dt>
 <dd><p>Groupby object returned by cudf.DataFrame.groupby().</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">

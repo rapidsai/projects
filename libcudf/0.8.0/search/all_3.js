@@ -11,7 +11,7 @@ var searchData=
   ['decompress',['Decompress',['../classcudf_1_1io_1_1orc_1_1OrcDecompressor.html#a93583f6a644aaa5e76f06ed2ad4c59fa',1,'cudf::io::orc::OrcDecompressor']]],
   ['delim_5fwhitespace',['delim_whitespace',['../structcudf_1_1io_1_1csv_1_1reader__options.html#ad2f6b3e74f320fbbc249fb5146cfc366',1,'cudf::io::csv::reader_options::delim_whitespace()'],['../structcudf_1_1csv__read__arg.html#a7d03afb1c9691cc9a9e39ba804448825',1,'cudf::csv_read_arg::delim_whitespace()']]],
   ['delimiter',['delimiter',['../structcudf_1_1io_1_1csv_1_1reader__options.html#a5af452b9ec790087e3e42b6401783cb2',1,'cudf::io::csv::reader_options::delimiter()'],['../structcudf_1_1csv__read__arg.html#a249049323dc94210b376d652be418094',1,'cudf::csv_read_arg::delimiter()']]],
-  ['destroy',['destroy',['../classdevice__table.html#ad01f25b401518dfb05817a40e277815c',1,'device_table']]],
+  ['destroy',['destroy',['../classdevice__table.html#ad01f25b401518dfb05817a40e277815c',1,'device_table::destroy()'],['../structcudf_1_1table.html#ae3732c2caf7df349bef74abfb25e1983',1,'cudf::table::destroy()']]],
   ['device_5fatomics_2ecuh',['device_atomics.cuh',['../device__atomics_8cuh.html',1,'']]],
   ['device_5fbuffer',['device_buffer',['../classdevice__buffer.html',1,'']]],
   ['device_5fbuffer_3c_20char_20_3e',['device_buffer&lt; char &gt;',['../classdevice__buffer.html',1,'']]],
