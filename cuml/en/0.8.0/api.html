@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cuML API Reference &mdash; cuml 0.8.0a documentation</title>
+  <title>cuML API Reference &mdash; cuml 0.8.0 documentation</title>
   
 
   
@@ -1508,46 +1508,23 @@ to split a node.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.cross_validate" title="cuml.ensemble.RandomForestClassifier.cross_validate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cross_validate</span></code></a>(self, X, y)</p></td>
-<td><p>Predicts the accuracy of the model for X.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.fit" title="cuml.ensemble.RandomForestClassifier.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.fit" title="cuml.ensemble.RandomForestClassifier.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
 <td><p>Perform Random Forest Classification on the input data</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.get_params" title="cuml.ensemble.RandomForestClassifier.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.get_params" title="cuml.ensemble.RandomForestClassifier.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
 <td><p>Returns the value of all parameters required to configure this estimator as a dictionary.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.predict" title="cuml.ensemble.RandomForestClassifier.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.predict" title="cuml.ensemble.RandomForestClassifier.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
 <td><p>Predicts the labels for X.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.score" title="cuml.ensemble.RandomForestClassifier.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y)</p></td>
+<td><p>Predicts the accuracy of the model for X.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.set_params" title="cuml.ensemble.RandomForestClassifier.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
 <td><p>Sets the value of parameters required to configure this estimator, it functions similar to the sklearn set_params.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="attribute">
-<dt id="cuml.ensemble.RandomForestClassifier.cross_validate">
-<code class="sig-name descname">cross_validate</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.cross_validate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Predicts the accuracy of the model for X.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">array-like (host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
-Acceptable formats: NumPy ndarray, Numba device
-ndarray</p>
-</dd>
-<dt><strong>y: NumPy</strong></dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>accuracy</strong><span class="classifier">float</span></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestClassifier.fit">
 <code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.fit" title="Permalink to this definition">¶</a></dt>
@@ -1596,6 +1573,29 @@ ndarray</p>
 <dd class="field-even"><dl class="simple">
 <dt>y: NumPy</dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
 </dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestClassifier.score">
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the accuracy of the model for X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: NumPy ndarray, Numba device
+ndarray</p>
+</dd>
+<dt><strong>y: NumPy</strong></dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>accuracy</strong><span class="classifier">float</span></dt><dd></dd>
 </dl>
 </dd>
 </dl>
