@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.9.0a+767.ga8e8867.dirty documentation</title>
+  <title>API Reference &mdash; cudf 0.9.0a+790.gd4b4244.dirty documentation</title>
   
 
   
@@ -369,7 +369,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.pop" title="cudf.dataframe.DataFrame.pop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code></a>(self, item)</p></td>
 <td><p>Return a column and drop it from the DataFrame.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.quantile" title="cudf.dataframe.DataFrame.quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantile</span></code></a>(self[, q, interpolation, columns, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.quantile" title="cudf.dataframe.DataFrame.quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantile</span></code></a>(self[, q, axis, numeric_only, …])</p></td>
 <td><p>Return values at the given quantile.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.query" title="cudf.dataframe.DataFrame.query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query</span></code></a>(self, expr[, local_dict])</p></td>
@@ -1522,12 +1522,16 @@ Must have at least one name.</p>
 
 <dl class="method">
 <dt id="cudf.dataframe.DataFrame.quantile">
-<code class="sig-name descname">quantile</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">q=0.5</em>, <em class="sig-param">interpolation='linear'</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">exact=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.DataFrame.quantile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">quantile</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">q=0.5</em>, <em class="sig-param">axis=0</em>, <em class="sig-param">numeric_only=True</em>, <em class="sig-param">interpolation='linear'</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">exact=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.DataFrame.quantile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return values at the given quantile.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>q</strong><span class="classifier">float or array-like</span></dt><dd><p>0 &lt;= q &lt;= 1, the quantile(s) to compute</p>
+</dd>
+<dt><strong>axis</strong><span class="classifier">int</span></dt><dd><p>axis is a NON-FUNCTIONAL parameter</p>
+</dd>
+<dt><strong>numeric_only</strong><span class="classifier">boolean</span></dt><dd><p>numeric_only is a NON-FUNCTIONAL parameter</p>
 </dd>
 <dt><strong>interpolation</strong><span class="classifier">{<cite>linear</cite>, <cite>lower</cite>, <cite>higher</cite>, <cite>midpoint</cite>, <cite>nearest</cite>}</span></dt><dd><p>This  parameter specifies the interpolation method to use,
 when the desired quantile lies between two data points i and j.
