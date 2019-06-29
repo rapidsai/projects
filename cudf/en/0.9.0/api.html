@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.9.0a+790.gd4b4244.dirty documentation</title>
+  <title>API Reference &mdash; cudf 0.9.0a+834.gfa94941.dirty documentation</title>
   
 
   
@@ -4814,11 +4814,14 @@ groups.</p>
 <dl class="function">
 <dt id="cudf.io.csv.read_csv">
 <code class="sig-prename descclassname">cudf.io.csv.</code><code class="sig-name descname">read_csv</code><span class="sig-paren">(</span><em class="sig-param">filepath_or_buffer</em>, <em class="sig-param">lineterminator='n'</em>, <em class="sig-param">quotechar='&quot;'</em>, <em class="sig-param">quoting=0</em>, <em class="sig-param">doublequote=True</em>, <em class="sig-param">header='infer'</em>, <em class="sig-param">mangle_dupe_cols=True</em>, <em class="sig-param">usecols=None</em>, <em class="sig-param">sep='</em>, <em class="sig-param">'</em>, <em class="sig-param">delimiter=None</em>, <em class="sig-param">delim_whitespace=False</em>, <em class="sig-param">skipinitialspace=False</em>, <em class="sig-param">names=None</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">skipfooter=0</em>, <em class="sig-param">skiprows=0</em>, <em class="sig-param">dayfirst=False</em>, <em class="sig-param">compression='infer'</em>, <em class="sig-param">thousands=None</em>, <em class="sig-param">decimal='.'</em>, <em class="sig-param">true_values=None</em>, <em class="sig-param">false_values=None</em>, <em class="sig-param">nrows=None</em>, <em class="sig-param">byte_range=None</em>, <em class="sig-param">skip_blank_lines=True</em>, <em class="sig-param">comment=None</em>, <em class="sig-param">na_values=None</em>, <em class="sig-param">keep_default_na=True</em>, <em class="sig-param">na_filter=True</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">index_col=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.csv.read_csv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load and parse a CSV file into a DataFrame</p>
+<dd><p>Load a comma-seperated-values (CSV) dataset into a DataFrame</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>filepath_or_buffer</strong><span class="classifier">str</span></dt><dd><p>Path of file to be read or a file-like object containing the file.</p>
+<dt><strong>filepath_or_buffer</strong><span class="classifier">str, path object, or file-like object</span></dt><dd><p>Either a path to a file (a <cite>str</cite>, <cite>pathlib.Path</cite>, or
+<cite>py._path.local.LocalPath</cite>), URL (including http, ftp, and S3 locations),
+or any object with a <cite>read()</cite> method (such as builtin <cite>open()</cite> file handler
+function or <cite>StringIO</cite>).</p>
 </dd>
 <dt><strong>sep</strong><span class="classifier">char, default ‘,’</span></dt><dd><p>Delimiter to be used.</p>
 </dd>
@@ -4984,12 +4987,15 @@ Passing False can improve performance.</p>
 
 <span class="target" id="module-cudf.io.parquet"></span><dl class="function">
 <dt id="cudf.io.parquet.read_parquet">
-<code class="sig-prename descclassname">cudf.io.parquet.</code><code class="sig-name descname">read_parquet</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">engine='cudf'</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">row_group=None</em>, <em class="sig-param">skip_rows=None</em>, <em class="sig-param">num_rows=None</em>, <em class="sig-param">strings_to_categorical=False</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.parquet.read_parquet" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read a Parquet file into DataFrame</p>
+<code class="sig-prename descclassname">cudf.io.parquet.</code><code class="sig-name descname">read_parquet</code><span class="sig-paren">(</span><em class="sig-param">filepath_or_buffer</em>, <em class="sig-param">engine='cudf'</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">row_group=None</em>, <em class="sig-param">skip_rows=None</em>, <em class="sig-param">num_rows=None</em>, <em class="sig-param">strings_to_categorical=False</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.parquet.read_parquet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a Parquet dataset into a DataFrame</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>path</strong><span class="classifier">string or path object</span></dt><dd><p>Path of file to be read</p>
+<dt><strong>filepath_or_buffer</strong><span class="classifier">str, path object, bytes, or file-like object</span></dt><dd><p>Either a path to a file (a <cite>str</cite>, <cite>pathlib.Path</cite>, or
+<cite>py._path.local.LocalPath</cite>), URL (including http, ftp, and S3 locations),
+Python bytes of raw binary data, or any object with a <cite>read()</cite> method
+(such as builtin <cite>open()</cite> file handler function or <cite>BytesIO</cite>).</p>
 </dd>
 <dt><strong>engine</strong><span class="classifier">{ ‘cudf’, ‘pyarrow’ }, default ‘cudf’</span></dt><dd><p>Parser engine to use.</p>
 </dd>
@@ -5101,12 +5107,15 @@ Columns are partitioned in the order they are given</p>
 
 <span class="target" id="module-cudf.io.orc"></span><dl class="function">
 <dt id="cudf.io.orc.read_orc">
-<code class="sig-prename descclassname">cudf.io.orc.</code><code class="sig-name descname">read_orc</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">engine='cudf'</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">stripe=None</em>, <em class="sig-param">skip_rows=None</em>, <em class="sig-param">num_rows=None</em>, <em class="sig-param">use_index=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.orc.read_orc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load an ORC object from the file path, returning a DataFrame.</p>
+<code class="sig-prename descclassname">cudf.io.orc.</code><code class="sig-name descname">read_orc</code><span class="sig-paren">(</span><em class="sig-param">filepath_or_buffer</em>, <em class="sig-param">engine='cudf'</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">stripe=None</em>, <em class="sig-param">skip_rows=None</em>, <em class="sig-param">num_rows=None</em>, <em class="sig-param">use_index=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.orc.read_orc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load an ORC dataset into a DataFrame</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>path</strong><span class="classifier">string</span></dt><dd><p>File path</p>
+<dt><strong>filepath_or_buffer</strong><span class="classifier">str, path object, bytes, or file-like object</span></dt><dd><p>Either a path to a file (a <cite>str</cite>, <cite>pathlib.Path</cite>, or
+<cite>py._path.local.LocalPath</cite>), URL (including http, ftp, and S3 locations),
+Python bytes of raw binary data, or any object with a <cite>read()</cite> method
+(such as builtin <cite>open()</cite> file handler function or <cite>BytesIO</cite>).</p>
 </dd>
 <dt><strong>engine</strong><span class="classifier">{ ‘cudf’, ‘pyarrow’ }, default ‘cudf’</span></dt><dd><p>Parser engine to use.</p>
 </dd>
@@ -5190,13 +5199,14 @@ Columns are partitioned in the order they are given</p>
 <span class="target" id="module-cudf.io.json"></span><dl class="function">
 <dt id="cudf.io.json.read_json">
 <code class="sig-prename descclassname">cudf.io.json.</code><code class="sig-name descname">read_json</code><span class="sig-paren">(</span><em class="sig-param">path_or_buf</em>, <em class="sig-param">engine='auto'</em>, <em class="sig-param">dtype=True</em>, <em class="sig-param">lines=False</em>, <em class="sig-param">compression='infer'</em>, <em class="sig-param">byte_range=None</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.json.read_json" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert a JSON string to a cuDF object.</p>
+<dd><p>Load a JSON dataset into a DataFrame</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>path_or_buf</strong><span class="classifier">a valid JSON string or file-like</span></dt><dd><p>The string could be a URL (pandas engine only). Valid URL schemes include
-http, ftp, s3, gcs, and file. For file URLs, a host is expected.
-For instance, a local file could be <code class="docutils literal notranslate"><span class="pre">file://localhost/path/to/table.json</span></code></p>
+<dt><strong>path_or_buf</strong><span class="classifier">str, path object, or file-like object</span></dt><dd><p>Either JSON data in a <cite>str</cite>, path to a file (a <cite>str</cite>, <cite>pathlib.Path</cite>, or
+<cite>py._path.local.LocalPath</cite>), URL (including http, ftp, and S3 locations),
+or any object with a <cite>read()</cite> method (such as builtin <cite>open()</cite> file handler
+function or <cite>StringIO</cite>).</p>
 </dd>
 <dt><strong>engine</strong><span class="classifier">{{ ‘auto’, ‘cudf’, ‘pandas’ }}, default ‘auto’</span></dt><dd><p>Parser engine to use. If ‘auto’ is passed, the engine will be
 automatically selected based on the other parameters.</p>
