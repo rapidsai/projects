@@ -1451,8 +1451,16 @@ for instructions to download nightly packages via conda.)</p>
 </dd>
 <dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
 </dd>
+<dt><strong>split_criterion: The criterion used to split nodes.</strong></dt><dd><p>0 for GINI, 1 for ENTROPY, 4 for CRITERION_END.
+2 and 3 not valid for classification
+(default = 0)</p>
+</dd>
 <dt><strong>split_algo</strong><span class="classifier">0 for HIST and 1 for GLOBAL_QUANTILE</span></dt><dd><p>(default = 0)
 the algorithm to determine how nodes are split in the tree.</p>
+</dd>
+<dt><strong>split_criterion: The criterion used to split nodes.</strong></dt><dd><p>0 for GINI, 1 for ENTROPY, 4 for CRITERION_END.
+2 and 3 not valid for classification
+(default = 0)</p>
 </dd>
 <dt><strong>bootstrap</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>Control bootstrapping.
 If set, each tree in the forest is built
@@ -1477,6 +1485,9 @@ per node split.</p>
 </dd>
 <dt><strong>min_rows_per_node</strong><span class="classifier">int (default = 2)</span></dt><dd><p>The minimum number of samples (rows) needed
 to split a node.</p>
+</dd>
+<dt><strong>quantile_per_tree</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>Whether quantile is computed for individal trees in RF.
+Only relevant for GLOBAL_QUANTILE split_algo.</p>
 </dd>
 </dl>
 </dd>
