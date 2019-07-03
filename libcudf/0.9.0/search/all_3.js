@@ -60,6 +60,7 @@ var searchData=
   ['dictionarypageheader',['DictionaryPageHeader',['../structcudf_1_1io_1_1parquet_1_1DictionaryPageHeader.html',1,'cudf::io::parquet']]],
   ['diff',['Diff',['../structDiff.html',1,'']]],
   ['diff_3c_20index_5ftype_2c_20jointype_3a_3ainner_5fjoin_20_3e',['Diff&lt; index_type, JoinType::INNER_JOIN &gt;',['../structDiff_3_01index__type_00_01JoinType_1_1INNER__JOIN_01_4.html',1,'']]],
+  ['disabled',['disabled',['../namespacecolumn__parse.html#ad1a5214577a0d2e3e4537f164b2d6f0fa86e26be360313a9999f14403d9b0e8ee',1,'column_parse']]],
   ['doublequote',['doublequote',['../structcudf_1_1io_1_1csv_1_1reader__options.html#ae226a08afc2f408a9e2377235bda673e',1,'cudf::io::csv::reader_options::doublequote()'],['../structcudf_1_1csv__read__arg.html#a518c3a61607cf99acdaa48f46b395780',1,'cudf::csv_read_arg::doublequote()']]],
   ['downcasting',['DownCasting',['../structDownCasting.html',1,'']]],
   ['drop_5fduplicates',['drop_duplicates',['../namespacecudf.html#ad33dca48e0e06d182698cefb81b14be2',1,'cudf']]],

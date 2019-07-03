@@ -9,6 +9,8 @@ var searchData=
   ['apply_5fbitmask_5fto_5fbitmask',['apply_bitmask_to_bitmask',['../bitmask__ops_8hpp.html#a4400e7c480cc83d4c66a6b82a75ec45d',1,'bitmask_ops.cu']]],
   ['apply_5fboolean_5fmask',['apply_boolean_mask',['../namespacecudf.html#a5fba636792abcf96032c639873d14870',1,'cudf']]],
   ['arithop',['ArithOp',['../structcudf_1_1binops_1_1compiled_1_1ArithOp.html',1,'cudf::binops::compiled']]],
+  ['as_5fdefault',['as_default',['../namespacecolumn__parse.html#ad1a5214577a0d2e3e4537f164b2d6f0fa4878ed34ec2e00f3747ed99340220b85',1,'column_parse']]],
+  ['as_5fhexadecimal',['as_hexadecimal',['../namespacecolumn__parse.html#ad1a5214577a0d2e3e4537f164b2d6f0faf19aee1cc5d29fddfa203fa01a43c9e9',1,'column_parse']]],
   ['assignlevels',['assignLevels',['../parsing__utils_8cu.html#ab39e56733eb09844785a9daf2e553ac2',1,'parsing_utils.cu']]],
   ['assignlevelskernel',['assignLevelsKernel',['../parsing__utils_8cu.html#a362343132e9dee84fd714e7abafce4d9',1,'parsing_utils.cu']]],
   ['atomicadd',['atomicAdd',['../device__atomics_8cuh.html#ae5d56a957e435f0b5d4a3d7abc53b5a7',1,'device_atomics.cuh']]],

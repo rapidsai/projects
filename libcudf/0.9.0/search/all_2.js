@@ -12,6 +12,7 @@ var searchData=
   ['column_2ecpp',['column.cpp',['../column_8cpp.html',1,'']]],
   ['column_5fdata_5ft',['column_data_t',['../structcudf_1_1io_1_1csv_1_1column__data__t.html',1,'cudf::io::csv']]],
   ['column_5fdtypes',['column_dtypes',['../namespacecudf.html#ad2f973d94c67ab3dc1a183c5adb3753d',1,'cudf']]],
+  ['column_5fparse',['column_parse',['../namespacecolumn__parse.html',1,'']]],
   ['column_5frange',['column_range',['../structcudf_1_1detail_1_1column__range__factory_1_1column__range.html',1,'cudf::detail::column_range_factory']]],
   ['column_5frange_5ffactory',['column_range_factory',['../structcudf_1_1detail_1_1column__range__factory.html',1,'cudf::detail']]],
   ['columnchunk',['ColumnChunk',['../structcudf_1_1io_1_1parquet_1_1ColumnChunk.html',1,'cudf::io::parquet']]],

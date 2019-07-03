@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['keep_5ffirst',['KEEP_FIRST',['../namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa86ea4bfd2b3121412b0a63a3697926ec',1,'cudf']]],
-  ['keep_5flast',['KEEP_LAST',['../namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa1d1398f646d74e801389737f07d89d1c',1,'cudf']]],
-  ['keep_5fnone',['KEEP_NONE',['../namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa6fb3154b77231184b596b4add407aa2a',1,'cudf']]]
+  ['as_5fdefault',['as_default',['../namespacecolumn__parse.html#ad1a5214577a0d2e3e4537f164b2d6f0fa4878ed34ec2e00f3747ed99340220b85',1,'column_parse']]],
+  ['as_5fhexadecimal',['as_hexadecimal',['../namespacecolumn__parse.html#ad1a5214577a0d2e3e4537f164b2d6f0faf19aee1cc5d29fddfa203fa01a43c9e9',1,'column_parse']]]
 ];
