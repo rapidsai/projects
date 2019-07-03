@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['rmm_5fallocator',['rmm_allocator',['../classrmm__allocator.html',1,'']]],
-  ['rmmoptions_5ft',['rmmOptions_t',['../structrmmOptions__t.html',1,'']]]
+  ['managed_5fmemory_5fresource',['managed_memory_resource',['../classrmm_1_1mr_1_1managed__memory__resource.html',1,'rmm::mr']]],
+  ['manager',['Manager',['../classrmm_1_1Manager.html',1,'rmm']]]
 ];

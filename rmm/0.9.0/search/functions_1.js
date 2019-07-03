@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['finalize',['finalize',['../classrmm_1_1Manager.html#a8270860d9b5672c79749f470f267e740',1,'rmm::Manager']]]
+  ['clear',['clear',['../classrmm_1_1Logger.html#ac48023cdcc34033c2704bfbeeeb3b00c',1,'rmm::Logger']]],
+  ['cnmem_5fmemory_5fresource',['cnmem_memory_resource',['../classrmm_1_1mr_1_1cnmem__memory__resource.html#af1af4a4728c47ec7e6e745ed8f285ffa',1,'rmm::mr::cnmem_memory_resource']]]
 ];

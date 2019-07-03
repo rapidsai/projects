@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['clear',['clear',['../classrmm_1_1Logger.html#ac48023cdcc34033c2704bfbeeeb3b00c',1,'rmm::Logger']]],
-  ['cnmemdevice_5ft_5f',['cnmemDevice_t_',['../structcnmemDevice__t__.html',1,'']]]
+  ['allocate',['allocate',['../classrmm_1_1mr_1_1device__memory__resource.html#a3c34ce66e1153973f3cb39530045c940',1,'rmm::mr::device_memory_resource::allocate()'],['../classrmm_1_1mr_1_1thrust__allocator.html#aa4820af9c1e3fbbf26c6a14338cb8feb',1,'rmm::mr::thrust_allocator::allocate()']]]
 ];

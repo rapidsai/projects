@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['setpointer',['setPointer',['../classrmm_1_1LogIt.html#a6bee1f58cdd54d2f4651863c8999d4ca',1,'rmm::LogIt']]],
-  ['size',['size',['../structcnmemDevice__t__.html#aa2b1f9393452d7548dd1d801a6915546',1,'cnmemDevice_t_']]],
-  ['streams',['streams',['../structcnmemDevice__t__.html#a2c6fb71f221ba9d4af844f7cd929caab',1,'cnmemDevice_t_']]],
-  ['streamsizes',['streamSizes',['../structcnmemDevice__t__.html#a735d6a6e1406e1048bbb2e956114639b',1,'cnmemDevice_t_']]]
+  ['rebind',['rebind',['../structrmm_1_1mr_1_1thrust__allocator_1_1rebind.html',1,'rmm::mr::thrust_allocator']]],
+  ['record',['record',['../classrmm_1_1Logger.html#a08c5924e48110f8f641a3e9491d1ed87',1,'rmm::Logger']]],
+  ['registerstream',['registerStream',['../classrmm_1_1Manager.html#aab9ae171cf3ae4a6002f365cc30729a7',1,'rmm::Manager']]],
+  ['resource',['resource',['../classrmm_1_1mr_1_1thrust__allocator.html#aa36bf648f33309f8fadda7e449224970',1,'rmm::mr::thrust_allocator']]],
+  ['rmm_5fallocator',['rmm_allocator',['../classrmm__allocator.html',1,'']]],
+  ['rmmoptions_5ft',['rmmOptions_t',['../structrmmOptions__t.html',1,'']]]
 ];
