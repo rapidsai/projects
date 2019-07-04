@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['scatter',['scatter',['../classNVStrings.html#ae22d0d1d8105e8bbffcf64d457810737',1,'NVStrings']]],
   ['seconds',['seconds',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049ad305a26f0c3deec9fa4bf14d8f778a40',1,'NVStrings']]],
   ['set_5fkeys_5fand_5fremap',['set_keys_and_remap',['../classNVCategory.html#a858319b09a137eb641f6f891c428bcbd',1,'NVCategory']]],
   ['set_5fnull_5fbitarray',['set_null_bitarray',['../classNVStrings.html#af13cc0d4eae84b8c11393c2a6f40251f',1,'NVStrings::set_null_bitarray()'],['../classNVCategory.html#a628aa25b77207997a6dd3d1b5ea483d4',1,'NVCategory::set_null_bitarray()']]],
@@ -7,7 +8,7 @@ var searchData=
   ['slice',['slice',['../classNVStrings.html#a3b6c28d2717be7f596031b492335b3b0',1,'NVStrings']]],
   ['slice_5ffrom',['slice_from',['../classNVStrings.html#a0da7fb4acd3955079cf275d1bd6d1a76',1,'NVStrings']]],
   ['slice_5freplace',['slice_replace',['../classNVStrings.html#a80257b75625b7abfa472269c1f73bfb9',1,'NVStrings']]],
-  ['sort',['sort',['../classNVStrings.html#a1b199ebbda37bf32f56841e12c3dc27f',1,'NVStrings']]],
+  ['sort',['sort',['../classNVStrings.html#a3f982345feb2bb6c313cb465d68a4e58',1,'NVStrings']]],
   ['sorttype',['sorttype',['../classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831',1,'NVStrings']]],
   ['split',['split',['../classNVStrings.html#a6b6fd3243acc1a1340816ec1256d3906',1,'NVStrings::split(const char *delimiter, int maxsplit, std::vector&lt; NVStrings *&gt; &amp;results)'],['../classNVStrings.html#a057359042642ff3891031e484f34b569',1,'NVStrings::split(int maxsplit, std::vector&lt; NVStrings *&gt; &amp;results)']]],
   ['split_5frecord',['split_record',['../classNVStrings.html#ab5889f0dc667e3356a182110ba614165',1,'NVStrings::split_record(const char *delimiter, int maxsplit, std::vector&lt; NVStrings *&gt; &amp;results)'],['../classNVStrings.html#afd11a8881d79d5afcd2f69de5636c8f4',1,'NVStrings::split_record(int maxsplit, std::vector&lt; NVStrings *&gt; &amp;results)']]],
