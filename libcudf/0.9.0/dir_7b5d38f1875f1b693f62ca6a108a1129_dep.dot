@@ -10,6 +10,6 @@ digraph "utilities" {
     dir_8e5eaa3c6c334094a05ac324ba52dd2c [shape=box label="nvtx" color="black" fillcolor="white" style="filled" URL="dir_8e5eaa3c6c334094a05ac324ba52dd2c.html"];
   }
   }
-  dir_8af788da82510e5633fff7e15680126e [shape=box label="bitmask" URL="dir_8af788da82510e5633fff7e15680126e.html"];
-  dir_7b5d38f1875f1b693f62ca6a108a1129->dir_8af788da82510e5633fff7e15680126e [headlabel="1", labeldistance=1.5 headhref="dir_000008_000007.html"];
+  dir_8af788da82510e5633fff7e15680126e [shape=box label="bitmask" fillcolor="white" style="filled" color="red" URL="dir_8af788da82510e5633fff7e15680126e.html"];
+  dir_7b5d38f1875f1b693f62ca6a108a1129->dir_8af788da82510e5633fff7e15680126e [headlabel="1", labeldistance=1.5 headhref="dir_000009_000007.html"];
 }

@@ -49,11 +49,15 @@ digraph "type_info.hpp"
   Node17 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node17 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node18 [label="functions.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h_source.html"];
+  Node18 [label="legacy/column.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$column_8hpp_source.html"];
+  Node18 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node19 [label="io_functions.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$io__functions_8h_source.html"];
+  Node19 [label="functions.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h_source.html"];
+  Node2 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="io_functions.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$io__functions_8h_source.html"];
   Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node20 [label="tuple",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="tuple",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

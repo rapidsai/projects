@@ -45,7 +45,11 @@ digraph "types.hpp"
   Node15 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node15 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node16 [label="functions.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h_source.html"];
+  Node16 [label="legacy/column.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$column_8hpp_source.html"];
+  Node16 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node17 [label="io_functions.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$io__functions_8h_source.html"];
+  Node17 [label="functions.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h_source.html"];
+  Node1 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="io_functions.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$io__functions_8h_source.html"];
 }
