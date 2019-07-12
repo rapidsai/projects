@@ -11,6 +11,7 @@ var searchData=
   ['target_5ftype_5fmapper',['target_type_mapper',['../structcudf_1_1groupby_1_1hash_1_1target__type__mapper.html',1,'cudf::groupby::hash']]],
   ['transformer_5fmeanvar',['transformer_meanvar',['../structcudf_1_1transformer__meanvar.html',1,'cudf']]],
   ['transformer_5fsquared',['transformer_squared',['../structcudf_1_1transformer__squared.html',1,'cudf']]],
+  ['transformer_5fvar_5fstd',['transformer_var_std',['../structcudf_1_1reduction_1_1transformer__var__std.html',1,'cudf::reduction']]],
   ['type_5fname',['type_name',['../structcudf_1_1binops_1_1jit_1_1type__name.html',1,'cudf::binops::jit']]],
   ['typed_5fgroupby_5ffunctor',['typed_groupby_functor',['../structtyped__groupby__functor.html',1,'']]],
   ['typesatomiccasimpl',['typesAtomicCASImpl',['../structcudf_1_1detail_1_1typesAtomicCASImpl.html',1,'cudf::detail']]],

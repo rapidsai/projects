@@ -40,7 +40,7 @@ var searchData=
   ['source_5finfo',['source_info',['../structcudf_1_1source__info.html',1,'cudf']]],
   ['source_5ftype',['source_type',['../structcudf_1_1io_1_1json_1_1reader__options.html#a05da6aea4918800cd66d3bb0098a6369',1,'cudf::io::json::reader_options']]],
   ['split',['split',['../namespacecudf.html#a69299f48fdcd25864a2f560e55d18ea9',1,'cudf']]],
-  ['squaredloader',['SquaredLoader',['../structcudf_1_1reductions_1_1SquaredLoader.html',1,'cudf::reductions']]],
+  ['standard_5fdeviation',['standard_deviation',['../structcudf_1_1reduction_1_1op_1_1standard__deviation.html',1,'cudf::reduction::op']]],
   ['store_5foutput_5ffunctor',['store_output_functor',['../structcudf_1_1detail_1_1store__output__functor.html',1,'cudf::detail']]],
   ['store_5foutput_5ffunctor_3c_20columntype_2c_20true_20_3e',['store_output_functor&lt; ColumnType, true &gt;',['../structcudf_1_1detail_1_1store__output__functor_3_01ColumnType_00_01true_01_4.html',1,'cudf::detail']]],
   ['stream',['Stream',['../structcudf_1_1io_1_1orc_1_1Stream.html',1,'cudf::io::orc']]],
@@ -48,6 +48,8 @@ var searchData=
   ['stripe',['stripe',['../structcudf_1_1orc__read__arg.html#a7d183604772bf6d200a76b71ad242bc9',1,'cudf::orc_read_arg']]],
   ['stripefooter',['StripeFooter',['../structcudf_1_1io_1_1orc_1_1StripeFooter.html',1,'cudf::io::orc']]],
   ['stripeinformation',['StripeInformation',['../structcudf_1_1io_1_1orc_1_1StripeInformation.html',1,'cudf::io::orc']]],
+  ['sum',['sum',['../structcudf_1_1reduction_1_1op_1_1sum.html',1,'cudf::reduction::op']]],
+  ['sum_5fof_5fsquares',['sum_of_squares',['../structcudf_1_1reduction_1_1op_1_1sum__of__squares.html',1,'cudf::reduction::op']]],
   ['sum_5fop',['sum_op',['../structsum__op.html',1,'']]],
   ['sumbrackets',['sumBrackets',['../parsing__utils_8cu.html#a89a461bfca75ab83fecf2335f193e50d',1,'parsing_utils.cu']]],
   ['sumbracketskernel',['sumBracketsKernel',['../parsing__utils_8cu.html#a4d604c4937fc5680977b22edabddc34f',1,'parsing_utils.cu']]]

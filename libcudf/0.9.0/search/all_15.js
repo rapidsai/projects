@@ -7,6 +7,8 @@ var searchData=
   ['value_5faccessor',['value_accessor',['../structcudf_1_1value__accessor.html',1,'cudf::value_accessor&lt; ElementType, ResultType, has_nulls &gt;'],['../structcudf_1_1value__accessor_3_01ElementType_00_01ResultType_00_01true_01_4.html#a41895ae13439d9d29ae26beb1f92e30e',1,'cudf::value_accessor&lt; ElementType, ResultType, true &gt;::value_accessor()'],['../structcudf_1_1value__accessor_3_01ElementType_00_01ResultType_00_01false_01_4.html#a13eb6daa3d858dc4b390d82461e5a4a1',1,'cudf::value_accessor&lt; ElementType, ResultType, false &gt;::value_accessor()']]],
   ['value_5faccessor_3c_20elementtype_2c_20resulttype_2c_20false_20_3e',['value_accessor&lt; ElementType, ResultType, false &gt;',['../structcudf_1_1value__accessor_3_01ElementType_00_01ResultType_00_01false_01_4.html',1,'cudf']]],
   ['value_5faccessor_3c_20elementtype_2c_20resulttype_2c_20true_20_3e',['value_accessor&lt; ElementType, ResultType, true &gt;',['../structcudf_1_1value__accessor_3_01ElementType_00_01ResultType_00_01true_01_4.html',1,'cudf']]],
-  ['value_5fsquared',['value_squared',['../structcudf_1_1meanvar.html#a1e4fbdcc540474102b9f4400c591c527',1,'cudf::meanvar']]],
-  ['value_5ftype',['value_type',['../structcudf_1_1detail_1_1wrapper.html#a8acf68753d62cd6210b6c4b69fdaebef',1,'cudf::detail::wrapper']]]
+  ['value_5fsquared',['value_squared',['../structcudf_1_1meanvar.html#a1e4fbdcc540474102b9f4400c591c527',1,'cudf::meanvar::value_squared()'],['../structcudf_1_1reduction_1_1var__std.html#af19bfaba48b854fbfb619ca445323527',1,'cudf::reduction::var_std::value_squared()']]],
+  ['value_5ftype',['value_type',['../structcudf_1_1detail_1_1wrapper.html#a8acf68753d62cd6210b6c4b69fdaebef',1,'cudf::detail::wrapper']]],
+  ['var_5fstd',['var_std',['../structcudf_1_1reduction_1_1var__std.html',1,'cudf::reduction::var_std&lt; ResultType &gt;'],['../structcudf_1_1reduction_1_1var__std.html#aa8bdabedf4e6a5ea9fcdd21e65e3cd81',1,'cudf::reduction::var_std::var_std()']]],
+  ['variance',['variance',['../structcudf_1_1reduction_1_1op_1_1variance.html',1,'cudf::reduction::op']]]
 ];

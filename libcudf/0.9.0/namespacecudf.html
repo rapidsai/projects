@@ -272,9 +272,9 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
 template&lt;bool has_nulls, typename ElementType , typename ResultType  = ElementType, typename Iterator_Index  = thrust::counting_iterator&lt;gdf_index_type&gt;&gt; </td></tr>
 <tr class="memitem:a657f930d43783b2f9ff84a219b19d245"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>make_pair_iterator</b> (const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;column, ResultType identity=ResultType{0}, Iterator_Index const it=Iterator_Index(0))</td></tr>
 <tr class="separator:a657f930d43783b2f9ff84a219b19d245"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16d269210347c80b2a841daef1a0d136"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__scalar.html">gdf_scalar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a16d269210347c80b2a841daef1a0d136">reduction</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> *col, gdf_reduction_op op, gdf_dtype output_dtype)</td></tr>
-<tr class="memdesc:a16d269210347c80b2a841daef1a0d136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the reduction of the values in all rows of a column This function does not detect overflows in reductions. Using a higher precision <code>dtype</code> may prevent overflow. Only <code>min</code> and <code>max</code> ops are supported for reduction of non-arithmetic types (date32, timestamp, category...). The null values are skipped for the operation. If the column is empty, the member is_valid of the output <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a> will contain <code>false</code>.  <a href="#a16d269210347c80b2a841daef1a0d136">More...</a><br /></td></tr>
-<tr class="separator:a16d269210347c80b2a841daef1a0d136"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34eb2aea42d4ee97fb98cc4b38dabd7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__scalar.html">gdf_scalar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a34eb2aea42d4ee97fb98cc4b38dabd7c">reduce</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> *col, cudf::reduction::operators op, gdf_dtype output_dtype, gdf_size_type ddof=1)</td></tr>
+<tr class="memdesc:a34eb2aea42d4ee97fb98cc4b38dabd7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the reduction of the values in all rows of a column This function does not detect overflows in reductions. Using a higher precision <code>dtype</code> may prevent overflow. Only <code>min</code> and <code>max</code> ops are supported for reduction of non-arithmetic types (date32, timestamp, category...). The null values are skipped for the operation. If the column is empty, the member is_valid of the output <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a> will contain <code>false</code>.  <a href="#a34eb2aea42d4ee97fb98cc4b38dabd7c">More...</a><br /></td></tr>
+<tr class="separator:a34eb2aea42d4ee97fb98cc4b38dabd7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65546aa9c42e87334fb5e1e3f274bc6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a65546aa9c42e87334fb5e1e3f274bc6b">scan</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> *input, <a class="el" href="structgdf__column__.html">gdf_column</a> *output, gdf_scan_op op, bool inclusive)</td></tr>
 <tr class="memdesc:a65546aa9c42e87334fb5e1e3f274bc6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the scan (a.k.a. prefix sum) of a column. The null values are skipped for the operation, and if an input element at <code>i</code> is null, then the output element at <code>i</code> will also be null.  <a href="#a65546aa9c42e87334fb5e1e3f274bc6b">More...</a><br /></td></tr>
 <tr class="separator:a65546aa9c42e87334fb5e1e3f274bc6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1674,14 +1674,14 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
 
 </div>
 </div>
-<a id="a16d269210347c80b2a841daef1a0d136"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16d269210347c80b2a841daef1a0d136">&#9670;&nbsp;</a></span>reduction()</h2>
+<a id="a34eb2aea42d4ee97fb98cc4b38dabd7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34eb2aea42d4ee97fb98cc4b38dabd7c">&#9670;&nbsp;</a></span>reduce()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structgdf__scalar.html">gdf_scalar</a> cudf::reduction </td>
+          <td class="memname"><a class="el" href="structgdf__scalar.html">gdf_scalar</a> cudf::reduce </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td>
           <td class="paramname"><em>col</em>, </td>
@@ -1689,14 +1689,20 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">gdf_reduction_op&#160;</td>
+          <td class="paramtype">cudf::reduction::operators&#160;</td>
           <td class="paramname"><em>op</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">gdf_dtype&#160;</td>
-          <td class="paramname"><em>output_dtype</em>&#160;</td>
+          <td class="paramname"><em>output_dtype</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_size_type&#160;</td>
+          <td class="paramname"><em>ddof</em> = <code>1</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1711,7 +1717,8 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">col</td><td>Input column </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">op</td><td>The operator applied by the reduction </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dtype</td><td>The computation and output precision. <code>dtype</code> must be a data type that is convertible from the input dtype. If the input column has arithmetic type, any arithmetic type can be specified. If the input column has non-arithmetic type (date32, timestamp, category...), the same type must be specified.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">output_dtype</td><td>The computation and output precision. <code>dtype</code> must be a data type that is convertible from the input dtype. If the input column has arithmetic type or cudf::bool8 type, output_dtype can be any arithmetic type or cudf::bool8 type. For <code>mean</code>, <code>var</code> and <code>std</code> ops, a floating point type must be specified. If the input column has non-arithmetic type (date32, timestamp, category...), the same type must be specified. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ddof</td><td>Delta Degrees of Freedom: the divisor used in calculation of <code>std</code> and <code>var</code> is <code>N - ddof</code>, where <code>N</code> is the population size.`</td></tr>
   </table>
   </dd>
 </dl>

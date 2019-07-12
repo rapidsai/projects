@@ -14,6 +14,7 @@ var searchData=
   ['tmst',['tmst',['../uniongdf__data.html#a6a92c8ac51677ff303caaa6397541d7b',1,'gdf_data']]],
   ['transformer_5fmeanvar',['transformer_meanvar',['../structcudf_1_1transformer__meanvar.html',1,'cudf']]],
   ['transformer_5fsquared',['transformer_squared',['../structcudf_1_1transformer__squared.html',1,'cudf']]],
+  ['transformer_5fvar_5fstd',['transformer_var_std',['../structcudf_1_1reduction_1_1transformer__var__std.html',1,'cudf::reduction']]],
   ['trie_2ecuh',['trie.cuh',['../trie_8cuh.html',1,'']]],
   ['true_5fvalues',['true_values',['../structcudf_1_1io_1_1csv_1_1reader__options.html#afc8fdf619b176834d8192de541986217',1,'cudf::io::csv::reader_options::true_values()'],['../structcudf_1_1csv__read__arg.html#af215196078ba8b166f8691e927666b42',1,'cudf::csv_read_arg::true_values()']]],
   ['type_5finfo_2ehpp',['type_info.hpp',['../type__info_8hpp.html',1,'']]],

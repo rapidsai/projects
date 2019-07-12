@@ -12,5 +12,6 @@ var searchData=
   ['parseoptions',['ParseOptions',['../structParseOptions.html',1,'']]],
   ['postscript',['PostScript',['../structcudf_1_1io_1_1orc_1_1PostScript.html',1,'cudf::io::orc']]],
   ['prefetch_5fqueue_5fs',['prefetch_queue_s',['../structprefetch__queue__s.html',1,'']]],
+  ['product',['product',['../structcudf_1_1reduction_1_1op_1_1product.html',1,'cudf::reduction::op']]],
   ['protobufreader',['ProtobufReader',['../classcudf_1_1io_1_1orc_1_1ProtobufReader.html',1,'cudf::io::orc']]]
 ];

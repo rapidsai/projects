@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.9.0a+1121.g2da00ff.dirty documentation</title>
+  <title>API Reference &mdash; cudf 0.9.0a+1195.gc347ecc.dirty documentation</title>
   
 
   
@@ -2630,160 +2630,157 @@ default: ‘value’</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.max" title="cudf.dataframe.series.Series.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>(self[, axis, skipna, dtype])</p></td>
 <td><p>Compute the max of the series</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.mean" title="cudf.dataframe.series.Series.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>(self[, axis, skipna, dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.mean" title="cudf.dataframe.series.Series.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>(self[, axis, skipna])</p></td>
 <td><p>Compute the mean of the series</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.mean_var" title="cudf.dataframe.series.Series.mean_var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_var</span></code></a>(self[, ddof])</p></td>
-<td><p>Compute mean and variance at the same time.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.min" title="cudf.dataframe.series.Series.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>(self[, axis, skipna, dtype])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.min" title="cudf.dataframe.series.Series.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>(self[, axis, skipna, dtype])</p></td>
 <td><p>Compute the min of the series</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.mod" title="cudf.dataframe.series.Series.mod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mod</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.mod" title="cudf.dataframe.series.Series.mod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mod</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Modulo of series and other, element-wise (binary operator mod).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.mul" title="cudf.dataframe.series.Series.mul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mul</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.mul" title="cudf.dataframe.series.Series.mul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mul</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Multiplication of series and other, element-wise (binary operator mul).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.ne" title="cudf.dataframe.series.Series.ne"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ne</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.ne" title="cudf.dataframe.series.Series.ne"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ne</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Not equal to of series and other, element-wise (binary operator ne).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.nlargest" title="cudf.dataframe.series.Series.nlargest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nlargest</span></code></a>(self[, n, keep])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.nlargest" title="cudf.dataframe.series.Series.nlargest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nlargest</span></code></a>(self[, n, keep])</p></td>
 <td><p>Returns a new Series of the <em>n</em> largest element.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.notna" title="cudf.dataframe.series.Series.notna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">notna</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.notna" title="cudf.dataframe.series.Series.notna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">notna</span></code></a>(self)</p></td>
 <td><p>Identify non-missing values in a Series.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.nsmallest" title="cudf.dataframe.series.Series.nsmallest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nsmallest</span></code></a>(self[, n, keep])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.nsmallest" title="cudf.dataframe.series.Series.nsmallest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nsmallest</span></code></a>(self[, n, keep])</p></td>
 <td><p>Returns a new Series of the <em>n</em> smallest element.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.nunique" title="cudf.dataframe.series.Series.nunique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nunique</span></code></a>(self[, method, dropna])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.nunique" title="cudf.dataframe.series.Series.nunique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nunique</span></code></a>(self[, method, dropna])</p></td>
 <td><p>Returns the number of unique values of the Series: approximate version, and exact version to be moved to libgdf</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.one_hot_encoding" title="cudf.dataframe.series.Series.one_hot_encoding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">one_hot_encoding</span></code></a>(self, cats[, dtype])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.one_hot_encoding" title="cudf.dataframe.series.Series.one_hot_encoding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">one_hot_encoding</span></code></a>(self, cats[, dtype])</p></td>
 <td><p>Perform one-hot-encoding</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.pow" title="cudf.dataframe.series.Series.pow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pow</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.pow" title="cudf.dataframe.series.Series.pow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pow</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Exponential power of series and other, element-wise (binary operator pow).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.product" title="cudf.dataframe.series.Series.product"><code class="xref py py-obj docutils literal notranslate"><span class="pre">product</span></code></a>(self[, axis, skipna, dtype])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.product" title="cudf.dataframe.series.Series.product"><code class="xref py py-obj docutils literal notranslate"><span class="pre">product</span></code></a>(self[, axis, skipna, dtype])</p></td>
 <td><p>Compute the product of the series</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.quantile" title="cudf.dataframe.series.Series.quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantile</span></code></a>(self[, q, interpolation, exact, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.quantile" title="cudf.dataframe.series.Series.quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantile</span></code></a>(self[, q, interpolation, exact, …])</p></td>
 <td><p>Return values at the given quantile.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.radd" title="cudf.dataframe.series.Series.radd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radd</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.radd" title="cudf.dataframe.series.Series.radd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radd</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Addition of series and other, element-wise (binary operator radd).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.reindex" title="cudf.dataframe.series.Series.reindex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reindex</span></code></a>(self[, index, copy])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.reindex" title="cudf.dataframe.series.Series.reindex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reindex</span></code></a>(self[, index, copy])</p></td>
 <td><p>Return a Series that conforms to a new index</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rename" title="cudf.dataframe.series.Series.rename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename</span></code></a>(self[, index, copy])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rename" title="cudf.dataframe.series.Series.rename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename</span></code></a>(self[, index, copy])</p></td>
 <td><p>Alter Series name.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.replace" title="cudf.dataframe.series.Series.replace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace</span></code></a>(self, to_replace, replacement)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.replace" title="cudf.dataframe.series.Series.replace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace</span></code></a>(self, to_replace, replacement)</p></td>
 <td><p>Replace values given in <em>to_replace</em> with <em>replacement</em>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.reset_index" title="cudf.dataframe.series.Series.reset_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_index</span></code></a>(self[, drop])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.reset_index" title="cudf.dataframe.series.Series.reset_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_index</span></code></a>(self[, drop])</p></td>
 <td><p>Reset index to RangeIndex</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.reverse" title="cudf.dataframe.series.Series.reverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reverse</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.reverse" title="cudf.dataframe.series.Series.reverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reverse</span></code></a>(self)</p></td>
 <td><p>Reverse the Series</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rfloordiv" title="cudf.dataframe.series.Series.rfloordiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfloordiv</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rfloordiv" title="cudf.dataframe.series.Series.rfloordiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfloordiv</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Integer division of series and other, element-wise (binary operator rfloordiv).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rmod" title="cudf.dataframe.series.Series.rmod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rmod</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rmod" title="cudf.dataframe.series.Series.rmod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rmod</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Modulo of series and other, element-wise (binary operator rmod).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rmul" title="cudf.dataframe.series.Series.rmul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rmul</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rmul" title="cudf.dataframe.series.Series.rmul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rmul</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Multiplication of series and other, element-wise (binary operator rmul).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rolling" title="cudf.dataframe.series.Series.rolling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rolling</span></code></a>(self, window[, min_periods, center])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rolling" title="cudf.dataframe.series.Series.rolling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rolling</span></code></a>(self, window[, min_periods, center])</p></td>
 <td><p>Rolling window calculations.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.round" title="cudf.dataframe.series.Series.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>(self[, decimals])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.round" title="cudf.dataframe.series.Series.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>(self[, decimals])</p></td>
 <td><p>Round a Series to a configurable number of decimal places.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rpow" title="cudf.dataframe.series.Series.rpow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rpow</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rpow" title="cudf.dataframe.series.Series.rpow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rpow</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Exponential power of series and other, element-wise (binary operator rpow).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rsub" title="cudf.dataframe.series.Series.rsub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsub</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rsub" title="cudf.dataframe.series.Series.rsub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsub</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Subtraction of series and other, element-wise (binary operator rsub).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rtruediv" title="cudf.dataframe.series.Series.rtruediv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rtruediv</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.rtruediv" title="cudf.dataframe.series.Series.rtruediv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rtruediv</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Floating division of series and other, element-wise (binary operator rtruediv).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.scale" title="cudf.dataframe.series.Series.scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.scale" title="cudf.dataframe.series.Series.scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale</span></code></a>(self)</p></td>
 <td><p>Scale values to [0, 1] in float64</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.set_index" title="cudf.dataframe.series.Series.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_index</span></code></a>(self, index)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.set_index" title="cudf.dataframe.series.Series.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_index</span></code></a>(self, index)</p></td>
 <td><p>Returns a new Series with a different index.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.set_mask" title="cudf.dataframe.series.Series.set_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_mask</span></code></a>(self, mask[, null_count])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.set_mask" title="cudf.dataframe.series.Series.set_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_mask</span></code></a>(self, mask[, null_count])</p></td>
 <td><p>Create new Series by setting a mask array.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.shift" title="cudf.dataframe.series.Series.shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift</span></code></a>(self[, periods, freq, axis, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.shift" title="cudf.dataframe.series.Series.shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift</span></code></a>(self[, periods, freq, axis, fill_value])</p></td>
 <td><p>Shift values of an input array by periods positions and store the output in a new array.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.sort_index" title="cudf.dataframe.series.Series.sort_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_index</span></code></a>(self[, ascending])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.sort_index" title="cudf.dataframe.series.Series.sort_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_index</span></code></a>(self[, ascending])</p></td>
 <td><p>Sort by the index.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.sort_values" title="cudf.dataframe.series.Series.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_values</span></code></a>(self[, ascending, na_position])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.sort_values" title="cudf.dataframe.series.Series.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_values</span></code></a>(self[, ascending, na_position])</p></td>
 <td><p>Sort by the values.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.std" title="cudf.dataframe.series.Series.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>(self[, ddof, axis, skipna])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.std" title="cudf.dataframe.series.Series.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>(self[, ddof, axis, skipna])</p></td>
 <td><p>Compute the standard deviation of the series</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.sub" title="cudf.dataframe.series.Series.sub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sub</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.sub" title="cudf.dataframe.series.Series.sub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sub</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Subtraction of series and other, element-wise (binary operator sub).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.sum" title="cudf.dataframe.series.Series.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>(self[, axis, skipna, dtype])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.sum" title="cudf.dataframe.series.Series.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>(self[, axis, skipna, dtype])</p></td>
 <td><p>Compute the sum of the series</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.tail" title="cudf.dataframe.series.Series.tail"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tail</span></code></a>(self[, n])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.tail" title="cudf.dataframe.series.Series.tail"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tail</span></code></a>(self[, n])</p></td>
 <td><p>Returns the last n rows as a new Series</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.take" title="cudf.dataframe.series.Series.take"><code class="xref py py-obj docutils literal notranslate"><span class="pre">take</span></code></a>(self, indices[, ignore_index])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.take" title="cudf.dataframe.series.Series.take"><code class="xref py py-obj docutils literal notranslate"><span class="pre">take</span></code></a>(self, indices[, ignore_index])</p></td>
 <td><p>Return Series by taking values from the corresponding <em>indices</em>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_array" title="cudf.dataframe.series.Series.to_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_array</span></code></a>(self[, fillna])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_array" title="cudf.dataframe.series.Series.to_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_array</span></code></a>(self[, fillna])</p></td>
 <td><p>Get a dense numpy array for the data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_dlpack" title="cudf.dataframe.series.Series.to_dlpack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dlpack</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_dlpack" title="cudf.dataframe.series.Series.to_dlpack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dlpack</span></code></a>(self)</p></td>
 <td><p>Converts a cuDF object into a DLPack tensor.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_frame" title="cudf.dataframe.series.Series.to_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_frame</span></code></a>(self[, name])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_frame" title="cudf.dataframe.series.Series.to_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_frame</span></code></a>(self[, name])</p></td>
 <td><p>Convert Series into a DataFrame</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_gpu_array" title="cudf.dataframe.series.Series.to_gpu_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_gpu_array</span></code></a>(self[, fillna])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_gpu_array" title="cudf.dataframe.series.Series.to_gpu_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_gpu_array</span></code></a>(self[, fillna])</p></td>
 <td><p>Get a dense numba device array for the data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_hdf" title="cudf.dataframe.series.Series.to_hdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdf</span></code></a>(self, path_or_buf, key, \*args, …)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_hdf" title="cudf.dataframe.series.Series.to_hdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdf</span></code></a>(self, path_or_buf, key, \*args, …)</p></td>
 <td><p>Write the contained data to an HDF5 file using HDFStore.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_json" title="cudf.dataframe.series.Series.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>(self[, path_or_buf])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_json" title="cudf.dataframe.series.Series.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>(self[, path_or_buf])</p></td>
 <td><p>Convert the cuDF object to a JSON string.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_string" title="cudf.dataframe.series.Series.to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_string</span></code></a>(self[, nrows])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.to_string" title="cudf.dataframe.series.Series.to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_string</span></code></a>(self[, nrows])</p></td>
 <td><p>Convert to string</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.truediv" title="cudf.dataframe.series.Series.truediv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truediv</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.truediv" title="cudf.dataframe.series.Series.truediv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truediv</span></code></a>(self, other[, fill_value])</p></td>
 <td><p>Floating division of series and other, element-wise (binary operator truediv).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.unique" title="cudf.dataframe.series.Series.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a>(self[, method, sort])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.unique" title="cudf.dataframe.series.Series.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a>(self[, method, sort])</p></td>
 <td><p>Returns unique values of this Series.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.value_counts" title="cudf.dataframe.series.Series.value_counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_counts</span></code></a>(self[, method, sort])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.value_counts" title="cudf.dataframe.series.Series.value_counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_counts</span></code></a>(self[, method, sort])</p></td>
 <td><p>Returns unique values of this Series.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.values_to_string" title="cudf.dataframe.series.Series.values_to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values_to_string</span></code></a>(self[, nrows])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.values_to_string" title="cudf.dataframe.series.Series.values_to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values_to_string</span></code></a>(self[, nrows])</p></td>
 <td><p>Returns a list of string for each element.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.var" title="cudf.dataframe.series.Series.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">var</span></code></a>(self[, ddof, axis, skipna])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.var" title="cudf.dataframe.series.Series.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">var</span></code></a>(self[, ddof, axis, skipna])</p></td>
 <td><p>Compute the variance of the series</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.where" title="cudf.dataframe.series.Series.where"><code class="xref py py-obj docutils literal notranslate"><span class="pre">where</span></code></a>(self, cond[, other, axis])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.series.Series.where" title="cudf.dataframe.series.Series.where"><code class="xref py py-obj docutils literal notranslate"><span class="pre">where</span></code></a>(self, cond[, other, axis])</p></td>
 <td><p>Replace values with other where the condition is False.</p></td>
 </tr>
 </tbody>
@@ -3467,14 +3464,8 @@ df[df &lt; 0] = 0</p>
 
 <dl class="method">
 <dt id="cudf.dataframe.series.Series.mean">
-<code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">axis=None</em>, <em class="sig-param">skipna=True</em>, <em class="sig-param">dtype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.series.Series.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">axis=None</em>, <em class="sig-param">skipna=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.series.Series.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the mean of the series</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cudf.dataframe.series.Series.mean_var">
-<code class="sig-name descname">mean_var</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">ddof=1</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.series.Series.mean_var" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute mean and variance at the same time.</p>
 </dd></dl>
 
 <dl class="method">
