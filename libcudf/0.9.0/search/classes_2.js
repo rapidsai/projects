@@ -8,6 +8,7 @@ var searchData=
   ['column_5fdata_5ft',['column_data_t',['../structcudf_1_1io_1_1csv_1_1column__data__t.html',1,'cudf::io::csv']]],
   ['column_5frange',['column_range',['../structcudf_1_1detail_1_1column__range__factory_1_1column__range.html',1,'cudf::detail::column_range_factory']]],
   ['column_5frange_5ffactory',['column_range_factory',['../structcudf_1_1detail_1_1column__range__factory.html',1,'cudf::detail']]],
+  ['column_5fto_5fstrings_5ffn',['column_to_strings_fn',['../structcolumn__to__strings__fn.html',1,'']]],
   ['columnchunk',['ColumnChunk',['../structcudf_1_1io_1_1parquet_1_1ColumnChunk.html',1,'cudf::io::parquet']]],
   ['columnchunkdesc',['ColumnChunkDesc',['../structcudf_1_1io_1_1parquet_1_1gpu_1_1ColumnChunkDesc.html',1,'cudf::io::parquet::gpu']]],
   ['columndesc',['ColumnDesc',['../structcudf_1_1io_1_1orc_1_1gpu_1_1ColumnDesc.html',1,'cudf::io::orc::gpu']]],

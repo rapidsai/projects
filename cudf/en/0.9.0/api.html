@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.9.0a+1195.gc347ecc.dirty documentation</title>
+  <title>API Reference &mdash; cudf 0.9.0a+1218.g60e1946.dirty documentation</title>
   
 
   
@@ -336,6 +336,12 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.head" title="cudf.dataframe.DataFrame.head"><code class="xref py py-obj docutils literal notranslate"><span class="pre">head</span></code></a>(self[, n])</p></td>
 <td><p>Returns the first n rows as a new DataFrame</p></td>
 </tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.isna" title="cudf.dataframe.DataFrame.isna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isna</span></code></a>(self, \*\*kwargs)</p></td>
+<td><p>Identify missing values in a DataFrame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.isnull" title="cudf.dataframe.DataFrame.isnull"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnull</span></code></a>(self, \*\*kwargs)</p></td>
+<td><p>Identify missing values in a DataFrame.</p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.iteritems" title="cudf.dataframe.DataFrame.iteritems"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iteritems</span></code></a>(self)</p></td>
 <td><p>Iterate over column names and series pairs</p></td>
 </tr>
@@ -357,85 +363,88 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.nlargest" title="cudf.dataframe.DataFrame.nlargest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nlargest</span></code></a>(self, n, columns[, keep])</p></td>
 <td><p>Get the rows of the DataFrame sorted by the n largest value of <em>columns</em></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.nsmallest" title="cudf.dataframe.DataFrame.nsmallest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nsmallest</span></code></a>(self, n, columns[, keep])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.notna" title="cudf.dataframe.DataFrame.notna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">notna</span></code></a>(self, \*\*kwargs)</p></td>
+<td><p>Identify non-missing values in a DataFrame.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.nsmallest" title="cudf.dataframe.DataFrame.nsmallest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nsmallest</span></code></a>(self, n, columns[, keep])</p></td>
 <td><p>Get the rows of the DataFrame sorted by the n smallest value of <em>columns</em></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.one_hot_encoding" title="cudf.dataframe.DataFrame.one_hot_encoding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">one_hot_encoding</span></code></a>(self, column, prefix, cats)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.one_hot_encoding" title="cudf.dataframe.DataFrame.one_hot_encoding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">one_hot_encoding</span></code></a>(self, column, prefix, cats)</p></td>
 <td><p>Expand a column with one-hot-encoding.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.partition_by_hash" title="cudf.dataframe.DataFrame.partition_by_hash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">partition_by_hash</span></code></a>(self, columns, nparts)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.partition_by_hash" title="cudf.dataframe.DataFrame.partition_by_hash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">partition_by_hash</span></code></a>(self, columns, nparts)</p></td>
 <td><p>Partition the dataframe by the hashed value of data in <em>columns</em>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.pop" title="cudf.dataframe.DataFrame.pop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code></a>(self, item)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.pop" title="cudf.dataframe.DataFrame.pop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code></a>(self, item)</p></td>
 <td><p>Return a column and drop it from the DataFrame.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.quantile" title="cudf.dataframe.DataFrame.quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantile</span></code></a>(self[, q, axis, numeric_only, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.quantile" title="cudf.dataframe.DataFrame.quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantile</span></code></a>(self[, q, axis, numeric_only, …])</p></td>
 <td><p>Return values at the given quantile.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.query" title="cudf.dataframe.DataFrame.query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query</span></code></a>(self, expr[, local_dict])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.query" title="cudf.dataframe.DataFrame.query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query</span></code></a>(self, expr[, local_dict])</p></td>
 <td><p>Query with a boolean expression using Numba to compile a GPU kernel.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.reindex" title="cudf.dataframe.DataFrame.reindex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reindex</span></code></a>(self[, labels, axis, index, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.reindex" title="cudf.dataframe.DataFrame.reindex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reindex</span></code></a>(self[, labels, axis, index, …])</p></td>
 <td><p>Return a new DataFrame whose axes conform to a new index</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.rename" title="cudf.dataframe.DataFrame.rename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename</span></code></a>(self[, mapper, columns, copy, inplace])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.rename" title="cudf.dataframe.DataFrame.rename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename</span></code></a>(self[, mapper, columns, copy, inplace])</p></td>
 <td><p>Alter column labels.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.replace" title="cudf.dataframe.DataFrame.replace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace</span></code></a>(self, to_replace, replacement)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.replace" title="cudf.dataframe.DataFrame.replace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace</span></code></a>(self, to_replace, replacement)</p></td>
 <td><p>Replace values given in <em>to_replace</em> with <em>replacement</em>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.rolling" title="cudf.dataframe.DataFrame.rolling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rolling</span></code></a>(self, window[, min_periods, center])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.rolling" title="cudf.dataframe.DataFrame.rolling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rolling</span></code></a>(self, window[, min_periods, center])</p></td>
 <td><p>Rolling window calculations.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.select_dtypes" title="cudf.dataframe.DataFrame.select_dtypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_dtypes</span></code></a>(self[, include, exclude])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.select_dtypes" title="cudf.dataframe.DataFrame.select_dtypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_dtypes</span></code></a>(self[, include, exclude])</p></td>
 <td><p>Return a subset of the DataFrame’s columns based on the column dtypes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.set_index" title="cudf.dataframe.DataFrame.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_index</span></code></a>(self, index)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.set_index" title="cudf.dataframe.DataFrame.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_index</span></code></a>(self, index)</p></td>
 <td><p>Return a new DataFrame with a new index</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.sort_index" title="cudf.dataframe.DataFrame.sort_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_index</span></code></a>(self[, ascending])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.sort_index" title="cudf.dataframe.DataFrame.sort_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_index</span></code></a>(self[, ascending])</p></td>
 <td><p>Sort by the index</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.sort_values" title="cudf.dataframe.DataFrame.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_values</span></code></a>(self, by[, ascending, na_position])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.sort_values" title="cudf.dataframe.DataFrame.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_values</span></code></a>(self, by[, ascending, na_position])</p></td>
 <td><p>Sort by the values row-wise.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.tail" title="cudf.dataframe.DataFrame.tail"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tail</span></code></a>(self[, n])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.tail" title="cudf.dataframe.DataFrame.tail"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tail</span></code></a>(self[, n])</p></td>
 <td><p>Returns the last n rows as a new DataFrame</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_arrow" title="cudf.dataframe.DataFrame.to_arrow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_arrow</span></code></a>(self[, preserve_index])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_arrow" title="cudf.dataframe.DataFrame.to_arrow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_arrow</span></code></a>(self[, preserve_index])</p></td>
 <td><p>Convert to a PyArrow Table.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_csv" title="cudf.dataframe.DataFrame.to_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_csv</span></code></a>(self[, path, sep, na_rep, columns, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_csv" title="cudf.dataframe.DataFrame.to_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_csv</span></code></a>(self[, path, sep, na_rep, columns, …])</p></td>
 <td><p>Write a dataframe to csv file format.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_dlpack" title="cudf.dataframe.DataFrame.to_dlpack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dlpack</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_dlpack" title="cudf.dataframe.DataFrame.to_dlpack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dlpack</span></code></a>(self)</p></td>
 <td><p>Converts a cuDF object into a DLPack tensor.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_feather" title="cudf.dataframe.DataFrame.to_feather"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_feather</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_feather" title="cudf.dataframe.DataFrame.to_feather"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_feather</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
 <td><p>Write a DataFrame to the feather format.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_gpu_matrix" title="cudf.dataframe.DataFrame.to_gpu_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_gpu_matrix</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_gpu_matrix" title="cudf.dataframe.DataFrame.to_gpu_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_gpu_matrix</span></code></a>(self)</p></td>
 <td><p>Convert to a numba gpu ndarray</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_hdf" title="cudf.dataframe.DataFrame.to_hdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdf</span></code></a>(self, path_or_buf, key, \*args, …)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_hdf" title="cudf.dataframe.DataFrame.to_hdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdf</span></code></a>(self, path_or_buf, key, \*args, …)</p></td>
 <td><p>Write the contained data to an HDF5 file using HDFStore.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_json" title="cudf.dataframe.DataFrame.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>(self[, path_or_buf])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_json" title="cudf.dataframe.DataFrame.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>(self[, path_or_buf])</p></td>
 <td><p>Convert the cuDF object to a JSON string.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_pandas" title="cudf.dataframe.DataFrame.to_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pandas</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_pandas" title="cudf.dataframe.DataFrame.to_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pandas</span></code></a>(self)</p></td>
 <td><p>Convert to a Pandas DataFrame.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_parquet" title="cudf.dataframe.DataFrame.to_parquet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_parquet</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_parquet" title="cudf.dataframe.DataFrame.to_parquet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_parquet</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
 <td><p>Write a DataFrame to the parquet format.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_records" title="cudf.dataframe.DataFrame.to_records"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_records</span></code></a>(self[, index])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_records" title="cudf.dataframe.DataFrame.to_records"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_records</span></code></a>(self[, index])</p></td>
 <td><p>Convert to a numpy recarray</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_string" title="cudf.dataframe.DataFrame.to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_string</span></code></a>(self[, nrows, ncols])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.to_string" title="cudf.dataframe.DataFrame.to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_string</span></code></a>(self[, nrows, ncols])</p></td>
 <td><p>Convert to string</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.transpose" title="cudf.dataframe.DataFrame.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.dataframe.DataFrame.transpose" title="cudf.dataframe.DataFrame.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>(self)</p></td>
 <td><p>Transpose index and columns.</p></td>
 </tr>
 </tbody>
@@ -1176,6 +1185,18 @@ all columns in the frame are used.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="cudf.dataframe.DataFrame.isna">
+<code class="sig-name descname">isna</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.DataFrame.isna" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identify missing values in a DataFrame. Alias for isnull.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cudf.dataframe.DataFrame.isnull">
+<code class="sig-name descname">isnull</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.DataFrame.isnull" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identify missing values in a DataFrame.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="cudf.dataframe.DataFrame.iteritems">
 <code class="sig-name descname">iteritems</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.DataFrame.iteritems" title="Permalink to this definition">¶</a></dt>
 <dd><p>Iterate over column names and series pairs</p>
@@ -1430,6 +1451,12 @@ sides</p>
 <p class="rubric">Notes</p>
 <p>Difference from pandas:
 * Only a single column is supported in <em>columns</em></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cudf.dataframe.DataFrame.notna">
+<code class="sig-name descname">notna</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.DataFrame.notna" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identify non-missing values in a DataFrame.</p>
 </dd></dl>
 
 <dl class="method">
