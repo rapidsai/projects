@@ -272,6 +272,9 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
 template&lt;bool has_nulls, typename ElementType , typename ResultType  = ElementType, typename Iterator_Index  = thrust::counting_iterator&lt;gdf_index_type&gt;&gt; </td></tr>
 <tr class="memitem:a657f930d43783b2f9ff84a219b19d245"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>make_pair_iterator</b> (const <a class="el" href="structgdf__column__.html">gdf_column</a> &amp;column, ResultType identity=ResultType{0}, Iterator_Index const it=Iterator_Index(0))</td></tr>
 <tr class="separator:a657f930d43783b2f9ff84a219b19d245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba9b7e3e01a011595712fcaa6fb3a678"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1table.html">table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aba9b7e3e01a011595712fcaa6fb3a678">merge</a> (<a class="el" href="structcudf_1_1table.html">table</a> const  &amp;left_table, <a class="el" href="structcudf_1_1table.html">table</a> const  &amp;right_table, std::vector&lt; gdf_size_type &gt; const  &amp;key_cols, std::vector&lt; order_by_type &gt; const  &amp;asc_desc, bool nulls_are_smallest=false)</td></tr>
+<tr class="memdesc:aba9b7e3e01a011595712fcaa6fb3a678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge sorted tables.  <a href="#aba9b7e3e01a011595712fcaa6fb3a678">More...</a><br /></td></tr>
+<tr class="separator:aba9b7e3e01a011595712fcaa6fb3a678"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34eb2aea42d4ee97fb98cc4b38dabd7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__scalar.html">gdf_scalar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a34eb2aea42d4ee97fb98cc4b38dabd7c">reduce</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> *col, cudf::reduction::operators op, gdf_dtype output_dtype, gdf_size_type ddof=1)</td></tr>
 <tr class="memdesc:a34eb2aea42d4ee97fb98cc4b38dabd7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the reduction of the values in all rows of a column This function does not detect overflows in reductions. Using a higher precision <code>dtype</code> may prevent overflow. Only <code>min</code> and <code>max</code> ops are supported for reduction of non-arithmetic types (date32, timestamp, category...). The null values are skipped for the operation. If the column is empty, the member is_valid of the output <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information. ">gdf_scalar</a> will contain <code>false</code>.  <a href="#a34eb2aea42d4ee97fb98cc4b38dabd7c">More...</a><br /></td></tr>
 <tr class="separator:a34eb2aea42d4ee97fb98cc4b38dabd7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1612,6 +1615,58 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aba9b7e3e01a011595712fcaa6fb3a678"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba9b7e3e01a011595712fcaa6fb3a678">&#9670;&nbsp;</a></span>merge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcudf_1_1table.html">table</a> cudf::merge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcudf_1_1table.html">table</a> const &amp;&#160;</td>
+          <td class="paramname"><em>left_table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcudf_1_1table.html">table</a> const &amp;&#160;</td>
+          <td class="paramname"><em>right_table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; gdf_size_type &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>key_cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; order_by_type &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>asc_desc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>nulls_are_smallest</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Merge sorted tables. </p>
+<p>Merges two sorted tables (including null values) into one sorted table containing data from both tables.</p>
+<p>Example: input: table 1 =&gt; col 1 {0, 1, 2, 3} col 2 {4, 5, 6, 7} table 2 =&gt; col 1 {1, 2} col 2 {8, 9} output: table =&gt; col 1 {0, 1, 1, 2, 2, 3} col 2 {4, 5, 8, 6, 9, 7}</p>
+<p>[in] left_table A sorted table to be merged [in] right_table A sorted table to be merged [in] key_cols Indices of left_cols and right_cols to be used for comparison criteria [in] asc_desc Sort order types of columns indexed by key_cols [in] nulls_are_smallest Flag indicating is nulls are to be treated as the smallest value</p>
+<p>A table containing sorted data from left_table and right_table </p>
 
 </div>
 </div>

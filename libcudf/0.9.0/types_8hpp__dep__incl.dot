@@ -104,8 +104,6 @@ digraph "types.hpp"
   Node44 -> Node28 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node44 -> Node54 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node54 [label="binaryop.hpp",height=0.2,width=0.4,color="red", fillcolor="white", style="filled",URL="$binaryop_8hpp_source.html"];
-  Node54 -> Node55 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node55 [label="type.h",height=0.2,width=0.4,color="red", fillcolor="white", style="filled",URL="$type_8h_source.html"];
   Node54 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node44 -> Node58 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node58 [label="io_types.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$io__types_8hpp_source.html"];
@@ -135,17 +133,20 @@ digraph "types.hpp"
   Node66 [label="bitmask.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bitmask_8hpp_source.html"];
   Node66 -> Node22 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node44 -> Node67 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node67 [label="reduction.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$reduction_8hpp_source.html"];
+  Node67 [label="merge.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$merge_8hpp_source.html"];
   Node44 -> Node68 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node68 [label="replace.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$replace_8hpp_source.html"];
+  Node68 [label="reduction.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$reduction_8hpp_source.html"];
   Node44 -> Node69 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node69 [label="rolling.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$rolling_8hpp_source.html"];
+  Node69 [label="replace.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$replace_8hpp_source.html"];
   Node44 -> Node70 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node70 [label="stream_compaction.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stream__compaction_8hpp_source.html"];
+  Node70 [label="rolling.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$rolling_8hpp_source.html"];
+  Node44 -> Node71 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node71 [label="stream_compaction.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stream__compaction_8hpp_source.html"];
   Node42 -> Node59 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node19 -> Node61 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node19 -> Node64 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node19 -> Node66 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node19 -> Node68 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node19 -> Node70 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 -> Node67 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 -> Node69 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 -> Node71 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }
