@@ -8,14 +8,11 @@ var searchData=
   ['mappedfile',['MappedFile',['../classMappedFile.html',1,'']]],
   ['mathopdispatcher',['MathOpDispatcher',['../structMathOpDispatcher.html',1,'']]],
   ['max',['max',['../structcudf_1_1reduction_1_1op_1_1max.html',1,'cudf::reduction::op::max'],['../structstd_1_1numeric__limits_3_01cudf_1_1detail_1_1wrapper_3_01T_00_01type__id_01_4_01_4.html#ad1e39a19122aedffc60a7d4f7f673ba5',1,'std::numeric_limits&lt; cudf::detail::wrapper&lt; T, type_id &gt; &gt;::max()']]],
-  ['max_5fop',['max_op',['../structmax__op.html',1,'']]],
   ['mean',['mean',['../structcudf_1_1reduction_1_1op_1_1mean.html',1,'cudf::reduction::op']]],
   ['meanvar',['meanvar',['../structcudf_1_1meanvar.html',1,'cudf::meanvar&lt; ElementType &gt;'],['../structcudf_1_1meanvar.html#a450a9c50caa287b162b87e177c6a5b65',1,'cudf::meanvar::meanvar()']]],
   ['merge',['merge',['../namespacecudf.html#aba9b7e3e01a011595712fcaa6fb3a678',1,'cudf']]],
   ['messageinfo',['MessageInfo',['../structIpcParser_1_1MessageInfo.html',1,'IpcParser']]],
   ['min',['min',['../structcudf_1_1reduction_1_1op_1_1min.html',1,'cudf::reduction::op::min'],['../structstd_1_1numeric__limits_3_01cudf_1_1detail_1_1wrapper_3_01T_00_01type__id_01_4_01_4.html#a0e88d475e6cccf2f67ecc3c4283e84cb',1,'std::numeric_limits&lt; cudf::detail::wrapper&lt; T, type_id &gt; &gt;::min()']]],
-  ['min_5fop',['min_op',['../structmin__op.html',1,'']]],
   ['modulo_5fpartitioner',['modulo_partitioner',['../structmodulo__partitioner.html',1,'']]],
-  ['multi_5fpass_5favg_5ffunctor',['multi_pass_avg_functor',['../structmulti__pass__avg__functor.html',1,'']]],
   ['murmurhash3_5f32',['MurmurHash3_32',['../structMurmurHash3__32.html',1,'']]]
 ];

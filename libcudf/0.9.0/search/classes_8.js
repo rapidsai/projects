@@ -7,7 +7,5 @@ var searchData=
   ['int_5ffastdiv',['int_fastdiv',['../classint__fastdiv.html',1,'']]],
   ['integral_5fcheck',['integral_check',['../structcudf_1_1detail_1_1integral__check.html',1,'cudf::detail']]],
   ['intermediate',['intermediate',['../structcudf_1_1reduction_1_1op_1_1mean_1_1intermediate.html',1,'cudf::reduction::op::mean::intermediate&lt; ResultType &gt;'],['../structcudf_1_1reduction_1_1op_1_1variance_1_1intermediate.html',1,'cudf::reduction::op::variance::intermediate&lt; ResultType &gt;'],['../structcudf_1_1reduction_1_1op_1_1standard__deviation_1_1intermediate.html',1,'cudf::reduction::op::standard_deviation::intermediate&lt; ResultType &gt;']]],
-  ['ipcparser',['IpcParser',['../classIpcParser.html',1,'']]],
-  ['is_5fsame_5ffunctor',['is_same_functor',['../structis__same__functor.html',1,'']]],
-  ['is_5fsame_5ffunctor_3c_20t_2c_20t_20_3e',['is_same_functor&lt; T, T &gt;',['../structis__same__functor_3_01T_00_01T_01_4.html',1,'']]]
+  ['ipcparser',['IpcParser',['../classIpcParser.html',1,'']]]
 ];

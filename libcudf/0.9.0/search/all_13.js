@@ -19,7 +19,6 @@ var searchData=
   ['true_5fvalues',['true_values',['../structcudf_1_1io_1_1csv_1_1reader__options.html#afc8fdf619b176834d8192de541986217',1,'cudf::io::csv::reader_options::true_values()'],['../structcudf_1_1csv__read__arg.html#af215196078ba8b166f8691e927666b42',1,'cudf::csv_read_arg::true_values()']]],
   ['type_5finfo_2ehpp',['type_info.hpp',['../type__info_8hpp.html',1,'']]],
   ['type_5fname',['type_name',['../structcudf_1_1binops_1_1jit_1_1type__name.html',1,'cudf::binops::jit']]],
-  ['typed_5fgroupby_5ffunctor',['typed_groupby_functor',['../structtyped__groupby__functor.html',1,'']]],
   ['types_2ehpp',['types.hpp',['../types_8hpp.html',1,'']]],
   ['typesatomiccasimpl',['typesAtomicCASImpl',['../structcudf_1_1detail_1_1typesAtomicCASImpl.html',1,'cudf::detail']]],
   ['typesatomiccasimpl_3c_20t_2c_201_20_3e',['typesAtomicCASImpl&lt; T, 1 &gt;',['../structcudf_1_1detail_1_1typesAtomicCASImpl_3_01T_00_011_01_4.html',1,'cudf::detail']]],

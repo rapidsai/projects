@@ -50,7 +50,6 @@ var searchData=
   ['stripeinformation',['StripeInformation',['../structcudf_1_1io_1_1orc_1_1StripeInformation.html',1,'cudf::io::orc']]],
   ['sum',['sum',['../structcudf_1_1reduction_1_1op_1_1sum.html',1,'cudf::reduction::op']]],
   ['sum_5fof_5fsquares',['sum_of_squares',['../structcudf_1_1reduction_1_1op_1_1sum__of__squares.html',1,'cudf::reduction::op']]],
-  ['sum_5fop',['sum_op',['../structsum__op.html',1,'']]],
   ['sumbrackets',['sumBrackets',['../parsing__utils_8cu.html#a89a461bfca75ab83fecf2335f193e50d',1,'parsing_utils.cu']]],
   ['sumbracketskernel',['sumBracketsKernel',['../parsing__utils_8cu.html#a4d604c4937fc5680977b22edabddc34f',1,'parsing_utils.cu']]]
 ];

@@ -3,17 +3,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node321 [label="BaseTraits",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node321 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node0 [label="cub::NumericTraits\l\< cudf::bool8 \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structcub_1_1NumericTraits_3_01cudf_1_1bool8_01_4.html"];
-  Node321 -> Node323 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node323 [label="cub::NumericTraits\l\< cudf::category \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structcub_1_1NumericTraits_3_01cudf_1_1category_01_4.html"];
-  Node321 -> Node324 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node324 [label="cub::NumericTraits\l\< cudf::date32 \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structcub_1_1NumericTraits_3_01cudf_1_1date32_01_4.html"];
-  Node321 -> Node325 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node325 [label="cub::NumericTraits\l\< cudf::date64 \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structcub_1_1NumericTraits_3_01cudf_1_1date64_01_4.html"];
-  Node321 -> Node326 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node326 [label="cub::NumericTraits\l\< cudf::nvstring_category \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structcub_1_1NumericTraits_3_01cudf_1_1nvstring__category_01_4.html"];
-  Node321 -> Node327 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node327 [label="cub::NumericTraits\l\< cudf::timestamp \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structcub_1_1NumericTraits_3_01cudf_1_1timestamp_01_4.html"];
+  Node0 [label="cudf::binops::compiled\l::BitwiseOp\< F \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structcudf_1_1binops_1_1compiled_1_1BitwiseOp.html"];
 }

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['aggregation_5foperations_2ehpp',['aggregation_operations.hpp',['../aggregation__operations_8hpp.html',1,'']]]
+  ['bitmask_5fops_2ehpp',['bitmask_ops.hpp',['../bitmask__ops_8hpp.html',1,'']]]
 ];

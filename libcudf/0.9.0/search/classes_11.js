@@ -18,6 +18,5 @@ var searchData=
   ['stripefooter',['StripeFooter',['../structcudf_1_1io_1_1orc_1_1StripeFooter.html',1,'cudf::io::orc']]],
   ['stripeinformation',['StripeInformation',['../structcudf_1_1io_1_1orc_1_1StripeInformation.html',1,'cudf::io::orc']]],
   ['sum',['sum',['../structcudf_1_1reduction_1_1op_1_1sum.html',1,'cudf::reduction::op']]],
-  ['sum_5fof_5fsquares',['sum_of_squares',['../structcudf_1_1reduction_1_1op_1_1sum__of__squares.html',1,'cudf::reduction::op']]],
-  ['sum_5fop',['sum_op',['../structsum__op.html',1,'']]]
+  ['sum_5fof_5fsquares',['sum_of_squares',['../structcudf_1_1reduction_1_1op_1_1sum__of__squares.html',1,'cudf::reduction::op']]]
 ];
