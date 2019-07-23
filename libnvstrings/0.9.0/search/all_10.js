@@ -10,7 +10,7 @@ var searchData=
   ['replace_5fwith_5fbackrefs',['replace_with_backrefs',['../classNVStrings.html#a52cdca3b0e21df2a987942571b253dca',1,'NVStrings']]],
   ['rfind',['rfind',['../classNVStrings.html#ab6c542e1cc5e026aa63c2eca7d788b06',1,'NVStrings']]],
   ['right',['right',['../classNVStrings.html#ae632539abce4f345d9c6995cc407281ea410c51e93c57cfd4df319a7b925a2dec',1,'NVStrings']]],
-  ['rjust',['rjust',['../classNVStrings.html#aff96491725f1e86bf1bf39f0faf2967f',1,'NVStrings']]],
+  ['rjust',['rjust',['../classNVStrings.html#ac201e235b531e52c251b41207124ee08',1,'NVStrings']]],
   ['rpartition',['rpartition',['../classNVStrings.html#a2401db8f4e2de76dd9531b1507889231',1,'NVStrings']]],
   ['rsplit',['rsplit',['../classNVStrings.html#a1e6307c66386d04d9762620bd8c47435',1,'NVStrings::rsplit(const char *delimiter, int maxsplit, std::vector&lt; NVStrings *&gt; &amp;results)'],['../classNVStrings.html#a28e4bfcfc4350d05c199baa979089775',1,'NVStrings::rsplit(int maxsplit, std::vector&lt; NVStrings *&gt; &amp;results)']]],
   ['rsplit_5frecord',['rsplit_record',['../classNVStrings.html#ac6cc5e78334a1da6c1153e565a2b9ae1',1,'NVStrings::rsplit_record(const char *delimiter, int maxsplit, std::vector&lt; NVStrings *&gt; &amp;results)'],['../classNVStrings.html#a2645f2f216a77d485db87fcd0489ada6',1,'NVStrings::rsplit_record(int maxsplit, std::vector&lt; NVStrings *&gt; &amp;results)']]],

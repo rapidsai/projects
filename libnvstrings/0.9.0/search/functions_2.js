@@ -1,8 +1,8 @@
 var searchData=
 [
   ['capitalize',['capitalize',['../classNVStrings.html#a2c71da05b27c0df1488a55ca5985f266',1,'NVStrings']]],
-  ['cat',['cat',['../classNVStrings.html#a6bd101e83b76d12667d4061e34e1833e',1,'NVStrings::cat(NVStrings *others, const char *separator, const char *narep=0)'],['../classNVStrings.html#ac19bf8db0608802e521cef3358e378aa',1,'NVStrings::cat(std::vector&lt; NVStrings *&gt; &amp;others, const char *separator, const char *narep=0)']]],
-  ['center',['center',['../classNVStrings.html#ac896e5ce494a3d901e598822a7ed61d9',1,'NVStrings']]],
+  ['cat',['cat',['../classNVStrings.html#aa60b00b99fe38631ab3889b1aebe7080',1,'NVStrings::cat(NVStrings *others, const char *separator, const char *narep=nullptr)'],['../classNVStrings.html#a674d40d351acb747feedea62b50bcf27',1,'NVStrings::cat(std::vector&lt; NVStrings *&gt; &amp;others, const char *separator, const char *narep=nullptr)']]],
+  ['center',['center',['../classNVStrings.html#a9824a09656fc666f451842a3641334d0',1,'NVStrings']]],
   ['compare',['compare',['../classNVStrings.html#a97f105ecf0e8ecc2f9b1a2b8f2df99e6',1,'NVStrings']]],
   ['compute_5fstatistics',['compute_statistics',['../classNVStrings.html#add6efee15f3cbc7cf2f433c60326e86e',1,'NVStrings']]],
   ['contains',['contains',['../classNVStrings.html#aeeaf5bdc198726eabe0adaf6b1269b6a',1,'NVStrings']]],
@@ -12,7 +12,7 @@ var searchData=
   ['count_5fre',['count_re',['../classNVStrings.html#a89d30089eb87e6ae497d0a9fa6bb03a4',1,'NVStrings']]],
   ['create_5fcustring_5findex',['create_custring_index',['../classNVStrings.html#a0ddf0181988136d5bf3cae02f7ba375a',1,'NVStrings']]],
   ['create_5ffrom_5farray',['create_from_array',['../classNVStrings.html#abdf94e76d98a14f33c80bb0533eda899',1,'NVStrings::create_from_array()'],['../classNVCategory.html#a430917c4a4fb67316b4b991ae678a26c',1,'NVCategory::create_from_array()']]],
-  ['create_5ffrom_5fbools',['create_from_bools',['../classNVStrings.html#ad15813ac17c4a67dbee62d3c06c0a66f',1,'NVStrings']]],
+  ['create_5ffrom_5fbools',['create_from_bools',['../classNVStrings.html#a83d5f80ad3c34cb311fe449ed0e655cf',1,'NVStrings']]],
   ['create_5ffrom_5fcategories',['create_from_categories',['../classNVCategory.html#a70befd06ac8817201e72275dd8ae9275',1,'NVCategory']]],
   ['create_5ffrom_5fcsv',['create_from_csv',['../classNVStrings.html#a91c022a172bc0988862d1ebc09e099e4',1,'NVStrings']]],
   ['create_5ffrom_5findex',['create_from_index',['../classNVStrings.html#a8cadd917f9e5a1336eb1ba7416abc988',1,'NVStrings::create_from_index()'],['../classNVCategory.html#a6ecb7cd1bf614bbcd6007d8d0cf943c8',1,'NVCategory::create_from_index()']]],

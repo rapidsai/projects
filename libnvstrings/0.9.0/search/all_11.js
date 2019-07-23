@@ -6,7 +6,7 @@ var searchData=
   ['set_5fnull_5fbitarray',['set_null_bitarray',['../classNVStrings.html#af13cc0d4eae84b8c11393c2a6f40251f',1,'NVStrings::set_null_bitarray()'],['../classNVCategory.html#a628aa25b77207997a6dd3d1b5ea483d4',1,'NVCategory::set_null_bitarray()']]],
   ['size',['size',['../classNVStrings.html#ac0e454d488b47498f7171acf4980990a',1,'NVStrings::size()'],['../classNVCategory.html#a597cd442ecce8a96af5e585683eae1e4',1,'NVCategory::size()']]],
   ['slice',['slice',['../classNVStrings.html#a3b6c28d2717be7f596031b492335b3b0',1,'NVStrings']]],
-  ['slice_5ffrom',['slice_from',['../classNVStrings.html#a0da7fb4acd3955079cf275d1bd6d1a76',1,'NVStrings']]],
+  ['slice_5ffrom',['slice_from',['../classNVStrings.html#a5f967a5409d75e09b3d410b8f04b3dd1',1,'NVStrings']]],
   ['slice_5freplace',['slice_replace',['../classNVStrings.html#a80257b75625b7abfa472269c1f73bfb9',1,'NVStrings']]],
   ['sort',['sort',['../classNVStrings.html#a3f982345feb2bb6c313cb465d68a4e58',1,'NVStrings']]],
   ['sorttype',['sorttype',['../classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831',1,'NVStrings']]],

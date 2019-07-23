@@ -6,5 +6,5 @@ var searchData=
   ['find_5fmultiple',['find_multiple',['../classNVStrings.html#a1915b944e3c49ecf9011f9ab24737f21',1,'NVStrings']]],
   ['findall',['findall',['../classNVStrings.html#a07bd6570c16fe0cce0820f5ddeef4046',1,'NVStrings']]],
   ['findall_5frecord',['findall_record',['../classNVStrings.html#ab058e14e28403706ce4ac8b76c8c23e8',1,'NVStrings']]],
-  ['ftos',['ftos',['../classNVStrings.html#ae7fbea8e4f1fe486f8043a92896f6065',1,'NVStrings']]]
+  ['ftos',['ftos',['../classNVStrings.html#a4151197106a18de97c4b5a2eac1e88a4',1,'NVStrings']]]
 ];
