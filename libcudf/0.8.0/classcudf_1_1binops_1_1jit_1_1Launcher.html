@@ -68,7 +68,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classcudf_1_1binops_1_1jit_1_1Launcher-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">cudf::binops::jit::Launcher Class Reference</div>  </div>
@@ -82,6 +81,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a6e7a3e3640f8982d2212d941042f4720"><td class="memItemLeft" align="right" valign="top"><a id="a6e7a3e3640f8982d2212d941042f4720"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Launcher</b> (const std::string &amp;ptx)</td></tr>
+<tr class="separator:a6e7a3e3640f8982d2212d941042f4720"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af46e5690d534dce8fe6fc51dbf22f59e"><td class="memItemLeft" align="right" valign="top"><a id="af46e5690d534dce8fe6fc51dbf22f59e"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Launcher</b> (<a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a> &amp;&amp;)</td></tr>
 <tr class="separator:af46e5690d534dce8fe6fc51dbf22f59e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -94,111 +96,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeed175938024bd8e28b8bcc61fc8a10d"><td class="memItemLeft" align="right" valign="top"><a id="aeed175938024bd8e28b8bcc61fc8a10d"></a>
 <a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a> &amp;)=delete</td></tr>
 <tr class="separator:aeed175938024bd8e28b8bcc61fc8a10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca4d778170be3e485fc0232c10d09ef3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html#aca4d778170be3e485fc0232c10d09ef3">kernel</a> (std::string &amp;&amp;value)</td></tr>
-<tr class="memdesc:aca4d778170be3e485fc0232c10d09ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the kernel name that this launcher will compile and launch.  <a href="#aca4d778170be3e485fc0232c10d09ef3">More...</a><br /></td></tr>
-<tr class="separator:aca4d778170be3e485fc0232c10d09ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7441e0b380798f862da89f974aeca4f"><td class="memTemplParams" colspan="2">template&lt;typename ... Args&gt; </td></tr>
-<tr class="memitem:af7441e0b380798f862da89f974aeca4f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html#af7441e0b380798f862da89f974aeca4f">instantiate</a> (gdf_binary_operator ope, Operator::Type type, Args &amp;&amp;... args)</td></tr>
-<tr class="memdesc:af7441e0b380798f862da89f974aeca4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to generate vector containing all template types for a JIT kernel. This vector is used to instantiate the kernel code for one set of types.  <a href="#af7441e0b380798f862da89f974aeca4f">More...</a><br /></td></tr>
-<tr class="separator:af7441e0b380798f862da89f974aeca4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf107234246879078b3519ceab69d53f"><td class="memTemplParams" colspan="2">template&lt;typename ... Args&gt; </td></tr>
+<tr class="memitem:adf107234246879078b3519ceab69d53f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html#adf107234246879078b3519ceab69d53f">setKernelInst</a> (std::string &amp;&amp;kernName, gdf_binary_operator ope, Operator::Type type, Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:adf107234246879078b3519ceab69d53f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the kernel to launch using this launcher.  <a href="#adf107234246879078b3519ceab69d53f">More...</a><br /></td></tr>
+<tr class="separator:adf107234246879078b3519ceab69d53f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8132873faedfe2fcc55935582f2a35da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html#a8132873faedfe2fcc55935582f2a35da">setProgram</a> (std::string prog_file_name)</td></tr>
+<tr class="memdesc:a8132873faedfe2fcc55935582f2a35da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Program for this launcher.  <a href="#a8132873faedfe2fcc55935582f2a35da">More...</a><br /></td></tr>
+<tr class="separator:a8132873faedfe2fcc55935582f2a35da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a062ba7a21477b960df9536335fa22df6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html#a062ba7a21477b960df9536335fa22df6">setProgram</a> (std::string prog_file_name, std::string ptx)</td></tr>
+<tr class="memdesc:a062ba7a21477b960df9536335fa22df6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Program for this launcher.  <a href="#a062ba7a21477b960df9536335fa22df6">More...</a><br /></td></tr>
+<tr class="separator:a062ba7a21477b960df9536335fa22df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74dc5440783c944662bb703357eb75a1"><td class="memItemLeft" align="right" valign="top">gdf_error&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html#a74dc5440783c944662bb703357eb75a1">launch</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> *out, <a class="el" href="structgdf__column__.html">gdf_column</a> *lhs, <a class="el" href="structgdf__scalar.html">gdf_scalar</a> *rhs)</td></tr>
 <tr class="memdesc:a74dc5440783c944662bb703357eb75a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle the Jitify API to instantiate and launch using information contained in the members of <code>this</code>  <a href="#a74dc5440783c944662bb703357eb75a1">More...</a><br /></td></tr>
 <tr class="separator:a74dc5440783c944662bb703357eb75a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af05e5dd9db188eccf8e713fff63523ee"><td class="memItemLeft" align="right" valign="top">gdf_error&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html#af05e5dd9db188eccf8e713fff63523ee">launch</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> *out, <a class="el" href="structgdf__column__.html">gdf_column</a> *lhs, <a class="el" href="structgdf__column__.html">gdf_column</a> *rhs)</td></tr>
 <tr class="memdesc:af05e5dd9db188eccf8e713fff63523ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle the Jitify API to instantiate and launch using information contained in the members of <code>this</code>  <a href="#af05e5dd9db188eccf8e713fff63523ee">More...</a><br /></td></tr>
 <tr class="separator:af05e5dd9db188eccf8e713fff63523ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a77956093d302d0b07110e5ae9b3e5c8c"><td class="memItemLeft" align="right" valign="top"><a id="a77956093d302d0b07110e5ae9b3e5c8c"></a>
-static <a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a>&#160;</td><td class="memItemRight" valign="bottom"><b>launch</b> ()</td></tr>
-<tr class="separator:a77956093d302d0b07110e5ae9b3e5c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class used to handle compilation and execution of JIT kernels. </p>
 <h2>------------------------------------------------------------------------&mdash;* </h2>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="af7441e0b380798f862da89f974aeca4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7441e0b380798f862da89f974aeca4f">&#9670;&nbsp;</a></span>instantiate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ... Args&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a>&amp; cudf::binops::jit::Launcher::instantiate </td>
-          <td>(</td>
-          <td class="paramtype">gdf_binary_operator&#160;</td>
-          <td class="paramname"><em>ope</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Operator::Type&#160;</td>
-          <td class="paramname"><em>type</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Args &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>args</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Method to generate vector containing all template types for a JIT kernel. This vector is used to instantiate the kernel code for one set of types. </p>
-<p>------------------------------------------------------------------------&mdash;* </p><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Args</td><td>Output dtype, LHS dtype, RHS dtype </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">type</td><td><a class="el" href="classcudf_1_1binops_1_1jit_1_1Operator.html">Operator</a> type (direct (lhs op rhs) or reverse (rhs op lhs)) </td></tr>
-    <tr><td class="paramname">args</td><td>gdf_column* output, lhs, rhs <h2><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html" title="Class used to handle compilation and execution of JIT kernels. ">Launcher</a>&amp; ref to this launcehr object </h2>
-</td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aca4d778170be3e485fc0232c10d09ef3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca4d778170be3e485fc0232c10d09ef3">&#9670;&nbsp;</a></span>kernel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a> &amp; cudf::binops::jit::Launcher::kernel </td>
-          <td>(</td>
-          <td class="paramtype">std::string &amp;&amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the kernel name that this launcher will compile and launch. </p>
-<p>------------------------------------------------------------------------&mdash;* </p><h2>value kernel name </h2>
-
-</div>
-</div>
 <a id="a74dc5440783c944662bb703357eb75a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a74dc5440783c944662bb703357eb75a1">&#9670;&nbsp;</a></span>launch() <span class="overload">[1/2]</span></h2>
 
@@ -286,6 +204,138 @@ template&lt;typename ... Args&gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="adf107234246879078b3519ceab69d53f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf107234246879078b3519ceab69d53f">&#9670;&nbsp;</a></span>setKernelInst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a>&amp; cudf::binops::jit::Launcher::setKernelInst </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>kernName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_binary_operator&#160;</td>
+          <td class="paramname"><em>ope</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Operator::Type&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the kernel to launch using this launcher. </p>
+<p>------------------------------------------------------------------------&mdash;* Method to generate vector containing all template types for a JIT kernel. This vector is used to get the compiled kernel for one set of types and set it as the kernel to launch using this launcher.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Args</td><td>Output dtype, LHS dtype, RHS dtype </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td><a class="el" href="classcudf_1_1binops_1_1jit_1_1Operator.html">Operator</a> type (direct (lhs op rhs) or reverse (rhs op lhs)) </td></tr>
+    <tr><td class="paramname">args</td><td>gdf_column* output, lhs, rhs <h2><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html" title="Class used to handle compilation and execution of JIT kernels. ">Launcher</a>&amp; ref to this launcehr object </h2>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8132873faedfe2fcc55935582f2a35da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8132873faedfe2fcc55935582f2a35da">&#9670;&nbsp;</a></span>setProgram() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a> &amp; cudf::binops::jit::Launcher::setProgram </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>prog_file_name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Program for this launcher. </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prog_file_name</td><td>Name to give to the program held by this <a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html" title="Class used to handle compilation and execution of JIT kernels. ">Launcher</a>. <h2><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html" title="Class used to handle compilation and execution of JIT kernels. ">Launcher</a>&amp; ref to this launcher object </h2>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a062ba7a21477b960df9536335fa22df6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a062ba7a21477b960df9536335fa22df6">&#9670;&nbsp;</a></span>setProgram() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html">Launcher</a> &amp; cudf::binops::jit::Launcher::setProgram </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>prog_file_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>ptx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Program for this launcher. </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prog_file_name</td><td>Name to give to the program held by this <a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html" title="Class used to handle compilation and execution of JIT kernels. ">Launcher</a>.</td></tr>
+    <tr><td class="paramname">ptx</td><td>Additional ptx code that contains a user defined function to be used.</td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="el" href="classcudf_1_1binops_1_1jit_1_1Launcher.html" title="Class used to handle compilation and execution of JIT kernels. ">Launcher</a>&amp; ref to this launcher object </h2>
 
 </div>
 </div>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['table',['table',['../structcudf_1_1table.html#a9e4b67d3faebe8c996825a47dd94a7de',1,'cudf::table::table(std::vector&lt; gdf_column *&gt; const &amp;cols)'],['../structcudf_1_1table.html#a8db2758bf56971a9155eb73b51b30ae7',1,'cudf::table::table(gdf_column *cols[], gdf_size_type num_cols)'],['../structcudf_1_1table.html#a321f20cb1d0ab03817186a426d4184de',1,'cudf::table::table(std::initializer_list&lt; gdf_column *&gt; list)'],['../structcudf_1_1table.html#acc660686dcc23cfad1712c05e3b5e345',1,'cudf::table::table(gdf_size_type num_rows, std::vector&lt; gdf_dtype &gt; const &amp;dtypes, bool allocate_bitmasks=false, bool all_valid=false, cudaStream_t stream=0)']]]
+  ['validate',['validate',['../namespacecudf.html#afa70e889e2b83eba15ed8e8e864dd3ff',1,'cudf']]],
+  ['value_5faccessor',['value_accessor',['../structcudf_1_1value__accessor_3_01ElementType_00_01ResultType_00_01true_01_4.html#a41895ae13439d9d29ae26beb1f92e30e',1,'cudf::value_accessor&lt; ElementType, ResultType, true &gt;::value_accessor()'],['../structcudf_1_1value__accessor_3_01ElementType_00_01ResultType_00_01false_01_4.html#a13eb6daa3d858dc4b390d82461e5a4a1',1,'cudf::value_accessor&lt; ElementType, ResultType, false &gt;::value_accessor()']]]
 ];

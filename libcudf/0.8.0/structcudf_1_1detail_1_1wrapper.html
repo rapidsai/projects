@@ -98,9 +98,14 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afc10094e848bc5bcd7e0def088946abe"><td class="memItemLeft" align="right" valign="top"><a id="afc10094e848bc5bcd7e0def088946abe"></a>
-CUDA_HOST_DEVICE_CALLABLE constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>wrapper</b> (T v)</td></tr>
-<tr class="separator:afc10094e848bc5bcd7e0def088946abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdecc095524443a184776746a9345ded"><td class="memTemplParams" colspan="2"><a id="acdecc095524443a184776746a9345ded"></a>
+template&lt;gdf_dtype dtype = type_id, std::enable_if_t&lt;(dtype !=GDF_BOOL8)&gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:acdecc095524443a184776746a9345ded"><td class="memTemplItemLeft" align="right" valign="top">CUDA_HOST_DEVICE_CALLABLE constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><b>wrapper</b> (T v)</td></tr>
+<tr class="separator:acdecc095524443a184776746a9345ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdecc095524443a184776746a9345ded"><td class="memTemplParams" colspan="2"><a id="acdecc095524443a184776746a9345ded"></a>
+template&lt;gdf_dtype dtype = type_id, std::enable_if_t&lt;(dtype==GDF_BOOL8)&gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:acdecc095524443a184776746a9345ded"><td class="memTemplItemLeft" align="right" valign="top">CUDA_HOST_DEVICE_CALLABLE constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><b>wrapper</b> (T v)</td></tr>
+<tr class="separator:acdecc095524443a184776746a9345ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa339ce3a23ed19183c4da6de271a2b11"><td class="memItemLeft" align="right" valign="top"><a id="aa339ce3a23ed19183c4da6de271a2b11"></a>
 CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memItemRight" valign="bottom"><b>operator value_type</b> () const</td></tr>
 <tr class="separator:aa339ce3a23ed19183c4da6de271a2b11"><td class="memSeparator" colspan="2">&#160;</td></tr>

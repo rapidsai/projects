@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cuML API Reference &mdash; cuml 0.8.0a documentation</title>
+  <title>cuML API Reference &mdash; cuml 0.8.0 documentation</title>
   
 
   
@@ -33,6 +33,7 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/params.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Welcome to cuML’s documentation!" href="index.html" /> 
@@ -86,16 +87,42 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">cuML API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#linear-regression">Linear Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ridge-regression">Ridge Regression</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#stochastic-gradient-descent">Stochastic Gradient Descent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#nearest-neighbors">Nearest Neighbors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#k-means-clustering">K-Means Clustering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dbscan">DBSCAN</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#kalman-filter">Kalman Filter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#principal-component-analysis">Principal Component Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#truncated-svd">Truncated SVD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#umap">UMAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preprocessing">Preprocessing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#model-selection-and-data-splitting">Model Selection and Data Splitting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#label-encoding">Label Encoding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#regression-and-classification">Regression and Classification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#linear-regression">Linear Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logistic-regression">Logistic Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ridge-regression">Ridge Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lasso-regression">Lasso Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#elasticnet-regression">ElasticNet Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stochastic-gradient-descent">Stochastic Gradient Descent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#random-forest">Random Forest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quasi-newton">Quasi-Newton</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#clustering">Clustering</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#k-means-clustering">K-Means Clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dbscan">DBSCAN</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#dimensionality-reduction-and-manifold-learning">Dimensionality Reduction and Manifold Learning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#principal-component-analysis">Principal Component Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#truncated-svd">Truncated SVD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#umap">UMAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#random-projections">Random Projections</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#neighbors">Neighbors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#nearest-neighbors">Nearest Neighbors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#time-series">Time Series</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#kalman-filter">Kalman Filter</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -164,8 +191,149 @@
             
   <div class="section" id="cuml-api-reference">
 <h1>cuML API Reference<a class="headerlink" href="#cuml-api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="preprocessing">
+<h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="model-selection-and-data-splitting">
+<h3>Model Selection and Data Splitting<a class="headerlink" href="#model-selection-and-data-splitting" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><span class="target" id="module-cuml.preprocessing.model_selection"></span><dl class="function">
+<dt id="cuml.preprocessing.model_selection.train_test_split">
+<code class="sig-prename descclassname">cuml.preprocessing.model_selection.</code><code class="sig-name descname">train_test_split</code><span class="sig-paren">(</span><em class="sig-param">X:cudf.dataframe.dataframe.DataFrame, y:Union[str, cudf.dataframe.series.Series], train_size:Union[float, int]=0.8, shuffle:bool=True, seed:int=None</em><span class="sig-paren">)</span> &#x2192; Tuple[cudf.dataframe.dataframe.DataFrame, cudf.dataframe.dataframe.DataFrame, cudf.dataframe.dataframe.DataFrame, cudf.dataframe.dataframe.DataFrame]<a class="headerlink" href="#cuml.preprocessing.model_selection.train_test_split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Partitions the data into four collated dataframes, mimicing sklearn’s
+<cite>train_test_split</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">cudf.DataFrame</span></dt><dd><p>Data to split, has shape (n_samples, n_features)</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">str or cudf.Series</span></dt><dd><p>Set of labels for the data, either a series of shape (n_samples) or
+the string label of a column in X containing the labels</p>
+</dd>
+<dt><strong>train_size</strong><span class="classifier">float or int, optional</span></dt><dd><p>If float, represents the proportion [0, 1] of the data
+to be assigned to the training set. If an int, represents the number
+of instances to be assigned to the training set. Defaults to 0.8</p>
+</dd>
+<dt><strong>shuffle</strong><span class="classifier">bool, optional</span></dt><dd><p>Whether or not to shuffle inputs before splitting</p>
+</dd>
+<dt><strong>seed</strong><span class="classifier">int, optional</span></dt><dd><p>If shuffle is true, seeds the generator. Unseeded by default</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>X_train, X_test, y_train, y_test</strong><span class="classifier">cudf.DataFrame</span></dt><dd><p>Partitioned dataframes. If <cite>y</cite> was provided as a column name, the
+column was dropped from the <a href="#id1"><span class="problematic" id="id2">`</span></a>X`s</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="label-encoding">
+<h3>Label Encoding<a class="headerlink" href="#label-encoding" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="class">
+<dt id="cuml.preprocessing.LabelEncoder">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.preprocessing.</code><code class="sig-name descname">LabelEncoder</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.preprocessing.LabelEncoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>An nvcategory based implementation of ordinal label encoding</p>
+<p class="rubric">Examples</p>
+<p>Converting a categorical implementation to a numerical one</p>
+<p>Output:</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.preprocessing.LabelEncoder.fit" title="cuml.preprocessing.LabelEncoder.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.preprocessing.LabelEncoder.fit_transform" title="cuml.preprocessing.LabelEncoder.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.preprocessing.LabelEncoder.transform" title="cuml.preprocessing.LabelEncoder.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 68%" />
+<col style="width: 32%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>inverse_transform</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="cuml.preprocessing.LabelEncoder.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">y:cudf.dataframe.series.Series</em><span class="sig-paren">)</span> &#x2192; 'LabelEncoder'<a class="headerlink" href="#cuml.preprocessing.LabelEncoder.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit a LabelEncoder (nvcategory) instance to a set of categories</p>
+<dl class="simple">
+<dt>y<span class="classifier">cudf.Series</span></dt><dd><p>Series containing the categories to be encoded. It’s elements
+may or may not be unique</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>self</strong><span class="classifier">LabelEncoder</span></dt><dd><p>A fitted instance of itself to allow method chaining</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.preprocessing.LabelEncoder.fit_transform">
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">y:cudf.dataframe.series.Series</em><span class="sig-paren">)</span> &#x2192; cudf.dataframe.series.Series<a class="headerlink" href="#cuml.preprocessing.LabelEncoder.fit_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simultaneously fit and transform an input</p>
+<p>This is functionally equivalent to (but faster than)
+<cite>LabelEncoder().fit(y).transform(y)</cite></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.preprocessing.LabelEncoder.transform">
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">y:cudf.dataframe.series.Series</em><span class="sig-paren">)</span> &#x2192; cudf.dataframe.series.Series<a class="headerlink" href="#cuml.preprocessing.LabelEncoder.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform an input into its categorical keys.</p>
+<p>This is intended for use with small inputs relative to the size of the
+dataset. For fitting and transforming an entire dataset, prefer
+<cite>fit_transform</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">cudf.Series</span></dt><dd><p>Input keys to be transformed. Its values should match the
+categories given to <cite>fit</cite></p>
+</dd>
+<dt><strong>Returns</strong></dt><dd></dd>
+<dt><strong>——</strong></dt><dd></dd>
+<dt><strong>encoded</strong><span class="classifier">cudf.Series</span></dt><dd><p>The ordinally encoded input series</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><dl class="simple">
+<dt>KeyError</dt><dd><p>if a category appears that was not seen in <cite>fit</cite></p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="regression-and-classification">
+<h2>Regression and Classification<a class="headerlink" href="#regression-and-classification" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="linear-regression">
-<h2>Linear Regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">¶</a></h2>
+<h3>Linear Regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.LinearRegression">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">LinearRegression</code><a class="headerlink" href="#cuml.LinearRegression" title="Permalink to this definition">¶</a></dt>
@@ -227,7 +395,7 @@ is a regression task (predicting a continuous variable).</p>
 <span class="n">reg</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;intercept:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Intercept:&quot;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
 
 <span class="n">X_new</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
@@ -235,6 +403,7 @@ is a regression task (predicting a continuous variable).</p>
 <span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">preds</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
 
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Predictions:&quot;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -247,7 +416,7 @@ is a regression task (predicting a continuous variable).</p>
 <span class="n">Intercept</span><span class="p">:</span>
             <span class="mf">3.0</span>
 
-<span class="n">Preds</span><span class="p">:</span>
+<span class="n">Predictions</span><span class="p">:</span>
 
             <span class="mi">0</span> <span class="mf">15.999999</span>
             <span class="mi">1</span> <span class="mf">14.999999</span>
@@ -258,7 +427,7 @@ is a regression task (predicting a continuous variable).</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id5"><span class="problematic" id="id6">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id7"><span class="problematic" id="id8">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -349,8 +518,172 @@ is a regression task (predicting a continuous variable).</p>
 </dd></dl>
 
 </div>
+<div class="section" id="logistic-regression">
+<h3>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.LogisticRegression">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">LogisticRegression</code><a class="headerlink" href="#cuml.LogisticRegression" title="Permalink to this definition">¶</a></dt>
+<dd><p>LogisticRegression is a linear model that is used to model probability of
+occurrence of certain events, for example probability of success or fail of
+an event.</p>
+<p>cuML’s LogisticRegression can take array-like objects, either in host as
+NumPy arrays or in device (as Numba or __cuda_array_interface__ compliant).
+It provides both single-class (using sigmoid loss) and multiple-class
+(using softmax loss) variants, depending on the input variables.</p>
+<p>Only one solver option is currently available: Quasi-Newton (QN)
+algorithms. Even though it is presented as a single option, this solver
+resolves to two different algorithms underneath:</p>
+<ul class="simple">
+<li><p>Orthant-Wise Limited Memory Quasi-Newton (OWL-QN) if there is l1</p></li>
+</ul>
+<p>regularization
+- Limited Memory BFGS (L-BFGS) otherwise.</p>
+<p>Note that, just like in Scikit-learn, the bias will not be regularized.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>penalty: ‘none’, ‘l1’, ‘l2’, ‘elasticnet’ (default = ‘l2’)</strong></dt><dd><p>Used to specify the norm used in the penalization.
+If ‘none’ or ‘l2’ are selected, then L-BFGS solver will be used.
+If ‘l1’ is selected, solver OWL-QN will be used.
+If ‘elasticnet’ is selected, OWL-QN will be used if l1_ratio &gt; 0,
+otherwise L-BFGS will be used.</p>
+</dd>
+<dt><strong>tol: float (default = 1e-4)</strong></dt><dd><p>The training process will stop if current_loss &gt; previous_loss - tol</p>
+</dd>
+<dt><strong>C: float (default = 1.0)</strong></dt><dd><p>Inverse of regularization strength; must be a positive float.</p>
+</dd>
+<dt><strong>fit_intercept: boolean (default = True)</strong></dt><dd><p>If True, the model tries to correct for the global mean of y.
+If False, the model expects that you have centered the data.</p>
+</dd>
+<dt><strong>class_weight: None</strong></dt><dd><p>Custom class weighs are currently not supported.</p>
+</dd>
+<dt><strong>max_iter: int (default = 1000)</strong></dt><dd><p>Maximum number of iterations taken for the solvers to converge.</p>
+</dd>
+<dt><strong>verbose: bool (optional, default False)</strong></dt><dd><p>Controls verbosity of logging.</p>
+</dd>
+<dt><strong>l1_ratio: float or None, optional (default=None)</strong></dt><dd><p>The Elastic-Net mixing parameter, with <cite>0 &lt;= l1_ratio &lt;= 1</cite></p>
+</dd>
+<dt><strong>solver: ‘qn’, ‘lbfgs’, ‘owl’ (default=qn).</strong></dt><dd><p>Algorithm to use in the optimization problem. Currently only <cite>qn</cite> is
+supported, which automatically selects either L-BFGS or OWL-QN
+depending on the condictions of the l1 regularization described
+above. Options ‘lbfgs’ and ‘owl’ are just convenience values that
+end up using the same solver following the same rules.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>cuML’s LogisticRegression uses a different solver that the equivalent
+Scikit-learn except when there is no penalty and <cite>solver=lbfgs</cite> is
+chosen in Scikit-learn. This can cause (smaller) differences in the
+coefficients and predictions of the model, similar to difference when
+using different solvers in Scikit-learn.</p>
+<p>For additional docs, see Scikit-learn’s LogistRegression
+&lt;<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html">https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html</a>&gt;`_.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c1"># Both import methods supported</span>
+<span class="c1"># from cuml import LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">cuml.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">X</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">X</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">reg</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Intercept:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">intercept_</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
+
+<span class="n">X_new</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="n">preds</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Predictions:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>coef_: device array, shape (n_classes, n_features)</strong></dt><dd><p>The estimated coefficients for the linear regression model.</p>
+</dd>
+<dt><strong>intercept_: device array (n_classes, 1)</strong></dt><dd><p>The independent term. If <a href="#id9"><span class="problematic" id="id10">fit_intercept_</span></a> is False, will be 0.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LogisticRegression.fit" title="cuml.LogisticRegression.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<td><p>Fit the model with X and y.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.LogisticRegression.predict" title="cuml.LogisticRegression.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<td><p>Predicts the y for X.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cuml.LogisticRegression.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LogisticRegression.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model with X and y.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1).
+Acceptable formats: cuDF Series, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.LogisticRegression.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LogisticRegression.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the y for X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="ridge-regression">
-<h2>Ridge Regression<a class="headerlink" href="#ridge-regression" title="Permalink to this headline">¶</a></h2>
+<h3>Ridge Regression<a class="headerlink" href="#ridge-regression" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.Ridge">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">Ridge</code><a class="headerlink" href="#cuml.Ridge" title="Permalink to this definition">¶</a></dt>
@@ -358,9 +691,10 @@ is a regression task (predicting a continuous variable).</p>
 coefficients when predicting response y with a linear combination of the
 predictors in X. It can reduce the variance of the predictors, and improves
 the conditioning of the problem.</p>
-<p>cuML’s Ridge expects a cuDF DataFrame, and provides 3 algorithms SVD, Eig
-and CD to fit a linear model. SVD is more stable, but Eig (default) is much
-faster. CD uses Coordinate Descent and can be faster when data is large.</p>
+<p>cuML’s Ridge an array-like object or cuDF DataFrame, and provides 3
+algorithms: SVD, Eig and CD to fit a linear model. SVD is more stable,
+but Eig (default) is much faster. CD uses Coordinate Descent and can be
+faster when data is large.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -404,7 +738,7 @@ and much more.</p>
 <span class="kn">from</span> <span class="nn">cuml</span> <span class="kn">import</span> <span class="n">Ridge</span>
 <span class="kn">from</span> <span class="nn">cuml.linear_model</span> <span class="kn">import</span> <span class="n">Ridge</span>
 
-<span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">])</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1e-5</span><span class="p">])</span>
 <span class="n">ridge</span> <span class="o">=</span> <span class="n">Ridge</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">fit_intercept</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">normalize</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span>
               <span class="n">solver</span> <span class="o">=</span> <span class="s2">&quot;eig&quot;</span><span class="p">)</span>
 
@@ -414,10 +748,10 @@ and much more.</p>
 
 <span class="n">y</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="p">)</span>
 
-<span class="n">result_ridge</span> <span class="o">=</span> <span class="n">ridge</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_cudf</span><span class="p">,</span> <span class="n">y_cudf</span><span class="p">)</span>
+<span class="n">result_ridge</span> <span class="o">=</span> <span class="n">ridge</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">result_ridge</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;intercept:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Intercept:&quot;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">result_ridge</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
 
 <span class="n">X_new</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
@@ -425,6 +759,7 @@ and much more.</p>
 <span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">preds</span> <span class="o">=</span> <span class="n">result_ridge</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
 
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Predictions:&quot;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -448,7 +783,7 @@ and much more.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id7"><span class="problematic" id="id8">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id11"><span class="problematic" id="id12">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -481,9 +816,13 @@ and much more.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
-<dt><strong>y: cuDF DataFrame</strong></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
+<dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1).
+Acceptable formats: cuDF Series, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd>
@@ -510,7 +849,9 @@ and much more.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd>
@@ -539,8 +880,389 @@ and much more.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="lasso-regression">
+<h3>Lasso Regression<a class="headerlink" href="#lasso-regression" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.Lasso">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">Lasso</code><a class="headerlink" href="#cuml.Lasso" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lasso extends LinearRegression by providing L1 regularization on the
+coefficients when predicting response y with a linear combination of the
+predictors in X. It can zero some of the coefficients for feature
+selection, and improves the conditioning of the problem.</p>
+<p>cuML’s Lasso an array-like object or cuDF DataFrame, and
+uses coordinate descent to fit a linear model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>alpha</strong><span class="classifier">float or double</span></dt><dd><p>Constant that multiplies the L1 term. Defaults to 1.0.
+alpha = 0 is equivalent to an ordinary least square, solved by the
+LinearRegression class.
+For numerical reasons, using alpha = 0 with the Lasso class is not
+advised.
+Given this, you should use the LinearRegression class.</p>
+</dd>
+<dt><strong>fit_intercept</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>If True, Lasso tries to correct for the global mean of y.
+If False, the model expects that you have centered the data.</p>
+</dd>
+<dt><strong>normalize</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>If True, the predictors in X will be normalized by dividing by it’s L2
+norm.
+If False, no scaling will be done.</p>
+</dd>
+<dt><strong>max_iter</strong><span class="classifier">int</span></dt><dd><p>The maximum number of iterations</p>
+</dd>
+<dt><strong>tol</strong><span class="classifier">float, optional</span></dt><dd><p>The tolerance for the optimization: if the updates are smaller than
+tol, the optimization code checks the dual gap for optimality and
+continues until it is smaller than tol.</p>
+</dd>
+<dt><strong>selection</strong><span class="classifier">str, default ‘cyclic’</span></dt><dd><p>If set to ‘random’, a random coefficient is updated every iteration
+rather than looping over features sequentially by default.
+This (setting to ‘random’) often leads to significantly faster
+convergence especially when tol is higher than 1e-4.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cudf</span>
+<span class="kn">from</span> <span class="nn">cuml.linear_model</span> <span class="kn">import</span> <span class="n">Lasso</span>
+
+<span class="n">ls</span> <span class="o">=</span> <span class="n">Lasso</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">X</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">X</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">result_lasso</span> <span class="o">=</span> <span class="n">ls</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result_lasso</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;intercept:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result_lasso</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
+
+<span class="n">X_new</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="n">result_lasso</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Coefficients</span><span class="p">:</span>
+
+            <span class="mi">0</span> <span class="mf">0.85</span>
+            <span class="mi">1</span> <span class="mf">0.0</span>
+
+<span class="n">Intercept</span><span class="p">:</span>
+            <span class="mf">0.149999</span>
+
+<span class="n">Preds</span><span class="p">:</span>
+
+            <span class="mi">0</span> <span class="mf">2.7</span>
+            <span class="mi">1</span> <span class="mf">1.85</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
+</dd>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id13"><span class="problematic" id="id14">fit_intercept_</span></a> is False, will be 0.</p>
+</dd>
+<dt><strong>For additional docs, see `scikitlearn’s Lasso</strong></dt><dd></dd>
+<dt><strong>&lt;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html&gt;`_.</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.Lasso.fit" title="cuml.Lasso.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<td><p>Fit the model with X and y.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.Lasso.get_params" title="cuml.Lasso.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
+<td><p>Sklearn style return parameter state</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.Lasso.predict" title="cuml.Lasso.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<td><p>Predicts the y for X.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.Lasso.set_params" title="cuml.Lasso.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
+<td><p>Sklearn style set parameter state to dictionary of params.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cuml.Lasso.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Lasso.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model with X and y.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1).
+Acceptable formats: cuDF Series, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.Lasso.get_params">
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Lasso.get_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sklearn style return parameter state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>deep</strong><span class="classifier">boolean (default = True)</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.Lasso.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Lasso.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the y for X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.Lasso.set_params">
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Lasso.set_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sklearn style set parameter state to dictionary of params.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>params</strong><span class="classifier">dict of new params</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="elasticnet-regression">
+<h3>ElasticNet Regression<a class="headerlink" href="#elasticnet-regression" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.ElasticNet">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">ElasticNet</code><a class="headerlink" href="#cuml.ElasticNet" title="Permalink to this definition">¶</a></dt>
+<dd><p>ElasticNet extends LinearRegression with combined L1 and L2 regularizations
+on the coefficients when predicting response y with a linear combination of
+the predictors in X. It can reduce the variance of the predictors, force
+some coefficients to be smaell, and improves the conditioning of the
+problem.</p>
+<p>cuML’s ElasticNet an array-like object or cuDF DataFrame, uses coordinate
+descent to fit a linear model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>alpha</strong><span class="classifier">float or double</span></dt><dd><p>Constant that multiplies the L1 term. Defaults to 1.0.
+alpha = 0 is equivalent to an ordinary least square, solved by the
+LinearRegression object.
+For numerical reasons, using alpha = 0 with the Lasso object is not
+advised.
+Given this, you should use the LinearRegression object.</p>
+</dd>
+<dt><strong>l1_ratio: The ElasticNet mixing parameter, with 0 &lt;= l1_ratio &lt;= 1.</strong></dt><dd><p>For l1_ratio = 0 the penalty is an L2 penalty. For l1_ratio = 1 it is
+an L1 penalty.
+For 0 &lt; l1_ratio &lt; 1, the penalty is a combination of L1 and L2.</p>
+</dd>
+<dt><strong>fit_intercept</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>If True, Lasso tries to correct for the global mean of y.
+If False, the model expects that you have centered the data.</p>
+</dd>
+<dt><strong>normalize</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>If True, the predictors in X will be normalized by dividing by it’s L2
+norm.
+If False, no scaling will be done.</p>
+</dd>
+<dt><strong>max_iter</strong><span class="classifier">int</span></dt><dd><p>The maximum number of iterations</p>
+</dd>
+<dt><strong>tol</strong><span class="classifier">float, optional</span></dt><dd><p>The tolerance for the optimization: if the updates are smaller than
+tol, the optimization code checks the dual gap for optimality and
+continues until it is smaller than tol.</p>
+</dd>
+<dt><strong>selection</strong><span class="classifier">str, default ‘cyclic’</span></dt><dd><p>If set to ‘random’, a random coefficient is updated every iteration
+rather than looping over features sequentially by default.
+This (setting to ‘random’) often leads to significantly faster
+convergence especially when tol is higher than 1e-4.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cudf</span>
+<span class="kn">from</span> <span class="nn">cuml.linear_model</span> <span class="kn">import</span> <span class="n">ElasticNet</span>
+
+<span class="n">enet</span> <span class="o">=</span> <span class="n">ElasticNet</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">l1_ratio</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">X</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">X</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">result_enet</span> <span class="o">=</span> <span class="n">enet</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result_enet</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;intercept:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result_enet</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
+
+<span class="n">X_new</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="n">result_enet</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Coefficients</span><span class="p">:</span>
+
+            <span class="mi">0</span> <span class="mf">0.448408</span>
+            <span class="mi">1</span> <span class="mf">0.443341</span>
+
+<span class="n">Intercept</span><span class="p">:</span>
+            <span class="mf">0.1082506</span>
+
+<span class="n">Preds</span><span class="p">:</span>
+
+            <span class="mi">0</span> <span class="mf">3.67018</span>
+            <span class="mi">1</span> <span class="mf">3.22177</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
+</dd>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id15"><span class="problematic" id="id16">fit_intercept_</span></a> is False, will be 0.</p>
+</dd>
+<dt><strong>For additional docs, see `scikitlearn’s ElasticNet</strong></dt><dd></dd>
+<dt><strong>&lt;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html&gt;`_.</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ElasticNet.fit" title="cuml.ElasticNet.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<td><p>Fit the model with X and y.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ElasticNet.get_params" title="cuml.ElasticNet.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
+<td><p>Sklearn style return parameter state</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ElasticNet.predict" title="cuml.ElasticNet.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<td><p>Predicts the y for X.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ElasticNet.set_params" title="cuml.ElasticNet.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
+<td><p>Sklearn style set parameter state to dictionary of params.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cuml.ElasticNet.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ElasticNet.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model with X and y.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1).
+Acceptable formats: cuDF Series, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ElasticNet.get_params">
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ElasticNet.get_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sklearn style return parameter state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>deep</strong><span class="classifier">boolean (default = True)</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ElasticNet.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ElasticNet.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the y for X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ElasticNet.set_params">
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ElasticNet.set_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sklearn style set parameter state to dictionary of params.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>params</strong><span class="classifier">dict of new params</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="stochastic-gradient-descent">
-<h2>Stochastic Gradient Descent<a class="headerlink" href="#stochastic-gradient-descent" title="Permalink to this headline">¶</a></h2>
+<h3>Stochastic Gradient Descent<a class="headerlink" href="#stochastic-gradient-descent" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.SGD">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">SGD</code><a class="headerlink" href="#cuml.SGD" title="Permalink to this definition">¶</a></dt>
@@ -639,12 +1361,16 @@ cuML coef :  0      0.9834546</p>
 <dd><p>Fit the model with X and y.
 Parameters
 ———-
-X : cuDF DataFrame</p>
+X : array-like (device or host) shape = (n_samples, n_features)</p>
 <blockquote>
-<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </div></blockquote>
 <dl class="simple">
-<dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
+<dt>y<span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1).
+Acceptable formats: cuDF Series, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd></dl>
@@ -655,9 +1381,11 @@ X : cuDF DataFrame</p>
 <dd><p>Predicts the y for X.
 Parameters
 ———-
-X : cuDF DataFrame</p>
+X : array-like (device or host) shape = (n_samples, n_features)</p>
 <blockquote>
-<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </div></blockquote>
 <dl class="simple">
 <dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
@@ -671,9 +1399,11 @@ X : cuDF DataFrame</p>
 <dd><p>Predicts the y for X.
 Parameters
 ———-
-X : cuDF DataFrame</p>
+X : array-like (device or host) shape = (n_samples, n_features)</p>
 <blockquote>
-<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </div></blockquote>
 <dl class="simple">
 <dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
@@ -684,100 +1414,91 @@ X : cuDF DataFrame</p>
 </dd></dl>
 
 </div>
-<div class="section" id="nearest-neighbors">
-<h2>Nearest Neighbors<a class="headerlink" href="#nearest-neighbors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="random-forest">
+<h3>Random Forest<a class="headerlink" href="#random-forest" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
-<dt id="cuml.NearestNeighbors">
-<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">NearestNeighbors</code><a class="headerlink" href="#cuml.NearestNeighbors" title="Permalink to this definition">¶</a></dt>
-<dd><p>NearestNeighbors is a unsupervised algorithm where if one wants to find the
-“closest” datapoint(s) to new unseen data, one can calculate a suitable
-“distance” between each and every point, and return the top K datapoints
-which have the smallest distance to it.</p>
-<p>cuML’s KNN expects a cuDF DataFrame or a Numpy Array (where automatic
-chunking will be done in to a Numpy Array in a future release), and fits a
-special data structure first to approximate the distance calculations,
-allowing our querying times to be O(plogn) and not the brute force O(np)
-[where p = no(features)]:</p>
+<dt id="cuml.ensemble.RandomForestClassifier">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.ensemble.</code><code class="sig-name descname">RandomForestClassifier</code><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements a Random Forest classifier model which fits multiple decision
+tree classifiers in an ensemble.</p>
+<p>Note that the underlying algorithm for tree node splits differs from that
+used in scikit-learn. By default, the cuML Random Forest uses a
+histogram-based algorithms to determine splits, rather than an exact
+count. You can tune the size of the histograms with the n_bins parameter.</p>
+<p><strong>Known Limitations</strong>: This is an initial preview release of the cuML
+Random Forest code. It contains a number of known
+limitations:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Only classification is supported. Regression support is planned for
+the next release.</p></li>
+<li><p>The implementation relies on limited CUDA shared memory for scratch
+space, so models with a very large number of features or bins will
+generate a memory limit exception. This limitation will be lifted in
+the next release.</p></li>
+<li><p>Inference/prediction takes place on the CPU. A GPU-based inference
+solution is planned for a near-future release release.</p></li>
+<li><p>Instances of RandomForestClassifier cannot be pickled currently.</p></li>
+</ul>
+</div></blockquote>
+<p>The code is under heavy development, so users who need these features may
+wish to pull from nightly builds of cuML. (See <a class="reference external" href="https://rapids.ai/start.html">https://rapids.ai/start.html</a>
+for instructions to download nightly packages via conda.)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>n_neighbors: int (default = 5)</strong></dt><dd><p>The top K closest datapoints you want the algorithm to return.
-If this number is large, then expect the algorithm to run slower.</p>
+<dt><strong>n_estimators</strong><span class="classifier">int (default = 10)</span></dt><dd><p>number of trees in the forest.</p>
 </dd>
-<dt><strong>should_downcast</strong><span class="classifier">bool (default = False)</span></dt><dd><p>Currently only single precision is supported in the underlying undex.
-Setting this to true will allow single-precision input arrays to be
-automatically downcasted to single precision.</p>
+<dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
+</dd>
+<dt><strong>split_algo</strong><span class="classifier">0 for HIST and 1 for GLOBAL_QUANTILE</span></dt><dd><p>(default = 0)
+the algorithm to determine how nodes are split in the tree.</p>
+</dd>
+<dt><strong>bootstrap</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>Control bootstrapping.
+If set, each tree in the forest is built
+on a bootstrapped sample with replacement.
+If false, sampling without replacement is done.</p>
+</dd>
+<dt><strong>bootstrap_features</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>Control bootstrapping for features.
+If features are drawn with or without replacement</p>
+</dd>
+<dt><strong>rows_sample</strong><span class="classifier">float (default = 1.0)</span></dt><dd><p>Ratio of dataset rows used while fitting each tree.</p>
+</dd>
+<dt><strong>max_depth</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum tree depth. Unlimited (i.e, until leaves are pure),
+if -1.</p>
+</dd>
+<dt><strong>max_leaves</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum leaf nodes per tree. Soft constraint. Unlimited,
+if -1.</p>
+</dd>
+<dt><strong>max_features</strong><span class="classifier">float (default = 1.0)</span></dt><dd><p>Ratio of number of features (columns) to consider
+per node split.</p>
+</dd>
+<dt><strong>n_bins</strong><span class="classifier">int (default = 8)</span></dt><dd><p>Number of bins used by the split algorithm.</p>
+</dd>
+<dt><strong>min_rows_per_node</strong><span class="classifier">int (default = 2)</span></dt><dd><p>The minimum number of samples (rows) needed
+to split a node.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
-<p>NearestNeighbors is a generative model. This means the data X has to be
-stored in order for inference to occur.</p>
-<p><strong>Applications of NearestNeighbors</strong></p>
-<blockquote>
-<div><p>Applications of NearestNeighbors include recommendation systems where
-content or colloborative filtering is used. Since NearestNeighbors is a
-relatively simple generative model, it is also used in data
-visualization and regression / classification tasks.</p>
-</div></blockquote>
-<p>For an additional example see <a class="reference external" href="https://github.com/rapidsai/notebook/blob/master/python/notebooks/knn_demo.ipynb">the NearestNeighbors notebook</a>.</p>
-<p>For additional docs, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html#sklearn.neighbors.NearestNeighbors">scikitlearn’s NearestNeighbors</a>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span>
-<span class="kn">from</span> <span class="nn">cuml.neighbors</span> <span class="kn">import</span> <span class="n">NearestNeighbors</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">cuml.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span> <span class="k">as</span> <span class="n">cuRFC</span>
 
-<span class="n">np_float</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
-  <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="c1"># Point 1</span>
-  <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="c1"># Point 2</span>
-  <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>  <span class="c1"># Point 3</span>
-<span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
 
-<span class="n">gdf_float</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-<span class="n">gdf_float</span><span class="p">[</span><span class="s1">&#39;dim_0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">np_float</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">gdf_float</span><span class="p">[</span><span class="s1">&#39;dim_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">np_float</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">gdf_float</span><span class="p">[</span><span class="s1">&#39;dim_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">np_float</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">cuml_model</span> <span class="o">=</span> <span class="n">cuRFC</span><span class="p">(</span><span class="n">max_features</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                   <span class="n">n_bins</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+                   <span class="n">n_estimators</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">cuml_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">cuml_predict</span> <span class="o">=</span> <span class="n">cuml_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;n_samples = 3, n_dims = 3&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
-
-<span class="n">nn_float</span> <span class="o">=</span> <span class="n">NearestNeighbors</span><span class="p">()</span>
-<span class="n">nn_float</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
-<span class="c1"># get 3 nearest neighbors</span>
-<span class="n">distances</span><span class="p">,</span><span class="n">indices</span> <span class="o">=</span> <span class="n">nn_float</span><span class="o">.</span><span class="n">kneighbors</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Predicted labels : &quot;</span><span class="p">,</span> <span class="n">cuml_predict</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span>
-
-<span class="c1"># Both import methods supported</span>
-<span class="c1"># from cuml.neighbors import NearestNeighbors</span>
-<span class="kn">from</span> <span class="nn">cuml</span> <span class="kn">import</span> <span class="n">NearestNeighbors</span>
-
-<span class="n">n_samples</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">n_dims</span> <span class="o">=</span> <span class="mi">3</span>
-
-<span class="n">dim_0</span> <span class="n">dim_1</span> <span class="n">dim_2</span>
-
-<span class="mi">0</span>   <span class="mf">1.0</span>   <span class="mf">2.0</span>   <span class="mf">3.0</span>
-<span class="mi">1</span>   <span class="mf">1.0</span>   <span class="mf">2.0</span>   <span class="mf">4.0</span>
-<span class="mi">2</span>   <span class="mf">2.0</span>   <span class="mf">2.0</span>   <span class="mf">4.0</span>
-
-<span class="c1"># indices:</span>
-
-         <span class="n">index_neighbor_0</span> <span class="n">index_neighbor_1</span> <span class="n">index_neighbor_2</span>
-<span class="mi">0</span>                <span class="mi">0</span>                <span class="mi">1</span>                <span class="mi">2</span>
-<span class="mi">1</span>                <span class="mi">1</span>                <span class="mi">0</span>                <span class="mi">2</span>
-<span class="mi">2</span>                <span class="mi">2</span>                <span class="mi">1</span>                <span class="mi">0</span>
-<span class="c1"># distances:</span>
-
-         <span class="n">distance_neighbor_0</span> <span class="n">distance_neighbor_1</span> <span class="n">distance_neighbor_2</span>
-<span class="mi">0</span>                 <span class="mf">0.0</span>                 <span class="mf">1.0</span>                 <span class="mf">2.0</span>
-<span class="mi">1</span>                 <span class="mf">0.0</span>                 <span class="mf">1.0</span>                 <span class="mf">1.0</span>
-<span class="mi">2</span>                 <span class="mf">0.0</span>                 <span class="mf">1.0</span>                 <span class="mf">2.0</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Predicted labels :  [0 1 0 1 0 1 0 1 0 1]
 </pre></div>
 </div>
 <p class="rubric">Methods</p>
@@ -787,22 +1508,38 @@ visualization and regression / classification tasks.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.NearestNeighbors.fit" title="cuml.NearestNeighbors.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X)</p></td>
-<td><p>Fit GPU index for performing nearest neighbor queries.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.fit" title="cuml.ensemble.RandomForestClassifier.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<td><p>Perform Random Forest Classification on the input data</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.NearestNeighbors.kneighbors" title="cuml.NearestNeighbors.kneighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kneighbors</span></code></a>(self, X[, k])</p></td>
-<td><p>Query the GPU index for the k nearest neighbors of column vectors in X.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.get_params" title="cuml.ensemble.RandomForestClassifier.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
+<td><p>Returns the value of all parameters required to configure this estimator as a dictionary.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.predict" title="cuml.ensemble.RandomForestClassifier.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<td><p>Predicts the labels for X.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.score" title="cuml.ensemble.RandomForestClassifier.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y)</p></td>
+<td><p>Predicts the accuracy of the model for X.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.set_params" title="cuml.ensemble.RandomForestClassifier.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
+<td><p>Sets the value of parameters required to configure this estimator, it functions similar to the sklearn set_params.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="cuml.NearestNeighbors.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.fit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fit GPU index for performing nearest neighbor queries.</p>
+<dt id="cuml.ensemble.RandomForestClassifier.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform Random Forest Classification on the input data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame or numpy ndarray</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>Dense vector (int32) of shape (n_samples, 1).
+Acceptable formats: NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy
+These labels should be contiguous integers from 0 to n_classes.</p>
 </dd>
 </dl>
 </dd>
@@ -810,32 +1547,223 @@ visualization and regression / classification tasks.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="cuml.NearestNeighbors.kneighbors">
-<code class="sig-name descname">kneighbors</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">k=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.kneighbors" title="Permalink to this definition">¶</a></dt>
-<dd><p>Query the GPU index for the k nearest neighbors of column vectors in X.</p>
+<dt id="cuml.ensemble.RandomForestClassifier.get_params">
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.get_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of all parameters
+required to configure this estimator as a dictionary.
+Parameters
+———–
+deep : boolean (default = True)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestClassifier.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the labels for X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X_ctype</strong><span class="classifier">Ctypes pointer (row-major)</span></dt><dd><p>Pointer to input data</p>
-</dd>
-<dt><strong>N: Intetger</strong></dt><dd><p>The number of rows in X</p>
-</dd>
-<dt><strong>k: Integer</strong></dt><dd><p>Number of neighbors to search</p>
-</dd>
-<dt><strong>I_ptr: Ctypes pointer (row-major)</strong></dt><dd><p>Pointer to N*k array for output indices</p>
-</dd>
-<dt><strong>D_ptr: Ctypes pointer (row-major)</strong></dt><dd><p>Pointer to N*k array for output distances</p>
+<dt><strong>X</strong><span class="classifier">array-like (host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: NumPy ndarray, Numba device
+ndarray</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>distances: cuDF DataFrame or numpy ndarray</dt><dd><p>The distances of the k-nearest neighbors for each column vector
-in X</p>
-</dd>
-<dt>indices: cuDF DataFrame of numpy ndarray</dt><dd><p>The indices of the k-nearest neighbors for each column vector in X</p>
+<dt>y: NumPy</dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
 </dd>
 </dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestClassifier.score">
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the accuracy of the model for X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: NumPy ndarray, Numba device
+ndarray</p>
+</dd>
+<dt><strong>y: NumPy</strong></dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>accuracy</strong><span class="classifier">float</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestClassifier.set_params">
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.set_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the value of parameters required to
+configure this estimator, it functions similar to
+the sklearn set_params.
+Parameters
+———–
+params : dict of new params</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="quasi-newton">
+<h3>Quasi-Newton<a class="headerlink" href="#quasi-newton" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.QN">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">QN</code><a class="headerlink" href="#cuml.QN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Quasi-Newton methods are used to either find zeroes or local maxima
+and minima of functions, and used by this class to optimize a cost
+function.</p>
+<p>Two algorithms are implemented underneath cuML’s QN class, and which one
+is executed depends on the following rule:</p>
+<ul class="simple">
+<li><p>Orthant-Wise Limited Memory Quasi-Newton (OWL-QN) if there is l1</p></li>
+</ul>
+<p>regularization
+- Limited Memory BFGS (L-BFGS) otherwise.</p>
+<p>cuML’s QN class can take array-like objects, either in host as
+NumPy arrays or in device (as Numba or __cuda_array_interface__ compliant).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>loss: ‘sigmoid’, ‘softmax’, ‘squared_loss’ (default = ‘squared_loss’)</strong></dt><dd><p>‘sigmoid’ loss used for single class logistic regression
+‘softmax’ loss used for multiclass logistic regression
+‘normal’ used for normal/square loss</p>
+</dd>
+<dt><strong>fit_intercept: boolean (default = True)</strong></dt><dd><p>If True, the model tries to correct for the global mean of y.
+If False, the model expects that you have centered the data.</p>
+</dd>
+<dt><strong>l1_strength: float (default = 0.0)</strong></dt><dd><p>l1 regularization strength (if non-zero, will run OWL-QN, else L-BFGS).
+Note, that as in Scikit-learn, the bias will not be regularized.</p>
+</dd>
+<dt><strong>l2_strength: float (default = 0.0)</strong></dt><dd><p>l2 regularization strength. Note, that as in Scikit-learn, the bias
+will not be regularized.</p>
+</dd>
+<dt><strong>max_iter: int (default = 1000)</strong></dt><dd><p>Maximum number of iterations taken for the solvers to converge.</p>
+</dd>
+<dt><strong>tol: float (default = 1e-3)</strong></dt><dd><p>The training process will stop if current_loss &gt; previous_loss - tol</p>
+</dd>
+<dt><strong>linesearch_max_iter: int (default = 50)</strong></dt><dd><p>Max number of linesearch iterations per outer iteration of the
+algorithm.</p>
+</dd>
+<dt><strong>lbfgs_memory: int (default = 5)</strong></dt><dd><p>Rank of the lbfgs inverse-Hessian approximation. Method will use
+O(lbfgs_memory * D) memory.</p>
+</dd>
+<dt><strong>verbose: bool (optional, default False)</strong></dt><dd><p>Controls verbosity of logging.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This class contains implementations of two popular Quasi-Newton methods:
+- Limited-memory Broyden Fletcher Goldfarb Shanno (L-BFGS) [Nocedal,
+Wright - Numerical Optimization (1999)]
+- Orthant-wise limited-memory quasi-newton (OWL-QN) [Andrew, Gao - ICML
+2007]
+&lt;<a class="reference external" href="https://www.microsoft.com/en-us/research/publication/scalable-training-of-l1-regularized-log-linear-models/">https://www.microsoft.com/en-us/research/publication/scalable-training-of-l1-regularized-log-linear-models/</a>&gt;</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c1"># Both import methods supported</span>
+<span class="c1"># from cuml import QN</span>
+<span class="kn">from</span> <span class="nn">cuml.solvers</span> <span class="kn">import</span> <span class="n">QN</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">X</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">X</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="p">)</span>
+
+<span class="n">solver</span> <span class="o">=</span> <span class="n">QN</span><span class="p">()</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Note: for now, the coefficients also include the intercept in the</span>
+<span class="c1"># last position if fit_intercept=True</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">coef_</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Intercept:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">intercept_</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
+
+<span class="n">X_new</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="n">preds</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Predictions:&quot;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>coef_</strong><span class="classifier">array, shape (n_classes, n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.
+Note: shape is (n_classes, n_features + 1) if fit_intercept = True.</p>
+</dd>
+<dt><strong>intercept_</strong><span class="classifier">array (n_classes, 1)</span></dt><dd><p>The independent term. If <a href="#id17"><span class="problematic" id="id18">fit_intercept_</span></a> is False, will be 0.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.QN.fit" title="cuml.QN.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<td><p>Fit the model with X and y.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.QN.predict" title="cuml.QN.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<td><p>Predicts the y for X.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cuml.QN.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.QN.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model with X and y.
+Parameters
+———-
+X : array-like (device or host) shape = (n_samples, n_features)</p>
+<blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</div></blockquote>
+<dl class="simple">
+<dt>y<span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1).
+Acceptable formats: cuDF Series, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.QN.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.QN.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the y for X.
+Parameters
+———-
+X : array-like (device or host) shape = (n_samples, n_features)</p>
+<blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</div></blockquote>
+<dl class="simple">
+<dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -843,8 +1771,11 @@ in X</p>
 </dd></dl>
 
 </div>
+</div>
+<div class="section" id="clustering">
+<h2>Clustering<a class="headerlink" href="#clustering" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="k-means-clustering">
-<h2>K-Means Clustering<a class="headerlink" href="#k-means-clustering" title="Permalink to this headline">¶</a></h2>
+<h3>K-Means Clustering<a class="headerlink" href="#k-means-clustering" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.KMeans">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">KMeans</code><a class="headerlink" href="#cuml.KMeans" title="Permalink to this definition">¶</a></dt>
@@ -853,9 +1784,9 @@ Expectation Maximization. It randomnly selects K data points in X, and
 computes which samples are close to these points.
 For every cluster of points, a mean is computed (hence the name), and this
 becomes the new centroid.</p>
-<p>cuML’s KMeans expects a cuDF DataFrame, and supports the scalable KMeans++
-intialization method. This method is more stable than randomnly selecting
-K points.</p>
+<p>cuML’s KMeans expects an array-like object or cuDF DataFrame, and supports
+the scalable KMeans++ intialization method. This method is more stable
+than randomnly selecting K points.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
@@ -991,17 +1922,17 @@ each data cluster.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.KMeans.fit_predict" title="cuml.KMeans.fit_predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_predict</span></code></a>(self, X)</p></td>
 <td><p>Compute cluster centers and predict cluster index for each sample.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.KMeans.fit_transform" title="cuml.KMeans.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, input_gdf)</p></td>
-<td><p>Compute clustering and transform input_gdf to cluster-distance space.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.KMeans.fit_transform" title="cuml.KMeans.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X)</p></td>
+<td><p>Compute clustering and transform X to cluster-distance space.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.KMeans.get_params" title="cuml.KMeans.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
-<td><p>Sklearn style return parameter state</p></td>
+<td><p>Scikit-learn style return parameter state</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.KMeans.predict" title="cuml.KMeans.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
 <td><p>Predict the closest cluster each sample in X belongs to.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.KMeans.set_params" title="cuml.KMeans.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
-<td><p>Sklearn style set parameter state to dictionary of params.</p></td>
+<td><p>Scikit-learn style set parameter state to dictionary of params.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.KMeans.transform" title="cuml.KMeans.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X)</p></td>
 <td><p>Transform X to a cluster-distance space.</p></td>
@@ -1015,7 +1946,9 @@ each data cluster.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd>
@@ -1029,8 +1962,9 @@ each data cluster.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame</span></dt><dd><p>Dense matrix (floats or doubles) of shape
-(n_samples, n_features)</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd>
@@ -1039,13 +1973,14 @@ each data cluster.</p>
 
 <dl class="attribute">
 <dt id="cuml.KMeans.fit_transform">
-<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">input_gdf</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.fit_transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute clustering and transform input_gdf to cluster-distance space.</p>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.fit_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute clustering and transform X to cluster-distance space.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>input_gdf</strong><span class="classifier">cuDF DataFrame</span></dt><dd><p>Dense matrix (floats or doubles) of shape
-(n_samples, n_features)</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd>
@@ -1055,7 +1990,7 @@ each data cluster.</p>
 <dl class="attribute">
 <dt id="cuml.KMeans.get_params">
 <code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.get_params" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sklearn style return parameter state</p>
+<dd><p>Scikit-learn style return parameter state</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1072,8 +2007,9 @@ each data cluster.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame</span></dt><dd><p>Dense matrix (floats or doubles) of shape
-(n_samples, n_features)</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd>
@@ -1083,7 +2019,7 @@ each data cluster.</p>
 <dl class="attribute">
 <dt id="cuml.KMeans.set_params">
 <code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.set_params" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sklearn style set parameter state to dictionary of params.</p>
+<dd><p>Scikit-learn style set parameter state to dictionary of params.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1100,8 +2036,9 @@ each data cluster.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame</span></dt><dd><p>Dense matrix (floats or doubles) of shape
-(n_samples, n_features)</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd>
@@ -1112,15 +2049,16 @@ each data cluster.</p>
 
 </div>
 <div class="section" id="dbscan">
-<h2>DBSCAN<a class="headerlink" href="#dbscan" title="Permalink to this headline">¶</a></h2>
+<h3>DBSCAN<a class="headerlink" href="#dbscan" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.DBSCAN">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">DBSCAN</code><a class="headerlink" href="#cuml.DBSCAN" title="Permalink to this definition">¶</a></dt>
 <dd><p>DBSCAN is a very powerful yet fast clustering technique that finds clusters
 where data is concentrated. This allows DBSCAN to generalize to many
 problems if the datapoints tend to congregate in larger groups.</p>
-<p>cuML’s DBSCAN expects a cuDF DataFrame, and constructs an adjacency graph
-to compute the distances between close neighbours.</p>
+<p>cuML’s DBSCAN expects an array-like object or cuDF DataFrame, and
+constructs an adjacency graph to compute the distances between close
+neighbours.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1220,8 +2158,9 @@ For additional docs, see <a class="reference external" href="http://scikit-learn
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples,
-n_features)</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd>
@@ -1235,7 +2174,9 @@ n_features)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd>
@@ -1256,151 +2197,11 @@ n_features)</p>
 </dd></dl>
 
 </div>
-<div class="section" id="kalman-filter">
-<h2>Kalman Filter<a class="headerlink" href="#kalman-filter" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="cuml.KalmanFilter">
-<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">KalmanFilter</code><a class="headerlink" href="#cuml.KalmanFilter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Implements a Kalman filter. You are responsible for setting the
-various state variables to reasonable values; defaults  will
-not give you a functional filter.
-After construction the filter will have default matrices created for you,
-but you must specify the values for each.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>dim_x</strong><span class="classifier">int</span></dt><dd><p>Number of state variables for the Kalman filter.
-This is used to set the default size of P, Q, and u</p>
-</dd>
-<dt><strong>dim_z</strong><span class="classifier">int</span></dt><dd><p>Number of of measurement inputs.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cuml</span> <span class="k">import</span> <span class="n">KalmanFilter</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">KalmanFilter</span><span class="p">(</span><span class="n">dim_x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dim_z</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">2.</span><span class="p">],</span>    <span class="c1"># position</span>
-                <span class="p">[</span><span class="mf">0.</span><span class="p">]])</span>   <span class="c1"># velocity</span>
-<span class="n">f</span><span class="o">.</span><span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">1.</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">]])</span>
-<span class="n">f</span><span class="o">.</span><span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">]])</span>
-<span class="n">f</span><span class="o">.</span><span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1000.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span> <span class="p">[</span>   <span class="mf">0.</span><span class="p">,</span> <span class="mf">1000.</span><span class="p">]</span> <span class="p">])</span>
-<span class="n">f</span><span class="o">.</span><span class="n">R</span> <span class="o">=</span> <span class="mi">5</span>
-</pre></div>
 </div>
-<p>Now just perform the standard predict/update loop:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">some_condition_is_true</span><span class="p">:</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">numba</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">to_device</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">predict</span><span class="p">()</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>x</strong><span class="classifier">numba device array, numpy array or cuDF series (dim_x, 1),</span></dt><dd><p>Current state estimate. Any call to update() or predict() updates
-this variable.</p>
-</dd>
-<dt><strong>P</strong><span class="classifier">numba device array, numpy array or cuDF dataframe(dim_x, dim_x)</span></dt><dd><p>Current state covariance matrix. Any call to update() or predict()
-updates this variable.</p>
-</dd>
-<dt><strong>x_prior</strong><span class="classifier">numba device array, numpy array or cuDF series(dim_x, 1)</span></dt><dd><p>Prior (predicted) state estimate. The <a href="#id1"><span class="problematic" id="id2">*</span></a>_prior and <a href="#id3"><span class="problematic" id="id4">*</span></a>_post attributes
-are for convienence; they store the  prior and posterior of the
-current epoch. Read Only.</p>
-</dd>
-<dt><strong>P_prior</strong><span class="classifier">numba device array, numpy array or cuDF dataframe(dim_x, dim_x)</span></dt><dd><p>Prior (predicted) state covariance matrix. Read Only.</p>
-</dd>
-<dt><strong>x_post</strong><span class="classifier">numba device array, numpy array or cuDF series(dim_x, 1)</span></dt><dd><p>Posterior (updated) state estimate. Read Only.</p>
-</dd>
-<dt><strong>P_post</strong><span class="classifier">numba device array, numpy array or cuDF dataframe(dim_x, dim_x)</span></dt><dd><p>Posterior (updated) state covariance matrix. Read Only.</p>
-</dd>
-<dt><strong>z</strong><span class="classifier">numba device array or cuDF series (dim_x, 1)</span></dt><dd><p>Last measurement used in update(). Read only.</p>
-</dd>
-<dt><strong>R</strong><span class="classifier">numba device array(dim_z, dim_z)</span></dt><dd><p>Measurement noise matrix</p>
-</dd>
-<dt><strong>Q</strong><span class="classifier">numba device array(dim_x, dim_x)</span></dt><dd><p>Process noise matrix</p>
-</dd>
-<dt><strong>F</strong><span class="classifier">numba device array()</span></dt><dd><p>State Transition matrix</p>
-</dd>
-<dt><strong>H</strong><span class="classifier">numba device array(dim_z, dim_x)</span></dt><dd><p>Measurement function</p>
-</dd>
-<dt><strong>y</strong><span class="classifier">numba device array</span></dt><dd><p>Residual of the update step. Read only.</p>
-</dd>
-<dt><strong>K</strong><span class="classifier">numba device array(dim_x, dim_z)</span></dt><dd><p>Kalman gain of the update step. Read only.</p>
-</dd>
-<dt><strong>precision: ‘single’ or ‘double’</strong></dt><dd><p>Whether the Kalman Filter uses single or double precision</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.KalmanFilter.predict" title="cuml.KalmanFilter.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self[, B, F, Q])</p></td>
-<td><p>Predict next state (prior) using the Kalman filter state propagation equations.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.KalmanFilter.update" title="cuml.KalmanFilter.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>(self, z[, R, H])</p></td>
-<td><p>Add a new measurement (z) to the Kalman filter.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="attribute">
-<dt id="cuml.KalmanFilter.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">B=None</em>, <em class="sig-param">F=None</em>, <em class="sig-param">Q=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KalmanFilter.predict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Predict next state (prior) using the Kalman filter state propagation
-equations.
-Parameters
-———-
-u : np.array</p>
-<blockquote>
-<div><p>Optional control vector. If not <cite>None</cite>, it is multiplied by B
-to create the control input into the system.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>B<span class="classifier">np.array(dim_x, dim_z), or None</span></dt><dd><p>Optional control transition matrix; a value of None
-will cause the filter to use <cite>self.B</cite>.</p>
-</dd>
-<dt>F<span class="classifier">np.array(dim_x, dim_x), or None</span></dt><dd><p>Optional state transition matrix; a value of None
-will cause the filter to use <cite>self.F</cite>.</p>
-</dd>
-<dt>Q<span class="classifier">np.array(dim_x, dim_x), scalar, or None</span></dt><dd><p>Optional process noise matrix; a value of None will cause the
-filter to use <cite>self.Q</cite>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="cuml.KalmanFilter.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">z</em>, <em class="sig-param">R=None</em>, <em class="sig-param">H=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KalmanFilter.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add a new measurement (z) to the Kalman filter.
-If z is None, nothing is computed. However, x_post and P_post are
-updated with the prior (x_prior, P_prior), and self.z is set to None.
-Parameters
-———-
-z : (dim_z, 1): array_like</p>
-<blockquote>
-<div><p>measurement for this update. z can be a scalar if dim_z is 1,
-otherwise it must be convertible to a column vector.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>R<span class="classifier">np.array, scalar, or None</span></dt><dd><p>Optionally provide R to override the measurement noise for this
-one call, otherwise  self.R will be used.</p>
-</dd>
-<dt>H<span class="classifier">np.array, or None</span></dt><dd><p>Optionally provide H to override the measurement function for this
-one call, otherwise self.H will be used.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
+<div class="section" id="dimensionality-reduction-and-manifold-learning">
+<h2>Dimensionality Reduction and Manifold Learning<a class="headerlink" href="#dimensionality-reduction-and-manifold-learning" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="principal-component-analysis">
-<h2>Principal Component Analysis<a class="headerlink" href="#principal-component-analysis" title="Permalink to this headline">¶</a></h2>
+<h3>Principal Component Analysis<a class="headerlink" href="#principal-component-analysis" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.PCA">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">PCA</code><a class="headerlink" href="#cuml.PCA" title="Permalink to this definition">¶</a></dt>
@@ -1409,10 +2210,11 @@ reduction technique used to combine features in X in linear combinations
 such that each new component captures the most information or variance of
 the data. N_components is usually small, say at 3, where it can be used for
 data visualization, data compression and exploratory analysis.</p>
-<p>cuML’s PCA expects a cuDF DataFrame, and provides 2 algorithms Full and
-Jacobi. Full (default) uses a full eigendecomposition then selects the top
-K eigenvectors. The Jacobi algorithm is much faster as it iteratively tries
-to correct the top K eigenvectors, but might be less accurate.</p>
+<p>cuML’s PCA expects an array-like object or cuDF DataFrame, and provides 2
+algorithms Full and Jacobi. Full (default) uses a full eigendecomposition
+then selects the top K eigenvectors. The Jacobi algorithm is much faster
+as it iteratively tries to correct the top K eigenvectors, but might be
+less accurate.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1589,7 +2391,9 @@ estimated covariance of X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd>
@@ -1608,8 +2412,10 @@ estimated covariance of X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_features)</span></dt><dd><p>training data (floats or doubles), where n_samples is the number of
-samples, and n_features is the number of features.</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>training data (floats or doubles), where n_samples is the number of
+samples, and n_features is the number of features.
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 <dt><strong>y</strong><span class="classifier">ignored</span></dt><dd></dd>
 </dl>
@@ -1635,8 +2441,10 @@ samples, and n_features is the number of features.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_components)</span></dt><dd><p>New data (floats or doubles), where n_samples is the number of
-samples and n_components is the number of components.</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>New data (floats or doubles), where n_samples is the number of
+samples and n_components is the number of components.
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd>
@@ -1657,8 +2465,10 @@ from a training set.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_features)</span></dt><dd><p>New data (floats or doubles), where n_samples is the number of
-samples and n_features is the number of features.</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>New data (floats or doubles), where n_samples is the number of
+samples and n_components is the number of components.
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd>
@@ -1674,18 +2484,18 @@ samples and n_features is the number of features.</p>
 
 </div>
 <div class="section" id="truncated-svd">
-<h2>Truncated SVD<a class="headerlink" href="#truncated-svd" title="Permalink to this headline">¶</a></h2>
+<h3>Truncated SVD<a class="headerlink" href="#truncated-svd" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.TruncatedSVD">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">TruncatedSVD</code><a class="headerlink" href="#cuml.TruncatedSVD" title="Permalink to this definition">¶</a></dt>
 <dd><p>TruncatedSVD is used to compute the top K singular values and vectors of a
 large matrix X. It is much faster when n_components is small, such as in
 the use of PCA when 3 components is used for 3D visualization.</p>
-<p>cuML’s TruncatedSVD expects a cuDF DataFrame, and provides 2 algorithms
-Full and Jacobi. Full (default) uses a full eigendecomposition then selects
-the top K singular vectors. The Jacobi algorithm is much faster as it
-iteratively tries to correct the top K singular vectors, but might be
-less accurate.</p>
+<p>cuML’s TruncatedSVD an array-like object or cuDF DataFrame, and provides 2
+algorithms Full and Jacobi. Full (default) uses a full eigendecomposition
+then selects the top K singular vectors. The Jacobi algorithm is much
+faster as it iteratively tries to correct the top K singular vectors, but
+might be less accurate.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1827,11 +2637,15 @@ For additional documentation, see <a class="reference external" href="http://sci
 <dl class="attribute">
 <dt id="cuml.TruncatedSVD.fit">
 <code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">_transform=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.fit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fit LSI model on training cudf DataFrame X.</p>
+<dd><blockquote>
+<div><p>Fit LSI model on training cudf DataFrame X.</p>
+</div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame, dense matrix, shape (n_samples, n_features)</span></dt><dd><p>Training data (floats or doubles)</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd>
@@ -1845,7 +2659,9 @@ For additional documentation, see <a class="reference external" href="http://sci
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X GDF</strong><span class="classifier">cuDF DataFrame, dense matrix, shape (n_samples, n_features)</span></dt><dd><p>Training data (floats or doubles)</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd>
@@ -1871,7 +2687,9 @@ For additional documentation, see <a class="reference external" href="http://sci
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_components)</span></dt><dd><p>New data.</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd>
@@ -1891,7 +2709,9 @@ For additional documentation, see <a class="reference external" href="http://sci
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame, dense matrix, shape (n_samples, n_features)</span></dt><dd><p>New data.</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd>
@@ -1908,7 +2728,7 @@ For additional documentation, see <a class="reference external" href="http://sci
 
 </div>
 <div class="section" id="umap">
-<h2>UMAP<a class="headerlink" href="#umap" title="Permalink to this headline">¶</a></h2>
+<h3>UMAP<a class="headerlink" href="#umap" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.UMAP">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">UMAP</code><a class="headerlink" href="#cuml.UMAP" title="Permalink to this definition">¶</a></dt>
@@ -1976,7 +2796,7 @@ in the optimization process. Increasing this value will result
 in greater repulsive force being applied, greater optimization
 cost, but slightly more accuracy.</p>
 </dd>
-<dt><strong>transform_queue_size: float (optional, default 4.0)</strong></dt><dd><p>For transform operations (embedding new points using a trained <a href="#id9"><span class="problematic" id="id10">model_</span></a>
+<dt><strong>transform_queue_size: float (optional, default 4.0)</strong></dt><dd><p>For transform operations (embedding new points using a trained <a href="#id19"><span class="problematic" id="id20">model_</span></a>
 this will control how aggressively to search for nearest neighbors.
 Larger values will result in slower performance but more accurate
 nearest neighbor evaluation.</p>
@@ -2044,12 +2864,16 @@ Reduction
 <dd><p>Fit X into an embedded space.
 Parameters
 ———-
-X : array, shape (n_samples, n_features)</p>
+X : array-like (device or host) shape = (n_samples, n_features)</p>
 <blockquote>
-<div><p>X contains a sample per row.</p>
+<div><p>X contains a sample per row.
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </div></blockquote>
 <dl class="simple">
-<dt>y<span class="classifier">array, shape (n_samples)</span></dt><dd><p>y contains a label per row.</p>
+<dt>y<span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>y contains a label per row.
+Acceptable formats: cuDF Series, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2061,9 +2885,11 @@ X : array, shape (n_samples, n_features)</p>
 output.
 Parameters
 ———-
-X : array, shape (n_samples, n_features) or (n_samples, n_samples)</p>
+X : array-like (device or host) shape = (n_samples, n_features)</p>
 <blockquote>
-<div><p>X contains a sample per row.</p>
+<div><p>X contains a sample per row.
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </div></blockquote>
 <dl class="simple">
 <dt>X_new<span class="classifier">array, shape (n_samples, n_components)</span></dt><dd><p>Embedding of the training data in low-dimensional space.</p>
@@ -2084,7 +2910,9 @@ transform().</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">array, shape (n_samples, n_features)</span></dt><dd><p>New data to be transformed.</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>New data to be transformed.
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 <dt><strong>Returns</strong></dt><dd></dd>
 <dt><strong>——-</strong></dt><dd></dd>
@@ -2097,6 +2925,423 @@ transform().</p>
 
 </dd></dl>
 
+</div>
+<div class="section" id="random-projections">
+<h3>Random Projections<a class="headerlink" href="#random-projections" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.random_projection.GaussianRandomProjection">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.random_projection.</code><code class="sig-name descname">GaussianRandomProjection</code><a class="headerlink" href="#cuml.random_projection.GaussianRandomProjection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gaussian Random Projection method derivated from BaseRandomProjection
+class.</p>
+<p>Random projection is a dimensionality reduction technique. Random
+projection methods are powerful methods known for their simplicity,
+computational efficiency and restricted model size.
+This algorithm also has the advantage to preserve distances well between
+any two samples and is thus suitable for methods having this requirement.</p>
+<p>The components of the random matrix are drawn from N(0, 1 / n_components).</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class</p>
+</dd>
+<dt><strong>n_components</strong><span class="classifier">int (default = ‘auto’)</span></dt><dd><p>Dimensionality of the target projection space. If set to ‘auto’,
+the parameter is deducted thanks to Johnson–Lindenstrauss lemma.
+The automatic deduction make use of the number of samples and
+the eps parameter.</p>
+<p>The Johnson–Lindenstrauss lemma can produce very conservative
+n_components parameter as it makes no assumption on dataset structure.</p>
+</dd>
+<dt><strong>eps</strong><span class="classifier">float (default = 0.1)</span></dt><dd><p>Error tolerance during projection. Used by Johnson–Lindenstrauss
+automatic deduction when n_components is set to ‘auto’.</p>
+</dd>
+<dt><strong>random_state</strong><span class="classifier">int (default = None)</span></dt><dd><p>Seed used to initilize random generator</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Inspired from sklearn’s implementation :
+<a class="reference external" href="https://scikit-learn.org/stable/modules/random_projection.html">https://scikit-learn.org/stable/modules/random_projection.html</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>gaussian_method</strong><span class="classifier">boolean</span></dt><dd><p>To be passed to base class in order to determine
+random matrix generation method</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="cuml.random_projection.SparseRandomProjection">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.random_projection.</code><code class="sig-name descname">SparseRandomProjection</code><a class="headerlink" href="#cuml.random_projection.SparseRandomProjection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sparse Random Projection method derivated from BaseRandomProjection class.</p>
+<p>Random projection is a dimensionality reduction technique. Random
+projection methods are powerful methods known for their simplicity,
+computational efficiency and restricted model size.
+This algorithm also has the advantage to preserve distances well between
+any two samples and is thus suitable for methods having this requirement.</p>
+<p>Sparse random matrix is an alternative to dense random projection matrix
+(e.g. Gaussian) that guarantees similar embedding quality while being much
+more memory efficient and allowing faster computation of the projected data
+(with sparse enough matrices).
+If we note ‘s = 1 / density’ the components of the random matrix are
+drawn from:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>-sqrt(s) / sqrt(n_components)   with probability 1 / 2s</p></li>
+<li><p>0                              with probability 1 - 1 / s</p></li>
+<li><p>+sqrt(s) / sqrt(n_components)   with probability 1 / 2s</p></li>
+</ul>
+</div></blockquote>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class</p>
+</dd>
+<dt><strong>n_components</strong><span class="classifier">int (default = ‘auto’)</span></dt><dd><p>Dimensionality of the target projection space. If set to ‘auto’,
+the parameter is deducted thanks to Johnson–Lindenstrauss lemma.
+The automatic deduction make use of the number of samples and
+the eps parameter.</p>
+<p>The Johnson–Lindenstrauss lemma can produce very conservative
+n_components parameter as it makes no assumption on dataset structure.</p>
+</dd>
+<dt><strong>density</strong><span class="classifier">float in range (0, 1] (default = ‘auto’)</span></dt><dd><p>Ratio of non-zero component in the random projection matrix.</p>
+<p>If density = ‘auto’, the value is set to the minimum density
+as recommended by Ping Li et al.: 1 / sqrt(n_features).</p>
+</dd>
+<dt><strong>eps</strong><span class="classifier">float (default = 0.1)</span></dt><dd><p>Error tolerance during projection. Used by Johnson–Lindenstrauss
+automatic deduction when n_components is set to ‘auto’.</p>
+</dd>
+<dt><strong>dense_output</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>If set to True transformed matrix will be dense otherwise sparse.</p>
+</dd>
+<dt><strong>random_state</strong><span class="classifier">int (default = None)</span></dt><dd><p>Seed used to initilize random generator</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Inspired from sklearn’s implementation :
+<a class="reference external" href="https://scikit-learn.org/stable/modules/random_projection.html">https://scikit-learn.org/stable/modules/random_projection.html</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>gaussian_method</strong><span class="classifier">boolean</span></dt><dd><p>To be passed to base class in order to determine
+random matrix generation method</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="neighbors">
+<h2>Neighbors<a class="headerlink" href="#neighbors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nearest-neighbors">
+<h3>Nearest Neighbors<a class="headerlink" href="#nearest-neighbors" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.NearestNeighbors">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">NearestNeighbors</code><a class="headerlink" href="#cuml.NearestNeighbors" title="Permalink to this definition">¶</a></dt>
+<dd><p>NearestNeighbors is a unsupervised algorithm where if one wants to find the
+“closest” datapoint(s) to new unseen data, one can calculate a suitable
+“distance” between each and every point, and return the top K datapoints
+which have the smallest distance to it.</p>
+<p>cuML’s KNN an array-like object or cuDF DataFrame (where automatic
+chunking will be done in to a Numpy Array in a future release), and fits a
+special data structure first to approximate the distance calculations,
+allowing our querying times to be O(plogn) and not the brute force O(np)
+[where p = no(features)]:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n_neighbors: int (default = 5)</strong></dt><dd><p>The top K closest datapoints you want the algorithm to return.
+If this number is large, then expect the algorithm to run slower.</p>
+</dd>
+<dt><strong>should_downcast</strong><span class="classifier">bool (default = False)</span></dt><dd><p>Currently only single precision is supported in the underlying undex.
+Setting this to true will allow single-precision input arrays to be
+automatically downcasted to single precision.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>NearestNeighbors is a generative model. This means the data X has to be
+stored in order for inference to occur.</p>
+<p><strong>Applications of NearestNeighbors</strong></p>
+<blockquote>
+<div><p>Applications of NearestNeighbors include recommendation systems where
+content or colloborative filtering is used. Since NearestNeighbors is a
+relatively simple generative model, it is also used in data
+visualization and regression / classification tasks.</p>
+</div></blockquote>
+<p>For an additional example see <a class="reference external" href="https://github.com/rapidsai/notebook/blob/master/python/notebooks/knn_demo.ipynb">the NearestNeighbors notebook</a>.</p>
+<p>For additional docs, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html#sklearn.neighbors.NearestNeighbors">scikitlearn’s NearestNeighbors</a>.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span>
+<span class="kn">from</span> <span class="nn">cuml.neighbors</span> <span class="kn">import</span> <span class="n">NearestNeighbors</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">np_float</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="c1"># Point 1</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="c1"># Point 2</span>
+  <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>  <span class="c1"># Point 3</span>
+<span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+
+<span class="n">gdf_float</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">gdf_float</span><span class="p">[</span><span class="s1">&#39;dim_0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">np_float</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">gdf_float</span><span class="p">[</span><span class="s1">&#39;dim_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">np_float</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">gdf_float</span><span class="p">[</span><span class="s1">&#39;dim_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">np_float</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;n_samples = 3, n_dims = 3&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
+
+<span class="n">nn_float</span> <span class="o">=</span> <span class="n">NearestNeighbors</span><span class="p">()</span>
+<span class="n">nn_float</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
+<span class="c1"># get 3 nearest neighbors</span>
+<span class="n">distances</span><span class="p">,</span><span class="n">indices</span> <span class="o">=</span> <span class="n">nn_float</span><span class="o">.</span><span class="n">kneighbors</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span>
+
+<span class="c1"># Both import methods supported</span>
+<span class="c1"># from cuml.neighbors import NearestNeighbors</span>
+<span class="kn">from</span> <span class="nn">cuml</span> <span class="kn">import</span> <span class="n">NearestNeighbors</span>
+
+<span class="n">n_samples</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">n_dims</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">dim_0</span> <span class="n">dim_1</span> <span class="n">dim_2</span>
+
+<span class="mi">0</span>   <span class="mf">1.0</span>   <span class="mf">2.0</span>   <span class="mf">3.0</span>
+<span class="mi">1</span>   <span class="mf">1.0</span>   <span class="mf">2.0</span>   <span class="mf">4.0</span>
+<span class="mi">2</span>   <span class="mf">2.0</span>   <span class="mf">2.0</span>   <span class="mf">4.0</span>
+
+<span class="c1"># indices:</span>
+
+         <span class="n">index_neighbor_0</span> <span class="n">index_neighbor_1</span> <span class="n">index_neighbor_2</span>
+<span class="mi">0</span>                <span class="mi">0</span>                <span class="mi">1</span>                <span class="mi">2</span>
+<span class="mi">1</span>                <span class="mi">1</span>                <span class="mi">0</span>                <span class="mi">2</span>
+<span class="mi">2</span>                <span class="mi">2</span>                <span class="mi">1</span>                <span class="mi">0</span>
+<span class="c1"># distances:</span>
+
+         <span class="n">distance_neighbor_0</span> <span class="n">distance_neighbor_1</span> <span class="n">distance_neighbor_2</span>
+<span class="mi">0</span>                 <span class="mf">0.0</span>                 <span class="mf">1.0</span>                 <span class="mf">2.0</span>
+<span class="mi">1</span>                 <span class="mf">0.0</span>                 <span class="mf">1.0</span>                 <span class="mf">1.0</span>
+<span class="mi">2</span>                 <span class="mf">0.0</span>                 <span class="mf">1.0</span>                 <span class="mf">2.0</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.NearestNeighbors.fit" title="cuml.NearestNeighbors.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X)</p></td>
+<td><p>Fit GPU index for performing nearest neighbor queries.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.NearestNeighbors.kneighbors" title="cuml.NearestNeighbors.kneighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kneighbors</span></code></a>(self, X[, k])</p></td>
+<td><p>Query the GPU index for the k nearest neighbors of column vectors in X.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cuml.NearestNeighbors.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit GPU index for performing nearest neighbor queries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.NearestNeighbors.kneighbors">
+<code class="sig-name descname">kneighbors</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">k=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.kneighbors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query the GPU index for the k nearest neighbors of column vectors in X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>k: Integer</strong></dt><dd><p>Number of neighbors to search</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>distances: cuDF DataFrame or numpy ndarray</dt><dd><p>The distances of the k-nearest neighbors for each column vector
+in X</p>
+</dd>
+<dt>indices: cuDF DataFrame of numpy ndarray</dt><dd><p>The indices of the k-nearest neighbors for each column vector in X</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="time-series">
+<h2>Time Series<a class="headerlink" href="#time-series" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="kalman-filter">
+<h3>Kalman Filter<a class="headerlink" href="#kalman-filter" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.KalmanFilter">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">KalmanFilter</code><a class="headerlink" href="#cuml.KalmanFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements a Kalman filter. You are responsible for setting the
+various state variables to reasonable values; defaults  will
+not give you a functional filter.
+After construction the filter will have default matrices created for you,
+but you must specify the values for each.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>dim_x</strong><span class="classifier">int</span></dt><dd><p>Number of state variables for the Kalman filter.
+This is used to set the default size of P, Q, and u</p>
+</dd>
+<dt><strong>dim_z</strong><span class="classifier">int</span></dt><dd><p>Number of of measurement inputs.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cuml</span> <span class="k">import</span> <span class="n">KalmanFilter</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">KalmanFilter</span><span class="p">(</span><span class="n">dim_x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dim_z</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">2.</span><span class="p">],</span>    <span class="c1"># position</span>
+                <span class="p">[</span><span class="mf">0.</span><span class="p">]])</span>   <span class="c1"># velocity</span>
+<span class="n">f</span><span class="o">.</span><span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">1.</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">]])</span>
+<span class="n">f</span><span class="o">.</span><span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">]])</span>
+<span class="n">f</span><span class="o">.</span><span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1000.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span> <span class="p">[</span>   <span class="mf">0.</span><span class="p">,</span> <span class="mf">1000.</span><span class="p">]</span> <span class="p">])</span>
+<span class="n">f</span><span class="o">.</span><span class="n">R</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>Now just perform the standard predict/update loop:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">some_condition_is_true</span><span class="p">:</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">numba</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">to_device</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">predict</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">numba device array, numpy array or cuDF series (dim_x, 1),</span></dt><dd><p>Current state estimate. Any call to update() or predict() updates
+this variable.</p>
+</dd>
+<dt><strong>P</strong><span class="classifier">numba device array, numpy array or cuDF dataframe(dim_x, dim_x)</span></dt><dd><p>Current state covariance matrix. Any call to update() or predict()
+updates this variable.</p>
+</dd>
+<dt><strong>x_prior</strong><span class="classifier">numba device array, numpy array or cuDF series(dim_x, 1)</span></dt><dd><p>Prior (predicted) state estimate. The <a href="#id3"><span class="problematic" id="id4">*</span></a>_prior and <a href="#id5"><span class="problematic" id="id6">*</span></a>_post attributes
+are for convienence; they store the  prior and posterior of the
+current epoch. Read Only.</p>
+</dd>
+<dt><strong>P_prior</strong><span class="classifier">numba device array, numpy array or cuDF dataframe(dim_x, dim_x)</span></dt><dd><p>Prior (predicted) state covariance matrix. Read Only.</p>
+</dd>
+<dt><strong>x_post</strong><span class="classifier">numba device array, numpy array or cuDF series(dim_x, 1)</span></dt><dd><p>Posterior (updated) state estimate. Read Only.</p>
+</dd>
+<dt><strong>P_post</strong><span class="classifier">numba device array, numpy array or cuDF dataframe(dim_x, dim_x)</span></dt><dd><p>Posterior (updated) state covariance matrix. Read Only.</p>
+</dd>
+<dt><strong>z</strong><span class="classifier">numba device array or cuDF series (dim_x, 1)</span></dt><dd><p>Last measurement used in update(). Read only.</p>
+</dd>
+<dt><strong>R</strong><span class="classifier">numba device array(dim_z, dim_z)</span></dt><dd><p>Measurement noise matrix</p>
+</dd>
+<dt><strong>Q</strong><span class="classifier">numba device array(dim_x, dim_x)</span></dt><dd><p>Process noise matrix</p>
+</dd>
+<dt><strong>F</strong><span class="classifier">numba device array()</span></dt><dd><p>State Transition matrix</p>
+</dd>
+<dt><strong>H</strong><span class="classifier">numba device array(dim_z, dim_x)</span></dt><dd><p>Measurement function</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">numba device array</span></dt><dd><p>Residual of the update step. Read only.</p>
+</dd>
+<dt><strong>K</strong><span class="classifier">numba device array(dim_x, dim_z)</span></dt><dd><p>Kalman gain of the update step. Read only.</p>
+</dd>
+<dt><strong>precision: ‘single’ or ‘double’</strong></dt><dd><p>Whether the Kalman Filter uses single or double precision</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.KalmanFilter.predict" title="cuml.KalmanFilter.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self[, B, F, Q])</p></td>
+<td><p>Predict next state (prior) using the Kalman filter state propagation equations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.KalmanFilter.update" title="cuml.KalmanFilter.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>(self, z[, R, H])</p></td>
+<td><p>Add a new measurement (z) to the Kalman filter.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cuml.KalmanFilter.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">B=None</em>, <em class="sig-param">F=None</em>, <em class="sig-param">Q=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KalmanFilter.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict next state (prior) using the Kalman filter state propagation
+equations.
+Parameters
+———-
+u : np.array</p>
+<blockquote>
+<div><p>Optional control vector. If not <cite>None</cite>, it is multiplied by B
+to create the control input into the system.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>B<span class="classifier">np.array(dim_x, dim_z), or None</span></dt><dd><p>Optional control transition matrix; a value of None
+will cause the filter to use <cite>self.B</cite>.</p>
+</dd>
+<dt>F<span class="classifier">np.array(dim_x, dim_x), or None</span></dt><dd><p>Optional state transition matrix; a value of None
+will cause the filter to use <cite>self.F</cite>.</p>
+</dd>
+<dt>Q<span class="classifier">np.array(dim_x, dim_x), scalar, or None</span></dt><dd><p>Optional process noise matrix; a value of None will cause the
+filter to use <cite>self.Q</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.KalmanFilter.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">z</em>, <em class="sig-param">R=None</em>, <em class="sig-param">H=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KalmanFilter.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new measurement (z) to the Kalman filter.
+If z is None, nothing is computed. However, x_post and P_post are
+updated with the prior (x_prior, P_prior), and self.z is set to None.
+Parameters
+———-
+z : (dim_z, 1): array_like</p>
+<blockquote>
+<div><p>measurement for this update. z can be a scalar if dim_z is 1,
+otherwise it must be convertible to a column vector.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>R<span class="classifier">np.array, scalar, or None</span></dt><dd><p>Optionally provide R to override the measurement noise for this
+one call, otherwise  self.R will be used.</p>
+</dd>
+<dt>H<span class="classifier">np.array, or None</span></dt><dd><p>Optionally provide H to override the measurement function for this
+one call, otherwise self.H will be used.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 </div>
 </div>
 
