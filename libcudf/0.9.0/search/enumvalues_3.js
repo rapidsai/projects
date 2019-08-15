@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inferred',['inferred',['../namespacecolumn__parse.html#ad1a5214577a0d2e3e4537f164b2d6f0fabd3ee6b72a8ee871139a919002851929',1,'column_parse']]]
+  ['disabled_1101',['disabled',['../namespacecolumn__parse.html#a3d4f8311e6d8667f32461f3dd26b7256a86e26be360313a9999f14403d9b0e8ee',1,'column_parse']]]
 ];

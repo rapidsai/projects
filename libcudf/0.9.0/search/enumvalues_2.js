@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['enabled',['enabled',['../namespacecolumn__parse.html#ad1a5214577a0d2e3e4537f164b2d6f0fa6ded22f5f5faf55de6277fa3cabd194f',1,'column_parse']]]
+  ['ceil_1099',['CEIL',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba8b0d502b44d1472a2d5fa3638f0ce945',1,'cudf']]],
+  ['cos_1100',['COS',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19baf7c88ff3bee94b5c3c16c405706ef34a',1,'cudf']]]
 ];
