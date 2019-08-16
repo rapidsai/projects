@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wrap',['wrap',['../classNVStrings.html#ac7b63041edf7e30cdbe8676c75f38635',1,'NVStrings']]]
+  ['values_5fcptr_295',['values_cptr',['../classNVCategory.html#afb959fb30d1ee23905b7dd0b533810dd',1,'NVCategory']]]
 ];

@@ -204,158 +204,164 @@ Methods that modify any string will create a new nvstrings instance.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.count" title="nvstrings.nvstrings.count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">count</span></code></a>(self, pat[, devptr])</p></td>
 <td><p>Count occurrences of pattern in each string.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.endswith" title="nvstrings.nvstrings.endswith"><code class="xref py py-obj docutils literal notranslate"><span class="pre">endswith</span></code></a>(self, pat[, devptr])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.device_memory" title="nvstrings.nvstrings.device_memory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">device_memory</span></code></a>(self)</p></td>
+<td><p>Returns the total device memory used by this instance</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.endswith" title="nvstrings.nvstrings.endswith"><code class="xref py py-obj docutils literal notranslate"><span class="pre">endswith</span></code></a>(self, pat[, devptr])</p></td>
 <td><p>Return array of boolean values with True for the strings where the specified string is at the end.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.extract" title="nvstrings.nvstrings.extract"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract</span></code></a>(self, pat)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.extract" title="nvstrings.nvstrings.extract"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract</span></code></a>(self, pat)</p></td>
 <td><p>Extract string from the first match of regular expression pat.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.extract_record" title="nvstrings.nvstrings.extract_record"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract_record</span></code></a>(self, pat)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.extract_record" title="nvstrings.nvstrings.extract_record"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract_record</span></code></a>(self, pat)</p></td>
 <td><p>Extract string from the first match of regular expression pat.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.fillna" title="nvstrings.nvstrings.fillna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fillna</span></code></a>(self, repl)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.fillna" title="nvstrings.nvstrings.fillna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fillna</span></code></a>(self, repl)</p></td>
 <td><p>Create new instance, replacing all nulls with the given string(s).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.find" title="nvstrings.nvstrings.find"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find</span></code></a>(self, sub[, start, end, devptr])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.find" title="nvstrings.nvstrings.find"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find</span></code></a>(self, sub[, start, end, devptr])</p></td>
 <td><p>Find the specified string sub within each string.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.find_from" title="nvstrings.nvstrings.find_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_from</span></code></a>(self, sub[, starts, ends, devptr])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.find_from" title="nvstrings.nvstrings.find_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_from</span></code></a>(self, sub[, starts, ends, devptr])</p></td>
 <td><p>Find the specified string within each string starting at the specified character positions.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.find_multiple" title="nvstrings.nvstrings.find_multiple"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_multiple</span></code></a>(self, strs[, devptr])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.find_multiple" title="nvstrings.nvstrings.find_multiple"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_multiple</span></code></a>(self, strs[, devptr])</p></td>
 <td><p>Return a ‘matrix’ of find results for each of the string in the strs parameter.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.findall" title="nvstrings.nvstrings.findall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">findall</span></code></a>(self, pat)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.findall" title="nvstrings.nvstrings.findall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">findall</span></code></a>(self, pat)</p></td>
 <td><p>A new set of nvstrings is created by organizing substring results vertically.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.findall_record" title="nvstrings.nvstrings.findall_record"><code class="xref py py-obj docutils literal notranslate"><span class="pre">findall_record</span></code></a>(self, pat)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.findall_record" title="nvstrings.nvstrings.findall_record"><code class="xref py py-obj docutils literal notranslate"><span class="pre">findall_record</span></code></a>(self, pat)</p></td>
 <td><p>Find all occurrences of regular expression pattern in each string.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.gather" title="nvstrings.nvstrings.gather"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gather</span></code></a>(self, indexes[, count])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.gather" title="nvstrings.nvstrings.gather"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gather</span></code></a>(self, indexes[, count])</p></td>
 <td><p>Return a new list of strings from this instance.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.get" title="nvstrings.nvstrings.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>(self, i)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.get" title="nvstrings.nvstrings.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>(self, i)</p></td>
 <td><p>Returns the character specified in each string as a new string.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.get_cpointer" title="nvstrings.nvstrings.get_cpointer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_cpointer</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.get_cpointer" title="nvstrings.nvstrings.get_cpointer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_cpointer</span></code></a>(self)</p></td>
 <td><p>Returns memory pointer to underlying C++ class instance.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.get_info" title="nvstrings.nvstrings.get_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_info</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.get_info" title="nvstrings.nvstrings.get_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_info</span></code></a>(self)</p></td>
 <td><p>Return a dictionary of information about the strings in this instance.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.get_ipc_data" title="nvstrings.nvstrings.get_ipc_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ipc_data</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.get_ipc_data" title="nvstrings.nvstrings.get_ipc_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_ipc_data</span></code></a>(self)</p></td>
 <td><p>Returns IPC data handler to underlying C++ object from NVStrings.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.hash" title="nvstrings.nvstrings.hash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hash</span></code></a>(self[, devptr])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.hash" title="nvstrings.nvstrings.hash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hash</span></code></a>(self[, devptr])</p></td>
 <td><p>Returns hash values represented by each string.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.htoi" title="nvstrings.nvstrings.htoi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">htoi</span></code></a>(self[, devptr])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.htoi" title="nvstrings.nvstrings.htoi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">htoi</span></code></a>(self[, devptr])</p></td>
 <td><p>Returns integer value represented by each string.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.index" title="nvstrings.nvstrings.index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code></a>(self, sub[, start, end, devptr])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.index" title="nvstrings.nvstrings.index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code></a>(self, sub[, start, end, devptr])</p></td>
 <td><p>Same as find but throws an error if arg is not found in all strings.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.insert" title="nvstrings.nvstrings.insert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">insert</span></code></a>(self[, start, repl])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.insert" title="nvstrings.nvstrings.insert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">insert</span></code></a>(self[, start, repl])</p></td>
 <td><p>Insert the specified string into each string in the specified position.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.ip2int" title="nvstrings.nvstrings.ip2int"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ip2int</span></code></a>(self[, devptr])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.ip2int" title="nvstrings.nvstrings.ip2int"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ip2int</span></code></a>(self[, devptr])</p></td>
 <td><p>Returns integer value represented by each string.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.is_empty" title="nvstrings.nvstrings.is_empty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_empty</span></code></a>(self[, devptr])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.is_empty" title="nvstrings.nvstrings.is_empty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_empty</span></code></a>(self[, devptr])</p></td>
 <td><p>Return array of boolean values with True for strings that contain at least one character.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isalnum" title="nvstrings.nvstrings.isalnum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isalnum</span></code></a>(self[, devptr])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isalnum" title="nvstrings.nvstrings.isalnum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isalnum</span></code></a>(self[, devptr])</p></td>
 <td><p>Return array of boolean values with True for strings that contain only alpha-numeric characters.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isalpha" title="nvstrings.nvstrings.isalpha"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isalpha</span></code></a>(self[, devptr])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isalpha" title="nvstrings.nvstrings.isalpha"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isalpha</span></code></a>(self[, devptr])</p></td>
 <td><p>Return array of boolean values with True for strings that contain only alphabetic characters.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isdecimal" title="nvstrings.nvstrings.isdecimal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isdecimal</span></code></a>(self[, devptr])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isdecimal" title="nvstrings.nvstrings.isdecimal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isdecimal</span></code></a>(self[, devptr])</p></td>
 <td><p>Return array of boolean values with True for strings that contain only decimal characters – those that can be used to extract base10 numbers.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isdigit" title="nvstrings.nvstrings.isdigit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isdigit</span></code></a>(self[, devptr])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isdigit" title="nvstrings.nvstrings.isdigit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isdigit</span></code></a>(self[, devptr])</p></td>
 <td><p>Return array of boolean values with True for strings that contain only decimal and digit characters.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.islower" title="nvstrings.nvstrings.islower"><code class="xref py py-obj docutils literal notranslate"><span class="pre">islower</span></code></a>(self[, devptr])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.islower" title="nvstrings.nvstrings.islower"><code class="xref py py-obj docutils literal notranslate"><span class="pre">islower</span></code></a>(self[, devptr])</p></td>
 <td><p>Return array of boolean values with True for strings that contain only lowercase characters.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isnumeric" title="nvstrings.nvstrings.isnumeric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnumeric</span></code></a>(self[, devptr])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isnumeric" title="nvstrings.nvstrings.isnumeric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnumeric</span></code></a>(self[, devptr])</p></td>
 <td><p>Return array of boolean values with True for strings that contain only numeric characters.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isspace" title="nvstrings.nvstrings.isspace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isspace</span></code></a>(self[, devptr])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isspace" title="nvstrings.nvstrings.isspace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isspace</span></code></a>(self[, devptr])</p></td>
 <td><p>Return array of boolean values with True for strings that contain only whitespace characters.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isupper" title="nvstrings.nvstrings.isupper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isupper</span></code></a>(self[, devptr])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.isupper" title="nvstrings.nvstrings.isupper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isupper</span></code></a>(self[, devptr])</p></td>
 <td><p>Return array of boolean values with True for strings that contain only uppercase characters.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.join" title="nvstrings.nvstrings.join"><code class="xref py py-obj docutils literal notranslate"><span class="pre">join</span></code></a>(self[, sep])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.join" title="nvstrings.nvstrings.join"><code class="xref py py-obj docutils literal notranslate"><span class="pre">join</span></code></a>(self[, sep])</p></td>
 <td><p>Concatentate this list of strings into a single string.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.len" title="nvstrings.nvstrings.len"><code class="xref py py-obj docutils literal notranslate"><span class="pre">len</span></code></a>(self[, devptr])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.len" title="nvstrings.nvstrings.len"><code class="xref py py-obj docutils literal notranslate"><span class="pre">len</span></code></a>(self[, devptr])</p></td>
 <td><p>Returns the number of characters of each string.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.ljust" title="nvstrings.nvstrings.ljust"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ljust</span></code></a>(self, width[, fillchar])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.ljust" title="nvstrings.nvstrings.ljust"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ljust</span></code></a>(self, width[, fillchar])</p></td>
 <td><p>Pad the end of each string to the minimum width.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.lower" title="nvstrings.nvstrings.lower"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lower</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.lower" title="nvstrings.nvstrings.lower"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lower</span></code></a>(self)</p></td>
 <td><p>Convert each string to lowercase.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.lstrip" title="nvstrings.nvstrings.lstrip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lstrip</span></code></a>(self[, to_strip])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.lstrip" title="nvstrings.nvstrings.lstrip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lstrip</span></code></a>(self[, to_strip])</p></td>
 <td><p>Strip leading characters from each string.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.match" title="nvstrings.nvstrings.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, pat[, devptr])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.match" title="nvstrings.nvstrings.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a>(self, pat[, devptr])</p></td>
 <td><p>Return array of boolean values where True is set if the specified pattern matches the beginning of the corresponding string.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.match_strings" title="nvstrings.nvstrings.match_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match_strings</span></code></a>(self, strs[, devptr])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.match_strings" title="nvstrings.nvstrings.match_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match_strings</span></code></a>(self, strs[, devptr])</p></td>
 <td><p>Return array of boolean values where True is set for those strings in strs that match exactly to the corresponding strings in this instance.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.null_count" title="nvstrings.nvstrings.null_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">null_count</span></code></a>(self[, emptyisnull])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.null_count" title="nvstrings.nvstrings.null_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">null_count</span></code></a>(self[, emptyisnull])</p></td>
 <td><p>Returns the number of null strings in this instance.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.order" title="nvstrings.nvstrings.order"><code class="xref py py-obj docutils literal notranslate"><span class="pre">order</span></code></a>(self[, stype, asc, nullfirst, devptr])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.order" title="nvstrings.nvstrings.order"><code class="xref py py-obj docutils literal notranslate"><span class="pre">order</span></code></a>(self[, stype, asc, nullfirst, devptr])</p></td>
 <td><p>Sort this list by name (2) or length (1) or both (3).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.pad" title="nvstrings.nvstrings.pad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pad</span></code></a>(self, width[, side, fillchar])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.pad" title="nvstrings.nvstrings.pad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pad</span></code></a>(self, width[, side, fillchar])</p></td>
 <td><p>Add specified padding to each string.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.partition" title="nvstrings.nvstrings.partition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">partition</span></code></a>(self[, delimiter])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.partition" title="nvstrings.nvstrings.partition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">partition</span></code></a>(self[, delimiter])</p></td>
 <td><p>Each string is split into two strings on the first delimiter found.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.remove_strings" title="nvstrings.nvstrings.remove_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_strings</span></code></a>(self, indexes[, count])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.remove_strings" title="nvstrings.nvstrings.remove_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_strings</span></code></a>(self, indexes[, count])</p></td>
 <td><p>Remove the specified strings and return a new instance.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.repeat" title="nvstrings.nvstrings.repeat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">repeat</span></code></a>(self, repeats)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.repeat" title="nvstrings.nvstrings.repeat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">repeat</span></code></a>(self, repeats)</p></td>
 <td><p>Appends each string with itself the specified number of times.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.replace" title="nvstrings.nvstrings.replace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace</span></code></a>(self, pat, repl[, n, regex])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.replace" title="nvstrings.nvstrings.replace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace</span></code></a>(self, pat, repl[, n, regex])</p></td>
 <td><p>Replace a string (pat) in each string with another string (repl).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.replace_multi" title="nvstrings.nvstrings.replace_multi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_multi</span></code></a>(self, pats, repls[, regex])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.replace_multi" title="nvstrings.nvstrings.replace_multi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_multi</span></code></a>(self, pats, repls[, regex])</p></td>
 <td><p>Replace multiple strings (pats) in each string with corresponding strings (repls).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.replace_with_backrefs" title="nvstrings.nvstrings.replace_with_backrefs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_with_backrefs</span></code></a>(self, pat, repl)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.replace_with_backrefs" title="nvstrings.nvstrings.replace_with_backrefs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_with_backrefs</span></code></a>(self, pat, repl)</p></td>
 <td><p>Use the repl back-ref template to create a new string with the extracted elements found using the pat expression.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rfind" title="nvstrings.nvstrings.rfind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfind</span></code></a>(self, sub[, start, end, devptr])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rfind" title="nvstrings.nvstrings.rfind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfind</span></code></a>(self, sub[, start, end, devptr])</p></td>
 <td><p>Find the specified string within each string.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rindex" title="nvstrings.nvstrings.rindex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rindex</span></code></a>(self, sub[, start, end, devptr])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rindex" title="nvstrings.nvstrings.rindex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rindex</span></code></a>(self, sub[, start, end, devptr])</p></td>
 <td><p>Same as rfind but throws an error if arg is not found in all strings.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rjust" title="nvstrings.nvstrings.rjust"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rjust</span></code></a>(self, width[, fillchar])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rjust" title="nvstrings.nvstrings.rjust"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rjust</span></code></a>(self, width[, fillchar])</p></td>
 <td><p>Pad the beginning of each string to the minimum width.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rpartition" title="nvstrings.nvstrings.rpartition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rpartition</span></code></a>(self[, delimiter])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rpartition" title="nvstrings.nvstrings.rpartition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rpartition</span></code></a>(self[, delimiter])</p></td>
 <td><p>Each string is split into two strings on the first delimiter found.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rsplit" title="nvstrings.nvstrings.rsplit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsplit</span></code></a>(self[, delimiter, n])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rsplit" title="nvstrings.nvstrings.rsplit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsplit</span></code></a>(self[, delimiter, n])</p></td>
 <td><p>A new set of columns (nvstrings) is created by splitting the strings vertically.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rsplit_record" title="nvstrings.nvstrings.rsplit_record"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsplit_record</span></code></a>(self[, delimiter, n])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rsplit_record" title="nvstrings.nvstrings.rsplit_record"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsplit_record</span></code></a>(self[, delimiter, n])</p></td>
 <td><p>Returns an array of nvstrings each representing the split of each individual string.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rstrip" title="nvstrings.nvstrings.rstrip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rstrip</span></code></a>(self[, to_strip])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.rstrip" title="nvstrings.nvstrings.rstrip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rstrip</span></code></a>(self[, to_strip])</p></td>
 <td><p>Strip trailing characters from each string.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.scalar_scatter" title="nvstrings.nvstrings.scalar_scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scalar_scatter</span></code></a>(self, str, indexes, count)</p></td>
+<td><p>Return a new list of strings placing the specified string at the provided indexes.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.scatter" title="nvstrings.nvstrings.scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter</span></code></a>(self, strs, indexes)</p></td>
 <td><p>Return a new list of strings combining this instance with the provided strings using the specified indexes.</p></td>
@@ -428,6 +434,12 @@ Methods that modify any string will create a new nvstrings instance.</p>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.upper" title="nvstrings.nvstrings.upper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">upper</span></code></a>(self)</p></td>
 <td><p>Convert each string to uppercase.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.url_decode" title="nvstrings.nvstrings.url_decode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">url_decode</span></code></a>(self)</p></td>
+<td><p>URL-decode each string and return as a new instance.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#nvstrings.nvstrings.url_encode" title="nvstrings.nvstrings.url_encode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">url_encode</span></code></a>(self)</p></td>
+<td><p>URL-encode each string and return as a new instance.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#nvstrings.nvstrings.wrap" title="nvstrings.nvstrings.wrap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wrap</span></code></a>(self, width)</p></td>
 <td><p>This will place new-line characters in whitespace so each line is no more than width characters.</p></td>
@@ -652,6 +664,19 @@ Memory must be able to hold at least size() of int32 values.</p>
 </dl>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="nvstrings.nvstrings.device_memory">
+<code class="sig-name descname">device_memory</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.device_memory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the total device memory used by this instance</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<span class="go">&gt;&gt; s = nvstrings.to_device([&#39;a&#39;*7])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">device_memory</span><span class="p">())</span>
+<span class="go">24</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1842,6 +1867,35 @@ string. Default is space.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="nvstrings.nvstrings.scalar_scatter">
+<code class="sig-name descname">scalar_scatter</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">str</em>, <em class="sig-param">indexes</em>, <em class="sig-param">count</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.scalar_scatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new list of strings placing the specified
+string at the provided indexes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>str</strong><span class="classifier">str</span></dt><dd><p>String to be placed</p>
+</dd>
+<dt><strong>indexes</strong><span class="classifier">List of ints or GPU memory pointer</span></dt><dd><p>0-based indexes of strings indicating the positions
+where the str parameter should be placed.
+Existing strings at those positions will be replaced.
+Values must be of type int32.</p>
+</dd>
+<dt><strong>count</strong><span class="classifier">int</span></dt><dd><p>Number of elements in the indexes parameter.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="s2">&quot;d&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">scalar_scatter</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
+<span class="go">[&#39;a&#39;, &#39;_&#39;, &#39;c&#39;, &#39;_&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
 <dt id="nvstrings.nvstrings.scatter">
 <code class="sig-name descname">scatter</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">strs</em>, <em class="sig-param">indexes</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.scatter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a new list of strings combining this instance
@@ -2404,6 +2458,37 @@ This only applies to ASCII characters at this time.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;Hello, friend&quot;</span><span class="p">,</span><span class="s2">&quot;Goodbye, friend&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
 <span class="go">[&#39;HELLO, FRIEND&#39;, &#39;GOODBYE, FRIEND&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="nvstrings.nvstrings.url_decode">
+<code class="sig-name descname">url_decode</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.url_decode" title="Permalink to this definition">¶</a></dt>
+<dd><p>URL-decode each string and return as a new instance.
+No format checking is performed. All characters are
+expected to be encoded as UTF-8 hex values.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;A</span><span class="si">%2F</span><span class="s1">B-C</span><span class="si">%2F</span><span class="s1">D&#39;</span><span class="p">,</span> <span class="s1">&#39;e</span><span class="si">%20f</span><span class="s1">.g&#39;</span><span class="p">,</span> <span class="s1">&#39;4-5%2C6&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">url_decode</span><span class="p">())</span>
+<span class="go">[&#39;A/B-C/D&#39;, &#39;e f.g&#39;, &#39;4-5,6&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="nvstrings.nvstrings.url_encode">
+<code class="sig-name descname">url_encode</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.url_encode" title="Permalink to this definition">¶</a></dt>
+<dd><p>URL-encode each string and return as a new instance.
+No format checking is performed. All characters are encoded except
+for ASCII letters, digits, and these characters: ‘.’,’_’,’-‘,’~’.
+Encoding converts to hex using UTF-8 encoded bytes.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;a/b-c/d&quot;</span><span class="p">,</span><span class="s2">&quot;E F.G&quot;</span><span class="p">,</span><span class="s2">&quot;1-2,3&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">url_encode</span><span class="p">())</span>
+<span class="go">[&#39;a%2Fb-c%2Fd&#39;, &#39;E%20F.G&#39;, &#39;1-2%2C3&#39;]</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -3273,6 +3358,29 @@ Default is ‘_’.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dstrings</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;this is my&#39;</span><span class="p">,</span> <span class="s1">&#39;favorite book&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nvtext</span><span class="o">.</span><span class="n">ngrams</span><span class="p">(</span><span class="n">dstrings</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">))</span>
 <span class="go">[&#39;this_is&#39;, &#39;is_my&#39;, &#39;my_favorite&#39;, &#39;favorite_book&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="nvtext.normalize_spaces">
+<code class="sig-prename descclassname">nvtext.</code><code class="sig-name descname">normalize_spaces</code><span class="sig-paren">(</span><em class="sig-param">strs</em><span class="sig-paren">)</span><a class="headerlink" href="#nvtext.normalize_spaces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove extra whitespace between tokens and trim whitespace
+from the beginning and the end of each string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>strs</strong><span class="classifier">nvstrings</span></dt><dd><p>The strings for this operation.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello          world&quot;</span><span class="p">,</span><span class="s2">&quot; test string  &quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">nvtext</span><span class="o">.</span><span class="n">normalize_spaces</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="go">[&quot;hello world&quot;, &quot;test string&quot;]</span>
 </pre></div>
 </div>
 </dd></dl>

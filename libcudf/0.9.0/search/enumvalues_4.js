@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['keep_5ffirst',['KEEP_FIRST',['../namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa86ea4bfd2b3121412b0a63a3697926ec',1,'cudf']]],
-  ['keep_5flast',['KEEP_LAST',['../namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa1d1398f646d74e801389737f07d89d1c',1,'cudf']]],
-  ['keep_5fnone',['KEEP_NONE',['../namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa6fb3154b77231184b596b4add407aa2a',1,'cudf']]]
+  ['enabled_1102',['enabled',['../namespacecolumn__parse.html#a3d4f8311e6d8667f32461f3dd26b7256a6ded22f5f5faf55de6277fa3cabd194f',1,'column_parse']]],
+  ['exp_1103',['EXP',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba6e272b8c75625066b2c8994cec6c8f73',1,'cudf']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['device_5fatomics_2ecuh',['device_atomics.cuh',['../device__atomics_8cuh.html',1,'']]],
-  ['device_5foperators_2ecuh',['device_operators.cuh',['../device__operators_8cuh.html',1,'']]]
+  ['full_5fjoin_2ecuh_856',['full_join.cuh',['../full__join_8cuh.html',1,'']]]
 ];
