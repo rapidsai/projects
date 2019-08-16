@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="_static/params.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Multi-GPU with cuGraph" href="dask-cugraph.html" />
     <link rel="prev" title="Welcome to cugraph’s documentation!" href="index.html" /> 
 </head>
 
@@ -124,6 +125,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="dask-cugraph.html">Multi-GPU with cuGraph</a></li>
 </ul>
 
             
@@ -289,7 +291,7 @@ The gdf column contains the destination index for each edge.
 Destination indices must be in the range [0, V) (V: number of
 vertices).</p>
 </dd>
-<dt><strong>value_col</strong><span class="classifier">cudf.Series, optional</span></dt><dd><p>This pointer can be <code class="docutils literal notranslate"><span class="pre">none</span></code>.
+<dt><strong>value_col</strong><span class="classifier">cudf.Series, optional</span></dt><dd><p>This pointer can be <code class="docutils literal notranslate"><span class="pre">None</span></code>.
 If not, this cudf.Series wraps a gdf_column of size E (E: number of
 edges).
 The gdf column contains the weight value for each edge.
@@ -347,7 +349,7 @@ Destination indices must be in the range [0, V) (V: number of
 vertices).
 Destination indices must be 32 bit integers.</p>
 </dd>
-<dt><strong>value_col</strong><span class="classifier">cudf.Series, optional</span></dt><dd><p>This pointer can be <code class="docutils literal notranslate"><span class="pre">none</span></code>.
+<dt><strong>value_col</strong><span class="classifier">cudf.Series, optional</span></dt><dd><p>This pointer can be <code class="docutils literal notranslate"><span class="pre">None</span></code>.
 If not, this cudf.Series wraps a gdf_column of size E (E: number of
 edges).
 The gdf column contains the weight value for each edge.
@@ -619,18 +621,87 @@ specified).</p>
 <dt id="cugraph.structure.graph.Graph.view_adj_list">
 <code class="sig-name descname">view_adj_list</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.structure.graph.Graph.view_adj_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the adjacency list. Compute it if needed.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl>
+<dt><strong>offset_col</strong><span class="classifier">cudf.Series</span></dt><dd><p>This cudf.Series wraps a gdf_column of size V + 1 (V: number of
+vertices).
+The gdf column contains the offsets for the vertices in this graph.
+Offsets are in the range [0, E] (E: number of edges).</p>
+</dd>
+<dt><strong>index_col</strong><span class="classifier">cudf.Series</span></dt><dd><p>This cudf.Series wraps a gdf_column of size E (E: number of edges).
+The gdf column contains the destination index for each edge.
+Destination indices are in the range [0, V) (V: number of
+vertices).</p>
+</dd>
+<dt><strong>value_col</strong><span class="classifier">cudf.Series or <code class="docutils literal notranslate"><span class="pre">None</span></code></span></dt><dd><p>This pointer is <code class="docutils literal notranslate"><span class="pre">None</span></code> for unweighted graphs.
+For weighted graphs, this cudf.Series wraps a gdf_column of size E
+(E: number of edges).
+The gdf column contains the weight value for each edge.
+The expected type of the gdf_column element is floating point
+number.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cugraph.structure.graph.Graph.view_edge_list">
 <code class="sig-name descname">view_edge_list</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.structure.graph.Graph.view_edge_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the edge list. Compute it if needed.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl>
+<dt><strong>source_col</strong><span class="classifier">cudf.Series</span></dt><dd><p>This cudf.Series wraps a gdf_column of size E (E: number of edges).
+The gdf column contains the source index for each edge.
+Source indices are in the range [0, V) (V: number of vertices).
+Source indices must be 32 bit integers.</p>
+</dd>
+<dt><strong>dest_col</strong><span class="classifier">cudf.Series</span></dt><dd><p>This cudf.Series wraps a gdf_column of size E (E: number of edges).
+The gdf column contains the destination index for each edge.
+Destination indices are in the range [0, V) (V: number of
+vertices).
+Destination indices must be 32 bit integers.</p>
+</dd>
+<dt><strong>value_col</strong><span class="classifier">cudf.Series or <code class="docutils literal notranslate"><span class="pre">None</span></code></span></dt><dd><p>This pointer is <code class="docutils literal notranslate"><span class="pre">None</span></code> for unweighted graphs.
+For weighted graphs, this cudf.Series wraps a gdf_column of size E
+(E: number of edges).
+The gdf column contains the weight value for each edge.
+The expected type of the gdf_column element is floating point
+number.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cugraph.structure.graph.Graph.view_transposed_adj_list">
 <code class="sig-name descname">view_transposed_adj_list</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.structure.graph.Graph.view_transposed_adj_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the transposed adjacency list. Compute it if needed.</p>
+<dl class="field-list">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl>
+<dt><strong>offset_col</strong><span class="classifier">cudf.Series</span></dt><dd><p>This cudf.Series wraps a gdf_column of size V + 1 (V: number of
+vertices).
+The gdf column contains the offsets for the vertices in this graph.
+Offsets are in the range [0, E] (E: number of edges).</p>
+</dd>
+<dt><strong>index_col</strong><span class="classifier">cudf.Series</span></dt><dd><p>This cudf.Series wraps a gdf_column of size E (E: number of edges).
+The gdf column contains the source index for each edge.
+Source indices are in the range [0, V) (V: number of vertices).</p>
+</dd>
+<dt><strong>value_col</strong><span class="classifier">cudf.Series or <code class="docutils literal notranslate"><span class="pre">None</span></code></span></dt><dd><p>This pointer is <code class="docutils literal notranslate"><span class="pre">None</span></code> for unweighted graphs.
+For weighted graphs, this cudf.Series wraps a gdf_column of size E
+(E: number of edges).
+The gdf column contains the weight value for each edge.
+The expected type of the gdf_column element is floating point
+number.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -674,10 +745,10 @@ original ids.</p>
 <span class="gp">&gt;&gt;&gt; </span>                  <span class="n">dtype</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int32&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">,</span> <span class="s1">&#39;float32&#39;</span><span class="p">],</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sources</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">destinations</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge_list</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="n">destinations</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">source_col</span><span class="p">,</span> <span class="n">dest_col</span><span class="p">,</span> <span class="n">numbering_map</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">renumber</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span>
 <span class="gp">&gt;&gt;&gt; </span>                                                       <span class="n">destinations</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge_list</span><span class="p">(</span><span class="n">source_col</span><span class="p">,</span> <span class="n">dest_col</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -703,7 +774,7 @@ destination (or target following NetworkX’s terminology) vertices, and
 <dt><strong>target</strong><span class="classifier">string or integer</span></dt><dd><p>This is used to index the destination (or target following NetworkX’s
 terminology) column.</p>
 </dd>
-<dt><strong>weight</strong><span class="classifier">string or integer, optional</span></dt><dd><p>This pointer can be <code class="docutils literal notranslate"><span class="pre">none</span></code>. If not, this is used to index the weight
+<dt><strong>weight</strong><span class="classifier">string or integer, optional</span></dt><dd><p>This pointer can be <code class="docutils literal notranslate"><span class="pre">None</span></code>. If not, this is used to index the weight
 column.</p>
 </dd>
 </dl>
@@ -1060,6 +1131,43 @@ graph.</p>
 <div class="section" id="module-cugraph.components.connectivity">
 <span id="connected-components"></span><h3>Connected Components<a class="headerlink" href="#module-cugraph.components.connectivity" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
+<dt id="cugraph.components.connectivity.strongly_connected_components">
+<code class="sig-prename descclassname">cugraph.components.connectivity.</code><code class="sig-name descname">strongly_connected_components</code><span class="sig-paren">(</span><em class="sig-param">G</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.components.connectivity.strongly_connected_components" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the stronlgly connected components and attach a component label to
+each vertex.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>G</strong><span class="classifier">cugraph.Graph</span></dt><dd><p>cuGraph graph descriptor, should contain the connectivity information as
+an edge list (edge weights are not used for this algorithm). The graph
+can be either directed or undirected where an undirected edge is
+represented by a directed edge in both directions.
+The adjacency list will be computed if not already present.
+The number of vertices should fit into a 32b int.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>df</strong><span class="classifier">cudf.DataFrame</span></dt><dd><p>df[‘labels’][i] gives the label id of the i’th vertex
+df[‘vertices’][i] gives the vertex id of the i’th vertex</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/karate.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                  <span class="n">dtype</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int32&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">,</span> <span class="s1">&#39;float32&#39;</span><span class="p">],</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sources</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">destinations</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge_list</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span><span class="n">destinations</span><span class="p">,</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">strongly_connected_components</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="cugraph.components.connectivity.weakly_connected_components">
 <code class="sig-prename descclassname">cugraph.components.connectivity.</code><code class="sig-name descname">weakly_connected_components</code><span class="sig-paren">(</span><em class="sig-param">G</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.components.connectivity.weakly_connected_components" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate the weakly connected components and attach a component label to
@@ -1078,7 +1186,8 @@ fit into a 32b int.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>df</strong><span class="classifier">cudf.DataFrame</span></dt><dd><p>df[‘labels’][i] gives the label id of the i’th vertex</p>
+<dt><strong>df</strong><span class="classifier">cudf.DataFrame</span></dt><dd><p>df[‘labels’][i] gives the label id of the i’th vertex
+df[‘vertices’][i] gives the vertex id of the i’th vertex</p>
 </dd>
 </dl>
 </dd>
@@ -1568,6 +1677,8 @@ before the i’th vertex in the traversal.</p>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dask-cugraph.html" class="btn btn-neutral float-right" title="Multi-GPU with cuGraph" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="Welcome to cugraph’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
