@@ -1,7 +1,7 @@
-Welcome to RAPIDS documentation!
-=================================
-GPU accelerated DataFrame library for data manipulation and preparation: `cuDF <https://rapidsai.github.io/projects/cudf/en/latest>`_ 
+Legacy RAPIDS Portal
+====================
 
-GPU accelerated Machine Learning library: `cuML <https://rapidsai.github.io/projects/cuml/en/latest>`_
 
-For more RAPIDS docs, please see `docs.rapids.ai <https://docs.rapids.ai>`_
+This page is a legacy portal to RAPIDS API docs.
+
+Please use https://docs.rapids.ai/ instead.
