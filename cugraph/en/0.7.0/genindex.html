@@ -157,8 +157,11 @@
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#G"><strong>G</strong></a>
+ | <a href="#I"><strong>I</strong></a>
  | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
  | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#V"><strong>V</strong></a>
  
@@ -170,7 +173,7 @@
 </li>
       <li><a href="api.html#cugraph.Graph.add_edge_list">add_edge_list (cugraph.Graph attribute)</a>
 </li>
-      <li><a href="api.html#cugraph.Graph.add_transpose">add_transpose (cugraph.Graph attribute)</a>
+      <li><a href="api.html#cugraph.Graph.add_transposed_adj_list">add_transposed_adj_list (cugraph.Graph attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -202,13 +205,15 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#cugraph.Graph.degree">degree (cugraph.Graph attribute)</a>
+</li>
       <li><a href="api.html#cugraph.Graph.delete_adj_list">delete_adj_list (cugraph.Graph attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#cugraph.Graph.delete_edge_list">delete_edge_list (cugraph.Graph attribute)</a>
 </li>
-      <li><a href="api.html#cugraph.Graph.delete_transpose">delete_transpose (cugraph.Graph attribute)</a>
+      <li><a href="api.html#cugraph.Graph.delete_transposed_adj_list">delete_transposed_adj_list (cugraph.Graph attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -216,11 +221,21 @@
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#cugraph.Graph">Graph (class in cugraph)</a>
+      <li><a href="api.html#cugraph.Graph.get_two_hop_neighbors">get_two_hop_neighbors (cugraph.Graph attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#cugraph.Graph">Graph (class in cugraph)</a>
+</li>
       <li><a href="api.html#cugraph.grmat_gen">grmat_gen() (in module cugraph)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#cugraph.Graph.in_degree">in_degree (cugraph.Graph attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -228,13 +243,21 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#cugraph.Graph.num_vertices">num_vertices (cugraph.Graph attribute)</a>
+      <li><a href="api.html#cugraph.Graph.number_of_edges">number_of_edges (cugraph.Graph attribute)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#cugraph.nvJaccard">nvJaccard() (in module cugraph)</a>
+      <li><a href="api.html#cugraph.Graph.number_of_vertices">number_of_vertices (cugraph.Graph attribute)</a>
 </li>
       <li><a href="api.html#cugraph.nvLouvain">nvLouvain() (in module cugraph)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#cugraph.Graph.out_degree">out_degree (cugraph.Graph attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -243,6 +266,14 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#cugraph.pagerank">pagerank() (in module cugraph)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#cugraph.Graph.renumber">renumber (cugraph.Graph attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -270,7 +301,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#cugraph.Graph.view_edge_list">view_edge_list (cugraph.Graph attribute)</a>
 </li>
-      <li><a href="api.html#cugraph.Graph.view_transpose_adj_list">view_transpose_adj_list (cugraph.Graph attribute)</a>
+      <li><a href="api.html#cugraph.Graph.view_transposed_adj_list">view_transposed_adj_list (cugraph.Graph attribute)</a>
 </li>
   </ul></td>
 </tr></table>

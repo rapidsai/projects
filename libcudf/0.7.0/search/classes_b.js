@@ -1,16 +1,13 @@
 var searchData=
 [
-  ['managed',['managed',['../structmanaged.html',1,'']]],
-  ['managed_5fallocator',['managed_allocator',['../structmanaged__allocator.html',1,'']]],
-  ['mathop',['MathOp',['../structMathOp.html',1,'']]],
-  ['max_5fop',['max_op',['../structmax__op.html',1,'']]],
-  ['messageinfo',['MessageInfo',['../structIpcParser_1_1MessageInfo.html',1,'IpcParser']]],
-  ['min_5fop',['min_op',['../structmin__op.html',1,'']]],
-  ['modulo_5fpartitioner',['modulo_partitioner',['../structmodulo__partitioner.html',1,'']]],
-  ['modulus_5fbit_5fwidth',['modulus_bit_width',['../structmodulus__bit__width.html',1,'']]],
-  ['multicolgroupby',['MultiColGroupBy',['../structMultiColGroupBy.html',1,'']]],
-  ['multicolgroupby_3c_20tplptrs_2c_20indext_2c_20valst_2c_20reducer_2c_20columnorderingpolicy_3a_3asort_20_3e',['MultiColGroupBy&lt; TplPtrs, IndexT, ValsT, Reducer, ColumnOrderingPolicy::Sort &gt;',['../structMultiColGroupBy_3_01TplPtrs_00_01IndexT_00_01ValsT_00_01Reducer_00_01ColumnOrderingPolicy_1_1Sort_01_4.html',1,'']]],
-  ['multicolgroupbycount',['MultiColGroupByCount',['../structMultiColGroupByCount.html',1,'']]],
-  ['multicolgroupbycount_3c_20tplptrs_2c_20indext_2c_20columnorderingpolicy_3a_3asort_20_3e',['MultiColGroupByCount&lt; TplPtrs, IndexT, ColumnOrderingPolicy::Sort &gt;',['../structMultiColGroupByCount_3_01TplPtrs_00_01IndexT_00_01ColumnOrderingPolicy_1_1Sort_01_4.html',1,'']]],
-  ['murmurhash3_5f32',['MurmurHash3_32',['../structMurmurHash3__32.html',1,'']]]
+  ['launcher',['Launcher',['../classcudf_1_1binops_1_1jit_1_1Launcher.html',1,'cudf::binops::jit::Launcher'],['../structcudf_1_1unary_1_1Launcher.html',1,'cudf::unary::Launcher&lt; T, Tout, F &gt;']]],
+  ['layoutdesc',['LayoutDesc',['../structIpcParser_1_1LayoutDesc.html',1,'IpcParser']]],
+  ['legacy_5fallocator',['legacy_allocator',['../structlegacy__allocator.html',1,'']]],
+  ['lesserindex',['LesserIndex',['../structLesserIndex.html',1,'']]],
+  ['lesserindex_3c_20tuple_2c_200_2c_20imax_20_3e',['LesserIndex&lt; Tuple, 0, imax &gt;',['../structLesserIndex_3_01Tuple_00_010_00_01imax_01_4.html',1,'']]],
+  ['lesserrtti',['LesserRTTI',['../structLesserRTTI.html',1,'']]],
+  ['localtime_5ftype_5frecord_5fs',['localtime_type_record_s',['../structlocaltime__type__record__s.html',1,'']]],
+  ['logic_5ferror',['logic_error',['../structcudf_1_1logic__error.html',1,'cudf']]],
+  ['logicalop',['LogicalOp',['../structLogicalOp.html',1,'']]],
+  ['lut_5farr',['lut_arr',['../structlut__arr.html',1,'']]]
 ];

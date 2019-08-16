@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libcudf: row_comparator&lt; map_type, size_type &gt; Struct Template Reference</title>
+<title>libcudf: row_comparator&lt; map_type &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,7 +68,7 @@ $(function() {
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structrow__comparator-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">row_comparator&lt; map_type, size_type &gt; Struct Template Reference</div>  </div>
+<div class="title">row_comparator&lt; map_type &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -77,70 +77,70 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="groupby__compute__api_8h_source.html">groupby_compute_api.h</a>&gt;</code></p>
 <div class="dynheader">
-Collaboration diagram for row_comparator&lt; map_type, size_type &gt;:</div>
+Collaboration diagram for row_comparator&lt; map_type &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="structrow__comparator__coll__graph.png" border="0" usemap="#row__comparator_3_01map__type_00_01size__type_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="row__comparator_3_01map__type_00_01size__type_01_4_coll__map" id="row__comparator_3_01map__type_00_01size__type_01_4_coll__map">
+<div class="center"><img src="structrow__comparator__coll__graph.png" border="0" usemap="#row__comparator_3_01map__type_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="row__comparator_3_01map__type_01_4_coll__map" id="row__comparator_3_01map__type_01_4_coll__map">
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ae23601b2cbd61b1915443169ccebe545"><td class="memItemLeft" align="right" valign="top"><a id="ae23601b2cbd61b1915443169ccebe545"></a>
+<tr class="memitem:ad4ad803e076a80b8361596d2d6873e02"><td class="memItemLeft" align="right" valign="top"><a id="ad4ad803e076a80b8361596d2d6873e02"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>key_type</b> = typename map_type::key_type</td></tr>
-<tr class="separator:ae23601b2cbd61b1915443169ccebe545"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f2dd22a117e09dcdc645fa4c5712d6d"><td class="memItemLeft" align="right" valign="top"><a id="a4f2dd22a117e09dcdc645fa4c5712d6d"></a>
+<tr class="separator:ad4ad803e076a80b8361596d2d6873e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba4c1d331b9fb7dff5f8e52f3c7c2256"><td class="memItemLeft" align="right" valign="top"><a id="aba4c1d331b9fb7dff5f8e52f3c7c2256"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>map_key_comparator</b> = typename map_type::key_equal</td></tr>
-<tr class="separator:a4f2dd22a117e09dcdc645fa4c5712d6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:aba4c1d331b9fb7dff5f8e52f3c7c2256"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a30203956e7d237c1b235f002ca372fb7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrow__comparator.html#a30203956e7d237c1b235f002ca372fb7">row_comparator</a> (map_type const &amp;map, <a class="el" href="classgdf__table.html">gdf_table</a>&lt; size_type &gt; const &amp;l_table, <a class="el" href="classgdf__table.html">gdf_table</a>&lt; size_type &gt; const &amp;r_table)</td></tr>
-<tr class="memdesc:a30203956e7d237c1b235f002ca372fb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="structrow__comparator.html" title="This functor is used inside the hash table&#39;s insert function to compare equality between two keys in ...">row_comparator</a> functor to check for equality between keys in the hash table.  <a href="#a30203956e7d237c1b235f002ca372fb7">More...</a><br /></td></tr>
-<tr class="separator:a30203956e7d237c1b235f002ca372fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0f76d6b7a0a8986b00d39dcdcdb41ae"><td class="memItemLeft" align="right" valign="top">__device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrow__comparator.html#ae0f76d6b7a0a8986b00d39dcdcdb41ae">operator()</a> (key_type const &amp;left_index, key_type const &amp;right_index) const</td></tr>
-<tr class="memdesc:ae0f76d6b7a0a8986b00d39dcdcdb41ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used in the hash table's insert function to check for equality between two keys. Two cases are possible:  <a href="#ae0f76d6b7a0a8986b00d39dcdcdb41ae">More...</a><br /></td></tr>
-<tr class="separator:ae0f76d6b7a0a8986b00d39dcdcdb41ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5fcc41c68f1c76039bdc0bed3992f17"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrow__comparator.html#ae5fcc41c68f1c76039bdc0bed3992f17">row_comparator</a> (map_type const &amp;map, <a class="el" href="classdevice__table.html">device_table</a> l_table, <a class="el" href="classdevice__table.html">device_table</a> r_table)</td></tr>
+<tr class="memdesc:ae5fcc41c68f1c76039bdc0bed3992f17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="structrow__comparator.html" title="This functor is used inside the hash table&#39;s insert function to compare equality between two keys in ...">row_comparator</a> functor to check for equality between keys in the hash table.  <a href="#ae5fcc41c68f1c76039bdc0bed3992f17">More...</a><br /></td></tr>
+<tr class="separator:ae5fcc41c68f1c76039bdc0bed3992f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34ba09e0cf5563cdddc65140b0aac1c5"><td class="memItemLeft" align="right" valign="top">__device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrow__comparator.html#a34ba09e0cf5563cdddc65140b0aac1c5">operator()</a> (key_type const &amp;left_index, key_type const &amp;right_index) const</td></tr>
+<tr class="memdesc:a34ba09e0cf5563cdddc65140b0aac1c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used in the hash table's insert function to check for equality between two keys. Two cases are possible:  <a href="#a34ba09e0cf5563cdddc65140b0aac1c5">More...</a><br /></td></tr>
+<tr class="separator:a34ba09e0cf5563cdddc65140b0aac1c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a7d1d67f8366a1c71d9d880bb9b840698"><td class="memItemLeft" align="right" valign="top"><a id="a7d1d67f8366a1c71d9d880bb9b840698"></a>
+<tr class="memitem:a318eee91b74ac6f4385436626c2ab9f1"><td class="memItemLeft" align="right" valign="top"><a id="a318eee91b74ac6f4385436626c2ab9f1"></a>
 const map_key_comparator&#160;</td><td class="memItemRight" valign="bottom"><b>default_comparator</b> {}</td></tr>
-<tr class="separator:a7d1d67f8366a1c71d9d880bb9b840698"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94af7d38b59e365e9e3bcceb838fb733"><td class="memItemLeft" align="right" valign="top"><a id="a94af7d38b59e365e9e3bcceb838fb733"></a>
+<tr class="separator:a318eee91b74ac6f4385436626c2ab9f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1206f3df8de4116fd5c831de2c9e5021"><td class="memItemLeft" align="right" valign="top"><a id="a1206f3df8de4116fd5c831de2c9e5021"></a>
 const key_type&#160;</td><td class="memItemRight" valign="bottom"><b>unused_key</b></td></tr>
-<tr class="separator:a94af7d38b59e365e9e3bcceb838fb733"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bc2f555ccb5fe4ec1073f8b2e74de83"><td class="memItemLeft" align="right" valign="top"><a id="a9bc2f555ccb5fe4ec1073f8b2e74de83"></a>
+<tr class="separator:a1206f3df8de4116fd5c831de2c9e5021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adef995f5d8f0ab430122b7da0bb8fbd1"><td class="memItemLeft" align="right" valign="top"><a id="adef995f5d8f0ab430122b7da0bb8fbd1"></a>
 map_type const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>the_map</b></td></tr>
-<tr class="separator:a9bc2f555ccb5fe4ec1073f8b2e74de83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80e31ed42416fcf0577517e90520b913"><td class="memItemLeft" align="right" valign="top"><a id="a80e31ed42416fcf0577517e90520b913"></a>
-<a class="el" href="classgdf__table.html">gdf_table</a>&lt; size_type &gt; const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>left_table</b></td></tr>
-<tr class="separator:a80e31ed42416fcf0577517e90520b913"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e0f7be825b2b612739edf0ddb26b368"><td class="memItemLeft" align="right" valign="top"><a id="a8e0f7be825b2b612739edf0ddb26b368"></a>
-<a class="el" href="classgdf__table.html">gdf_table</a>&lt; size_type &gt; const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>right_table</b></td></tr>
-<tr class="separator:a8e0f7be825b2b612739edf0ddb26b368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:adef995f5d8f0ab430122b7da0bb8fbd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1007b8a62efa832d1c8e8940a34939f"><td class="memItemLeft" align="right" valign="top"><a id="ac1007b8a62efa832d1c8e8940a34939f"></a>
+<a class="el" href="classdevice__table.html">device_table</a>&#160;</td><td class="memItemRight" valign="bottom"><b>left_table</b></td></tr>
+<tr class="separator:ac1007b8a62efa832d1c8e8940a34939f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9f0936cdd08f512da189913a16f1fd6"><td class="memItemLeft" align="right" valign="top"><a id="ac9f0936cdd08f512da189913a16f1fd6"></a>
+<a class="el" href="classdevice__table.html">device_table</a>&#160;</td><td class="memItemRight" valign="bottom"><b>right_table</b></td></tr>
+<tr class="separator:ac9f0936cdd08f512da189913a16f1fd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename map_type, typename size_type&gt;<br />
-struct row_comparator&lt; map_type, size_type &gt;</h3>
+<div class="textblock"><h3>template&lt;typename map_type&gt;<br />
+struct row_comparator&lt; map_type &gt;</h3>
 
 <p>This functor is used inside the hash table's insert function to compare equality between two keys in the hash table. </p>
 <p>If comparing a key to the map's unused key, simply performs the default key comparison defined in the map class.</p>
-<p>Otherwise, the hash table keys refer to row indices in gdf_tables and the functor checks for equality between the two rows. </p>
+<p>Otherwise, the hash table keys refer to row indices in device_tables and the functor checks for equality between the two rows. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a30203956e7d237c1b235f002ca372fb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30203956e7d237c1b235f002ca372fb7">&#9670;&nbsp;</a></span>row_comparator()</h2>
+<a id="ae5fcc41c68f1c76039bdc0bed3992f17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5fcc41c68f1c76039bdc0bed3992f17">&#9670;&nbsp;</a></span>row_comparator()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename map_type , typename size_type &gt; </div>
+template&lt;typename map_type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrow__comparator.html">row_comparator</a>&lt; map_type, size_type &gt;::<a class="el" href="structrow__comparator.html">row_comparator</a> </td>
+          <td class="memname"><a class="el" href="structrow__comparator.html">row_comparator</a>&lt; map_type &gt;::<a class="el" href="structrow__comparator.html">row_comparator</a> </td>
           <td>(</td>
           <td class="paramtype">map_type const &amp;&#160;</td>
           <td class="paramname"><em>map</em>, </td>
@@ -148,13 +148,13 @@ template&lt;typename map_type , typename size_type &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classgdf__table.html">gdf_table</a>&lt; size_type &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classdevice__table.html">device_table</a>&#160;</td>
           <td class="paramname"><em>l_table</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classgdf__table.html">gdf_table</a>&lt; size_type &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classdevice__table.html">device_table</a>&#160;</td>
           <td class="paramname"><em>r_table</em>&#160;</td>
         </tr>
         <tr>
@@ -174,8 +174,8 @@ template&lt;typename map_type , typename size_type &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">map</td><td>The hash table </td></tr>
-    <tr><td class="paramname">l_table</td><td>The left <a class="el" href="classgdf__table.html">gdf_table</a> </td></tr>
-    <tr><td class="paramname">r_table</td><td>The right <a class="el" href="classgdf__table.html">gdf_table</a> </td></tr>
+    <tr><td class="paramname">l_table</td><td>The left <a class="el" href="classdevice__table.html" title="Lightweight wrapper for a device array of gdf_columns of the same size. ">device_table</a> </td></tr>
+    <tr><td class="paramname">r_table</td><td>The right <a class="el" href="classdevice__table.html" title="Lightweight wrapper for a device array of gdf_columns of the same size. ">device_table</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -183,19 +183,19 @@ template&lt;typename map_type , typename size_type &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae0f76d6b7a0a8986b00d39dcdcdb41ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0f76d6b7a0a8986b00d39dcdcdb41ae">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="a34ba09e0cf5563cdddc65140b0aac1c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34ba09e0cf5563cdddc65140b0aac1c5">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename map_type , typename size_type &gt; </div>
+template&lt;typename map_type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__device__ bool <a class="el" href="structrow__comparator.html">row_comparator</a>&lt; map_type, size_type &gt;::operator() </td>
+          <td class="memname">__device__ bool <a class="el" href="structrow__comparator.html">row_comparator</a>&lt; map_type &gt;::operator() </td>
           <td>(</td>
           <td class="paramtype">key_type const &amp;&#160;</td>
           <td class="paramname"><em>left_index</em>, </td>
@@ -222,7 +222,7 @@ template&lt;typename map_type , typename size_type &gt; </div>
 <p>Used in the hash table's insert function to check for equality between two keys. Two cases are possible: </p>
 <ol type="1">
 <li>If left_index OR right_index is equal to the map's unused_key, then the functor is being used to compare against an empty key. In this case, perform the default key comparison defined in the map class.</li>
-<li>Else, the functor is being used to compare two rows of gdf_tables. In this case, the <a class="el" href="classgdf__table.html">gdf_table</a> rows_equal function is used to check if the two rows are equal.</li>
+<li>Else, the functor is being used to compare two rows of device_tables. In this case, the <a class="el" href="classdevice__table.html" title="Lightweight wrapper for a device array of gdf_columns of the same size. ">device_table</a> rows_equal function is used to check if the two rows are equal.</li>
 </ol>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

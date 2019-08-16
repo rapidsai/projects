@@ -1,0 +1,13 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="rmm::mr::device_memory\l_resource",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classrmm_1_1mr_1_1device__memory__resource.html",tooltip="Base class for all libcudf device memory allocation. "];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="rmm::mr::cnmem_memory\l_resource",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classrmm_1_1mr_1_1cnmem__memory__resource.html",tooltip="Memory resource that allocates/deallocates using the cnmem pool sub-allocator the cnmem pool sub-allo..."];
+  Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="rmm::mr::cuda_memory\l_resource",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classrmm_1_1mr_1_1cuda__memory__resource.html",tooltip="device_memory_resource derived class that uses cudaMalloc/Free for allocation/deallocation. "];
+  Node0 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="rmm::mr::managed_memory\l_resource",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classrmm_1_1mr_1_1managed__memory__resource.html",tooltip="device_memory_resource derived class that uses cudaMallocManaged/Free for allocation/deallocation. "];
+}

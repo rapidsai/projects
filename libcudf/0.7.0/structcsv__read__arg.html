@@ -273,8 +273,9 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This struct contains all input parameters to the read_csv function. Also contains the output dataframe. </p>
-<p>------------------------------------------------------------------------&mdash;* Input parameters are all stored in host memory. The output dataframe is in the device memory. </p><hr/>
- </div><h2 class="groupheader">Member Data Documentation</h2>
+<p>------------------------------------------------------------------------&mdash;* Input parameters are all stored in host memory. The output dataframe is in the device memory.</p>
+<p>Parameters in PANDAS that are unavailable in cudf: squeeze - data is always returned as a gdf_column array engine - this is the only engine verbose keep_date_col - will not maintain raw data date_parser - there is only this parser float_precision - there is only one converter that will cover all specified values </p><h2>dialect - not used </h2>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a138b7c7e28e0f671d75a98ad90e9c3d6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a138b7c7e28e0f671d75a98ad90e9c3d6">&#9670;&nbsp;</a></span>byte_range_size</h2>
 

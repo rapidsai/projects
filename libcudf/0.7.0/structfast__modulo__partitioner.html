@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libcudf: fast_modulo_partitioner&lt; hash_value_t, size_type, output_type &gt; Struct Template Reference</title>
+<title>libcudf: fast_modulo_partitioner&lt; hash_value_t, output_type &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,38 +67,38 @@ $(function() {
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structfast__modulo__partitioner-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">fast_modulo_partitioner&lt; hash_value_t, size_type, output_type &gt; Struct Template Reference</div>  </div>
+<div class="title">fast_modulo_partitioner&lt; hash_value_t, output_type &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p>Functor to map a hash value to a particular 'bin' or partition number that uses the FAST modulo operation implemented in <a class="el" href="classint__fastdiv.html">int_fastdiv</a> from here: <a href="https://github.com/milakov/int_fastdiv">https://github.com/milakov/int_fastdiv</a>.  
  <a href="structfast__modulo__partitioner.html#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for fast_modulo_partitioner&lt; hash_value_t, size_type, output_type &gt;:</div>
+Collaboration diagram for fast_modulo_partitioner&lt; hash_value_t, output_type &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="structfast__modulo__partitioner__coll__graph.png" border="0" usemap="#fast__modulo__partitioner_3_01hash__value__t_00_01size__type_00_01output__type_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="fast__modulo__partitioner_3_01hash__value__t_00_01size__type_00_01output__type_01_4_coll__map" id="fast__modulo__partitioner_3_01hash__value__t_00_01size__type_00_01output__type_01_4_coll__map">
+<div class="center"><img src="structfast__modulo__partitioner__coll__graph.png" border="0" usemap="#fast__modulo__partitioner_3_01hash__value__t_00_01output__type_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="fast__modulo__partitioner_3_01hash__value__t_00_01output__type_01_4_coll__map" id="fast__modulo__partitioner_3_01hash__value__t_00_01output__type_01_4_coll__map">
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac96b83218b062a20caaf8e7c1510d815"><td class="memItemLeft" align="right" valign="top"><a id="ac96b83218b062a20caaf8e7c1510d815"></a>
+<tr class="memitem:a534d2657b3bf1eb3bbdbee4a298990e0"><td class="memItemLeft" align="right" valign="top"><a id="a534d2657b3bf1eb3bbdbee4a298990e0"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>fast_modulo_partitioner</b> (int num_partitions)</td></tr>
-<tr class="separator:ac96b83218b062a20caaf8e7c1510d815"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a366fec73c73abba6a5dd623d86b34f66"><td class="memItemLeft" align="right" valign="top"><a id="a366fec73c73abba6a5dd623d86b34f66"></a>
+<tr class="separator:a534d2657b3bf1eb3bbdbee4a298990e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab93e08c83207b6f9bd7f78abd6de63da"><td class="memItemLeft" align="right" valign="top"><a id="ab93e08c83207b6f9bd7f78abd6de63da"></a>
 __host__ __device__ output_type&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (hash_value_t hash_value) const</td></tr>
-<tr class="separator:a366fec73c73abba6a5dd623d86b34f66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ab93e08c83207b6f9bd7f78abd6de63da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a3e616a1180ed441b93ebadd94f94a390"><td class="memItemLeft" align="right" valign="top"><a id="a3e616a1180ed441b93ebadd94f94a390"></a>
+<tr class="memitem:ae7520304c06d159c2ff8ce5a5d3d2f40"><td class="memItemLeft" align="right" valign="top"><a id="ae7520304c06d159c2ff8ce5a5d3d2f40"></a>
 const <a class="el" href="classint__fastdiv.html">int_fastdiv</a>&#160;</td><td class="memItemRight" valign="bottom"><b>fast_divisor</b></td></tr>
-<tr class="separator:a3e616a1180ed441b93ebadd94f94a390"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ae7520304c06d159c2ff8ce5a5d3d2f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename hash_value_t, typename size_type, typename output_type&gt;<br />
-struct fast_modulo_partitioner&lt; hash_value_t, size_type, output_type &gt;</h3>
+<div class="textblock"><h3>template&lt;typename hash_value_t, typename output_type&gt;<br />
+struct fast_modulo_partitioner&lt; hash_value_t, output_type &gt;</h3>
 
 <p>Functor to map a hash value to a particular 'bin' or partition number that uses the FAST modulo operation implemented in <a class="el" href="classint__fastdiv.html">int_fastdiv</a> from here: <a href="https://github.com/milakov/int_fastdiv">https://github.com/milakov/int_fastdiv</a>. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
