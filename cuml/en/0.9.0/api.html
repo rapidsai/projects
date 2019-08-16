@@ -101,6 +101,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#elasticnet-regression">ElasticNet Regression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#stochastic-gradient-descent">Stochastic Gradient Descent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#random-forest">Random Forest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#forest-inferencing">Forest Inferencing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#quasi-newton">Quasi-Newton</a></li>
 </ul>
 </li>
@@ -114,6 +115,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#truncated-svd">Truncated SVD</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#umap">UMAP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#random-projections">Random Projections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tsne">TSNE</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#neighbors">Neighbors</a><ul>
@@ -121,7 +123,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#time-series">Time Series</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#holtwinters">HoltWinters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#kalman-filter">Kalman Filter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#multi-node-multi-gpu-algorithms">Multi-Node, Multi-GPU Algorithms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">K-Means Clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Random Forest</a></li>
 </ul>
 </li>
 </ul>
@@ -501,7 +509,7 @@ is a regression task (predicting a continuous variable).</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id7"><span class="problematic" id="id8">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id11"><span class="problematic" id="id12">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -513,13 +521,13 @@ is a regression task (predicting a continuous variable).</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LinearRegression.fit" title="cuml.LinearRegression.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LinearRegression.fit" title="cuml.LinearRegression.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Fit the model with X and y.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.LinearRegression.get_params" title="cuml.LinearRegression.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
 <td><p>Sklearn style return parameter state</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LinearRegression.predict" title="cuml.LinearRegression.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LinearRegression.predict" title="cuml.LinearRegression.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Predicts the y for X.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.LinearRegression.set_params" title="cuml.LinearRegression.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
@@ -529,14 +537,22 @@ is a regression task (predicting a continuous variable).</p>
 </table>
 <dl class="attribute">
 <dt id="cuml.LinearRegression.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LinearRegression.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LinearRegression.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model with X and y.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
-<dt><strong>y: cuDF DataFrame</strong></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
+<dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1).
+Acceptable formats: cuDF Series, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the fit method will, when necessary, convert
+y to be the same data type as X if they differ. This
+will increase memory used for the method.</p>
 </dd>
 </dl>
 </dd>
@@ -558,20 +574,24 @@ is a regression task (predicting a continuous variable).</p>
 
 <dl class="attribute">
 <dt id="cuml.LinearRegression.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LinearRegression.predict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Predicts the y for X.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cuDF DataFrame</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features)</p>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LinearRegression.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the y for X.
+Parameters
+———-
+X : array-like (device or host) shape = (n_samples, n_features)</p>
+<blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</div></blockquote>
+<dl class="simple">
+<dt>convert_dtype<span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
+the input to the data type which was used to train the model. This
+will increase memory used for the method.</p>
 </dd>
 </dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
+<dl class="simple">
 <dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
-</dd>
-</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -691,7 +711,7 @@ using different solvers in Scikit-learn.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_: device array, shape (n_classes, n_features)</strong></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_: device array (n_classes, 1)</strong></dt><dd><p>The independent term. If <a href="#id9"><span class="problematic" id="id10">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_: device array (n_classes, 1)</strong></dt><dd><p>The independent term. If <a href="#id13"><span class="problematic" id="id14">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -703,17 +723,17 @@ using different solvers in Scikit-learn.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LogisticRegression.fit" title="cuml.LogisticRegression.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LogisticRegression.fit" title="cuml.LogisticRegression.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Fit the model with X and y.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.LogisticRegression.predict" title="cuml.LogisticRegression.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.LogisticRegression.predict" title="cuml.LogisticRegression.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Predicts the y for X.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="attribute">
 <dt id="cuml.LogisticRegression.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LogisticRegression.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LogisticRegression.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model with X and y.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -726,6 +746,10 @@ ndarray, cuda array interface compliant array like CuPy</p>
 Acceptable formats: cuDF Series, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the fit method will, when necessary, convert
+y to be the same data type as X if they differ. This
+will increase memory used for the method.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -733,7 +757,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.LogisticRegression.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LogisticRegression.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LogisticRegression.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the y for X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -741,6 +765,10 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
+the input to the data type which was used to train the model. This
+will increase memory used for the method.</p>
 </dd>
 </dl>
 </dd>
@@ -857,7 +885,7 @@ and much more.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id11"><span class="problematic" id="id12">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id15"><span class="problematic" id="id16">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -869,13 +897,13 @@ and much more.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.Ridge.fit" title="cuml.Ridge.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.Ridge.fit" title="cuml.Ridge.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Fit the model with X and y.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.Ridge.get_params" title="cuml.Ridge.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
 <td><p>Sklearn style return parameter state</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.Ridge.predict" title="cuml.Ridge.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.Ridge.predict" title="cuml.Ridge.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Predicts the y for X.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.Ridge.set_params" title="cuml.Ridge.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
@@ -885,7 +913,7 @@ and much more.</p>
 </table>
 <dl class="attribute">
 <dt id="cuml.Ridge.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Ridge.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Ridge.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model with X and y.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -897,6 +925,10 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1).
 Acceptable formats: cuDF Series, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the fit method will, when necessary, convert
+y to be the same data type as X if they differ. This
+will increase memory used for the method.</p>
 </dd>
 </dl>
 </dd>
@@ -918,7 +950,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.Ridge.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Ridge.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Ridge.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the y for X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -926,6 +958,10 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
+the input to the data type which was used to train the model. This
+will increase memory used for the method.</p>
 </dd>
 </dl>
 </dd>
@@ -1043,7 +1079,7 @@ convergence especially when tol is higher than 1e-4.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id13"><span class="problematic" id="id14">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id17"><span class="problematic" id="id18">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 <dt><strong>For additional docs, see `scikitlearn’s Lasso</strong></dt><dd></dd>
 <dt><strong>&lt;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html&gt;`_.</strong></dt><dd></dd>
@@ -1057,13 +1093,13 @@ convergence especially when tol is higher than 1e-4.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.Lasso.fit" title="cuml.Lasso.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.Lasso.fit" title="cuml.Lasso.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Fit the model with X and y.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.Lasso.get_params" title="cuml.Lasso.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
 <td><p>Sklearn style return parameter state</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.Lasso.predict" title="cuml.Lasso.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.Lasso.predict" title="cuml.Lasso.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Predicts the y for X.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.Lasso.set_params" title="cuml.Lasso.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
@@ -1073,7 +1109,7 @@ convergence especially when tol is higher than 1e-4.</p>
 </table>
 <dl class="attribute">
 <dt id="cuml.Lasso.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Lasso.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Lasso.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model with X and y.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1085,6 +1121,10 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1).
 Acceptable formats: cuDF Series, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the transform method will, when necessary,
+convert y to be the same data type as X if they differ. This
+will increase memory used for the method.</p>
 </dd>
 </dl>
 </dd>
@@ -1106,7 +1146,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.Lasso.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Lasso.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Lasso.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the y for X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1236,7 +1276,7 @@ convergence especially when tol is higher than 1e-4.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id15"><span class="problematic" id="id16">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id19"><span class="problematic" id="id20">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 <dt><strong>For additional docs, see `scikitlearn’s ElasticNet</strong></dt><dd></dd>
 <dt><strong>&lt;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html&gt;`_.</strong></dt><dd></dd>
@@ -1250,13 +1290,13 @@ convergence especially when tol is higher than 1e-4.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ElasticNet.fit" title="cuml.ElasticNet.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ElasticNet.fit" title="cuml.ElasticNet.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Fit the model with X and y.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.ElasticNet.get_params" title="cuml.ElasticNet.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
 <td><p>Sklearn style return parameter state</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ElasticNet.predict" title="cuml.ElasticNet.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ElasticNet.predict" title="cuml.ElasticNet.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Predicts the y for X.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.ElasticNet.set_params" title="cuml.ElasticNet.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
@@ -1266,7 +1306,7 @@ convergence especially when tol is higher than 1e-4.</p>
 </table>
 <dl class="attribute">
 <dt id="cuml.ElasticNet.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ElasticNet.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ElasticNet.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model with X and y.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1278,6 +1318,10 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1).
 Acceptable formats: cuDF Series, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the transform method will, when necessary,
+convert y to be the same data type as X if they differ. This
+will increase memory used for the method.</p>
 </dd>
 </dl>
 </dd>
@@ -1299,7 +1343,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.ElasticNet.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ElasticNet.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ElasticNet.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the y for X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1307,6 +1351,10 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
+the input to the data type which was used to train the model. This
+will increase memory used for the method.</p>
 </dd>
 </dl>
 </dd>
@@ -1418,20 +1466,20 @@ cuML coef :  0      0.9834546</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.SGD.fit" title="cuml.SGD.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.SGD.fit" title="cuml.SGD.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Fit the model with X and y.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.SGD.predict" title="cuml.SGD.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.SGD.predict" title="cuml.SGD.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Predicts the y for X.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.SGD.predictClass" title="cuml.SGD.predictClass"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predictClass</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.SGD.predictClass" title="cuml.SGD.predictClass"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predictClass</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Predicts the y for X.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="attribute">
 <dt id="cuml.SGD.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.SGD.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.SGD.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model with X and y.
 Parameters
 ———-
@@ -1446,12 +1494,16 @@ ndarray, cuda array interface compliant array like CuPy</p>
 Acceptable formats: cuDF Series, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
+<dt>convert_dtype<span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the fit method will, when necessary, convert
+y to be the same data type as X if they differ. This
+will increase memory used for the method.</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.SGD.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.SGD.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.SGD.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the y for X.
 Parameters
 ———-
@@ -1462,6 +1514,12 @@ Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </div></blockquote>
 <dl class="simple">
+<dt>convert_dtype<span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
+the input to the data type which was used to train the model. This
+will increase memory used for the method.</p>
+</dd>
+</dl>
+<dl class="simple">
 <dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
 </dd>
 </dl>
@@ -1469,7 +1527,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.SGD.predictClass">
-<code class="sig-name descname">predictClass</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.SGD.predictClass" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predictClass</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.SGD.predictClass" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the y for X.
 Parameters
 ———-
@@ -1479,6 +1537,12 @@ X : array-like (device or host) shape = (n_samples, n_features)</p>
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </div></blockquote>
+<dl class="simple">
+<dt>convert_dtype<span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the predictClass method will automatically
+convert the input to the data type which was used to train the
+model. This will increase memory used for the method.</p>
+</dd>
+</dl>
 <dl class="simple">
 <dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
 </dd>
@@ -1504,12 +1568,6 @@ Random Forest code. It contains a number of known
 limitations:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Only classification is supported. Regression support is planned for
-the next release.</p></li>
-<li><p>The implementation relies on limited CUDA shared memory for scratch
-space, so models with a very large number of features or bins will
-generate a memory limit exception. This limitation will be lifted in
-the next release.</p></li>
 <li><p>Inference/prediction takes place on the CPU. A GPU-based inference
 solution is planned for a near-future release release.</p></li>
 <li><p>Instances of RandomForestClassifier cannot be pickled currently.</p></li>
@@ -1529,7 +1587,7 @@ for instructions to download nightly packages via conda.)</p>
 2 and 3 not valid for classification
 (default = 0)</p>
 </dd>
-<dt><strong>split_algo</strong><span class="classifier">0 for HIST and 1 for GLOBAL_QUANTILE</span></dt><dd><p>(default = 0)
+<dt><strong>split_algo</strong><span class="classifier">0 for HIST and 1 for GLOBAL_QUANTILE</span></dt><dd><p>(default = 1)
 the algorithm to determine how nodes are split in the tree.</p>
 </dd>
 <dt><strong>bootstrap</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>Control bootstrapping.
@@ -1542,8 +1600,10 @@ If features are drawn with or without replacement</p>
 </dd>
 <dt><strong>rows_sample</strong><span class="classifier">float (default = 1.0)</span></dt><dd><p>Ratio of dataset rows used while fitting each tree.</p>
 </dd>
-<dt><strong>max_depth</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum tree depth. Unlimited (i.e, until leaves are pure),
-if -1.</p>
+<dt><strong>max_depth</strong><span class="classifier">int (default = 16)</span></dt><dd><p>Maximum tree depth. Unlimited (i.e, until leaves are pure),
+if -1. Unlimited depth is not supported with split_algo=1.
+<em>Note that this default differs from scikit-learn’s
+random forest, which defaults to unlimited depth.</em></p>
 </dd>
 <dt><strong>max_leaves</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum leaf nodes per tree. Soft constraint. Unlimited,
 if -1.</p>
@@ -1708,6 +1768,385 @@ params : dict of new params</p>
 
 </dd></dl>
 
+<dl class="class">
+<dt id="cuml.ensemble.RandomForestRegressor">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.ensemble.</code><code class="sig-name descname">RandomForestRegressor</code><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements a Random Forest regressor model which fits multiple decision
+trees in an ensemble.
+Note that the underlying algorithm for tree node splits differs from that
+used in scikit-learn. By default, the cuML Random Forest uses a
+histogram-based algorithms to determine splits, rather than an exact
+count. You can tune the size of the histograms with the n_bins parameter.
+The instances of RandomForestRegressor cannot be pickled currently.
+Examples
+———
+.. code-block:: python</p>
+<blockquote>
+<div><p>import numpy as np
+from cuml.test.utils import get_handle
+from cuml.ensemble import RandomForestRegressor as curfc
+from cuml.test.utils import get_handle
+X = np.asarray([[0,10],[0,20],[0,30],[0,40]], dtype=np.float32)
+y = np.asarray([0.0,1.0,2.0,3.0], dtype=np.float32)
+cuml_model = curfc(max_features=1.0, n_bins=8,</p>
+<blockquote>
+<div><p>split_algo=0, min_rows_per_node=2,
+n_estimators=40, accuracy_metric=’mse’)</p>
+</div></blockquote>
+<p>cuml_model.fit(X,y)
+cuml_score = cuml_model.score(X,y)
+print(“MSE score of cuml : “, cuml_score)</p>
+</div></blockquote>
+<p>Output:
+.. code-block:: python</p>
+<blockquote>
+<div><p>MSE score of cuml :  0.1123437201231765</p>
+</div></blockquote>
+<dl class="simple">
+<dt>n_estimators<span class="classifier">int (default = 10)</span></dt><dd><p>number of trees in the forest.</p>
+</dd>
+<dt>handle<span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
+</dd>
+<dt>split_algo<span class="classifier">int (default = 1)</span></dt><dd><p>0 for HIST, 1 for GLOBAL_QUANTILE and 2 for SPLIT_ALGO_END
+The type of algorithm to be used to create the trees.</p>
+</dd>
+<dt>split_criterion: int (default = 2)</dt><dd><p>The criterion used to split nodes.
+0 for GINI, 1 for ENTROPY,
+2 for MSE, 3 for MAE and 4 for CRITERION_END.
+0 and 1 not valid for regression</p>
+</dd>
+<dt>bootstrap<span class="classifier">boolean (default = True)</span></dt><dd><p>Control bootstrapping.
+If set, each tree in the forest is built
+on a bootstrapped sample with replacement.
+If false, sampling without replacement is done.</p>
+</dd>
+<dt>bootstrap_features<span class="classifier">boolean (default = False)</span></dt><dd><p>Control bootstrapping for features.
+If features are drawn with or without replacement</p>
+</dd>
+<dt>rows_sample<span class="classifier">float (default = 1.0)</span></dt><dd><p>Ratio of dataset rows used while fitting each tree.</p>
+</dd>
+<dt>max_depth<span class="classifier">int (default = 16)</span></dt><dd><p>Maximum tree depth. Unlimited (i.e, until leaves are pure),
+if -1. Unlimited depth is not supported with split_algo=1.
+<em>Note that this default differs from scikit-learn’s
+random forest, which defaults to unlimited depth.</em></p>
+</dd>
+<dt>max_leaves<span class="classifier">int (default = -1)</span></dt><dd><p>Maximum leaf nodes per tree. Soft constraint. Unlimited,
+if -1.</p>
+</dd>
+<dt>max_features<span class="classifier">int or float or string or None (default = ‘auto’)</span></dt><dd><p>Ratio of number of features (columns) to consider
+per node split.
+If int then max_features/n_features.
+If float then max_features is a fraction.
+If ‘auto’ then max_features=n_features which is 1.0.
+If ‘sqrt’ then max_features=1/sqrt(n_features).
+If ‘log2’ then max_features=log2(n_features)/n_features.
+If None, then max_features=n_features which is 1.0.</p>
+</dd>
+<dt>n_bins<span class="classifier">int (default = 8)</span></dt><dd><p>Number of bins used by the split algorithm.</p>
+</dd>
+<dt>min_rows_per_node<span class="classifier">int or float (default = 2)</span></dt><dd><p>The minimum number of samples (rows) needed
+to split a node.
+If int then number of sample rows
+If float the min_rows_per_sample*n_rows</p>
+</dd>
+<dt>accuracy_metric<span class="classifier">string (default = ‘mse’)</span></dt><dd><p>Decides the metric used to evaluate the performance
+of the model.
+for median of abs error : ‘median_ae’
+for mean of abs error : ‘mean_ae’
+for mean square error’ : ‘mse’</p>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.fit" title="cuml.ensemble.RandomForestRegressor.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<td><p>Perform Random Forest Classification on the input data</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.get_params" title="cuml.ensemble.RandomForestRegressor.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
+<td><p>Returns the value of all parameters required to configure this estimator as a dictionary.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.predict" title="cuml.ensemble.RandomForestRegressor.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<td><p>Predicts the labels for X.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.print_detailed" title="cuml.ensemble.RandomForestRegressor.print_detailed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_detailed</span></code></a>(self)</p></td>
+<td><p>prints the detailed information about the forest used to train and test the Random Forest model</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.print_summary" title="cuml.ensemble.RandomForestRegressor.print_summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_summary</span></code></a>(self)</p></td>
+<td><p>prints the summary of the forest used to train and test the model</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.score" title="cuml.ensemble.RandomForestRegressor.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y)</p></td>
+<td><p>Calculates the accuracy metric score of the model for X.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.set_params" title="cuml.ensemble.RandomForestRegressor.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
+<td><p>Sets the value of parameters required to configure this estimator, it functions similar to the sklearn set_params.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestRegressor.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform Random Forest Classification on the input data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>Dense vector (int32) of shape (n_samples, 1).
+Acceptable formats: NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy
+These labels should be contiguous integers from 0 to n_classes.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestRegressor.get_params">
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.get_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of all parameters
+required to configure this estimator as a dictionary.
+Parameters
+———–
+deep : boolean (default = True)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestRegressor.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the labels for X.
+Parameters
+———-
+X : array-like (device or host) shape = (n_samples, n_features)</p>
+<blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</div></blockquote>
+<dl class="simple">
+<dt>y: NumPy</dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestRegressor.print_detailed">
+<code class="sig-name descname">print_detailed</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.print_detailed" title="Permalink to this definition">¶</a></dt>
+<dd><p>prints the detailed information about the forest used to
+train and test the Random Forest model</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestRegressor.print_summary">
+<code class="sig-name descname">print_summary</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.print_summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>prints the summary of the forest used to train and test the model</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestRegressor.score">
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the accuracy metric score of the model for X.
+Parameters
+———-
+X : array-like (device or host) shape = (n_samples, n_features)</p>
+<blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</div></blockquote>
+<dl class="simple">
+<dt>y: NumPy</dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
+</dd>
+</dl>
+<p>mean_square_error : float or
+median_abs_error : float or
+mean_abs_error : float</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestRegressor.set_params">
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.set_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the value of parameters required to
+configure this estimator, it functions similar to
+the sklearn set_params.
+Parameters
+———–
+params : dict of new params</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="forest-inferencing">
+<h3>Forest Inferencing<a class="headerlink" href="#forest-inferencing" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.ForestInference">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">ForestInference</code><a class="headerlink" href="#cuml.ForestInference" title="Permalink to this definition">¶</a></dt>
+<dd><p>ForestInference provides GPU-accelerated inference (prediction)
+for random forest and boosted decision tree models.</p>
+<p>This module does not support training models. Rather, users should
+train a model in another package and save it in a
+treelite-compatible format. (See <a class="reference external" href="https://github.com/dmlc/treelite">https://github.com/dmlc/treelite</a>)
+Currently, LightGBM and XGBoost GBDT and random forest models are
+supported.</p>
+<p>Users typically create a ForestInference object by loading a
+saved model file with ForestInference.load. The resulting object
+provides a <cite>predict</cite> method for carrying out inference.</p>
+<dl class="simple">
+<dt><strong>Known limitations</strong>:</dt><dd><ul class="simple">
+<li><p>Trees are represented as complete binary trees, so a tree of depth k
+will be stored in (2**k) - 1 nodes. This will be less space-efficient
+for sparse trees.</p></li>
+<li><p>While treelite supports additional formats, only XGBoost and LightGBM
+are tested in FIL currently.</p></li>
+<li><p>LightGBM categorical features are not supported</p></li>
+<li><p>Inference uses a dense matrix format, which is efficient for many
+problems but will be suboptimal for sparse datasets.</p></li>
+<li><p>Only binary classification and regression are supported.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>For additional usage examples, see the sample notebook at
+<a class="reference external" href="https://github.com/rapidsai/notebooks/blob/branch-0.9/cuml/fil_demo.ipynb">https://github.com/rapidsai/notebooks/blob/branch-0.9/cuml/fil_demo.ipynb</a></p>
+<p>In the example below, synthetic data is copied to the host before
+infererence. ForestInference can also accept a numpy array directly at the
+cost of a slight performance overhead.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Assume that the file &#39;xgb.model&#39; contains a classifier model that was</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># previously saved by XGBoost&#39;s save_model function.</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sklearn</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numba</span> <span class="k">import</span> <span class="n">cuda</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">make_classification</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X_gpu</span> <span class="o">=</span> <span class="n">cuda</span><span class="o">.</span><span class="n">to_device</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fm</span> <span class="o">=</span> <span class="n">ForestInference</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">output_class</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fil_preds_gpu</span> <span class="o">=</span> <span class="n">fm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_gpu</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">accuracy_score</span> <span class="o">=</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                                             <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">fil_preds_gpu</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ForestInference.load" title="cuml.ForestInference.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>(filename[, output_class, threshold, …])</p></td>
+<td><p>Returns a FIL instance containing the forest saved in ‘filename’ This uses Treelite to load the saved model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ForestInference.load_from_treelite_model" title="cuml.ForestInference.load_from_treelite_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_from_treelite_model</span></code></a>(self, model, …[, …])</p></td>
+<td><p>Creates a FIL model using the treelite model passed to the function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ForestInference.predict" title="cuml.ForestInference.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, preds])</p></td>
+<td><p>Predicts the labels for X with the loaded forest model.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cuml.ForestInference.load">
+<code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">output_class=False</em>, <em class="sig-param">threshold=0.50</em>, <em class="sig-param">algo=u'TREE_REORG'</em>, <em class="sig-param">model_type=u'xgboost'</em>, <em class="sig-param">handle=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ForestInference.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a FIL instance containing the forest saved in ‘filename’
+This uses Treelite to load the saved model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>filename</strong><span class="classifier">str</span></dt><dd><p>Path to saved model file in a treelite-compatible format
+(See <a class="reference external" href="https://treelite.readthedocs.io/en/latest/treelite-api.html">https://treelite.readthedocs.io/en/latest/treelite-api.html</a></p>
+</dd>
+<dt><strong>output_class</strong><span class="classifier">bool</span></dt><dd><p>If true, return a 1 or 0 depending on whether the raw prediction
+exceeds the threshold. If False, just return the raw prediction.</p>
+</dd>
+<dt><strong>threshold</strong><span class="classifier">float</span></dt><dd><p>Cutoff value above which a prediction is set to 1.0
+Only used if the model is classification and output_class is True</p>
+</dd>
+<dt><strong>algo</strong><span class="classifier">string</span></dt><dd><p>Which inference algorithm to use.
+See documentation in FIL.load_from_treelite_model</p>
+</dd>
+<dt><strong>model_type</strong><span class="classifier">str</span></dt><dd><p>Format of saved treelite model to load.
+Can be ‘xgboost’, ‘lightgbm’, or ‘protobuf’</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ForestInference.load_from_treelite_model">
+<code class="sig-name descname">load_from_treelite_model</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">model</em>, <em class="sig-param">output_class</em>, <em class="sig-param">algo=u'TREE_REORG'</em>, <em class="sig-param">threshold=0.5</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ForestInference.load_from_treelite_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a FIL model using the treelite model
+passed to the function.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>model</strong><span class="classifier">the trained model information in the treelite format</span></dt><dd><p>loaded from a saved model using the treelite API
+<a class="reference external" href="https://treelite.readthedocs.io/en/latest/treelite-api.html">https://treelite.readthedocs.io/en/latest/treelite-api.html</a></p>
+</dd>
+<dt><strong>output_class: boolean</strong></dt><dd><p>If true, return a 1 or 0 depending on whether the raw prediction
+exceeds the threshold. If False, just return the raw prediction.</p>
+</dd>
+<dt><strong>algo</strong><span class="classifier">string name of the algo from (from algo_t enum)</span></dt><dd><p>‘NAIVE’ - simple inference using shared memory
+‘TREE_REORG’ - similar to naive but trees rearranged to be more</p>
+<blockquote>
+<div><p>coalescing-friendly</p>
+</div></blockquote>
+<dl class="simple">
+<dt>‘BATCH_TREE_REORG’ - similar to TREE_REORG but predicting</dt><dd><p>multiple rows per thread block</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>threshold</strong><span class="classifier">threshold is used to for classification</span></dt><dd><p>applied if output_class == True, else it is ignored</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ForestInference.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">preds=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ForestInference.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the labels for X with the loaded forest model.
+By default, the result is the raw floating point output
+from the model, unless output_class was set to True
+during model loading.</p>
+<p>See the documentation of ForestInference.load for details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy
+For optimal performance, pass a device array with C-style layout</p>
+</dd>
+<dt><strong>preds: gpuarray or cudf.Series, shape = (n_samples,)</strong></dt><dd><p>Optional ‘out’ location to store inference results</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>GPU array of length n_samples with inference results</dt><dd></dd>
+<dt>(or ‘preds’ filled with inference results if preds was specified)</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="quasi-newton">
 <h3>Quasi-Newton<a class="headerlink" href="#quasi-newton" title="Permalink to this headline">¶</a></h3>
@@ -1804,7 +2243,7 @@ Wright - Numerical Optimization (1999)]
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_classes, n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.
 Note: shape is (n_classes, n_features + 1) if fit_intercept = True.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array (n_classes, 1)</span></dt><dd><p>The independent term. If <a href="#id17"><span class="problematic" id="id18">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array (n_classes, 1)</span></dt><dd><p>The independent term. If <a href="#id21"><span class="problematic" id="id22">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -1816,17 +2255,17 @@ Note: shape is (n_classes, n_features + 1) if fit_intercept = True.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.QN.fit" title="cuml.QN.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.QN.fit" title="cuml.QN.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Fit the model with X and y.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.QN.predict" title="cuml.QN.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.QN.predict" title="cuml.QN.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Predicts the y for X.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="attribute">
 <dt id="cuml.QN.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.QN.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.QN.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model with X and y.
 Parameters
 ———-
@@ -1841,12 +2280,16 @@ ndarray, cuda array interface compliant array like CuPy</p>
 Acceptable formats: cuDF Series, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
+<dt>convert_dtype<span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the fit method will, when necessary, convert
+y to be the same data type as X if they differ. This
+will increase memory used for the method.</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.QN.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.QN.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.QN.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the y for X.
 Parameters
 ———-
@@ -1856,6 +2299,12 @@ X : array-like (device or host) shape = (n_samples, n_features)</p>
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </div></blockquote>
+<dl class="simple">
+<dt>convert_dtype<span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
+the input to the data type which was used to train the model. This
+will increase memory used for the method.</p>
+</dd>
+</dl>
 <dl class="simple">
 <dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
 </dd>
@@ -2016,22 +2465,22 @@ each data cluster.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.KMeans.fit_predict" title="cuml.KMeans.fit_predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_predict</span></code></a>(self, X)</p></td>
 <td><p>Compute cluster centers and predict cluster index for each sample.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.KMeans.fit_transform" title="cuml.KMeans.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.KMeans.fit_transform" title="cuml.KMeans.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Compute clustering and transform X to cluster-distance space.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.KMeans.get_params" title="cuml.KMeans.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
 <td><p>Scikit-learn style return parameter state</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.KMeans.predict" title="cuml.KMeans.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.KMeans.predict" title="cuml.KMeans.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Predict the closest cluster each sample in X belongs to.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.KMeans.score" title="cuml.KMeans.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X)</p></td>
-<td><p>Calcualate the inertia value.</p></td>
+<td><p>Opposite of the value of X on the K-means objective.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.KMeans.set_params" title="cuml.KMeans.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
 <td><p>Scikit-learn style set parameter state to dictionary of params.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.KMeans.transform" title="cuml.KMeans.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.KMeans.transform" title="cuml.KMeans.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Transform X to a cluster-distance space.</p></td>
 </tr>
 </tbody>
@@ -2070,7 +2519,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.KMeans.fit_transform">
-<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute clustering and transform X to cluster-distance space.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2078,6 +2527,10 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the fit_transform method will automatically
+convert the input to the data type which was used to train the
+model. This will increase memory used for the method.</p>
 </dd>
 </dl>
 </dd>
@@ -2099,24 +2552,8 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.KMeans.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict the closest cluster each sample in X belongs to.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
-Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
-ndarray, cuda array interface compliant array like CuPy</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="cuml.KMeans.score">
-<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.score" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calcualate the inertia value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -2128,7 +2565,29 @@ ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>inertia: double</dt><dd><p>The inertia score</p>
+<dt><strong>labels</strong><span class="classifier">array</span></dt><dd></dd>
+<dt>Which cluster each datapoint belongs to.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.KMeans.score">
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opposite of the value of X on the K-means objective.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>score: float</dt><dd><p>Opposite of the value of X on the K-means objective.</p>
 </dd>
 </dl>
 </dd>
@@ -2150,7 +2609,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.KMeans.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KMeans.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform X to a cluster-distance space.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2158,6 +2617,10 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the transform method will, when necessary,
+convert the input to the data type which was used to train the
+model. This will increase memory used for the method.</p>
 </dd>
 </dl>
 </dd>
@@ -2495,10 +2958,10 @@ estimated covariance of X.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.PCA.get_param_names" title="cuml.PCA.get_param_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_param_names</span></code></a>(self)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.PCA.inverse_transform" title="cuml.PCA.inverse_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_transform</span></code></a>(self, X)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.PCA.inverse_transform" title="cuml.PCA.inverse_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_transform</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Transform data back to its original space.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.PCA.transform" title="cuml.PCA.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.PCA.transform" title="cuml.PCA.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Apply dimensionality reduction to X.</p></td>
 </tr>
 </tbody>
@@ -2554,7 +3017,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.PCA.inverse_transform">
-<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.PCA.inverse_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.PCA.inverse_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform data back to its original space.</p>
 <p>In other words, return an input X_original whose transform would be X.</p>
 <dl class="field-list simple">
@@ -2564,6 +3027,10 @@ ndarray, cuda array interface compliant array like CuPy</p>
 samples and n_components is the number of components.
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the inverse_transform method will automatically
+convert the input to the data type which was used to train the
+model. This will increase memory used for the method.</p>
 </dd>
 </dl>
 </dd>
@@ -2577,7 +3044,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.PCA.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.PCA.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.PCA.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply dimensionality reduction to X.</p>
 <p>X is projected on the first principal components previously extracted
 from a training set.</p>
@@ -2588,6 +3055,10 @@ from a training set.</p>
 samples and n_components is the number of components.
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the transform method will automatically
+convert the input to the data type which was used to train the
+model. This will increase memory used for the method.</p>
 </dd>
 </dl>
 </dd>
@@ -2745,10 +3216,10 @@ For additional documentation, see <a class="reference external" href="http://sci
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.TruncatedSVD.get_param_names" title="cuml.TruncatedSVD.get_param_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_param_names</span></code></a>(self)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.TruncatedSVD.inverse_transform" title="cuml.TruncatedSVD.inverse_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_transform</span></code></a>(self, X)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.TruncatedSVD.inverse_transform" title="cuml.TruncatedSVD.inverse_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_transform</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Transform X back to its original space.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.TruncatedSVD.transform" title="cuml.TruncatedSVD.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.TruncatedSVD.transform" title="cuml.TruncatedSVD.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Perform dimensionality reduction on X.</p></td>
 </tr>
 </tbody>
@@ -2800,7 +3271,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.TruncatedSVD.inverse_transform">
-<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.inverse_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.inverse_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform X back to its original space.</p>
 <p>Returns a cuDF DataFrame X_original whose transform would be X.</p>
 <dl class="field-list simple">
@@ -2809,6 +3280,10 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the inverse_transform method will automatically
+convert the input to the data type which was used to train the
+model. This will increase memory used for the method.</p>
 </dd>
 </dl>
 </dd>
@@ -2823,7 +3298,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.TruncatedSVD.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform dimensionality reduction on X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2831,6 +3306,10 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the transform method will automatically
+convert the input to the data type which was used to train the
+model.</p>
 </dd>
 </dl>
 </dd>
@@ -2915,7 +3394,7 @@ in the optimization process. Increasing this value will result
 in greater repulsive force being applied, greater optimization
 cost, but slightly more accuracy.</p>
 </dd>
-<dt><strong>transform_queue_size: float (optional, default 4.0)</strong></dt><dd><p>For transform operations (embedding new points using a trained <a href="#id19"><span class="problematic" id="id20">model_</span></a>
+<dt><strong>transform_queue_size: float (optional, default 4.0)</strong></dt><dd><p>For transform operations (embedding new points using a trained <a href="#id23"><span class="problematic" id="id24">model_</span></a>
 this will control how aggressively to search for nearest neighbors.
 Larger values will result in slower performance but more accurate
 nearest neighbor evaluation.</p>
@@ -2966,20 +3445,20 @@ Reduction
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.UMAP.fit" title="cuml.UMAP.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, y])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.UMAP.fit" title="cuml.UMAP.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, y, convert_dtype])</p></td>
 <td><p>Fit X into an embedded space.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.UMAP.fit_transform" title="cuml.UMAP.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X[, y])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.UMAP.fit_transform" title="cuml.UMAP.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X[, y, convert_dtype])</p></td>
 <td><p>Fit X into an embedded space and return that transformed output.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.UMAP.transform" title="cuml.UMAP.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.UMAP.transform" title="cuml.UMAP.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Transform X into the existing embedded space and return that transformed output.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="attribute">
 <dt id="cuml.UMAP.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit X into an embedded space.
 Parameters
 ———-
@@ -2999,7 +3478,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.UMAP.fit_transform">
-<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit X into an embedded space and return that transformed
 output.
 Parameters
@@ -3018,7 +3497,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.UMAP.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform X into the existing embedded space and return that
 transformed output.</p>
 <p>Please refer to the reference UMAP implementation for information
@@ -3155,6 +3634,154 @@ random matrix generation method</p>
 </dd></dl>
 
 </div>
+<div class="section" id="tsne">
+<h3>TSNE<a class="headerlink" href="#tsne" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.TSNE">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">TSNE</code><a class="headerlink" href="#cuml.TSNE" title="Permalink to this definition">¶</a></dt>
+<dd><p>TSNE (T-Distributed Stochastic Neighbor Embedding) is an extremely
+powerful dimensionality reduction technique that aims to maintain
+local distances between data points. It is extremely robust to whatever
+dataset you give it, and is used in many areas including cancer research,
+music analysis and neural network weight visualizations.</p>
+<p>The current cuML TSNE implementation is a first experimental release. It
+defaults to use the ‘exact’ fitting algorithm, which is signficantly slower
+then the Barnes-Hut algorithm as data sizes grow. A preview implementation
+of Barnes-Hut (derived from CannyLabs’ BH open source CUDA code) is also
+available for problems with n_components = 2, though this implementation
+currently has outstanding issues that can lead to crashes in rare
+scenarios. Future releases of TSNE will fix these issues (tracked as cuML
+Issue #1002) and switch Barnes-Hut to be the default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n_components</strong><span class="classifier">int (default 2)</span></dt><dd><p>The output dimensionality size. Currently only size=2 is tested, but
+the ‘exact’ algorithm will support greater dimensionality in future.</p>
+</dd>
+<dt><strong>perplexity</strong><span class="classifier">float (default 30.0)</span></dt><dd><p>Larger datasets require a larger value. Consider choosing different
+perplexity values from 5 to 50 and see the output differences.</p>
+</dd>
+<dt><strong>early_exaggeration</strong><span class="classifier">float (default 12.0)</span></dt><dd><p>Controls the space between clusters. Not critical to tune this.</p>
+</dd>
+<dt><strong>learning_rate</strong><span class="classifier">float (default 200.0)</span></dt><dd><p>The learning rate usually between (10, 1000). If this is too high,
+TSNE could look like a cloud / ball of points.</p>
+</dd>
+<dt><strong>n_iter</strong><span class="classifier">int (default 1000)</span></dt><dd><p>The more epochs, the more stable/accruate the final embedding.</p>
+</dd>
+<dt><strong>n_iter_without_progress</strong><span class="classifier">int (default 300)</span></dt><dd><p>When the KL Divergence becomes too small after some iterations,
+terminate TSNE early.</p>
+</dd>
+<dt><strong>min_grad_norm</strong><span class="classifier">float (default 1e-07)</span></dt><dd><p>The minimum gradient norm for when TSNE will terminate early.</p>
+</dd>
+<dt><strong>metric</strong><span class="classifier">str ‘euclidean’ only (default ‘euclidean’)</span></dt><dd><p>Currently only supports euclidean distance. Will support cosine in
+a future release.</p>
+</dd>
+<dt><strong>init</strong><span class="classifier">str ‘random’ only (default ‘random’)</span></dt><dd><p>Currently only supports random intialization. Will support PCA
+intialization in a future release.</p>
+</dd>
+<dt><strong>verbose</strong><span class="classifier">int (default 0)</span></dt><dd><p>Level of verbosity. If &gt; 0, prints all help messages and warnings.</p>
+</dd>
+<dt><strong>random_state</strong><span class="classifier">int (default None)</span></dt><dd><p>Setting this can allow future runs of TSNE to look the same.</p>
+</dd>
+<dt><strong>method</strong><span class="classifier">str ‘barnes_hut’ or ‘exact’ (default ‘barnes_hut’)</span></dt><dd><p>Options are either barnes_hut or exact. It is recommend that you use
+the barnes hut approximation for superior O(nlogn) complexity.</p>
+</dd>
+<dt><strong>angle</strong><span class="classifier">float (default 0.5)</span></dt><dd><p>Tradeoff between accuracy and speed. Choose between (0,2 0.8) where
+closer to one indicates full accuracy but slower speeds.</p>
+</dd>
+<dt><strong>learning_rate_method</strong><span class="classifier">str ‘adaptive’ or ‘none’ (default ‘adaptive’)</span></dt><dd><p>Either adaptive or None. Uses a special adpative method that tunes
+the learning rate, early exaggeration and perplexity automatically
+based on input size.</p>
+</dd>
+<dt><strong>n_neighbors</strong><span class="classifier">int (default 90)</span></dt><dd><p>The number of datapoints you want to use in the
+attractive forces. Smaller values are better for preserving
+local structure, whilst larger values can improve global structure
+preservation. Default is 3 * 30 (perplexity)</p>
+</dd>
+<dt><strong>perplexity_max_iter</strong><span class="classifier">int (default 100)</span></dt><dd><p>The number of epochs the best guassian bands are found for.</p>
+</dd>
+<dt><strong>exaggeration_iter</strong><span class="classifier">int (default 250)</span></dt><dd><p>To promote the growth of clusters, set this higher.</p>
+</dd>
+<dt><strong>pre_momentum</strong><span class="classifier">float (default 0.5)</span></dt><dd><p>During the exaggeration iteration, more forcefully apply gradients.</p>
+</dd>
+<dt><strong>post_momentum</strong><span class="classifier">float (default 0.8)</span></dt><dd><p>During the late phases, less forcefully apply gradients.</p>
+</dd>
+<dt><strong>should_downcast</strong><span class="classifier">bool (default True)</span></dt><dd><p>Whether to reduce to dataset to float32 or not.</p>
+</dd>
+<dt><strong>handle</strong><span class="classifier">(cuML Handle, default None)</span></dt><dd><p>You can pass in a past handle that was intialized, or we will create
+one for you anew!</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<ul class="simple">
+<li><p>van der Maaten, L.J.P.
+t-Distributed Stochastic Neighbor Embedding
+<a class="reference external" href="https://lvdmaaten.github.io/tsne/">https://lvdmaaten.github.io/tsne/</a></p></li>
+<li><p>van der Maaten, L.J.P.; Hinton, G.E.
+Visualizing High-Dimensional Data
+Using t-SNE. Journal of Machine Learning Research 9:2579-2605, 2008.</p></li>
+<li><p>George C. Linderman, Manas Rachh, Jeremy G. Hoskins,
+Stefan Steinerberger, Yuval Kluger Efficient Algorithms for
+t-distributed Stochastic Neighborhood Embedding</p></li>
+</ul>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.TSNE.fit" title="cuml.TSNE.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X)</p></td>
+<td><p>Fit X into an embedded space.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.TSNE.fit_transform" title="cuml.TSNE.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X)</p></td>
+<td><p>Fit X into an embedded space and return that transformed output.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cuml.TSNE.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TSNE.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit X into an embedded space.
+Parameters
+———-
+X : array-like (device or host) shape = (n_samples, n_features)</p>
+<blockquote>
+<div><p>X contains a sample per row.
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</div></blockquote>
+<dl class="simple">
+<dt>y<span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>y contains a label per row.
+Acceptable formats: cuDF Series, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.TSNE.fit_transform">
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TSNE.fit_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit X into an embedded space and return that transformed output.
+Parameters
+———-
+X : array-like (device or host) shape = (n_samples, n_features)</p>
+<blockquote>
+<div><p>X contains a sample per row.
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</div></blockquote>
+<dl class="simple">
+<dt>X_new<span class="classifier">array, shape (n_samples, n_components)</span></dt><dd><p>Embedding of the training data in low-dimensional space.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 </div>
 <div class="section" id="neighbors">
 <h2>Neighbors<a class="headerlink" href="#neighbors" title="Permalink to this headline">¶</a></h2>
@@ -3166,24 +3793,11 @@ random matrix generation method</p>
 <dd><p>NearestNeighbors is an unsupervised algorithm for querying neighborhoods
 from a given set of datapoints. Currently, cuML supports k-NN queries,
 which define the neighborhood as the closest <cite>k</cite> neighbors to each query
-point.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>n_neighbors: int (default = 5)</strong></dt><dd><p>The top K closest datapoints you want the algorithm to return.
-Currently, this value must be &lt; 1024.</p>
-</dd>
-<dt><strong>should_downcast</strong><span class="classifier">bool (default = False)</span></dt><dd><p>Currently only single precision is supported in the underlying undex.
-Setting this to true will allow single-precision input arrays to be
-automatically downcasted to single precision.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>For an additional example see <a class="reference external" href="https://github.com/rapidsai/notebook/blob/master/python/notebooks/knn_demo.ipynb">the NearestNeighbors notebook</a>.</p>
-<p>For additional docs, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html#sklearn.neighbors.NearestNeighbors">scikitlearn’s NearestNeighbors</a>.</p>
-<p class="rubric">Examples</p>
+point.
+Note: Should_downcast is deprecated and will be removed in 0.10,</p>
+<blockquote>
+<div><p>please use the convert_dtypes variable instead.</p>
+</div></blockquote>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span>
 <span class="kn">from</span> <span class="nn">cuml.neighbors</span> <span class="kn">import</span> <span class="n">NearestNeighbors</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -3240,6 +3854,22 @@ automatically downcasted to single precision.</p>
 <span class="mi">2</span>                 <span class="mf">0.0</span>                 <span class="mf">1.0</span>                 <span class="mf">2.0</span>
 </pre></div>
 </div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n_neighbors: int (default = 5)</strong></dt><dd><p>The top K closest datapoints you want the algorithm to return.
+Currently, this value must be &lt; 1024.</p>
+</dd>
+<dt><strong>should_downcast</strong><span class="classifier">bool (default = None)</span></dt><dd><p>Currently only single precision is supported in the underlying undex.
+Setting this to true will allow single-precision input arrays to be
+automatically downcasted to single precision.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>For an additional example see <a class="reference external" href="https://github.com/rapidsai/notebook/blob/master/python/notebooks/knn_demo.ipynb">the NearestNeighbors notebook</a>.</p>
+<p>For additional docs, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html#sklearn.neighbors.NearestNeighbors">scikitlearn’s NearestNeighbors</a>.</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -3247,24 +3877,31 @@ automatically downcasted to single precision.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.NearestNeighbors.fit" title="cuml.NearestNeighbors.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.NearestNeighbors.fit" title="cuml.NearestNeighbors.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Fit GPU index for performing nearest neighbor queries.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.NearestNeighbors.kneighbors" title="cuml.NearestNeighbors.kneighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kneighbors</span></code></a>(self, X[, k])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.NearestNeighbors.kneighbors" title="cuml.NearestNeighbors.kneighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kneighbors</span></code></a>(self, X[, k, convert_dtype])</p></td>
 <td><p>Query the GPU index for the k nearest neighbors of column vectors in X.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="attribute">
 <dt id="cuml.NearestNeighbors.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit GPU index for performing nearest neighbor queries.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit method will automatically
+convert the inputs to np.float32.
+Note: Convert dtype will be set to False once should_downcast is</p>
+<blockquote>
+<div><p>deprecated in 0.10</p>
+</div></blockquote>
 </dd>
 </dl>
 </dd>
@@ -3273,25 +3910,30 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.NearestNeighbors.kneighbors">
-<code class="sig-name descname">kneighbors</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">k=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.kneighbors" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kneighbors</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">k=None</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.kneighbors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Query the GPU index for the k nearest neighbors of column vectors in X.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 <dt><strong>k: Integer</strong></dt><dd><p>Number of neighbors to search</p>
 </dd>
-</dl>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the kneighbors method will automatically
+convert the inputs to np.float32.
+Note: Convert dtype will be set to False once should_downcast is</p>
+<blockquote>
+<div><p>deprecated in 0.10</p>
+</div></blockquote>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>distances: cuDF DataFrame or numpy ndarray</dt><dd><p>The distances of the k-nearest neighbors for each column vector
+<dt><strong>Returns</strong></dt><dd></dd>
+<dt><strong>———-</strong></dt><dd></dd>
+<dt><strong>distances: cuDF DataFrame or numpy ndarray</strong></dt><dd><p>The distances of the k-nearest neighbors for each column vector
 in X</p>
 </dd>
-<dt>indices: cuDF DataFrame of numpy ndarray</dt><dd><p>The indices of the k-nearest neighbors for each column vector in X</p>
+<dt><strong>indices: cuDF DataFrame of numpy ndarray</strong></dt><dd><p>The indices of the k-nearest neighbors for each column vector in X</p>
 </dd>
 </dl>
 </dd>
@@ -3304,6 +3946,205 @@ in X</p>
 </div>
 <div class="section" id="time-series">
 <h2>Time Series<a class="headerlink" href="#time-series" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="holtwinters">
+<h3>HoltWinters<a class="headerlink" href="#holtwinters" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.ExponentialSmoothing">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">ExponentialSmoothing</code><a class="headerlink" href="#cuml.ExponentialSmoothing" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Implements a HoltWinters time series analysis model which is used in
+both forecasting future entries in a time series as well as in providing
+exponential smoothing, where weights are assigned against historical
+data with exponentially decreasing impact. This is done by analyzing
+three components of the data: level, trend, and seasonality.</p>
+<p><strong>Known Limitations</strong>:
+This version of ExponentialSmoothing currently provides only a limited
+number of features when compared to the
+statsmodels.holtwinters.ExponentialSmoothing model. Noticeably, it lacks:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>.predict()<span class="classifier">no support for in-sample prediction.</span></dt><dd><p><a class="reference external" href="https://github.com/rapidsai/cuml/issues/875">https://github.com/rapidsai/cuml/issues/875</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>.hessian()<span class="classifier">no support for returning Hessian matrix.</span></dt><dd><p><a class="reference external" href="https://github.com/rapidsai/cuml/issues/880">https://github.com/rapidsai/cuml/issues/880</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>.information()<span class="classifier">no support for returning Fisher matrix.</span></dt><dd><p><a class="reference external" href="https://github.com/rapidsai/cuml/issues/880">https://github.com/rapidsai/cuml/issues/880</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>.loglike()<span class="classifier">no support for returning Log-likelihood.</span></dt><dd><p><a class="reference external" href="https://github.com/rapidsai/cuml/issues/880">https://github.com/rapidsai/cuml/issues/880</a></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>Additionally, be warned that there may exist floating point instability
+issues in this model. Small values in endog may lead to faulty results.
+See <a class="reference external" href="https://github.com/rapidsai/cuml/issues/888">https://github.com/rapidsai/cuml/issues/888</a> for more information.</p>
+<p><strong>Known Differences</strong>:
+This version of ExponentialSmoothing differs from statsmodels in some
+other minor ways:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>.__init__() : Cannot pass trend component or damped trend component</p></li>
+<li><dl class="simple">
+<dt>.__init__()<span class="classifier">this version can take additional parameter eps,</span></dt><dd><p>start_periods, ts_num, and handle</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>.score()<span class="classifier">returns SSE rather than gradient logL</span></dt><dd><p><a class="reference external" href="https://github.com/rapidsai/cuml/issues/876">https://github.com/rapidsai/cuml/issues/876</a></p>
+</dd>
+</dl>
+</li>
+<li><p>this version provides get_level(), get_trend(), get_season()</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>endog</strong><span class="classifier">array-like (device or host)</span></dt><dd><blockquote>
+<div><p>Acceptable formats: cuDF DataFrame, cuDF Series,
+NumPy ndarray, Numba device ndarray, cuda array interface
+compliant array like CuPy.
+Note: cuDF.DataFrame types assumes data is in columns,
+while all other datatypes assume data is in rows.
+The endogenous dataset to be operated on.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>seasonal<span class="classifier">‘additive’, ‘add’, ‘multiplicative’, ‘mul’</span></dt><dd><p>(default = ‘additive’)
+whether the seasonal trend should be calculated
+additively or multiplicatively.</p>
+</dd>
+<dt>seasonal_periods<span class="classifier">int (default=2)</span></dt><dd><p>the seasonality of the data (how often it
+repeats). For monthly data this should be 12,
+for weekly data, this should be 7.</p>
+</dd>
+<dt>start_periods<span class="classifier">int (default=2)</span></dt><dd><p>number of seasons to be used for seasonal
+seed values</p>
+</dd>
+<dt>ts_num<span class="classifier">int (default=1)</span></dt><dd><p>the number of different time series that were passed
+in the endog param.</p>
+</dd>
+<dt>eps<span class="classifier">np.number &gt; 0 (default=2.24e-3)</span></dt><dd><p>the accuracy to which gradient descent should achieve.
+Note that changing this value may affect the forecasted results.</p>
+</dd>
+<dt>handle<span class="classifier">cuml.Handle (default=None)</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>“, cu_pred)</p>
+<blockquote>
+<div><p>Output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Forecasted points :
+0    4.000143766093652
+1    5.000000163513641
+2    6.000000000174092
+3    7.000000000000178
+</pre></div>
+</div>
+</div></blockquote>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ExponentialSmoothing.fit" title="cuml.ExponentialSmoothing.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self)</p></td>
+<td><p>Performing fitting on the given <cite>endog</cite> dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ExponentialSmoothing.forecast" title="cuml.ExponentialSmoothing.forecast"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forecast</span></code></a>(self[, h, index])</p></td>
+<td><p>Forecasts future points based on the fitted model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ExponentialSmoothing.get_level" title="cuml.ExponentialSmoothing.get_level"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_level</span></code></a>(self[, index])</p></td>
+<td><p>Returns the level component of the model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ExponentialSmoothing.get_season" title="cuml.ExponentialSmoothing.get_season"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_season</span></code></a>(self[, index])</p></td>
+<td><p>Returns the season component of the model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ExponentialSmoothing.get_trend" title="cuml.ExponentialSmoothing.get_trend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_trend</span></code></a>(self[, index])</p></td>
+<td><p>Returns the trend component of the model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ExponentialSmoothing.score" title="cuml.ExponentialSmoothing.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self[, index])</p></td>
+<td><p>Returns the score of the model.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cuml.ExponentialSmoothing.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ExponentialSmoothing.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performing fitting on the given <cite>endog</cite> dataset.
+Calculates the level, trend, season, and SSE components.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ExponentialSmoothing.forecast">
+<code class="sig-name descname">forecast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">h=1</em>, <em class="sig-param">index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ExponentialSmoothing.forecast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Forecasts future points based on the fitted model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>h</strong><span class="classifier">int (default=1)</span></dt><dd><p>the number of points for each series to be forecasted</p>
+</dd>
+<dt><strong>index</strong><span class="classifier">int (default=None)</span></dt><dd><p>the index of the time series from which you want
+forecasted points. if None, then a cudf.DataFrame of
+the forecasted points from all time series is returned.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>preds</strong><span class="classifier">cudf.DataFrame or cudf.Series</span></dt><dd><p>Series of forecasted points if index is provided.
+DataFrame of all forecasted points if index=None.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ExponentialSmoothing.get_level">
+<code class="sig-name descname">get_level</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ExponentialSmoothing.get_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the level component of the model.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ExponentialSmoothing.get_season">
+<code class="sig-name descname">get_season</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ExponentialSmoothing.get_season" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the season component of the model.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ExponentialSmoothing.get_trend">
+<code class="sig-name descname">get_trend</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ExponentialSmoothing.get_trend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the trend component of the model.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ExponentialSmoothing.score">
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ExponentialSmoothing.score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the score of the model.</p>
+<dl class="simple">
+<dt><a href="#id3"><span class="problematic" id="id4">**</span></a>Note: Currently returns the SSE, rather than the gradient of the</dt><dd><p>LogLikelihood. <a class="reference external" href="https://github.com/rapidsai/cuml/issues/876">https://github.com/rapidsai/cuml/issues/876</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="kalman-filter">
 <h3>Kalman Filter<a class="headerlink" href="#kalman-filter" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
@@ -3352,7 +4193,7 @@ this variable.</p>
 <dt><strong>P</strong><span class="classifier">numba device array, numpy array or cuDF dataframe(dim_x, dim_x)</span></dt><dd><p>Current state covariance matrix. Any call to update() or predict()
 updates this variable.</p>
 </dd>
-<dt><strong>x_prior</strong><span class="classifier">numba device array, numpy array or cuDF series(dim_x, 1)</span></dt><dd><p>Prior (predicted) state estimate. The <a href="#id3"><span class="problematic" id="id4">*</span></a>_prior and <a href="#id5"><span class="problematic" id="id6">*</span></a>_post attributes
+<dt><strong>x_prior</strong><span class="classifier">numba device array, numpy array or cuDF series(dim_x, 1)</span></dt><dd><p>Prior (predicted) state estimate. The <a href="#id5"><span class="problematic" id="id6">*</span></a>_prior and <a href="#id7"><span class="problematic" id="id8">*</span></a>_post attributes
 are for convienence; they store the  prior and posterior of the
 current epoch. Read Only.</p>
 </dd>
@@ -3442,6 +4283,549 @@ one call, otherwise  self.R will be used.</p>
 one call, otherwise self.H will be used.</p>
 </dd>
 </dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="multi-node-multi-gpu-algorithms">
+<h2>Multi-Node, Multi-GPU Algorithms<a class="headerlink" href="#multi-node-multi-gpu-algorithms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3>K-Means Clustering<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.dask.cluster.KMeans">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.cluster.</code><code class="sig-name descname">KMeans</code><span class="sig-paren">(</span><em class="sig-param">n_clusters=8</em>, <em class="sig-param">max_iter=300</em>, <em class="sig-param">tol=0.0001</em>, <em class="sig-param">verbose=0</em>, <em class="sig-param">random_state=1</em>, <em class="sig-param">precompute_distances='auto'</em>, <em class="sig-param">init='scalable-k-means++'</em>, <em class="sig-param">n_init=1</em>, <em class="sig-param">algorithm='auto'</em>, <em class="sig-param">client=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multi-Node Multi-GPU implementation of KMeans.</p>
+<p>This version minimizes data transfer by sharing only
+the centroids between workers in each iteration.</p>
+<p>Predictions are done embarrassingly parallel, using cuML’s
+single-GPU version.</p>
+<p>For more information on this implementation, refer to the
+documentation for single-GPU K-Means.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.fit" title="cuml.dask.cluster.KMeans.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X)</p></td>
+<td><p>Fits a distributed KMeans model :param X: dask_cudf.Dataframe to fit :return: This KMeans instance</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.fit_transform" title="cuml.dask.cluster.KMeans.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X)</p></td>
+<td><p>Calls fit followed by transform using a distributed KMeans model :param X: dask_cudf.Dataframe to fit &amp; predict :return: A dask_cudf.Dataframe containing label predictions</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.func_fit" title="cuml.dask.cluster.KMeans.func_fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">func_fit</span></code></a>(sessionId, n_clusters, max_iter, …)</p></td>
+<td><p>Runs on each worker to call fit on local KMeans instance.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.func_predict" title="cuml.dask.cluster.KMeans.func_predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">func_predict</span></code></a>(model, dfs, r)</p></td>
+<td><p>Runs on each worker to call fit on local KMeans instance :param model: Local KMeans instance :param dfs: List of cudf.Dataframes to use :param r: Stops memoization caching :return: cudf.Series with predictions</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.func_score" title="cuml.dask.cluster.KMeans.func_score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">func_score</span></code></a>(model, dfs, r)</p></td>
+<td><p>Runs on each worker to call fit on local KMeans instance :param model: Local KMeans instance :param dfs: List of cudf.Dataframes to use :param r: Stops memoization caching :return: cudf.Series with predictions</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.func_transform" title="cuml.dask.cluster.KMeans.func_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">func_transform</span></code></a>(model, dfs, r)</p></td>
+<td><p>Runs on each worker to call fit on local KMeans instance :param model: Local KMeans instance :param dfs: List of cudf.Dataframes to use :param r: Stops memoizatiion caching :return: The fit model</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.parallel_func" title="cuml.dask.cluster.KMeans.parallel_func"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parallel_func</span></code></a>(self, X, func)</p></td>
+<td><p>Predicts the labels using a distributed KMeans model :param X: dask_cudf.Dataframe to predict :return: A dask_cudf.Dataframe containing label predictions</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.predict" title="cuml.dask.cluster.KMeans.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<td><p>Predicts the labels using a distributed KMeans model :param X: dask_cudf.Dataframe to predict :return: A dask_cudf.Dataframe containing label predictions</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.transform" title="cuml.dask.cluster.KMeans.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X)</p></td>
+<td><p>Predicts the labels using a distributed KMeans model :param X: dask_cudf.Dataframe to predict :return: A dask_cudf.Dataframe containing label predictions</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 60%" />
+<col style="width: 40%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>fit_predict</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>score</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="cuml.dask.cluster.KMeans.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fits a distributed KMeans model
+:param X: dask_cudf.Dataframe to fit
+:return: This KMeans instance</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.cluster.KMeans.fit_transform">
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.fit_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls fit followed by transform using a distributed KMeans model
+:param X: dask_cudf.Dataframe to fit &amp; predict
+:return: A dask_cudf.Dataframe containing label predictions</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.cluster.KMeans.func_fit">
+<em class="property">static </em><code class="sig-name descname">func_fit</code><span class="sig-paren">(</span><em class="sig-param">sessionId</em>, <em class="sig-param">n_clusters</em>, <em class="sig-param">max_iter</em>, <em class="sig-param">tol</em>, <em class="sig-param">verbose</em>, <em class="sig-param">random_state</em>, <em class="sig-param">precompute_distances</em>, <em class="sig-param">init</em>, <em class="sig-param">n_init</em>, <em class="sig-param">algorithm</em>, <em class="sig-param">dfs</em>, <em class="sig-param">r</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.func_fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs on each worker to call fit on local KMeans instance.
+Extracts centroids
+:param model: Local KMeans instance
+:param dfs: List of cudf.Dataframes to use
+:param r: Stops memoizatiion caching
+:return: The fit model</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.cluster.KMeans.func_predict">
+<em class="property">static </em><code class="sig-name descname">func_predict</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">dfs</em>, <em class="sig-param">r</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.func_predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs on each worker to call fit on local KMeans instance
+:param model: Local KMeans instance
+:param dfs: List of cudf.Dataframes to use
+:param r: Stops memoization caching
+:return: cudf.Series with predictions</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.cluster.KMeans.func_score">
+<em class="property">static </em><code class="sig-name descname">func_score</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">dfs</em>, <em class="sig-param">r</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.func_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs on each worker to call fit on local KMeans instance
+:param model: Local KMeans instance
+:param dfs: List of cudf.Dataframes to use
+:param r: Stops memoization caching
+:return: cudf.Series with predictions</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.cluster.KMeans.func_transform">
+<em class="property">static </em><code class="sig-name descname">func_transform</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">dfs</em>, <em class="sig-param">r</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.func_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs on each worker to call fit on local KMeans instance
+:param model: Local KMeans instance
+:param dfs: List of cudf.Dataframes to use
+:param r: Stops memoizatiion caching
+:return: The fit model</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.cluster.KMeans.parallel_func">
+<code class="sig-name descname">parallel_func</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">func</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.parallel_func" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the labels using a distributed KMeans model
+:param X: dask_cudf.Dataframe to predict
+:return: A dask_cudf.Dataframe containing label predictions</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.cluster.KMeans.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the labels using a distributed KMeans model
+:param X: dask_cudf.Dataframe to predict
+:return: A dask_cudf.Dataframe containing label predictions</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.cluster.KMeans.transform">
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the labels using a distributed KMeans model
+:param X: dask_cudf.Dataframe to predict
+:return: A dask_cudf.Dataframe containing label predictions</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="id10">
+<h3>Random Forest<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.dask.ensemble.RandomForestClassifier">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.ensemble.</code><code class="sig-name descname">RandomForestClassifier</code><span class="sig-paren">(</span><em class="sig-param">n_estimators=10</em>, <em class="sig-param">max_depth=-1</em>, <em class="sig-param">handle=None</em>, <em class="sig-param">max_features=1.0</em>, <em class="sig-param">n_bins=8</em>, <em class="sig-param">split_algo=1</em>, <em class="sig-param">split_criterion=0</em>, <em class="sig-param">min_rows_per_node=2</em>, <em class="sig-param">bootstrap=True</em>, <em class="sig-param">bootstrap_features=False</em>, <em class="sig-param">type_model='classifier'</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">rows_sample=1.0</em>, <em class="sig-param">max_leaves=-1</em>, <em class="sig-param">n_streams=4</em>, <em class="sig-param">quantile_per_tree=False</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">criterion=None</em>, <em class="sig-param">min_samples_leaf=None</em>, <em class="sig-param">min_weight_fraction_leaf=None</em>, <em class="sig-param">max_leaf_nodes=None</em>, <em class="sig-param">min_impurity_decrease=None</em>, <em class="sig-param">min_impurity_split=None</em>, <em class="sig-param">oob_score=None</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">warm_start=None</em>, <em class="sig-param">class_weight=None</em>, <em class="sig-param">workers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Experimental API implementing a multi-GPU Random Forest classifier
+model which fits multiple decision tree classifiers in an
+ensemble. This uses Dask to partition data over multiple GPUs
+(possibly on different nodes).</p>
+<dl class="simple">
+<dt>Currently, this API makes the following assumptions:</dt><dd><ul class="simple">
+<li><p>The set of Dask workers used between instantiation, fit,
+and predict are all consistent</p></li>
+<li><p>Training data is comes in the form of cuDF dataframes,
+distributed so that each worker has at least one partition.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Future versions of the API will support more flexible data
+distribution and additional input types.</p>
+<p>The distributed algorithm uses an embarrassingly-parallel
+approach. For a forest with N trees being built on w workers, each
+worker simply builds N/w trees on the data it has available
+locally. In many cases, partitioning the data so that each worker
+builds trees on a subset of the total dataset works well, but
+it generally requires the data to be well-shuffled in advance.
+Alternatively, callers can replicate all of the data across
+workers so that rf.fit receives w partitions, each containing the
+same data. This would produce results approximately identical to
+single-GPU fitting.</p>
+<p>Please check the single-GPU implementation of Random Forest
+classifier for more information about the underlying algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n_estimators</strong><span class="classifier">int (default = 10)</span></dt><dd><p>total number of trees in the forest (not per-worker)</p>
+</dd>
+<dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
+</dd>
+<dt><strong>split_criterion: The criterion used to split nodes.</strong></dt><dd><p>0 for GINI, 1 for ENTROPY, 4 for CRITERION_END.
+2 and 3 not valid for classification
+(default = 0)</p>
+</dd>
+<dt><strong>split_algo</strong><span class="classifier">0 for HIST and 1 for GLOBAL_QUANTILE</span></dt><dd><p>(default = 1)
+the algorithm to determine how nodes are split in the tree.</p>
+</dd>
+<dt><strong>split_criterion: The criterion used to split nodes.</strong></dt><dd><p>0 for GINI, 1 for ENTROPY, 4 for CRITERION_END.
+2 and 3 not valid for classification
+(default = 0)</p>
+</dd>
+<dt><strong>bootstrap</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>Control bootstrapping.
+If set, each tree in the forest is built
+on a bootstrapped sample with replacement.
+If false, sampling without replacement is done.</p>
+</dd>
+<dt><strong>bootstrap_features</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>Control bootstrapping for features.
+If features are drawn with or without replacement</p>
+</dd>
+<dt><strong>rows_sample</strong><span class="classifier">float (default = 1.0)</span></dt><dd><p>Ratio of dataset rows used while fitting each tree.</p>
+</dd>
+<dt><strong>max_depth</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum tree depth. Unlimited (i.e, until leaves are pure),
+if -1.</p>
+</dd>
+<dt><strong>max_leaves</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum leaf nodes per tree. Soft constraint. Unlimited,
+if -1.</p>
+</dd>
+<dt><strong>max_features</strong><span class="classifier">float (default = 1.0)</span></dt><dd><p>Ratio of number of features (columns) to consider
+per node split.</p>
+</dd>
+<dt><strong>n_bins</strong><span class="classifier">int (default = 8)</span></dt><dd><p>Number of bins used by the split algorithm.</p>
+</dd>
+<dt><strong>min_rows_per_node</strong><span class="classifier">int (default = 2)</span></dt><dd><p>The minimum number of samples (rows) needed
+to split a node.</p>
+</dd>
+<dt><strong>quantile_per_tree</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>Whether quantile is computed for individal trees in RF.
+Only relevant for GLOBAL_QUANTILE split_algo.</p>
+</dd>
+<dt><strong>n_streams</strong><span class="classifier">int (default = 4 )</span></dt><dd><p>Number of parallel streams used for forest building</p>
+</dd>
+<dt><strong>workers</strong><span class="classifier">optional, list of strings</span></dt><dd><p>Dask addresses of workers to use for computation.
+If None, all available Dask workers will be used.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>For usage examples, please see the RAPIDS notebookss repository:
+<a class="reference external" href="https://github.com/rapidsai/notebooks/blob/branch-0.9/cuml/random_forest_demo_mnmg.ipynb">https://github.com/rapidsai/notebooks/blob/branch-0.9/cuml/random_forest_demo_mnmg.ipynb</a></p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestClassifier.fit" title="cuml.dask.ensemble.RandomForestClassifier.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<td><p>Fit the input data with a Random Forest classifier</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestClassifier.get_params" title="cuml.dask.ensemble.RandomForestClassifier.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
+<td><p>Returns the value of all parameters required to configure this estimator as a dictionary.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestClassifier.predict" title="cuml.dask.ensemble.RandomForestClassifier.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<td><p>Predicts the labels for X.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestClassifier.set_params" title="cuml.dask.ensemble.RandomForestClassifier.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, \*\*params)</p></td>
+<td><p>Sets the value of parameters required to configure this estimator, it functions similar to the sklearn set_params.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="cuml.dask.ensemble.RandomForestClassifier.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestClassifier.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the input data with a Random Forest classifier</p>
+<p>IMPORTANT: X is expected to be partitioned with at least one partition
+on each Dask worker being used by the forest (self.workers).</p>
+<p>If a worker has multiple data partitions, they will be concatenated
+before fitting, which will lead to additional memory usage. To minimize
+memory consumption, ensure that each worker has exactly one partition.</p>
+<p>When persisting data, you can use
+cuml.dask.common.utils.persist_across_workers to simplify this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X_dask_cudf</span> <span class="o">=</span> <span class="n">dask_cudf</span><span class="o">.</span><span class="n">from_cudf</span><span class="p">(</span><span class="n">X_cudf</span><span class="p">,</span> <span class="n">npartitions</span><span class="o">=</span><span class="n">n_workers</span><span class="p">)</span>
+<span class="n">y_dask_cudf</span> <span class="o">=</span> <span class="n">dask_cudf</span><span class="o">.</span><span class="n">from_cudf</span><span class="p">(</span><span class="n">y_cudf</span><span class="p">,</span> <span class="n">npartitions</span><span class="o">=</span><span class="n">n_workers</span><span class="p">)</span>
+<span class="n">X_dask_cudf</span><span class="p">,</span> <span class="n">y_dask_cudf</span> <span class="o">=</span> <span class="n">persist_across_workers</span><span class="p">(</span><span class="n">dask_client</span><span class="p">,</span>
+                                                  <span class="p">[</span><span class="n">X_dask_cudf</span><span class="p">,</span>
+                                                   <span class="n">y_dask_cudf</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl>
+<dt>(this is equivalent to calling <cite>persist</cite> with the data and workers)::</dt><dd><dl>
+<dt>X_dask_cudf, y_dask_cudf = dask_client.persist([X_dask_cudf,</dt><dd><blockquote>
+<div><p>y_dask_cudf],</p>
+</div></blockquote>
+<p>workers={
+X_dask_cudf=workers,
+y_dask_cudf=workers
+})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">dask_cudf.Dataframe</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Features of training examples.</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">dask_cudf.Dataframe</span></dt><dd><p>Dense  matrix (floats or doubles) of shape (n_samples, 1)
+Labels of training examples.
+<strong>y must be partitioned the same way as X</strong></p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.ensemble.RandomForestClassifier.get_params">
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestClassifier.get_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of all parameters
+required to configure this estimator as a dictionary.
+Parameters
+———–
+deep : boolean (default = True)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.ensemble.RandomForestClassifier.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestClassifier.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the labels for X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">np.array</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Features of examples to predict.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>y: np.array</dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.ensemble.RandomForestClassifier.set_params">
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestClassifier.set_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the value of parameters required to
+configure this estimator, it functions similar to
+the sklearn set_params.
+Parameters
+———–
+params : dict of new params</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cuml.dask.ensemble.RandomForestRegressor">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.ensemble.</code><code class="sig-name descname">RandomForestRegressor</code><span class="sig-paren">(</span><em class="sig-param">n_estimators=10</em>, <em class="sig-param">max_depth=-1</em>, <em class="sig-param">handle=None</em>, <em class="sig-param">max_features='auto'</em>, <em class="sig-param">n_bins=8</em>, <em class="sig-param">split_algo=1</em>, <em class="sig-param">split_criterion=2</em>, <em class="sig-param">bootstrap=True</em>, <em class="sig-param">bootstrap_features=False</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">min_rows_per_node=2</em>, <em class="sig-param">rows_sample=1.0</em>, <em class="sig-param">max_leaves=-1</em>, <em class="sig-param">n_streams=4</em>, <em class="sig-param">accuracy_metric='mse'</em>, <em class="sig-param">min_samples_leaf=None</em>, <em class="sig-param">min_weight_fraction_leaf=None</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">max_leaf_nodes=None</em>, <em class="sig-param">min_impurity_decrease=None</em>, <em class="sig-param">min_impurity_split=None</em>, <em class="sig-param">oob_score=None</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">warm_start=None</em>, <em class="sig-param">class_weight=None</em>, <em class="sig-param">quantile_per_tree=False</em>, <em class="sig-param">criterion=None</em>, <em class="sig-param">workers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestRegressor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Experimental API implementing a multi-GPU Random Forest classifier
+model which fits multiple decision tree classifiers in an
+ensemble. This uses Dask to partition data over multiple GPUs
+(possibly on different nodes).</p>
+<dl class="simple">
+<dt>Currently, this API makes the following assumptions:</dt><dd><ul class="simple">
+<li><p>The set of Dask workers used between instantiation, fit,
+and predict are all consistent</p></li>
+<li><p>Training data is comes in the form of cuDF dataframes,
+distributed so that each worker has at least one partition.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Future versions of the API will support more flexible data
+distribution and additional input types. User-facing APIs are
+expected to change in upcoming versions.</p>
+<p>The distributed algorithm uses an embarrassingly-parallel
+approach. For a forest with N trees being built on w workers, each
+worker simply builds N/w trees on the data it has available
+locally. In many cases, partitioning the data so that each worker
+builds trees on a subset of the total dataset works well, but
+it generally requires the data to be well-shuffled in advance.
+Alternatively, callers can replicate all of the data across
+workers so that rf.fit receives w partitions, each containing the
+same data. This would produce results approximately identical to
+single-GPU fitting.</p>
+<p>Please check the single-GPU implementation of Random Forest
+classifier for more information about the underlying algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n_estimators</strong><span class="classifier">int (default = 10)</span></dt><dd><p>total number of trees in the forest (not per-worker)</p>
+</dd>
+<dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
+</dd>
+<dt><strong>split_algo</strong><span class="classifier">int (default = 1)</span></dt><dd><p>0 for HIST, 1 for GLOBAL_QUANTILE
+The type of algorithm to be used to create the trees.</p>
+</dd>
+<dt><strong>split_criterion: int (default = 2)</strong></dt><dd><p>The criterion used to split nodes.
+0 for GINI, 1 for ENTROPY,
+2 for MSE, 3 for MAE and 4 for CRITERION_END.
+0 and 1 not valid for regression</p>
+</dd>
+<dt><strong>bootstrap</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>Control bootstrapping.
+If set, each tree in the forest is built
+on a bootstrapped sample with replacement.
+If false, sampling without replacement is done.</p>
+</dd>
+<dt><strong>bootstrap_features</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>Control bootstrapping for features.
+If features are drawn with or without replacement</p>
+</dd>
+<dt><strong>rows_sample</strong><span class="classifier">float (default = 1.0)</span></dt><dd><p>Ratio of dataset rows used while fitting each tree.</p>
+</dd>
+<dt><strong>max_depth</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum tree depth. Unlimited (i.e, until leaves are pure),
+if -1.</p>
+</dd>
+<dt><strong>max_leaves</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum leaf nodes per tree. Soft constraint. Unlimited,
+if -1.</p>
+</dd>
+<dt><strong>max_features</strong><span class="classifier">int or float or string or None (default = ‘auto’)</span></dt><dd><p>Ratio of number of features (columns) to consider
+per node split.
+If int then max_features/n_features.
+If float then max_features is a fraction.
+If ‘auto’ then max_features=n_features which is 1.0.
+If ‘sqrt’ then max_features=1/sqrt(n_features).
+If ‘log2’ then max_features=log2(n_features)/n_features.
+If None, then max_features=n_features which is 1.0.</p>
+</dd>
+<dt><strong>n_bins</strong><span class="classifier">int (default = 8)</span></dt><dd><p>Number of bins used by the split algorithm.</p>
+</dd>
+<dt><strong>min_rows_per_node</strong><span class="classifier">int or float (default = 2)</span></dt><dd><p>The minimum number of samples (rows) needed
+to split a node.
+If int then number of sample rows
+If float the min_rows_per_sample*n_rows</p>
+</dd>
+<dt><strong>accuracy_metric</strong><span class="classifier">string (default = ‘mse’)</span></dt><dd><p>Decides the metric used to evaluate the performance
+of the model.
+for median of abs error : ‘median_ae’
+for mean of abs error : ‘mean_ae’
+for mean square error’ : ‘mse’</p>
+</dd>
+<dt><strong>n_streams</strong><span class="classifier">int (default = 4 )</span></dt><dd><p>Number of parallel streams used for forest building</p>
+</dd>
+<dt><strong>workers</strong><span class="classifier">optional, list of strings</span></dt><dd><p>Dask addresses of workers to use for computation.
+If None, all available Dask workers will be used.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestRegressor.fit" title="cuml.dask.ensemble.RandomForestRegressor.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<td><p>Fit the input data with a Random Forest regression model</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestRegressor.get_params" title="cuml.dask.ensemble.RandomForestRegressor.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
+<td><p>Returns the value of all parameters required to configure this estimator as a dictionary.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestRegressor.predict" title="cuml.dask.ensemble.RandomForestRegressor.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<td><p>Predicts the regressor outputs for X.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestRegressor.set_params" title="cuml.dask.ensemble.RandomForestRegressor.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, \*\*params)</p></td>
+<td><p>Sets the value of parameters required to configure this estimator, it functions similar to the sklearn set_params.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="cuml.dask.ensemble.RandomForestRegressor.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestRegressor.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the input data with a Random Forest regression model</p>
+<p>IMPORTANT: X is expected to be partitioned with at least one partition
+on each Dask worker being used by the forest (self.workers).</p>
+<p>When persisting data, you can use
+cuml.dask.common.utils.persist_across_workers to simplify this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X_dask_cudf</span> <span class="o">=</span> <span class="n">dask_cudf</span><span class="o">.</span><span class="n">from_cudf</span><span class="p">(</span><span class="n">X_cudf</span><span class="p">,</span> <span class="n">npartitions</span><span class="o">=</span><span class="n">n_workers</span><span class="p">)</span>
+<span class="n">y_dask_cudf</span> <span class="o">=</span> <span class="n">dask_cudf</span><span class="o">.</span><span class="n">from_cudf</span><span class="p">(</span><span class="n">y_cudf</span><span class="p">,</span> <span class="n">npartitions</span><span class="o">=</span><span class="n">n_workers</span><span class="p">)</span>
+<span class="n">X_dask_cudf</span><span class="p">,</span> <span class="n">y_dask_cudf</span> <span class="o">=</span> <span class="n">persist_across_workers</span><span class="p">(</span><span class="n">dask_client</span><span class="p">,</span>
+                                                  <span class="p">[</span><span class="n">X_dask_cudf</span><span class="p">,</span>
+                                                   <span class="n">y_dask_cudf</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl>
+<dt>(this is equivalent to calling <cite>persist</cite> with the data and workers)::</dt><dd><dl>
+<dt>X_dask_cudf, y_dask_cudf = dask_client.persist([X_dask_cudf,</dt><dd><blockquote>
+<div><p>y_dask_cudf],</p>
+</div></blockquote>
+<p>workers={
+X_dask_cudf=workers,
+y_dask_cudf=workers
+})</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="simple">
+<dt>X<span class="classifier">dask_cudf.Dataframe</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Features of training examples.</p>
+</dd>
+<dt>y<span class="classifier">dask_cudf.Dataframe</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, 1)
+Labels of training examples.
+y must be partitioned the same way as X</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.ensemble.RandomForestRegressor.get_params">
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestRegressor.get_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of all parameters
+required to configure this estimator as a dictionary.
+Parameters
+———–
+deep : boolean (default = True)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.ensemble.RandomForestRegressor.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestRegressor.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the regressor outputs for X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">Dense matrix (floats or doubles) of shape (n_samples, n_features).</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>y: NumPy</dt><dd><p>Dense vector (float) of shape (n_samples, 1)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.ensemble.RandomForestRegressor.set_params">
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestRegressor.set_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the value of parameters required to
+configure this estimator, it functions similar to
+the sklearn set_params.
+Parameters
+———–
+params : dict of new params</p>
 </dd></dl>
 
 </dd></dl>
