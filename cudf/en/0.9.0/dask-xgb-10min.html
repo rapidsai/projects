@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10 Minutes to Dask-XGBoost &mdash; cudf 0.9.0a+2783.g305db1fbe documentation</title>
+  <title>10 Minutes to Dask-XGBoost &mdash; cudf 0.9.0a+2790.gd9be5f142 documentation</title>
   
 
   
@@ -457,8 +457,8 @@ env: NCCL_P2P_DISABLE=1
 <td style="vertical-align: top; border: 0px solid white">
 <h3 style="text-align: left;">Client</h3>
 <ul style="text-align: left; list-style: none; margin: 0; padding: 0;">
-  <li><b>Scheduler: </b>tcp://172.17.0.3:36632</li>
-  <li><b>Dashboard: </b><a href='http://172.17.0.3:8787/status' target='_blank'>http://172.17.0.3:8787/status</a>
+  <li><b>Scheduler: </b>tcp://172.17.0.2:43405</li>
+  <li><b>Dashboard: </b><a href='http://172.17.0.2:8787/status' target='_blank'>http://172.17.0.2:8787/status</a>
 </ul>
 </td>
 <td style="vertical-align: top; border: 0px solid white">
@@ -466,7 +466,7 @@ env: NCCL_P2P_DISABLE=1
 <ul style="text-align: left; list-style:none; margin: 0; padding: 0;">
   <li><b>Workers: </b>1</li>
   <li><b>Cores: </b>1</li>
-  <li><b>Memory: </b>1.08 TB</li>
+  <li><b>Memory: </b>270.37 GB</li>
 </ul>
 </td>
 </tr>
@@ -579,8 +579,8 @@ env: NCCL_P2P_DISABLE=1
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/opt/conda/envs/rapids/lib/python3.7/site-packages/distributed/worker.py:3177: UserWarning: Large object of size 2.00 MB detected in task graph:
-  (&#39;squared_error&#39;, 2, 0, &#39;x&#39;, [&#39;x&#39;], None, &#39;_predic ... fa1b17f1666c1&#39;)
+/opt/conda/envs/rapids/lib/python3.7/site-packages/distributed/worker.py:3210: UserWarning: Large object of size 2.00 MB detected in task graph:
+  (&#39;squared_error&#39;, 2, 0, &#39;x&#39;, [&#39;x&#39;], None, &#39;_predic ... 4c87f491cf300&#39;)
 Consider scattering large objects ahead of time
 with client.scatter to reduce scheduler burden and
 keep data on workers
@@ -597,7 +597,7 @@ keep data on workers
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-rmse value: 2.291109828626126
+rmse value: 2.2897951254199675
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
