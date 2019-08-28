@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.10.0a+685.gb2499a921 documentation</title>
+  <title>API Reference &mdash; cudf 0.10.0a+726.g8690b188d documentation</title>
   
 
   
@@ -1141,7 +1141,7 @@ If None, the default index is used.</p>
 
 <dl class="method">
 <dt id="cudf.dataframe.DataFrame.groupby">
-<code class="sig-name descname">groupby</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">by=None</em>, <em class="sig-param">sort=True</em>, <em class="sig-param">as_index=True</em>, <em class="sig-param">method='hash'</em>, <em class="sig-param">level=None</em>, <em class="sig-param">group_keys=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.DataFrame.groupby" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">groupby</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">by=None</em>, <em class="sig-param">sort=True</em>, <em class="sig-param">as_index=True</em>, <em class="sig-param">method='hash'</em>, <em class="sig-param">level=None</em>, <em class="sig-param">group_keys=True</em>, <em class="sig-param">dropna=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.DataFrame.groupby" title="Permalink to this definition">¶</a></dt>
 <dd><p>Groupby</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1157,6 +1157,9 @@ of the returned DataFrame</p>
 Valid values are “hash” or “cudf”.
 “cudf” method may be deprecated in the future, but is currently
 the only method supporting group UDFs via the <cite>apply</cite> function.</p>
+</dd>
+<dt><strong>dropna</strong><span class="classifier">bool, optional</span></dt><dd><p>If True (default), drop null keys.
+If False, perform grouping by keys containing null(s).</p>
 </dd>
 </dl>
 </dd>
@@ -3122,7 +3125,20 @@ corresponding Series locations is null the result will be null</p>
 <dt id="cudf.dataframe.series.Series.append">
 <code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">ignore_index=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.dataframe.series.Series.append" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append values from another <code class="docutils literal notranslate"><span class="pre">Series</span></code> or array-like object.
-If <code class="docutils literal notranslate"><span class="pre">ignore_index=True</span></code> (default), the index is reset.</p>
+If <code class="docutils literal notranslate"><span class="pre">ignore_index=True</span></code>, the index is reset.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>other</strong><span class="classifier"><code class="docutils literal notranslate"><span class="pre">Series</span></code> or array-like object</span></dt><dd></dd>
+<dt><strong>ignore_index</strong><span class="classifier">boolean, default False. If true, the index is reset.</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>A new Series equivalent to self concatenated with other</dt><dd></dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
