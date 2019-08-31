@@ -8,5 +8,6 @@ var searchData=
   ['nvcategory_2eh_94',['NVCategory.h',['../NVCategory_8h.html',1,'']]],
   ['nvstrings_95',['NVStrings',['../classNVStrings.html',1,'']]],
   ['nvstrings_2eh_96',['NVStrings.h',['../NVStrings_8h.html',1,'']]],
-  ['nvtext_97',['NVText',['../classNVText.html',1,'']]]
+  ['nvtext_97',['NVText',['../classNVText.html',1,'']]],
+  ['nvtext_2eh_98',['NVText.h',['../NVText_8h.html',1,'']]]
 ];
