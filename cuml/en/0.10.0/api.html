@@ -236,6 +236,40 @@ column was dropped from the <a href="#id1"><span class="problematic" id="id2">`<
 </dl>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span>
+<span class="kn">from</span> <span class="nn">cuml.preprocessing.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="c1"># Generate some sample data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+                     <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span><span class="p">})</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Original data: {df.shape[0]} elements&#39;</span><span class="p">)</span>
+
+<span class="c1"># Suppose we want an 80/20 split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span>
+                                                    <span class="n">train_size</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;X_train: {X_train.shape[0]} elements&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;X_test: {X_test.shape[0]} elements&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;y_train: {y_train.shape[0]} elements&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;y_test: {y_test.shape[0]} elements&#39;</span><span class="p">)</span>
+
+<span class="c1"># Alternatively, if our labels are stored separately</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;y&#39;</span><span class="p">])</span>
+
+<span class="c1"># we can also do</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span>
+                                                    <span class="n">train_size</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Original</span> <span class="n">data</span><span class="p">:</span> <span class="mi">10</span> <span class="n">elements</span>
+<span class="n">X_train</span><span class="p">:</span> <span class="mi">8</span> <span class="n">elements</span>
+<span class="n">X_test</span><span class="p">:</span> <span class="mi">2</span> <span class="n">elements</span>
+<span class="n">y_train</span><span class="p">:</span> <span class="mi">8</span> <span class="n">elements</span>
+<span class="n">y_test</span><span class="p">:</span> <span class="mi">2</span> <span class="n">elements</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div></blockquote>
