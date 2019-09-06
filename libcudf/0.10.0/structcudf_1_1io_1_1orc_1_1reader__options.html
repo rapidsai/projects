@@ -82,9 +82,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4bbf582315ae19f801bc5181e886dddc"><td class="memItemLeft" align="right" valign="top"><a id="a4bbf582315ae19f801bc5181e886dddc"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>reader_options</b> (<a class="el" href="structcudf_1_1io_1_1orc_1_1reader__options.html">reader_options</a> const &amp;)=default</td></tr>
 <tr class="separator:a4bbf582315ae19f801bc5181e886dddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6de6b97b2e5d2922dcdd3753a09f436"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1orc_1_1reader__options.html#af6de6b97b2e5d2922dcdd3753a09f436">reader_options</a> (std::vector&lt; std::string &gt; cols, bool use_index_lookup, bool np_compat)</td></tr>
-<tr class="memdesc:af6de6b97b2e5d2922dcdd3753a09f436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor to populate reader options.  <a href="structcudf_1_1io_1_1orc_1_1reader__options.html#af6de6b97b2e5d2922dcdd3753a09f436">More...</a><br /></td></tr>
-<tr class="separator:af6de6b97b2e5d2922dcdd3753a09f436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1209fa9e34900036b85ca13376565a59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1orc_1_1reader__options.html#a1209fa9e34900036b85ca13376565a59">reader_options</a> (std::vector&lt; std::string &gt; cols, bool use_index_lookup, bool np_compat, gdf_time_unit timestamp_time_unit)</td></tr>
+<tr class="memdesc:a1209fa9e34900036b85ca13376565a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor to populate reader options.  <a href="structcudf_1_1io_1_1orc_1_1reader__options.html#a1209fa9e34900036b85ca13376565a59">More...</a><br /></td></tr>
+<tr class="separator:a1209fa9e34900036b85ca13376565a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -97,14 +97,17 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>use_index</b> = true<
 <tr class="memitem:a900f092e9e36eabda3e0c8b228484e6c"><td class="memItemLeft" align="right" valign="top"><a id="a900f092e9e36eabda3e0c8b228484e6c"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>use_np_dtypes</b> = true</td></tr>
 <tr class="separator:a900f092e9e36eabda3e0c8b228484e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e39254d6c941794be6c4de3fc62960"><td class="memItemLeft" align="right" valign="top"><a id="a71e39254d6c941794be6c4de3fc62960"></a>
+gdf_time_unit&#160;</td><td class="memItemRight" valign="bottom"><b>timestamp_unit</b> = TIME_UNIT_NONE</td></tr>
+<tr class="separator:a71e39254d6c941794be6c4de3fc62960"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>------------------------------------------------------------------------&mdash;* </p>
 <h2><a class="anchor" id="autotoc_md222"></a>
 @brief Options for the ORC reader</h2>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af6de6b97b2e5d2922dcdd3753a09f436"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6de6b97b2e5d2922dcdd3753a09f436">&#9670;&nbsp;</a></span>reader_options()</h2>
+<a id="a1209fa9e34900036b85ca13376565a59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1209fa9e34900036b85ca13376565a59">&#9670;&nbsp;</a></span>reader_options()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -128,7 +131,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>use_np_dtypes</b> = t
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>np_compat</em>&#160;</td>
+          <td class="paramname"><em>np_compat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gdf_time_unit&#160;</td>
+          <td class="paramname"><em>timestamp_time_unit</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -146,13 +155,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>use_np_dtypes</b> = t
 <p>Constructor to populate reader options. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">columns</td><td>List of columns to read. If empty, all columns are read </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cols</td><td>List of columns to read. If empty, all columns are read </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">use_index_lookup</td><td>Whether to use row index for faster scanning </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">np_compat</td><td>Whether to use numpy-compatible dtypes </td></tr>
   </table>
   </dd>
 </dl>
 <h2><a class="anchor" id="autotoc_md224"></a>
-@param[in] np_compat Whether to use numpy-compatible dtypes</h2>
+@param[in] timestamp_time_unit Resolution of timestamps; none for default</h2>
 
 </div>
 </div>

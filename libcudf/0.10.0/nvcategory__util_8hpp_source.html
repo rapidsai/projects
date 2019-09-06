@@ -77,7 +77,7 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Forward declarations</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">class </span>NVCategory;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">class </span><a class="code" href="classNVCategory.html">NVCategory</a>;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a>{</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">struct </span>table;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
@@ -87,7 +87,7 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">int</span> nv_category_index_type;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;gdf_error nvcategory_gather(<a class="code" href="structgdf__column__.html">gdf_column</a>* column, NVCategory* nv_category);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;gdf_error nvcategory_gather(<a class="code" href="structgdf__column__.html">gdf_column</a>* column, <a class="code" href="classNVCategory.html">NVCategory</a>* nv_category);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;gdf_error concat_categories(<span class="keyword">const</span> <a class="code" href="structgdf__column__.html">gdf_column</a>* <span class="keyword">const</span> input_columns[], <a class="code" href="structgdf__column__.html">gdf_column</a>* output_column, <span class="keywordtype">int</span> num_columns);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
@@ -98,6 +98,7 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructgdf__column___html"><div class="ttname"><a href="structgdf__column__.html">gdf_column_</a></div><div class="ttdoc">The C representation of a column in CUDF. This is the main unit of operation.</div><div class="ttdef"><b>Definition:</b> types.h:137</div></div>
+<div class="ttc" id="aclassNVCategory_html"><div class="ttname"><a href="classNVCategory.html">NVCategory</a></div><div class="ttdoc">Manages a list of strings for a category and their associated indexes.</div><div class="ttdef"><b>Definition:</b> NVCategory.h:48</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> binaryop.cpp:42</div></div>
 <div class="ttc" id="astructcudf_1_1table_html"><div class="ttname"><a href="structcudf_1_1table.html">cudf::table</a></div><div class="ttdoc">A wrapper for a set of gdf_columns of equal number of rows.</div><div class="ttdef"><b>Definition:</b> table.hpp:36</div></div>
 <!-- start footer part -->

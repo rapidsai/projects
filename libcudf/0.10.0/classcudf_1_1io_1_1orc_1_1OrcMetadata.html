@@ -94,9 +94,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a368d4c402a6e90b21f65bde340dbd8b8"><td class="memItemLeft" align="right" valign="top"><a id="a368d4c402a6e90b21f65bde340dbd8b8"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>OrcMetadata</b> (<a class="el" href="classcudf_1_1io_1_1datasource.html">datasource</a> *const src)</td></tr>
 <tr class="separator:a368d4c402a6e90b21f65bde340dbd8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fed00d40a9eb0fb230456acf4d92307"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1io_1_1orc_1_1OrcMetadata.html#a1fed00d40a9eb0fb230456acf4d92307">select_stripes</a> (int stripe, int row_start, int &amp;row_count)</td></tr>
-<tr class="memdesc:a1fed00d40a9eb0fb230456acf4d92307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters and reads the info of only a selection of stripes.  <a href="classcudf_1_1io_1_1orc_1_1OrcMetadata.html#a1fed00d40a9eb0fb230456acf4d92307">More...</a><br /></td></tr>
-<tr class="separator:a1fed00d40a9eb0fb230456acf4d92307"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25e3df71398f35f3be41e4341d99a986"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1io_1_1orc_1_1OrcMetadata.html#a25e3df71398f35f3be41e4341d99a986">select_stripes</a> (int stripe, int &amp;row_start, int &amp;row_count)</td></tr>
+<tr class="memdesc:a25e3df71398f35f3be41e4341d99a986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters and reads the info of only a selection of stripes.  <a href="classcudf_1_1io_1_1orc_1_1OrcMetadata.html#a25e3df71398f35f3be41e4341d99a986">More...</a><br /></td></tr>
+<tr class="separator:a25e3df71398f35f3be41e4341d99a986"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9dcd34273064fb0b42d603d37833ea2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1io_1_1orc_1_1OrcMetadata.html#ab9dcd34273064fb0b42d603d37833ea2">select_columns</a> (std::vector&lt; std::string &gt; use_names, bool &amp;has_timestamp_column)</td></tr>
 <tr class="memdesc:ab9dcd34273064fb0b42d603d37833ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters and reduces down to a selection of columns.  <a href="classcudf_1_1io_1_1orc_1_1OrcMetadata.html#ab9dcd34273064fb0b42d603d37833ea2">More...</a><br /></td></tr>
 <tr class="separator:ab9dcd34273064fb0b42d603d37833ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,8 +177,8 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1io_1_1orc_1_1OrcDecompresso
 
 </div>
 </div>
-<a id="a1fed00d40a9eb0fb230456acf4d92307"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1fed00d40a9eb0fb230456acf4d92307">&#9670;&nbsp;</a></span>select_stripes()</h2>
+<a id="a25e3df71398f35f3be41e4341d99a986"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25e3df71398f35f3be41e4341d99a986">&#9670;&nbsp;</a></span>select_stripes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -195,7 +195,7 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1io_1_1orc_1_1OrcDecompresso
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">int &amp;&#160;</td>
           <td class="paramname"><em>row_start</em>, </td>
         </tr>
         <tr>
