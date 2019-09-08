@@ -163,6 +163,17 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>bool8</b> = <a class
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:a94d60cf0790fb642cce1c91f1dba63c8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8">interpolation</a> { <br />
+&#160;&#160;<a class="el" href="namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8ab424744b6ce548ac355f5830c0a8c5e1">LINEAR</a> =0, 
+<a class="el" href="namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8a00b75d21f696dc9d435e8b4b3c3bc58d">LOWER</a>, 
+<a class="el" href="namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8ae5385a7a8eb742f08471ba73ea2d77ba">HIGHER</a>, 
+<a class="el" href="namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8a7b5062e7868e9d05c598ef7ad6619014">MIDPOINT</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8a04fd403d483f6415e0b006bc67bd8fac">NEAREST</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a94d60cf0790fb642cce1c91f1dba63c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolation method to use, when the desired quantile lies between two data points i and j.  <a href="namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8">More...</a><br /></td></tr>
+<tr class="separator:a94d60cf0790fb642cce1c91f1dba63c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69091647ea1f9c9d4cdcf7c8876bea3a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3a">duplicate_keep_option</a> { <a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa86ea4bfd2b3121412b0a63a3697926ec">KEEP_FIRST</a> = 0, 
 <a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa1d1398f646d74e801389737f07d89d1c">KEEP_LAST</a>, 
 <a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa6fb3154b77231184b596b4add407aa2a">KEEP_NONE</a>
@@ -315,6 +326,15 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
 <tr class="memitem:aac52a52a504d46887f1368ae13a96ffb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aac52a52a504d46887f1368ae13a96ffb">is_sorted</a> (<a class="el" href="structcudf_1_1table.html">cudf::table</a> const  &amp;<a class="el" href="structcudf_1_1table.html">table</a>, std::vector&lt; int8_t &gt; const  &amp;descending, bool nulls_are_smallest)</td></tr>
 <tr class="memdesc:aac52a52a504d46887f1368ae13a96ffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the rows of a <code>table</code> are sorted in a lexicographical order.  <a href="namespacecudf.html#aac52a52a504d46887f1368ae13a96ffb">More...</a><br /></td></tr>
 <tr class="separator:aac52a52a504d46887f1368ae13a96ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c828f318cb2c14c8ac0567f5084d1e7"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="structcudf_1_1table.html">cudf::table</a>, <a class="el" href="structcudf_1_1table.html">cudf::table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a6c828f318cb2c14c8ac0567f5084d1e7">group_quantiles</a> (<a class="el" href="structcudf_1_1table.html">cudf::table</a> const  &amp;keys, <a class="el" href="structcudf_1_1table.html">cudf::table</a> const  &amp;values, std::vector&lt; double &gt; const  &amp;quantiles, <a class="el" href="namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8">interpolation</a> <a class="el" href="namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8">interpolation</a>=<a class="el" href="namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8ab424744b6ce548ac355f5830c0a8c5e1">LINEAR</a>, bool include_nulls=false)</td></tr>
+<tr class="memdesc:a6c828f318cb2c14c8ac0567f5084d1e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find values at given quantiles within groups.  <a href="namespacecudf.html#a6c828f318cb2c14c8ac0567f5084d1e7">More...</a><br /></td></tr>
+<tr class="separator:a6c828f318cb2c14c8ac0567f5084d1e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aad879c6bbd17521333c06dab5db483"><td class="memItemLeft" align="right" valign="top">gdf_error&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a3aad879c6bbd17521333c06dab5db483">quantile_exact</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> *col_in, <a class="el" href="namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8">interpolation</a> prec, double q, <a class="el" href="structgdf__scalar.html">gdf_scalar</a> *result, <a class="el" href="structgdf__context__.html">gdf_context</a> *ctxt)</td></tr>
+<tr class="memdesc:a3aad879c6bbd17521333c06dab5db483"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes exact quantile.  <a href="namespacecudf.html#a3aad879c6bbd17521333c06dab5db483">More...</a><br /></td></tr>
+<tr class="separator:a3aad879c6bbd17521333c06dab5db483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaecb9e39d5b5475f53260497f3a8db0a"><td class="memItemLeft" align="right" valign="top">gdf_error&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aaecb9e39d5b5475f53260497f3a8db0a">quantile_approx</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> *col_in, double q, <a class="el" href="structgdf__scalar.html">gdf_scalar</a> *result, <a class="el" href="structgdf__context__.html">gdf_context</a> *ctxt)</td></tr>
+<tr class="memdesc:aaecb9e39d5b5475f53260497f3a8db0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes approximate quantile.  <a href="namespacecudf.html#aaecb9e39d5b5475f53260497f3a8db0a">More...</a><br /></td></tr>
+<tr class="separator:aaecb9e39d5b5475f53260497f3a8db0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34eb2aea42d4ee97fb98cc4b38dabd7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__scalar.html">gdf_scalar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a34eb2aea42d4ee97fb98cc4b38dabd7c">reduce</a> (const <a class="el" href="structgdf__column__.html">gdf_column</a> *col, cudf::reduction::operators op, gdf_dtype output_dtype, gdf_size_type ddof=1)</td></tr>
 <tr class="memdesc:a34eb2aea42d4ee97fb98cc4b38dabd7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the reduction of the values in all rows of a column This function does not detect overflows in reductions. Using a higher precision <code>dtype</code> may prevent overflow. Only <code>min</code> and <code>max</code> ops are supported for reduction of non-arithmetic types (date32, timestamp, category...). The null values are skipped for the operation. If the column is empty, the member is_valid of the output <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information.">gdf_scalar</a> will contain <code>false</code>.  <a href="namespacecudf.html#a34eb2aea42d4ee97fb98cc4b38dabd7c">More...</a><br /></td></tr>
 <tr class="separator:a34eb2aea42d4ee97fb98cc4b38dabd7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -342,6 +362,9 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
 <tr class="memitem:ad4423a474f1918e65aed295f0600c488"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__column__.html">gdf_column</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ad4423a474f1918e65aed295f0600c488">upper_bound</a> (<a class="el" href="structcudf_1_1table.html">table</a> const  &amp;t, <a class="el" href="structcudf_1_1table.html">table</a> const  &amp;values, std::vector&lt; bool &gt; const  &amp;desc_flags, bool nulls_as_largest=true)</td></tr>
 <tr class="memdesc:ad4423a474f1918e65aed295f0600c488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find largest indices in a sorted table where values should be inserted to maintain order.  <a href="namespacecudf.html#ad4423a474f1918e65aed295f0600c488">More...</a><br /></td></tr>
 <tr class="separator:ad4423a474f1918e65aed295f0600c488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad614fa15b385e74efb6dcf3fa663fd7c"><td class="memItemLeft" align="right" valign="top"><a id="ad614fa15b385e74efb6dcf3fa663fd7c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>contains</b> (<a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;column, <a class="el" href="structgdf__scalar.html">gdf_scalar</a> const &amp;value)</td></tr>
+<tr class="separator:ad614fa15b385e74efb6dcf3fa663fd7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad888a160fd5439ce10ed29232debc200"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1table.html">table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ad888a160fd5439ce10ed29232debc200">apply_boolean_mask</a> (<a class="el" href="structcudf_1_1table.html">table</a> const &amp;input, <a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;boolean_mask)</td></tr>
 <tr class="memdesc:ad888a160fd5439ce10ed29232debc200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters a table using a column of boolean values as a mask.  <a href="namespacecudf.html#ad888a160fd5439ce10ed29232debc200">More...</a><br /></td></tr>
 <tr class="separator:ad888a160fd5439ce10ed29232debc200"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -595,6 +618,34 @@ typedef".</p>
 <tr><td class="fieldname"><a id="a69091647ea1f9c9d4cdcf7c8876bea3aa1d1398f646d74e801389737f07d89d1c"></a>KEEP_LAST&#160;</td><td class="fielddoc"><p>Keeps last duplicate row and unique rows. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a69091647ea1f9c9d4cdcf7c8876bea3aa6fb3154b77231184b596b4add407aa2a"></a>KEEP_NONE&#160;</td><td class="fielddoc"><p>Don't keep any duplicate rows, Keeps only unique rows. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a94d60cf0790fb642cce1c91f1dba63c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94d60cf0790fb642cce1c91f1dba63c8">&#9670;&nbsp;</a></span>interpolation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8">cudf::interpolation</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interpolation method to use, when the desired quantile lies between two data points i and j. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a94d60cf0790fb642cce1c91f1dba63c8ab424744b6ce548ac355f5830c0a8c5e1"></a>LINEAR&#160;</td><td class="fielddoc"><p>Linear interpolation between i and j. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a94d60cf0790fb642cce1c91f1dba63c8a00b75d21f696dc9d435e8b4b3c3bc58d"></a>LOWER&#160;</td><td class="fielddoc"><p>Lower data point (i) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a94d60cf0790fb642cce1c91f1dba63c8ae5385a7a8eb742f08471ba73ea2d77ba"></a>HIGHER&#160;</td><td class="fielddoc"><p>Higher data point (j) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a94d60cf0790fb642cce1c91f1dba63c8a7b5062e7868e9d05c598ef7ad6619014"></a>MIDPOINT&#160;</td><td class="fielddoc"><p>(i + j)/2 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a94d60cf0790fb642cce1c91f1dba63c8a04fd403d483f6415e0b006bc67bd8fac"></a>NEAREST&#160;</td><td class="fielddoc"><p>i or j, whichever is nearest </p>
 </td></tr>
 </table>
 
@@ -1736,7 +1787,7 @@ template&lt;typename T &gt; </div>
 <p>------------------------------------------------------------------------&mdash;* When explicitly passed a template argument of a given type, returns the appropriate <code>gdf_dtype</code> for the specified C++ type.</p>
 <p>For example: </p><div class="fragment"><div class="line"><span class="keywordflow">return</span> gdf_dtype_of&lt;int32_t&gt;();        <span class="comment">// Returns GDF_INT32</span></div>
 <div class="line"><span class="keywordflow">return</span> gdf_dtype_of&lt;cudf::category&gt;(); <span class="comment">// Returns GDF_CATEGORY</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md270"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md271"></a>
 @tparam T The type to map to a &lt;tt&gt;gdf_dtype&lt;/tt&gt;</h2>
 
 </div>
@@ -1787,6 +1838,82 @@ template&lt;typename T , typename BinaryOp &gt; </div>
 </dl>
 <h2><a class="anchor" id="autotoc_md178"></a>
 @returns The old value at &lt;tt&gt;address&lt;/tt&gt;</h2>
+
+</div>
+</div>
+<a id="a6c828f318cb2c14c8ac0567f5084d1e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c828f318cb2c14c8ac0567f5084d1e7">&#9670;&nbsp;</a></span>group_quantiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; <a class="el" href="structcudf_1_1table.html">cudf::table</a>, <a class="el" href="structcudf_1_1table.html">cudf::table</a> &gt; cudf::group_quantiles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcudf_1_1table.html">cudf::table</a> const &amp;&#160;</td>
+          <td class="paramname"><em>keys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcudf_1_1table.html">cudf::table</a> const &amp;&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; double &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>quantiles</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8">interpolation</a>&#160;</td>
+          <td class="paramname"><em>interpolation</em> = <code><a class="el" href="namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8ab424744b6ce548ac355f5830c0a8c5e1">LINEAR</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>include_nulls</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find values at given quantiles within groups. </p>
+<p>Computes groupby <code>keys</code> and finds values at each quantile specified in <code>quantiles</code> in each group of each column in <code>values</code>. When the quantile does not correspond to an exact index, but lies between index i and j, the result is an interpolation of values at index i and j, using the method specified in <code>interpolation</code>. Nulls are always ignored in <code>values</code>.</p>
+<p>Returns the resulting quantile(s) for all groups in a single column. When more than one quantile is requested, each group's results are stored contiguously in the same order specified in <code>quantiles</code>.</p>
+<p>Illustration: </p><div class="fragment"><div class="line">Let</div>
+<div class="line">keys   = {[ a, c, b, c, a],}</div>
+<div class="line">values = {[v1,v2,v3,v4,v5],}</div>
+<div class="line">quantiles = {q1, q2}</div>
+<div class="line">out_keys, out_values = <a class="code" href="namespacecudf.html#a6c828f318cb2c14c8ac0567f5084d1e7">group_quantiles</a>(keys, values, quantiles)</div>
+<div class="line"> </div>
+<div class="line">out_keys = {[ a,      b,     c     ],}</div>
+<div class="line">out_vals = {[x1, x2, y1, y2, z1, z2],}</div>
+<div class="line">where</div>
+<div class="line">x1 = value at quantile q1 in group [v1,v5]</div>
+<div class="line">x2 = value at quantile q2 in group [v1,v5]</div>
+<div class="line">y1 = value at quantile q1 in group [v3]</div>
+<div class="line">y2 = value at quantile q2 in group [v3]</div>
+<div class="line">z1 = value at quantile q1 in group [v2,v4]</div>
+<div class="line">z2 = value at quantile q2 in group [v2,v4]</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keys</td><td>Keys to group by </td></tr>
+    <tr><td class="paramname">values</td><td>Values to find the quantiles in </td></tr>
+    <tr><td class="paramname">quantiles</td><td>List of quantiles q where q is in [0,1] </td></tr>
+    <tr><td class="paramname">interpolation</td><td>Method to use for interpolating quantiles that lie between points </td></tr>
+    <tr><td class="paramname">include_nulls</td><td>Whether to consider rows in <code>keys</code> that contain <code>NULL</code> values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::pair&lt;cudf::table, cudf::table&gt; First table contains the unique keys in <code>keys</code>. Second table contains per-group values at quantiles </dd></dl>
 
 </div>
 </div>
@@ -2036,6 +2163,8 @@ template&lt;typename T , typename BinaryOp &gt; </div>
 </dl>
 <h2><a class="anchor" id="autotoc_md267"></a>
 @return gdf_column   Insertion points. Non-nullable column of type GDF_INT32 with same size as values.</h2>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2search_8hpp-example.html#a1">/rapids/cudf/cpp/include/cudf/search.hpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -2303,6 +2432,119 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>gdf_column of type GDF_BOOL8 indicating whether the i-th query point is inside (true) or not (false) </dd></dl>
+
+</div>
+</div>
+<a id="aaecb9e39d5b5475f53260497f3a8db0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaecb9e39d5b5475f53260497f3a8db0a">&#9670;&nbsp;</a></span>quantile_approx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gdf_error cudf::quantile_approx </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td>
+          <td class="paramname"><em>col_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgdf__scalar.html">gdf_scalar</a> *&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgdf__context__.html">gdf_context</a> *&#160;</td>
+          <td class="paramname"><em>ctxt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes approximate quantile. </p>
+<p>Computes quantile with the same type as <code>col_in</code>. This function works only with arithmetic columns.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">col_in</td><td>input column </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">q</td><td>requested quantile in [0,1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>The value at the requested quantile, with the same type as <code>col_in</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ctxt</td><td>Options</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>GDF_SUCCESS upon successful compute, otherwise returns appropriate error code </dd></dl>
+
+</div>
+</div>
+<a id="a3aad879c6bbd17521333c06dab5db483"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aad879c6bbd17521333c06dab5db483">&#9670;&nbsp;</a></span>quantile_exact()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gdf_error cudf::quantile_exact </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgdf__column__.html">gdf_column</a> *&#160;</td>
+          <td class="paramname"><em>col_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8">interpolation</a>&#160;</td>
+          <td class="paramname"><em>prec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgdf__scalar.html">gdf_scalar</a> *&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgdf__context__.html">gdf_context</a> *&#160;</td>
+          <td class="paramname"><em>ctxt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes exact quantile. </p>
+<p>Computes quantile using double precision. This function works only with arithmetic columns.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">col_in</td><td>input column </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">interpolation</td><td>Method to use for interpolating quantiles that lie between points </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">q</td><td>requested quantile in [0,1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">result</td><td>The value at the requested quantile </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ctxt</td><td>Options</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>GDF_SUCCESS upon successful compute, otherwise returns appropriate error code </dd></dl>
 
 </div>
 </div>
@@ -2873,6 +3115,8 @@ an exclusive scan if false.</h2>
 </dl>
 <h2><a class="anchor" id="autotoc_md268"></a>
 @return gdf_column   Insertion points. Non-nullable column of type GDF_INT32 with same size as values.</h2>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2search_8hpp-example.html#a2">/rapids/cudf/cpp/include/cudf/search.hpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -2952,6 +3196,7 @@ template&lt;typename bit_container , typename predicate , typename size_type &gt
 </div>
 </div>
 </div><!-- contents -->
+<div class="ttc" id="anamespacecudf_html_a6c828f318cb2c14c8ac0567f5084d1e7"><div class="ttname"><a href="namespacecudf.html#a6c828f318cb2c14c8ac0567f5084d1e7">cudf::group_quantiles</a></div><div class="ttdeci">std::pair&lt; cudf::table, cudf::table &gt; group_quantiles(cudf::table const &amp;keys, cudf::table const &amp;values, std::vector&lt; double &gt; const &amp;quantiles, cudf::interpolation interpolation, bool include_nulls)</div><div class="ttdoc">Find values at given quantiles within groups.</div><div class="ttdef"><b>Definition:</b> group_quantiles.cu:85</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
