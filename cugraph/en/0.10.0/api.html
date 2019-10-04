@@ -899,8 +899,8 @@ Computational &amp; Mathematical Organization Theory (2001) 7: 275.
 <a class="reference external" href="https://doi.org/10.1023/A:1013470632383">https://doi.org/10.1023/A:1013470632383</a></p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>graph</strong><span class="classifier">cuGraph.Graph</span></dt><dd><p>cuGraph graph descriptor with connectivity information. The graph can
+<dd class="field-odd"><dl>
+<dt><strong>G</strong><span class="classifier">cuGraph.Graph</span></dt><dd><p>cuGraph graph descriptor with connectivity information. The graph can
 contain either directed or undirected edges where undirected edges are
 represented as directed edges in both directions.</p>
 </dd>
@@ -923,6 +923,12 @@ numerical roundoff. Usually values between 1e-2 and 1e-6 are
 acceptable.</p>
 </dd>
 <dt><strong>nstart</strong><span class="classifier">cudf.Dataframe</span></dt><dd><p>GPU Dataframe containing the initial guess for katz centrality.</p>
+<dl class="simple">
+<dt>nstart[‘vertex’]<span class="classifier">cudf.Series</span></dt><dd><p>Contains the vertex identifiers</p>
+</dd>
+<dt>nstart[‘values’]<span class="classifier">cudf.Series</span></dt><dd><p>Contains the katz centrality values of vertices</p>
+</dd>
+</dl>
 </dd>
 <dt><strong>normalized</strong><span class="classifier">bool</span></dt><dd><p>If True normalize the resulting katz centrality values</p>
 </dd>
