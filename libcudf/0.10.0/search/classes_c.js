@@ -1,13 +1,18 @@
 var searchData=
 [
-  ['managed_724',['managed',['../structmanaged.html',1,'']]],
-  ['managed_5fallocator_725',['managed_allocator',['../structmanaged__allocator.html',1,'']]],
-  ['mathopdispatcher_726',['MathOpDispatcher',['../structcudf_1_1detail_1_1MathOpDispatcher.html',1,'cudf::detail']]],
-  ['max_727',['max',['../structcudf_1_1reduction_1_1op_1_1max.html',1,'cudf::reduction::op']]],
-  ['mean_728',['mean',['../structcudf_1_1reduction_1_1op_1_1mean.html',1,'cudf::reduction::op']]],
-  ['meanvar_729',['meanvar',['../structcudf_1_1meanvar.html',1,'cudf']]],
-  ['memory_5fmapped_5fsource_730',['memory_mapped_source',['../classcudf_1_1io_1_1memory__mapped__source.html',1,'cudf::io']]],
-  ['min_731',['min',['../structcudf_1_1reduction_1_1op_1_1min.html',1,'cudf::reduction::op']]],
-  ['modulo_5fpartitioner_732',['modulo_partitioner',['../structmodulo__partitioner.html',1,'']]],
-  ['murmurhash3_5f32_733',['MurmurHash3_32',['../structMurmurHash3__32.html',1,'']]]
+  ['managed_1089',['managed',['../structmanaged.html',1,'']]],
+  ['managed_5fallocator_1090',['managed_allocator',['../structmanaged__allocator.html',1,'']]],
+  ['mathopdispatcher_1091',['MathOpDispatcher',['../structcudf_1_1detail_1_1MathOpDispatcher.html',1,'cudf::detail']]],
+  ['max_1092',['max',['../structcudf_1_1reduction_1_1op_1_1max.html',1,'cudf::reduction::op']]],
+  ['mean_1093',['mean',['../structcudf_1_1reduction_1_1op_1_1mean.html',1,'cudf::reduction::op']]],
+  ['meanvar_1094',['meanvar',['../structcudf_1_1meanvar.html',1,'cudf']]],
+  ['memory_5fmapped_5fsource_1095',['memory_mapped_source',['../classcudf_1_1io_1_1memory__mapped__source.html',1,'cudf::io']]],
+  ['min_1096',['min',['../structcudf_1_1reduction_1_1op_1_1min.html',1,'cudf::reduction::op']]],
+  ['modulo_5fpartitioner_1097',['modulo_partitioner',['../structmodulo__partitioner.html',1,'']]],
+  ['murmurhash3_5f32_1098',['MurmurHash3_32',['../structMurmurHash3__32.html',1,'']]],
+  ['mutable_5fcolumn_5fdevice_5fview_1099',['mutable_column_device_view',['../classcudf_1_1mutable__column__device__view.html',1,'cudf']]],
+  ['mutable_5fcolumn_5fview_1100',['mutable_column_view',['../classcudf_1_1mutable__column__view.html',1,'cudf']]],
+  ['mutable_5fcolumn_5fview_5fbase_1101',['mutable_column_view_base',['../classcudf_1_1detail_1_1mutable__column__view__base.html',1,'cudf::detail']]],
+  ['mutable_5ftable_5fdevice_5fview_1102',['mutable_table_device_view',['../classcudf_1_1mutable__table__device__view.html',1,'cudf']]],
+  ['mutable_5ftable_5fview_1103',['mutable_table_view',['../classcudf_1_1mutable__table__view.html',1,'cudf']]]
 ];

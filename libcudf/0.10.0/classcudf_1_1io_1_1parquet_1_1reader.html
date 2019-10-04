@@ -92,7 +92,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aedacc8f389c67e9ce18943b69ed76dfb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1io_1_1parquet_1_1reader.html#aedacc8f389c67e9ce18943b69ed76dfb">reader</a> (std::shared_ptr&lt; arrow::io::RandomAccessFile &gt; file, <a class="el" href="structcudf_1_1io_1_1parquet_1_1reader__options.html">reader_options</a> const &amp;options)</td></tr>
 <tr class="separator:aedacc8f389c67e9ce18943b69ed76dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2c5956c64271cf57e09b3313c6fb64e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1io_1_1parquet_1_1reader.html#ac2c5956c64271cf57e09b3313c6fb64e">get_index_column</a> ()</td></tr>
-<tr class="memdesc:ac2c5956c64271cf57e09b3313c6fb64e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index column derived from the dataset metadata.  <a href="classcudf_1_1io_1_1parquet_1_1reader.html#ac2c5956c64271cf57e09b3313c6fb64e">More...</a><br /></td></tr>
+<tr class="memdesc:ac2c5956c64271cf57e09b3313c6fb64e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the PANDAS-specific index column derived from the metadata.  <a href="classcudf_1_1io_1_1parquet_1_1reader.html#ac2c5956c64271cf57e09b3313c6fb64e">More...</a><br /></td></tr>
 <tr class="separator:ac2c5956c64271cf57e09b3313c6fb64e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad070e4fdc57368379effb1936c143417"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1table.html">table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1io_1_1parquet_1_1reader.html#ad070e4fdc57368379effb1936c143417">read_all</a> ()</td></tr>
 <tr class="memdesc:ad070e4fdc57368379effb1936c143417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads and returns the entire data set.  <a href="classcudf_1_1io_1_1parquet_1_1reader.html#ad070e4fdc57368379effb1936c143417">More...</a><br /></td></tr>
@@ -106,7 +106,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md232"></a>
+<h2><a class="anchor" id="autotoc_md316"></a>
 @brief Class to read Apache Parquet data into cuDF columns</h2>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a98d1043e9cb74e5ca1de43ac93c23442"></a>
@@ -143,7 +143,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md234"></a>
+<h2><a class="anchor" id="autotoc_md318"></a>
 @brief Constructor for a file path source.</h2>
 
 </div>
@@ -188,7 +188,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md235"></a>
+<h2><a class="anchor" id="autotoc_md319"></a>
 @brief Constructor for an existing memory buffer source.</h2>
 
 </div>
@@ -227,7 +227,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md236"></a>
+<h2><a class="anchor" id="autotoc_md320"></a>
 @brief Constructor for an Arrow file source</h2>
 
 </div>
@@ -248,9 +248,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the index column derived from the dataset metadata. </p>
+<p>Returns the PANDAS-specific index column derived from the metadata. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md237"></a>
+<h2><a class="anchor" id="autotoc_md321"></a>
 @return std::string Name of the column if it exists.</h2>
 
 </div>
@@ -272,7 +272,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Reads and returns the entire data set. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md238"></a>
+<h2><a class="anchor" id="autotoc_md322"></a>
 @return cudf::table Object that contains the array of gdf_columns.</h2>
 
 </div>
@@ -300,7 +300,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md239"></a>
+<h2><a class="anchor" id="autotoc_md323"></a>
 @return cudf::table Object that contains the array of gdf_columns.</h2>
 
 </div>
@@ -339,7 +339,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md240"></a>
+<h2><a class="anchor" id="autotoc_md324"></a>
 @return cudf::table Object that contains the array of gdf_columns.</h2>
 
 </div>

@@ -79,22 +79,22 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5cc969fa052ab4887d8fe1806dfae45c"><td class="memTemplParams" colspan="2">template&lt;typename ColumnType &gt; </td></tr>
-<tr class="memitem:a5cc969fa052ab4887d8fe1806dfae45c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1detail_1_1column__gatherer.html#a5cc969fa052ab4887d8fe1806dfae45c">operator()</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> const *source_column, gdf_index_type const gather_map[], <a class="el" href="structgdf__column__.html">gdf_column</a> *destination_column, bool check_bounds, cudaStream_t stream, bool sync_nvstring_category=false)</td></tr>
-<tr class="memdesc:a5cc969fa052ab4887d8fe1806dfae45c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type-dispatched function to gather from one column to another based on a <code>gather_map</code>.  <a href="structcudf_1_1detail_1_1column__gatherer.html#a5cc969fa052ab4887d8fe1806dfae45c">More...</a><br /></td></tr>
-<tr class="separator:a5cc969fa052ab4887d8fe1806dfae45c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c1f8f1c4c51f39b918130e17a735a32"><td class="memTemplParams" colspan="2">template&lt;typename column_type , typename iterator_type &gt; </td></tr>
+<tr class="memitem:a1c1f8f1c4c51f39b918130e17a735a32"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1detail_1_1column__gatherer.html#a1c1f8f1c4c51f39b918130e17a735a32">operator()</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> const *source_column, iterator_type gather_map, <a class="el" href="structgdf__column__.html">gdf_column</a> *destination_column, bool ignore_out_of_bounds, bool sync_nvstring_category, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
+<tr class="memdesc:a1c1f8f1c4c51f39b918130e17a735a32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type-dispatched function to gather from one column to another based on a <code>gather_map</code>.  <a href="structcudf_1_1detail_1_1column__gatherer.html#a1c1f8f1c4c51f39b918130e17a735a32">More...</a><br /></td></tr>
+<tr class="separator:a1c1f8f1c4c51f39b918130e17a735a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Function object for gathering a type-erased gdf_column. To be used with the cudf::type_dispatcher. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><hr  />
  </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5cc969fa052ab4887d8fe1806dfae45c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5cc969fa052ab4887d8fe1806dfae45c">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="a1c1f8f1c4c51f39b918130e17a735a32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c1f8f1c4c51f39b918130e17a735a32">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ColumnType &gt; </div>
+template&lt;typename column_type , typename iterator_type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -108,8 +108,8 @@ template&lt;typename ColumnType &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">gdf_index_type const&#160;</td>
-          <td class="paramname"><em>gather_map</em>[], </td>
+          <td class="paramtype">iterator_type&#160;</td>
+          <td class="paramname"><em>gather_map</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -121,19 +121,19 @@ template&lt;typename ColumnType &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>check_bounds</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cudaStream_t&#160;</td>
-          <td class="paramname"><em>stream</em>, </td>
+          <td class="paramname"><em>ignore_out_of_bounds</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>sync_nvstring_category</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>sync_nvstring_category</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -151,26 +151,26 @@ template&lt;typename ColumnType &gt; </div>
 <p>Type-dispatched function to gather from one column to another based on a <code>gather_map</code>. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">ColumnType</td><td>Dispatched type for the column being gathered </td></tr>
+    <tr><td class="paramname">column_type</td><td>Dispatched type for the column being gathered </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">source_column</td><td>The column to gather from </td></tr>
-    <tr><td class="paramname">gather_map</td><td>Array of indices that maps source elements to destination elements </td></tr>
+    <tr><td class="paramname">gather_map</td><td>An iterator over integral values representing the gather map </td></tr>
     <tr><td class="paramname">destination_column</td><td>The column to gather into </td></tr>
-    <tr><td class="paramname">check_bounds</td><td>Optionally perform bounds checking on the values of <code>gather_map</code> </td></tr>
+    <tr><td class="paramname">ignore_out_of_bounds</td><td>Ignore values in <code>gather_map</code> that are out of bounds </td></tr>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 @param stream Optional CUDA stream on which to execute kernels</h2>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>gather.cu</li>
+<li>gather.cuh</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

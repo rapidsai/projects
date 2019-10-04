@@ -98,7 +98,7 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>detail {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;std::vector&lt;gdf_column*&gt; <a class="code" href="namespacecudf.html#a31f4a85729765c154b21d8102be5a9d5">slice</a>(<a class="code" href="structgdf__column__.html">gdf_column</a> <span class="keyword">const</span> &amp;                input_column,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;std::vector&lt;gdf_column*&gt; <a class="code" href="namespacecudf.html#a55e5ff580a7ad1c81368264f69934d9d">slice</a>(<a class="code" href="structgdf__column__.html">gdf_column</a> <span class="keyword">const</span> &amp;                input_column,</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                               gdf_index_type <span class="keyword">const</span>*             indices,</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                               gdf_size_type                     num_indices,</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                               std::vector&lt;cudaStream_t&gt; <span class="keyword">const</span> &amp; streams = std::vector&lt;cudaStream_t&gt;{});</div>
@@ -109,7 +109,7 @@ $(function() {
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructgdf__column___html"><div class="ttname"><a href="structgdf__column__.html">gdf_column_</a></div><div class="ttdoc">The C representation of a column in CUDF. This is the main unit of operation.</div><div class="ttdef"><b>Definition:</b> types.h:137</div></div>
-<div class="ttc" id="anamespacecudf_html_a31f4a85729765c154b21d8102be5a9d5"><div class="ttname"><a href="namespacecudf.html#a31f4a85729765c154b21d8102be5a9d5">cudf::slice</a></div><div class="ttdeci">std::vector&lt; gdf_column * &gt; slice(gdf_column const &amp;input_column, gdf_index_type const *indices, gdf_size_type num_indices)</div><div class="ttdoc">Slices a column (including null values) into a set of columns according to a set of indices.</div><div class="ttdef"><b>Definition:</b> slice.cu:288</div></div>
+<div class="ttc" id="anamespacecudf_html_a55e5ff580a7ad1c81368264f69934d9d"><div class="ttname"><a href="namespacecudf.html#a55e5ff580a7ad1c81368264f69934d9d">cudf::slice</a></div><div class="ttdeci">std::vector&lt; gdf_column * &gt; slice(gdf_column const &amp;input_column, gdf_index_type const *indices, gdf_size_type num_indices)</div><div class="ttdoc">Slices a column (including null values) into a set of columns according to a set of indices.</div><div class="ttdef"><b>Definition:</b> slice.cu:289</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> binaryop.cpp:43</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

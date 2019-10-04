@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7edatasource_544',['~datasource',['../classcudf_1_1io_1_1datasource.html#aa4486e8cfc15e495a15030f70d362437',1,'cudf::io::datasource']]]
+  ['years_877',['years',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a8667ec773f6dbfafbbfe0d0b9deecd14',1,'NVStrings']]]
 ];

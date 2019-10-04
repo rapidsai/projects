@@ -93,7 +93,7 @@ $(function() {
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;cudf/cudf.h&gt;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;cudf/legacy/table.hpp&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;utilities/integer_utils.hpp&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;io/utilities/datasource.hpp&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;io/utilities/wrapper_utils.hpp&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
@@ -121,26 +121,28 @@ $(function() {
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                   <span class="keywordtype">size_t</span> total_dictionary_entries,</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                   <span class="keyword">const</span> std::vector&lt;gdf_column_wrapper&gt; &amp;columns);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  std::unique_ptr&lt;datasource&gt; source_;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  std::unique_ptr&lt;avro_metadata&gt; md_;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  std::vector&lt;std::string&gt; columns_;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  std::vector&lt;std::pair&lt;int, std::string&gt;&gt; selected_cols_;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}  <span class="comment">// namespace avro</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}  <span class="comment">// namespace io</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}  <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">size_t</span> align_size(<span class="keywordtype">size_t</span> v)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> util::round_up_safe(v, <span class="keyword">sizeof</span>(uint32_t)); }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  std::unique_ptr&lt;datasource&gt; source_;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  std::unique_ptr&lt;avro_metadata&gt; md_;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  std::vector&lt;std::string&gt; columns_;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  std::vector&lt;std::pair&lt;int, std::string&gt;&gt; selected_cols_;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}  <span class="comment">// namespace avro</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}  <span class="comment">// namespace io</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}  <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclasshostdevice__vector_html"><div class="ttname"><a href="classhostdevice__vector.html">hostdevice_vector</a></div><div class="ttdoc">A helper class that wraps fixed-length device memory for the GPU, and a mirror host pinned memory for...</div><div class="ttdef"><b>Definition:</b> wrapper_utils.hpp:119</div></div>
-<div class="ttc" id="astructcudf_1_1io_1_1avro_1_1reader__options_html"><div class="ttname"><a href="structcudf_1_1io_1_1avro_1_1reader__options.html">cudf::io::avro::reader_options</a></div><div class="ttdef"><b>Definition:</b> io_readers.hpp:35</div></div>
+<div class="ttc" id="astructcudf_1_1io_1_1avro_1_1reader__options_html"><div class="ttname"><a href="structcudf_1_1io_1_1avro_1_1reader__options.html">cudf::io::avro::reader_options</a></div><div class="ttdef"><b>Definition:</b> io_readers.hpp:36</div></div>
 <div class="ttc" id="aclasscudf_1_1io_1_1avro_1_1reader_1_1Impl_html_abaa92b478d6c2ff99f32b71fbc62e479"><div class="ttname"><a href="classcudf_1_1io_1_1avro_1_1reader_1_1Impl.html#abaa92b478d6c2ff99f32b71fbc62e479">cudf::io::avro::reader::Impl::Impl</a></div><div class="ttdeci">Impl(std::unique_ptr&lt; datasource &gt; source, reader_options const &amp;options)</div><div class="ttdoc">Constructor from a dataset source with reader options.</div><div class="ttdef"><b>Definition:</b> avro_reader_impl.cu:152</div></div>
 <div class="ttc" id="aclasscudf_1_1io_1_1avro_1_1reader_1_1Impl_html_a9200d7a95675f35aab6f2dc441ee8a90"><div class="ttname"><a href="classcudf_1_1io_1_1avro_1_1reader_1_1Impl.html#a9200d7a95675f35aab6f2dc441ee8a90">cudf::io::avro::reader::Impl::read</a></div><div class="ttdeci">table read(int skip_rows, int num_rows)</div><div class="ttdoc">Read an entire set or a subset of data from the source and returns an array of gdf_columns.</div><div class="ttdef"><b>Definition:</b> avro_reader_impl.cu:160</div></div>
 <div class="ttc" id="aclasscudf_1_1io_1_1avro_1_1reader_1_1Impl_html"><div class="ttname"><a href="classcudf_1_1io_1_1avro_1_1reader_1_1Impl.html">cudf::io::avro::reader::Impl</a></div><div class="ttdoc">Implementation for Avro reader.</div><div class="ttdef"><b>Definition:</b> avro_reader_impl.hpp:38</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> binaryop.cpp:43</div></div>
-<div class="ttc" id="aclassdevice__buffer_html"><div class="ttname"><a href="classdevice__buffer.html">device_buffer</a></div><div class="ttdoc">A helper class that owns a resizable device memory buffer.</div><div class="ttdef"><b>Definition:</b> wrapper_utils.hpp:169</div></div>
-<div class="ttc" id="astructcudf_1_1table_html"><div class="ttname"><a href="structcudf_1_1table.html">cudf::table</a></div><div class="ttdoc">A wrapper for a set of gdf_columns of equal number of rows.</div><div class="ttdef"><b>Definition:</b> table.hpp:36</div></div>
+<div class="ttc" id="aclassdevice__buffer_html"><div class="ttname"><a href="classdevice__buffer.html">device_buffer</a></div><div class="ttdoc">A helper class that owns a resizable device memory buffer.</div><div class="ttdef"><b>Definition:</b> wrapper_utils.hpp:171</div></div>
+<div class="ttc" id="astructcudf_1_1table_html"><div class="ttname"><a href="structcudf_1_1table.html">cudf::table</a></div><div class="ttdoc">A wrapper for a set of gdf_columns of equal number of rows.</div><div class="ttdef"><b>Definition:</b> legacy/table.hpp:36</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

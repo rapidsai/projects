@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['quote_5fall_1105',['QUOTE_ALL',['../structcudf_1_1csv__read__arg.html#ac38936d9c26a6ba6e5d488f36afa0a4eaf90080bae75ba35601c87900887ab75d',1,'cudf::csv_read_arg']]],
-  ['quote_5fminimal_1106',['QUOTE_MINIMAL',['../structcudf_1_1csv__read__arg.html#ac38936d9c26a6ba6e5d488f36afa0a4eaaee7131988c0281123a37aef8f2f6b49',1,'cudf::csv_read_arg']]],
-  ['quote_5fnone_1107',['QUOTE_NONE',['../structcudf_1_1csv__read__arg.html#ac38936d9c26a6ba6e5d488f36afa0a4ea9b2ff4c8ffb04d079986e1f854051fce',1,'cudf::csv_read_arg']]],
-  ['quote_5fnonnumeric_1108',['QUOTE_NONNUMERIC',['../structcudf_1_1csv__read__arg.html#ac38936d9c26a6ba6e5d488f36afa0a4eaa8f7f2fbd082c4312e8a4d0dbae0bfd1',1,'cudf::csv_read_arg']]]
+  ['midpoint_1787',['MIDPOINT',['../namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8a7b5062e7868e9d05c598ef7ad6619014',1,'cudf']]],
+  ['minutes_1788',['minutes',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a4262801072819bc89e488b9a111135f9',1,'NVStrings']]],
+  ['months_1789',['months',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049aeed9e40cde5808e62979d57dbc381f51',1,'NVStrings']]],
+  ['ms_1790',['ms',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a03457e192cd793d83b4553f1a3822e71',1,'NVStrings']]]
 ];

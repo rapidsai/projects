@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10 Minutes to Dask-XGBoost &mdash; cudf 0.10.0a+726.g8690b188d documentation</title>
+  <title>10 Minutes to Dask-XGBoost &mdash; cudf 0.10.0a+2343.g6a7d06a50 documentation</title>
   
 
   
@@ -25,6 +25,7 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -457,7 +458,7 @@ env: NCCL_P2P_DISABLE=1
 <td style="vertical-align: top; border: 0px solid white">
 <h3 style="text-align: left;">Client</h3>
 <ul style="text-align: left; list-style: none; margin: 0; padding: 0;">
-  <li><b>Scheduler: </b>tcp://172.17.0.2:38537</li>
+  <li><b>Scheduler: </b>tcp://172.17.0.2:44582</li>
   <li><b>Dashboard: </b><a href='http://172.17.0.2:8787/status' target='_blank'>http://172.17.0.2:8787/status</a>
 </ul>
 </td>
@@ -574,12 +575,30 @@ env: NCCL_P2P_DISABLE=1
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/opt/conda/envs/rapids/lib/python3.7/site-packages/distributed/worker.py:3239: UserWarning: Large object of size 2.00 MB detected in task graph:
+  (&#39;squared_error&#39;, 2, 0, &#39;x&#39;, [&#39;x&#39;], None, &#39;_predic ... 920760c71e849&#39;)
+Consider scattering large objects ahead of time
+with client.scatter to reduce scheduler burden and
+keep data on workers
+
+    future = client.submit(func, big_data)    # bad
+
+    big_future = client.scatter(big_data)     # good
+    future = client.submit(func, big_future)  # good
+  % (format_bytes(len(b)), s)
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-rmse value: 2.295640729682449
+rmse value: 2.2907895822569206
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">

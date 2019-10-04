@@ -83,21 +83,13 @@ Collaboration diagram for cudf::io::csv::reader_options:</div>
 <div class="dyncontent">
 <div class="center"><img src="structcudf_1_1io_1_1csv_1_1reader__options__coll__graph.png" border="0" usemap="#cudf_1_1io_1_1csv_1_1reader__options_coll__map" alt="Collaboration graph"/></div>
 <map name="cudf_1_1io_1_1csv_1_1reader__options_coll__map" id="cudf_1_1io_1_1csv_1_1reader__options_coll__map">
-<area shape="rect" title="Options for the CSV reader." alt="" coords="5,124,237,165"/>
+<area shape="rect" title="Options for the CSV reader." alt="" coords="5,109,237,151"/>
 <area shape="rect" title=" " alt="" coords="80,5,163,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ad3edd5890d8bc42e699657650175c4bb"><td class="memItemLeft" align="right" valign="top"><a id="ad3edd5890d8bc42e699657650175c4bb"></a>
-gdf_input_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1csv_1_1reader__options.html#ad3edd5890d8bc42e699657650175c4bb">input_data_form</a> = HOST_BUFFER</td></tr>
-<tr class="memdesc:ad3edd5890d8bc42e699657650175c4bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of source of CSV data. <br /></td></tr>
-<tr class="separator:ad3edd5890d8bc42e699657650175c4bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9878d61b963c6610c1bf288974e8ad3"><td class="memItemLeft" align="right" valign="top"><a id="ac9878d61b963c6610c1bf288974e8ad3"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1csv_1_1reader__options.html#ac9878d61b963c6610c1bf288974e8ad3">filepath_or_buffer</a></td></tr>
-<tr class="memdesc:ac9878d61b963c6610c1bf288974e8ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">If input_data_form is FILE_PATH, contains the filepath. If input_data_type is HOST_BUFFER, points to the host memory buffer. <br /></td></tr>
-<tr class="separator:ac9878d61b963c6610c1bf288974e8ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09f6c19330a69732b79520995b4ca590"><td class="memItemLeft" align="right" valign="top"><a id="a09f6c19330a69732b79520995b4ca590"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1csv_1_1reader__options.html#a09f6c19330a69732b79520995b4ca590">compression</a> = &quot;none&quot;</td></tr>
 <tr class="memdesc:a09f6c19330a69732b79520995b4ca590"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compression type ("none", "infer", "bz2", "gz", "xz", "zip"); with the default value, "infer", infers the compression from the file extension. <br /></td></tr>
@@ -205,11 +197,15 @@ quote_style&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1csv_1_1reader__options.html#ae226a08afc2f408a9e2377235bda673e">doublequote</a> = true</td></tr>
 <tr class="memdesc:ae226a08afc2f408a9e2377235bda673e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether to interpret two consecutive quotechar inside a field as a single quotechar; true by default. <br /></td></tr>
 <tr class="separator:ae226a08afc2f408a9e2377235bda673e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae53fb55e43e3c324af8608468e4b7b77"><td class="memItemLeft" align="right" valign="top"><a id="ae53fb55e43e3c324af8608468e4b7b77"></a>
+gdf_time_unit&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1csv_1_1reader__options.html#ae53fb55e43e3c324af8608468e4b7b77">out_time_unit</a> = TIME_UNIT_NONE</td></tr>
+<tr class="memdesc:ae53fb55e43e3c324af8608468e4b7b77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the output resolution for date32, date64, and timestamp columns. <br /></td></tr>
+<tr class="separator:ae53fb55e43e3c324af8608468e4b7b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Options for the CSV reader. </p>
 <p>------------------------------------------------------------------------&mdash;* TODO: Clean-up the parameters, as it is decoupled from the <code>read_csv</code> interface. That interface allows it to be more closely aligned with PANDAS' </p>
-<h2><a class="anchor" id="autotoc_md216"></a>
+<h2><a class="anchor" id="autotoc_md298"></a>
 for user-friendliness.</h2>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a8aab09ef364d4492ecb2e7f713c36565"></a>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libcudf: cudf::detail::bounds_checker Struct Reference</title>
+<title>libcudf: cudf::detail::bounds_checker&lt; map_type &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ $(function() {
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structcudf_1_1detail_1_1bounds__checker-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">cudf::detail::bounds_checker Struct Reference</div>  </div>
+<div class="title">cudf::detail::bounds_checker&lt; map_type &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -80,27 +80,30 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9786c48621d146a55499eb102ba69b2c"><td class="memItemLeft" align="right" valign="top"><a id="a9786c48621d146a55499eb102ba69b2c"></a>
+<tr class="memitem:a4994fa5ecd00dd35f47c88969a21c156"><td class="memItemLeft" align="right" valign="top"><a id="a4994fa5ecd00dd35f47c88969a21c156"></a>
 __device__&#160;</td><td class="memItemRight" valign="bottom"><b>bounds_checker</b> (gdf_index_type begin_, gdf_index_type end_)</td></tr>
-<tr class="separator:a9786c48621d146a55499eb102ba69b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f067dbda86081e6f79381737e015ea8"><td class="memItemLeft" align="right" valign="top"><a id="a0f067dbda86081e6f79381737e015ea8"></a>
-__device__ __forceinline__ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (gdf_index_type const index)</td></tr>
-<tr class="separator:a0f067dbda86081e6f79381737e015ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a4994fa5ecd00dd35f47c88969a21c156"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80581c394f6c75e9380f4abf0f71b52b"><td class="memItemLeft" align="right" valign="top"><a id="a80581c394f6c75e9380f4abf0f71b52b"></a>
+__device__ __forceinline__ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (map_type const index)</td></tr>
+<tr class="separator:a80581c394f6c75e9380f4abf0f71b52b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a047639893dfa198662a67f032ac73524"><td class="memItemLeft" align="right" valign="top"><a id="a047639893dfa198662a67f032ac73524"></a>
-const gdf_index_type&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b></td></tr>
-<tr class="separator:a047639893dfa198662a67f032ac73524"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbcf1e8239c752a2e4806f63600c6e53"><td class="memItemLeft" align="right" valign="top"><a id="afbcf1e8239c752a2e4806f63600c6e53"></a>
-const gdf_index_type&#160;</td><td class="memItemRight" valign="bottom"><b>end</b></td></tr>
-<tr class="separator:afbcf1e8239c752a2e4806f63600c6e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a704efc7eedcc7239c1282614658a1072"><td class="memItemLeft" align="right" valign="top"><a id="a704efc7eedcc7239c1282614658a1072"></a>
+gdf_index_type&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b></td></tr>
+<tr class="separator:a704efc7eedcc7239c1282614658a1072"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46ec423a418d80716e766b799077db21"><td class="memItemLeft" align="right" valign="top"><a id="a46ec423a418d80716e766b799077db21"></a>
+gdf_index_type&#160;</td><td class="memItemRight" valign="bottom"><b>end</b></td></tr>
+<tr class="separator:a46ec423a418d80716e766b799077db21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Function object to check if an index is within the bounds [begin, end). </p>
+<div class="textblock"><h3>template&lt;typename map_type&gt;<br />
+struct cudf::detail::bounds_checker&lt; map_type &gt;</h3>
+
+<p>Function object to check if an index is within the bounds [begin, end). </p>
 <p>------------------------------------------------------------------------&mdash;* </p><hr  />
  </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>gather.cu</li>
+<li>gather.cuh</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

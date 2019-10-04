@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['sin_1109',['SIN',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba6b585cf453d36fbb0381b38bc2c966e1',1,'cudf']]],
-  ['sqrt_1110',['SQRT',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba6ac653ea3d15f23b0f6e61b447f783ea',1,'cudf']]]
+  ['name_1791',['name',['../classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831a2f5d336f9e795adab8ed537aa190ff23',1,'NVStrings']]],
+  ['nearest_1792',['NEAREST',['../namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8a04fd403d483f6415e0b006bc67bd8fac',1,'cudf']]],
+  ['never_1793',['NEVER',['../namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6a615857bddd061281abf998989fb2ba8f',1,'cudf']]],
+  ['none_1794',['none',['../classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831a0b5479f46e32a0b52419271376591269',1,'NVStrings']]],
+  ['not_1795',['NOT',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba5e654d9830c09fc254d4f9f19fbdfe6e',1,'cudf']]],
+  ['ns_1796',['ns',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a4d185b3b79bf8f4cf83d5eb349427294',1,'NVStrings']]],
+  ['num_5ftype_5fids_1797',['NUM_TYPE_IDS',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba0f6b1e874ab643a0f237082cb35acad5',1,'cudf']]]
 ];

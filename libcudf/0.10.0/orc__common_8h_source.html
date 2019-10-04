@@ -112,9 +112,9 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    LONG = 4,</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    FLOAT = 5,</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    DOUBLE = 6,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    STRING = 7,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59bae008ab0db4e9b28f33e1e3c9c3daf444">STRING</a> = 7,</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    BINARY = 8,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    TIMESTAMP = 9,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba1983b1e0581db578a3461827838dfb72">TIMESTAMP</a> = 9,</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    LIST = 10,</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    MAP = 11,</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    STRUCT = 12,</div>
@@ -148,12 +148,27 @@ $(function() {
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    DICTIONARY_V2 = 3,  <span class="comment">// the encoding is dictionary-based using RLE v2</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;} <span class="comment">// namespace orc</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;} <span class="comment">// namespace io</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;} <span class="comment">// namespace cudf</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif // __IO_ORC_COMMON_H__</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">enum</span> { <span class="comment">// Protobuf field types</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    PB_TYPE_VARINT = 0,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    PB_TYPE_FIXED64 = 1,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    PB_TYPE_FIXEDLEN = 2,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    PB_TYPE_START_GROUP = 3, <span class="comment">// deprecated</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    PB_TYPE_END_GROUP = 4, <span class="comment">// deprecated</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    PB_TYPE_FIXED32 = 5,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    PB_TYPE_INVALID_6 = 6,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    PB_TYPE_INVALID_7 = 7,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;} <span class="comment">// namespace orc</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;} <span class="comment">// namespace io</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;} <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif // __IO_ORC_COMMON_H__</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespacecudf_html_acd4cd7157c4379954b5772936f89c59bae008ab0db4e9b28f33e1e3c9c3daf444"><div class="ttname"><a href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59bae008ab0db4e9b28f33e1e3c9c3daf444">cudf::STRING</a></div><div class="ttdoc">String elements.</div><div class="ttdef"><b>Definition:</b> types.hpp:115</div></div>
+<div class="ttc" id="anamespacecudf_html_acd4cd7157c4379954b5772936f89c59ba1983b1e0581db578a3461827838dfb72"><div class="ttname"><a href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba1983b1e0581db578a3461827838dfb72">cudf::TIMESTAMP</a></div><div class="ttdoc">duration of specified resolution since Unix Epoch in int64</div><div class="ttdef"><b>Definition:</b> types.hpp:113</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> binaryop.cpp:43</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

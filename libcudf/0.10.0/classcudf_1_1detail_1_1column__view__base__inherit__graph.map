@@ -1,0 +1,6 @@
+<map id="cudf::detail::column_view_base" name="cudf::detail::column_view_base">
+<area shape="rect" id="node1" title="A non&#45;owning, immutable view of device data as a column of elements, some of which may be null as ind..." alt="" coords="226,5,449,47"/>
+<area shape="rect" id="node2" href="$classcudf_1_1column__view.html" title="A non&#45;owning, immutable view of device data as a column of elements, some of which may be null as ind..." alt="" coords="5,102,197,129"/>
+<area shape="rect" id="node3" href="$classcudf_1_1detail_1_1mutable__column__view__base.html" title=" " alt="" coords="221,95,453,136"/>
+<area shape="rect" id="node4" href="$classcudf_1_1mutable__column__view.html" title="A non&#45;owning, mutable view of device data as a column of elements, some of which may be null as indic..." alt="" coords="477,102,749,129"/>
+</map>

@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['b08_996',['b08',['../uniongdf__data.html#a4adaa7eea0bf9cd24694cee83fbcb36a',1,'gdf_data']]],
-  ['bitmask_997',['bitmask',['../structcudf_1_1value__accessor_3_01ElementType_00_01ResultType_00_01true_01_4.html#a84a07f37b9488a4ce57c8f1154d684a8',1,'cudf::value_accessor&lt; ElementType, ResultType, true &gt;']]],
-  ['block_5fsize_998',['block_size',['../structBlockSumArray.html#a1d278705f6112181ad427b162832b4e5',1,'BlockSumArray']]],
-  ['byte_5frange_5foffset_999',['byte_range_offset',['../structcudf_1_1csv__read__arg.html#a01d793f4f4a47925d4c75b3afdd839ce',1,'cudf::csv_read_arg::byte_range_offset()'],['../structcudf_1_1json__read__arg.html#a92382ad0e6d64ec06898dcb14914b99b',1,'cudf::json_read_arg::byte_range_offset()']]],
-  ['byte_5frange_5fsize_1000',['byte_range_size',['../structcudf_1_1csv__read__arg.html#a32a8a0a1b38d71f410ebff5465eefb7f',1,'cudf::csv_read_arg::byte_range_size()'],['../structcudf_1_1json__read__arg.html#aff28e4b4f04bac1910c2ed1a4174be81',1,'cudf::json_read_arg::byte_range_size()']]]
+  ['_5fdata_1628',['_data',['../classcudf_1_1detail_1_1column__device__view__base.html#a4d268f4ba99b4149919c9317e9f94038',1,'cudf::detail::column_device_view_base::_data()'],['../classcudf_1_1detail_1_1column__view__base.html#acfe73a38fa04f01be62beb34b2a3f87a',1,'cudf::detail::column_view_base::_data()']]],
+  ['_5fnull_5fcount_1629',['_null_count',['../classcudf_1_1detail_1_1column__device__view__base.html#a7fff9f702b5918553718c43a9a113e45',1,'cudf::detail::column_device_view_base::_null_count()'],['../classcudf_1_1detail_1_1column__view__base.html#abca5b3f93d8cef425990ed6907f25841',1,'cudf::detail::column_view_base::_null_count()']]],
+  ['_5fnull_5fmask_1630',['_null_mask',['../classcudf_1_1detail_1_1column__device__view__base.html#a0f81eaf40c6d60198cffd07c2161a3a8',1,'cudf::detail::column_device_view_base::_null_mask()'],['../classcudf_1_1detail_1_1column__view__base.html#a47cb87ff8d6c42393ad44aa1adb9fa9a',1,'cudf::detail::column_view_base::_null_mask()']]],
+  ['_5fnum_5fchildren_1631',['_num_children',['../classcudf_1_1column__device__view.html#a6f5a8cb3ec321d40009930a6c88bbb9d',1,'cudf::column_device_view']]],
+  ['_5foffset_1632',['_offset',['../classcudf_1_1detail_1_1column__device__view__base.html#a10de5ae9c53bfcd098e50e8157970586',1,'cudf::detail::column_device_view_base::_offset()'],['../classcudf_1_1detail_1_1column__view__base.html#a1ac97d1e5a49bb5a297c9041d4191d75',1,'cudf::detail::column_view_base::_offset()']]],
+  ['_5fsize_1633',['_size',['../classcudf_1_1detail_1_1column__device__view__base.html#a7c12c0021cd00ee452491e107f8ba5d0',1,'cudf::detail::column_device_view_base::_size()'],['../classcudf_1_1detail_1_1column__view__base.html#a6c07b0117a24ee9af3abd0ee4c309b73',1,'cudf::detail::column_view_base::_size()']]],
+  ['_5ftype_1634',['_type',['../classcudf_1_1detail_1_1column__device__view__base.html#a1769f145e660bfa638576f3bcc2ce0b0',1,'cudf::detail::column_device_view_base::_type()'],['../classcudf_1_1detail_1_1column__view__base.html#aae4ea5f9998c7c4a991ef9a81111c7b5',1,'cudf::detail::column_view_base::_type()']]]
 ];

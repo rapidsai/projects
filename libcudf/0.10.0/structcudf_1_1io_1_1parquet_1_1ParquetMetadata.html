@@ -116,15 +116,15 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_column_nam
 <tr class="memitem:aac03de7521c0195f40a71507ac475864"><td class="memItemLeft" align="right" valign="top"><a id="aac03de7521c0195f40a71507ac475864"></a>
 std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_column_names</b> ()</td></tr>
 <tr class="separator:aac03de7521c0195f40a71507ac475864"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f75835a3582bba358d4706aea60d81a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1parquet_1_1ParquetMetadata.html#a4f75835a3582bba358d4706aea60d81a">get_index_column_name</a> ()</td></tr>
-<tr class="memdesc:a4f75835a3582bba358d4706aea60d81a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the column name used for the row indexes in a dataframe.  <a href="structcudf_1_1io_1_1parquet_1_1ParquetMetadata.html#a4f75835a3582bba358d4706aea60d81a">More...</a><br /></td></tr>
-<tr class="separator:a4f75835a3582bba358d4706aea60d81a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a715f0b93de60208abf4cfd6f0efd2c2c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1parquet_1_1ParquetMetadata.html#a715f0b93de60208abf4cfd6f0efd2c2c">get_pandas_index_name</a> ()</td></tr>
+<tr class="memdesc:a715f0b93de60208abf4cfd6f0efd2c2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the column name used for the row indexes in a dataframe.  <a href="structcudf_1_1io_1_1parquet_1_1ParquetMetadata.html#a715f0b93de60208abf4cfd6f0efd2c2c">More...</a><br /></td></tr>
+<tr class="separator:a715f0b93de60208abf4cfd6f0efd2c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a262e224be5c5226f32f84856b7d37da4"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1parquet_1_1ParquetMetadata.html#a262e224be5c5226f32f84856b7d37da4">select_row_groups</a> (int row_group, int &amp;row_start, int &amp;row_count)</td></tr>
 <tr class="memdesc:a262e224be5c5226f32f84856b7d37da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters and reduces down to a selection of row groups.  <a href="structcudf_1_1io_1_1parquet_1_1ParquetMetadata.html#a262e224be5c5226f32f84856b7d37da4">More...</a><br /></td></tr>
 <tr class="separator:a262e224be5c5226f32f84856b7d37da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af20affc20cd166d4bd832a72d254e9f1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1parquet_1_1ParquetMetadata.html#af20affc20cd166d4bd832a72d254e9f1">select_columns</a> (std::vector&lt; std::string &gt; use_names, const char *use_index_col)</td></tr>
-<tr class="memdesc:af20affc20cd166d4bd832a72d254e9f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters and reduces down to a selection of columns.  <a href="structcudf_1_1io_1_1parquet_1_1ParquetMetadata.html#af20affc20cd166d4bd832a72d254e9f1">More...</a><br /></td></tr>
-<tr class="separator:af20affc20cd166d4bd832a72d254e9f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57efb069149f0ea31fba140be337f7b2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1parquet_1_1ParquetMetadata.html#a57efb069149f0ea31fba140be337f7b2">select_columns</a> (std::vector&lt; std::string &gt; use_names, bool include_index, const std::string &amp;pandas_index)</td></tr>
+<tr class="memdesc:a57efb069149f0ea31fba140be337f7b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters and reduces down to a selection of columns.  <a href="structcudf_1_1io_1_1parquet_1_1ParquetMetadata.html#a57efb069149f0ea31fba140be337f7b2">More...</a><br /></td></tr>
+<tr class="separator:a57efb069149f0ea31fba140be337f7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c2f072c6c7152ef8335cf7c927f0fbb"><td class="memItemLeft" align="right" valign="top"><a id="a5c2f072c6c7152ef8335cf7c927f0fbb"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>print_metadata</b> () const</td></tr>
 <tr class="separator:a5c2f072c6c7152ef8335cf7c927f0fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,8 +154,8 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>created_by</b>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A helper wrapper for Parquet file metadata. Provides some additional convenience methods for initializing and accessing the metadata and schema. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4f75835a3582bba358d4706aea60d81a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f75835a3582bba358d4706aea60d81a">&#9670;&nbsp;</a></span>get_index_column_name()</h2>
+<a id="a715f0b93de60208abf4cfd6f0efd2c2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a715f0b93de60208abf4cfd6f0efd2c2c">&#9670;&nbsp;</a></span>get_pandas_index_name()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,7 +164,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>created_by</b>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string cudf::io::parquet::ParquetMetadata::get_index_column_name </td>
+          <td class="memname">std::string cudf::io::parquet::ParquetMetadata::get_pandas_index_name </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -183,8 +183,8 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>created_by</b>
 
 </div>
 </div>
-<a id="af20affc20cd166d4bd832a72d254e9f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af20affc20cd166d4bd832a72d254e9f1">&#9670;&nbsp;</a></span>select_columns()</h2>
+<a id="a57efb069149f0ea31fba140be337f7b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57efb069149f0ea31fba140be337f7b2">&#9670;&nbsp;</a></span>select_columns()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -201,8 +201,14 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>created_by</b>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>use_index_col</em>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>include_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>pandas_index</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -221,11 +227,12 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>created_by</b>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">use_names</td><td>List of column names to select </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">use_index_col</td><td>Name of the index column</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">include_index</td><td>Whether to always include the PANDAS index column </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pandas_index</td><td>Name of the PANDAS index column</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>List of column names &amp; Parquet column indexes </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>List of column names </dd></dl>
 
 </div>
 </div>

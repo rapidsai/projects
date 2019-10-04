@@ -118,6 +118,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a87df975e12a4bd65c5626f4d26c8dbc0"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVText.html#a87df975e12a4bd65c5626f4d26c8dbc0">edit_distance</a> (<a class="el" href="classNVText.html#a44215a8d5d167d45e5e6ccf7f25927b3">distance_type</a> algo, <a class="el" href="classNVStrings.html">NVStrings</a> &amp;strs1, <a class="el" href="classNVStrings.html">NVStrings</a> &amp;strs2, unsigned int *results, bool devmem=true)</td></tr>
 <tr class="memdesc:a87df975e12a4bd65c5626f4d26c8dbc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the edit distance between each string and the target strings.  <a href="classNVText.html#a87df975e12a4bd65c5626f4d26c8dbc0">More...</a><br /></td></tr>
 <tr class="separator:a87df975e12a4bd65c5626f4d26c8dbc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd2ea3e351bce5c555e7aa0d6b6ff0ac"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVText.html#abd2ea3e351bce5c555e7aa0d6b6ff0ac">edit_distance_matrix</a> (<a class="el" href="classNVText.html#a44215a8d5d167d45e5e6ccf7f25927b3">distance_type</a> algorithm, <a class="el" href="classNVStrings.html">NVStrings</a> &amp;strings, unsigned int *results, bool device_memory=true)</td></tr>
+<tr class="memdesc:abd2ea3e351bce5c555e7aa0d6b6ff0ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the edit distance between each pair of strings in given nvstrings object.  <a href="classNVText.html#abd2ea3e351bce5c555e7aa0d6b6ff0ac">More...</a><br /></td></tr>
+<tr class="separator:abd2ea3e351bce5c555e7aa0d6b6ff0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0ee9442381754782a84159635a74157"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classNVStrings.html">NVStrings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVText.html#aa0ee9442381754782a84159635a74157">create_ngrams</a> (<a class="el" href="classNVStrings.html">NVStrings</a> &amp;strs, unsigned int ngrams, const char *separator)</td></tr>
 <tr class="memdesc:aa0ee9442381754782a84159635a74157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts tokenized list of strings into instance with ngrams.  <a href="classNVText.html#aa0ee9442381754782a84159635a74157">More...</a><br /></td></tr>
 <tr class="separator:aa0ee9442381754782a84159635a74157"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -396,6 +399,78 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 if successful. </dd></dl>
+
+</div>
+</div>
+<a id="abd2ea3e351bce5c555e7aa0d6b6ff0ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd2ea3e351bce5c555e7aa0d6b6ff0ac">&#9670;&nbsp;</a></span>edit_distance_matrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static unsigned int NVText::edit_distance_matrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classNVText.html#a44215a8d5d167d45e5e6ccf7f25927b3">distance_type</a>&#160;</td>
+          <td class="paramname"><em>algorithm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classNVStrings.html">NVStrings</a> &amp;&#160;</td>
+          <td class="paramname"><em>strings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>results</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>device_memory</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute the edit distance between each pair of strings in given nvstrings object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">algorithm</td><td>The edit distance algorithm to use for the computation. Only <code>levenshtein</code> algorithm is supported yet. </td></tr>
+    <tr><td class="paramname">strings</td><td>Strings to process. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>[in,out] results Array of distances, one per each pair of strings. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device_memory</td><td>True if results in device memory. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if successful.</dd></dl>
+<p>Exceptional cases for the edit_distance_matrix function are: </p><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">cudf::logic_error</td><td>when <code>algorithm != levenshtein</code> </td></tr>
+    <tr><td class="paramname">cudf::logic_error</td><td>when <code>results == nullptr</code> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

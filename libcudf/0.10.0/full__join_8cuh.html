@@ -114,13 +114,13 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9ca9776462d581973b36ed04e12a0616"><td class="memTemplParams" colspan="2">template&lt;typename index_type , typename size_type &gt; </td></tr>
-<tr class="memitem:a9ca9776462d581973b36ed04e12a0616"><td class="memTemplItemLeft" align="right" valign="top">rmm::device_vector&lt; index_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="full__join_8cuh.html#a9ca9776462d581973b36ed04e12a0616">create_missing_indices</a> (index_type const *const index_ptr, const size_type max_index_value, const size_type index_size, cudaStream_t stream)</td></tr>
+<tr class="memitem:a9ca9776462d581973b36ed04e12a0616"><td class="memTemplItemLeft" align="right" valign="top">rmm::device_vector&lt; index_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="full__join_8cuh.html#a9ca9776462d581973b36ed04e12a0616">create_missing_indices</a> (index_type const *const index_ptr, const size_type max_index_value, const size_type index_size, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
 <tr class="separator:a9ca9776462d581973b36ed04e12a0616"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2961bb1b495485a3a33f21a44c2b3d1d"><td class="memTemplParams" colspan="2">template&lt;typename data_type , typename size_type &gt; </td></tr>
-<tr class="memitem:a2961bb1b495485a3a33f21a44c2b3d1d"><td class="memTemplItemLeft" align="right" valign="top">gdf_error&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="full__join_8cuh.html#a2961bb1b495485a3a33f21a44c2b3d1d">expand_buffer</a> (data_type **buffer, size_type *const buffer_capacity, const size_type buffer_size, const size_type expand_size, cudaStream_t stream)</td></tr>
+<tr class="memitem:a2961bb1b495485a3a33f21a44c2b3d1d"><td class="memTemplItemLeft" align="right" valign="top">gdf_error&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="full__join_8cuh.html#a2961bb1b495485a3a33f21a44c2b3d1d">expand_buffer</a> (data_type **buffer, size_type *const buffer_capacity, const size_type buffer_size, const size_type expand_size, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
 <tr class="separator:a2961bb1b495485a3a33f21a44c2b3d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac234d83f65cafbba0a2fa151f43558f9"><td class="memTemplParams" colspan="2">template&lt;typename index_type , typename size_type &gt; </td></tr>
-<tr class="memitem:ac234d83f65cafbba0a2fa151f43558f9"><td class="memTemplItemLeft" align="right" valign="top">gdf_error&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="full__join_8cuh.html#ac234d83f65cafbba0a2fa151f43558f9">append_full_join_indices</a> (index_type **l_index_ptr, index_type **r_index_ptr, size_type &amp;index_capacity, size_type &amp;index_size, const size_type max_index_value, cudaStream_t stream)</td></tr>
+<tr class="memitem:ac234d83f65cafbba0a2fa151f43558f9"><td class="memTemplItemLeft" align="right" valign="top">gdf_error&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="full__join_8cuh.html#ac234d83f65cafbba0a2fa151f43558f9">append_full_join_indices</a> (index_type **l_index_ptr, index_type **r_index_ptr, size_type &amp;index_capacity, size_type &amp;index_size, const size_type max_index_value, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
 <tr class="separator:ac234d83f65cafbba0a2fa151f43558f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -171,7 +171,7 @@ template&lt;typename index_type , typename size_type &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cudaStream_t&#160;</td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
           <td class="paramname"><em>stream</em>&#160;</td>
         </tr>
         <tr>
@@ -222,7 +222,7 @@ template&lt;typename index_type , typename size_type &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cudaStream_t&#160;</td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
           <td class="paramname"><em>stream</em>&#160;</td>
         </tr>
         <tr>
@@ -280,7 +280,7 @@ template&lt;typename data_type , typename size_type &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cudaStream_t&#160;</td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
           <td class="paramname"><em>stream</em>&#160;</td>
         </tr>
         <tr>

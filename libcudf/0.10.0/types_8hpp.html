@@ -67,8 +67,11 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">types.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -77,31 +80,35 @@ $(function() {
 <p>Type declarations for libcudf.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;cudf.h&quot;</code><br />
+<code>#include &quot;utilities/cuda.cuh&quot;</code><br />
+<code>#include &lt;cstddef&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for types.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="types_8hpp__incl.png" border="0" usemap="#types_8hpp" alt=""/></div>
 <map name="types_8hpp" id="types_8hpp">
-<area shape="rect" title="Type declarations for libcudf." alt="" coords="1285,5,1397,32"/>
-<area shape="rect" href="cudf_8h_source.html" title=" " alt="" coords="823,80,905,107"/>
-<area shape="rect" title=" " alt="" coords="1521,155,1613,181"/>
-<area shape="rect" title=" " alt="" coords="1689,155,1781,181"/>
-<area shape="rect" href="types_8h_source.html" title=" " alt="" coords="122,229,214,256"/>
-<area shape="rect" href="io__types_8h_source.html" title=" " alt="" coords="272,155,395,181"/>
-<area shape="rect" href="convert__types_8h_source.html" title=" " alt="" coords="419,155,591,181"/>
-<area shape="rect" href="io__types_8hpp_source.html" title=" " alt="" coords="615,155,758,181"/>
-<area shape="rect" href="io__functions_8hpp_source.html" title=" " alt="" coords="970,155,1153,181"/>
-<area shape="rect" href="io__readers_8hpp_source.html" title=" " alt="" coords="783,155,945,181"/>
-<area shape="rect" href="column_8hpp_source.html" title=" " alt="" coords="5,155,197,181"/>
-<area shape="rect" href="functions_8h_source.html" title=" " alt="" coords="1177,155,1309,181"/>
-<area shape="rect" href="io__functions_8h_source.html" title=" " alt="" coords="1333,155,1496,181"/>
-<area shape="rect" title=" " alt="" coords="736,229,819,256"/>
-<area shape="rect" title=" " alt="" coords="921,304,1004,331"/>
-<area shape="rect" title=" " alt="" coords="843,229,925,256"/>
-<area shape="rect" title=" " alt="" coords="619,229,711,256"/>
-<area shape="rect" href="table_8hpp_source.html" title=" " alt="" coords="1000,229,1232,256"/>
-<area shape="rect" title=" " alt="" coords="1049,304,1141,331"/>
-<area shape="rect" title=" " alt="" coords="1165,304,1347,331"/>
+<area shape="rect" title="Type declarations for libcudf." alt="" coords="1918,5,2030,32"/>
+<area shape="rect" href="cudf_8h_source.html" title=" " alt="" coords="978,80,1061,107"/>
+<area shape="rect" title=" " alt="" coords="2012,80,2104,107"/>
+<area shape="rect" title=" " alt="" coords="1728,155,1820,181"/>
+<area shape="rect" title=" " alt="" coords="1844,155,1936,181"/>
+<area shape="rect" href="types_8h_source.html" title=" " alt="" coords="8,229,100,256"/>
+<area shape="rect" href="io__types_8h_source.html" title=" " alt="" coords="241,155,364,181"/>
+<area shape="rect" href="convert__types_8h_source.html" title=" " alt="" coords="388,155,560,181"/>
+<area shape="rect" href="io__types_8hpp_source.html" title=" " alt="" coords="584,155,727,181"/>
+<area shape="rect" href="io__functions_8hpp_source.html" title=" " alt="" coords="1126,155,1308,181"/>
+<area shape="rect" href="io__readers_8hpp_source.html" title=" " alt="" coords="752,155,914,181"/>
+<area shape="rect" href="io__writers_8hpp_source.html" title=" " alt="" coords="938,155,1101,181"/>
+<area shape="rect" href="legacy_2column_8hpp_source.html" title=" " alt="" coords="25,155,217,181"/>
+<area shape="rect" href="functions_8h_source.html" title=" " alt="" coords="1384,155,1516,181"/>
+<area shape="rect" href="io__functions_8h_source.html" title=" " alt="" coords="1541,155,1704,181"/>
+<area shape="rect" title=" " alt="" coords="764,229,846,256"/>
+<area shape="rect" title=" " alt="" coords="930,304,1013,331"/>
+<area shape="rect" title=" " alt="" coords="921,229,1004,256"/>
+<area shape="rect" title=" " alt="" coords="647,229,739,256"/>
+<area shape="rect" href="legacy_2table_8hpp_source.html" title=" " alt="" coords="1078,229,1310,256"/>
+<area shape="rect" title=" " alt="" coords="1056,304,1148,331"/>
+<area shape="rect" title=" " alt="" coords="1172,304,1355,331"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -109,61 +116,67 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="types_8hpp__dep__incl.png" border="0" usemap="#types_8hppdep" alt=""/></div>
 <map name="types_8hppdep" id="types_8hppdep">
-<area shape="rect" title="Type declarations for libcudf." alt="" coords="661,5,773,32"/>
-<area shape="rect" href="binary__ops_8hpp_source.html" title=" " alt="" coords="595,379,757,405"/>
-<area shape="rect" href="bitmask__ops_8hpp.html" title=" " alt="" coords="995,155,1167,181"/>
-<area shape="rect" href="src_2quantiles_2groupby_8hpp_source.html" title=" " alt="" coords="1869,603,2001,629"/>
-<area shape="rect" href="src_2groupby_2hash_2groupby_8hpp_source.html" title=" " alt="" coords="239,379,371,405"/>
-<area shape="rect" href="copying_8hpp_source.html" title=" " alt="" coords="302,304,434,331"/>
-<area shape="rect" href="include_2cudf_2groupby_8hpp_source.html" title=" " alt="" coords="94,304,226,331"/>
-<area shape="rect" href="bitmask_8hpp_source.html" title=" " alt="" coords="1198,304,1330,331"/>
-<area shape="rect" href="table_8hpp_source.html" title=" " alt="" coords="4688,80,4800,107"/>
-<area shape="rect" href="merge_8hpp_source.html" title=" " alt="" coords="459,304,571,331"/>
-<area shape="rect" href="include_2cudf_2quantiles_8hpp_source.html" title=" " alt="" coords="971,304,1123,331"/>
-<area shape="rect" href="replace_8hpp_source.html" title=" " alt="" coords="595,304,727,331"/>
-<area shape="rect" href="search_8hpp_source.html" title=" " alt="" coords="4397,304,4520,331"/>
-<area shape="rect" href="stream__compaction_8hpp_source.html" title=" " alt="" coords="4883,304,5115,331"/>
-<area shape="rect" href="cudf__utils_8h_source.html" title=" " alt="" coords="1426,379,1569,405"/>
-<area shape="rect" href="legacy__bitmask_8hpp_source.html" title=" " alt="" coords="2060,453,2263,480"/>
-<area shape="rect" href="iterator_8cuh.html" title="provide column input iterator with/without nulls" alt="" coords="2138,603,2281,629"/>
-<area shape="rect" href="src_2quantiles_2quantiles_8hpp_source.html" title=" " alt="" coords="1025,453,1177,480"/>
-<area shape="rect" href="device__atomics_8cuh.html" title="overloads for CUDA atomic operations" alt="" coords="1641,603,1844,629"/>
-<area shape="rect" href="device__operators_8cuh.html" title="definition of the device operators" alt="" coords="1495,528,1718,555"/>
-<area shape="rect" href="wrapper__types_8hpp.html" title="Wrapper structs for for the non&#45;fundamental gdf_dtype types." alt="" coords="1644,453,1836,480"/>
-<area shape="rect" href="rolling__detail_8hpp_source.html" title=" " alt="" coords="1415,603,1617,629"/>
-<area shape="rect" href="type__dispatcher_8hpp_source.html" title=" " alt="" coords="1961,528,2173,555"/>
-<area shape="rect" href="column__utils_8hpp_source.html" title=" " alt="" coords="2478,603,2661,629"/>
-<area shape="rect" href="wrapper__utils_8hpp_source.html" title=" " alt="" coords="2720,677,2912,704"/>
-<area shape="rect" href="avro__reader__impl_8hpp_source.html" title=" " alt="" coords="2838,752,3061,779"/>
-<area shape="rect" href="csv__reader__impl_8hpp_source.html" title=" " alt="" coords="3962,752,4174,779"/>
-<area shape="rect" href="json__reader__impl_8hpp_source.html" title=" " alt="" coords="4198,752,4421,779"/>
-<area shape="rect" href="orc__reader__impl_8hpp_source.html" title=" " alt="" coords="4445,752,4657,779"/>
-<area shape="rect" href="parquet__reader__impl_8hpp_source.html" title=" " alt="" coords="2557,752,2809,779"/>
-<area shape="rect" href="parsing__utils_8cuh.html" title=" " alt="" coords="2324,752,2516,779"/>
-<area shape="rect" href="aggregation__requests_8hpp_source.html" title=" " alt="" coords="1139,379,1402,405"/>
-<area shape="rect" href="type__info_8hpp.html" title=" " alt="" coords="63,379,215,405"/>
-<area shape="rect" href="io__functions_8hpp_source.html" title=" " alt="" coords="2554,155,2737,181"/>
-<area shape="rect" href="io__readers_8hpp_source.html" title=" " alt="" coords="4544,304,4707,331"/>
-<area shape="rect" href="cudf_8h_source.html" title=" " alt="" coords="2475,229,2557,256"/>
-<area shape="rect" href="point__in__polygon_8hpp_source.html" title=" " alt="" coords="2029,304,2251,331"/>
-<area shape="rect" href="io__uncomp_8h_source.html" title=" " alt="" coords="2630,304,2762,331"/>
-<area shape="rect" href="cuio__common_8hpp_source.html" title=" " alt="" coords="2786,304,2958,331"/>
-<area shape="rect" href="binaryop_8hpp_source.html" title=" " alt="" coords="803,304,946,331"/>
-<area shape="rect" href="io__types_8hpp_source.html" title=" " alt="" coords="2982,304,3125,331"/>
-<area shape="rect" href="column_8hpp_source.html" title=" " alt="" coords="3149,304,3272,331"/>
-<area shape="rect" href="datetime_8hpp_source.html" title=" " alt="" coords="3297,304,3439,331"/>
-<area shape="rect" href="filling_8hpp_source.html" title=" " alt="" coords="3463,304,3595,331"/>
-<area shape="rect" href="gis_8hpp_source.html" title=" " alt="" coords="3619,304,3711,331"/>
-<area shape="rect" href="reduction_8hpp_source.html" title=" " alt="" coords="3736,304,3888,331"/>
-<area shape="rect" href="rolling_8hpp_source.html" title=" " alt="" coords="3913,304,4045,331"/>
-<area shape="rect" href="transform_8hpp_source.html" title=" " alt="" coords="4069,304,4221,331"/>
-<area shape="rect" href="unary_8hpp_source.html" title=" " alt="" coords="1507,304,1619,331"/>
-<area shape="rect" href="nvcategory__util_8hpp_source.html" title=" " alt="" coords="1642,304,1854,331"/>
+<area shape="rect" title="Type declarations for libcudf." alt="" coords="4266,5,4378,32"/>
+<area shape="rect" href="binary__ops_8hpp_source.html" title=" " alt="" coords="1062,80,1225,107"/>
+<area shape="rect" href="bitmask__ops_8hpp.html" title=" " alt="" coords="519,229,691,256"/>
+<area shape="rect" href="sort__helper_8hpp_source.html" title=" " alt="" coords="2844,603,3016,629"/>
+<area shape="rect" href="group__quantiles_8hpp_source.html" title=" " alt="" coords="2687,453,2899,480"/>
+<area shape="rect" href="column_2column_8hpp_source.html" title=" " alt="" coords="4687,155,4810,181"/>
+<area shape="rect" href="column__factories_8hpp_source.html" title=" " alt="" coords="4476,229,4699,256"/>
+<area shape="rect" href="column__view_8hpp_source.html" title=" " alt="" coords="4613,80,4785,107"/>
+<area shape="rect" href="table__view_8hpp.html" title="A (mutable_)table_view is a set of (mutable_)column_views of equal size." alt="" coords="4834,155,4997,181"/>
+<area shape="rect" href="copying_8hpp_source.html" title=" " alt="" coords="4411,304,4543,331"/>
+<area shape="rect" href="groupby_8hpp_source.html" title=" " alt="" coords="3295,379,3427,405"/>
+<area shape="rect" href="bitmask_8hpp_source.html" title=" " alt="" coords="3128,304,3260,331"/>
+<area shape="rect" href="interop_8hpp.html" title="Defines APIs for converting to/from &quot;legacy&quot; constructs such as gdf_column and gdf_dtype into their c..." alt="" coords="4861,80,4993,107"/>
+<area shape="rect" href="legacy_2table_8hpp_source.html" title=" " alt="" coords="1561,80,1673,107"/>
+<area shape="rect" href="merge_8hpp_source.html" title=" " alt="" coords="3511,304,3623,331"/>
+<area shape="rect" href="quantiles_8hpp_source.html" title=" " alt="" coords="3285,304,3437,331"/>
+<area shape="rect" href="replace_8hpp_source.html" title=" " alt="" coords="3699,304,3831,331"/>
+<area shape="rect" href="search_8hpp_source.html" title=" " alt="" coords="3855,304,3978,331"/>
+<area shape="rect" href="stream__compaction_8hpp_source.html" title=" " alt="" coords="4002,304,4234,331"/>
+<area shape="rect" href="null__mask_8hpp_source.html" title=" " alt="" coords="4511,155,4663,181"/>
+<area shape="rect" href="sorting_8hpp_source.html" title=" " alt="" coords="5017,80,5149,107"/>
+<area shape="rect" href="traits_8hpp_source.html" title=" " alt="" coords="5198,155,5321,181"/>
+<area shape="rect" href="type__dispatcher_8hpp.html" title="Defines the mapping between cudf::type_id runtime type information." alt="" coords="5224,80,5436,107"/>
+<area shape="rect" href="cudf__utils_8h_source.html" title=" " alt="" coords="1860,379,2003,405"/>
+<area shape="rect" href="legacy__bitmask_8hpp_source.html" title=" " alt="" coords="2111,453,2314,480"/>
+<area shape="rect" href="iterator_8cuh.html" title="provide column input iterator with/without nulls" alt="" coords="2280,603,2423,629"/>
+<area shape="rect" href="quantiles__util_8hpp_source.html" title=" " alt="" coords="2389,453,2591,480"/>
+<area shape="rect" href="device__atomics_8cuh.html" title="overloads for CUDA atomic operations" alt="" coords="1626,603,1829,629"/>
+<area shape="rect" href="device__operators_8cuh.html" title="definition of the device operators" alt="" coords="1764,528,1987,555"/>
+<area shape="rect" href="wrapper__types_8hpp.html" title="Wrapper structs for for the non&#45;fundamental gdf_dtype types." alt="" coords="1845,453,2037,480"/>
+<area shape="rect" href="rolling__detail_8hpp_source.html" title=" " alt="" coords="1853,603,2055,629"/>
+<area shape="rect" href="legacy_2type__dispatcher_8hpp_source.html" title=" " alt="" coords="2388,528,2600,555"/>
+<area shape="rect" href="utils_8hpp_source.html" title=" " alt="" coords="3495,603,3607,629"/>
+<area shape="rect" href="table_2table_8hpp_source.html" title=" " alt="" coords="4790,229,4902,256"/>
+<area shape="rect" href="aggregation__requests_8hpp_source.html" title=" " alt="" coords="2923,453,3185,480"/>
+<area shape="rect" href="type__info_8hpp.html" title=" " alt="" coords="3261,528,3413,555"/>
+<area shape="rect" href="avro__reader__impl_8hpp_source.html" title=" " alt="" coords="772,304,995,331"/>
+<area shape="rect" href="csv__reader__impl_8hpp_source.html" title=" " alt="" coords="24,304,236,331"/>
+<area shape="rect" href="json__reader__impl_8hpp_source.html" title=" " alt="" coords="1019,304,1241,331"/>
+<area shape="rect" href="orc__reader__impl_8hpp_source.html" title=" " alt="" coords="1265,304,1477,331"/>
+<area shape="rect" href="orc__writer__impl_8hpp_source.html" title=" " alt="" coords="260,304,472,331"/>
+<area shape="rect" href="parquet__reader__impl_8hpp_source.html" title=" " alt="" coords="496,304,748,331"/>
+<area shape="rect" href="io__types_8hpp_source.html" title=" " alt="" coords="2013,155,2156,181"/>
+<area shape="rect" href="io__functions_8hpp_source.html" title=" " alt="" coords="2921,304,3104,331"/>
+<area shape="rect" href="io__readers_8hpp_source.html" title=" " alt="" coords="1502,304,1665,331"/>
+<area shape="rect" href="io__writers_8hpp_source.html" title=" " alt="" coords="1689,304,1851,331"/>
+<area shape="rect" href="cudf_8h_source.html" title=" " alt="" coords="2153,229,2235,256"/>
+<area shape="rect" href="point__in__polygon_8hpp_source.html" title=" " alt="" coords="2624,304,2847,331"/>
+<area shape="rect" href="io__uncomp_8h_source.html" title=" " alt="" coords="2180,304,2312,331"/>
+<area shape="rect" href="csv__gpu_8h_source.html" title=" " alt="" coords="2337,304,2449,331"/>
 </map>
 </div>
 </div>
 <p><a href="types_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1data__type.html">cudf::data_type</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicator for the logical data type of an element in a column.  <a href="classcudf_1_1data__type.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacecudf"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html">cudf</a></td></tr>
@@ -172,15 +185,90 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a27a677c66bef483a40f3d65c02b09e0f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> = struct CUstream_st *</td></tr>
+<tr class="separator:a27a677c66bef483a40f3d65c02b09e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdeef83263fa09d8faa36f8bb90c99de"><td class="memItemLeft" align="right" valign="top"><a id="abdeef83263fa09d8faa36f8bb90c99de"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>bit_mask::bit_mask_t</b> = uint32_t</td></tr>
 <tr class="separator:abdeef83263fa09d8faa36f8bb90c99de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aff16b2db009d92300befaca11827e9"><td class="memItemLeft" align="right" valign="top"><a id="a0aff16b2db009d92300befaca11827e9"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>cudf::size_type</b> = int32_t</td></tr>
+<tr class="separator:a0aff16b2db009d92300befaca11827e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d17001baf070a639c3a5e8ed8c46d34"><td class="memItemLeft" align="right" valign="top"><a id="a1d17001baf070a639c3a5e8ed8c46d34"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>cudf::bitmask_type</b> = uint32_t</td></tr>
+<tr class="separator:a1d17001baf070a639c3a5e8ed8c46d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a750f02016b046079f7062d334890b4fc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">cudf::order</a> : bool { <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fca83ec681a20197326c163ea3b39ef7c32">cudf::order::ASCENDING</a>, 
+<a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fcacff818f0ae4cef845577e39283886a53">cudf::order::DESCENDING</a>
+ }</td></tr>
+<tr class="separator:a750f02016b046079f7062d334890b4fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a058e6d6e8a21583ce0e85ee73e5abb31"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">cudf::null_order</a> : bool { <a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31ac130fda0cb93540bf1574912e78964fb">cudf::null_order::AFTER</a>, 
+<a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31a3525317285c6126ce3b62a8df8c00b07">cudf::null_order::BEFORE</a>
+ }</td></tr>
+<tr class="separator:a058e6d6e8a21583ce0e85ee73e5abb31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa481249b705132999f4d082aacd21dbf"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbf">cudf::mask_state</a> { <a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbfa74ad69efae4a12aec59682147aac9344">cudf::UNALLOCATED</a>, 
+<a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbfa37d7c1f4781c3276729ed1678c0c0844">cudf::UNINITIALIZED</a>, 
+<a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbfadb86173d779f7b173db120643cc1c402">cudf::ALL_VALID</a>, 
+<a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbfa042cac70175410616150fafb92f76351">cudf::ALL_NULL</a>
+ }</td></tr>
+<tr class="separator:aa481249b705132999f4d082aacd21dbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd4cd7157c4379954b5772936f89c59b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a> { <br />
+&#160;&#160;<a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59bab2c14e467fcbf9a215ccc679f35bb027">cudf::EMPTY</a> = 0, 
+<a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba71f4b0467efae61c1e3ac5910178940f">cudf::INT8</a>, 
+<a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba7dafa1ea3755308998ff8c972342c099">cudf::INT16</a>, 
+<a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae">cudf::INT32</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59bab9c234f82eec5cb83e3ea67aac9c1166">cudf::INT64</a>, 
+<a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba37225001c5ad4b3d1aa808620debfe7a">cudf::FLOAT32</a>, 
+<a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59baf24707a0d5537fd50bca87cd18a9a0e5">cudf::FLOAT64</a>, 
+<a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba9100ee556e5cf9b6dada6c7c506fa138">cudf::BOOL8</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59baaff82f65fddd2421f3a4567405848203">cudf::DATE32</a>, 
+<a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba1983b1e0581db578a3461827838dfb72">cudf::TIMESTAMP</a>, 
+<a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59baabcc7f7b028da5bba90f587958cc1026">cudf::CATEGORY</a>, 
+<a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59bae008ab0db4e9b28f33e1e3c9c3daf444">cudf::STRING</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba0f6b1e874ab643a0f237082cb35acad5">cudf::NUM_TYPE_IDS</a>
+<br />
+ }</td></tr>
+<tr class="separator:acd4cd7157c4379954b5772936f89c59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a1d7ba63c94ea716b16cea21e848116eb"><td class="memItemLeft" align="right" valign="top"><a id="a1d7ba63c94ea716b16cea21e848116eb"></a>
+device_memory_resource *&#160;</td><td class="memItemRight" valign="bottom"><b>rmm::mr::get_default_resource</b> ()</td></tr>
+<tr class="separator:a1d7ba63c94ea716b16cea21e848116eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5bd500e54a0760773f941986e8e056b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aa5bd500e54a0760773f941986e8e056b">cudf::operator==</a> (data_type const &amp;lhs, data_type const &amp;rhs)</td></tr>
+<tr class="memdesc:aa5bd500e54a0760773f941986e8e056b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> objects for equality.  <a href="namespacecudf.html#aa5bd500e54a0760773f941986e8e056b">More...</a><br /></td></tr>
+<tr class="separator:aa5bd500e54a0760773f941986e8e056b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b0daf2c01663d51cb3b87ad8ce93c0"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a51b0daf2c01663d51cb3b87ad8ce93c0">cudf::size_of</a> (data_type t)</td></tr>
+<tr class="memdesc:a51b0daf2c01663d51cb3b87ad8ce93c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size in bytes of elements of the specified <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code>  <a href="namespacecudf.html#a51b0daf2c01663d51cb3b87ad8ce93c0">More...</a><br /></td></tr>
+<tr class="separator:a51b0daf2c01663d51cb3b87ad8ce93c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Type declarations for libcudf. </p>
 <p>------------------------------------------------------------------------&mdash;*</p>
 <hr  />
- </div></div><!-- contents -->
+ </div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a27a677c66bef483a40f3d65c02b09e0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27a677c66bef483a40f3d65c02b09e0f">&#9670;&nbsp;</a></span>cudaStream_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using cudaStream_t =  struct CUstream_st*</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>------------------------------------------------------------------------&mdash;* </p>
+<h2><a class="anchor" id="autotoc_md410"></a>
+@brief Forward declaration of cudaStream_t</h2>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

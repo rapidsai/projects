@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_5ftype_1081',['value_type',['../structcudf_1_1detail_1_1wrapper.html#a8acf68753d62cd6210b6c4b69fdaebef',1,'cudf::detail::wrapper']]]
+  ['id_5fto_5ftype_1726',['id_to_type',['../type__dispatcher_8hpp.html#a6f3ba732694781ef981bf1d0d6aed3d6',1,'cudf::exp']]]
 ];

@@ -131,60 +131,61 @@ $(function() {
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  std::vector&lt;std::string&gt; column_names_;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  std::vector&lt;gdf_dtype&gt; dtypes_;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  std::vector&lt;gdf_column_wrapper&gt; columns_;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="classdevice__buffer.html">device_buffer&lt;uint64_t&gt;</a> rec_starts_;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="comment">// parsing options</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">bool</span> allow_newlines_in_strings_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="structParseOptions.html">ParseOptions</a> opts_{<span class="charliteral">&#39;,&#39;</span>, <span class="charliteral">&#39;\n&#39;</span>, <span class="charliteral">&#39;\&quot;&#39;</span>, <span class="charliteral">&#39;.&#39;</span>};</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  rmm::device_vector&lt;SerialTrieNode&gt; d_true_trie_;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  rmm::device_vector&lt;SerialTrieNode&gt; d_false_trie_;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  rmm::device_vector&lt;SerialTrieNode&gt; d_na_trie_;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">void</span> ingestRawInput();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">void</span> decompressInput();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">void</span> setRecordStarts();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keywordtype">void</span> uploadDataToDevice();</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordtype">void</span> setColumnNames();</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordtype">void</span> setDataTypes();</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keywordtype">void</span> detectDataTypes(<a class="code" href="structcudf_1_1io_1_1json_1_1ColumnInfo.html">ColumnInfo</a> *column_infos);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keywordtype">void</span> convertDataToColumns();</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordtype">void</span> convertJsonToColumns(gdf_dtype *<span class="keyword">const</span> dtypes, <span class="keywordtype">void</span> *<span class="keyword">const</span> *gdf_columns, gdf_valid_type *<span class="keyword">const</span> *valid_fields,</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                            gdf_size_type *num_valid_fields);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classcudf_1_1io_1_1json_1_1reader_1_1Impl.html#a0e14292946dc6ee16ab8adde849351c6">Impl</a>(<a class="code" href="structcudf_1_1io_1_1json_1_1reader__options.html">reader_options</a> <span class="keyword">const</span> &amp;args);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <a class="code" href="structcudf_1_1table.html">table</a> <a class="code" href="classcudf_1_1io_1_1json_1_1reader_1_1Impl.html#affc57eee52248ada46e6ad60df845780">read</a>();</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <a class="code" href="structcudf_1_1table.html">table</a> <a class="code" href="classcudf_1_1io_1_1json_1_1reader_1_1Impl.html#aaeeffbe727c9362dd0ae955d41618754">read_byte_range</a>(<span class="keywordtype">size_t</span> offset, <span class="keywordtype">size_t</span> size);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keyword">auto</span> getArgs()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> args_; }</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;};</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;} <span class="comment">// namespace json</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;} <span class="comment">// namespace io</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;} <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  std::vector&lt;gdf_dtype_extra_info&gt; dtypes_extra_info_;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  std::vector&lt;gdf_column_wrapper&gt; columns_;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="classdevice__buffer.html">device_buffer&lt;uint64_t&gt;</a> rec_starts_;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">// parsing options</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">bool</span> allow_newlines_in_strings_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="structParseOptions.html">ParseOptions</a> opts_{<span class="charliteral">&#39;,&#39;</span>, <span class="charliteral">&#39;\n&#39;</span>, <span class="charliteral">&#39;\&quot;&#39;</span>, <span class="charliteral">&#39;.&#39;</span>};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  rmm::device_vector&lt;SerialTrieNode&gt; d_true_trie_;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  rmm::device_vector&lt;SerialTrieNode&gt; d_false_trie_;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  rmm::device_vector&lt;SerialTrieNode&gt; d_na_trie_;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">void</span> ingestRawInput();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordtype">void</span> decompressInput();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordtype">void</span> setRecordStarts();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordtype">void</span> uploadDataToDevice();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordtype">void</span> setColumnNames();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordtype">void</span> setDataTypes();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="keywordtype">void</span> detectDataTypes(<a class="code" href="structcudf_1_1io_1_1json_1_1ColumnInfo.html">ColumnInfo</a> *column_infos);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keywordtype">void</span> convertDataToColumns();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keywordtype">void</span> convertJsonToColumns(gdf_dtype *<span class="keyword">const</span> dtypes, <span class="keywordtype">void</span> *<span class="keyword">const</span> *gdf_columns, gdf_valid_type *<span class="keyword">const</span> *valid_fields,</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                            gdf_size_type *num_valid_fields);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classcudf_1_1io_1_1json_1_1reader_1_1Impl.html#a0e14292946dc6ee16ab8adde849351c6">Impl</a>(<a class="code" href="structcudf_1_1io_1_1json_1_1reader__options.html">reader_options</a> <span class="keyword">const</span> &amp;args);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <a class="code" href="structcudf_1_1table.html">table</a> <a class="code" href="classcudf_1_1io_1_1json_1_1reader_1_1Impl.html#affc57eee52248ada46e6ad60df845780">read</a>();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <a class="code" href="structcudf_1_1table.html">table</a> <a class="code" href="classcudf_1_1io_1_1json_1_1reader_1_1Impl.html#aaeeffbe727c9362dd0ae955d41618754">read_byte_range</a>(<span class="keywordtype">size_t</span> offset, <span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="keyword">auto</span> getArgs()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> args_; }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;};</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;} <span class="comment">// namespace json</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;} <span class="comment">// namespace io</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;} <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructParseOptions_html"><div class="ttname"><a href="structParseOptions.html">ParseOptions</a></div><div class="ttdoc">Structure for holding various options used when parsing and.</div><div class="ttdef"><b>Definition:</b> type_conversion.cuh:154</div></div>
 <div class="ttc" id="astructcudf_1_1io_1_1json_1_1ColumnInfo_html"><div class="ttname"><a href="structcudf_1_1io_1_1json_1_1ColumnInfo.html">cudf::io::json::ColumnInfo</a></div><div class="ttdef"><b>Definition:</b> json_reader_impl.hpp:33</div></div>
-<div class="ttc" id="aclasscudf_1_1io_1_1json_1_1reader_1_1Impl_html_a0e14292946dc6ee16ab8adde849351c6"><div class="ttname"><a href="classcudf_1_1io_1_1json_1_1reader_1_1Impl.html#a0e14292946dc6ee16ab8adde849351c6">cudf::io::json::reader::Impl::Impl</a></div><div class="ttdeci">Impl(reader_options const &amp;args)</div><div class="ttdef"><b>Definition:</b> json_reader_impl.cu:58</div></div>
-<div class="ttc" id="aclasscudf_1_1io_1_1json_1_1reader_1_1Impl_html_affc57eee52248ada46e6ad60df845780"><div class="ttname"><a href="classcudf_1_1io_1_1json_1_1reader_1_1Impl.html#affc57eee52248ada46e6ad60df845780">cudf::io::json::reader::Impl::read</a></div><div class="ttdeci">table read()</div><div class="ttdoc">Parse the input JSON file as specified with the args_ data member.</div><div class="ttdef"><b>Definition:</b> json_reader_impl.cu:96</div></div>
+<div class="ttc" id="aclasscudf_1_1io_1_1json_1_1reader_1_1Impl_html_a0e14292946dc6ee16ab8adde849351c6"><div class="ttname"><a href="classcudf_1_1io_1_1json_1_1reader_1_1Impl.html#a0e14292946dc6ee16ab8adde849351c6">cudf::io::json::reader::Impl::Impl</a></div><div class="ttdeci">Impl(reader_options const &amp;args)</div><div class="ttdef"><b>Definition:</b> json_reader_impl.cu:61</div></div>
+<div class="ttc" id="aclasscudf_1_1io_1_1json_1_1reader_1_1Impl_html_affc57eee52248ada46e6ad60df845780"><div class="ttname"><a href="classcudf_1_1io_1_1json_1_1reader_1_1Impl.html#affc57eee52248ada46e6ad60df845780">cudf::io::json::reader::Impl::read</a></div><div class="ttdeci">table read()</div><div class="ttdoc">Parse the input JSON file as specified with the args_ data member.</div><div class="ttdef"><b>Definition:</b> json_reader_impl.cu:99</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> binaryop.cpp:43</div></div>
 <div class="ttc" id="aclassdevice__buffer_html"><div class="ttname"><a href="classdevice__buffer.html">device_buffer&lt; char &gt;</a></div></div>
-<div class="ttc" id="astructcudf_1_1io_1_1json_1_1reader__options_html"><div class="ttname"><a href="structcudf_1_1io_1_1json_1_1reader__options.html">cudf::io::json::reader_options</a></div><div class="ttdef"><b>Definition:</b> io_readers.hpp:101</div></div>
-<div class="ttc" id="astructcudf_1_1table_html"><div class="ttname"><a href="structcudf_1_1table.html">cudf::table</a></div><div class="ttdoc">A wrapper for a set of gdf_columns of equal number of rows.</div><div class="ttdef"><b>Definition:</b> table.hpp:36</div></div>
+<div class="ttc" id="astructcudf_1_1io_1_1json_1_1reader__options_html"><div class="ttname"><a href="structcudf_1_1io_1_1json_1_1reader__options.html">cudf::io::json::reader_options</a></div><div class="ttdef"><b>Definition:</b> io_readers.hpp:102</div></div>
+<div class="ttc" id="astructcudf_1_1table_html"><div class="ttname"><a href="structcudf_1_1table.html">cudf::table</a></div><div class="ttdoc">A wrapper for a set of gdf_columns of equal number of rows.</div><div class="ttdef"><b>Definition:</b> legacy/table.hpp:36</div></div>
 <div class="ttc" id="aclasscudf_1_1io_1_1json_1_1reader_1_1Impl_html"><div class="ttname"><a href="classcudf_1_1io_1_1json_1_1reader_1_1Impl.html">cudf::io::json::reader::Impl</a></div><div class="ttdoc">Class used to parse Json input and convert it into gdf columns.</div><div class="ttdef"><b>Definition:</b> json_reader_impl.hpp:46</div></div>
-<div class="ttc" id="aclasscudf_1_1io_1_1json_1_1reader_1_1Impl_html_aaeeffbe727c9362dd0ae955d41618754"><div class="ttname"><a href="classcudf_1_1io_1_1json_1_1reader_1_1Impl.html#aaeeffbe727c9362dd0ae955d41618754">cudf::io::json::reader::Impl::read_byte_range</a></div><div class="ttdeci">table read_byte_range(size_t offset, size_t size)</div><div class="ttdoc">Parse the input JSON file as specified with the args_ data member.</div><div class="ttdef"><b>Definition:</b> json_reader_impl.cu:128</div></div>
+<div class="ttc" id="aclasscudf_1_1io_1_1json_1_1reader_1_1Impl_html_aaeeffbe727c9362dd0ae955d41618754"><div class="ttname"><a href="classcudf_1_1io_1_1json_1_1reader_1_1Impl.html#aaeeffbe727c9362dd0ae955d41618754">cudf::io::json::reader::Impl::read_byte_range</a></div><div class="ttdeci">table read_byte_range(size_t offset, size_t size)</div><div class="ttdoc">Parse the input JSON file as specified with the args_ data member.</div><div class="ttdef"><b>Definition:</b> json_reader_impl.cu:131</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

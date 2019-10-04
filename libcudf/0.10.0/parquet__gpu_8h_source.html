@@ -139,7 +139,7 @@ $(function() {
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        max_rep_level(max_repetition_level_),</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        def_level_bits(def_level_bits_),</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        rep_level_bits(rep_level_bits_),</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        data_type(datatype_ | (datatype_length_ &lt;&lt; 3)),</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classcudf_1_1data__type.html">data_type</a>(datatype_ | (datatype_length_ &lt;&lt; 3)),</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        num_data_pages(0),</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        num_dict_pages(0),</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        max_num_pages(0),</div>
@@ -158,7 +158,7 @@ $(function() {
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  uint32_t num_rows;            <span class="comment">// number of rows in this chunk</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  int16_t max_def_level;        <span class="comment">// max definition level</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  int16_t max_rep_level;        <span class="comment">// max repetition level</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  uint16_t data_type;           <span class="comment">// basic column data type, ((type_length &lt;&lt; 3) |</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  uint16_t <a class="code" href="classcudf_1_1data__type.html">data_type</a>;           <span class="comment">// basic column data type, ((type_length &lt;&lt; 3) |</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                <span class="comment">// parquet::Type)</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  uint8_t def_level_bits;       <span class="comment">// bits to encode max definition level</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  uint8_t rep_level_bits;       <span class="comment">// bits to encode max repetition level</span></div>
@@ -197,6 +197,7 @@ $(function() {
 <div class="ttc" id="astructcudf_1_1io_1_1parquet_1_1gpu_1_1ColumnChunkDesc_html"><div class="ttname"><a href="structcudf_1_1io_1_1parquet_1_1gpu_1_1ColumnChunkDesc.html">cudf::io::parquet::gpu::ColumnChunkDesc</a></div><div class="ttdoc">Struct describing a particular chunk of column data.</div><div class="ttdef"><b>Definition:</b> parquet_gpu.h:64</div></div>
 <div class="ttc" id="astructcudf_1_1io_1_1parquet_1_1gpu_1_1PageInfo_html"><div class="ttname"><a href="structcudf_1_1io_1_1parquet_1_1gpu_1_1PageInfo.html">cudf::io::parquet::gpu::PageInfo</a></div><div class="ttdoc">Struct describing a particular page of column chunk data.</div><div class="ttdef"><b>Definition:</b> parquet_gpu.h:46</div></div>
 <div class="ttc" id="astructcudf_1_1io_1_1parquet_1_1gpu_1_1nvstrdesc__s_html"><div class="ttname"><a href="structcudf_1_1io_1_1parquet_1_1gpu_1_1nvstrdesc__s.html">cudf::io::parquet::gpu::nvstrdesc_s</a></div><div class="ttdoc">Struct to describe the output of a string datatype.</div><div class="ttdef"><b>Definition:</b> parquet_gpu.h:38</div></div>
+<div class="ttc" id="aclasscudf_1_1data__type_html"><div class="ttname"><a href="classcudf_1_1data__type.html">cudf::data_type</a></div><div class="ttdoc">Indicator for the logical data type of an element in a column.</div><div class="ttdef"><b>Definition:</b> types.hpp:126</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> binaryop.cpp:43</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

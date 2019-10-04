@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unwrapped_5ftype_5ft_1080',['unwrapped_type_t',['../wrapper__types_8hpp.html#a260c01364584fd390ca17fdc5d16cf1f',1,'cudf::detail']]]
+  ['cudastream_5ft_1725',['cudaStream_t',['../types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f',1,'types.hpp']]]
 ];

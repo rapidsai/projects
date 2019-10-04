@@ -120,7 +120,13 @@ $(function() {
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                         <span class="keywordtype">size_t</span> scratch_size, <span class="keywordtype">int</span> count = 1,</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                         cudaStream_t stream = (cudaStream_t)0);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif  // _GPUINFLATE_H_</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;cudaError_t gpu_snap(<a class="code" href="structgpu__inflate__input__s.html">gpu_inflate_input_s</a> *inputs,</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                     <a class="code" href="structgpu__inflate__status__s.html">gpu_inflate_status_s</a> *outputs, <span class="keywordtype">int</span> count = 1,</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                     cudaStream_t stream = (cudaStream_t)0);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif  // _GPUINFLATE_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructgpu__inflate__input__s_html"><div class="ttname"><a href="structgpu__inflate__input__s.html">gpu_inflate_input_s</a></div><div class="ttdoc">Input parameters for the decompression interface.</div><div class="ttdef"><b>Definition:</b> gpuinflate.h:25</div></div>
 <div class="ttc" id="astructgpu__inflate__status__s_html"><div class="ttname"><a href="structgpu__inflate__status__s.html">gpu_inflate_status_s</a></div><div class="ttdoc">Output parameters for the decompression interface.</div><div class="ttdef"><b>Definition:</b> gpuinflate.h:35</div></div>

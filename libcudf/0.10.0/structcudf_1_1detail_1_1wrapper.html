@@ -100,14 +100,14 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="str
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a51676f2de5f6de1721e86d8c9d4a27cb"><td class="memTemplParams" colspan="2"><a id="a51676f2de5f6de1721e86d8c9d4a27cb"></a>
+<tr class="memitem:aecc2c2dda00a63295fb17693ced4eb1b"><td class="memTemplParams" colspan="2"><a id="aecc2c2dda00a63295fb17693ced4eb1b"></a>
 template&lt;gdf_dtype dtype = type_id, std::enable_if_t&lt;(dtype !=GDF_BOOL8)&gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:a51676f2de5f6de1721e86d8c9d4a27cb"><td class="memTemplItemLeft" align="right" valign="top">constexpr CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memTemplItemRight" valign="bottom"><b>wrapper</b> (T v)</td></tr>
-<tr class="separator:a51676f2de5f6de1721e86d8c9d4a27cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51676f2de5f6de1721e86d8c9d4a27cb"><td class="memTemplParams" colspan="2"><a id="a51676f2de5f6de1721e86d8c9d4a27cb"></a>
-template&lt;gdf_dtype dtype = type_id, std::enable_if_t&lt;(dtype==GDF_BOOL8)&gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:a51676f2de5f6de1721e86d8c9d4a27cb"><td class="memTemplItemLeft" align="right" valign="top">constexpr CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memTemplItemRight" valign="bottom"><b>wrapper</b> (T v)</td></tr>
-<tr class="separator:a51676f2de5f6de1721e86d8c9d4a27cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecc2c2dda00a63295fb17693ced4eb1b"><td class="memTemplItemLeft" align="right" valign="top">constexpr CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memTemplItemRight" valign="bottom"><b>wrapper</b> (<a class="el" href="structcudf_1_1detail_1_1wrapper.html#a8acf68753d62cd6210b6c4b69fdaebef">value_type</a> v)</td></tr>
+<tr class="separator:aecc2c2dda00a63295fb17693ced4eb1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37b9e8952f35192ecb35bdb86cada87e"><td class="memTemplParams" colspan="2"><a id="a37b9e8952f35192ecb35bdb86cada87e"></a>
+template&lt;typename from_type , gdf_dtype dtype = type_id, std::enable_if_t&lt;(dtype==GDF_BOOL8)&gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:a37b9e8952f35192ecb35bdb86cada87e"><td class="memTemplItemLeft" align="right" valign="top">constexpr CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memTemplItemRight" valign="bottom"><b>wrapper</b> (from_type v)</td></tr>
+<tr class="separator:a37b9e8952f35192ecb35bdb86cada87e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa339ce3a23ed19183c4da6de271a2b11"><td class="memItemLeft" align="right" valign="top"><a id="aa339ce3a23ed19183c4da6de271a2b11"></a>
 CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memItemRight" valign="bottom"><b>operator value_type</b> () const</td></tr>
 <tr class="separator:aa339ce3a23ed19183c4da6de271a2b11"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,7 +129,7 @@ Public Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a363155d601be28d9979f088c3d846ecd"><td class="memItemLeft" align="right" valign="top"><a id="a363155d601be28d9979f088c3d846ecd"></a>
-static constexpr gdf_dtype&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1detail_1_1wrapper.html#a363155d601be28d9979f088c3d846ecd">corresponding_column_type</a> {type_id}</td></tr>
+static constexpr gdf_dtype&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1detail_1_1wrapper.html#a363155d601be28d9979f088c3d846ecd">corresponding_column_type</a> {<a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">type_id</a>}</td></tr>
 <tr class="memdesc:a363155d601be28d9979f088c3d846ecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The wrapped gdf_dtype. <br /></td></tr>
 <tr class="separator:a363155d601be28d9979f088c3d846ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>

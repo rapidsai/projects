@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['valid_1076',['valid',['../structgdf__column__.html#aab16b9467d41db5f36d2a708cba7d612',1,'gdf_column_']]],
-  ['value_1077',['value',['../structcudf_1_1detail_1_1wrapper.html#a5914e8dde1ed708adda58f7ad68561f7',1,'cudf::detail::wrapper']]],
-  ['value_5fsquared_1078',['value_squared',['../structcudf_1_1meanvar.html#a1e4fbdcc540474102b9f4400c591c527',1,'cudf::meanvar::value_squared()'],['../structcudf_1_1reduction_1_1var__std.html#af19bfaba48b854fbfb619ca445323527',1,'cudf::reduction::var_std::value_squared()']]]
+  ['table_1710',['table',['../structcudf_1_1orc__write__arg.html#a2df030e3a8d9ef1fcefbd6374fe33c45',1,'cudf::orc_write_arg']]],
+  ['thousands_1711',['thousands',['../structcudf_1_1io_1_1csv_1_1reader__options.html#ade49b51d84f6a6b3e9f783130366f02c',1,'cudf::io::csv::reader_options::thousands()'],['../structcudf_1_1csv__read__arg.html#a73230008aab8e9da1d0fc6ca2095311d',1,'cudf::csv_read_arg::thousands()']]],
+  ['time_5funit_1712',['time_unit',['../structgdf__dtype__extra__info.html#addaa5a9b9786bcaa30a70942d339dec8',1,'gdf_dtype_extra_info']]],
+  ['timestamp_5funit_1713',['timestamp_unit',['../structcudf_1_1orc__read__arg.html#a7e3f2b327899d907fb15ce4fce56bb18',1,'cudf::orc_read_arg::timestamp_unit()'],['../structcudf_1_1parquet__read__arg.html#a0834245e998f26fe54424142c71b86cf',1,'cudf::parquet_read_arg::timestamp_unit()']]],
+  ['tmst_1714',['tmst',['../uniongdf__data.html#a6a92c8ac51677ff303caaa6397541d7b',1,'gdf_data']]],
+  ['true_5fvalues_1715',['true_values',['../structcudf_1_1io_1_1csv_1_1reader__options.html#afc8fdf619b176834d8192de541986217',1,'cudf::io::csv::reader_options::true_values()'],['../structcudf_1_1csv__read__arg.html#af215196078ba8b166f8691e927666b42',1,'cudf::csv_read_arg::true_values()']]]
 ];

@@ -197,6 +197,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa0ddd6f471bcc6dda1dcf110bda896be"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVStrings.html#aa0ddd6f471bcc6dda1dcf110bda896be">is_empty</a> (bool *results, bool devmem=true)</td></tr>
 <tr class="memdesc:aa0ddd6f471bcc6dda1dcf110bda896be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true for non-empty strings &ndash; non-null strings with at least one character.  <a href="classNVStrings.html#aa0ddd6f471bcc6dda1dcf110bda896be">More...</a><br /></td></tr>
 <tr class="separator:aa0ddd6f471bcc6dda1dcf110bda896be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a026bcba91ab86fd8ce8c9469e772e21c"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVStrings.html#a026bcba91ab86fd8ce8c9469e772e21c">code_points</a> (unsigned int *results)</td></tr>
+<tr class="memdesc:a026bcba91ab86fd8ce8c9469e772e21c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills in matrix with code point values (integers) for each string. A code point is the integer value representation of a character. For example, in UTF-8 the code point value for the character 'A' is 65.  <a href="classNVStrings.html#a026bcba91ab86fd8ce8c9469e772e21c">More...</a><br /></td></tr>
+<tr class="separator:a026bcba91ab86fd8ce8c9469e772e21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa60b00b99fe38631ab3889b1aebe7080"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNVStrings.html">NVStrings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVStrings.html#aa60b00b99fe38631ab3889b1aebe7080">cat</a> (<a class="el" href="classNVStrings.html">NVStrings</a> *others, const char *separator, const char *narep=nullptr)</td></tr>
 <tr class="memdesc:aa60b00b99fe38631ab3889b1aebe7080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the given strings to this instance of strings and returns as new instance.  <a href="classNVStrings.html#aa60b00b99fe38631ab3889b1aebe7080">More...</a><br /></td></tr>
 <tr class="separator:aa60b00b99fe38631ab3889b1aebe7080"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -734,6 +737,33 @@ Create NVStrings instance from strings</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>New instance with each string padded appropriately. </dd></dl>
+
+</div>
+</div>
+<a id="a026bcba91ab86fd8ce8c9469e772e21c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a026bcba91ab86fd8ce8c9469e772e21c">&#9670;&nbsp;</a></span>code_points()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int NVStrings::code_points </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>results</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fills in matrix with code point values (integers) for each string. A code point is the integer value representation of a character. For example, in UTF-8 the code point value for the character 'A' is 65. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">results</td><td>Device array filled in by this method. This must point to device memory able to hold <a class="el" href="classNVStrings.html#ac0e454d488b47498f7171acf4980990a" title="Returns the number of strings managed by this instance.">size()</a> integer arrays where each sub-array has the length of the number of characters for that string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The total number of values written to results. </dd></dl>
 
 </div>
 </div>

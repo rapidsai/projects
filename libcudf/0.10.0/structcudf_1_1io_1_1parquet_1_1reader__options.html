@@ -82,9 +82,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0407c572fd23e757cc5f46c06d6404ff"><td class="memItemLeft" align="right" valign="top"><a id="a0407c572fd23e757cc5f46c06d6404ff"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>reader_options</b> (<a class="el" href="structcudf_1_1io_1_1parquet_1_1reader__options.html">reader_options</a> const &amp;)=default</td></tr>
 <tr class="separator:a0407c572fd23e757cc5f46c06d6404ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40e08af280ea3a03c8e31f663e35b916"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1parquet_1_1reader__options.html#a40e08af280ea3a03c8e31f663e35b916">reader_options</a> (std::vector&lt; std::string &gt; cols, bool strings_as_category, gdf_time_unit timestamp_time_unit)</td></tr>
-<tr class="memdesc:a40e08af280ea3a03c8e31f663e35b916"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor to populate reader options.  <a href="structcudf_1_1io_1_1parquet_1_1reader__options.html#a40e08af280ea3a03c8e31f663e35b916">More...</a><br /></td></tr>
-<tr class="separator:a40e08af280ea3a03c8e31f663e35b916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac965205a85189ae8f5c088949be1f1ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1parquet_1_1reader__options.html#ac965205a85189ae8f5c088949be1f1ed">reader_options</a> (std::vector&lt; std::string &gt; cols, bool strings_as_category, bool read_pandas_indexes, gdf_time_unit timestamp_time_unit)</td></tr>
+<tr class="memdesc:ac965205a85189ae8f5c088949be1f1ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor to populate reader options.  <a href="structcudf_1_1io_1_1parquet_1_1reader__options.html#ac965205a85189ae8f5c088949be1f1ed">More...</a><br /></td></tr>
+<tr class="separator:ac965205a85189ae8f5c088949be1f1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -94,17 +94,20 @@ std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bott
 <tr class="memitem:a435fac4194e388af0741d35930aa0616"><td class="memItemLeft" align="right" valign="top"><a id="a435fac4194e388af0741d35930aa0616"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>strings_to_categorical</b> = false</td></tr>
 <tr class="separator:a435fac4194e388af0741d35930aa0616"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d19fd7de5f80fdb72d9b729dfac6906"><td class="memItemLeft" align="right" valign="top"><a id="a8d19fd7de5f80fdb72d9b729dfac6906"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>use_pandas_metadata</b> = false</td></tr>
+<tr class="separator:a8d19fd7de5f80fdb72d9b729dfac6906"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba73ca71198e065317a2eb6097ddfb0e"><td class="memItemLeft" align="right" valign="top"><a id="aba73ca71198e065317a2eb6097ddfb0e"></a>
 gdf_time_unit&#160;</td><td class="memItemRight" valign="bottom"><b>timestamp_unit</b> = TIME_UNIT_NONE</td></tr>
 <tr class="separator:aba73ca71198e065317a2eb6097ddfb0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md231"></a>
+<h2><a class="anchor" id="autotoc_md315"></a>
 @brief Options for the Parquet reader</h2>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a40e08af280ea3a03c8e31f663e35b916"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40e08af280ea3a03c8e31f663e35b916">&#9670;&nbsp;</a></span>reader_options()</h2>
+<a id="ac965205a85189ae8f5c088949be1f1ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac965205a85189ae8f5c088949be1f1ed">&#9670;&nbsp;</a></span>reader_options()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -123,6 +126,12 @@ gdf_time_unit&#160;</td><td class="memItemRight" valign="bottom"><b>timestamp_un
           <td></td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>strings_as_category</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>read_pandas_indexes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -148,10 +157,11 @@ gdf_time_unit&#160;</td><td class="memItemRight" valign="bottom"><b>timestamp_un
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">cols</td><td>List of columns to read. If empty, all columns are read </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">strings_to_categorical</td><td>Whether to store strings as GDF_CATEGORY </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">read_pandas_indexes</td><td>Whether to always load PANDAS index columns </td></tr>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md233"></a>
+<h2><a class="anchor" id="autotoc_md317"></a>
 @param[in] timestamp_time_unit Resolution of timestamps; none for default</h2>
 
 </div>

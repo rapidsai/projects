@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['log_1103',['LOG',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba1509f8449abb15062ad85e15fb3861d7',1,'cudf']]]
+  ['keep_5ffirst_1778',['KEEP_FIRST',['../namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa86ea4bfd2b3121412b0a63a3697926ec',1,'cudf']]],
+  ['keep_5flast_1779',['KEEP_LAST',['../namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa1d1398f646d74e801389737f07d89d1c',1,'cudf']]],
+  ['keep_5fnone_1780',['KEEP_NONE',['../namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa6fb3154b77231184b596b4add407aa2a',1,'cudf']]]
 ];

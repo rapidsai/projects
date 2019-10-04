@@ -234,12 +234,16 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1csv__read__arg.html#a32a8a0a1b38d71f410ebff5465eefb7f">byte_range_size</a> = 0</td></tr>
 <tr class="memdesc:a32a8a0a1b38d71f410ebff5465eefb7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes to read; always reads complete rows. <br /></td></tr>
 <tr class="separator:a32a8a0a1b38d71f410ebff5465eefb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c3619d91ca37b1e5a3c847ac70c6e1b"><td class="memItemLeft" align="right" valign="top"><a id="a6c3619d91ca37b1e5a3c847ac70c6e1b"></a>
+gdf_time_unit&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1csv__read__arg.html#a6c3619d91ca37b1e5a3c847ac70c6e1b">out_time_unit</a> = TIME_UNIT_NONE</td></tr>
+<tr class="memdesc:a6c3619d91ca37b1e5a3c847ac70c6e1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The output resolution for date32, date64, and timestamp columns. <br /></td></tr>
+<tr class="separator:a6c3619d91ca37b1e5a3c847ac70c6e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Input arguments to the <code>read_csv</code> interface. </p>
 <p>------------------------------------------------------------------------&mdash;* Available parameters and are closely patterned after PANDAS' <code>read_csv</code> API. Not all parameters are unsupported. If the matching PANDAS' parameter has a default value of <code>None</code>, then a default value of <code>-1</code> or <code>0</code> may be used as the equivalent.</p>
 <p>Parameters in PANDAS that are unavailable or in cudf: <code>sep</code> - use <code>delimiter</code> instead <code>squeeze</code> - data is always returned as a <a class="el" href="structcudf_1_1table.html" title="A wrapper for a set of gdf_columns of equal number of rows.">cudf::table</a> <code>engine</code> - there is only one engine <code>converters</code> - external lambda arguments are not supported <code>verbose</code> - use column functions to count invalids instead <code>parse_dates</code> - dates are detected automatically <code>infer_datetime_format</code> - date format are always inferred <code>keep_date_col</code> - original raw data is not kept <code>date_parser</code> - external lambda arguments are not supported <code>iterator</code> - use <code>byte_range_xxx</code> for chunking instead <code>chunksize</code> - use <code>byte_range_xxx</code> for chunking instead <code>escapechar</code> - only ASCII-encoded data is supported <code>encoding</code> - only ASCII-encoded data is supported <code>dialect</code> - use each parameter and set that option instead <code>tupleize_cols</code> - deprecated in PANDAS <code>error_bad_lines</code> - exception is always raised detectable on bad data <code>warn_bad_lines</code> - exception is always raised detectable on bad data <code>low_memory</code> - use <code>byte_range_xxx</code> for chunking instead <code>memory_map</code> - files are always memory-mapped </p>
-<h2><a class="anchor" id="autotoc_md244"></a>
+<h2><a class="anchor" id="autotoc_md329"></a>
 &lt;tt&gt;float_precision&lt;/tt&gt;       - there is only one converter</h2>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="ac38936d9c26a6ba6e5d488f36afa0a4e"></a>

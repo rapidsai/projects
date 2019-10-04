@@ -97,17 +97,22 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">struct </span>table;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>detail {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecudf.html#a7574c3f8a91c7ae6c24304f3cc61e606">scatter</a>(table <span class="keyword">const</span>* source_table, gdf_index_type <span class="keyword">const</span> scatter_map[],</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                  table* destination_table);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}  <span class="comment">// namespace detail</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}  <span class="comment">// namespace cudf</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecudf.html#ae9ee593defbe8e2fcaa05b50fbd6612e">scatter</a>(table <span class="keyword">const</span>* source_table, <a class="code" href="structgdf__column__.html">gdf_column</a> <span class="keyword">const</span>&amp; scatter_map,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;         table* destination_table, <span class="keywordtype">bool</span> check_bounds = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;         <span class="keywordtype">bool</span> allow_negative_indices = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecudf.html#ae9ee593defbe8e2fcaa05b50fbd6612e">scatter</a>(table <span class="keyword">const</span>* source_table, gdf_index_type <span class="keyword">const</span> scatter_map[],</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;         table* destination_table, <span class="keywordtype">bool</span> check_bounds = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;         <span class="keywordtype">bool</span> allow_negative_indices = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}  <span class="comment">// namespace detail</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}  <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacecudf_html_a7574c3f8a91c7ae6c24304f3cc61e606"><div class="ttname"><a href="namespacecudf.html#a7574c3f8a91c7ae6c24304f3cc61e606">cudf::scatter</a></div><div class="ttdeci">table scatter(table const &amp;source, gdf_index_type const scatter_map[], table const &amp;target)</div><div class="ttdoc">Creates a new table as if an in-place scatter from a source table was performed on the target table.</div><div class="ttdef"><b>Definition:</b> scatter.cu:182</div></div>
+<div class="ttc" id="astructgdf__column___html"><div class="ttname"><a href="structgdf__column__.html">gdf_column_</a></div><div class="ttdoc">The C representation of a column in CUDF. This is the main unit of operation.</div><div class="ttdef"><b>Definition:</b> types.h:137</div></div>
+<div class="ttc" id="anamespacecudf_html_ae9ee593defbe8e2fcaa05b50fbd6612e"><div class="ttname"><a href="namespacecudf.html#ae9ee593defbe8e2fcaa05b50fbd6612e">cudf::scatter</a></div><div class="ttdeci">table scatter(table const &amp;source, gdf_column const &amp;scatter_map, table const &amp;target, bool check_bounds)</div><div class="ttdoc">Creates a new table as if an in-place scatter from a source table was performed on the target table.</div><div class="ttdef"><b>Definition:</b> scatter.cu:298</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> binaryop.cpp:43</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,21 +1,12 @@
 var searchData=
 [
-  ['scan_967',['scan',['../namespacecudf.html#a65546aa9c42e87334fb5e1e3f274bc6b',1,'cudf']]],
-  ['scatter_968',['scatter',['../namespacecudf.html#a7574c3f8a91c7ae6c24304f3cc61e606',1,'cudf::scatter(table const  &amp;source, gdf_index_type const scatter_map[], table const  &amp;target)'],['../namespacecudf.html#a8f032f6bab98db53bf7fa76259e09e92',1,'cudf::scatter(std::vector&lt; gdf_scalar &gt; const  &amp;source, gdf_index_type const scatter_map[], gdf_size_type num_scatter_rows, table const  &amp;target)']]],
-  ['select_5fcolumns_969',['select_columns',['../classcudf_1_1io_1_1avro_1_1avro__metadata.html#a7b3e0684751343a8d62ca9f2379a8746',1,'cudf::io::avro::avro_metadata::select_columns()'],['../classcudf_1_1io_1_1orc_1_1OrcMetadata.html#ab9dcd34273064fb0b42d603d37833ea2',1,'cudf::io::orc::OrcMetadata::select_columns()'],['../structcudf_1_1io_1_1parquet_1_1ParquetMetadata.html#af20affc20cd166d4bd832a72d254e9f1',1,'cudf::io::parquet::ParquetMetadata::select_columns()']]],
-  ['select_5frow_5fgroups_970',['select_row_groups',['../structcudf_1_1io_1_1parquet_1_1ParquetMetadata.html#a262e224be5c5226f32f84856b7d37da4',1,'cudf::io::parquet::ParquetMetadata']]],
-  ['select_5fstripes_971',['select_stripes',['../classcudf_1_1io_1_1orc_1_1OrcMetadata.html#a1fed00d40a9eb0fb230456acf4d92307',1,'cudf::io::orc::OrcMetadata']]],
-  ['serializedtriecontains_972',['serializedTrieContains',['../trie_8cuh.html#af8de08a98a954c441e90ec47b216549b',1,'trie.cuh']]],
-  ['set_5fbit_973',['set_bit',['../classBitMask.html#a781ddd52abf6c4bb976b5c379641825d',1,'BitMask']]],
-  ['set_5fbit_5funsafe_974',['set_bit_unsafe',['../classBitMask.html#a21b1ef306c6c83a13d8a8650c458d1f7',1,'BitMask']]],
-  ['set_5felement_5fhost_975',['set_element_host',['../classBitMask.html#ad767ab585eb25dc80ca3b82ad68cf254',1,'BitMask']]],
-  ['set_5fkernel_5finst_976',['set_kernel_inst',['../classcudf_1_1jit_1_1launcher.html#a04a65099e13c3fbb65f55ce91f395f46',1,'cudf::jit::launcher']]],
-  ['setelement_977',['setElement',['../parsing__utils_8cu.html#a3b1720be10e4765219021d6f1bbfe969',1,'setElement(T *array, gdf_size_type idx, const T &amp;t, const V &amp;v):&#160;parsing_utils.cu'],['../parsing__utils_8cu.html#abe254b0f10561000c3a6401285f7818b',1,'setElement(thrust::pair&lt; T, V &gt; *array, gdf_size_type idx, const T &amp;t, const V &amp;v):&#160;parsing_utils.cu'],['../parsing__utils_8cu.html#ad44d11e2e89b52a5bd983bec741c1eee',1,'setElement(void *array, gdf_size_type idx, const T &amp;t, const V &amp;v):&#160;parsing_utils.cu']]],
-  ['size_978',['size',['../classcudf_1_1io_1_1arrow__io__source.html#addf8415c28750a5249a770ac3b9e6b7a',1,'cudf::io::arrow_io_source::size()'],['../classcudf_1_1io_1_1memory__mapped__source.html#a1aa3eb0065911a1e213c271c2d1598cb',1,'cudf::io::memory_mapped_source::size()'],['../classcudf_1_1io_1_1datasource.html#acdec117c1e897d07db5195d6d9361e62',1,'cudf::io::datasource::size()']]],
-  ['size_5fof_979',['size_of',['../namespacecudf.html#aea3dfde6d57f821aa1825a90a8cdddcb',1,'cudf']]],
-  ['skip_5fstruct_5ffield_980',['skip_struct_field',['../classcudf_1_1io_1_1parquet_1_1CompactProtocolReader.html#ae7736da3127ce592144213a6d0c2a3fb',1,'cudf::io::parquet::CompactProtocolReader']]],
-  ['slice_981',['slice',['../namespacecudf.html#a31f4a85729765c154b21d8102be5a9d5',1,'cudf']]],
-  ['split_982',['split',['../namespacecudf.html#a69299f48fdcd25864a2f560e55d18ea9',1,'cudf']]],
-  ['sumbrackets_983',['sumBrackets',['../parsing__utils_8cu.html#a89a461bfca75ab83fecf2335f193e50d',1,'parsing_utils.cu']]],
-  ['sumbracketskernel_984',['sumBracketsKernel',['../parsing__utils_8cu.html#a4d604c4937fc5680977b22edabddc34f',1,'parsing_utils.cu']]]
+  ['pad_1501',['pad',['../classNVStrings.html#aefbe772d7e225d41e2837280edc8cd08',1,'NVStrings']]],
+  ['pair_5faccessor_1502',['pair_accessor',['../structcudf_1_1pair__accessor_3_01ElementType_00_01ResultType_00_01true_01_4.html#a7f8b179b0ce4868b077b37c5b9ba273c',1,'cudf::pair_accessor&lt; ElementType, ResultType, true &gt;::pair_accessor()'],['../structcudf_1_1pair__accessor_3_01ElementType_00_01ResultType_00_01false_01_4.html#ae3d81bd19c7ae8d8b41ba54bfdaf5bdd',1,'cudf::pair_accessor&lt; ElementType, ResultType, false &gt;::pair_accessor()']]],
+  ['parse_1503',['parse',['../classcudf_1_1io_1_1avro_1_1schema__parser.html#af270f496fc1a40af3052ca0caff68fc0',1,'cudf::io::avro::schema_parser::parse()'],['../classcudf_1_1io_1_1avro_1_1container.html#adacb6096165f32e4cc501ead3aaac66b',1,'cudf::io::avro::container::parse()']]],
+  ['partition_1504',['partition',['../classNVStrings.html#a1f18538ef786a0599246e0ea4324d4b5',1,'NVStrings']]],
+  ['point_5fin_5fpolygon_1505',['point_in_polygon',['../namespacecudf.html#a30c6e502e3755eefe9a720cdf0f3ed5e',1,'cudf']]],
+  ['porter_5fstemmer_5fmeasure_1506',['porter_stemmer_measure',['../classNVText.html#a9be1270d1d500fecc275a719266eefaf',1,'NVText']]],
+  ['print_1507',['print',['../classNVStrings.html#a0846b760037f5282428ae80b57471b2f',1,'NVStrings']]],
+  ['ptx_5fparser_1508',['ptx_parser',['../classcudf_1_1jit_1_1ptx__parser.html#af33c008582e1fc88a589e94b04148a50',1,'cudf::jit::ptx_parser']]],
+  ['put_5frow_5findex_5fentry_1509',['put_row_index_entry',['../classcudf_1_1io_1_1orc_1_1ProtobufWriter.html#aa1ded26103a330c6f64daf9e1e4e9d7b',1,'cudf::io::orc::ProtobufWriter']]]
 ];

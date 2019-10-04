@@ -1,10 +1,15 @@
 var searchData=
 [
-  ['abs_1085',['ABS',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19bab226be3789467f51f32cf06550a4c46e',1,'cudf']]],
-  ['arccos_1086',['ARCCOS',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba1e17febbc6d14208d0a264562dcee2e9',1,'cudf']]],
-  ['arcsin_1087',['ARCSIN',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba463397f416a024fb7df7d906a0436dbb',1,'cudf']]],
-  ['arctan_1088',['ARCTAN',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19bad1c5c0c8ffe6bf038e617b0aad0f9aac',1,'cudf']]],
-  ['as_5fdatetime_1089',['as_datetime',['../namespacecolumn__parse.html#a3d4f8311e6d8667f32461f3dd26b7256a0e9b04806b00a9cc47b1b8ef8dc26695',1,'column_parse']]],
-  ['as_5fdefault_1090',['as_default',['../namespacecolumn__parse.html#a3d4f8311e6d8667f32461f3dd26b7256a4878ed34ec2e00f3747ed99340220b85',1,'column_parse']]],
-  ['as_5fhexadecimal_1091',['as_hexadecimal',['../namespacecolumn__parse.html#a3d4f8311e6d8667f32461f3dd26b7256af19aee1cc5d29fddfa203fa01a43c9e9',1,'column_parse']]]
+  ['abs_1742',['ABS',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19bab226be3789467f51f32cf06550a4c46e',1,'cudf']]],
+  ['after_1743',['AFTER',['../namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31ac130fda0cb93540bf1574912e78964fb',1,'cudf']]],
+  ['all_5fnull_1744',['ALL_NULL',['../namespacecudf.html#aa481249b705132999f4d082aacd21dbfa042cac70175410616150fafb92f76351',1,'cudf']]],
+  ['all_5fvalid_1745',['ALL_VALID',['../namespacecudf.html#aa481249b705132999f4d082aacd21dbfadb86173d779f7b173db120643cc1c402',1,'cudf']]],
+  ['always_1746',['ALWAYS',['../namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6a995bafc1b2e35df60002e61e2ec0c6df',1,'cudf']]],
+  ['arccos_1747',['ARCCOS',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba1e17febbc6d14208d0a264562dcee2e9',1,'cudf']]],
+  ['arcsin_1748',['ARCSIN',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba463397f416a024fb7df7d906a0436dbb',1,'cudf']]],
+  ['arctan_1749',['ARCTAN',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19bad1c5c0c8ffe6bf038e617b0aad0f9aac',1,'cudf']]],
+  ['as_5fdatetime_1750',['as_datetime',['../namespacecudf_1_1io_1_1csv_1_1column__parse.html#a35c8622fd61325c06ee43ade80c576b3a9626c7b89b62caf5ba716cf6f177621d',1,'cudf::io::csv::column_parse']]],
+  ['as_5fdefault_1751',['as_default',['../namespacecudf_1_1io_1_1csv_1_1column__parse.html#a35c8622fd61325c06ee43ade80c576b3a791840d89fc93aee40ed6222ce6b77e0',1,'cudf::io::csv::column_parse']]],
+  ['as_5fhexadecimal_1752',['as_hexadecimal',['../namespacecudf_1_1io_1_1csv_1_1column__parse.html#a35c8622fd61325c06ee43ade80c576b3a785afcd6940acacf7fc6e21bd592ebd4',1,'cudf::io::csv::column_parse']]],
+  ['ascending_1753',['ASCENDING',['../namespacecudf.html#a750f02016b046079f7062d334890b4fca83ec681a20197326c163ea3b39ef7c32',1,'cudf']]]
 ];
