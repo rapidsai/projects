@@ -69,9 +69,11 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classrmm_1_1mr_1_1cnmem__memory__resource-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">rmm::mr::cnmem_memory_resource Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
+<div class="title">rmm::mr::cnmem_memory_resource Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -85,6 +87,7 @@ Inheritance diagram for rmm::mr::cnmem_memory_resource:</div>
 <div class="center"><img src="classrmm_1_1mr_1_1cnmem__memory__resource__inherit__graph.png" border="0" usemap="#rmm_1_1mr_1_1cnmem__memory__resource_inherit__map" alt="Inheritance graph"/></div>
 <map name="rmm_1_1mr_1_1cnmem__memory__resource_inherit__map" id="rmm_1_1mr_1_1cnmem__memory__resource_inherit__map">
 <area shape="rect" title="Memory resource that allocates/deallocates using the cnmem pool sub&#45;allocator." alt="" coords="11,95,243,136"/>
+<area shape="rect" href="classrmm_1_1mr_1_1cnmem__managed__memory__resource.html" title="Memory resource that allocates/deallocates managed device memory (CUDA Unified Memory) using the cnme..." alt="" coords="5,184,248,225"/>
 <area shape="rect" href="classrmm_1_1mr_1_1device__memory__resource.html" title="Base class for all libcudf device memory allocation." alt="" coords="5,5,248,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -116,13 +119,61 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeaed913bfdd02266062b7880d5bb350f inherit pub_methods_classrmm_1_1mr_1_1device__memory__resource"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrmm_1_1mr_1_1device__memory__resource.html#aeaed913bfdd02266062b7880d5bb350f">is_equal</a> (<a class="el" href="classrmm_1_1mr_1_1device__memory__resource.html">device_memory_resource</a> const &amp;other) const noexcept</td></tr>
 <tr class="memdesc:aeaed913bfdd02266062b7880d5bb350f inherit pub_methods_classrmm_1_1mr_1_1device__memory__resource"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare this resource to another.  <a href="classrmm_1_1mr_1_1device__memory__resource.html#aeaed913bfdd02266062b7880d5bb350f">More...</a><br /></td></tr>
 <tr class="separator:aeaed913bfdd02266062b7880d5bb350f inherit pub_methods_classrmm_1_1mr_1_1device__memory__resource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf47e14914c13581b64e2a78b39a08e8 inherit pub_methods_classrmm_1_1mr_1_1device__memory__resource"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::size_t, std::size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrmm_1_1mr_1_1device__memory__resource.html#adf47e14914c13581b64e2a78b39a08e8">get_mem_info</a> (cudaStream_t stream) const</td></tr>
+<tr class="memdesc:adf47e14914c13581b64e2a78b39a08e8 inherit pub_methods_classrmm_1_1mr_1_1device__memory__resource"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries the amount of free and total memory for the resource.  <a href="classrmm_1_1mr_1_1device__memory__resource.html#adf47e14914c13581b64e2a78b39a08e8">More...</a><br /></td></tr>
+<tr class="separator:adf47e14914c13581b64e2a78b39a08e8 inherit pub_methods_classrmm_1_1mr_1_1device__memory__resource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:abc5e59e9f7fe501ad156f8c531c9c28f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrmm_1_1mr_1_1cnmem__memory__resource.html#abc5e59e9f7fe501ad156f8c531c9c28f">pool_options</a> : unsigned short { <a class="el" href="classrmm_1_1mr_1_1cnmem__memory__resource.html#abc5e59e9f7fe501ad156f8c531c9c28faf59a25f2594f469f0bfccad7f8f13744">pool_options::MANAGED</a>, 
+<a class="el" href="classrmm_1_1mr_1_1cnmem__memory__resource.html#abc5e59e9f7fe501ad156f8c531c9c28faa33b7755e5f9b504d2d038eaca4ff28d">pool_options::CUDA</a>
+ }</td></tr>
+<tr class="memdesc:abc5e59e9f7fe501ad156f8c531c9c28f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies Managed (UVM) allocations vs device memory for the memory pool.  <a href="classrmm_1_1mr_1_1cnmem__memory__resource.html#abc5e59e9f7fe501ad156f8c531c9c28f">More...</a><br /></td></tr>
+<tr class="separator:abc5e59e9f7fe501ad156f8c531c9c28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ab6c1981cfc1cbc3c892a14f0c9df0b02"><td class="memItemLeft" align="right" valign="top"><a id="ab6c1981cfc1cbc3c892a14f0c9df0b02"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>cnmem_memory_resource</b> (std::size_t initial_pool_size, <a class="el" href="classrmm_1_1mr_1_1cnmem__memory__resource.html#abc5e59e9f7fe501ad156f8c531c9c28f">pool_options</a> pool_type)</td></tr>
+<tr class="separator:ab6c1981cfc1cbc3c892a14f0c9df0b02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Memory resource that allocates/deallocates using the cnmem pool sub-allocator. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 the cnmem pool sub-allocator for allocation/deallocation.</h2>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="abc5e59e9f7fe501ad156f8c531c9c28f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc5e59e9f7fe501ad156f8c531c9c28f">&#9670;&nbsp;</a></span>pool_options</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classrmm_1_1mr_1_1cnmem__memory__resource.html#abc5e59e9f7fe501ad156f8c531c9c28f">rmm::mr::cnmem_memory_resource::pool_options</a> : unsigned short</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Specifies Managed (UVM) allocations vs device memory for the memory pool. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abc5e59e9f7fe501ad156f8c531c9c28faf59a25f2594f469f0bfccad7f8f13744"></a>MANAGED&#160;</td><td class="fielddoc"><p>Uses managed memory for pool. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abc5e59e9f7fe501ad156f8c531c9c28faa33b7755e5f9b504d2d038eaca4ff28d"></a>CUDA&#160;</td><td class="fielddoc"><p>Uses CUDA device memory for pool. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af1af4a4728c47ec7e6e745ed8f285ffa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af1af4a4728c47ec7e6e745ed8f285ffa">&#9670;&nbsp;</a></span>cnmem_memory_resource()</h2>
 
@@ -155,7 +206,7 @@ the cnmem pool sub-allocator for allocation/deallocation.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md23"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 zero, an implementation defined pool size is used.</h2>
 
 </div>
@@ -186,7 +237,7 @@ zero, an implementation defined pool size is used.</h2>
 
 <p>Queries if the resource supports use of non-null streams for allocation/deallocation. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md35"></a>
+<h2><a class="anchor" id="autotoc_md44"></a>
 @returns If the resource supports non-null streams</h2>
 
 <p>Implements <a class="el" href="classrmm_1_1mr_1_1device__memory__resource.html#a04598a0abd19625d081a69599360b215">rmm::mr::device_memory_resource</a>.</p>

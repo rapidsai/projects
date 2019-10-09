@@ -113,11 +113,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeaed913bfdd02266062b7880d5bb350f inherit pub_methods_classrmm_1_1mr_1_1device__memory__resource"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrmm_1_1mr_1_1device__memory__resource.html#aeaed913bfdd02266062b7880d5bb350f">is_equal</a> (<a class="el" href="classrmm_1_1mr_1_1device__memory__resource.html">device_memory_resource</a> const &amp;other) const noexcept</td></tr>
 <tr class="memdesc:aeaed913bfdd02266062b7880d5bb350f inherit pub_methods_classrmm_1_1mr_1_1device__memory__resource"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare this resource to another.  <a href="classrmm_1_1mr_1_1device__memory__resource.html#aeaed913bfdd02266062b7880d5bb350f">More...</a><br /></td></tr>
 <tr class="separator:aeaed913bfdd02266062b7880d5bb350f inherit pub_methods_classrmm_1_1mr_1_1device__memory__resource"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf47e14914c13581b64e2a78b39a08e8 inherit pub_methods_classrmm_1_1mr_1_1device__memory__resource"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::size_t, std::size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrmm_1_1mr_1_1device__memory__resource.html#adf47e14914c13581b64e2a78b39a08e8">get_mem_info</a> (cudaStream_t stream) const</td></tr>
+<tr class="memdesc:adf47e14914c13581b64e2a78b39a08e8 inherit pub_methods_classrmm_1_1mr_1_1device__memory__resource"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries the amount of free and total memory for the resource.  <a href="classrmm_1_1mr_1_1device__memory__resource.html#adf47e14914c13581b64e2a78b39a08e8">More...</a><br /></td></tr>
+<tr class="separator:adf47e14914c13581b64e2a78b39a08e8 inherit pub_methods_classrmm_1_1mr_1_1device__memory__resource"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><code><a class="el" href="classrmm_1_1mr_1_1device__memory__resource.html" title="Base class for all libcudf device memory allocation.">device_memory_resource</a></code> derived class that uses cudaMalloc/Free for </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md26"></a>
+<h2><a class="anchor" id="autotoc_md29"></a>
 allocation/deallocation.</h2>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="af3319eeb30d26e14eb8195e6e159d746"></a>
@@ -145,7 +148,7 @@ allocation/deallocation.</h2>
 
 <p>Queries if the resource supports use of non-null streams for allocation/deallocation. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md35"></a>
+<h2><a class="anchor" id="autotoc_md44"></a>
 @returns If the resource supports non-null streams</h2>
 
 <p>Implements <a class="el" href="classrmm_1_1mr_1_1device__memory__resource.html#a04598a0abd19625d081a69599360b215">rmm::mr::device_memory_resource</a>.</p>

@@ -88,6 +88,7 @@ Inheritance diagram for rmm::mr::device_memory_resource:</div>
 <area shape="rect" href="classrmm_1_1mr_1_1cnmem__memory__resource.html" title="Memory resource that allocates/deallocates using the cnmem pool sub&#45;allocator." alt="" coords="306,5,538,47"/>
 <area shape="rect" href="classrmm_1_1mr_1_1cuda__memory__resource.html" title="device_memory_resource derived class that uses cudaMalloc/Free for" alt="" coords="311,71,533,112"/>
 <area shape="rect" href="classrmm_1_1mr_1_1managed__memory__resource.html" title="device_memory_resource derived class that uses" alt="" coords="296,136,548,177"/>
+<area shape="rect" href="classrmm_1_1mr_1_1cnmem__managed__memory__resource.html" title="Memory resource that allocates/deallocates managed device memory (CUDA Unified Memory) using the cnme..." alt="" coords="596,5,839,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -105,6 +106,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a04598a0abd19625d081a69599360b215"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrmm_1_1mr_1_1device__memory__resource.html#a04598a0abd19625d081a69599360b215">supports_streams</a> () const noexcept=0</td></tr>
 <tr class="memdesc:a04598a0abd19625d081a69599360b215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries if the resource supports use of non-null streams for allocation/deallocation.  <a href="classrmm_1_1mr_1_1device__memory__resource.html#a04598a0abd19625d081a69599360b215">More...</a><br /></td></tr>
 <tr class="separator:a04598a0abd19625d081a69599360b215"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf47e14914c13581b64e2a78b39a08e8"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::size_t, std::size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrmm_1_1mr_1_1device__memory__resource.html#adf47e14914c13581b64e2a78b39a08e8">get_mem_info</a> (cudaStream_t stream) const</td></tr>
+<tr class="memdesc:adf47e14914c13581b64e2a78b39a08e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries the amount of free and total memory for the resource.  <a href="classrmm_1_1mr_1_1device__memory__resource.html#adf47e14914c13581b64e2a78b39a08e8">More...</a><br /></td></tr>
+<tr class="separator:adf47e14914c13581b64e2a78b39a08e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for all libcudf device memory allocation. </p>
@@ -163,7 +167,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md32"></a>
+<h2><a class="anchor" id="autotoc_md41"></a>
 @return void* Pointer to the newly allocated memory</h2>
 
 </div>
@@ -218,8 +222,45 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md33"></a>
+<h2><a class="anchor" id="autotoc_md42"></a>
 @param stream Stream on which to perform deallocation</h2>
+
+</div>
+</div>
+<a id="adf47e14914c13581b64e2a78b39a08e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf47e14914c13581b64e2a78b39a08e8">&#9670;&nbsp;</a></span>get_mem_info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;std::size_t, std::size_t&gt; rmm::mr::device_memory_resource::get_mem_info </td>
+          <td>(</td>
+          <td class="paramtype">cudaStream_t&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Queries the amount of free and total memory for the resource. </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>the stream whose memory manager we want to retrieve</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a std::pair&lt;size_t,size_t&gt; which contains free memory in bytes </dd></dl>
+<h2><a class="anchor" id="autotoc_md45"></a>
+in .first and total amount of memory in .second</h2>
 
 </div>
 </div>
@@ -256,7 +297,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md34"></a>
+<h2><a class="anchor" id="autotoc_md43"></a>
 @returns If the two resources are equivalent</h2>
 
 </div>
@@ -286,7 +327,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Queries if the resource supports use of non-null streams for allocation/deallocation. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md35"></a>
+<h2><a class="anchor" id="autotoc_md44"></a>
 @returns If the resource supports non-null streams</h2>
 
 <p>Implemented in <a class="el" href="classrmm_1_1mr_1_1cnmem__memory__resource.html#a5be2df0ff53ce6cb9c494845f5664ee9">rmm::mr::cnmem_memory_resource</a>, <a class="el" href="classrmm_1_1mr_1_1cuda__memory__resource.html#af3319eeb30d26e14eb8195e6e159d746">rmm::mr::cuda_memory_resource</a>, and <a class="el" href="classrmm_1_1mr_1_1managed__memory__resource.html#ad01bf649a47380eef0bff9fb37d94a23">rmm::mr::managed_memory_resource</a>.</p>
