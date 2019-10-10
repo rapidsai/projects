@@ -179,6 +179,9 @@ Functions</h2></td></tr>
 <tr class="memitem:adf05239d0780a81ae0d8cfcd4ca50010"><td class="memItemLeft" align="right" valign="top"><a id="adf05239d0780a81ae0d8cfcd4ca50010"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>cudf::exp::CUDF_TYPE_MAPPING</b> (double, type_id::FLOAT64)</td></tr>
 <tr class="separator:adf05239d0780a81ae0d8cfcd4ca50010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17ab30b60ccceb000e342c16086f7670"><td class="memItemLeft" align="right" valign="top"><a id="a17ab30b60ccceb000e342c16086f7670"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>cudf::exp::CUDF_TYPE_MAPPING</b> (<a class="el" href="classcudf_1_1string__view.html">cudf::string_view</a>, type_id::STRING)</td></tr>
+<tr class="separator:a17ab30b60ccceb000e342c16086f7670"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0982b0206f79dafca3665c165dd859d"><td class="memTemplParams" colspan="2">template&lt;template&lt; cudf::type_id &gt; typename IdTypeMap = id_to_type_impl, typename Functor , typename... Ts&gt; </td></tr>
 <tr class="memitem:af0982b0206f79dafca3665c165dd859d"><td class="memTemplItemLeft" align="right" valign="top">constexpr decltype(auto) CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="type__dispatcher_8hpp.html#af0982b0206f79dafca3665c165dd859d">cudf::exp::type_dispatcher</a> (<a class="el" href="classcudf_1_1data__type.html">cudf::data_type</a> dtype, Functor f, Ts &amp;&amp;... args)</td></tr>
 <tr class="memdesc:af0982b0206f79dafca3665c165dd859d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invokes an <code>operator()</code> template with the type instantiation based on the specified <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">cudf::data_type</a></code>'s <code>id()</code>.  <a href="type__dispatcher_8hpp.html#af0982b0206f79dafca3665c165dd859d">More...</a><br /></td></tr>
@@ -187,7 +190,7 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the mapping between <code><a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></code> runtime type information. </p>
 <p>------------------------------------------------------------------------&mdash;*</p>
-<h2><a class="anchor" id="autotoc_md444"></a>
+<h2><a class="anchor" id="autotoc_md490"></a>
 and concrete C++ types.</h2>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a7dcb8f2b1a2a8f0e2c965251ea4bbae1"></a>
@@ -231,7 +234,7 @@ and concrete C++ types.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md447"></a>
+<h2><a class="anchor" id="autotoc_md493"></a>
 @param Id The &lt;tt&gt;cudf::type_id&lt;/tt&gt; enum</h2>
 
 </div>
@@ -253,7 +256,7 @@ template&lt;cudf::type_id Id&gt; </div>
 
 <p>Maps a <code><a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></code> to it's corresponding concrete C++ type. </p>
 <p>------------------------------------------------------------------------&mdash;* Example: </p><div class="fragment"><div class="line">static_assert(std::is_same&lt;int32_t, id_to_type&lt;INT32&gt;);</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md446"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md492"></a>
 @tparam t The &lt;tt&gt;cudf::type_id&lt;/tt&gt; to map</h2>
 
 </div>
@@ -287,7 +290,7 @@ template&lt;cudf::type_id Id&gt; </div>
 
 <p>Defines all of the mappings between C++ types and their corresponding. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md448"></a>
+<h2><a class="anchor" id="autotoc_md494"></a>
 &lt;tt&gt;cudf::type_id&lt;/tt&gt; values.</h2>
 
 </div>
@@ -385,7 +388,7 @@ template &lt; typename ColumnType,
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md449"></a>
+<h2><a class="anchor" id="autotoc_md495"></a>
 @return Whatever is returned by the callable's &lt;tt&gt;operator()&lt;/tt&gt;</h2>
 
 </div>
@@ -419,15 +422,15 @@ template&lt;typename T &gt; </div>
 <p>------------------------------------------------------------------------&mdash;* When explicitly passed a template argument of a given type, returns the appropriate <code>type_id</code> enum for the specified C++ type.</p>
 <p>For example:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">return</span> cudf::type_to_id&lt;int32_t&gt;();        <span class="comment">// Returns INT32</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md445"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md491"></a>
 @tparam T The type to map to a &lt;tt&gt;cudf::type_id&lt;/tt&gt;</h2>
 
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="aclasscudf_1_1data__type_html"><div class="ttname"><a href="classcudf_1_1data__type.html">cudf::data_type</a></div><div class="ttdoc">Indicator for the logical data type of an element in a column.</div><div class="ttdef"><b>Definition:</b> types.hpp:126</div></div>
-<div class="ttc" id="anamespacecudf_html_acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae"><div class="ttname"><a href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae">cudf::INT32</a></div><div class="ttdoc">4 byte signed integer</div><div class="ttdef"><b>Definition:</b> types.hpp:107</div></div>
-<div class="ttc" id="anamespacecudf_html_acd4cd7157c4379954b5772936f89c59b"><div class="ttname"><a href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></div><div class="ttdeci">type_id</div><div class="ttdef"><b>Definition:</b> types.hpp:103</div></div>
+<div class="ttc" id="aclasscudf_1_1data__type_html"><div class="ttname"><a href="classcudf_1_1data__type.html">cudf::data_type</a></div><div class="ttdoc">Indicator for the logical data type of an element in a column.</div><div class="ttdef"><b>Definition:</b> types.hpp:127</div></div>
+<div class="ttc" id="anamespacecudf_html_acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae"><div class="ttname"><a href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae">cudf::INT32</a></div><div class="ttdoc">4 byte signed integer</div><div class="ttdef"><b>Definition:</b> types.hpp:108</div></div>
+<div class="ttc" id="anamespacecudf_html_acd4cd7157c4379954b5772936f89c59b"><div class="ttname"><a href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></div><div class="ttdeci">type_id</div><div class="ttdef"><b>Definition:</b> types.hpp:104</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

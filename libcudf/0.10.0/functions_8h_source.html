@@ -138,38 +138,40 @@ $(function() {
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;gdf_error gdf_extract_datetime_day(<a class="code" href="structgdf__column__.html">gdf_column</a> *input, <a class="code" href="structgdf__column__.html">gdf_column</a> *output);</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;gdf_error gdf_extract_datetime_hour(<a class="code" href="structgdf__column__.html">gdf_column</a> *input, <a class="code" href="structgdf__column__.html">gdf_column</a> *output);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;gdf_error gdf_extract_datetime_weekday(<a class="code" href="structgdf__column__.html">gdf_column</a> *input, <a class="code" href="structgdf__column__.html">gdf_column</a> *output);</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;gdf_error gdf_extract_datetime_minute(<a class="code" href="structgdf__column__.html">gdf_column</a> *input, <a class="code" href="structgdf__column__.html">gdf_column</a> *output);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;gdf_error gdf_extract_datetime_hour(<a class="code" href="structgdf__column__.html">gdf_column</a> *input, <a class="code" href="structgdf__column__.html">gdf_column</a> *output);</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;gdf_error gdf_extract_datetime_second(<a class="code" href="structgdf__column__.html">gdf_column</a> *input, <a class="code" href="structgdf__column__.html">gdf_column</a> *output);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;gdf_error gdf_extract_datetime_minute(<a class="code" href="structgdf__column__.html">gdf_column</a> *input, <a class="code" href="structgdf__column__.html">gdf_column</a> *output);</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;gdf_error gdf_order_by(<a class="code" href="structgdf__column__.html">gdf_column</a> <span class="keyword">const</span>* <span class="keyword">const</span>* input_columns,</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                       int8_t*      asc_desc,</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                       <span class="keywordtype">size_t</span>       num_inputs,</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                       <a class="code" href="structgdf__column__.html">gdf_column</a>*  output_indices,</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                       <a class="code" href="structgdf__context__.html">gdf_context</a> * context);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;gdf_error gdf_digitize(<a class="code" href="structgdf__column__.html">gdf_column</a>* col,</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                       <a class="code" href="structgdf__column__.html">gdf_column</a>* bins,   <span class="comment">// same type as col</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                       <span class="keywordtype">bool</span> right,</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                       gdf_index_type out_indices[]);</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="comment">// forward declaration for DLPack functions below</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="comment">// This approach is necessary to satisfy CFFI</span></div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="keyword">struct </span>DLManagedTensor;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>DLManagedTensor DLManagedTensor_;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;gdf_error gdf_from_dlpack(<a class="code" href="structgdf__column__.html">gdf_column</a>** columns,</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                          gdf_size_type *num_columns,</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                          DLManagedTensor_ <span class="keyword">const</span> * tensor);</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;gdf_error gdf_to_dlpack(DLManagedTensor_ *tensor,</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                        <a class="code" href="structgdf__column__.html">gdf_column</a> <span class="keyword">const</span> * <span class="keyword">const</span> * columns,</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                        gdf_size_type num_columns);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;gdf_error gdf_extract_datetime_second(<a class="code" href="structgdf__column__.html">gdf_column</a> *input, <a class="code" href="structgdf__column__.html">gdf_column</a> *output);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;gdf_error gdf_order_by(<a class="code" href="structgdf__column__.html">gdf_column</a> <span class="keyword">const</span>* <span class="keyword">const</span>* input_columns,</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                       int8_t*      asc_desc,</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                       <span class="keywordtype">size_t</span>       num_inputs,</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                       <a class="code" href="structgdf__column__.html">gdf_column</a>*  output_indices,</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                       <a class="code" href="structgdf__context__.html">gdf_context</a> * context);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;gdf_error gdf_digitize(<a class="code" href="structgdf__column__.html">gdf_column</a>* col,</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                       <a class="code" href="structgdf__column__.html">gdf_column</a>* bins,   <span class="comment">// same type as col</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                       <span class="keywordtype">bool</span> right,</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                       gdf_index_type out_indices[]);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="comment">// forward declaration for DLPack functions below</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="comment">// This approach is necessary to satisfy CFFI</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="keyword">struct </span>DLManagedTensor;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>DLManagedTensor DLManagedTensor_;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;gdf_error gdf_from_dlpack(<a class="code" href="structgdf__column__.html">gdf_column</a>** columns,</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                          gdf_size_type *num_columns,</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                          DLManagedTensor_ <span class="keyword">const</span> * tensor);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;gdf_error gdf_to_dlpack(DLManagedTensor_ *tensor,</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                        <a class="code" href="structgdf__column__.html">gdf_column</a> <span class="keyword">const</span> * <span class="keyword">const</span> * columns,</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                        gdf_size_type num_columns);</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructgdf__column___html"><div class="ttname"><a href="structgdf__column__.html">gdf_column_</a></div><div class="ttdoc">The C representation of a column in CUDF. This is the main unit of operation.</div><div class="ttdef"><b>Definition:</b> types.h:137</div></div>
 <div class="ttc" id="astructgdf__context___html"><div class="ttname"><a href="structgdf__context__.html">gdf_context_</a></div><div class="ttdoc">This struct holds various information about how an operation should be performed as well as additiona...</div><div class="ttdef"><b>Definition:</b> types.h:210</div></div>

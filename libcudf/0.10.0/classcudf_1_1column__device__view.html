@@ -113,12 +113,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a153cea524647191bb58223d3ee1761f0"><td class="memItemLeft" align="right" valign="top"><a id="a153cea524647191bb58223d3ee1761f0"></a>
 <a class="el" href="classcudf_1_1column__device__view.html">column_device_view</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classcudf_1_1column__device__view.html">column_device_view</a> &amp;&amp;)=default</td></tr>
 <tr class="separator:a153cea524647191bb58223d3ee1761f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f74ac17ef9049a96cab4662910bac83"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column__device__view.html#a8f74ac17ef9049a96cab4662910bac83">column_device_view</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> <a class="el" href="classcudf_1_1column.html">column</a>, ptrdiff_t h_ptr, ptrdiff_t d_ptr)</td></tr>
+<tr class="memdesc:a8f74ac17ef9049a96cab4662910bac83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of this class using the specified host memory pointer (h_ptr) to store child objects and the device memory pointer (d_ptr) as a base for any child object pointers.  <a href="classcudf_1_1column__device__view.html#a8f74ac17ef9049a96cab4662910bac83">More...</a><br /></td></tr>
+<tr class="separator:a8f74ac17ef9049a96cab4662910bac83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c08e09e855c14258972ac6e179c7a1f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2c08e09e855c14258972ac6e179c7a1f"><td class="memTemplItemLeft" align="right" valign="top">__device__ const T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcudf_1_1column__device__view.html#a2c08e09e855c14258972ac6e179c7a1f">element</a> (size_type element_index) const noexcept</td></tr>
+<tr class="memdesc:a2c08e09e855c14258972ac6e179c7a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference to element at the specified index.  <a href="classcudf_1_1column__device__view.html#a2c08e09e855c14258972ac6e179c7a1f">More...</a><br /></td></tr>
+<tr class="separator:a2c08e09e855c14258972ac6e179c7a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f2f7224d396604c4ab4edb6d6b34fc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column__device__view.html#a0f2f7224d396604c4ab4edb6d6b34fc7">destroy</a> ()</td></tr>
 <tr class="memdesc:a0f2f7224d396604c4ab4edb6d6b34fc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <code>device_column_view</code> object.  <a href="classcudf_1_1column__device__view.html#a0f2f7224d396604c4ab4edb6d6b34fc7">More...</a><br /></td></tr>
 <tr class="separator:a0f2f7224d396604c4ab4edb6d6b34fc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a725c90468ab0d0d7c36301614713a1"><td class="memItemLeft" align="right" valign="top">__device__ <a class="el" href="classcudf_1_1column__device__view.html">column_device_view</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column__device__view.html#a0a725c90468ab0d0d7c36301614713a1">child</a> (size_type child_index) const noexcept</td></tr>
 <tr class="memdesc:a0a725c90468ab0d0d7c36301614713a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified child.  <a href="classcudf_1_1column__device__view.html#a0a725c90468ab0d0d7c36301614713a1">More...</a><br /></td></tr>
 <tr class="separator:a0a725c90468ab0d0d7c36301614713a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93bf884bdf3ea7da88995aa72f5dd829"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
+<tr class="memitem:a93bf884bdf3ea7da88995aa72f5dd829"><td class="memTemplItemLeft" align="right" valign="top">__device__ const <a class="el" href="classcudf_1_1string__view.html">string_view</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcudf_1_1column__device__view.html#a93bf884bdf3ea7da88995aa72f5dd829">element</a> (size_type element_index) const noexcept</td></tr>
+<tr class="memdesc:a93bf884bdf3ea7da88995aa72f5dd829"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code><a class="el" href="classcudf_1_1string__view.html" title="A non-owning, immutable view of device data that is a variable length char array representing a UTF-8...">string_view</a></code> to the string element at the specified index.  <a href="classcudf_1_1column__device__view.html#a93bf884bdf3ea7da88995aa72f5dd829">More...</a><br /></td></tr>
+<tr class="separator:a93bf884bdf3ea7da88995aa72f5dd829"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classcudf_1_1detail_1_1column__device__view__base"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classcudf_1_1detail_1_1column__device__view__base')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html">cudf::detail::column_device_view_base</a></td></tr>
 <tr class="memitem:a45178b16c4c30d29096bfbde770a9ca4 inherit pub_methods_classcudf_1_1detail_1_1column__device__view__base"><td class="memItemLeft" align="right" valign="top"><a id="a45178b16c4c30d29096bfbde770a9ca4"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>column_device_view_base</b> (<a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html">column_device_view_base</a> const &amp;)=default</td></tr>
@@ -140,12 +151,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad537e72bc510fe2afa81fda6dee9859b inherit pub_methods_classcudf_1_1detail_1_1column__device__view__base"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ T const  *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#ad537e72bc510fe2afa81fda6dee9859b">data</a> () const noexcept</td></tr>
 <tr class="memdesc:ad537e72bc510fe2afa81fda6dee9859b inherit pub_methods_classcudf_1_1detail_1_1column__device__view__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying data casted to the specified type, plus the offset.  <a href="classcudf_1_1detail_1_1column__device__view__base.html#ad537e72bc510fe2afa81fda6dee9859b">More...</a><br /></td></tr>
 <tr class="separator:ad537e72bc510fe2afa81fda6dee9859b inherit pub_methods_classcudf_1_1detail_1_1column__device__view__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c3ef866866f0dc48f2d7cd62337629c inherit pub_methods_classcudf_1_1detail_1_1column__device__view__base"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a2c3ef866866f0dc48f2d7cd62337629c inherit pub_methods_classcudf_1_1detail_1_1column__device__view__base"><td class="memTemplItemLeft" align="right" valign="top">__device__ T const  &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#a2c3ef866866f0dc48f2d7cd62337629c">element</a> (size_type element_index) const noexcept</td></tr>
-<tr class="memdesc:a2c3ef866866f0dc48f2d7cd62337629c inherit pub_methods_classcudf_1_1detail_1_1column__device__view__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference to element at the specified index.  <a href="classcudf_1_1detail_1_1column__device__view__base.html#a2c3ef866866f0dc48f2d7cd62337629c">More...</a><br /></td></tr>
-<tr class="separator:a2c3ef866866f0dc48f2d7cd62337629c inherit pub_methods_classcudf_1_1detail_1_1column__device__view__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc745d2118d1b6773b35f760e49515e5 inherit pub_methods_classcudf_1_1detail_1_1column__device__view__base"><td class="memItemLeft" align="right" valign="top">__host__ __device__ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#abc745d2118d1b6773b35f760e49515e5">size</a> () const noexcept</td></tr>
-<tr class="memdesc:abc745d2118d1b6773b35f760e49515e5 inherit pub_methods_classcudf_1_1detail_1_1column__device__view__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>string_view</code> to the string element at the specified index.  <a href="classcudf_1_1detail_1_1column__device__view__base.html#abc745d2118d1b6773b35f760e49515e5">More...</a><br /></td></tr>
 <tr class="separator:abc745d2118d1b6773b35f760e49515e5 inherit pub_methods_classcudf_1_1detail_1_1column__device__view__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18049291d87fb72a96209ed2df518876 inherit pub_methods_classcudf_1_1detail_1_1column__device__view__base"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classcudf_1_1data__type.html">data_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#a18049291d87fb72a96209ed2df518876">type</a> () const noexcept</td></tr>
 <tr class="separator:a18049291d87fb72a96209ed2df518876 inherit pub_methods_classcudf_1_1detail_1_1column__device__view__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,6 +184,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a0b517e1a232074845382eee0ba9d31eb"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classcudf_1_1column__device__view.html">column_device_view</a>, std::function&lt; void(<a class="el" href="classcudf_1_1column__device__view.html">column_device_view</a> *)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column__device__view.html#a0b517e1a232074845382eee0ba9d31eb">create</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> source_view, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
 <tr class="memdesc:a0b517e1a232074845382eee0ba9d31eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to construct a column view that is usable in device memory.  <a href="classcudf_1_1column__device__view.html#a0b517e1a232074845382eee0ba9d31eb">More...</a><br /></td></tr>
 <tr class="separator:a0b517e1a232074845382eee0ba9d31eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2e9342c5f3ae996992fe4c2ac5b667d"><td class="memItemLeft" align="right" valign="top">static size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column__device__view.html#ac2e9342c5f3ae996992fe4c2ac5b667d">extent</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> source_view)</td></tr>
+<tr class="memdesc:ac2e9342c5f3ae996992fe4c2ac5b667d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the size in bytes of the amount of memory needed to hold a device view of the specified column and it's children.  <a href="classcudf_1_1column__device__view.html#ac2e9342c5f3ae996992fe4c2ac5b667d">More...</a><br /></td></tr>
+<tr class="separator:ac2e9342c5f3ae996992fe4c2ac5b667d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -225,8 +234,53 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <h2><a class="anchor" id="autotoc_md211"></a>
 that is trivially copyable and usable in CUDA device code.</h2>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8f74ac17ef9049a96cab4662910bac83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f74ac17ef9049a96cab4662910bac83">&#9670;&nbsp;</a></span>column_device_view() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cudf::column_device_view::column_device_view </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a>&#160;</td>
+          <td class="paramname"><em>column</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ptrdiff_t&#160;</td>
+          <td class="paramname"><em>h_ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ptrdiff_t&#160;</td>
+          <td class="paramname"><em>d_ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates an instance of this class using the specified host memory pointer (h_ptr) to store child objects and the device memory pointer (d_ptr) as a base for any child object pointers. </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">column</td><td>Column view from which to create this instance. </td></tr>
+    <tr><td class="paramname">h_ptr</td><td>Host memory pointer on which to place any child data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="anchor" id="autotoc_md227"></a>
+@param d_ptr Device memory pointer on which to base any child pointers.</h2>
+
+</div>
+</div>
 <a id="a0c03e9a04c3876ffc40a1f02af4f3d8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c03e9a04c3876ffc40a1f02af4f3d8a">&#9670;&nbsp;</a></span>column_device_view()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c03e9a04c3876ffc40a1f02af4f3d8a">&#9670;&nbsp;</a></span>column_device_view() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -251,7 +305,7 @@ that is trivially copyable and usable in CUDA device code.</h2>
 
 <p>Construct's a <code><a class="el" href="classcudf_1_1column__device__view.html" title="An immutable, non-owning view of device data as a column of elements.">column_device_view</a></code> from a <code><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></code> populating all but the children. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>This constructor is for internal use only. To create a <code><a class="el" href="classcudf_1_1column__device__view.html" title="An immutable, non-owning view of device data as a column of elements.">column_device_view</a></code> from a <code><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></code>, the </dd></dl>
-<h2><a class="anchor" id="autotoc_md231"></a>
+<h2><a class="anchor" id="autotoc_md233"></a>
 &lt;tt&gt;column_device_view::create()&lt;/tt&gt; function should be used.</h2>
 
 </div>
@@ -288,7 +342,7 @@ that is trivially copyable and usable in CUDA device code.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md230"></a>
+<h2><a class="anchor" id="autotoc_md232"></a>
 @return column_view The requested child &lt;tt&gt;column_view&lt;/tt&gt;</h2>
 
 </div>
@@ -340,7 +394,7 @@ that is trivially copyable and usable in CUDA device code.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <code>unique_ptr</code> to a <code><a class="el" href="classcudf_1_1column__device__view.html" title="An immutable, non-owning view of device data as a column of elements.">column_device_view</a></code> that makes the data from </dd></dl>
-<h2><a class="anchor" id="autotoc_md228"></a>
+<h2><a class="anchor" id="autotoc_md229"></a>
 &lt;tt&gt;source_view&lt;/tt&gt; available in device memory.</h2>
 
 </div>
@@ -363,8 +417,119 @@ that is trivially copyable and usable in CUDA device code.</h2>
 
 <p>Destroy the <code>device_column_view</code> object. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>Does not free the column data, simply free's the device memory </dd></dl>
-<h2><a class="anchor" id="autotoc_md229"></a>
+<h2><a class="anchor" id="autotoc_md230"></a>
 allocated to hold the child views.</h2>
+
+</div>
+</div>
+<a id="a2c08e09e855c14258972ac6e179c7a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c08e09e855c14258972ac6e179c7a1f">&#9670;&nbsp;</a></span>element() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__device__ const T cudf::column_device_view::element </td>
+          <td>(</td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>element_index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns reference to element at the specified index. </p>
+<p>------------------------------------------------------------------------&mdash;* If the element at the specified index is NULL, i.e., <code>is_null(element_index) == true</code>, then any attempt to use the result will lead to undefined behavior.</p>
+<p>This function accounts for the offset.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The element type </td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="anchor" id="autotoc_md228"></a>
+@param element_index Position of the desired element</h2>
+
+</div>
+</div>
+<a id="a93bf884bdf3ea7da88995aa72f5dd829"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93bf884bdf3ea7da88995aa72f5dd829">&#9670;&nbsp;</a></span>element() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__device__ const <a class="el" href="classcudf_1_1string__view.html">string_view</a> cudf::column_device_view::element </td>
+          <td>(</td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>element_index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns <code><a class="el" href="classcudf_1_1string__view.html" title="A non-owning, immutable view of device data that is a variable length char array representing a UTF-8...">string_view</a></code> to the string element at the specified index. </p>
+<p>------------------------------------------------------------------------&mdash;* If the element at the specified index is NULL, i.e., <code>is_null(element_index) == true</code>, then any attempt to use the result will lead to undefined behavior.</p>
+<p>This function accounts for the offset.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">element_index</td><td>Position of the desired string element </td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="anchor" id="autotoc_md213"></a>
+@return string_view instance representing this element at this index</h2>
+
+</div>
+</div>
+<a id="ac2e9342c5f3ae996992fe4c2ac5b667d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2e9342c5f3ae996992fe4c2ac5b667d">&#9670;&nbsp;</a></span>extent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_type cudf::column_device_view::extent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a>&#160;</td>
+          <td class="paramname"><em>source_view</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the size in bytes of the amount of memory needed to hold a device view of the specified column and it's children. </p>
+<p>------------------------------------------------------------------------&mdash;* </p>
+<h2><a class="anchor" id="autotoc_md231"></a>
+@param source_view The &lt;tt&gt;column_view&lt;/tt&gt; to use for this calculation.</h2>
 
 </div>
 </div>

@@ -112,9 +112,17 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1DeviceXor.html">DeviceXor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1is__compound__impl.html">is_compound_impl</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1is__fixed__width__impl.html">is_fixed_width_impl</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1is__numeric__impl.html">is_numeric_impl</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1is__relationally__comparable__impl.html">is_relationally_comparable_impl</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1is__relationally__comparable__impl_3_01L_00_01R_00_01void__t_3_01less__comparable_e55590d6a511f5004b91a7c1dc07c638.html">is_relationally_comparable_impl&lt; L, R, void_t&lt; less_comparable&lt; L, R &gt;, greater_comparable&lt; L, R &gt; &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1is__simple__impl.html">is_simple_impl</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1json__read__arg.html">json_read_arg</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input arguments to the <code>read_json</code> interface.  <a href="structcudf_1_1json__read__arg.html#details">More...</a><br /></td></tr>
@@ -153,6 +161,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1source__info.html">source_info</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1string__view.html">string_view</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A non-owning, immutable view of device data that is a variable length char array representing a UTF-8 string. The caller must maintain the device memory for the lifetime of this instance.  <a href="classcudf_1_1string__view.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1strings__column__view.html">strings_column_view</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a column-view of strings type, an instance of this class.  <a href="classcudf_1_1strings__column__view.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1table.html">table</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for a set of gdf_columns of equal number of rows.  <a href="structcudf_1_1table.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,6 +191,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:a0b75348b715cc23b1a6f8b5cf03589cc"><td class="memItemLeft" align="right" valign="top"><a id="a0b75348b715cc23b1a6f8b5cf03589cc"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>char_utf8</b> = uint32_t</td></tr>
+<tr class="separator:a0b75348b715cc23b1a6f8b5cf03589cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0aff16b2db009d92300befaca11827e9"><td class="memItemLeft" align="right" valign="top"><a id="a0aff16b2db009d92300befaca11827e9"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>size_type</b> = int32_t</td></tr>
 <tr class="separator:a0aff16b2db009d92300befaca11827e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -561,6 +578,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>contains</b> (<a clas
 <tr class="memitem:ac4c1f9dc1aaa71e250df1eed4b02f3d8"><td class="memItemLeft" align="right" valign="top"><a id="ac4c1f9dc1aaa71e250df1eed4b02f3d8"></a>
 <a class="el" href="structcudf_1_1table.html">table</a>&#160;</td><td class="memItemRight" valign="bottom"><b>drop_nulls</b> (<a class="el" href="structcudf_1_1table.html">table</a> const &amp;input, <a class="el" href="structcudf_1_1table.html">table</a> const &amp;keys)</td></tr>
 <tr class="separator:ac4c1f9dc1aaa71e250df1eed4b02f3d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a806dfe2d3033333c99fd399afeddab3d"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a806dfe2d3033333c99fd399afeddab3d">make_strings_column</a> (const rmm::device_vector&lt; thrust::pair&lt; const char *, size_type &gt;&gt; &amp;strings, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a806dfe2d3033333c99fd399afeddab3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct STRING type column given an array of pointer/size pairs. The total number of char bytes must not exceed the maximum size of size_type. The string characters are expected to be UTF-8 encoded sequence of char bytes. Use the <a class="el" href="classcudf_1_1strings__column__view.html" title="Given a column-view of strings type, an instance of this class.">strings_column_view</a> class to perform strings operations on this type of column.  <a href="namespacecudf.html#a806dfe2d3033333c99fd399afeddab3d">More...</a><br /></td></tr>
+<tr class="separator:a806dfe2d3033333c99fd399afeddab3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00cef65bd1df1b0b2a30f9e047ad35e1"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a00cef65bd1df1b0b2a30f9e047ad35e1">make_strings_column</a> (const rmm::device_vector&lt; char &gt; &amp;strings, const rmm::device_vector&lt; size_type &gt; &amp;offsets, const rmm::device_vector&lt; bitmask_type &gt; &amp;null_mask, size_type null_count, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a00cef65bd1df1b0b2a30f9e047ad35e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct STRING type column given an contiguous array of chars encoded as UTF-8, an array of byte offsets identifying individual strings within the char array, and a null bitmask. The total number of char bytes must not exceed the maximum size of size_type. Use the <a class="el" href="classcudf_1_1strings__column__view.html" title="Given a column-view of strings type, an instance of this class.">strings_column_view</a> class to perform strings operations on this type of column. This function makes a deep copy of the strings, offsets, null_mask to create a new column.  <a href="namespacecudf.html#a00cef65bd1df1b0b2a30f9e047ad35e1">More...</a><br /></td></tr>
+<tr class="separator:a00cef65bd1df1b0b2a30f9e047ad35e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2f973d94c67ab3dc1a183c5adb3753d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; gdf_dtype &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ad2f973d94c67ab3dc1a183c5adb3753d">column_dtypes</a> (<a class="el" href="structcudf_1_1table.html">cudf::table</a> const  &amp;<a class="el" href="structcudf_1_1table.html">table</a>)</td></tr>
 <tr class="memdesc:ad2f973d94c67ab3dc1a183c5adb3753d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns vector of the dtypes of the columns in a table.  <a href="namespacecudf.html#ad2f973d94c67ab3dc1a183c5adb3753d">More...</a><br /></td></tr>
 <tr class="separator:ad2f973d94c67ab3dc1a183c5adb3753d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -741,15 +764,15 @@ template&lt;&gt; </td></tr>
 <tr class="separator:a347d883100d3f7c725ad64c649f59c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14e1cea4200d1d92d7f38d596333d28a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a14e1cea4200d1d92d7f38d596333d28a"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a14e1cea4200d1d92d7f38d596333d28a">is_compound</a> ()</td></tr>
-<tr class="memdesc:a14e1cea4200d1d92d7f38d596333d28a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indictates whether the type <code>T</code> is a compound type.  <a href="namespacecudf.html#a14e1cea4200d1d92d7f38d596333d28a">More...</a><br /></td></tr>
+<tr class="memdesc:a14e1cea4200d1d92d7f38d596333d28a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the type <code>T</code> is a compound type.  <a href="namespacecudf.html#a14e1cea4200d1d92d7f38d596333d28a">More...</a><br /></td></tr>
 <tr class="separator:a14e1cea4200d1d92d7f38d596333d28a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7f296c6fe2b6ae35ac59e41cbf1487d"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ad7f296c6fe2b6ae35ac59e41cbf1487d">is_compound</a> (<a class="el" href="classcudf_1_1data__type.html">data_type</a> type)</td></tr>
+<tr class="memdesc:ad7f296c6fe2b6ae35ac59e41cbf1487d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether elements of <code>type</code> are compound.  <a href="namespacecudf.html#ad7f296c6fe2b6ae35ac59e41cbf1487d">More...</a><br /></td></tr>
+<tr class="separator:ad7f296c6fe2b6ae35ac59e41cbf1487d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad15f075ce6421723e214c0d153fe695f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ad15f075ce6421723e214c0d153fe695f"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ad15f075ce6421723e214c0d153fe695f">is_simple</a> ()</td></tr>
 <tr class="memdesc:ad15f075ce6421723e214c0d153fe695f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the type <code>T</code> is a simple type.  <a href="namespacecudf.html#ad15f075ce6421723e214c0d153fe695f">More...</a><br /></td></tr>
 <tr class="separator:ad15f075ce6421723e214c0d153fe695f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7f296c6fe2b6ae35ac59e41cbf1487d"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ad7f296c6fe2b6ae35ac59e41cbf1487d">is_compound</a> (<a class="el" href="classcudf_1_1data__type.html">data_type</a> type)</td></tr>
-<tr class="memdesc:ad7f296c6fe2b6ae35ac59e41cbf1487d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether elements of <code>type</code> are compound.  <a href="namespacecudf.html#ad7f296c6fe2b6ae35ac59e41cbf1487d">More...</a><br /></td></tr>
-<tr class="separator:ad7f296c6fe2b6ae35ac59e41cbf1487d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6e62b8bc2981be767ae3f6843877956"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ae6e62b8bc2981be767ae3f6843877956">is_simple</a> (<a class="el" href="classcudf_1_1data__type.html">data_type</a> type)</td></tr>
 <tr class="memdesc:ae6e62b8bc2981be767ae3f6843877956"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether elements of <code>type</code> are simple.  <a href="namespacecudf.html#ae6e62b8bc2981be767ae3f6843877956">More...</a><br /></td></tr>
 <tr class="separator:ae6e62b8bc2981be767ae3f6843877956"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -907,7 +930,7 @@ typedef".</p>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md274"></a>
+<h2><a class="anchor" id="autotoc_md279"></a>
 @brief Indicates when to allocate a mask, based on an existing mask.</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a267e03474dcfd85242d2fdc6e5846ec6a615857bddd061281abf998989fb2ba8f"></a>NEVER&#160;</td><td class="fielddoc"><p>Do not allocate a null mask, regardless of input. </p>
@@ -932,7 +955,7 @@ typedef".</p>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md414"></a>
+<h2><a class="anchor" id="autotoc_md460"></a>
 @brief Controls the allocation/initialization of a null mask.</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa481249b705132999f4d082aacd21dbfa74ad69efae4a12aec59682147aac9344"></a>UNALLOCATED&#160;</td><td class="fielddoc"><p>Null mask not allocated, (all elements are valid) </p>
@@ -967,7 +990,7 @@ typedef".</p>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md413"></a>
+<h2><a class="anchor" id="autotoc_md459"></a>
 @brief Indicates how null values compare against all other values.</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a058e6d6e8a21583ce0e85ee73e5abb31ac130fda0cb93540bf1574912e78964fb"></a>AFTER&#160;</td><td class="fielddoc"><p>NULL values ordered <em>after</em> all other values. </p>
@@ -998,7 +1021,7 @@ typedef".</p>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md412"></a>
+<h2><a class="anchor" id="autotoc_md458"></a>
 @brief Indicates the order in which elements should be sorted.</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a750f02016b046079f7062d334890b4fca83ec681a20197326c163ea3b39ef7c32"></a>ASCENDING&#160;</td><td class="fielddoc"><p>Elements ordered from small to large. </p>
@@ -1021,7 +1044,7 @@ typedef".</p>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md415"></a>
+<h2><a class="anchor" id="autotoc_md461"></a>
 @brief Identifies a column's logical element type</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acd4cd7157c4379954b5772936f89c59bab2c14e467fcbf9a215ccc679f35bb027"></a>EMPTY&#160;</td><td class="fielddoc"><p>Always null with no underlying data. </p>
@@ -1758,7 +1781,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true The specified bit is <code>1</code> </dd></dl>
-<h2><a class="anchor" id="autotoc_md422"></a>
+<h2><a class="anchor" id="autotoc_md468"></a>
 @return false  The specified bit is &lt;tt&gt;0&lt;/tt&gt;</h2>
 
 </div>
@@ -1798,7 +1821,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md366"></a>
+<h2><a class="anchor" id="autotoc_md371"></a>
 @return std::size_t The necessary number of bytes</h2>
 
 </div>
@@ -1886,7 +1909,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
 <p>Sets the specified bit to <code>0</code> </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>This operation requires a global atomic operation. Therefore, it is not reccomended to use this function in performance critical regions. When possible, it is more efficient to compute and update an entire element at once using <code>set_element</code>.</dd></dl>
 <p>This function is thread-safe.</p>
-<h2><a class="anchor" id="autotoc_md426"></a>
+<h2><a class="anchor" id="autotoc_md472"></a>
 @param bit_index  Index of the bit to set</h2>
 
 </div>
@@ -1914,7 +1937,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md348"></a>
+<h2><a class="anchor" id="autotoc_md353"></a>
 @return std::vector&lt;gdf_dtype_extra_info&gt;</h2>
 
 </div>
@@ -1942,7 +1965,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md347"></a>
+<h2><a class="anchor" id="autotoc_md352"></a>
 @return std::vector&lt;gdf_dtype&gt;</h2>
 
 </div>
@@ -1988,7 +2011,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A single table having all the columns from <code>table1</code> and <code>table2</code> </dd></dl>
-<h2><a class="anchor" id="autotoc_md350"></a>
+<h2><a class="anchor" id="autotoc_md355"></a>
 respectively in the same order.</h2>
 
 </div>
@@ -2276,7 +2299,7 @@ template&lt;JoinType join_type, typename index_type &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md247"></a>
+<h2><a class="anchor" id="autotoc_md252"></a>
 @return size_type The number of descendants of the parent</h2>
 
 </div>
@@ -2330,7 +2353,7 @@ template&lt;JoinType join_type, typename index_type &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md368"></a>
+<h2><a class="anchor" id="autotoc_md373"></a>
 @return The number of non-zero bits in the specified range</h2>
 
 </div>
@@ -2384,7 +2407,7 @@ template&lt;JoinType join_type, typename index_type &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md369"></a>
+<h2><a class="anchor" id="autotoc_md374"></a>
 @return The number of zero bits in the specified range</h2>
 
 </div>
@@ -2438,7 +2461,7 @@ template&lt;JoinType join_type, typename index_type &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>rmm::device_buffer A <code><a class="el" href="classdevice__buffer.html" title="A helper class that owns a resizable device memory buffer.">device_buffer</a></code> for use as a null bitmask </dd></dl>
-<h2><a class="anchor" id="autotoc_md367"></a>
+<h2><a class="anchor" id="autotoc_md372"></a>
 satisfying the desired size and state</h2>
 
 </div>
@@ -2902,7 +2925,7 @@ template&lt;typename T &gt; </div>
 <p>------------------------------------------------------------------------&mdash;* When explicitly passed a template argument of a given type, returns the appropriate <code>gdf_dtype</code> for the specified C++ type.</p>
 <p>For example: </p><div class="fragment"><div class="line"><span class="keywordflow">return</span> gdf_dtype_of&lt;int32_t&gt;();        <span class="comment">// Returns GDF_INT32</span></div>
 <div class="line"><span class="keywordflow">return</span> gdf_dtype_of&lt;cudf::category&gt;(); <span class="comment">// Returns GDF_CATEGORY</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md427"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md473"></a>
 @tparam T The type to map to a &lt;tt&gt;gdf_dtype&lt;/tt&gt;</h2>
 
 </div>
@@ -3056,7 +3079,7 @@ template&lt;typename T , typename BinaryOp &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true If the table contains one or more null values </dd></dl>
-<h2><a class="anchor" id="autotoc_md349"></a>
+<h2><a class="anchor" id="autotoc_md354"></a>
 @return false If the table contains zero null values</h2>
 
 </div>
@@ -3203,7 +3226,7 @@ template&lt;typename T , typename BinaryOp &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md421"></a>
+<h2><a class="anchor" id="autotoc_md467"></a>
 @brief Returns the position within a word of the specified bit.</h2>
 
 </div>
@@ -3233,7 +3256,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Indictates whether the type <code>T</code> is a compound type. </p>
+<p>Indicates whether the type <code>T</code> is a compound type. </p>
 <p>------------------------------------------------------------------------&mdash;* <code>column</code>s with "compound" elements are logically a single column of elements, but may be concretely implemented with two or more <code>column</code>s. For example, a <code>STRING</code> column could contain a <code>column</code> of offsets and a child <code>column</code> of characters.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -3242,7 +3265,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a "compound" type </dd></dl>
-<h2><a class="anchor" id="autotoc_md440"></a>
+<h2><a class="anchor" id="autotoc_md486"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a "simple" type</h2>
 
 </div>
@@ -3280,7 +3303,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a compound type </dd></dl>
-<h2><a class="anchor" id="autotoc_md442"></a>
+<h2><a class="anchor" id="autotoc_md487"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is a simple type</h2>
 
 </div>
@@ -3319,7 +3342,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a fixed-width element type </dd></dl>
-<h2><a class="anchor" id="autotoc_md438"></a>
+<h2><a class="anchor" id="autotoc_md484"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a variable-width element type</h2>
 
 </div>
@@ -3357,7 +3380,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is fixed-width </dd></dl>
-<h2><a class="anchor" id="autotoc_md439"></a>
+<h2><a class="anchor" id="autotoc_md485"></a>
 @return false  &lt;tt&gt;type&lt;/tt&gt; is variable-width</h2>
 
 </div>
@@ -3395,7 +3418,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> is numeric </dd></dl>
-<h2><a class="anchor" id="autotoc_md436"></a>
+<h2><a class="anchor" id="autotoc_md482"></a>
 @return false  &lt;tt&gt;T&lt;/tt&gt; is not numeric</h2>
 
 </div>
@@ -3433,7 +3456,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is numeric </dd></dl>
-<h2><a class="anchor" id="autotoc_md437"></a>
+<h2><a class="anchor" id="autotoc_md483"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not numeric</h2>
 
 </div>
@@ -3473,7 +3496,7 @@ template&lt;typename L , typename R &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true Objects of types <code>L</code> and <code>R</code> can be relationally be compared </dd></dl>
-<h2><a class="anchor" id="autotoc_md435"></a>
+<h2><a class="anchor" id="autotoc_md481"></a>
 @return false Objects of types &lt;tt&gt;L&lt;/tt&gt; and &lt;tt&gt;R&lt;/tt&gt; cannot be compared</h2>
 
 </div>
@@ -3512,7 +3535,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a simple type </dd></dl>
-<h2><a class="anchor" id="autotoc_md441"></a>
+<h2><a class="anchor" id="autotoc_md488"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a compound type</h2>
 
 </div>
@@ -3550,7 +3573,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a simple type </dd></dl>
-<h2><a class="anchor" id="autotoc_md443"></a>
+<h2><a class="anchor" id="autotoc_md489"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is a compound type</h2>
 
 </div>
@@ -3811,7 +3834,7 @@ template&lt;JoinType join_type, typename index_type &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md372"></a>
+<h2><a class="anchor" id="autotoc_md377"></a>
 @return gdf_column   Insertion points. Non-nullable column of type GDF_INT32 with same size as values.</h2>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2search_8hpp-example.html#a1">/rapids/cudf/cpp/include/cudf/search.hpp</a>.</dd>
 </dl>
@@ -3946,7 +3969,7 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md244"></a>
+<h2><a class="anchor" id="autotoc_md247"></a>
 allocation of the column's &lt;tt&gt;data&lt;/tt&gt; and &lt;tt&gt;null_mask&lt;/tt&gt;.</h2>
 
 </div>
@@ -4012,6 +4035,132 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
 </dl>
 <h2><a class="anchor" id="autotoc_md130"></a>
 @param[in] it       The index iterator, &lt;tt&gt;thrust::counting_iterator&lt;/tt&gt; by default</h2>
+
+</div>
+</div>
+<a id="a00cef65bd1df1b0b2a30f9e047ad35e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00cef65bd1df1b0b2a30f9e047ad35e1">&#9670;&nbsp;</a></span>make_strings_column() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; cudf::make_strings_column </td>
+          <td>(</td>
+          <td class="paramtype">const rmm::device_vector&lt; char &gt; &amp;&#160;</td>
+          <td class="paramname"><em>strings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const rmm::device_vector&lt; size_type &gt; &amp;&#160;</td>
+          <td class="paramname"><em>offsets</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const rmm::device_vector&lt; bitmask_type &gt; &amp;&#160;</td>
+          <td class="paramname"><em>null_mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>null_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct STRING type column given an contiguous array of chars encoded as UTF-8, an array of byte offsets identifying individual strings within the char array, and a null bitmask. The total number of char bytes must not exceed the maximum size of size_type. Use the <a class="el" href="classcudf_1_1strings__column__view.html" title="Given a column-view of strings type, an instance of this class.">strings_column_view</a> class to perform strings operations on this type of column. This function makes a deep copy of the strings, offsets, null_mask to create a new column. </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>if device memory allocation fails</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strings</td><td>The contiguous array of chars in device memory. This char array is expected to be UTF-8 encoded characters. </td></tr>
+    <tr><td class="paramname">offsets</td><td>The array of byte offsets in device memory. The number of elements is one more than the total number of strings so the offset[last] - offset[0] is the total number of bytes in the strings array. </td></tr>
+    <tr><td class="paramname">null_mask</td><td>The array of bits specifying the null strings. This array must be in device memory. Arrow format for nulls is used for interpeting this bitmask. </td></tr>
+    <tr><td class="paramname">null_count</td><td>The number of null string entries. </td></tr>
+    <tr><td class="paramname">stream</td><td>Optional stream for use with all memory allocation and device kernels </td></tr>
+    <tr><td class="paramname">mr</td><td>Optional resource to use for device memory </td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="anchor" id="autotoc_md249"></a>
+allocation of the column's &lt;tt&gt;null_mask&lt;/tt&gt; and children.</h2>
+
+</div>
+</div>
+<a id="a806dfe2d3033333c99fd399afeddab3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a806dfe2d3033333c99fd399afeddab3d">&#9670;&nbsp;</a></span>make_strings_column() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; cudf::make_strings_column </td>
+          <td>(</td>
+          <td class="paramtype">const rmm::device_vector&lt; thrust::pair&lt; const char *, size_type &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>strings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct STRING type column given an array of pointer/size pairs. The total number of char bytes must not exceed the maximum size of size_type. The string characters are expected to be UTF-8 encoded sequence of char bytes. Use the <a class="el" href="classcudf_1_1strings__column__view.html" title="Given a column-view of strings type, an instance of this class.">strings_column_view</a> class to perform strings operations on this type of column. </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd><code>null_count()</code> and <code>null_bitmask</code> are determined if a pair contains a null string. That is, for each pair, if <code>.first</code> is null, that string is considered null. Likewise, a string is considered empty (not null) if <code>.first</code> is not null and <code>.second</code> is 0. Otherwise the <code>.first</code> member must be a valid device address pointing to <code>.second</code> consecutive bytes.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>if device memory allocation fails</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strings</td><td>The pointer/size pair arrays. Each pointer must be a device memory address or <code>nullptr</code> (indicating a null string). The size must be the number of bytes. </td></tr>
+    <tr><td class="paramname">stream</td><td>Optional stream for use with all memory allocation and device kernels </td></tr>
+    <tr><td class="paramname">mr</td><td>Optional resource to use for device memory </td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="anchor" id="autotoc_md248"></a>
+allocation of the column's &lt;tt&gt;null_mask&lt;/tt&gt; and children.</h2>
 
 </div>
 </div>
@@ -4178,7 +4327,7 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>lhs</code> is equal to <code>rhs</code> </dd></dl>
-<h2><a class="anchor" id="autotoc_md417"></a>
+<h2><a class="anchor" id="autotoc_md463"></a>
 @return false &lt;tt&gt;lhs&lt;/tt&gt; is not equal to &lt;tt&gt;rhs&lt;/tt&gt;</h2>
 
 </div>
@@ -4404,7 +4553,7 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information.">gdf_scalar</a> the result value If the reduction fails, the member is_valid of the output <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information.">gdf_scalar</a> </dd></dl>
-<h2><a class="anchor" id="autotoc_md370"></a>
+<h2><a class="anchor" id="autotoc_md375"></a>
 will contain &lt;tt&gt;false&lt;/tt&gt;.</h2>
 
 </div>
@@ -4660,7 +4809,7 @@ a row</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md371"></a>
+<h2><a class="anchor" id="autotoc_md376"></a>
 an exclusive scan if false.</h2>
 
 </div>
@@ -4917,7 +5066,7 @@ an exclusive scan if false.</h2>
 <p>Sets the specified bit to <code>1</code> </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>This operation requires a global atomic operation. Therefore, it is not recommended to use this function in performance critical regions. When possible, it is more efficient to compute and update an entire word at once using <code>set_word</code>.</dd></dl>
 <p>This function is thread-safe.</p>
-<h2><a class="anchor" id="autotoc_md423"></a>
+<h2><a class="anchor" id="autotoc_md469"></a>
 @param bit_index  Index of the bit to set</h2>
 
 </div>
@@ -4954,7 +5103,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md424"></a>
+<h2><a class="anchor" id="autotoc_md470"></a>
 @return A bitmask word with &lt;tt&gt;n&lt;/tt&gt; least significant bits set</h2>
 
 </div>
@@ -4991,7 +5140,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md425"></a>
+<h2><a class="anchor" id="autotoc_md471"></a>
 @return A bitmask word with &lt;tt&gt;n&lt;/tt&gt; most significant bits set</h2>
 
 </div>
@@ -5158,7 +5307,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md365"></a>
+<h2><a class="anchor" id="autotoc_md370"></a>
 @return size_type The count of null elements</h2>
 
 </div>
@@ -5411,7 +5560,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md373"></a>
+<h2><a class="anchor" id="autotoc_md378"></a>
 @return gdf_column   Insertion points. Non-nullable column of type GDF_INT32 with same size as values.</h2>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2search_8hpp-example.html#a2">/rapids/cudf/cpp/include/cudf/search.hpp</a>.</dd>
 </dl>
@@ -5517,7 +5666,7 @@ template&lt;typename bit_container , typename predicate , typename size_type &gt
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md420"></a>
+<h2><a class="anchor" id="autotoc_md466"></a>
 @brief Returns the index of the word containing the specified bit.</h2>
 
 </div>

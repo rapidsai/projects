@@ -120,12 +120,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad537e72bc510fe2afa81fda6dee9859b"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ T const  *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#ad537e72bc510fe2afa81fda6dee9859b">data</a> () const noexcept</td></tr>
 <tr class="memdesc:ad537e72bc510fe2afa81fda6dee9859b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying data casted to the specified type, plus the offset.  <a href="classcudf_1_1detail_1_1column__device__view__base.html#ad537e72bc510fe2afa81fda6dee9859b">More...</a><br /></td></tr>
 <tr class="separator:ad537e72bc510fe2afa81fda6dee9859b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c3ef866866f0dc48f2d7cd62337629c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a2c3ef866866f0dc48f2d7cd62337629c"><td class="memTemplItemLeft" align="right" valign="top">__device__ T const  &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#a2c3ef866866f0dc48f2d7cd62337629c">element</a> (size_type element_index) const noexcept</td></tr>
-<tr class="memdesc:a2c3ef866866f0dc48f2d7cd62337629c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference to element at the specified index.  <a href="classcudf_1_1detail_1_1column__device__view__base.html#a2c3ef866866f0dc48f2d7cd62337629c">More...</a><br /></td></tr>
-<tr class="separator:a2c3ef866866f0dc48f2d7cd62337629c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc745d2118d1b6773b35f760e49515e5"><td class="memItemLeft" align="right" valign="top">__host__ __device__ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#abc745d2118d1b6773b35f760e49515e5">size</a> () const noexcept</td></tr>
-<tr class="memdesc:abc745d2118d1b6773b35f760e49515e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>string_view</code> to the string element at the specified index.  <a href="classcudf_1_1detail_1_1column__device__view__base.html#abc745d2118d1b6773b35f760e49515e5">More...</a><br /></td></tr>
 <tr class="separator:abc745d2118d1b6773b35f760e49515e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18049291d87fb72a96209ed2df518876"><td class="memItemLeft" align="right" valign="top">__host__ __device__ <a class="el" href="classcudf_1_1data__type.html">data_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#a18049291d87fb72a96209ed2df518876">type</a> () const noexcept</td></tr>
 <tr class="separator:a18049291d87fb72a96209ed2df518876"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,7 +180,7 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An immutable, non-owning view of device data as a column of elements. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md213"></a>
+<h2><a class="anchor" id="autotoc_md214"></a>
 that is trivially copyable and usable in CUDA device code.</h2>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad537e72bc510fe2afa81fda6dee9859b"></a>
@@ -222,47 +217,8 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md215"></a>
-@return T const* Typed pointer to underlying data, including the offset</h2>
-
-</div>
-</div>
-<a id="a2c3ef866866f0dc48f2d7cd62337629c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c3ef866866f0dc48f2d7cd62337629c">&#9670;&nbsp;</a></span>element()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">__device__ T const&amp; cudf::detail::column_device_view_base::element </td>
-          <td>(</td>
-          <td class="paramtype">size_type&#160;</td>
-          <td class="paramname"><em>element_index</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns reference to element at the specified index. </p>
-<p>------------------------------------------------------------------------&mdash;* This function accounts for the offset.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The element type </td></tr>
-  </table>
-  </dd>
-</dl>
 <h2><a class="anchor" id="autotoc_md216"></a>
-@param element_index Position of the desired element</h2>
+@return T const* Typed pointer to underlying data, including the offset</h2>
 
 </div>
 </div>
@@ -298,7 +254,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md227"></a>
+<h2><a class="anchor" id="autotoc_md226"></a>
 @return &lt;strong&gt;device&lt;/strong&gt; get_mask_word</h2>
 
 </div>
@@ -328,7 +284,7 @@ template&lt;typename T &gt; </div>
 
 <p>Indicates whether the column contains null elements, i.e., <code><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#a53d1cb858f088261d1c1d75db51c3def">null_count()</a> &gt; 0</code> </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section return"><dt>Returns</dt><dd>true The column contains null elements </dd></dl>
-<h2><a class="anchor" id="autotoc_md222"></a>
+<h2><a class="anchor" id="autotoc_md221"></a>
 @return false All elements are valid</h2>
 
 </div>
@@ -368,7 +324,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md214"></a>
+<h2><a class="anchor" id="autotoc_md215"></a>
 @return T const* Typed pointer to underlying data</h2>
 
 </div>
@@ -406,7 +362,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true The element is null </dd></dl>
-<h2><a class="anchor" id="autotoc_md226"></a>
+<h2><a class="anchor" id="autotoc_md225"></a>
 @return false The element is valid</h2>
 
 </div>
@@ -444,7 +400,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true The element is valid </dd></dl>
-<h2><a class="anchor" id="autotoc_md225"></a>
+<h2><a class="anchor" id="autotoc_md224"></a>
 @return false The element is null</h2>
 
 </div>
@@ -472,7 +428,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md221"></a>
+<h2><a class="anchor" id="autotoc_md220"></a>
 @brief Returns the count of null elements</h2>
 
 </div>
@@ -502,7 +458,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
 
 <p>Returns raw pointer to the underlying bitmask allocation. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>This function does <em>not</em> account for the <code><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#aa8f046548c2db522f00cfe801b59a120" title="Returns the index of the first element relative to the base memory.">offset()</a></code>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md223"></a>
+<h2><a class="anchor" id="autotoc_md222"></a>
 @note If &lt;tt&gt;null_count() == 0&lt;/tt&gt;, this may return &lt;tt&gt;nullptr&lt;/tt&gt;.</h2>
 
 </div>
@@ -533,7 +489,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
 <p>Indicates whether the column can contain null elements, i.e., if it has an allocated bitmask. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>If <code><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#a53d1cb858f088261d1c1d75db51c3def">null_count()</a> &gt; 0</code>, this function must always return <code>true</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true The bitmask is allocated </dd></dl>
-<h2><a class="anchor" id="autotoc_md220"></a>
+<h2><a class="anchor" id="autotoc_md219"></a>
 @return false The bitmask is not allocated</h2>
 
 </div>
@@ -563,7 +519,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
 
 <p>Returns the index of the first element relative to the base memory. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md224"></a>
+<h2><a class="anchor" id="autotoc_md223"></a>
 allocation, i.e., what is returned from &lt;tt&gt;head&lt;T&gt;()&lt;/tt&gt;.</h2>
 
 </div>
@@ -590,13 +546,8 @@ allocation, i.e., what is returned from &lt;tt&gt;head&lt;T&gt;()&lt;/tt&gt;.</h
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Returns <code>string_view</code> to the string element at the specified index. </p>
-<p>------------------------------------------------------------------------&mdash;* This function accounts for the offset.</p>
-<h2><a class="anchor" id="autotoc_md217"></a>
-@param element_index Position of the desired string</h2>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md218"></a>
+<h2><a class="anchor" id="autotoc_md217"></a>
 @brief Returns the number of elements in the column</h2>
 
 </div>
@@ -624,7 +575,7 @@ allocation, i.e., what is returned from &lt;tt&gt;head&lt;T&gt;()&lt;/tt&gt;.</h
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md219"></a>
+<h2><a class="anchor" id="autotoc_md218"></a>
 @brief Returns the element type</h2>
 
 </div>
