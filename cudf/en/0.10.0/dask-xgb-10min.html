@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10 Minutes to Dask-XGBoost &mdash; cudf 0.10.0a+2542.gaabdda135 documentation</title>
+  <title>10 Minutes to Dask-XGBoost &mdash; cudf 0.10.0a+2577.g64588be99 documentation</title>
   
 
   
@@ -107,11 +107,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="10min-cudf-cupy.html">10 Minutes to cuDF and CuPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guide-to-udfs.html">Overview of User Defined Functions with cuDF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guide-to-udfs.html#DataFrame-UDFs">DataFrame UDFs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guide-to-udfs.html#GroupBy-DataFrame-UDFs">GroupBy DataFrame UDFs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guide-to-udfs.html#Numba-Kernels-on-CuPy-Arrays">Numba Kernels on CuPy Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guide-to-udfs.html#Null-Handling-in-UDFs">Null Handling in UDFs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guide-to-udfs.html#Summary">Summary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developer.html">Developer Documentation</a></li>
 </ul>
 
@@ -465,8 +460,8 @@ env: NCCL_P2P_DISABLE=1
 <td style="vertical-align: top; border: 0px solid white">
 <h3 style="text-align: left;">Client</h3>
 <ul style="text-align: left; list-style: none; margin: 0; padding: 0;">
-  <li><b>Scheduler: </b>tcp://172.17.0.3:35322</li>
-  <li><b>Dashboard: </b><a href='http://172.17.0.3:8787/status' target='_blank'>http://172.17.0.3:8787/status</a>
+  <li><b>Scheduler: </b>tcp://172.17.0.2:40284</li>
+  <li><b>Dashboard: </b><a href='http://172.17.0.2:8787/status' target='_blank'>http://172.17.0.2:8787/status</a>
 </ul>
 </td>
 <td style="vertical-align: top; border: 0px solid white">
@@ -582,30 +577,12 @@ env: NCCL_P2P_DISABLE=1
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/opt/conda/envs/rapids/lib/python3.7/site-packages/distributed/worker.py:3251: UserWarning: Large object of size 2.00 MB detected in task graph:
-  (&#39;squared_error&#39;, 2, 0, &#39;x&#39;, [&#39;x&#39;], None, &#39;_predic ... 2bced8dd0360c&#39;)
-Consider scattering large objects ahead of time
-with client.scatter to reduce scheduler burden and
-keep data on workers
-
-    future = client.submit(func, big_data)    # bad
-
-    big_future = client.scatter(big_data)     # good
-    future = client.submit(func, big_future)  # good
-  % (format_bytes(len(b)), s)
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-rmse value: 2.293886447976903
+rmse value: 2.291766855160882
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
