@@ -110,6 +110,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#module-cugraph.components.connectivity">Connected Components</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#cores">Cores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-cugraph.cores.k_core">K-Core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cugraph.cores.core_number">Core Number</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#link-analysis">Link Analysis</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#module-cugraph.link_analysis.pagerank">Pagerank</a></li>
 </ul>
@@ -125,7 +130,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#utilities">Utilities</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#module-cugraph.utilities.grmat">R-mat Graph Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#r-mat-graph-generation">R-mat Graph Generation</a></li>
 </ul>
 </li>
 </ul>
@@ -1377,6 +1382,109 @@ df[‘vertices’][i] gives the vertex id of the i’th vertex</p>
 
 </div>
 </div>
+<div class="section" id="cores">
+<h2>Cores<a class="headerlink" href="#cores" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-cugraph.cores.k_core">
+<span id="k-core"></span><h3>K-Core<a class="headerlink" href="#module-cugraph.cores.k_core" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="cugraph.cores.k_core.k_core">
+<code class="sig-prename descclassname">cugraph.cores.k_core.</code><code class="sig-name descname">k_core</code><span class="sig-paren">(</span><em class="sig-param">G</em>, <em class="sig-param">k=None</em>, <em class="sig-param">core_number=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.cores.k_core.k_core" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the k-core of the graph G based on the out degree of its nodes. A
+k-core of a graph is a maximal subgraph that contains nodes of degree k or
+more. This call does not support a graph with self-loops and parallel
+edges.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>G</strong><span class="classifier">cuGraph.Graph</span></dt><dd><p>cuGraph graph descriptor with connectivity information. The graph
+should contain undirected edges where undirected edges are represented
+as directed edges in both directions. While this graph can contain edge
+weights, they don’t participate in the calculation of the k-core.</p>
+</dd>
+<dt><strong>k</strong><span class="classifier">int, optional</span></dt><dd><p>Order of the core. This value must not be negative. If set to None, the
+main core is returned.</p>
+</dd>
+<dt><strong>core_number</strong><span class="classifier">cudf.DataFrame, optional</span></dt><dd><p>Precomputed core number of the nodes of the graph G containing two
+cudf.Series of size V: the vertex identifiers and the corresponding
+core number values. If set to None, the core numbers of the nodes are
+calculated internally.</p>
+<dl class="simple">
+<dt>core_number[‘vertex’]<span class="classifier">cudf.Series</span></dt><dd><p>Contains the vertex identifiers</p>
+</dd>
+<dt>core_number[‘values’]<span class="classifier">cudf.Series</span></dt><dd><p>Contains the core number of vertices</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>KCoreGraph</strong><span class="classifier">cuGraph.Graph</span></dt><dd><p>K Core of the input graph</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/karate.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                  <span class="n">dtype</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int32&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">,</span> <span class="s1">&#39;float32&#39;</span><span class="p">],</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sources</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">destinations</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge_list</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="n">destinations</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">KCoreGraph</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">k_core</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cugraph.cores.core_number">
+<span id="core-number"></span><h3>Core Number<a class="headerlink" href="#module-cugraph.cores.core_number" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="cugraph.cores.core_number.core_number">
+<code class="sig-prename descclassname">cugraph.cores.core_number.</code><code class="sig-name descname">core_number</code><span class="sig-paren">(</span><em class="sig-param">G</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.cores.core_number.core_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the core numbers for the nodes of the graph G. A k-core of a graph
+is a maximal subgraph that contains nodes of degree k or more.
+A node has a core number of k if it belongs a k-core but not to k+1-core.
+This call does not support a graph with self-loops and parallel
+edges.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>graph</strong><span class="classifier">cuGraph.Graph</span></dt><dd><p>cuGraph graph descriptor with connectivity information. The graph
+should contain undirected edges where undirected edges are represented
+as directed edges in both directions. While this graph can contain edge
+weights, they don’t participate in the calculation of the core numbers.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>df</strong><span class="classifier">cudf.DataFrame</span></dt><dd><p>GPU data frame containing two cudf.Series of size V: the vertex
+identifiers and the corresponding core number values.</p>
+<dl class="simple">
+<dt>df[‘vertex’]<span class="classifier">cudf.Series</span></dt><dd><p>Contains the vertex identifiers</p>
+</dd>
+<dt>df[‘core_number’]<span class="classifier">cudf.Series</span></dt><dd><p>Contains the core number of vertices</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/karate.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                  <span class="n">dtype</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int32&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">,</span> <span class="s1">&#39;float32&#39;</span><span class="p">],</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sources</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">destinations</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge_list</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="n">destinations</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cn</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">core_number</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
 <div class="section" id="link-analysis">
 <h2>Link Analysis<a class="headerlink" href="#link-analysis" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="module-cugraph.link_analysis.pagerank">
@@ -1830,13 +1938,8 @@ before the i’th vertex in the traversal.</p>
 </div>
 <div class="section" id="utilities">
 <h2>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="module-cugraph.utilities.grmat">
-<span id="r-mat-graph-generation"></span><h3>R-mat Graph Generation<a class="headerlink" href="#module-cugraph.utilities.grmat" title="Permalink to this headline">¶</a></h3>
-<dl class="function">
-<dt id="cugraph.utilities.grmat.grmat_gen">
-<code class="sig-prename descclassname">cugraph.utilities.grmat.</code><code class="sig-name descname">grmat_gen</code><span class="sig-paren">(</span><em class="sig-param">argv</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.utilities.grmat.grmat_gen" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<div class="section" id="r-mat-graph-generation">
+<h3>R-mat Graph Generation<a class="headerlink" href="#r-mat-graph-generation" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>
