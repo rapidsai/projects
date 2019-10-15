@@ -3062,7 +3062,7 @@ than randomnly selecting K points.</p>
 </dd>
 <dt><strong>max_iter</strong><span class="classifier">int (default = 300)</span></dt><dd><p>The more iterations of EM, the more accurate, but slower.</p>
 </dd>
-<dt><strong>tol</strong><span class="classifier">float (default = 1e-4)</span></dt><dd><p>Stopping criterion when centroid means do not change much.</p>
+<dt><strong>tol</strong><span class="classifier">float64 (default = 1e-4)</span></dt><dd><p>Stopping criterion when centroid means do not change much.</p>
 </dd>
 <dt><strong>verbose</strong><span class="classifier">boolean (default = 0)</span></dt><dd><p>If True, prints diagnositc information.</p>
 </dd>
@@ -3078,7 +3078,7 @@ kmeans++ intialization.
 for the initial centroids. If an ndarray is passed, it should be of
 shape (n_clusters, n_features) and gives the initial centers.</p>
 </dd>
-<dt><strong>oversampling_factor</strong><span class="classifier">int scalable k-means|| oversampling factor</span></dt><dd></dd>
+<dt><strong>oversampling_factor</strong><span class="classifier">float64 scalable k-means|| oversampling factor</span></dt><dd></dd>
 <dt><strong>max_samples_per_batch</strong><span class="classifier">int maximum number of samples to use for each batch</span></dt><dd><p>of the pairwise distance computation.</p>
 </dd>
 <dt><strong>oversampling_factor</strong><span class="classifier">int (default = 2) The amount of points to sample</span></dt><dd><p>in scalable k-means++ initialization for potential centroids.
@@ -5047,7 +5047,10 @@ documentation for single-GPU K-Means.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.predict" title="cuml.dask.cluster.KMeans.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
 <td><p>Predicts the labels using a distributed KMeans model :param X: dask_cudf.Dataframe to predict :return: A dask_cudf.Dataframe containing label predictions</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.transform" title="cuml.dask.cluster.KMeans.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.raise_exception_from_futures" title="cuml.dask.cluster.KMeans.raise_exception_from_futures"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raise_exception_from_futures</span></code></a>(self, futures)</p></td>
+<td><p>Raises a RuntimeError if any of the futures indicates an exception</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.transform" title="cuml.dask.cluster.KMeans.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X)</p></td>
 <td><p>Predicts the labels using a distributed KMeans model :param X: dask_cudf.Dataframe to predict :return: A dask_cudf.Dataframe containing label predictions</p></td>
 </tr>
 </tbody>
@@ -5140,6 +5143,13 @@ Extracts centroids
 <dd><p>Predicts the labels using a distributed KMeans model
 :param X: dask_cudf.Dataframe to predict
 :return: A dask_cudf.Dataframe containing label predictions</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.cluster.KMeans.raise_exception_from_futures">
+<code class="sig-name descname">raise_exception_from_futures</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">futures</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.raise_exception_from_futures" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raises a RuntimeError if any of the futures indicates
+an exception</p>
 </dd></dl>
 
 <dl class="method">
