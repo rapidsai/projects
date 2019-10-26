@@ -81,9 +81,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aff8d165b0d14b747aadebbcfff9b8c9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrow__inequality__comparator.html#aff8d165b0d14b747aadebbcfff9b8c9f">row_inequality_comparator</a> (<a class="el" href="classdevice__table.html">device_table</a> const &amp;lhs, <a class="el" href="classdevice__table.html">device_table</a> const &amp;rhs, bool nulls_are_smallest=true, int8_t const *const asc_desc_flags=nullptr)</td></tr>
 <tr class="memdesc:aff8d165b0d14b747aadebbcfff9b8c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for inequality comparator.  <a href="structrow__inequality__comparator.html#aff8d165b0d14b747aadebbcfff9b8c9f">More...</a><br /></td></tr>
 <tr class="separator:aff8d165b0d14b747aadebbcfff9b8c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6831c8eb8ee40c432ff48892498889bc"><td class="memItemLeft" align="right" valign="top">__device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrow__inequality__comparator.html#a6831c8eb8ee40c432ff48892498889bc">operator()</a> (gdf_index_type lhs_index, gdf_index_type rhs_index) const</td></tr>
-<tr class="memdesc:a6831c8eb8ee40c432ff48892498889bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inquality operator comparator.  <a href="structrow__inequality__comparator.html#a6831c8eb8ee40c432ff48892498889bc">More...</a><br /></td></tr>
-<tr class="separator:a6831c8eb8ee40c432ff48892498889bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec39c542c6bcc196c9437f5c78c0a838"><td class="memItemLeft" align="right" valign="top">__device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrow__inequality__comparator.html#aec39c542c6bcc196c9437f5c78c0a838">operator()</a> (cudf::size_type lhs_index, cudf::size_type rhs_index) const</td></tr>
+<tr class="memdesc:aec39c542c6bcc196c9437f5c78c0a838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inquality operator comparator.  <a href="structrow__inequality__comparator.html#aec39c542c6bcc196c9437f5c78c0a838">More...</a><br /></td></tr>
+<tr class="separator:aec39c542c6bcc196c9437f5c78c0a838"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;bool nullable = true&gt;<br />
@@ -209,8 +209,8 @@ template&lt;bool nullable = true&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6831c8eb8ee40c432ff48892498889bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6831c8eb8ee40c432ff48892498889bc">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="aec39c542c6bcc196c9437f5c78c0a838"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec39c542c6bcc196c9437f5c78c0a838">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,13 +223,13 @@ template&lt;bool nullable = true&gt; </div>
         <tr>
           <td class="memname">__device__ bool <a class="el" href="structrow__inequality__comparator.html">row_inequality_comparator</a>&lt; nullable &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype">gdf_index_type&#160;</td>
+          <td class="paramtype">cudf::size_type&#160;</td>
           <td class="paramname"><em>lhs_index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">gdf_index_type&#160;</td>
+          <td class="paramtype">cudf::size_type&#160;</td>
           <td class="paramname"><em>rhs_index</em>&#160;</td>
         </tr>
         <tr>

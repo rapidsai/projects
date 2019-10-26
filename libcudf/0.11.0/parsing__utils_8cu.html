@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c184e51c84f2c3f0345bbc8a0d75d3e1.html">io</a></li><li class="navelem"><a class="el" href="dir_1f7d5b856c5aa0cd4ef64361025a1219.html">utilities</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c184e51c84f2c3f0345bbc8a0d75d3e1.html">io</a></li><li class="navelem"><a class="el" href="dir_1f7d5b856c5aa0cd4ef64361025a1219.html">utilities</a></li><li class="navelem"><a class="el" href="dir_d026f478d3a282f4a27a2755f392204f.html">legacy</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -80,64 +80,64 @@ $(function() {
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;rmm/rmm.h&gt;</code><br />
-<code>#include &lt;rmm/thrust_rmm_allocator.h&gt;</code><br />
-<code>#include &lt;utilities/error_utils.hpp&gt;</code><br />
+<code>#include &lt;cudf/utilities/error.hpp&gt;</code><br />
 <code>#include &lt;io/utilities/wrapper_utils.hpp&gt;</code><br />
+<code>#include &lt;rmm/device_buffer.hpp&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for parsing_utils.cu:</div>
 <div class="dyncontent">
 <div class="center"><img src="parsing__utils_8cu__incl.png" border="0" usemap="#parsing__utils_8cu" alt=""/></div>
 <map name="parsing__utils_8cu" id="parsing__utils_8cu">
-<area shape="rect" title=" " alt="" coords="2569,5,2751,32"/>
-<area shape="rect" href="parsing__utils_8cuh.html" title=" " alt="" coords="2564,80,2756,107"/>
-<area shape="rect" title=" " alt="" coords="789,885,872,912"/>
-<area shape="rect" title=" " alt="" coords="3151,661,3313,688"/>
-<area shape="rect" title=" " alt="" coords="2257,811,2340,837"/>
-<area shape="rect" title=" " alt="" coords="2780,661,2892,688"/>
-<area shape="rect" title=" " alt="" coords="3396,661,3679,688"/>
-<area shape="rect" href="wrapper__utils_8hpp_source.html" title=" " alt="" coords="1678,155,1901,196"/>
-<area shape="rect" href="error__utils_8hpp_source.html" title=" " alt="" coords="2515,579,2787,606"/>
-<area shape="rect" title=" " alt="" coords="3023,661,3126,688"/>
-<area shape="rect" title=" " alt="" coords="2916,661,2999,688"/>
-<area shape="rect" href="cudf_8h_source.html" title=" " alt="" coords="1673,661,1805,688"/>
-<area shape="rect" title=" " alt="" coords="2245,162,2397,189"/>
-<area shape="rect" title=" " alt="" coords="2422,162,2634,189"/>
-<area shape="rect" title=" " alt="" coords="2657,162,2929,189"/>
-<area shape="rect" title=" " alt="" coords="2381,736,2473,763"/>
-<area shape="rect" title=" " alt="" coords="1222,736,1314,763"/>
-<area shape="rect" href="types_8h_source.html" title=" " alt="" coords="465,811,557,837"/>
-<area shape="rect" href="io__types_8h_source.html" title=" " alt="" coords="1505,736,1628,763"/>
-<area shape="rect" href="convert__types_8h_source.html" title=" " alt="" coords="1653,736,1825,763"/>
-<area shape="rect" href="io__types_8hpp_source.html" title=" " alt="" coords="1338,736,1481,763"/>
-<area shape="rect" href="io__functions_8hpp_source.html" title=" " alt="" coords="2497,736,2679,763"/>
-<area shape="rect" href="io__readers_8hpp_source.html" title=" " alt="" coords="984,736,1147,763"/>
-<area shape="rect" href="io__writers_8hpp_source.html" title=" " alt="" coords="1849,736,2012,763"/>
-<area shape="rect" href="legacy_2column_8hpp_source.html" title=" " alt="" coords="717,736,909,763"/>
-<area shape="rect" href="functions_8h_source.html" title=" " alt="" coords="2037,736,2169,763"/>
-<area shape="rect" href="io__functions_8h_source.html" title=" " alt="" coords="2193,736,2356,763"/>
-<area shape="rect" title=" " alt="" coords="1589,811,1672,837"/>
-<area shape="rect" title=" " alt="" coords="745,811,837,837"/>
-<area shape="rect" href="legacy_2table_8hpp_source.html" title=" " alt="" coords="1151,811,1383,837"/>
-<area shape="rect" href="types_8hpp.html" title="Type declarations for libcudf." alt="" coords="2687,885,2849,912"/>
-<area shape="rect" title=" " alt="" coords="279,885,371,912"/>
-<area shape="rect" title=" " alt="" coords="1175,885,1358,912"/>
-<area shape="rect" title=" " alt="" coords="1398,960,1490,987"/>
-<area shape="rect" href="column__utils_8hpp_source.html" title=" " alt="" coords="848,244,1131,271"/>
-<area shape="rect" title=" " alt="" coords="723,326,835,353"/>
-<area shape="rect" href="NVStrings_8h.html" title="Class definition for NVStrings." alt="" coords="5,811,237,837"/>
-<area shape="rect" title=" " alt="" coords="1609,244,1701,271"/>
-<area shape="rect" href="legacy_2type__dispatcher_8hpp_source.html" title=" " alt="" coords="859,319,1091,360"/>
-<area shape="rect" href="wrapper__types_8hpp.html" title="Wrapper structs for for the non&#45;fundamental gdf_dtype types." alt="" coords="675,408,907,449"/>
-<area shape="rect" href="cudf__utils_8h_source.html" title=" " alt="" coords="1827,497,2069,524"/>
-<area shape="rect" title=" " alt="" coords="533,497,725,524"/>
-<area shape="rect" title=" " alt="" coords="749,497,832,524"/>
-<area shape="rect" title=" " alt="" coords="857,497,989,524"/>
-<area shape="rect" title=" " alt="" coords="427,497,509,524"/>
-<area shape="rect" title=" " alt="" coords="2417,661,2620,688"/>
-<area shape="rect" href="bitmask__ops_8hpp.html" title=" " alt="" coords="3257,572,3500,613"/>
-<area shape="rect" href="bitmask_8hpp_source.html" title=" " alt="" coords="2037,579,2289,606"/>
-<area shape="rect" title=" " alt="" coords="2644,661,2756,688"/>
+<area shape="rect" title=" " alt="" coords="1610,5,1793,32"/>
+<area shape="rect" href="parsing__utils_8cuh.html" title=" " alt="" coords="680,80,872,107"/>
+<area shape="rect" title=" " alt="" coords="439,811,521,837"/>
+<area shape="rect" title=" " alt="" coords="763,736,845,763"/>
+<area shape="rect" href="wrapper__utils_8hpp_source.html" title=" " alt="" coords="1358,155,1581,196"/>
+<area shape="rect" href="error_8hpp_source.html" title=" " alt="" coords="2982,661,3245,688"/>
+<area shape="rect" title=" " alt="" coords="2324,80,2487,107"/>
+<area shape="rect" title=" " alt="" coords="2511,80,2614,107"/>
+<area shape="rect" title=" " alt="" coords="2639,80,2871,107"/>
+<area shape="rect" href="cudf_8h_source.html" title=" " alt="" coords="1974,579,2106,606"/>
+<area shape="rect" title=" " alt="" coords="720,162,872,189"/>
+<area shape="rect" title=" " alt="" coords="138,162,350,189"/>
+<area shape="rect" title=" " alt="" coords="424,162,696,189"/>
+<area shape="rect" title=" " alt="" coords="2241,661,2333,688"/>
+<area shape="rect" title=" " alt="" coords="1679,885,1771,912"/>
+<area shape="rect" href="types_8h_source.html" title=" " alt="" coords="3321,736,3413,763"/>
+<area shape="rect" href="types_8hpp.html" title="Type declarations for libcudf." alt="" coords="1436,811,1548,837"/>
+<area shape="rect" href="convert__types_8h_source.html" title=" " alt="" coords="1742,661,1914,688"/>
+<area shape="rect" href="io__types_8hpp_source.html" title=" " alt="" coords="1506,661,1718,688"/>
+<area shape="rect" href="io__types_8h_source.html" title=" " alt="" coords="1856,736,2099,763"/>
+<area shape="rect" href="io__functions_8hpp_source.html" title=" " alt="" coords="771,661,1023,688"/>
+<area shape="rect" href="io__readers_8hpp_source.html" title=" " alt="" coords="1149,661,1381,688"/>
+<area shape="rect" href="io__writers_8hpp_source.html" title=" " alt="" coords="515,661,747,688"/>
+<area shape="rect" href="legacy_2column_8hpp_source.html" title=" " alt="" coords="2715,661,2907,688"/>
+<area shape="rect" href="functions_8h_source.html" title=" " alt="" coords="1939,661,2141,688"/>
+<area shape="rect" href="io__functions_8h_source.html" title=" " alt="" coords="2357,661,2589,688"/>
+<area shape="rect" title=" " alt="" coords="3314,811,3417,837"/>
+<area shape="rect" title=" " alt="" coords="1211,885,1303,912"/>
+<area shape="rect" title=" " alt="" coords="1252,736,1335,763"/>
+<area shape="rect" title=" " alt="" coords="1418,736,1510,763"/>
+<area shape="rect" href="legacy_2table_8hpp_source.html" title=" " alt="" coords="996,736,1228,763"/>
+<area shape="rect" title=" " alt="" coords="3441,811,3533,837"/>
+<area shape="rect" title=" " alt="" coords="1021,811,1203,837"/>
+<area shape="rect" href="hostdevice__vector_8hpp_source.html" title=" " alt="" coords="1924,497,2156,524"/>
+<area shape="rect" href="column__utils_8hpp_source.html" title=" " alt="" coords="2272,244,2555,271"/>
+<area shape="rect" title=" " alt="" coords="2221,326,2333,353"/>
+<area shape="rect" href="NVStrings_8h.html" title="Class definition for NVStrings." alt="" coords="5,736,237,763"/>
+<area shape="rect" title=" " alt="" coords="1289,244,1381,271"/>
+<area shape="rect" title=" " alt="" coords="3077,736,3160,763"/>
+<area shape="rect" title=" " alt="" coords="2715,736,2917,763"/>
+<area shape="rect" title=" " alt="" coords="3184,736,3296,763"/>
+<area shape="rect" title=" " alt="" coords="2941,736,3053,763"/>
+<area shape="rect" href="legacy_2type__dispatcher_8hpp_source.html" title=" " alt="" coords="2829,319,3061,360"/>
+<area shape="rect" href="wrapper__types_8hpp.html" title="Wrapper structs for for the non&#45;fundamental gdf_dtype types." alt="" coords="2829,408,3061,449"/>
+<area shape="rect" href="cudf__utils_8h_source.html" title=" " alt="" coords="2731,497,2973,524"/>
+<area shape="rect" title=" " alt="" coords="2515,497,2707,524"/>
+<area shape="rect" title=" " alt="" coords="2997,497,3080,524"/>
+<area shape="rect" title=" " alt="" coords="3105,497,3237,524"/>
+<area shape="rect" title=" " alt="" coords="2408,497,2491,524"/>
+<area shape="rect" href="error__utils_8hpp_source.html" title=" " alt="" coords="2995,572,3237,613"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -162,34 +162,34 @@ Functions</h2></td></tr>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ad4ad59c2437e060d7360c44caf2ce451"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>divCeil</b> (T dividend, T divisor) noexcept</td></tr>
 <tr class="separator:ad4ad59c2437e060d7360c44caf2ce451"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b1720be10e4765219021d6f1bbfe969"><td class="memTemplParams" colspan="2">template&lt;class T , class V &gt; </td></tr>
-<tr class="memitem:a3b1720be10e4765219021d6f1bbfe969"><td class="memTemplItemLeft" align="right" valign="top">__device__ __forceinline__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="parsing__utils_8cu.html#a3b1720be10e4765219021d6f1bbfe969">setElement</a> (T *array, gdf_size_type idx, const T &amp;t, const V &amp;v)</td></tr>
-<tr class="separator:a3b1720be10e4765219021d6f1bbfe969"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe254b0f10561000c3a6401285f7818b"><td class="memTemplParams" colspan="2">template&lt;class T , class V &gt; </td></tr>
-<tr class="memitem:abe254b0f10561000c3a6401285f7818b"><td class="memTemplItemLeft" align="right" valign="top">__device__ __forceinline__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="parsing__utils_8cu.html#abe254b0f10561000c3a6401285f7818b">setElement</a> (thrust::pair&lt; T, V &gt; *array, gdf_size_type idx, const T &amp;t, const V &amp;v)</td></tr>
-<tr class="memdesc:abe254b0f10561000c3a6401285f7818b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the specified element of the array of pairs using the two passed.  <a href="parsing__utils_8cu.html#abe254b0f10561000c3a6401285f7818b">More...</a><br /></td></tr>
-<tr class="separator:abe254b0f10561000c3a6401285f7818b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad44d11e2e89b52a5bd983bec741c1eee"><td class="memTemplParams" colspan="2">template&lt;class T , class V &gt; </td></tr>
-<tr class="memitem:ad44d11e2e89b52a5bd983bec741c1eee"><td class="memTemplItemLeft" align="right" valign="top">__device__ __forceinline__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="parsing__utils_8cu.html#ad44d11e2e89b52a5bd983bec741c1eee">setElement</a> (void *array, gdf_size_type idx, const T &amp;t, const V &amp;v)</td></tr>
-<tr class="memdesc:ad44d11e2e89b52a5bd983bec741c1eee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloads the <a class="el" href="parsing__utils_8cu.html#a3b1720be10e4765219021d6f1bbfe969">setElement()</a> functions for void* arrays.  <a href="parsing__utils_8cu.html#ad44d11e2e89b52a5bd983bec741c1eee">More...</a><br /></td></tr>
-<tr class="separator:ad44d11e2e89b52a5bd983bec741c1eee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adae8a40054045ad7b9133be7dfaa680b"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:adae8a40054045ad7b9133be7dfaa680b"><td class="memTemplItemLeft" align="right" valign="top">__global__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="parsing__utils_8cu.html#adae8a40054045ad7b9133be7dfaa680b">countAndSetPositions</a> (char *data, uint64_t size, uint64_t offset, const char key, gdf_size_type *count, T *positions)</td></tr>
-<tr class="memdesc:adae8a40054045ad7b9133be7dfaa680b"><td class="mdescLeft">&#160;</td><td class="mdescRight">CUDA kernel that finds all occurrences of a character in the given character array. If the 'positions' parameter is not void*, positions of all occurrences are stored in the output array.  <a href="parsing__utils_8cu.html#adae8a40054045ad7b9133be7dfaa680b">More...</a><br /></td></tr>
-<tr class="separator:adae8a40054045ad7b9133be7dfaa680b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a875fcc5bd06c95e5d755ca66f6527e9b"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a875fcc5bd06c95e5d755ca66f6527e9b"><td class="memTemplItemLeft" align="right" valign="top">gdf_size_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="parsing__utils_8cu.html#a875fcc5bd06c95e5d755ca66f6527e9b">findAllFromSet</a> (const char *h_data, size_t h_size, const std::vector&lt; char &gt; &amp;keys, uint64_t result_offset, T *positions)</td></tr>
-<tr class="memdesc:a875fcc5bd06c95e5d755ca66f6527e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the input character array for each of characters in a set. Sums up the number of occurrences. If the 'positions' parameter is not void*, positions of all occurrences are stored in the output device array.  <a href="parsing__utils_8cu.html#a875fcc5bd06c95e5d755ca66f6527e9b">More...</a><br /></td></tr>
-<tr class="separator:a875fcc5bd06c95e5d755ca66f6527e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f78fa5ce08eb9ad8df0dea142b18b58"><td class="memItemLeft" align="right" valign="top">gdf_size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parsing__utils_8cu.html#a4f78fa5ce08eb9ad8df0dea142b18b58">countAllFromSet</a> (const char *h_data, size_t h_size, const std::vector&lt; char &gt; &amp;keys)</td></tr>
-<tr class="memdesc:a4f78fa5ce08eb9ad8df0dea142b18b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the input character array for each of characters in a set and sums up the number of occurrences.  <a href="parsing__utils_8cu.html#a4f78fa5ce08eb9ad8df0dea142b18b58">More...</a><br /></td></tr>
-<tr class="separator:a4f78fa5ce08eb9ad8df0dea142b18b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28c68425ae2afd38890b4d485f387c77"><td class="memItemLeft" align="right" valign="top"><a id="a28c68425ae2afd38890b4d485f387c77"></a>
-template gdf_size_type&#160;</td><td class="memItemRight" valign="bottom"><b>findAllFromSet&lt; uint64_t &gt;</b> (const char *h_data, size_t h_size, const std::vector&lt; char &gt; &amp;keys, uint64_t result_offset, uint64_t *positions)</td></tr>
-<tr class="separator:a28c68425ae2afd38890b4d485f387c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a890649baeb1d93287ff652ed1cf651f0"><td class="memItemLeft" align="right" valign="top"><a id="a890649baeb1d93287ff652ed1cf651f0"></a>
-template gdf_size_type&#160;</td><td class="memItemRight" valign="bottom"><b>findAllFromSet&lt; pos_key_pair &gt;</b> (const char *h_data, size_t h_size, const std::vector&lt; char &gt; &amp;keys, uint64_t result_offset, pos_key_pair *positions)</td></tr>
-<tr class="separator:a890649baeb1d93287ff652ed1cf651f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48d8bc697322047f4e8fcd1bdd09f5c5"><td class="memTemplParams" colspan="2">template&lt;class T , class V &gt; </td></tr>
+<tr class="memitem:a48d8bc697322047f4e8fcd1bdd09f5c5"><td class="memTemplItemLeft" align="right" valign="top">__device__ __forceinline__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="parsing__utils_8cu.html#a48d8bc697322047f4e8fcd1bdd09f5c5">setElement</a> (T *array, cudf::size_type idx, const T &amp;t, const V &amp;v)</td></tr>
+<tr class="separator:a48d8bc697322047f4e8fcd1bdd09f5c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9739b2dd9d72cea1d59d0173143a7353"><td class="memTemplParams" colspan="2">template&lt;class T , class V &gt; </td></tr>
+<tr class="memitem:a9739b2dd9d72cea1d59d0173143a7353"><td class="memTemplItemLeft" align="right" valign="top">__device__ __forceinline__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="parsing__utils_8cu.html#a9739b2dd9d72cea1d59d0173143a7353">setElement</a> (thrust::pair&lt; T, V &gt; *array, cudf::size_type idx, const T &amp;t, const V &amp;v)</td></tr>
+<tr class="memdesc:a9739b2dd9d72cea1d59d0173143a7353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the specified element of the array of pairs using the two passed.  <a href="parsing__utils_8cu.html#a9739b2dd9d72cea1d59d0173143a7353">More...</a><br /></td></tr>
+<tr class="separator:a9739b2dd9d72cea1d59d0173143a7353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af00afffc4129bec1a47b0c478fdf2ba2"><td class="memTemplParams" colspan="2">template&lt;class T , class V &gt; </td></tr>
+<tr class="memitem:af00afffc4129bec1a47b0c478fdf2ba2"><td class="memTemplItemLeft" align="right" valign="top">__device__ __forceinline__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="parsing__utils_8cu.html#af00afffc4129bec1a47b0c478fdf2ba2">setElement</a> (void *array, cudf::size_type idx, const T &amp;t, const V &amp;v)</td></tr>
+<tr class="memdesc:af00afffc4129bec1a47b0c478fdf2ba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloads the <a class="el" href="parsing__utils_8cu.html#a48d8bc697322047f4e8fcd1bdd09f5c5">setElement()</a> functions for void* arrays.  <a href="parsing__utils_8cu.html#af00afffc4129bec1a47b0c478fdf2ba2">More...</a><br /></td></tr>
+<tr class="separator:af00afffc4129bec1a47b0c478fdf2ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71bc6d90ad7a98be55bd41331ff0f6df"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a71bc6d90ad7a98be55bd41331ff0f6df"><td class="memTemplItemLeft" align="right" valign="top">__global__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="parsing__utils_8cu.html#a71bc6d90ad7a98be55bd41331ff0f6df">countAndSetPositions</a> (char *data, uint64_t size, uint64_t offset, const char key, cudf::size_type *count, T *positions)</td></tr>
+<tr class="memdesc:a71bc6d90ad7a98be55bd41331ff0f6df"><td class="mdescLeft">&#160;</td><td class="mdescRight">CUDA kernel that finds all occurrences of a character in the given character array. If the 'positions' parameter is not void*, positions of all occurrences are stored in the output array.  <a href="parsing__utils_8cu.html#a71bc6d90ad7a98be55bd41331ff0f6df">More...</a><br /></td></tr>
+<tr class="separator:a71bc6d90ad7a98be55bd41331ff0f6df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a165ed4c021ac435c7adf852f9903664c"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a165ed4c021ac435c7adf852f9903664c"><td class="memTemplItemLeft" align="right" valign="top">cudf::size_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="parsing__utils_8cu.html#a165ed4c021ac435c7adf852f9903664c">findAllFromSet</a> (const char *h_data, size_t h_size, const std::vector&lt; char &gt; &amp;keys, uint64_t result_offset, T *positions)</td></tr>
+<tr class="memdesc:a165ed4c021ac435c7adf852f9903664c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the input character array for each of characters in a set. Sums up the number of occurrences. If the 'positions' parameter is not void*, positions of all occurrences are stored in the output device array.  <a href="parsing__utils_8cu.html#a165ed4c021ac435c7adf852f9903664c">More...</a><br /></td></tr>
+<tr class="separator:a165ed4c021ac435c7adf852f9903664c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a181f6a1eef79753e2f0bb9dd4d267010"><td class="memItemLeft" align="right" valign="top">cudf::size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parsing__utils_8cu.html#a181f6a1eef79753e2f0bb9dd4d267010">countAllFromSet</a> (const char *h_data, size_t h_size, const std::vector&lt; char &gt; &amp;keys)</td></tr>
+<tr class="memdesc:a181f6a1eef79753e2f0bb9dd4d267010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the input character array for each of characters in a set and sums up the number of occurrences.  <a href="parsing__utils_8cu.html#a181f6a1eef79753e2f0bb9dd4d267010">More...</a><br /></td></tr>
+<tr class="separator:a181f6a1eef79753e2f0bb9dd4d267010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b66ab98895d58dc1767f3d120ccc58b"><td class="memItemLeft" align="right" valign="top"><a id="a7b66ab98895d58dc1767f3d120ccc58b"></a>
+template cudf::size_type&#160;</td><td class="memItemRight" valign="bottom"><b>findAllFromSet&lt; uint64_t &gt;</b> (const char *h_data, size_t h_size, const std::vector&lt; char &gt; &amp;keys, uint64_t result_offset, uint64_t *positions)</td></tr>
+<tr class="separator:a7b66ab98895d58dc1767f3d120ccc58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad04960ecd73a18e99acc5678416563b0"><td class="memItemLeft" align="right" valign="top"><a id="ad04960ecd73a18e99acc5678416563b0"></a>
+template cudf::size_type&#160;</td><td class="memItemRight" valign="bottom"><b>findAllFromSet&lt; pos_key_pair &gt;</b> (const char *h_data, size_t h_size, const std::vector&lt; char &gt; &amp;keys, uint64_t result_offset, pos_key_pair *positions)</td></tr>
+<tr class="separator:ad04960ecd73a18e99acc5678416563b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d604c4937fc5680977b22edabddc34f"><td class="memItemLeft" align="right" valign="top">__global__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parsing__utils_8cu.html#a4d604c4937fc5680977b22edabddc34f">sumBracketsKernel</a> (pos_key_pair *brackets, int bracket_count, const char *open_chars, const char *close_chars, int bracket_char_cnt, <a class="el" href="structBlockSumArray.html">BlockSumArray</a> sum_array)</td></tr>
 <tr class="memdesc:a4d604c4937fc5680977b22edabddc34f"><td class="mdescLeft">&#160;</td><td class="mdescRight">CUDA kernel that aggregates bracket nesting levels for each block in the input array.  <a href="parsing__utils_8cu.html#a4d604c4937fc5680977b22edabddc34f">More...</a><br /></td></tr>
 <tr class="separator:a4d604c4937fc5680977b22edabddc34f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,9 +208,9 @@ template gdf_size_type&#160;</td><td class="memItemRight" valign="bottom"><b>fin
 <tr class="memitem:ab39e56733eb09844785a9daf2e553ac2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parsing__utils_8cu.html#ab39e56733eb09844785a9daf2e553ac2">assignLevels</a> (pos_key_pair *brackets, uint64_t count, const <a class="el" href="classBlockSumPyramid.html">BlockSumPyramid</a> &amp;sum_pyramid, char *open_chars, char *close_chars, int bracket_char_cnt, int16_t *levels)</td></tr>
 <tr class="memdesc:ab39e56733eb09844785a9daf2e553ac2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around assignLevelsKernel.  <a href="parsing__utils_8cu.html#ab39e56733eb09844785a9daf2e553ac2">More...</a><br /></td></tr>
 <tr class="separator:ab39e56733eb09844785a9daf2e553ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a7485db73e563a8696a48058bfd2017"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdevice__buffer.html">device_buffer</a>&lt; int16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parsing__utils_8cu.html#a3a7485db73e563a8696a48058bfd2017">getBracketLevels</a> (pos_key_pair *brackets, int count, const std::string &amp;open_chars, const std::string &amp;close_chars)</td></tr>
-<tr class="memdesc:a3a7485db73e563a8696a48058bfd2017"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes nested levels for each of the brackets in the input array.  <a href="parsing__utils_8cu.html#a3a7485db73e563a8696a48058bfd2017">More...</a><br /></td></tr>
-<tr class="separator:a3a7485db73e563a8696a48058bfd2017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa60fe49673caff17132584ad54fb6db7"><td class="memItemLeft" align="right" valign="top">rmm::device_vector&lt; int16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parsing__utils_8cu.html#aa60fe49673caff17132584ad54fb6db7">getBracketLevels</a> (pos_key_pair *brackets, int count, const std::string &amp;open_chars, const std::string &amp;close_chars)</td></tr>
+<tr class="memdesc:aa60fe49673caff17132584ad54fb6db7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes nested levels for each of the brackets in the input array.  <a href="parsing__utils_8cu.html#aa60fe49673caff17132584ad54fb6db7">More...</a><br /></td></tr>
+<tr class="separator:aa60fe49673caff17132584ad54fb6db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -459,14 +459,14 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>bytes_per_fi
 
 </div>
 </div>
-<a id="a4f78fa5ce08eb9ad8df0dea142b18b58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f78fa5ce08eb9ad8df0dea142b18b58">&#9670;&nbsp;</a></span>countAllFromSet()</h2>
+<a id="a181f6a1eef79753e2f0bb9dd4d267010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a181f6a1eef79753e2f0bb9dd4d267010">&#9670;&nbsp;</a></span>countAllFromSet()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">gdf_size_type countAllFromSet </td>
+          <td class="memname">cudf::size_type countAllFromSet </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>h_data</em>, </td>
@@ -502,12 +502,12 @@ constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>bytes_per_fi
   </dd>
 </dl>
 <h2><a class="anchor" id="autotoc_md107"></a>
-@return gdf_size_type total number of occurrences</h2>
+@return cudf::size_type total number of occurrences</h2>
 
 </div>
 </div>
-<a id="adae8a40054045ad7b9133be7dfaa680b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adae8a40054045ad7b9133be7dfaa680b">&#9670;&nbsp;</a></span>countAndSetPositions()</h2>
+<a id="a71bc6d90ad7a98be55bd41331ff0f6df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71bc6d90ad7a98be55bd41331ff0f6df">&#9670;&nbsp;</a></span>countAndSetPositions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -541,7 +541,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">gdf_size_type *&#160;</td>
+          <td class="paramtype">cudf::size_type *&#160;</td>
           <td class="paramname"><em>count</em>, </td>
         </tr>
         <tr>
@@ -575,8 +575,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a875fcc5bd06c95e5d755ca66f6527e9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a875fcc5bd06c95e5d755ca66f6527e9b">&#9670;&nbsp;</a></span>findAllFromSet()</h2>
+<a id="a165ed4c021ac435c7adf852f9903664c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a165ed4c021ac435c7adf852f9903664c">&#9670;&nbsp;</a></span>findAllFromSet()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -584,7 +584,7 @@ template&lt;class T &gt; </div>
 template&lt;class T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">gdf_size_type findAllFromSet </td>
+          <td class="memname">cudf::size_type findAllFromSet </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>h_data</em>, </td>
@@ -634,18 +634,18 @@ template&lt;class T &gt; </div>
   </dd>
 </dl>
 <h2><a class="anchor" id="autotoc_md106"></a>
-@return gdf_size_type total number of occurrences</h2>
+@return cudf::size_type total number of occurrences</h2>
 
 </div>
 </div>
-<a id="a3a7485db73e563a8696a48058bfd2017"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a7485db73e563a8696a48058bfd2017">&#9670;&nbsp;</a></span>getBracketLevels()</h2>
+<a id="aa60fe49673caff17132584ad54fb6db7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa60fe49673caff17132584ad54fb6db7">&#9670;&nbsp;</a></span>getBracketLevels()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classdevice__buffer.html">device_buffer</a>&lt;int16_t&gt; getBracketLevels </td>
+          <td class="memname">rmm::device_vector&lt;int16_t&gt; getBracketLevels </td>
           <td>(</td>
           <td class="paramtype">pos_key_pair *&#160;</td>
           <td class="paramname"><em>brackets</em>, </td>
@@ -688,12 +688,12 @@ template&lt;class T &gt; </div>
   </dd>
 </dl>
 <h2><a class="anchor" id="autotoc_md114"></a>
-@return device_ptr&lt;int16_t&gt; Device memory array of levels</h2>
+@return rmm::device_vector&lt;int16_t&gt; Device vector containing bracket levels</h2>
 
 </div>
 </div>
-<a id="a3b1720be10e4765219021d6f1bbfe969"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b1720be10e4765219021d6f1bbfe969">&#9670;&nbsp;</a></span>setElement() <span class="overload">[1/3]</span></h2>
+<a id="a48d8bc697322047f4e8fcd1bdd09f5c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48d8bc697322047f4e8fcd1bdd09f5c5">&#9670;&nbsp;</a></span>setElement() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -709,7 +709,7 @@ template&lt;class T , class V &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">gdf_size_type&#160;</td>
+          <td class="paramtype">cudf::size_type&#160;</td>
           <td class="paramname"><em>idx</em>, </td>
         </tr>
         <tr>
@@ -737,8 +737,8 @@ template&lt;class T , class V &gt; </div>
 
 </div>
 </div>
-<a id="abe254b0f10561000c3a6401285f7818b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe254b0f10561000c3a6401285f7818b">&#9670;&nbsp;</a></span>setElement() <span class="overload">[2/3]</span></h2>
+<a id="a9739b2dd9d72cea1d59d0173143a7353"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9739b2dd9d72cea1d59d0173143a7353">&#9670;&nbsp;</a></span>setElement() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -754,7 +754,7 @@ template&lt;class T , class V &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">gdf_size_type&#160;</td>
+          <td class="paramtype">cudf::size_type&#160;</td>
           <td class="paramname"><em>idx</em>, </td>
         </tr>
         <tr>
@@ -784,8 +784,8 @@ parameters.</h2>
 
 </div>
 </div>
-<a id="ad44d11e2e89b52a5bd983bec741c1eee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad44d11e2e89b52a5bd983bec741c1eee">&#9670;&nbsp;</a></span>setElement() <span class="overload">[3/3]</span></h2>
+<a id="af00afffc4129bec1a47b0c478fdf2ba2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af00afffc4129bec1a47b0c478fdf2ba2">&#9670;&nbsp;</a></span>setElement() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -801,7 +801,7 @@ template&lt;class T , class V &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">gdf_size_type&#160;</td>
+          <td class="paramtype">cudf::size_type&#160;</td>
           <td class="paramname"><em>idx</em>, </td>
         </tr>
         <tr>
@@ -824,7 +824,7 @@ template&lt;class T , class V &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Overloads the <a class="el" href="parsing__utils_8cu.html#a3b1720be10e4765219021d6f1bbfe969">setElement()</a> functions for void* arrays. </p>
+<p>Overloads the <a class="el" href="parsing__utils_8cu.html#a48d8bc697322047f4e8fcd1bdd09f5c5">setElement()</a> functions for void* arrays. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
 <h2><a class="anchor" id="autotoc_md104"></a>
 Does not do anything, indexing is not allowed with void* arrays.</h2>

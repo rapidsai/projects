@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c184e51c84f2c3f0345bbc8a0d75d3e1.html">io</a></li><li class="navelem"><a class="el" href="dir_56104a64f8aca57823254a4bb31adba9.html">csv</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c184e51c84f2c3f0345bbc8a0d75d3e1.html">io</a></li><li class="navelem"><a class="el" href="dir_56104a64f8aca57823254a4bb31adba9.html">csv</a></li><li class="navelem"><a class="el" href="dir_6745257352e55965e586aef410d97b0f.html">legacy</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -105,15 +105,15 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">using</span> flags = uint8_t;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structcudf_1_1io_1_1csv_1_1column__parse_1_1stats.html">   41</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcudf_1_1io_1_1csv_1_1column__parse_1_1stats.html">stats</a> {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  gdf_size_type countFloat;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  gdf_size_type countDateAndTime;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  gdf_size_type countString;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  gdf_size_type countBool;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  gdf_size_type countInt8;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  gdf_size_type countInt16;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  gdf_size_type countInt32;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  gdf_size_type countInt64;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  gdf_size_type countNULL;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  cudf::size_type countFloat;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  cudf::size_type countDateAndTime;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  cudf::size_type countString;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  cudf::size_type countBool;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  cudf::size_type countInt8;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  cudf::size_type countInt16;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  cudf::size_type countInt32;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  cudf::size_type countInt64;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  cudf::size_type countNULL;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}  <span class="comment">// namespace column_parse</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
@@ -128,7 +128,7 @@ $(function() {
 <div class="ttc" id="anamespacecudf_1_1io_1_1csv_1_1column__parse_html_a35c8622fd61325c06ee43ade80c576b3acf681afc0692328d3abc5894206dacce"><div class="ttname"><a href="namespacecudf_1_1io_1_1csv_1_1column__parse.html#a35c8622fd61325c06ee43ade80c576b3acf681afc0692328d3abc5894206dacce">cudf::io::csv::column_parse::enabled</a></div><div class="ttdoc">data is read and parsed as usual</div><div class="ttdef"><b>Definition:</b> csv_common.h:30</div></div>
 <div class="ttc" id="anamespacecudf_1_1io_1_1csv_1_1column__parse_html_a35c8622fd61325c06ee43ade80c576b3ad7a062b2d836eadaf03e0f58496e933d"><div class="ttname"><a href="namespacecudf_1_1io_1_1csv_1_1column__parse.html#a35c8622fd61325c06ee43ade80c576b3ad7a062b2d836eadaf03e0f58496e933d">cudf::io::csv::column_parse::inferred</a></div><div class="ttdoc">infer the dtype</div><div class="ttdef"><b>Definition:</b> csv_common.h:31</div></div>
 <div class="ttc" id="astructcudf_1_1io_1_1csv_1_1column__parse_1_1stats_html"><div class="ttname"><a href="structcudf_1_1io_1_1csv_1_1column__parse_1_1stats.html">cudf::io::csv::column_parse::stats</a></div><div class="ttdoc">Per-column histogram struct holding detected ocurrences of each dtype.</div><div class="ttdef"><b>Definition:</b> csv_common.h:41</div></div>
-<div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> binaryop.cpp:43</div></div>
+<div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> binaryop.cpp:44</div></div>
 <div class="ttc" id="anamespacecudf_1_1io_1_1csv_1_1column__parse_html_a35c8622fd61325c06ee43ade80c576b3a791840d89fc93aee40ed6222ce6b77e0"><div class="ttname"><a href="namespacecudf_1_1io_1_1csv_1_1column__parse.html#a35c8622fd61325c06ee43ade80c576b3a791840d89fc93aee40ed6222ce6b77e0">cudf::io::csv::column_parse::as_default</a></div><div class="ttdoc">no special decoding</div><div class="ttdef"><b>Definition:</b> csv_common.h:32</div></div>
 <div class="ttc" id="anamespacecudf_1_1io_1_1csv_1_1column__parse_html_a35c8622fd61325c06ee43ade80c576b3a785afcd6940acacf7fc6e21bd592ebd4"><div class="ttname"><a href="namespacecudf_1_1io_1_1csv_1_1column__parse.html#a35c8622fd61325c06ee43ade80c576b3a785afcd6940acacf7fc6e21bd592ebd4">cudf::io::csv::column_parse::as_hexadecimal</a></div><div class="ttdoc">decode with base-16</div><div class="ttdef"><b>Definition:</b> csv_common.h:33</div></div>
 <!-- start footer part -->

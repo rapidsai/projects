@@ -107,7 +107,7 @@ $(function() {
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;cudaError_t DecodeAvroColumnData(<a class="code" href="structcudf_1_1io_1_1avro_1_1block__desc__s.html">block_desc_s</a> *blocks, <a class="code" href="structcudf_1_1io_1_1avro_1_1gpu_1_1schemadesc__s.html">schemadesc_s</a> *schema, <a class="code" href="structcudf_1_1io_1_1avro_1_1gpu_1_1nvstrdesc__s.html">nvstrdesc_s</a> *global_dictionary, uint8_t *avro_data,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;cudaError_t DecodeAvroColumnData(<a class="code" href="structcudf_1_1io_1_1avro_1_1block__desc__s.html">block_desc_s</a> *blocks, <a class="code" href="structcudf_1_1io_1_1avro_1_1gpu_1_1schemadesc__s.html">schemadesc_s</a> *schema, <a class="code" href="structcudf_1_1io_1_1avro_1_1gpu_1_1nvstrdesc__s.html">nvstrdesc_s</a> *global_dictionary, <span class="keyword">const</span> uint8_t *avro_data,</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    uint32_t num_blocks, uint32_t schema_len, uint32_t num_dictionary_entries, <span class="keywordtype">size_t</span> max_rows = ~0, <span class="keywordtype">size_t</span> first_row = 0, uint32_t min_row_size = 0, cudaStream_t stream = (cudaStream_t)0);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
@@ -119,7 +119,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructcudf_1_1io_1_1avro_1_1block__desc__s_html"><div class="ttname"><a href="structcudf_1_1io_1_1avro_1_1block__desc__s.html">cudf::io::avro::block_desc_s</a></div><div class="ttdef"><b>Definition:</b> avro_common.h:27</div></div>
 <div class="ttc" id="astructcudf_1_1io_1_1avro_1_1gpu_1_1schemadesc__s_html"><div class="ttname"><a href="structcudf_1_1io_1_1avro_1_1gpu_1_1schemadesc__s.html">cudf::io::avro::gpu::schemadesc_s</a></div><div class="ttdoc">Struct to describe the avro schema.</div><div class="ttdef"><b>Definition:</b> avro_gpu.h:37</div></div>
-<div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> binaryop.cpp:43</div></div>
+<div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> binaryop.cpp:44</div></div>
 <div class="ttc" id="astructcudf_1_1io_1_1avro_1_1gpu_1_1nvstrdesc__s_html"><div class="ttname"><a href="structcudf_1_1io_1_1avro_1_1gpu_1_1nvstrdesc__s.html">cudf::io::avro::gpu::nvstrdesc_s</a></div><div class="ttdoc">Struct to describe the output of a string datatype.</div><div class="ttdef"><b>Definition:</b> avro_gpu.h:29</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

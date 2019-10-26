@@ -81,9 +81,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af3d9d71d421ccb5052bc4e4ffec74078"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrow__equality__comparator.html#af3d9d71d421ccb5052bc4e4ffec74078">row_equality_comparator</a> (<a class="el" href="classdevice__table.html">device_table</a> const &amp;lhs, <a class="el" href="classdevice__table.html">device_table</a> const &amp;rhs, bool nulls_are_equal=false)</td></tr>
 <tr class="memdesc:af3d9d71d421ccb5052bc4e4ffec74078"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="structrow__equality__comparator.html" title="Functor to compute if two rows are equal.">row_equality_comparator</a>.  <a href="structrow__equality__comparator.html#af3d9d71d421ccb5052bc4e4ffec74078">More...</a><br /></td></tr>
 <tr class="separator:af3d9d71d421ccb5052bc4e4ffec74078"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa02720f15cdc22f8398b45929a0958f9"><td class="memItemLeft" align="right" valign="top">__device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrow__equality__comparator.html#aa02720f15cdc22f8398b45929a0958f9">operator()</a> (gdf_index_type lhs_index, gdf_index_type rhs_index) const</td></tr>
-<tr class="memdesc:aa02720f15cdc22f8398b45929a0958f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor to compute if two rows are equal.  <a href="structrow__equality__comparator.html#aa02720f15cdc22f8398b45929a0958f9">More...</a><br /></td></tr>
-<tr class="separator:aa02720f15cdc22f8398b45929a0958f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad65f0aff19207c8df21ede9d98ab13e1"><td class="memItemLeft" align="right" valign="top">__device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrow__equality__comparator.html#ad65f0aff19207c8df21ede9d98ab13e1">operator()</a> (cudf::size_type lhs_index, cudf::size_type rhs_index) const</td></tr>
+<tr class="memdesc:ad65f0aff19207c8df21ede9d98ab13e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor to compute if two rows are equal.  <a href="structrow__equality__comparator.html#ad65f0aff19207c8df21ede9d98ab13e1">More...</a><br /></td></tr>
+<tr class="separator:ad65f0aff19207c8df21ede9d98ab13e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;bool nullable = true&gt;<br />
@@ -201,8 +201,8 @@ template&lt;bool nullable = true&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa02720f15cdc22f8398b45929a0958f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa02720f15cdc22f8398b45929a0958f9">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="ad65f0aff19207c8df21ede9d98ab13e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad65f0aff19207c8df21ede9d98ab13e1">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,13 +215,13 @@ template&lt;bool nullable = true&gt; </div>
         <tr>
           <td class="memname">__device__ bool <a class="el" href="structrow__equality__comparator.html">row_equality_comparator</a>&lt; nullable &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype">gdf_index_type&#160;</td>
+          <td class="paramtype">cudf::size_type&#160;</td>
           <td class="paramname"><em>lhs_index</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">gdf_index_type&#160;</td>
+          <td class="paramtype">cudf::size_type&#160;</td>
           <td class="paramname"><em>rhs_index</em>&#160;</td>
         </tr>
         <tr>

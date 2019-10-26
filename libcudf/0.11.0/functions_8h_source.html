@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_4010bc87a0115613477f89ebf589f29d.html">cudf</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_4010bc87a0115613477f89ebf589f29d.html">cudf</a></li><li class="navelem"><a class="el" href="dir_eeea53a8fae276279952df3b2a0336fd.html">legacy</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -79,9 +79,9 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;gdf_error gdf_nvtx_range_pop();</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;gdf_size_type gdf_valid_allocation_size(gdf_size_type column_size);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;cudf::size_type gdf_valid_allocation_size(cudf::size_type column_size);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;gdf_size_type gdf_num_bitmask_elements(gdf_size_type column_size);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;cudf::size_type gdf_num_bitmask_elements(cudf::size_type column_size);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">/* context operations */</span></div>
@@ -103,7 +103,7 @@ $(function() {
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> * gdf_cuda_error_name(<span class="keywordtype">int</span> cuda_error);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">// transpose</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment"></span>gdf_error gdf_transpose(gdf_size_type ncols,</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment"></span>gdf_error gdf_transpose(cudf::size_type ncols,</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                        <a class="code" href="structgdf__column__.html">gdf_column</a>** in_cols,</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                        <a class="code" href="structgdf__column__.html">gdf_column</a>** out_cols);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
@@ -156,7 +156,7 @@ $(function() {
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;gdf_error gdf_digitize(<a class="code" href="structgdf__column__.html">gdf_column</a>* col,</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                       <a class="code" href="structgdf__column__.html">gdf_column</a>* bins,   <span class="comment">// same type as col</span></div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                       <span class="keywordtype">bool</span> right,</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                       gdf_index_type out_indices[]);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                       cudf::size_type out_indices[]);</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="comment">// forward declaration for DLPack functions below</span></div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="comment">// This approach is necessary to satisfy CFFI</span></div>
@@ -164,17 +164,17 @@ $(function() {
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>DLManagedTensor DLManagedTensor_;</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;gdf_error gdf_from_dlpack(<a class="code" href="structgdf__column__.html">gdf_column</a>** columns,</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                          gdf_size_type *num_columns,</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                          cudf::size_type *num_columns,</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                          DLManagedTensor_ <span class="keyword">const</span> * tensor);</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;gdf_error gdf_to_dlpack(DLManagedTensor_ *tensor,</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                        <a class="code" href="structgdf__column__.html">gdf_column</a> <span class="keyword">const</span> * <span class="keyword">const</span> * columns,</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                        gdf_size_type num_columns);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                        cudf::size_type num_columns);</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructgdf__column___html"><div class="ttname"><a href="structgdf__column__.html">gdf_column_</a></div><div class="ttdoc">The C representation of a column in CUDF. This is the main unit of operation.</div><div class="ttdef"><b>Definition:</b> types.h:137</div></div>
-<div class="ttc" id="astructgdf__context___html"><div class="ttname"><a href="structgdf__context__.html">gdf_context_</a></div><div class="ttdoc">This struct holds various information about how an operation should be performed as well as additiona...</div><div class="ttdef"><b>Definition:</b> types.h:210</div></div>
+<div class="ttc" id="astructgdf__column___html"><div class="ttname"><a href="structgdf__column__.html">gdf_column_</a></div><div class="ttdoc">The C representation of a column in CUDF. This is the main unit of operation.</div><div class="ttdef"><b>Definition:</b> types.h:138</div></div>
+<div class="ttc" id="astructgdf__context___html"><div class="ttname"><a href="structgdf__context__.html">gdf_context_</a></div><div class="ttdoc">This struct holds various information about how an operation should be performed as well as additiona...</div><div class="ttdef"><b>Definition:</b> types.h:211</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

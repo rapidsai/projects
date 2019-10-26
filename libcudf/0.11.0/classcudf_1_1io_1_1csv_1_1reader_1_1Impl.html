@@ -82,17 +82,17 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1io_1_1csv_1_1reader_1_1Impl.html#afd30bffc9edd85128f1e525a92503b54">Impl</a> (std::unique_ptr&lt; <a class="el" href="classcudf_1_1io_1_1datasource.html">datasource</a> &gt; source, std::string filepath, <a class="el" href="structcudf_1_1io_1_1csv_1_1reader__options.html">reader_options</a> const &amp;args)</td></tr>
 <tr class="memdesc:afd30bffc9edd85128f1e525a92503b54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from a dataset source with reader options. <br /></td></tr>
 <tr class="separator:afd30bffc9edd85128f1e525a92503b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc5d5cb9f2222e08c0a42bdc87d4a11c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1table.html">table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1io_1_1csv_1_1reader_1_1Impl.html#adc5d5cb9f2222e08c0a42bdc87d4a11c">read</a> (size_t range_offset, size_t range_size, gdf_size_type skip_rows, gdf_size_type skip_end_rows, gdf_size_type num_rows)</td></tr>
-<tr class="memdesc:adc5d5cb9f2222e08c0a42bdc87d4a11c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read an entire set or a subset of data from the source and returns an array of gdf_columns.  <a href="classcudf_1_1io_1_1csv_1_1reader_1_1Impl.html#adc5d5cb9f2222e08c0a42bdc87d4a11c">More...</a><br /></td></tr>
-<tr class="separator:adc5d5cb9f2222e08c0a42bdc87d4a11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aada292940ca926c0e224c688e8f0d9f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1table.html">table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1io_1_1csv_1_1reader_1_1Impl.html#aada292940ca926c0e224c688e8f0d9f6">read</a> (size_t range_offset, size_t range_size, cudf::size_type skip_rows, cudf::size_type skip_end_rows, cudf::size_type num_rows)</td></tr>
+<tr class="memdesc:aada292940ca926c0e224c688e8f0d9f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read an entire set or a subset of data from the source and returns an array of gdf_columns.  <a href="classcudf_1_1io_1_1csv_1_1reader_1_1Impl.html#aada292940ca926c0e224c688e8f0d9f6">More...</a><br /></td></tr>
+<tr class="separator:aada292940ca926c0e224c688e8f0d9f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>------------------------------------------------------------------------&mdash;* </p>
 <h2><a class="anchor" id="autotoc_md75"></a>
 @brief Class used to parse Json input and convert it into gdf columns</h2>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="adc5d5cb9f2222e08c0a42bdc87d4a11c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc5d5cb9f2222e08c0a42bdc87d4a11c">&#9670;&nbsp;</a></span>read()</h2>
+<a id="aada292940ca926c0e224c688e8f0d9f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aada292940ca926c0e224c688e8f0d9f6">&#9670;&nbsp;</a></span>read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -112,19 +112,19 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">gdf_size_type&#160;</td>
+          <td class="paramtype">cudf::size_type&#160;</td>
           <td class="paramname"><em>skip_rows</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">gdf_size_type&#160;</td>
+          <td class="paramtype">cudf::size_type&#160;</td>
           <td class="paramname"><em>skip_end_rows</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">gdf_size_type&#160;</td>
+          <td class="paramtype">cudf::size_type&#160;</td>
           <td class="paramname"><em>num_rows</em>&#160;</td>
         </tr>
         <tr>

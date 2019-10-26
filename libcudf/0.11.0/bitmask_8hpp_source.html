@@ -92,14 +92,14 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;cudf/cudf.h&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="types_8hpp.html">cudf/types.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;gdf_error gdf_count_nonzero_mask(gdf_valid_type <span class="keyword">const</span>* masks,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                 gdf_size_type num_rows, gdf_size_type* count);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;gdf_error gdf_count_nonzero_mask(cudf::valid_type <span class="keyword">const</span>* masks,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                 cudf::size_type num_rows, cudf::size_type* count);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;gdf_error gdf_mask_concat(gdf_valid_type* output_mask,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                          gdf_size_type output_column_length,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                          gdf_valid_type* masks_to_concat[],</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                          gdf_size_type* column_lengths,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                          gdf_size_type num_columns);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;gdf_error gdf_mask_concat(cudf::valid_type* output_mask,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                          cudf::size_type output_column_length,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                          cudf::valid_type* masks_to_concat[],</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                          cudf::size_type* column_lengths,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                          cudf::size_type num_columns);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif</span></div>

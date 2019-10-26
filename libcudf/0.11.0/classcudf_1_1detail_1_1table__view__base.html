@@ -104,9 +104,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6105220eceee5a633a47c4de2012629c"><td class="memItemLeft" align="right" valign="top">const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1table__view__base.html#a6105220eceee5a633a47c4de2012629c">end</a> () const noexcept</td></tr>
 <tr class="memdesc:a6105220eceee5a633a47c4de2012629c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator one past the last column view in the <code>table</code>.  <a href="classcudf_1_1detail_1_1table__view__base.html#a6105220eceee5a633a47c4de2012629c">More...</a><br /></td></tr>
 <tr class="separator:a6105220eceee5a633a47c4de2012629c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af97280785c439876d37b90f345f53ecf"><td class="memItemLeft" align="right" valign="top">ColumnView &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1table__view__base.html#af97280785c439876d37b90f345f53ecf">column</a> (size_type column_index) noexcept</td></tr>
-<tr class="memdesc:af97280785c439876d37b90f345f53ecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the view of the specified column.  <a href="classcudf_1_1detail_1_1table__view__base.html#af97280785c439876d37b90f345f53ecf">More...</a><br /></td></tr>
-<tr class="separator:af97280785c439876d37b90f345f53ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a0a606b34117de5a730d05829663f5"><td class="memItemLeft" align="right" valign="top">ColumnView const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1table__view__base.html#a93a0a606b34117de5a730d05829663f5">column</a> (size_type column_index) const noexcept</td></tr>
+<tr class="memdesc:a93a0a606b34117de5a730d05829663f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the view of the specified column.  <a href="classcudf_1_1detail_1_1table__view__base.html#a93a0a606b34117de5a730d05829663f5">More...</a><br /></td></tr>
+<tr class="separator:a93a0a606b34117de5a730d05829663f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fe8d1c02d47117c940b8e5ebdaabb06"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1table__view__base.html#a8fe8d1c02d47117c940b8e5ebdaabb06">num_columns</a> () const noexcept</td></tr>
 <tr class="separator:a8fe8d1c02d47117c940b8e5ebdaabb06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad8c7f7043c9c9f91ed61fb9d9558283"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1table__view__base.html#aad8c7f7043c9c9f91ed61fb9d9558283">num_rows</a> () const noexcept</td></tr>
@@ -131,7 +131,7 @@ class cudf::detail::table_view_base&lt; ColumnView &gt;</h3>
 <p>Base class for a table of <code>ColumnView</code>s. </p>
 <p>------------------------------------------------------------------------&mdash;* This class should not be used directly. Instead: -<code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code> should be used for a table of <code><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></code>s -<code><a class="el" href="classcudf_1_1mutable__table__view.html" title="A set of mutable_column_views of the same size.">mutable_table_view</a></code> should be used for a table of <code><a class="el" href="classcudf_1_1mutable__column__view.html" title="A non-owning, mutable view of device data as a column of elements, some of which may be null as indic...">mutable_column_view</a></code>s</p>
 <p>All public constructors and member functions of <code><a class="el" href="classcudf_1_1detail_1_1table__view__base.html" title="Base class for a table of ColumnViews.">table_view_base</a></code> are available in both <code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code> and <code><a class="el" href="classcudf_1_1mutable__table__view.html" title="A set of mutable_column_views of the same size.">mutable_table_view</a></code>.</p>
-<h2><a class="anchor" id="autotoc_md444"></a>
+<h2><a class="anchor" id="autotoc_md448"></a>
 @tparam ColumnView The type of column view the table contains</h2>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1efbcc85f85d8e30b06e29633df0ca38"></a>
@@ -171,7 +171,7 @@ template&lt;typename ColumnView&gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md445"></a>
+<h2><a class="anchor" id="autotoc_md449"></a>
 @param cols The vector of columns to construct the table from</h2>
 
 </div>
@@ -202,7 +202,7 @@ template&lt;typename ColumnView&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md447"></a>
+<h2><a class="anchor" id="autotoc_md451"></a>
 @brief Returns an iterator to the first view in the &lt;tt&gt;table&lt;/tt&gt;.</h2>
 
 </div>
@@ -232,13 +232,13 @@ template&lt;typename ColumnView&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md446"></a>
+<h2><a class="anchor" id="autotoc_md450"></a>
 @brief Returns an iterator to the first view in the &lt;tt&gt;table&lt;/tt&gt;.</h2>
 
 </div>
 </div>
-<a id="af97280785c439876d37b90f345f53ecf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af97280785c439876d37b90f345f53ecf">&#9670;&nbsp;</a></span>column()</h2>
+<a id="a93a0a606b34117de5a730d05829663f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93a0a606b34117de5a730d05829663f5">&#9670;&nbsp;</a></span>column()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,11 +249,11 @@ template&lt;typename ColumnView &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ColumnView &amp; <a class="el" href="classcudf_1_1detail_1_1table__view__base.html">cudf::detail::table_view_base</a>&lt; ColumnView &gt;::<a class="el" href="classcudf_1_1column.html">column</a> </td>
+          <td class="memname">ColumnView const  &amp; <a class="el" href="classcudf_1_1detail_1_1table__view__base.html">cudf::detail::table_view_base</a>&lt; ColumnView &gt;::<a class="el" href="classcudf_1_1column.html">column</a> </td>
           <td>(</td>
           <td class="paramtype">size_type&#160;</td>
           <td class="paramname"><em>column_index</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -270,7 +270,7 @@ template&lt;typename ColumnView &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md450"></a>
+<h2><a class="anchor" id="autotoc_md454"></a>
 @return A reference to the desired column</h2>
 
 </div>
@@ -302,7 +302,7 @@ template&lt;typename ColumnView&gt; </div>
 
 <p>Returns an iterator one past the last column view in the <code>table</code>. </p>
 <p>------------------------------------------------------------------------&mdash;* <code><a class="el" href="classcudf_1_1detail_1_1table__view__base.html#ab046219cffed16909286da3b260418c5" title="Returns an iterator one past the last column view in the table.">end()</a></code> acts as a place holder. Attempting to dereference it results in </p>
-<h2><a class="anchor" id="autotoc_md449"></a>
+<h2><a class="anchor" id="autotoc_md453"></a>
 undefined behavior.</h2>
 
 </div>
@@ -334,7 +334,7 @@ template&lt;typename ColumnView&gt; </div>
 
 <p>Returns an iterator one past the last column view in the <code>table</code>. </p>
 <p>------------------------------------------------------------------------&mdash;* <code><a class="el" href="classcudf_1_1detail_1_1table__view__base.html#ab046219cffed16909286da3b260418c5" title="Returns an iterator one past the last column view in the table.">end()</a></code> acts as a place holder. Attempting to dereference it results in </p>
-<h2><a class="anchor" id="autotoc_md448"></a>
+<h2><a class="anchor" id="autotoc_md452"></a>
 undefined behavior.</h2>
 
 </div>
@@ -364,7 +364,7 @@ template&lt;typename ColumnView&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md451"></a>
+<h2><a class="anchor" id="autotoc_md455"></a>
 @brief Returns the number of columns</h2>
 
 </div>
@@ -394,7 +394,7 @@ template&lt;typename ColumnView&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md452"></a>
+<h2><a class="anchor" id="autotoc_md456"></a>
 @brief Returns the number of rows</h2>
 
 </div>

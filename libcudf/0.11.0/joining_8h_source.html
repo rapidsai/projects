@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_225fbdd929da3974e4b1071c96e9e0b0.html">join</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_225fbdd929da3974e4b1071c96e9e0b0.html">join</a></li><li class="navelem"><a class="el" href="dir_f483f3ba3a769b7a204e7daafa5fdbe0.html">legacy</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -92,7 +92,7 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;cudf/functions.h&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;cudf/legacy/functions.h&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;cudf/types.h&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;table/legacy/device_table.cuh&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
@@ -114,7 +114,7 @@ $(function() {
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// For inner joins, doesn&#39;t matter which table is build/probe, so we want</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// to build the hash table on the smaller table.</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">if</span>((join_type == JoinType::INNER_JOIN) &amp;&amp;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;     (right_table.<a class="code" href="structcudf_1_1table.html#a4d674ea49e1147d80e1b2d9e5a3762c2">num_rows</a>() &gt; left_table.<a class="code" href="structcudf_1_1table.html#a4d674ea49e1147d80e1b2d9e5a3762c2">num_rows</a>()))</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;     (right_table.<a class="code" href="structcudf_1_1table.html#a4802b922998be4138ec8617aff6056e2">num_rows</a>() &gt; left_table.<a class="code" href="structcudf_1_1table.html#a4802b922998be4138ec8617aff6056e2">num_rows</a>()))</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> join_hash&lt;join_type, output_index_type&gt;(right_table, </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                                   left_table, </div>
@@ -152,13 +152,13 @@ $(function() {
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;          flip_indices);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructgdf__column___html"><div class="ttname"><a href="structgdf__column__.html">gdf_column_</a></div><div class="ttdoc">The C representation of a column in CUDF. This is the main unit of operation.</div><div class="ttdef"><b>Definition:</b> types.h:137</div></div>
+<div class="ttc" id="astructgdf__column___html"><div class="ttname"><a href="structgdf__column__.html">gdf_column_</a></div><div class="ttdoc">The C representation of a column in CUDF. This is the main unit of operation.</div><div class="ttdef"><b>Definition:</b> types.h:138</div></div>
 <div class="ttc" id="astructcompute__sort__join_html"><div class="ttname"><a href="structcompute__sort__join.html">compute_sort_join</a></div><div class="ttdef"><b>Definition:</b> sort_join.cuh:334</div></div>
-<div class="ttc" id="astructcudf_1_1table_html_a4d674ea49e1147d80e1b2d9e5a3762c2"><div class="ttname"><a href="structcudf_1_1table.html#a4d674ea49e1147d80e1b2d9e5a3762c2">cudf::table::num_rows</a></div><div class="ttdeci">gdf_size_type num_rows() const</div><div class="ttdoc">Returns the number of rows in the table.</div><div class="ttdef"><b>Definition:</b> legacy/table.hpp:139</div></div>
+<div class="ttc" id="astructcudf_1_1table_html_a4802b922998be4138ec8617aff6056e2"><div class="ttname"><a href="structcudf_1_1table.html#a4802b922998be4138ec8617aff6056e2">cudf::table::num_rows</a></div><div class="ttdeci">cudf::size_type num_rows() const</div><div class="ttdoc">Returns the number of rows in the table.</div><div class="ttdef"><b>Definition:</b> legacy/table.hpp:139</div></div>
 <div class="ttc" id="anamespacecudf_html_a324e3af1901162a99c4e182255e63964"><div class="ttname"><a href="namespacecudf.html#a324e3af1901162a99c4e182255e63964">cudf::join_call</a></div><div class="ttdeci">void join_call(cudf::table const &amp;left, cudf::table const &amp;right, gdf_column *left_result, gdf_column *right_result, gdf_context *join_context)</div><div class="ttdoc">Computes the join operation between two sets of columns.</div><div class="ttdef"><b>Definition:</b> joining.cu:167</div></div>
-<div class="ttc" id="astructgdf__column___html_a728baf018dbceb2b251332fd313478ec"><div class="ttname"><a href="structgdf__column__.html#a728baf018dbceb2b251332fd313478ec">gdf_column_::null_count</a></div><div class="ttdeci">gdf_size_type null_count</div><div class="ttdoc">The number of NULL values in the column's data.</div><div class="ttdef"><b>Definition:</b> types.h:142</div></div>
+<div class="ttc" id="astructgdf__column___html_a728baf018dbceb2b251332fd313478ec"><div class="ttname"><a href="structgdf__column__.html#a728baf018dbceb2b251332fd313478ec">gdf_column_::null_count</a></div><div class="ttdeci">gdf_size_type null_count</div><div class="ttdoc">The number of NULL values in the column's data.</div><div class="ttdef"><b>Definition:</b> types.h:143</div></div>
 <div class="ttc" id="astructcudf_1_1table_html"><div class="ttname"><a href="structcudf_1_1table.html">cudf::table</a></div><div class="ttdoc">A wrapper for a set of gdf_columns of equal number of rows.</div><div class="ttdef"><b>Definition:</b> legacy/table.hpp:36</div></div>
-<div class="ttc" id="astructgdf__column___html_a3e4d04127fb96d0c7debbe8d4e9d577f"><div class="ttname"><a href="structgdf__column__.html#a3e4d04127fb96d0c7debbe8d4e9d577f">gdf_column_::dtype</a></div><div class="ttdeci">gdf_dtype dtype</div><div class="ttdoc">The datatype of the column's data.</div><div class="ttdef"><b>Definition:</b> types.h:141</div></div>
+<div class="ttc" id="astructgdf__column___html_a3e4d04127fb96d0c7debbe8d4e9d577f"><div class="ttname"><a href="structgdf__column__.html#a3e4d04127fb96d0c7debbe8d4e9d577f">gdf_column_::dtype</a></div><div class="ttdeci">gdf_dtype dtype</div><div class="ttdoc">The datatype of the column's data.</div><div class="ttdef"><b>Definition:</b> types.h:142</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -77,12 +77,12 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="structcsr__gdf__.html">    6</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structcsr__gdf__.html">csr_gdf_</a> {</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">void</span> *          A;          <span class="comment">// on-device:   single array (length nnz) that holds all the valid data fields (based on valid bitmap)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    gdf_size_type * IA;         <span class="comment">// on-device:   compressed row indexes (size rows + 1)</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    cudf::size_type *   IA;         <span class="comment">// on-device:   compressed row indexes (size rows + 1)</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    int64_t *       JA;         <span class="comment">// on-device:   column index (size of nnz)</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    gdf_dtype       dtype;      <span class="comment">// on-host:     the data type</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    int64_t         nnz;        <span class="comment">// on-host:     the number of valid fields (nnz = number non-zero)</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    gdf_size_type   rows;       <span class="comment">// on-host:     the number of rows</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    gdf_size_type   cols;       <span class="comment">// on-host:     the number of columns</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    cudf::size_type rows;       <span class="comment">// on-host:     the number of rows</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    cudf::size_type cols;       <span class="comment">// on-host:     the number of columns</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;} <a class="code" href="structcsr__gdf__.html">csr_gdf</a>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>

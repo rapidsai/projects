@@ -76,14 +76,14 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a15f4d4280058bec42232e3b745adbc83"><td class="memTemplParams" colspan="2">template&lt;typename ColumnType &gt; </td></tr>
-<tr class="memitem:a15f4d4280058bec42232e3b745adbc83"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1detail_1_1scalar__scatterer.html#a15f4d4280058bec42232e3b745adbc83">operator()</a> (<a class="el" href="structgdf__scalar.html">gdf_scalar</a> const &amp;source, gdf_index_type const scatter_map[], const gdf_size_type num_scatter_rows, <a class="el" href="structgdf__column__.html">gdf_column</a> *destination_column, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
-<tr class="memdesc:a15f4d4280058bec42232e3b745adbc83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type-dispatched function to scatter from one scalar to a table based on a <code>scatter_map</code>.  <a href="structcudf_1_1detail_1_1scalar__scatterer.html#a15f4d4280058bec42232e3b745adbc83">More...</a><br /></td></tr>
-<tr class="separator:a15f4d4280058bec42232e3b745adbc83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51d5c54d6510d1c2718515b90a4c6ab4"><td class="memTemplParams" colspan="2">template&lt;typename ColumnType &gt; </td></tr>
+<tr class="memitem:a51d5c54d6510d1c2718515b90a4c6ab4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1detail_1_1scalar__scatterer.html#a51d5c54d6510d1c2718515b90a4c6ab4">operator()</a> (<a class="el" href="structgdf__scalar.html">gdf_scalar</a> const &amp;source, cudf::size_type const scatter_map[], const cudf::size_type num_scatter_rows, <a class="el" href="structgdf__column__.html">gdf_column</a> *destination_column, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
+<tr class="memdesc:a51d5c54d6510d1c2718515b90a4c6ab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type-dispatched function to scatter from one scalar to a table based on a <code>scatter_map</code>.  <a href="structcudf_1_1detail_1_1scalar__scatterer.html#a51d5c54d6510d1c2718515b90a4c6ab4">More...</a><br /></td></tr>
+<tr class="separator:a51d5c54d6510d1c2718515b90a4c6ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a15f4d4280058bec42232e3b745adbc83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15f4d4280058bec42232e3b745adbc83">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="a51d5c54d6510d1c2718515b90a4c6ab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51d5c54d6510d1c2718515b90a4c6ab4">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -102,13 +102,13 @@ template&lt;typename ColumnType &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">gdf_index_type const&#160;</td>
+          <td class="paramtype">cudf::size_type const&#160;</td>
           <td class="paramname"><em>scatter_map</em>[], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const gdf_size_type&#160;</td>
+          <td class="paramtype">const cudf::size_type&#160;</td>
           <td class="paramname"><em>num_scatter_rows</em>, </td>
         </tr>
         <tr>

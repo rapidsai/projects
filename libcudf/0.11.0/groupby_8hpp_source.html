@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_4010bc87a0115613477f89ebf589f29d.html">cudf</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_4010bc87a0115613477f89ebf589f29d.html">cudf</a></li><li class="navelem"><a class="el" href="dir_eeea53a8fae276279952df3b2a0336fd.html">legacy</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -89,8 +89,8 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef GROUPBY_HPP</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define GROUPBY_HPP</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;cudf.h&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="types_8hpp.html">types.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;cudf/cudf.h&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="types_8hpp.html">cudf/types.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;cudf/quantiles.hpp&gt;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;tuple&gt;</span></div>
@@ -181,14 +181,14 @@ $(function() {
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;std::pair&lt;<a class="code" href="structcudf_1_1table.html">cudf::table</a>,</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;          <a class="code" href="structgdf__column__.html">gdf_column</a>&gt;</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;gdf_group_by_without_aggregations(<a class="code" href="structcudf_1_1table.html">cudf::table</a> <span class="keyword">const</span>&amp; input_table,</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                  gdf_size_type num_key_cols,</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                                  gdf_index_type <span class="keyword">const</span>* key_col_indices,</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                  cudf::size_type num_key_cols,</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                                  cudf::size_type <span class="keyword">const</span>* key_col_indices,</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                                  <a class="code" href="structgdf__context__.html">gdf_context</a>* context);</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassthrust_1_1device__vector_html"><div class="ttname"><a href="classthrust_1_1device__vector.html">thrust::device_vector</a></div><div class="ttdef"><b>Definition:</b> groupby.hpp:31</div></div>
-<div class="ttc" id="astructgdf__column___html"><div class="ttname"><a href="structgdf__column__.html">gdf_column_</a></div><div class="ttdoc">The C representation of a column in CUDF. This is the main unit of operation.</div><div class="ttdef"><b>Definition:</b> types.h:137</div></div>
+<div class="ttc" id="astructgdf__column___html"><div class="ttname"><a href="structgdf__column__.html">gdf_column_</a></div><div class="ttdoc">The C representation of a column in CUDF. This is the main unit of operation.</div><div class="ttdef"><b>Definition:</b> types.h:138</div></div>
 <div class="ttc" id="astructcudf_1_1groupby_1_1sort_1_1operation_html"><div class="ttname"><a href="structcudf_1_1groupby_1_1sort_1_1operation.html">cudf::groupby::sort::operation</a></div><div class="ttdef"><b>Definition:</b> groupby.hpp:134</div></div>
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div><div class="ttdoc">Type declarations for libcudf.</div></div>
 <div class="ttc" id="anamespacecudf_html_a94d60cf0790fb642cce1c91f1dba63c8"><div class="ttname"><a href="namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8">cudf::interpolation</a></div><div class="ttdeci">interpolation</div><div class="ttdoc">Interpolation method to use, when the desired quantile lies between two data points i and j.</div><div class="ttdef"><b>Definition:</b> quantiles.hpp:29</div></div>
@@ -196,10 +196,10 @@ $(function() {
 <div class="ttc" id="astructcudf_1_1groupby_1_1hash_1_1Options_html"><div class="ttname"><a href="structcudf_1_1groupby_1_1hash_1_1Options.html">cudf::groupby::hash::Options</a></div><div class="ttdef"><b>Definition:</b> groupby.hpp:89</div></div>
 <div class="ttc" id="astructcudf_1_1groupby_1_1Options_html_afef8f0773674798b17db44e20fa464fe"><div class="ttname"><a href="structcudf_1_1groupby_1_1Options.html#afef8f0773674798b17db44e20fa464fe">cudf::groupby::Options::ignore_null_keys</a></div><div class="ttdeci">const bool ignore_null_keys</div><div class="ttdef"><b>Definition:</b> groupby.hpp:75</div></div>
 <div class="ttc" id="astructcudf_1_1groupby_1_1Options_html"><div class="ttname"><a href="structcudf_1_1groupby_1_1Options.html">cudf::groupby::Options</a></div><div class="ttdoc">Top-level options for controlling behavior of the groupby operation.</div><div class="ttdef"><b>Definition:</b> groupby.hpp:51</div></div>
-<div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> binaryop.cpp:43</div></div>
+<div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> binaryop.cpp:44</div></div>
 <div class="ttc" id="astructcudf_1_1groupby_1_1sort_1_1Options_html"><div class="ttname"><a href="structcudf_1_1groupby_1_1sort_1_1Options.html">cudf::groupby::sort::Options</a></div><div class="ttdoc">Options unique to the sort-based groupby The priority of determining the sort flags:</div><div class="ttdef"><b>Definition:</b> groupby.hpp:146</div></div>
 <div class="ttc" id="astructcudf_1_1groupby_1_1sort_1_1Options_html_a97df1f6c9fba12db923e1351664b24aa"><div class="ttname"><a href="structcudf_1_1groupby_1_1sort_1_1Options.html#a97df1f6c9fba12db923e1351664b24aa">cudf::groupby::sort::Options::null_sort_behavior</a></div><div class="ttdeci">null_order null_sort_behavior</div><div class="ttdoc">Indicates how nulls are treated.</div><div class="ttdef"><b>Definition:</b> groupby.hpp:147</div></div>
-<div class="ttc" id="astructgdf__context___html"><div class="ttname"><a href="structgdf__context__.html">gdf_context_</a></div><div class="ttdoc">This struct holds various information about how an operation should be performed as well as additiona...</div><div class="ttdef"><b>Definition:</b> types.h:210</div></div>
+<div class="ttc" id="astructgdf__context___html"><div class="ttname"><a href="structgdf__context__.html">gdf_context_</a></div><div class="ttdoc">This struct holds various information about how an operation should be performed as well as additiona...</div><div class="ttdef"><b>Definition:</b> types.h:211</div></div>
 <div class="ttc" id="astructcudf_1_1table_html"><div class="ttname"><a href="structcudf_1_1table.html">cudf::table</a></div><div class="ttdoc">A wrapper for a set of gdf_columns of equal number of rows.</div><div class="ttdef"><b>Definition:</b> legacy/table.hpp:36</div></div>
 <div class="ttc" id="aclassrmm__allocator_html"><div class="ttname"><a href="classrmm__allocator.html">rmm_allocator</a></div><div class="ttdef"><b>Definition:</b> groupby.hpp:34</div></div>
 <div class="ttc" id="astructcudf_1_1groupby_1_1sort_1_1Options_html_ae7675c404c27005482d9d9129581d436"><div class="ttname"><a href="structcudf_1_1groupby_1_1sort_1_1Options.html#ae7675c404c27005482d9d9129581d436">cudf::groupby::sort::Options::input_sorted</a></div><div class="ttdeci">bool input_sorted</div><div class="ttdoc">Indicates if the input data is sorted.</div><div class="ttdef"><b>Definition:</b> groupby.hpp:148</div></div>

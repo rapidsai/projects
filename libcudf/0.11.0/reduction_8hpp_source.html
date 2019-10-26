@@ -110,26 +110,28 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  MEAN,           </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  VAR,            </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  STD,            </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}  <span class="comment">// namespace reduction</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<a class="code" href="structgdf__scalar.html">gdf_scalar</a> <a class="code" href="namespacecudf.html#a34eb2aea42d4ee97fb98cc4b38dabd7c">reduce</a>(<span class="keyword">const</span> <a class="code" href="structgdf__column__.html">gdf_column</a> *col, cudf::reduction::operators op,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        gdf_dtype output_dtype,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                        gdf_size_type ddof = 1);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecudf.html#a65546aa9c42e87334fb5e1e3f274bc6b">scan</a>(<span class="keyword">const</span> <a class="code" href="structgdf__column__.html">gdf_column</a> *input, <a class="code" href="structgdf__column__.html">gdf_column</a> *output,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                   gdf_scan_op op, <span class="keywordtype">bool</span> inclusive);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}  <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  ANY,            </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  ALL,            </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}  <span class="comment">// namespace reduction</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<a class="code" href="structgdf__scalar.html">gdf_scalar</a> <a class="code" href="namespacecudf.html#afdab46512f8d4cf604ed983c02556bf4">reduce</a>(<span class="keyword">const</span> <a class="code" href="structgdf__column__.html">gdf_column</a> *col, cudf::reduction::operators op,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        gdf_dtype output_dtype,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                        cudf::size_type ddof = 1);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecudf.html#a65546aa9c42e87334fb5e1e3f274bc6b">scan</a>(<span class="keyword">const</span> <a class="code" href="structgdf__column__.html">gdf_column</a> *input, <a class="code" href="structgdf__column__.html">gdf_column</a> *output,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                   gdf_scan_op op, <span class="keywordtype">bool</span> inclusive);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif  // REDUCTION_HPP</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}  <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif  // REDUCTION_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructgdf__column___html"><div class="ttname"><a href="structgdf__column__.html">gdf_column_</a></div><div class="ttdoc">The C representation of a column in CUDF. This is the main unit of operation.</div><div class="ttdef"><b>Definition:</b> types.h:137</div></div>
-<div class="ttc" id="anamespacecudf_html_a34eb2aea42d4ee97fb98cc4b38dabd7c"><div class="ttname"><a href="namespacecudf.html#a34eb2aea42d4ee97fb98cc4b38dabd7c">cudf::reduce</a></div><div class="ttdeci">gdf_scalar reduce(const gdf_column *col, cudf::reduction::operators op, gdf_dtype output_dtype, gdf_size_type ddof)</div><div class="ttdoc">Computes the reduction of the values in all rows of a column This function does not detect overflows ...</div><div class="ttdef"><b>Definition:</b> reductions.cu:21</div></div>
-<div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> binaryop.cpp:43</div></div>
+<div class="ttc" id="astructgdf__column___html"><div class="ttname"><a href="structgdf__column__.html">gdf_column_</a></div><div class="ttdoc">The C representation of a column in CUDF. This is the main unit of operation.</div><div class="ttdef"><b>Definition:</b> types.h:138</div></div>
+<div class="ttc" id="anamespacecudf_html_afdab46512f8d4cf604ed983c02556bf4"><div class="ttname"><a href="namespacecudf.html#afdab46512f8d4cf604ed983c02556bf4">cudf::reduce</a></div><div class="ttdeci">gdf_scalar reduce(const gdf_column *col, cudf::reduction::operators op, gdf_dtype output_dtype, cudf::size_type ddof)</div><div class="ttdoc">Computes the reduction of the values in all rows of a column This function does not detect overflows ...</div><div class="ttdef"><b>Definition:</b> reductions.cu:21</div></div>
+<div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> binaryop.cpp:44</div></div>
 <div class="ttc" id="anamespacecudf_html_a65546aa9c42e87334fb5e1e3f274bc6b"><div class="ttname"><a href="namespacecudf.html#a65546aa9c42e87334fb5e1e3f274bc6b">cudf::scan</a></div><div class="ttdeci">void scan(const gdf_column *input, gdf_column *output, gdf_scan_op op, bool inclusive)</div><div class="ttdoc">Computes the scan (a.k.a. prefix sum) of a column. The null values are skipped for the operation,...</div><div class="ttdef"><b>Definition:</b> scan.cu:172</div></div>
-<div class="ttc" id="astructgdf__scalar_html"><div class="ttname"><a href="structgdf__scalar.html">gdf_scalar</a></div><div class="ttdoc">A struct to hold a scalar (single) value and its type information.</div><div class="ttdef"><b>Definition:</b> types.h:125</div></div>
+<div class="ttc" id="astructgdf__scalar_html"><div class="ttname"><a href="structgdf__scalar.html">gdf_scalar</a></div><div class="ttdoc">A struct to hold a scalar (single) value and its type information.</div><div class="ttdef"><b>Definition:</b> types.h:126</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
