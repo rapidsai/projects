@@ -144,7 +144,7 @@ class rmm::mr::thrust_allocator&lt; T &gt;</h3>
 
 <p>An <code>allocator</code> compatible with Thrust containers and algorithms using a <code><a class="el" href="classrmm_1_1mr_1_1device__memory__resource.html" title="Base class for all libcudf device memory allocation.">device_memory_resource</a></code> for memory (de)allocation. </p>
 <p>------------------------------------------------------------------------&mdash;* Unlike a <code><a class="el" href="classrmm_1_1mr_1_1device__memory__resource.html" title="Base class for all libcudf device memory allocation.">device_memory_resource</a></code>, <code><a class="el" href="classrmm_1_1mr_1_1thrust__allocator.html" title="An allocator compatible with Thrust containers and algorithms using a device_memory_resource for memo...">thrust_allocator</a></code> is typed and bound to allocate objects of a specific type <code>T</code>, but can be freely rebound to other types.</p>
-<h2><a class="anchor" id="autotoc_md54"></a>
+<h2><a class="anchor" id="autotoc_md52"></a>
 @tparam T The type of the objects that will be allocated by this allocator</h2>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a88aa26ce7e5c961d527cb600cfe5d54c"></a>
@@ -190,7 +190,7 @@ template&lt;typename T&gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md56"></a>
+<h2><a class="anchor" id="autotoc_md54"></a>
 @param stream The stream to be used for device memory (de)allocation</h2>
 
 </div>
@@ -225,7 +225,7 @@ template&lt;typename U &gt; </div>
 
 <p>Copy constructor. Copies the resource pointer and stream. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md57"></a>
+<h2><a class="anchor" id="autotoc_md55"></a>
 @param other The &lt;tt&gt;thrust_allocator&lt;/tt&gt; to copy</h2>
 
 </div>
@@ -264,7 +264,7 @@ template&lt;typename T&gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md58"></a>
+<h2><a class="anchor" id="autotoc_md56"></a>
 @return pointer Pointer to the newly allocated storage</h2>
 
 </div>
@@ -313,7 +313,7 @@ template&lt;typename T&gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md59"></a>
+<h2><a class="anchor" id="autotoc_md57"></a>
 prior &lt;tt&gt;allocate&lt;/tt&gt; call that produced &lt;tt&gt;p&lt;/tt&gt;</h2>
 
 </div>
@@ -343,7 +343,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md60"></a>
+<h2><a class="anchor" id="autotoc_md58"></a>
 @brief Returns the device memory resource used by this allocator.</h2>
 
 </div>
@@ -373,7 +373,7 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md61"></a>
+<h2><a class="anchor" id="autotoc_md59"></a>
 @brief Returns the stream used by this allocator.</h2>
 
 </div>
