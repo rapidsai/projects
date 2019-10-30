@@ -102,6 +102,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#ridge-regression">Ridge Regression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lasso-regression">Lasso Regression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#elasticnet-regression">ElasticNet Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mini-batch-sgd-classifier">Mini Batch SGD Classifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mini-batch-sgd-regressor">Mini Batch SGD Regressor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#stochastic-gradient-descent">Stochastic Gradient Descent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#random-forest">Random Forest</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#forest-inferencing">Forest Inferencing</a></li>
@@ -545,14 +547,36 @@ convert the inputs to np.float32.</p>
 </dl>
 </dd></dl>
 
-<span class="target" id="module-cuml.metrics.cluster"></span></div></blockquote>
+<span class="target" id="module-cuml.metrics.cluster.adjustedrandindex"></span><dl class="function">
+<dt id="cuml.metrics.cluster.adjustedrandindex.adjusted_rand_score">
+<code class="sig-prename descclassname">cuml.metrics.cluster.adjustedrandindex.</code><code class="sig-name descname">adjusted_rand_score</code><span class="sig-paren">(</span><em class="sig-param">labels_true</em>, <em class="sig-param">labels_pred</em>, <em class="sig-param">handle=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.metrics.cluster.adjustedrandindex.adjusted_rand_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjusted_rand_score is a clustering similarity metric based on the Rand
+index and is corrected for chance.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>labels_true</strong><span class="classifier">Ground truth labels to be used as a reference</span></dt><dd><p>labels_pred : Array of predicted labels used to evaluate the model</p>
+<p>handle : cuml.Handle</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float</dt><dd><p>The adjusted rand index value between -1.0 and 1.0</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
 </div>
 <div class="section" id="benchmarking">
 <h3>Benchmarking<a class="headerlink" href="#benchmarking" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><span class="target" id="module-cuml.benchmark.algorithms"></span><dl class="class">
 <dt id="cuml.benchmark.algorithms.AlgorithmPair">
-<em class="property">class </em><code class="sig-prename descclassname">cuml.benchmark.algorithms.</code><code class="sig-name descname">AlgorithmPair</code><span class="sig-paren">(</span><em class="sig-param">cpu_class</em>, <em class="sig-param">cuml_class</em>, <em class="sig-param">shared_args</em>, <em class="sig-param">cuml_args={}</em>, <em class="sig-param">cpu_args={}</em>, <em class="sig-param">name=None</em>, <em class="sig-param">accepts_labels=True</em>, <em class="sig-param">data_prep_hook=None</em>, <em class="sig-param">accuracy_function=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.benchmark.algorithms.AlgorithmPair" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.benchmark.algorithms.</code><code class="sig-name descname">AlgorithmPair</code><span class="sig-paren">(</span><em class="sig-param">cpu_class</em>, <em class="sig-param">cuml_class</em>, <em class="sig-param">shared_args</em>, <em class="sig-param">cuml_args={}</em>, <em class="sig-param">cpu_args={}</em>, <em class="sig-param">name=None</em>, <em class="sig-param">accepts_labels=True</em>, <em class="sig-param">data_prep_hook=None</em>, <em class="sig-param">accuracy_function=None</em>, <em class="sig-param">bench_func=&lt;function fit&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.benchmark.algorithms.AlgorithmPair" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wraps a cuML algorithm and (optionally) a cpu-based algorithm
 (typically scikit-learn, but does not need to be as long as it offers
 <cite>fit</cite> and <cite>predict</cite> or <cite>transform</cite> methods).
@@ -1322,9 +1346,11 @@ coefficients when predicting response y with a linear combination of the
 predictors in X. It can reduce the variance of the predictors, and improves
 the conditioning of the problem.</p>
 <p>cuML’s Ridge an array-like object or cuDF DataFrame, and provides 3
-algorithms: SVD, Eig and CD to fit a linear model. SVD is more stable,
-but Eig (default) is much faster. CD uses Coordinate Descent and can be
-faster when data is large.</p>
+algorithms: SVD, Eig and CD to fit a linear model. In general SVD uses
+significantly more memory and is slower than Eig. If using CUDA 10.1,
+the memory difference is even bigger than in the other supported CUDA
+versions. However, SVD is more stable than Eig (default). CD uses
+Coordinate Descent and can be faster when data is large.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1911,6 +1937,346 @@ will increase memory used for the method.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="mini-batch-sgd-classifier">
+<h3>Mini Batch SGD Classifier<a class="headerlink" href="#mini-batch-sgd-classifier" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.MBSGDClassifier">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">MBSGDClassifier</code><a class="headerlink" href="#cuml.MBSGDClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Linear models (linear SVM, logistic regression, or linear regression)
+fitted by minimizing a regularized empirical loss with mini-batch SGD.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>loss</strong><span class="classifier">‘hinge’, ‘log’, ‘squared_loss’ (default = ‘squared_loss’)</span></dt><dd><p>‘hinge’ uses linear SVM
+‘log’ uses logistic regression
+‘squared_loss’ uses linear regression</p>
+</dd>
+<dt><strong>penalty: ‘none’, ‘l1’, ‘l2’, ‘elasticnet’ (default = ‘none’)</strong></dt><dd><p>‘none’ does not perform any regularization
+‘l1’ performs L1 norm (Lasso) which minimizes the sum of the abs value
+of coefficients
+‘l2’ performs L2 norm (Ridge) which minimizes the sum of the square of
+the coefficients
+‘elasticnet’ performs Elastic Net regularization which is a weighted
+average of L1 and L2 norms</p>
+</dd>
+<dt><strong>alpha: float (default = 0.0001)</strong></dt><dd><p>The constant value which decides the degree of regularization</p>
+</dd>
+<dt><strong>fit_intercept</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>If True, the model tries to correct for the global mean of y.
+If False, the model expects that you have centered the data.</p>
+</dd>
+<dt><strong>epochs</strong><span class="classifier">int (default = 1000)</span></dt><dd><p>The number of times the model should iterate through the entire dataset
+during training (default = 1000)</p>
+</dd>
+<dt><strong>tol</strong><span class="classifier">float (default = 1e-3)</span></dt><dd><p>The training process will stop if current_loss &gt; previous_loss - tol</p>
+</dd>
+<dt><strong>shuffle</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>True, shuffles the training data after each epoch
+False, does not shuffle the training data after each epoch</p>
+</dd>
+<dt><strong>eta0</strong><span class="classifier">float (default = 0.001)</span></dt><dd><p>Initial learning rate</p>
+</dd>
+<dt><strong>power_t</strong><span class="classifier">float (default = 0.5)</span></dt><dd><p>The exponent used for calculating the invscaling learning rate</p>
+</dd>
+<dt><strong>learning_rate</strong><span class="classifier">‘optimal’, ‘constant’, ‘invscaling’,</span></dt><dd><blockquote>
+<div><p>‘adaptive’ (default = ‘constant’)</p>
+</div></blockquote>
+<p>optimal option supported in the next version
+constant keeps the learning rate constant
+adaptive changes the learning rate if the training loss or the
+validation accuracy does not improve for n_iter_no_change epochs.
+The old learning rate is generally divide by 5</p>
+</dd>
+<dt><strong>n_iter_no_change</strong><span class="classifier">int (default = 5)</span></dt><dd><p>the number of epochs to train without any imporvement in the model</p>
+</dd>
+<dt><strong>Notes</strong></dt><dd></dd>
+<dt><strong>——</strong></dt><dd></dd>
+<dt><strong>For additional docs, see `scikitlearn’s OLS</strong></dt><dd></dd>
+<dt><strong>&lt;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html&gt;</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Output:
+.. code-block:: python</p>
+<blockquote>
+<div><p>cuML intercept :  0.7150013446807861
+cuML coef :  0    0.27320495</p>
+<blockquote>
+<div><p>1     0.1875956
+dtype: float32</p>
+</div></blockquote>
+<p>cuML predictions :  [1. 1.]</p>
+</div></blockquote>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.MBSGDClassifier.fit" title="cuml.MBSGDClassifier.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
+<td><p>Fit the model with X and y.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.MBSGDClassifier.get_params" title="cuml.MBSGDClassifier.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
+<td><p>Sklearn style return parameter state</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.MBSGDClassifier.predict" title="cuml.MBSGDClassifier.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
+<td><p>Predicts the y for X.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.MBSGDClassifier.set_params" title="cuml.MBSGDClassifier.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
+<td><p>Sklearn style set parameter state to dictionary of params.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cuml.MBSGDClassifier.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.MBSGDClassifier.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model with X and y.
+Parameters
+———-
+X : array-like (device or host) shape = (n_samples, n_features)</p>
+<blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</div></blockquote>
+<dl class="simple">
+<dt>y<span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1).
+Acceptable formats: cuDF Series, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt>convert_dtype<span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the fit method will, when necessary, convert
+y to be the same data type as X if they differ. This
+will increase memory used for the method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.MBSGDClassifier.get_params">
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.MBSGDClassifier.get_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sklearn style return parameter state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>deep</strong><span class="classifier">boolean (default = True)</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.MBSGDClassifier.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.MBSGDClassifier.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the y for X.
+Parameters
+———-
+X : array-like (device or host) shape = (n_samples, n_features)</p>
+<blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</div></blockquote>
+<dl class="simple">
+<dt>convert_dtype<span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
+the input to the data type which was used to train the model. This
+will increase memory used for the method.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.MBSGDClassifier.set_params">
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.MBSGDClassifier.set_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sklearn style set parameter state to dictionary of params.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>params</strong><span class="classifier">dict of new params</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="mini-batch-sgd-regressor">
+<h3>Mini Batch SGD Regressor<a class="headerlink" href="#mini-batch-sgd-regressor" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.MBSGDRegressor">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">MBSGDRegressor</code><a class="headerlink" href="#cuml.MBSGDRegressor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Linear regression model fitted by minimizing a
+regularized empirical loss with mini-batch SGD.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>loss</strong><span class="classifier">‘squared_loss’ (default = ‘squared_loss’)</span></dt><dd><p>‘squared_loss’ uses linear regression</p>
+</dd>
+<dt><strong>penalty: ‘none’, ‘l1’, ‘l2’, ‘elasticnet’ (default = ‘none’)</strong></dt><dd><p>‘none’ does not perform any regularization
+‘l1’ performs L1 norm (Lasso) which minimizes the sum of the abs value
+of coefficients
+‘l2’ performs L2 norm (Ridge) which minimizes the sum of the square of
+the coefficients
+‘elasticnet’ performs Elastic Net regularization which is a weighted
+average of L1 and L2 norms</p>
+</dd>
+<dt><strong>alpha: float (default = 0.0001)</strong></dt><dd><p>The constant value which decides the degree of regularization</p>
+</dd>
+<dt><strong>fit_intercept</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>If True, the model tries to correct for the global mean of y.
+If False, the model expects that you have centered the data.</p>
+</dd>
+<dt><strong>epochs</strong><span class="classifier">int (default = 1000)</span></dt><dd><p>The number of times the model should iterate through the entire dataset
+during training (default = 1000)</p>
+</dd>
+<dt><strong>tol</strong><span class="classifier">float (default = 1e-3)</span></dt><dd><p>The training process will stop if current_loss &gt; previous_loss - tol</p>
+</dd>
+<dt><strong>shuffle</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>True, shuffles the training data after each epoch
+False, does not shuffle the training data after each epoch</p>
+</dd>
+<dt><strong>eta0</strong><span class="classifier">float (default = 0.001)</span></dt><dd><p>Initial learning rate</p>
+</dd>
+<dt><strong>power_t</strong><span class="classifier">float (default = 0.5)</span></dt><dd><p>The exponent used for calculating the invscaling learning rate</p>
+</dd>
+<dt><strong>learning_rate</strong><span class="classifier">‘optimal’, ‘constant’, ‘invscaling’,</span></dt><dd><blockquote>
+<div><p>‘adaptive’ (default = ‘constant’)</p>
+</div></blockquote>
+<p>optimal option supported in the next version
+constant keeps the learning rate constant
+adaptive changes the learning rate if the training loss or the
+validation accuracy does not improve for n_iter_no_change epochs.
+The old learning rate is generally divide by 5</p>
+</dd>
+<dt><strong>n_iter_no_change</strong><span class="classifier">int (default = 5)</span></dt><dd><p>the number of epochs to train without any imporvement in the model</p>
+</dd>
+<dt><strong>Notes</strong></dt><dd></dd>
+<dt><strong>——</strong></dt><dd></dd>
+<dt><strong>For additional docs, see `scikitlearn’s OLS</strong></dt><dd></dd>
+<dt><strong>&lt;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDRegressor.html&gt;</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Output:
+.. code-block:: python</p>
+<blockquote>
+<div><p>cuML intercept :  0.7150013446807861
+cuML coef :  0    0.27320495</p>
+<blockquote>
+<div><p>1     0.1875956
+dtype: float32</p>
+</div></blockquote>
+<p>cuML predictions :  [2.4725943 2.1993892]</p>
+</div></blockquote>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.MBSGDRegressor.fit" title="cuml.MBSGDRegressor.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
+<td><p>Fit the model with X and y.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.MBSGDRegressor.get_params" title="cuml.MBSGDRegressor.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
+<td><p>Sklearn style return parameter state</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.MBSGDRegressor.predict" title="cuml.MBSGDRegressor.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
+<td><p>Predicts the y for X.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.MBSGDRegressor.set_params" title="cuml.MBSGDRegressor.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
+<td><p>Sklearn style set parameter state to dictionary of params.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cuml.MBSGDRegressor.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.MBSGDRegressor.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model with X and y.
+Parameters
+———-
+X : array-like (device or host) shape = (n_samples, n_features)</p>
+<blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</div></blockquote>
+<dl class="simple">
+<dt>y<span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1).
+Acceptable formats: cuDF Series, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt>convert_dtype<span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the fit method will, when necessary, convert
+y to be the same data type as X if they differ. This
+will increase memory used for the method.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.MBSGDRegressor.get_params">
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.MBSGDRegressor.get_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sklearn style return parameter state</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>deep</strong><span class="classifier">boolean (default = True)</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.MBSGDRegressor.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.MBSGDRegressor.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the y for X.
+Parameters
+———-
+X : array-like (device or host) shape = (n_samples, n_features)</p>
+<blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</div></blockquote>
+<dl class="simple">
+<dt>convert_dtype<span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
+the input to the data type which was used to train the model. This
+will increase memory used for the method.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.MBSGDRegressor.set_params">
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.MBSGDRegressor.set_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sklearn style set parameter state to dictionary of params.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>params</strong><span class="classifier">dict of new params</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="stochastic-gradient-descent">
 <h3>Stochastic Gradient Descent<a class="headerlink" href="#stochastic-gradient-descent" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
@@ -1951,7 +2317,7 @@ during training (default = 1000)</p>
 <dt><strong>shuffle</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>True, shuffles the training data after each epoch
 False, does not shuffle the training data after each epoch</p>
 </dd>
-<dt><strong>eta0</strong><span class="classifier">float (default = 0.0)</span></dt><dd><p>Initial learning rate</p>
+<dt><strong>eta0</strong><span class="classifier">float (default = 0.001)</span></dt><dd><p>Initial learning rate</p>
 </dd>
 <dt><strong>power_t</strong><span class="classifier">float (default = 0.5)</span></dt><dd><p>The exponent used for calculating the invscaling learning rate</p>
 </dd>
@@ -2151,6 +2517,9 @@ to split a node.
 If int then number of sample rows
 If float the min_rows_per_sample*n_rows</p>
 </dd>
+<dt><strong>min_impurity_decrease</strong><span class="classifier">float (default = 0.0)</span></dt><dd><p>Minimum decrease in impurity requried for
+node to be spilt.</p>
+</dd>
 <dt><strong>quantile_per_tree</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>Whether quantile is computed for individal trees in RF.
 Only relevant for GLOBAL_QUANTILE split_algo.</p>
 </dd>
@@ -2199,7 +2568,7 @@ Only relevant for GLOBAL_QUANTILE split_algo.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.print_summary" title="cuml.ensemble.RandomForestClassifier.print_summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_summary</span></code></a>(self)</p></td>
 <td><p>prints the summary of the forest used to train and test the model</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.score" title="cuml.ensemble.RandomForestClassifier.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.score" title="cuml.ensemble.RandomForestClassifier.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, threshold, algo, num_classes])</p></td>
 <td><p>Calculates the accuracy metric score of the model for X.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.set_params" title="cuml.ensemble.RandomForestClassifier.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
@@ -2308,22 +2677,38 @@ train and test the Random Forest model</p>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestClassifier.score">
-<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.score" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'BATCH_TREE_REORG'</em>, <em class="sig-param">num_classes=2</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the accuracy metric score of the model for X.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 <dt><strong>y</strong><span class="classifier">NumPy</span></dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
 </dd>
+<dt><strong>algo</strong><span class="classifier">string name of the algo from (from algo_t enum)</span></dt><dd><p>This is optional and required only while performing the
+predict operation on the GPU.
+‘NAIVE’ - simple inference using shared memory
+‘TREE_REORG’ - similar to naive but trees rearranged to be more</p>
+<blockquote>
+<div><p>coalescing-friendly</p>
+</div></blockquote>
+<dl class="simple">
+<dt>‘BATCH_TREE_REORG’ - similar to TREE_REORG but predicting</dt><dd><p>multiple rows per thread block</p>
+</dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>float</dt><dd><p>Accuracy of the model [0.0 - 1.0]</p>
+<dt><strong>threshold</strong><span class="classifier">float</span></dt><dd><p>threshold is used to for classification
+This is optional and required only while performing the
+predict operation on the GPU.</p>
+</dd>
+<dt><strong>num_classes</strong><span class="classifier">integer</span></dt><dd><p>number of different classes present in the dataset</p>
+</dd>
+<dt><strong>Returns</strong></dt><dd></dd>
+<dt><strong>——-</strong></dt><dd></dd>
+<dt><strong>float</strong></dt><dd><p>Accuracy of the model [0.0 - 1.0]</p>
 </dd>
 </dl>
 </dd>
@@ -2417,11 +2802,17 @@ to split a node.
 If int then number of sample rows
 If float the min_rows_per_sample*n_rows</p>
 </dd>
+<dt><strong>min_impurity_decrease</strong><span class="classifier">float (default = 0.0)</span></dt><dd><p>The minimum decrease in impurity required
+for node to be split</p>
+</dd>
 <dt><strong>accuracy_metric</strong><span class="classifier">string (default = ‘mse’)</span></dt><dd><p>Decides the metric used to evaluate the performance
 of the model.
 for median of abs error : ‘median_ae’
 for mean of abs error : ‘mean_ae’
 for mean square error’ : ‘mse’</p>
+</dd>
+<dt><strong>quantile_per_tree</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>Whether quantile is computed for individal trees in RF.
+Only relevant for GLOBAL_QUANTILE split_algo.</p>
 </dd>
 </dl>
 </dd>
@@ -2453,7 +2844,7 @@ for mean square error’ : ‘mse’</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.fit" title="cuml.ensemble.RandomForestRegressor.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
-<td><p>Perform Random Forest Classification on the input data</p></td>
+<td><p>Perform Random Forest Regression on the input data</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.get_params" title="cuml.ensemble.RandomForestRegressor.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
 <td><p>Returns the value of all parameters required to configure this estimator as a dictionary.</p></td>
@@ -2467,7 +2858,7 @@ for mean square error’ : ‘mse’</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.print_summary" title="cuml.ensemble.RandomForestRegressor.print_summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_summary</span></code></a>(self)</p></td>
 <td><p>prints the summary of the forest used to train and test the model</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.score" title="cuml.ensemble.RandomForestRegressor.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.score" title="cuml.ensemble.RandomForestRegressor.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, algo])</p></td>
 <td><p>Calculates the accuracy metric score of the model for X.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.set_params" title="cuml.ensemble.RandomForestRegressor.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
@@ -2478,7 +2869,7 @@ for mean square error’ : ‘mse’</p>
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestRegressor.fit">
 <code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.fit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Perform Random Forest Classification on the input data</p>
+<dd><p>Perform Random Forest Regression on the input data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -2563,7 +2954,7 @@ train and test the Random Forest model</p>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestRegressor.score">
-<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.score" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">algo=u'BATCH_TREE_REORG'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the accuracy metric score of the model for X.
 Parameters
 ———-
@@ -2573,8 +2964,20 @@ X : array-like (device or host) shape = (n_samples, n_features)</p>
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </div></blockquote>
-<dl class="simple">
+<dl>
 <dt>y: NumPy</dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
+</dd>
+<dt>algo<span class="classifier">string name of the algo from (from algo_t enum)</span></dt><dd><p>This is optional and required only while performing the
+predict operation on the GPU.
+‘NAIVE’ - simple inference using shared memory
+‘TREE_REORG’ - similar to naive but trees rearranged to be more</p>
+<blockquote>
+<div><p>coalescing-friendly</p>
+</div></blockquote>
+<dl class="simple">
+<dt>‘BATCH_TREE_REORG’ - similar to TREE_REORG but predicting</dt><dd><p>multiple rows per thread block</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <p>mean_square_error : float or
@@ -3062,7 +3465,7 @@ than randomnly selecting K points.</p>
 </dd>
 <dt><strong>max_iter</strong><span class="classifier">int (default = 300)</span></dt><dd><p>The more iterations of EM, the more accurate, but slower.</p>
 </dd>
-<dt><strong>tol</strong><span class="classifier">float (default = 1e-4)</span></dt><dd><p>Stopping criterion when centroid means do not change much.</p>
+<dt><strong>tol</strong><span class="classifier">float64 (default = 1e-4)</span></dt><dd><p>Stopping criterion when centroid means do not change much.</p>
 </dd>
 <dt><strong>verbose</strong><span class="classifier">boolean (default = 0)</span></dt><dd><p>If True, prints diagnositc information.</p>
 </dd>
@@ -3078,7 +3481,7 @@ kmeans++ intialization.
 for the initial centroids. If an ndarray is passed, it should be of
 shape (n_clusters, n_features) and gives the initial centers.</p>
 </dd>
-<dt><strong>oversampling_factor</strong><span class="classifier">int scalable k-means|| oversampling factor</span></dt><dd></dd>
+<dt><strong>oversampling_factor</strong><span class="classifier">float64 scalable k-means|| oversampling factor</span></dt><dd></dd>
 <dt><strong>max_samples_per_batch</strong><span class="classifier">int maximum number of samples to use for each batch</span></dt><dd><p>of the pairwise distance computation.</p>
 </dd>
 <dt><strong>oversampling_factor</strong><span class="classifier">int (default = 2) The amount of points to sample</span></dt><dd><p>in scalable k-means++ initialization for potential centroids.
@@ -5047,7 +5450,10 @@ documentation for single-GPU K-Means.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.predict" title="cuml.dask.cluster.KMeans.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
 <td><p>Predicts the labels using a distributed KMeans model :param X: dask_cudf.Dataframe to predict :return: A dask_cudf.Dataframe containing label predictions</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.transform" title="cuml.dask.cluster.KMeans.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.raise_exception_from_futures" title="cuml.dask.cluster.KMeans.raise_exception_from_futures"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raise_exception_from_futures</span></code></a>(self, futures)</p></td>
+<td><p>Raises a RuntimeError if any of the futures indicates an exception</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.transform" title="cuml.dask.cluster.KMeans.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X)</p></td>
 <td><p>Predicts the labels using a distributed KMeans model :param X: dask_cudf.Dataframe to predict :return: A dask_cudf.Dataframe containing label predictions</p></td>
 </tr>
 </tbody>
@@ -5140,6 +5546,13 @@ Extracts centroids
 <dd><p>Predicts the labels using a distributed KMeans model
 :param X: dask_cudf.Dataframe to predict
 :return: A dask_cudf.Dataframe containing label predictions</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.cluster.KMeans.raise_exception_from_futures">
+<code class="sig-name descname">raise_exception_from_futures</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">futures</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.raise_exception_from_futures" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raises a RuntimeError if any of the futures indicates
+an exception</p>
 </dd></dl>
 
 <dl class="method">
