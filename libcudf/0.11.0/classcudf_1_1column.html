@@ -67,6 +67,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classcudf_1_1column-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -74,6 +75,12 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1column_1_1contents.html">contents</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for the contents of a column.  <a href="structcudf_1_1column_1_1contents.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3d17a379583d63242649c782d87905bb"><td class="memItemLeft" align="right" valign="top"><a id="a3d17a379583d63242649c782d87905bb"></a>
@@ -88,9 +95,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3f067a569ada07a600542e681bd2539c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column.html#a3f067a569ada07a600542e681bd2539c">column</a> (<a class="el" href="classcudf_1_1column.html">column</a> const &amp;other, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a3f067a569ada07a600542e681bd2539c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new column object by deep copying the contents of <code>other</code>.  <a href="classcudf_1_1column.html#a3f067a569ada07a600542e681bd2539c">More...</a><br /></td></tr>
 <tr class="separator:a3f067a569ada07a600542e681bd2539c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae41668052868d3ac398a5e1e78b72fc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column.html#ae41668052868d3ac398a5e1e78b72fc3">column</a> (<a class="el" href="classcudf_1_1column.html">column</a> &amp;&amp;other)</td></tr>
-<tr class="memdesc:ae41668052868d3ac398a5e1e78b72fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the contents from <code>other</code> to create a new column.  <a href="classcudf_1_1column.html#ae41668052868d3ac398a5e1e78b72fc3">More...</a><br /></td></tr>
-<tr class="separator:ae41668052868d3ac398a5e1e78b72fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51789e95134b9753295130ca21bab6b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column.html#a51789e95134b9753295130ca21bab6b2">column</a> (<a class="el" href="classcudf_1_1column.html">column</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:a51789e95134b9753295130ca21bab6b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the contents from <code>other</code> to create a new column.  <a href="classcudf_1_1column.html#a51789e95134b9753295130ca21bab6b2">More...</a><br /></td></tr>
+<tr class="separator:a51789e95134b9753295130ca21bab6b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ba075937984a11d8cef416a85fd3089"><td class="memTemplParams" colspan="2">template&lt;typename B1 , typename B2  = rmm::device_buffer&gt; </td></tr>
 <tr class="memitem:a3ba075937984a11d8cef416a85fd3089"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcudf_1_1column.html#a3ba075937984a11d8cef416a85fd3089">column</a> (<a class="el" href="classcudf_1_1data__type.html">data_type</a> dtype, size_type <a class="el" href="classcudf_1_1column.html#ae2270f05ff97dfbf45ea71f20f0ed275">size</a>, B1 &amp;&amp;data, B2 &amp;&amp;null_mask={}, size_type <a class="el" href="classcudf_1_1column.html#a2d92092a5214eb9ea8205eea0adbd9bc">null_count</a>=UNKNOWN_NULL_COUNT, std::vector&lt; std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&gt; &amp;&amp;children={})</td></tr>
 <tr class="memdesc:a3ba075937984a11d8cef416a85fd3089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new column from existing device memory.  <a href="classcudf_1_1column.html#a3ba075937984a11d8cef416a85fd3089">More...</a><br /></td></tr>
@@ -122,6 +129,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a685b93e9f39793b0846ed795db754f99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcudf_1_1column.html">column</a> const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column.html#a685b93e9f39793b0846ed795db754f99">child</a> (size_type child_index) const noexcept</td></tr>
 <tr class="memdesc:a685b93e9f39793b0846ed795db754f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const reference to the specified child.  <a href="classcudf_1_1column.html#a685b93e9f39793b0846ed795db754f99">More...</a><br /></td></tr>
 <tr class="separator:a685b93e9f39793b0846ed795db754f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48f912fcfe196400944c62513131ab12"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1column_1_1contents.html">contents</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column.html#a48f912fcfe196400944c62513131ab12">release</a> () noexcept</td></tr>
+<tr class="memdesc:a48f912fcfe196400944c62513131ab12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases ownership of the column's contents.  <a href="classcudf_1_1column.html#a48f912fcfe196400944c62513131ab12">More...</a><br /></td></tr>
+<tr class="separator:a48f912fcfe196400944c62513131ab12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4d5aed625c00685f5bf826d5153d966"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcudf_1_1column__view.html">column_view</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column.html#ab4d5aed625c00685f5bf826d5153d966">view</a> () const</td></tr>
 <tr class="memdesc:ab4d5aed625c00685f5bf826d5153d966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an immutable, non-owning view of the column's data and children.  <a href="classcudf_1_1column.html#ab4d5aed625c00685f5bf826d5153d966">More...</a><br /></td></tr>
 <tr class="separator:ab4d5aed625c00685f5bf826d5153d966"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,11 +215,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae41668052868d3ac398a5e1e78b72fc3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae41668052868d3ac398a5e1e78b72fc3">&#9670;&nbsp;</a></span>column() <span class="overload">[3/5]</span></h2>
+<a id="a51789e95134b9753295130ca21bab6b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51789e95134b9753295130ca21bab6b2">&#9670;&nbsp;</a></span>column() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">cudf::column::column </td>
@@ -219,6 +232,11 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Move the contents from <code>other</code> to create a new column. </p>
@@ -479,7 +497,7 @@ template&lt;typename B1 , typename B2  = rmm::device_buffer&gt; </div>
 
 <p>Creates a mutable, non-owning view of the column's data and children. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>Creating a mutable view of a <code>column</code> invalidates the <code>column</code>'s <code><a class="el" href="classcudf_1_1column.html#a2d92092a5214eb9ea8205eea0adbd9bc" title="Returns the count of null elements.">null_count()</a></code> by setting it to <code>UNKNOWN_NULL_COUNT</code>. The user can either explicitly update the null count with <code><a class="el" href="classcudf_1_1column.html#ae3b18509d779b105420b96aa771a339a" title="Updates the count of null elements.">set_null_count()</a></code>, or if not, the null count will be recomputed on the next invocation of <code><a class="el" href="classcudf_1_1column.html#a2d92092a5214eb9ea8205eea0adbd9bc" title="Returns the count of null elements.">null_count()</a></code>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md198"></a>
+<h2><a class="anchor" id="autotoc_md200"></a>
 @return mutable_column_view The mutable, non-owning view</h2>
 
 </div>
@@ -591,7 +609,7 @@ elements indicated by the &lt;tt&gt;null_mask&lt;/tt&gt; (if it exists).</h2>
 
 <p>Implicit conversion operator to a <code><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></code>. </p>
 <p>------------------------------------------------------------------------&mdash;* This allows passing a <code>column</code> object directly into a function that requires a <code><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></code>. The conversion is automatic.</p>
-<h2><a class="anchor" id="autotoc_md197"></a>
+<h2><a class="anchor" id="autotoc_md199"></a>
 @return column_view Immutable, non-owning &lt;tt&gt;column_view&lt;/tt&gt;</h2>
 
 </div>
@@ -622,8 +640,45 @@ elements indicated by the &lt;tt&gt;null_mask&lt;/tt&gt; (if it exists).</h2>
 <p>Implicit conversion operator to a <code><a class="el" href="classcudf_1_1mutable__column__view.html" title="A non-owning, mutable view of device data as a column of elements, some of which may be null as indic...">mutable_column_view</a></code>. </p>
 <p>------------------------------------------------------------------------&mdash;* This allows pasing a <code>column</code> object into a function that accepts a <code><a class="el" href="classcudf_1_1mutable__column__view.html" title="A non-owning, mutable view of device data as a column of elements, some of which may be null as indic...">mutable_column_view</a></code>. The conversion is automatic.</p>
 <dl class="section note"><dt>Note</dt><dd>Creating a mutable view of a <code>column</code> invalidates the <code>column</code>'s <code><a class="el" href="classcudf_1_1column.html#a2d92092a5214eb9ea8205eea0adbd9bc" title="Returns the count of null elements.">null_count()</a></code> by setting it to <code>UNKNOWN_NULL_COUNT</code>. For best performance, the user should explicitly update the null count with <code><a class="el" href="classcudf_1_1column.html#ae3b18509d779b105420b96aa771a339a" title="Updates the count of null elements.">set_null_count()</a></code>. Otherwise, the null count will be recomputed on the next invocation of <code><a class="el" href="classcudf_1_1column.html#a2d92092a5214eb9ea8205eea0adbd9bc" title="Returns the count of null elements.">null_count()</a></code>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md199"></a>
+<h2><a class="anchor" id="autotoc_md201"></a>
 @return mutable_column_view Mutable, non-owning &lt;tt&gt;mutable_column_view&lt;/tt&gt;</h2>
+
+</div>
+</div>
+<a id="a48f912fcfe196400944c62513131ab12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48f912fcfe196400944c62513131ab12">&#9670;&nbsp;</a></span>release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcudf_1_1column_1_1contents.html">column::contents</a> cudf::column::release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Releases ownership of the column's contents. </p>
+<p>------------------------------------------------------------------------&mdash;* It is the caller's responsibility to query the <code><a class="el" href="classcudf_1_1column.html#ae2270f05ff97dfbf45ea71f20f0ed275">size()</a>, <a class="el" href="classcudf_1_1column.html#a2d92092a5214eb9ea8205eea0adbd9bc" title="Returns the count of null elements.">null_count()</a>, <a class="el" href="classcudf_1_1column.html#a138187ebd94b3a69aaec0700898ac464">type()</a></code> before invoking <code><a class="el" href="classcudf_1_1column.html#a48f912fcfe196400944c62513131ab12" title="Releases ownership of the column&#39;s contents.">release()</a></code>.</p>
+<p>After calling <code><a class="el" href="classcudf_1_1column.html#a48f912fcfe196400944c62513131ab12" title="Releases ownership of the column&#39;s contents.">release()</a></code> on a column it will be empty, i.e.:</p><ul>
+<li><code><a class="el" href="classcudf_1_1column.html#a138187ebd94b3a69aaec0700898ac464">type()</a> == <a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a>{EMPTY}</code></li>
+<li><code><a class="el" href="classcudf_1_1column.html#ae2270f05ff97dfbf45ea71f20f0ed275">size()</a> == 0</code></li>
+<li><code><a class="el" href="classcudf_1_1column.html#a2d92092a5214eb9ea8205eea0adbd9bc" title="Returns the count of null elements.">null_count()</a> == 0</code></li>
+<li><code><a class="el" href="classcudf_1_1column.html#a38c6d502a24f01b09c73882f5ac335bd">num_children()</a> == 0</code></li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>A <code>contents</code> struct containing the data, null mask, and children of </dd></dl>
+<h2><a class="anchor" id="autotoc_md197"></a>
+the column.</h2>
 
 </div>
 </div>
@@ -729,7 +784,7 @@ elements indicated by the &lt;tt&gt;null_mask&lt;/tt&gt; (if it exists).</h2>
 
 <p>Creates an immutable, non-owning view of the column's data and children. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md196"></a>
+<h2><a class="anchor" id="autotoc_md198"></a>
 @return column_view The immutable, non-owning view</h2>
 
 </div>

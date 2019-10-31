@@ -237,7 +237,7 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An immutable, non-owning view of device data as a column of elements. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md200"></a>
+<h2><a class="anchor" id="autotoc_md202"></a>
 that is trivially copyable and usable in CUDA device code.</h2>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8f74ac17ef9049a96cab4662910bac83"></a>
@@ -280,7 +280,7 @@ that is trivially copyable and usable in CUDA device code.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md218"></a>
+<h2><a class="anchor" id="autotoc_md220"></a>
 @param d_ptr Device memory pointer on which to base any child pointers.</h2>
 
 </div>
@@ -311,7 +311,7 @@ that is trivially copyable and usable in CUDA device code.</h2>
 
 <p>Construct's a <code><a class="el" href="classcudf_1_1column__device__view.html" title="An immutable, non-owning view of device data as a column of elements.">column_device_view</a></code> from a <code><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></code> populating all but the children. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>This constructor is for internal use only. To create a <code><a class="el" href="classcudf_1_1column__device__view.html" title="An immutable, non-owning view of device data as a column of elements.">column_device_view</a></code> from a <code><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></code>, the </dd></dl>
-<h2><a class="anchor" id="autotoc_md224"></a>
+<h2><a class="anchor" id="autotoc_md226"></a>
 &lt;tt&gt;column_device_view::create()&lt;/tt&gt; function should be used.</h2>
 
 </div>
@@ -348,7 +348,7 @@ that is trivially copyable and usable in CUDA device code.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md223"></a>
+<h2><a class="anchor" id="autotoc_md225"></a>
 @return column_view The requested child &lt;tt&gt;column_view&lt;/tt&gt;</h2>
 
 </div>
@@ -400,7 +400,7 @@ that is trivially copyable and usable in CUDA device code.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <code>unique_ptr</code> to a <code><a class="el" href="classcudf_1_1column__device__view.html" title="An immutable, non-owning view of device data as a column of elements.">column_device_view</a></code> that makes the data from </dd></dl>
-<h2><a class="anchor" id="autotoc_md220"></a>
+<h2><a class="anchor" id="autotoc_md222"></a>
 &lt;tt&gt;source_view&lt;/tt&gt; available in device memory.</h2>
 
 </div>
@@ -422,7 +422,7 @@ that is trivially copyable and usable in CUDA device code.</h2>
 
 <p>Destroy the <code>device_column_view</code> object. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>Does not free the column data, simply free's the device memory </dd></dl>
-<h2><a class="anchor" id="autotoc_md221"></a>
+<h2><a class="anchor" id="autotoc_md223"></a>
 allocated to hold the child views.</h2>
 
 </div>
@@ -462,7 +462,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md219"></a>
+<h2><a class="anchor" id="autotoc_md221"></a>
 @param element_index Position of the desired element</h2>
 
 </div>
@@ -502,7 +502,7 @@ template&lt;&gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md202"></a>
+<h2><a class="anchor" id="autotoc_md204"></a>
 @return string_view instance representing this element at this index</h2>
 
 </div>
@@ -533,7 +533,7 @@ template&lt;&gt; </div>
 
 <p>Return the size in bytes of the amount of memory needed to hold a device view of the specified column and it's children. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md222"></a>
+<h2><a class="anchor" id="autotoc_md224"></a>
 @param source_view The &lt;tt&gt;column_view&lt;/tt&gt; to use for this calculation.</h2>
 
 </div>

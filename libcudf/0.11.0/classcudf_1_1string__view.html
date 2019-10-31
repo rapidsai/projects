@@ -173,7 +173,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A non-owning, immutable view of device data that is a variable length char array representing a UTF-8 string. The caller must maintain the device memory for the lifetime of this instance. </p>
 <p>------------------------------------------------------------------------&mdash;* It provides a simple wrapper and string operations for an individual string </p>
-<h2><a class="anchor" id="autotoc_md382"></a>
+<h2><a class="anchor" id="autotoc_md385"></a>
 with a column of strings.</h2>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7e6e5d25a108945a55b4842380abd065"></a>
@@ -209,7 +209,7 @@ with a column of strings.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md383"></a>
+<h2><a class="anchor" id="autotoc_md386"></a>
 @param bytes Number of bytes in data array.</h2>
 
 </div>
@@ -232,7 +232,7 @@ with a column of strings.</h2>
 
 <p>Create instance from existing device char array. The array must include a null-terminator ('\0). </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md384"></a>
+<h2><a class="anchor" id="autotoc_md387"></a>
 @param data Device char array encoded in UTF8.</h2>
 
 </div>
@@ -253,7 +253,7 @@ with a column of strings.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md391"></a>
+<h2><a class="anchor" id="autotoc_md394"></a>
 @brief Return new iterator pointing to the beginning of this string</h2>
 
 </div>
@@ -276,7 +276,7 @@ with a column of strings.</h2>
 
 <p>Return the byte offset from <a class="el" href="classcudf_1_1string__view.html#a3abba521cada0c3a77566ffe74aad985">data()</a> for a given character position. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md394"></a>
+<h2><a class="anchor" id="autotoc_md397"></a>
 @param pos Character position</h2>
 
 </div>
@@ -316,7 +316,7 @@ with a column of strings.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 If they compare equal. &lt;0 Either the value of the first character of this string that does not match is lower in the arg string, or all compared characters match but the arg string is shorter. &gt;0 Either the value of the first character of this string that does not match is greater in the arg string, or all compared characters </dd></dl>
-<h2><a class="anchor" id="autotoc_md396"></a>
+<h2><a class="anchor" id="autotoc_md399"></a>
 match but the arg string is longer.</h2>
 
 </div>
@@ -345,7 +345,7 @@ match but the arg string is longer.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 If they compare equal. &lt;0 Either the value of the first character of this string that does not match is lower in the arg string, or all compared characters match but the arg string is shorter. &gt;0 Either the value of the first character of this string that does not match is greater in the arg string, or all compared characters </dd></dl>
-<h2><a class="anchor" id="autotoc_md395"></a>
+<h2><a class="anchor" id="autotoc_md398"></a>
 match but the arg string is longer.</h2>
 
 </div>
@@ -365,7 +365,7 @@ match but the arg string is longer.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md387"></a>
+<h2><a class="anchor" id="autotoc_md390"></a>
 @brief Return a pointer to the internal device array</h2>
 
 </div>
@@ -385,7 +385,7 @@ match but the arg string is longer.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md388"></a>
+<h2><a class="anchor" id="autotoc_md391"></a>
 @brief Return true if string has no characters</h2>
 
 </div>
@@ -405,7 +405,7 @@ match but the arg string is longer.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md392"></a>
+<h2><a class="anchor" id="autotoc_md395"></a>
 @brief Return new iterator pointing past the end of this string</h2>
 
 </div>
@@ -451,7 +451,7 @@ match but the arg string is longer.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md405"></a>
+<h2><a class="anchor" id="autotoc_md408"></a>
 @return -1 if arg string is not found in this string.</h2>
 
 </div>
@@ -504,7 +504,7 @@ match but the arg string is longer.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md404"></a>
+<h2><a class="anchor" id="autotoc_md407"></a>
 @return -1 if arg string is not found in this string.</h2>
 
 </div>
@@ -550,7 +550,7 @@ match but the arg string is longer.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md403"></a>
+<h2><a class="anchor" id="autotoc_md406"></a>
 @return -1 if str is not found in this string.</h2>
 
 </div>
@@ -572,7 +572,7 @@ match but the arg string is longer.</h2>
 
 <p>Return true if string is NULL. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md389"></a>
+<h2><a class="anchor" id="autotoc_md392"></a>
 That is, &lt;tt&gt;data()==nullptr&lt;/tt&gt; for this instance.</h2>
 
 </div>
@@ -592,7 +592,7 @@ That is, &lt;tt&gt;data()==nullptr&lt;/tt&gt; for this instance.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md386"></a>
+<h2><a class="anchor" id="autotoc_md389"></a>
 @brief Return the number of characters in this string</h2>
 
 </div>
@@ -613,7 +613,7 @@ That is, &lt;tt&gt;data()==nullptr&lt;/tt&gt; for this instance.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md398"></a>
+<h2><a class="anchor" id="autotoc_md401"></a>
 @brief Returns true if rhs does not match this string.</h2>
 
 </div>
@@ -634,7 +634,7 @@ That is, &lt;tt&gt;data()==nullptr&lt;/tt&gt; for this instance.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md399"></a>
+<h2><a class="anchor" id="autotoc_md402"></a>
 @brief Returns true if this string is ordered before rhs.</h2>
 
 </div>
@@ -655,7 +655,7 @@ That is, &lt;tt&gt;data()==nullptr&lt;/tt&gt; for this instance.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md401"></a>
+<h2><a class="anchor" id="autotoc_md404"></a>
 @brief Returns true if this string matches or is ordered before rhs.</h2>
 
 </div>
@@ -676,7 +676,7 @@ That is, &lt;tt&gt;data()==nullptr&lt;/tt&gt; for this instance.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md397"></a>
+<h2><a class="anchor" id="autotoc_md400"></a>
 @brief Returns true if rhs matches this string exactly.</h2>
 
 </div>
@@ -697,7 +697,7 @@ That is, &lt;tt&gt;data()==nullptr&lt;/tt&gt; for this instance.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md400"></a>
+<h2><a class="anchor" id="autotoc_md403"></a>
 @brief Returns true if rhs is ordered before this string.</h2>
 
 </div>
@@ -718,7 +718,7 @@ That is, &lt;tt&gt;data()==nullptr&lt;/tt&gt; for this instance.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md402"></a>
+<h2><a class="anchor" id="autotoc_md405"></a>
 @brief Returns true if rhs matches or is ordered before this string.</h2>
 
 </div>
@@ -741,7 +741,7 @@ That is, &lt;tt&gt;data()==nullptr&lt;/tt&gt; for this instance.</h2>
 
 <p>Return single UTF-8 character at the given character position. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md393"></a>
+<h2><a class="anchor" id="autotoc_md396"></a>
 @param pos Character position</h2>
 
 </div>
@@ -787,7 +787,7 @@ That is, &lt;tt&gt;data()==nullptr&lt;/tt&gt; for this instance.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md408"></a>
+<h2><a class="anchor" id="autotoc_md411"></a>
 @return -1 if arg string is not found in this string.</h2>
 
 </div>
@@ -840,7 +840,7 @@ That is, &lt;tt&gt;data()==nullptr&lt;/tt&gt; for this instance.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md407"></a>
+<h2><a class="anchor" id="autotoc_md410"></a>
 @return -1 if arg string is not found in this string.</h2>
 
 </div>
@@ -886,7 +886,7 @@ That is, &lt;tt&gt;data()==nullptr&lt;/tt&gt; for this instance.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md406"></a>
+<h2><a class="anchor" id="autotoc_md409"></a>
 @return -1 if arg string is not found in this string.</h2>
 
 </div>
@@ -932,7 +932,7 @@ That is, &lt;tt&gt;data()==nullptr&lt;/tt&gt; for this instance.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md411"></a>
+<h2><a class="anchor" id="autotoc_md414"></a>
 @return Number of tokens.</h2>
 
 </div>
@@ -952,7 +952,7 @@ That is, &lt;tt&gt;data()==nullptr&lt;/tt&gt; for this instance.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md385"></a>
+<h2><a class="anchor" id="autotoc_md388"></a>
 @brief Return the number of bytes in this string</h2>
 
 </div>
@@ -998,7 +998,7 @@ That is, &lt;tt&gt;data()==nullptr&lt;/tt&gt; for this instance.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md410"></a>
+<h2><a class="anchor" id="autotoc_md413"></a>
 @return Number of tokens.</h2>
 
 </div>
@@ -1037,7 +1037,7 @@ That is, &lt;tt&gt;data()==nullptr&lt;/tt&gt; for this instance.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md409"></a>
+<h2><a class="anchor" id="autotoc_md412"></a>
 @return New instance pointing to a subset of the characters within this instance.</h2>
 
 </div>

@@ -186,7 +186,7 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An immutable, non-owning view of device data as a column of elements. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md203"></a>
+<h2><a class="anchor" id="autotoc_md205"></a>
 that is trivially copyable and usable in CUDA device code.</h2>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad537e72bc510fe2afa81fda6dee9859b"></a>
@@ -223,7 +223,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md205"></a>
+<h2><a class="anchor" id="autotoc_md207"></a>
 @return T const* Typed pointer to underlying data, including the offset</h2>
 
 </div>
@@ -260,7 +260,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md217"></a>
+<h2><a class="anchor" id="autotoc_md219"></a>
 @return &lt;strong&gt;device&lt;/strong&gt; get_mask_word</h2>
 
 </div>
@@ -290,7 +290,7 @@ template&lt;typename T &gt; </div>
 
 <p>Indicates whether the column contains null elements, i.e., <code><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#a53d1cb858f088261d1c1d75db51c3def">null_count()</a> &gt; 0</code> </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section return"><dt>Returns</dt><dd>true The column contains null elements </dd></dl>
-<h2><a class="anchor" id="autotoc_md210"></a>
+<h2><a class="anchor" id="autotoc_md212"></a>
 @return false All elements are valid</h2>
 
 </div>
@@ -330,7 +330,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md204"></a>
+<h2><a class="anchor" id="autotoc_md206"></a>
 @return T const* Typed pointer to underlying data</h2>
 
 </div>
@@ -369,7 +369,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true The element is null </dd></dl>
-<h2><a class="anchor" id="autotoc_md215"></a>
+<h2><a class="anchor" id="autotoc_md217"></a>
 @return false The element is valid</h2>
 
 </div>
@@ -407,7 +407,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true The element is null </dd></dl>
-<h2><a class="anchor" id="autotoc_md216"></a>
+<h2><a class="anchor" id="autotoc_md218"></a>
 @return false The element is valid</h2>
 
 </div>
@@ -446,7 +446,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true The element is valid </dd></dl>
-<h2><a class="anchor" id="autotoc_md213"></a>
+<h2><a class="anchor" id="autotoc_md215"></a>
 @return false The element is null</h2>
 
 </div>
@@ -484,7 +484,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true The element is valid </dd></dl>
-<h2><a class="anchor" id="autotoc_md214"></a>
+<h2><a class="anchor" id="autotoc_md216"></a>
 @return false The element is null</h2>
 
 </div>
@@ -512,7 +512,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md209"></a>
+<h2><a class="anchor" id="autotoc_md211"></a>
 @brief Returns the count of null elements</h2>
 
 </div>
@@ -542,7 +542,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
 
 <p>Returns raw pointer to the underlying bitmask allocation. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>This function does <em>not</em> account for the <code><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#aa8f046548c2db522f00cfe801b59a120" title="Returns the index of the first element relative to the base memory.">offset()</a></code>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md211"></a>
+<h2><a class="anchor" id="autotoc_md213"></a>
 @note If &lt;tt&gt;null_count() == 0&lt;/tt&gt;, this may return &lt;tt&gt;nullptr&lt;/tt&gt;.</h2>
 
 </div>
@@ -573,7 +573,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
 <p>Indicates whether the column can contain null elements, i.e., if it has an allocated bitmask. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>If <code><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#a53d1cb858f088261d1c1d75db51c3def">null_count()</a> &gt; 0</code>, this function must always return <code>true</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true The bitmask is allocated </dd></dl>
-<h2><a class="anchor" id="autotoc_md208"></a>
+<h2><a class="anchor" id="autotoc_md210"></a>
 @return false The bitmask is not allocated</h2>
 
 </div>
@@ -603,7 +603,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
 
 <p>Returns the index of the first element relative to the base memory. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md212"></a>
+<h2><a class="anchor" id="autotoc_md214"></a>
 allocation, i.e., what is returned from &lt;tt&gt;head&lt;T&gt;()&lt;/tt&gt;.</h2>
 
 </div>
@@ -631,7 +631,7 @@ allocation, i.e., what is returned from &lt;tt&gt;head&lt;T&gt;()&lt;/tt&gt;.</h
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md206"></a>
+<h2><a class="anchor" id="autotoc_md208"></a>
 @brief Returns the number of elements in the column</h2>
 
 </div>
@@ -659,7 +659,7 @@ allocation, i.e., what is returned from &lt;tt&gt;head&lt;T&gt;()&lt;/tt&gt;.</h
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md207"></a>
+<h2><a class="anchor" id="autotoc_md209"></a>
 @brief Returns the element type</h2>
 
 </div>

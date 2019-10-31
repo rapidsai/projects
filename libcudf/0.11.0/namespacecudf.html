@@ -919,7 +919,7 @@ typedef".</p>
 
 <p>Type alias representing an int32_t duration of days since the unix. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md508"></a>
+<h2><a class="anchor" id="autotoc_md511"></a>
 epoch.</h2>
 
 </div>
@@ -938,7 +938,7 @@ epoch.</h2>
 
 <p>Type alias representing an int64_t duration of milliseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md510"></a>
+<h2><a class="anchor" id="autotoc_md513"></a>
 the unix epoch.</h2>
 
 </div>
@@ -957,7 +957,7 @@ the unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of nanoseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md512"></a>
+<h2><a class="anchor" id="autotoc_md515"></a>
 the unix epoch.</h2>
 
 </div>
@@ -976,7 +976,7 @@ the unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of seconds since the. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md509"></a>
+<h2><a class="anchor" id="autotoc_md512"></a>
 unix epoch.</h2>
 
 </div>
@@ -995,7 +995,7 @@ unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of microseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md511"></a>
+<h2><a class="anchor" id="autotoc_md514"></a>
 the unix epoch.</h2>
 
 </div>
@@ -1065,7 +1065,7 @@ the unix epoch.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md275"></a>
+<h2><a class="anchor" id="autotoc_md278"></a>
 @brief Indicates when to allocate a mask, based on an existing mask.</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a267e03474dcfd85242d2fdc6e5846ec6a615857bddd061281abf998989fb2ba8f"></a>NEVER&#160;</td><td class="fielddoc"><p>Do not allocate a null mask, regardless of input. </p>
@@ -1075,6 +1075,8 @@ the unix epoch.</h2>
 <tr><td class="fieldname"><a id="a267e03474dcfd85242d2fdc6e5846ec6a995bafc1b2e35df60002e61e2ec0c6df"></a>ALWAYS&#160;</td><td class="fielddoc"><p>Allocate a null mask, regardless of input. </p>
 </td></tr>
 </table>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a0">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -1090,7 +1092,7 @@ the unix epoch.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md463"></a>
+<h2><a class="anchor" id="autotoc_md466"></a>
 @brief Controls the allocation/initialization of a null mask.</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa481249b705132999f4d082aacd21dbfa74ad69efae4a12aec59682147aac9344"></a>UNALLOCATED&#160;</td><td class="fielddoc"><p>Null mask not allocated, (all elements are valid) </p>
@@ -1125,7 +1127,7 @@ the unix epoch.</h2>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md462"></a>
+<h2><a class="anchor" id="autotoc_md465"></a>
 @brief Indicates how null values compare against all other values.</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a058e6d6e8a21583ce0e85ee73e5abb31ac130fda0cb93540bf1574912e78964fb"></a>AFTER&#160;</td><td class="fielddoc"><p>NULL values ordered <em>after</em> all other values. </p>
@@ -1156,7 +1158,7 @@ the unix epoch.</h2>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md461"></a>
+<h2><a class="anchor" id="autotoc_md464"></a>
 @brief Indicates the order in which elements should be sorted.</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a750f02016b046079f7062d334890b4fca83ec681a20197326c163ea3b39ef7c32"></a>ASCENDING&#160;</td><td class="fielddoc"><p>Elements ordered from small to large. </p>
@@ -1179,7 +1181,7 @@ the unix epoch.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md464"></a>
+<h2><a class="anchor" id="autotoc_md467"></a>
 @brief Identifies a column's logical element type</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acd4cd7157c4379954b5772936f89c59bab2c14e467fcbf9a215ccc679f35bb027"></a>EMPTY&#160;</td><td class="fielddoc"><p>Always null with no underlying data. </p>
@@ -1418,6 +1420,8 @@ the unix epoch.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>gdf_column An allocated column of same size and type of input </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a1">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -1915,7 +1919,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md371"></a>
+<h2><a class="anchor" id="autotoc_md374"></a>
 @return std::size_t The necessary number of bytes</h2>
 
 </div>
@@ -2000,7 +2004,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md472"></a>
+<h2><a class="anchor" id="autotoc_md475"></a>
 @param bit_index The index of the bit to clear</h2>
 
 </div>
@@ -2028,7 +2032,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md353"></a>
+<h2><a class="anchor" id="autotoc_md356"></a>
 @return std::vector&lt;gdf_dtype_extra_info&gt;</h2>
 
 </div>
@@ -2056,7 +2060,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md352"></a>
+<h2><a class="anchor" id="autotoc_md355"></a>
 @return std::vector&lt;gdf_dtype&gt;</h2>
 
 </div>
@@ -2102,7 +2106,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A single table having all the columns from <code>table1</code> and <code>table2</code> </dd></dl>
-<h2><a class="anchor" id="autotoc_md355"></a>
+<h2><a class="anchor" id="autotoc_md358"></a>
 respectively in the same order.</h2>
 
 </div>
@@ -2390,7 +2394,7 @@ template&lt;JoinType join_type, typename index_type &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md246"></a>
+<h2><a class="anchor" id="autotoc_md248"></a>
 @return size_type The number of descendants of the parent</h2>
 
 </div>
@@ -2444,7 +2448,7 @@ template&lt;JoinType join_type, typename index_type &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md373"></a>
+<h2><a class="anchor" id="autotoc_md376"></a>
 @return The number of non-zero bits in the specified range</h2>
 
 </div>
@@ -2498,7 +2502,7 @@ template&lt;JoinType join_type, typename index_type &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md374"></a>
+<h2><a class="anchor" id="autotoc_md377"></a>
 @return The number of zero bits in the specified range</h2>
 
 </div>
@@ -2552,7 +2556,7 @@ template&lt;JoinType join_type, typename index_type &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>rmm::device_buffer A <code>device_buffer</code> for use as a null bitmask </dd></dl>
-<h2><a class="anchor" id="autotoc_md372"></a>
+<h2><a class="anchor" id="autotoc_md375"></a>
 satisfying the desired size and state</h2>
 
 </div>
@@ -3016,7 +3020,7 @@ template&lt;typename T &gt; </div>
 <p>------------------------------------------------------------------------&mdash;* When explicitly passed a template argument of a given type, returns the appropriate <code>gdf_dtype</code> for the specified C++ type.</p>
 <p>For example: </p><div class="fragment"><div class="line"><span class="keywordflow">return</span> gdf_dtype_of&lt;int32_t&gt;();        <span class="comment">// Returns GDF_INT32</span></div>
 <div class="line"><span class="keywordflow">return</span> gdf_dtype_of&lt;cudf::category&gt;(); <span class="comment">// Returns GDF_CATEGORY</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md479"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md482"></a>
 @tparam T The type to map to a &lt;tt&gt;gdf_dtype&lt;/tt&gt;</h2>
 
 </div>
@@ -3170,7 +3174,7 @@ template&lt;typename T , typename BinaryOp &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true If the table contains one or more null values </dd></dl>
-<h2><a class="anchor" id="autotoc_md354"></a>
+<h2><a class="anchor" id="autotoc_md357"></a>
 @return false If the table contains zero null values</h2>
 
 </div>
@@ -3251,7 +3255,7 @@ template&lt;typename T , typename BinaryOp &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md470"></a>
+<h2><a class="anchor" id="autotoc_md473"></a>
 @brief Returns the position within a word of the specified bit.</h2>
 
 </div>
@@ -3290,7 +3294,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a "compound" type </dd></dl>
-<h2><a class="anchor" id="autotoc_md497"></a>
+<h2><a class="anchor" id="autotoc_md500"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a "simple" type</h2>
 
 </div>
@@ -3328,7 +3332,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a compound type </dd></dl>
-<h2><a class="anchor" id="autotoc_md498"></a>
+<h2><a class="anchor" id="autotoc_md501"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is a simple type</h2>
 
 </div>
@@ -3367,7 +3371,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a fixed-width element type </dd></dl>
-<h2><a class="anchor" id="autotoc_md495"></a>
+<h2><a class="anchor" id="autotoc_md498"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a variable-width element type</h2>
 
 </div>
@@ -3405,7 +3409,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is fixed-width </dd></dl>
-<h2><a class="anchor" id="autotoc_md496"></a>
+<h2><a class="anchor" id="autotoc_md499"></a>
 @return false  &lt;tt&gt;type&lt;/tt&gt; is variable-width</h2>
 
 </div>
@@ -3497,7 +3501,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> is numeric </dd></dl>
-<h2><a class="anchor" id="autotoc_md491"></a>
+<h2><a class="anchor" id="autotoc_md494"></a>
 @return false  &lt;tt&gt;T&lt;/tt&gt; is not numeric</h2>
 
 </div>
@@ -3535,7 +3539,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is numeric </dd></dl>
-<h2><a class="anchor" id="autotoc_md492"></a>
+<h2><a class="anchor" id="autotoc_md495"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not numeric</h2>
 
 </div>
@@ -3575,7 +3579,7 @@ template&lt;typename L , typename R &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true Objects of types <code>L</code> and <code>R</code> can be relationally be compared </dd></dl>
-<h2><a class="anchor" id="autotoc_md490"></a>
+<h2><a class="anchor" id="autotoc_md493"></a>
 @return false Objects of types &lt;tt&gt;L&lt;/tt&gt; and &lt;tt&gt;R&lt;/tt&gt; cannot be compared</h2>
 
 </div>
@@ -3614,7 +3618,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a simple type </dd></dl>
-<h2><a class="anchor" id="autotoc_md499"></a>
+<h2><a class="anchor" id="autotoc_md502"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a compound type</h2>
 
 </div>
@@ -3652,7 +3656,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a simple type </dd></dl>
-<h2><a class="anchor" id="autotoc_md500"></a>
+<h2><a class="anchor" id="autotoc_md503"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is a compound type</h2>
 
 </div>
@@ -3735,7 +3739,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> is a timestamp </dd></dl>
-<h2><a class="anchor" id="autotoc_md493"></a>
+<h2><a class="anchor" id="autotoc_md496"></a>
 @return false  &lt;tt&gt;T&lt;/tt&gt; is not a timestamp</h2>
 
 </div>
@@ -3773,7 +3777,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a timestamp </dd></dl>
-<h2><a class="anchor" id="autotoc_md494"></a>
+<h2><a class="anchor" id="autotoc_md497"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not a timestamp</h2>
 
 </div>
@@ -3989,7 +3993,7 @@ template&lt;JoinType join_type, typename index_type &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md349"></a>
+<h2><a class="anchor" id="autotoc_md352"></a>
 @return gdf_column   Insertion points. Non-nullable column of type GDF_INT32 with same size as values.</h2>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2legacy_2search_8hpp-example.html#a1">/rapids/cudf/cpp/include/cudf/legacy/search.hpp</a>.</dd>
 </dl>
@@ -4124,7 +4128,7 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md238"></a>
+<h2><a class="anchor" id="autotoc_md240"></a>
 allocation of the column's &lt;tt&gt;data&lt;/tt&gt; and &lt;tt&gt;null_mask&lt;/tt&gt;.</h2>
 
 </div>
@@ -4263,7 +4267,7 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md241"></a>
+<h2><a class="anchor" id="autotoc_md243"></a>
 allocation of the column's &lt;tt&gt;null_mask&lt;/tt&gt; and children.</h2>
 
 </div>
@@ -4316,7 +4320,7 @@ allocation of the column's &lt;tt&gt;null_mask&lt;/tt&gt; and children.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md240"></a>
+<h2><a class="anchor" id="autotoc_md242"></a>
 allocation of the column's &lt;tt&gt;null_mask&lt;/tt&gt; and children.</h2>
 
 </div>
@@ -4391,7 +4395,7 @@ allocation of the column's &lt;tt&gt;null_mask&lt;/tt&gt; and children.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md242"></a>
+<h2><a class="anchor" id="autotoc_md244"></a>
 allocation of the column's &lt;tt&gt;null_mask&lt;/tt&gt; and children.</h2>
 
 </div>
@@ -4465,7 +4469,7 @@ allocation of the column's &lt;tt&gt;null_mask&lt;/tt&gt; and children.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md243"></a>
+<h2><a class="anchor" id="autotoc_md245"></a>
 allocation of the column's &lt;tt&gt;null_mask&lt;/tt&gt; and children.</h2>
 
 </div>
@@ -4533,7 +4537,7 @@ allocation of the column's &lt;tt&gt;null_mask&lt;/tt&gt; and children.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md239"></a>
+<h2><a class="anchor" id="autotoc_md241"></a>
 allocation of the column's &lt;tt&gt;data&lt;/tt&gt; and &lt;tt&gt;null_mask&lt;/tt&gt;.</h2>
 
 </div>
@@ -4701,7 +4705,7 @@ allocation of the column's &lt;tt&gt;data&lt;/tt&gt; and &lt;tt&gt;null_mask&lt;
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>lhs</code> is equal to <code>rhs</code> </dd></dl>
-<h2><a class="anchor" id="autotoc_md466"></a>
+<h2><a class="anchor" id="autotoc_md469"></a>
 @return false &lt;tt&gt;lhs&lt;/tt&gt; is not equal to &lt;tt&gt;rhs&lt;/tt&gt;</h2>
 
 </div>
@@ -4868,7 +4872,7 @@ allocation of the column's &lt;tt&gt;data&lt;/tt&gt; and &lt;tt&gt;null_mask&lt;
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information.">gdf_scalar</a> the result value If the reduction fails, the member is_valid of the output <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information.">gdf_scalar</a> </dd></dl>
-<h2><a class="anchor" id="autotoc_md375"></a>
+<h2><a class="anchor" id="autotoc_md378"></a>
 will contain &lt;tt&gt;false&lt;/tt&gt;.</h2>
 
 </div>
@@ -5124,7 +5128,7 @@ a row</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md376"></a>
+<h2><a class="anchor" id="autotoc_md379"></a>
 an exclusive scan if false.</h2>
 
 </div>
@@ -5378,7 +5382,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md471"></a>
+<h2><a class="anchor" id="autotoc_md474"></a>
 @param bit_index Index of the bit to set</h2>
 
 </div>
@@ -5457,6 +5461,8 @@ an exclusive scan if false.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A std::vector of gdf_column*, each of which may have a different number of rows. The number of rows in each column is equal to the difference of two consecutive indices in the indices array. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a2">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -5508,6 +5514,8 @@ an exclusive scan if false.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A std::vector of gdf_column*, each of which may have a different size a different number of rows. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a3">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -5575,7 +5583,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md370"></a>
+<h2><a class="anchor" id="autotoc_md373"></a>
 @return size_type The count of null elements</h2>
 
 </div>
@@ -5869,7 +5877,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md350"></a>
+<h2><a class="anchor" id="autotoc_md353"></a>
 @return gdf_column   Insertion points. Non-nullable column of type GDF_INT32 with same size as values.</h2>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2legacy_2search_8hpp-example.html#a2">/rapids/cudf/cpp/include/cudf/legacy/search.hpp</a>.</dd>
 </dl>
@@ -5975,7 +5983,7 @@ template&lt;typename bit_container , typename predicate , typename size_type &gt
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md469"></a>
+<h2><a class="anchor" id="autotoc_md472"></a>
 @brief Returns the index of the word containing the specified bit.</h2>
 
 </div>
