@@ -103,9 +103,9 @@ Collaboration diagram for rmm::mr::cnmem_memory_resource:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af1af4a4728c47ec7e6e745ed8f285ffa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrmm_1_1mr_1_1cnmem__memory__resource.html#af1af4a4728c47ec7e6e745ed8f285ffa">cnmem_memory_resource</a> (std::size_t initial_pool_size=0)</td></tr>
-<tr class="memdesc:af1af4a4728c47ec7e6e745ed8f285ffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a cnmem memory resource and allocate the initial device memory pool.  <a href="classrmm_1_1mr_1_1cnmem__memory__resource.html#af1af4a4728c47ec7e6e745ed8f285ffa">More...</a><br /></td></tr>
-<tr class="separator:af1af4a4728c47ec7e6e745ed8f285ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7165e2f7298ffb12684cb94c2f8deb25"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrmm_1_1mr_1_1cnmem__memory__resource.html#a7165e2f7298ffb12684cb94c2f8deb25">cnmem_memory_resource</a> (std::size_t initial_pool_size=0, std::vector&lt; int &gt; const &amp;devices={})</td></tr>
+<tr class="memdesc:a7165e2f7298ffb12684cb94c2f8deb25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a cnmem memory resource and allocate the initial device memory pool.  <a href="classrmm_1_1mr_1_1cnmem__memory__resource.html#a7165e2f7298ffb12684cb94c2f8deb25">More...</a><br /></td></tr>
+<tr class="separator:a7165e2f7298ffb12684cb94c2f8deb25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5be2df0ff53ce6cb9c494845f5664ee9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrmm_1_1mr_1_1cnmem__memory__resource.html#a5be2df0ff53ce6cb9c494845f5664ee9">supports_streams</a> () const noexcept override</td></tr>
 <tr class="memdesc:a5be2df0ff53ce6cb9c494845f5664ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries if the resource supports use of non-null streams for allocation/deallocation.  <a href="classrmm_1_1mr_1_1cnmem__memory__resource.html#a5be2df0ff53ce6cb9c494845f5664ee9">More...</a><br /></td></tr>
 <tr class="separator:a5be2df0ff53ce6cb9c494845f5664ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,14 +133,14 @@ Protected Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:aa126e0a2b44d2576b2ad3d960cf464b2"><td class="memItemLeft" align="right" valign="top"><a id="aa126e0a2b44d2576b2ad3d960cf464b2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>cnmem_memory_resource</b> (std::size_t initial_pool_size, <a class="el" href="classrmm_1_1mr_1_1cnmem__memory__resource.html#a53423dac6d804f073c50ee7cbe2f1b08">memory_kind</a> mem_kind)</td></tr>
-<tr class="separator:aa126e0a2b44d2576b2ad3d960cf464b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9def7c8a40c62b5ab568993dd54052b7"><td class="memItemLeft" align="right" valign="top"><a id="a9def7c8a40c62b5ab568993dd54052b7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>cnmem_memory_resource</b> (std::size_t initial_pool_size, std::vector&lt; int &gt; const &amp;devices, <a class="el" href="classrmm_1_1mr_1_1cnmem__memory__resource.html#a53423dac6d804f073c50ee7cbe2f1b08">memory_kind</a> pool_type)</td></tr>
+<tr class="separator:a9def7c8a40c62b5ab568993dd54052b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Memory resource that allocates/deallocates using the cnmem pool. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 sub-allocator.</h2>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a53423dac6d804f073c50ee7cbe2f1b08"></a>
@@ -174,8 +174,8 @@ sub-allocator.</h2>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af1af4a4728c47ec7e6e745ed8f285ffa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1af4a4728c47ec7e6e745ed8f285ffa">&#9670;&nbsp;</a></span>cnmem_memory_resource()</h2>
+<a id="a7165e2f7298ffb12684cb94c2f8deb25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7165e2f7298ffb12684cb94c2f8deb25">&#9670;&nbsp;</a></span>cnmem_memory_resource()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -187,8 +187,18 @@ sub-allocator.</h2>
           <td class="memname">rmm::mr::cnmem_memory_resource::cnmem_memory_resource </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>initial_pool_size</em> = <code>0</code></td><td>)</td>
+          <td class="paramname"><em>initial_pool_size</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::vector&lt; int &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>devices</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -202,12 +212,12 @@ sub-allocator.</h2>
 <p>-----------------------------------------------------------------------&mdash;* TODO Add constructor arguments for other CNMEM options/flags</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">initial_pool_size</td><td>Size, in bytes, of the intial pool size. When </td></tr>
+    <tr><td class="paramname">initial_pool_size</td><td>Size, in bytes, of the initial pool size. When zero, an implementation defined pool size is used. </td></tr>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md25"></a>
-zero, an implementation defined pool size is used.</h2>
+<h2><a class="anchor" id="autotoc_md26"></a>
+@param devices List of GPU device IDs to register with CNMEM</h2>
 
 </div>
 </div>
@@ -237,7 +247,7 @@ zero, an implementation defined pool size is used.</h2>
 
 <p>Queries if the resource supports use of non-null streams for allocation/deallocation. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md41"></a>
+<h2><a class="anchor" id="autotoc_md42"></a>
 @returns If the resource supports non-null streams</h2>
 
 <p>Implements <a class="el" href="classrmm_1_1mr_1_1device__memory__resource.html#a04598a0abd19625d081a69599360b215">rmm::mr::device_memory_resource</a>.</p>

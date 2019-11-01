@@ -78,22 +78,44 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a4c04f5a6d0be59cde6b2e253ae77b97e"><td class="memItemLeft" align="right" valign="top"><a id="a4c04f5a6d0be59cde6b2e253ae77b97e"></a>
-rmmAllocationMode_t&#160;</td><td class="memItemRight" valign="bottom"><b>allocation_mode</b></td></tr>
+<tr class="memitem:a4c04f5a6d0be59cde6b2e253ae77b97e"><td class="memItemLeft" align="right" valign="top">rmmAllocationMode_t&#160;</td><td class="memItemRight" valign="bottom"><b>allocation_mode</b></td></tr>
 <tr class="separator:a4c04f5a6d0be59cde6b2e253ae77b97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f4ff13682ad693440101c337adf6d95"><td class="memItemLeft" align="right" valign="top"><a id="a3f4ff13682ad693440101c337adf6d95"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>initial_pool_size</b></td></tr>
-<tr class="separator:a3f4ff13682ad693440101c337adf6d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62b26e284683101cfe33d4affbf94895"><td class="memItemLeft" align="right" valign="top"><a id="a62b26e284683101cfe33d4affbf94895"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>initial_pool_size</b> {}</td></tr>
+<tr class="separator:a62b26e284683101cfe33d4affbf94895"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a833fc34f32b1ea3f04e6c466cc55ae78"><td class="memItemLeft" align="right" valign="top"><a id="a833fc34f32b1ea3f04e6c466cc55ae78"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>enable_logging</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>enable_logging</b> {false}</td></tr>
 <tr class="separator:a833fc34f32b1ea3f04e6c466cc55ae78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a5bd421d9ba233496f305e11159b9be"><td class="memItemLeft" align="right" valign="top"><a id="a2a5bd421d9ba233496f305e11159b9be"></a>
+std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrmmOptions__t.html#a2a5bd421d9ba233496f305e11159b9be">devices</a> {}</td></tr>
+<tr class="memdesc:a2a5bd421d9ba233496f305e11159b9be"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of GPU device IDs to register. <br /></td></tr>
+<tr class="separator:a2a5bd421d9ba233496f305e11159b9be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Options for initializing the memory manager. </p>
-<p>------------------------------------------------------------------------&mdash;* If set to zero, <code>initial_pool_size</code> defaults to half of the total GPU memory </p>
-<h2><a class="anchor" id="autotoc_md70"></a>
-for the current device.</h2>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<p>------------------------------------------------------------------------&mdash;* By default, uses <code>CudaDefaultAllocation</code>, which uses <code>cudaMalloc/cudaFree</code>.</p>
+<p>If set to zero, <code>initial_pool_size</code> defaults to half of the total GPU memory for the current device.</p>
+<p>Optionally accepts an array of device IDs that will be managed by RMM. If <code>nullptr</code>, assumes that only the device returned by <code>cudaGetDevice()</code> is </p>
+<h2><a class="anchor" id="autotoc_md71"></a>
+used. These are only used when &lt;tt&gt;allocation_mode == PoolAllocation&lt;/tt&gt;.</h2>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4c04f5a6d0be59cde6b2e253ae77b97e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c04f5a6d0be59cde6b2e253ae77b97e">&#9670;&nbsp;</a></span>allocation_mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rmmAllocationMode_t rmmOptions_t::allocation_mode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">      CudaDefaultAllocation}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li><a class="el" href="rmm__api_8h_source.html">rmm_api.h</a></li>
 </ul>
 </div><!-- contents -->
