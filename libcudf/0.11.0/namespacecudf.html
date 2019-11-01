@@ -258,6 +258,12 @@ Enumerations</h2></td></tr>
 <a class="el" href="namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6a995bafc1b2e35df60002e61e2ec0c6df">ALWAYS</a>
  }</td></tr>
 <tr class="separator:a267e03474dcfd85242d2fdc6e5846ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69091647ea1f9c9d4cdcf7c8876bea3a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3a">duplicate_keep_option</a> { <a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa86ea4bfd2b3121412b0a63a3697926ec">KEEP_FIRST</a> = 0, 
+<a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa1d1398f646d74e801389737f07d89d1c">KEEP_LAST</a>, 
+<a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa6fb3154b77231184b596b4add407aa2a">KEEP_NONE</a>
+ }</td></tr>
+<tr class="memdesc:a69091647ea1f9c9d4cdcf7c8876bea3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choices for drop_duplicates API for retainment of duplicate rows.  <a href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3a">More...</a><br /></td></tr>
+<tr class="separator:a69091647ea1f9c9d4cdcf7c8876bea3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab15567f1034536ae6f7f14179334a19b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ab15567f1034536ae6f7f14179334a19b">unary_op</a> { <br />
 &#160;&#160;<a class="el" href="namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba6b585cf453d36fbb0381b38bc2c966e1">SIN</a>, 
 <a class="el" href="namespacecudf.html#ab15567f1034536ae6f7f14179334a19baf7c88ff3bee94b5c3c16c405706ef34a">COS</a>, 
@@ -291,12 +297,6 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a94d60cf0790fb642cce1c91f1dba63c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolation method to use, when the desired quantile lies between two data points i and j.  <a href="namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8">More...</a><br /></td></tr>
 <tr class="separator:a94d60cf0790fb642cce1c91f1dba63c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69091647ea1f9c9d4cdcf7c8876bea3a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3a">duplicate_keep_option</a> { <a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa86ea4bfd2b3121412b0a63a3697926ec">KEEP_FIRST</a> = 0, 
-<a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa1d1398f646d74e801389737f07d89d1c">KEEP_LAST</a>, 
-<a class="el" href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa6fb3154b77231184b596b4add407aa2a">KEEP_NONE</a>
- }</td></tr>
-<tr class="memdesc:a69091647ea1f9c9d4cdcf7c8876bea3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choices for drop_duplicates API for retainment of duplicate rows.  <a href="namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3a">More...</a><br /></td></tr>
-<tr class="separator:a69091647ea1f9c9d4cdcf7c8876bea3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a750f02016b046079f7062d334890b4fc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">order</a> : bool { <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fca83ec681a20197326c163ea3b39ef7c32">order::ASCENDING</a>, 
 <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fcacff818f0ae4cef845577e39283886a53">order::DESCENDING</a>
  }</td></tr>
@@ -1919,7 +1919,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md374"></a>
+<h2><a class="anchor" id="autotoc_md376"></a>
 @return std::size_t The necessary number of bytes</h2>
 
 </div>
@@ -2032,7 +2032,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md356"></a>
+<h2><a class="anchor" id="autotoc_md358"></a>
 @return std::vector&lt;gdf_dtype_extra_info&gt;</h2>
 
 </div>
@@ -2060,7 +2060,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md355"></a>
+<h2><a class="anchor" id="autotoc_md357"></a>
 @return std::vector&lt;gdf_dtype&gt;</h2>
 
 </div>
@@ -2106,7 +2106,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A single table having all the columns from <code>table1</code> and <code>table2</code> </dd></dl>
-<h2><a class="anchor" id="autotoc_md358"></a>
+<h2><a class="anchor" id="autotoc_md360"></a>
 respectively in the same order.</h2>
 
 </div>
@@ -2448,7 +2448,7 @@ template&lt;JoinType join_type, typename index_type &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md376"></a>
+<h2><a class="anchor" id="autotoc_md378"></a>
 @return The number of non-zero bits in the specified range</h2>
 
 </div>
@@ -2502,7 +2502,7 @@ template&lt;JoinType join_type, typename index_type &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md377"></a>
+<h2><a class="anchor" id="autotoc_md379"></a>
 @return The number of zero bits in the specified range</h2>
 
 </div>
@@ -2556,7 +2556,7 @@ template&lt;JoinType join_type, typename index_type &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>rmm::device_buffer A <code>device_buffer</code> for use as a null bitmask </dd></dl>
-<h2><a class="anchor" id="autotoc_md375"></a>
+<h2><a class="anchor" id="autotoc_md377"></a>
 satisfying the desired size and state</h2>
 
 </div>
@@ -3174,7 +3174,7 @@ template&lt;typename T , typename BinaryOp &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true If the table contains one or more null values </dd></dl>
-<h2><a class="anchor" id="autotoc_md357"></a>
+<h2><a class="anchor" id="autotoc_md359"></a>
 @return false If the table contains zero null values</h2>
 
 </div>
@@ -3993,7 +3993,7 @@ template&lt;JoinType join_type, typename index_type &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md352"></a>
+<h2><a class="anchor" id="autotoc_md354"></a>
 @return gdf_column   Insertion points. Non-nullable column of type GDF_INT32 with same size as values.</h2>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2legacy_2search_8hpp-example.html#a1">/rapids/cudf/cpp/include/cudf/legacy/search.hpp</a>.</dd>
 </dl>
@@ -4872,7 +4872,7 @@ allocation of the column's &lt;tt&gt;data&lt;/tt&gt; and &lt;tt&gt;null_mask&lt;
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information.">gdf_scalar</a> the result value If the reduction fails, the member is_valid of the output <a class="el" href="structgdf__scalar.html" title="A struct to hold a scalar (single) value and its type information.">gdf_scalar</a> </dd></dl>
-<h2><a class="anchor" id="autotoc_md378"></a>
+<h2><a class="anchor" id="autotoc_md352"></a>
 will contain &lt;tt&gt;false&lt;/tt&gt;.</h2>
 
 </div>
@@ -5128,7 +5128,7 @@ a row</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md379"></a>
+<h2><a class="anchor" id="autotoc_md353"></a>
 an exclusive scan if false.</h2>
 
 </div>
@@ -5583,7 +5583,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md373"></a>
+<h2><a class="anchor" id="autotoc_md375"></a>
 @return size_type The count of null elements</h2>
 
 </div>
@@ -5877,7 +5877,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md353"></a>
+<h2><a class="anchor" id="autotoc_md355"></a>
 @return gdf_column   Insertion points. Non-nullable column of type GDF_INT32 with same size as values.</h2>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2legacy_2search_8hpp-example.html#a2">/rapids/cudf/cpp/include/cudf/legacy/search.hpp</a>.</dd>
 </dl>
