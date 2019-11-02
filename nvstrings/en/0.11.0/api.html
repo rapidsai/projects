@@ -3397,6 +3397,84 @@ Edit distance is how many character changes between strings.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="nvtext.is_consonant">
+<code class="sig-prename descclassname">nvtext.</code><code class="sig-name descname">is_consonant</code><span class="sig-paren">(</span><em class="sig-param">strs</em>, <em class="sig-param">index</em>, <em class="sig-param">index_is_ptr=False</em>, <em class="sig-param">vowels='aeiou'</em>, <em class="sig-param">y_char='y'</em>, <em class="sig-param">devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvtext.is_consonant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a bool array with True if the character at the specified
+(0-based) index position is a consonant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>strs</strong><span class="classifier">nvstrings</span></dt><dd><p>The strings for this operation</p>
+</dd>
+<dt><strong>index</strong><span class="classifier">int</span></dt><dd><p>The position of character to check in each string.
+This may also be a device pointer to memory containing
+index values of type int32 for each of the strings.
+The number of values must be at least strs.size().</p>
+</dd>
+<dt><strong>index_is_ptr</strong><span class="classifier">boolean</span></dt><dd><p>Set to True if index parameter is device memory pointer
+instead of an character position.</p>
+</dd>
+<dt><strong>vowels: str</strong></dt><dd><p>Characters to consider as vowels
+Default is ‘aeiou’</p>
+</dd>
+<dt><strong>y_char: str</strong></dt><dd><p>Characters to treat as ‘y’ for vowel-specific algorithm.
+Default is ‘y’</p>
+</dd>
+<dt><strong>devptr</strong><span class="classifier">GPU memory pointer</span></dt><dd><p>Must be able to hold at least strs.size() of int8 values.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;berry&quot;</span><span class="p">,</span> <span class="s2">&quot;blast&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">nvtext</span><span class="o">.</span><span class="n">is_consonant</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">false</span><span class="p">,</span> <span class="n">false</span><span class="p">,</span> <span class="n">true</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="nvtext.is_vowel">
+<code class="sig-prename descclassname">nvtext.</code><code class="sig-name descname">is_vowel</code><span class="sig-paren">(</span><em class="sig-param">strs</em>, <em class="sig-param">index</em>, <em class="sig-param">index_is_ptr=False</em>, <em class="sig-param">vowels='aeiou'</em>, <em class="sig-param">y_char='y'</em>, <em class="sig-param">devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvtext.is_vowel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a bool array with True if the character at the specified
+(0-based) index position is a vowel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>strs</strong><span class="classifier">nvstrings</span></dt><dd><p>The strings for this operation.</p>
+</dd>
+<dt><strong>index</strong><span class="classifier">int</span></dt><dd><p>The position of character to check in each string.
+This may also be a device pointer to memory containing
+index values of type int32 for each of the strings.
+The number of values must be at least strs.size().</p>
+</dd>
+<dt><strong>index_is_ptr</strong><span class="classifier">boolean</span></dt><dd><p>Set to True if index parameter is device memory pointer
+instead of an character position.</p>
+</dd>
+<dt><strong>vowels: str</strong></dt><dd><p>Characters to consider as vowels
+Default is ‘aeiou’</p>
+</dd>
+<dt><strong>y_char: str</strong></dt><dd><p>Characters to treat as ‘y’ for vowel-specific algorithm.
+Default is ‘y’</p>
+</dd>
+<dt><strong>devptr</strong><span class="classifier">GPU memory pointer</span></dt><dd><p>Must be able to hold at least strs.size() of int8 values.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;twelve&quot;</span><span class="p">,</span> <span class="s2">&quot;berry&quot;</span><span class="p">,</span> <span class="s2">&quot;blazing&quot;</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">nvtext</span><span class="o">.</span><span class="n">is_consonant</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">false</span><span class="p">,</span> <span class="n">true</span><span class="p">,</span> <span class="n">true</span><span class="p">,</span> <span class="n">false</span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="nvtext.ngrams">
 <code class="sig-prename descclassname">nvtext.</code><code class="sig-name descname">ngrams</code><span class="sig-paren">(</span><em class="sig-param">tokens</em>, <em class="sig-param">N=2</em>, <em class="sig-param">sep='_'</em><span class="sig-paren">)</span><a class="headerlink" href="#nvtext.ngrams" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate the n-grams from a set of tokens.

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['name_319',['name',['../classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831a2f5d336f9e795adab8ed537aa190ff23',1,'NVStrings']]],
-  ['none_320',['none',['../classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831a0b5479f46e32a0b52419271376591269',1,'NVStrings']]],
-  ['ns_321',['ns',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a4d185b3b79bf8f4cf83d5eb349427294',1,'NVStrings']]]
+  ['minutes_323',['minutes',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a4262801072819bc89e488b9a111135f9',1,'NVStrings']]],
+  ['months_324',['months',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049aeed9e40cde5808e62979d57dbc381f51',1,'NVStrings']]],
+  ['ms_325',['ms',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a03457e192cd793d83b4553f1a3822e71',1,'NVStrings']]]
 ];

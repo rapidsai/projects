@@ -82,6 +82,12 @@ Public Types</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a44215a8d5d167d45e5e6ccf7f25927b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edit distance algorithms.  <a href="classNVText.html#a44215a8d5d167d45e5e6ccf7f25927b3">More...</a><br /></td></tr>
 <tr class="separator:a44215a8d5d167d45e5e6ccf7f25927b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af974314b036ba255dd5f71b108d1ffde"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVText.html#af974314b036ba255dd5f71b108d1ffde">letter_type</a> { <a class="el" href="classNVText.html#af974314b036ba255dd5f71b108d1ffdeabeae3c6c6f53e34ef4987d73b1d04daa">none</a>, 
+<a class="el" href="classNVText.html#af974314b036ba255dd5f71b108d1ffdea7db4fdbec25c7e9c82051d5eeb14a4af">vowel</a>, 
+<a class="el" href="classNVText.html#af974314b036ba255dd5f71b108d1ffdea77041323a5f7e0f0d5c9df094819f313">consonant</a>
+ }</td></tr>
+<tr class="memdesc:af974314b036ba255dd5f71b108d1ffde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vowel/consonant type.  <a href="classNVText.html#af974314b036ba255dd5f71b108d1ffde">More...</a><br /></td></tr>
+<tr class="separator:af974314b036ba255dd5f71b108d1ffde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -127,6 +133,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a9be1270d1d500fecc275a719266eefaf"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVText.html#a9be1270d1d500fecc275a719266eefaf">porter_stemmer_measure</a> (<a class="el" href="classNVStrings.html">NVStrings</a> &amp;strs, const char *vowels, const char *y_char, unsigned int *results, bool devmem=true)</td></tr>
 <tr class="memdesc:a9be1270d1d500fecc275a719266eefaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes Porter Stemmer measure on words in the provided <a class="el" href="classNVStrings.html" title="This class manages a list of strings stored in device memory. An instance of this class is a CPU (hos...">NVStrings</a> instance.  <a href="classNVText.html#a9be1270d1d500fecc275a719266eefaf">More...</a><br /></td></tr>
 <tr class="separator:a9be1270d1d500fecc275a719266eefaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac830b48dcebfb12daab791ce7ecae877"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVText.html#ac830b48dcebfb12daab791ce7ecae877">is_letter</a> (<a class="el" href="classNVStrings.html">NVStrings</a> &amp;strs, const char *vowels, const char *y_char, <a class="el" href="classNVText.html#af974314b036ba255dd5f71b108d1ffde">letter_type</a> ltype, int character_index, bool *results, bool devmem=true)</td></tr>
+<tr class="memdesc:ac830b48dcebfb12daab791ce7ecae877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns boolean array indicating whether the specified character index is a consonant or vowel. False is returned if the index is beyond the end of the string.  <a href="classNVText.html#ac830b48dcebfb12daab791ce7ecae877">More...</a><br /></td></tr>
+<tr class="separator:ac830b48dcebfb12daab791ce7ecae877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dd4ac58f18fb55b05ea1e7021ef2831"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVText.html#a3dd4ac58f18fb55b05ea1e7021ef2831">is_letter</a> (<a class="el" href="classNVStrings.html">NVStrings</a> &amp;strs, const char *vowels, const char *y_char, <a class="el" href="classNVText.html#af974314b036ba255dd5f71b108d1ffde">letter_type</a> ltype, int *indices, bool *results, bool devmem=true)</td></tr>
+<tr class="memdesc:a3dd4ac58f18fb55b05ea1e7021ef2831"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns boolean array indicating whether the specified character index is a consonant or vowel. False is returned if the index is beyond the end of the string.  <a href="classNVText.html#a3dd4ac58f18fb55b05ea1e7021ef2831">More...</a><br /></td></tr>
+<tr class="separator:a3dd4ac58f18fb55b05ea1e7021ef2831"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd2b9f9cfc0697e66b9d3a7a045db67a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classNVStrings.html">NVStrings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVText.html#acd2b9f9cfc0697e66b9d3a7a045db67a">scatter_count</a> (<a class="el" href="classNVStrings.html">NVStrings</a> &amp;strs, unsigned int *counts, bool devmem=true)</td></tr>
 <tr class="memdesc:acd2b9f9cfc0697e66b9d3a7a045db67a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new strings instance duplicating each string by its associated count value.  <a href="classNVText.html#acd2b9f9cfc0697e66b9d3a7a045db67a">More...</a><br /></td></tr>
 <tr class="separator:acd2b9f9cfc0697e66b9d3a7a045db67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,6 +161,30 @@ Static Public Member Functions</h2></td></tr>
 <p>Edit distance algorithms. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a44215a8d5d167d45e5e6ccf7f25927b3af07b2315327db14019b5e4282109ae92"></a>levenshtein&#160;</td><td class="fielddoc"><p>Use the levenshtein algorithm. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="af974314b036ba255dd5f71b108d1ffde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af974314b036ba255dd5f71b108d1ffde">&#9670;&nbsp;</a></span>letter_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classNVText.html#af974314b036ba255dd5f71b108d1ffde">NVText::letter_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vowel/consonant type. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af974314b036ba255dd5f71b108d1ffdeabeae3c6c6f53e34ef4987d73b1d04daa"></a>none&#160;</td><td class="fielddoc"><p>Reserved. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af974314b036ba255dd5f71b108d1ffdea7db4fdbec25c7e9c82051d5eeb14a4af"></a>vowel&#160;</td><td class="fielddoc"><p>Return true for vowels only. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af974314b036ba255dd5f71b108d1ffdea77041323a5f7e0f0d5c9df094819f313"></a>consonant&#160;</td><td class="fielddoc"><p>Return true for consonants only. </p>
 </td></tr>
 </table>
 
@@ -471,6 +507,168 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a3dd4ac58f18fb55b05ea1e7021ef2831"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dd4ac58f18fb55b05ea1e7021ef2831">&#9670;&nbsp;</a></span>is_letter() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static unsigned int NVText::is_letter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classNVStrings.html">NVStrings</a> &amp;&#160;</td>
+          <td class="paramname"><em>strs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>vowels</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>y_char</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classNVText.html#af974314b036ba255dd5f71b108d1ffde">letter_type</a>&#160;</td>
+          <td class="paramname"><em>ltype</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>indices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>results</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>devmem</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns boolean array indicating whether the specified character index is a consonant or vowel. False is returned if the index is beyond the end of the string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strs</td><td>Words that preprocessed to lowercase with no punctuation and no whitespace. </td></tr>
+    <tr><td class="paramname">vowels</td><td>Characters to check as vowels. </td></tr>
+    <tr><td class="paramname">y_char</td><td>The 'y' character used for extra vowel checking. </td></tr>
+    <tr><td class="paramname">ltype</td><td>Specify letter type </td></tr>
+    <tr><td class="paramname">indices</td><td>The 0-based character positions to check in each string. Must point to device memory with at least strs.size() elements. </td></tr>
+    <tr><td class="paramname">results</td><td>Array of boolena values. </td></tr>
+    <tr><td class="paramname">devmem</td><td>True if results in device memory. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if successful </dd></dl>
+
+</div>
+</div>
+<a id="ac830b48dcebfb12daab791ce7ecae877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac830b48dcebfb12daab791ce7ecae877">&#9670;&nbsp;</a></span>is_letter() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static unsigned int NVText::is_letter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classNVStrings.html">NVStrings</a> &amp;&#160;</td>
+          <td class="paramname"><em>strs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>vowels</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>y_char</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classNVText.html#af974314b036ba255dd5f71b108d1ffde">letter_type</a>&#160;</td>
+          <td class="paramname"><em>ltype</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>character_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>results</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>devmem</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns boolean array indicating whether the specified character index is a consonant or vowel. False is returned if the index is beyond the end of the string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strs</td><td>Words that preprocessed to lowercase with no punctuation and no whitespace. </td></tr>
+    <tr><td class="paramname">vowels</td><td>Characters to check as vowels. </td></tr>
+    <tr><td class="paramname">y_char</td><td>The 'y' character used for extra vowel checking. </td></tr>
+    <tr><td class="paramname">ltype</td><td>Specify letter type </td></tr>
+    <tr><td class="paramname">character_index</td><td>The 0-based character position to check in each string. </td></tr>
+    <tr><td class="paramname">results</td><td>Array of boolena values. </td></tr>
+    <tr><td class="paramname">devmem</td><td>True if results in device memory. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if successful </dd></dl>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['padside_307',['padside',['../classNVStrings.html#ae632539abce4f345d9c6995cc407281e',1,'NVStrings']]]
+  ['letter_5ftype_312',['letter_type',['../classNVText.html#af974314b036ba255dd5f71b108d1ffde',1,'NVText']]]
 ];

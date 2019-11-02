@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['left_313',['left',['../classNVStrings.html#ae632539abce4f345d9c6995cc407281ea27a6f390cacbee032b9099765c3277dd',1,'NVStrings']]],
-  ['length_314',['length',['../classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831a744462e227edbd3642f8baf46d35b4ca',1,'NVStrings']]],
-  ['levenshtein_315',['levenshtein',['../classNVText.html#a44215a8d5d167d45e5e6ccf7f25927b3af07b2315327db14019b5e4282109ae92',1,'NVText']]]
+  ['hours_319',['hours',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a046925b9e4b8b8bb927942bc4648f981',1,'NVStrings']]]
 ];

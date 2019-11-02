@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['unary_5fop_1803',['unary_op',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19b',1,'cudf']]]
+  ['timestamp_5funits_1807',['timestamp_units',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049',1,'NVStrings']]],
+  ['type_5fid_1808',['type_id',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59b',1,'cudf']]]
 ];

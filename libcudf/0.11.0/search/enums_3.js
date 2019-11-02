@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['null_5forder_1796',['null_order',['../namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31',1,'cudf']]]
+  ['mask_5fallocation_5fpolicy_1800',['mask_allocation_policy',['../namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6',1,'cudf']]],
+  ['mask_5fstate_1801',['mask_state',['../namespacecudf.html#aa481249b705132999f4d082aacd21dbf',1,'cudf']]]
 ];

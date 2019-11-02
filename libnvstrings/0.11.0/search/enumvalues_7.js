@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['seconds_323',['seconds',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049ad305a26f0c3deec9fa4bf14d8f778a40',1,'NVStrings']]]
+  ['right_329',['right',['../classNVStrings.html#ae632539abce4f345d9c6995cc407281ea410c51e93c57cfd4df319a7b925a2dec',1,'NVStrings']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['days_311',['days',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a4ba1905c4ab3c8ae7094614084649d39',1,'NVStrings']]]
+  ['consonant_317',['consonant',['../classNVText.html#af974314b036ba255dd5f71b108d1ffdea77041323a5f7e0f0d5c9df094819f313',1,'NVText']]]
 ];
