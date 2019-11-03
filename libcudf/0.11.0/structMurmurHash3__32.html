@@ -82,27 +82,36 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>result_type</b> = ha
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a79aec69c652c12c5d44e9272a5310239"><td class="memItemLeft" align="right" valign="top"><a id="a79aec69c652c12c5d44e9272a5310239"></a>
-__forceinline__ __host__ __device__ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>rotl32</b> (uint32_t x, int8_t r) const</td></tr>
-<tr class="separator:a79aec69c652c12c5d44e9272a5310239"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18c4ecd1af0cb57e4e790c2e9a94a521"><td class="memItemLeft" align="right" valign="top"><a id="a18c4ecd1af0cb57e4e790c2e9a94a521"></a>
-__forceinline__ __host__ __device__ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>fmix32</b> (uint32_t h) const</td></tr>
-<tr class="separator:a18c4ecd1af0cb57e4e790c2e9a94a521"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99e1f7adad5b1be8b5e90f274d13c481"><td class="memItemLeft" align="right" valign="top">__host__ __device__ result_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMurmurHash3__32.html#a99e1f7adad5b1be8b5e90f274d13c481">hash_combine</a> (result_type lhs, result_type rhs)</td></tr>
-<tr class="memdesc:a99e1f7adad5b1be8b5e90f274d13c481"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combines two hash values into a new single hash value. Called repeatedly to create a hash value from several variables. Taken from the Boost hash_combine function <a href="https://www.boost.org/doc/libs/1_35_0/doc/html/boost/hash_combine_id241013.html">https://www.boost.org/doc/libs/1_35_0/doc/html/boost/hash_combine_id241013.html</a>.  <a href="structMurmurHash3__32.html#a99e1f7adad5b1be8b5e90f274d13c481">More...</a><br /></td></tr>
-<tr class="separator:a99e1f7adad5b1be8b5e90f274d13c481"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3121dc004b5067495fcff1012a8c1ab0"><td class="memItemLeft" align="right" valign="top"><a id="a3121dc004b5067495fcff1012a8c1ab0"></a>
-__forceinline__ __host__ __device__ result_type&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const Key &amp;key) const</td></tr>
-<tr class="separator:a3121dc004b5067495fcff1012a8c1ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ef8672c9954c0ff7142742bcf70535d"><td class="memTemplParams" colspan="2"><a id="a8ef8672c9954c0ff7142742bcf70535d"></a>
-template&lt;&gt; </td></tr>
-<tr class="memitem:a8ef8672c9954c0ff7142742bcf70535d"><td class="memTemplItemLeft" align="right" valign="top">__forceinline__ __host__ __device__ hash_value_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structMurmurHash3__32.html#a8ef8672c9954c0ff7142742bcf70535d">operator()</a> (const <a class="el" href="classcudf_1_1string__view.html">cudf::string_view</a> &amp;key) const</td></tr>
-<tr class="memdesc:a8ef8672c9954c0ff7142742bcf70535d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="structMurmurHash3__32.html">MurmurHash3_32</a> operator for strings. <br /></td></tr>
-<tr class="separator:a8ef8672c9954c0ff7142742bcf70535d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38cca5a6497af5708bddaea1a5e3fd6f"><td class="memItemLeft" align="right" valign="top"><a id="a38cca5a6497af5708bddaea1a5e3fd6f"></a>
+CUDA_HOST_DEVICE_CALLABLE uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>rotl32</b> (uint32_t x, int8_t r) const</td></tr>
+<tr class="separator:a38cca5a6497af5708bddaea1a5e3fd6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b22ab94b0ec7f5a7fda58f0b6ed52f1"><td class="memItemLeft" align="right" valign="top"><a id="a9b22ab94b0ec7f5a7fda58f0b6ed52f1"></a>
+CUDA_HOST_DEVICE_CALLABLE uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>fmix32</b> (uint32_t h) const</td></tr>
+<tr class="separator:a9b22ab94b0ec7f5a7fda58f0b6ed52f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e3e783b8d4ac25335c7f112729644d2"><td class="memItemLeft" align="right" valign="top">CUDA_HOST_DEVICE_CALLABLE result_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMurmurHash3__32.html#a1e3e783b8d4ac25335c7f112729644d2">hash_combine</a> (result_type lhs, result_type rhs)</td></tr>
+<tr class="memdesc:a1e3e783b8d4ac25335c7f112729644d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combines two hash values into a new single hash value. Called repeatedly to create a hash value from several variables. Taken from the Boost hash_combine function <a href="https://www.boost.org/doc/libs/1_35_0/doc/html/boost/hash_combine_id241013.html">https://www.boost.org/doc/libs/1_35_0/doc/html/boost/hash_combine_id241013.html</a>.  <a href="structMurmurHash3__32.html#a1e3e783b8d4ac25335c7f112729644d2">More...</a><br /></td></tr>
+<tr class="separator:a1e3e783b8d4ac25335c7f112729644d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f0f47bc5f5274b1521b376c7ef01afb"><td class="memTemplParams" colspan="2"><a id="a9f0f47bc5f5274b1521b376c7ef01afb"></a>
+template&lt;typename TKey  = Key&gt; </td></tr>
+<tr class="memitem:a9f0f47bc5f5274b1521b376c7ef01afb"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_same&lt; TKey, <a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::bool8</a> &gt;::value, result_type &gt; CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (const TKey &amp;key) const</td></tr>
+<tr class="separator:a9f0f47bc5f5274b1521b376c7ef01afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acffbc498e21784248293b4ceda3c9b61"><td class="memTemplParams" colspan="2"><a id="acffbc498e21784248293b4ceda3c9b61"></a>
+template&lt;typename TKey  = Key&gt; </td></tr>
+<tr class="memitem:acffbc498e21784248293b4ceda3c9b61"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_same&lt; TKey, <a class="el" href="structcudf_1_1experimental_1_1bool8.html">cudf::experimental::bool8</a> &gt;::value, result_type &gt; CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (const TKey &amp;key) const</td></tr>
+<tr class="separator:acffbc498e21784248293b4ceda3c9b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14053b4600a267516d974688db86ebb0"><td class="memTemplParams" colspan="2"><a id="a14053b4600a267516d974688db86ebb0"></a>
+template&lt;typename TKey  = Key&gt; </td></tr>
+<tr class="memitem:a14053b4600a267516d974688db86ebb0"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_same&lt; TKey, <a class="el" href="classcudf_1_1string__view.html">cudf::string_view</a> &gt;::value, result_type &gt; CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structMurmurHash3__32.html#a14053b4600a267516d974688db86ebb0">operator()</a> (const TKey &amp;key) const</td></tr>
+<tr class="memdesc:a14053b4600a267516d974688db86ebb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="structMurmurHash3__32.html">MurmurHash3_32</a> operator for strings. <br /></td></tr>
+<tr class="separator:a14053b4600a267516d974688db86ebb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadf7ffec89cf7befe28985ec3ad44709"><td class="memTemplParams" colspan="2"><a id="aadf7ffec89cf7befe28985ec3ad44709"></a>
+template&lt;typename TKey  = Key&gt; </td></tr>
+<tr class="memitem:aadf7ffec89cf7befe28985ec3ad44709"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; !std::is_same&lt; TKey, <a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::bool8</a> &gt;::value &amp;&amp;!std::is_same&lt; TKey, <a class="el" href="classcudf_1_1string__view.html">cudf::string_view</a> &gt;::value &amp;&amp;!std::is_same&lt; TKey, <a class="el" href="structcudf_1_1experimental_1_1bool8.html">cudf::experimental::bool8</a> &gt;::value, result_type &gt; CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (const TKey &amp;key) const</td></tr>
+<tr class="separator:aadf7ffec89cf7befe28985ec3ad44709"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a99e1f7adad5b1be8b5e90f274d13c481"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99e1f7adad5b1be8b5e90f274d13c481">&#9670;&nbsp;</a></span>hash_combine()</h2>
+<a id="a1e3e783b8d4ac25335c7f112729644d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e3e783b8d4ac25335c7f112729644d2">&#9670;&nbsp;</a></span>hash_combine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -113,7 +122,7 @@ template&lt;typename Key &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ result_type <a class="el" href="structMurmurHash3__32.html">MurmurHash3_32</a>&lt; Key &gt;::hash_combine </td>
+          <td class="memname">CUDA_HOST_DEVICE_CALLABLE result_type <a class="el" href="structMurmurHash3__32.html">MurmurHash3_32</a>&lt; Key &gt;::hash_combine </td>
           <td>(</td>
           <td class="paramtype">result_type&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>

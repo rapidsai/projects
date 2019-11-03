@@ -17,7 +17,7 @@ var searchData=
   ['block_5fsize_61',['block_size',['../structBlockSumArray.html#a1d278705f6112181ad427b162832b4e5',1,'BlockSumArray']]],
   ['blocksumarray_62',['BlockSumArray',['../structBlockSumArray.html',1,'']]],
   ['blocksumpyramid_63',['BlockSumPyramid',['../classBlockSumPyramid.html',1,'']]],
-  ['bool8_64',['BOOL8',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba9100ee556e5cf9b6dada6c7c506fa138',1,'cudf']]],
+  ['bool8_64',['bool8',['../structcudf_1_1experimental_1_1bool8.html',1,'cudf::experimental::bool8'],['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba9100ee556e5cf9b6dada6c7c506fa138',1,'cudf::BOOL8()']]],
   ['both_65',['both',['../classNVStrings.html#ae632539abce4f345d9c6995cc407281ea5b01f59b3412cfffe0dab5fc41d3e46f',1,'NVStrings']]],
   ['bounds_5fchecker_66',['bounds_checker',['../structcudf_1_1detail_1_1bounds__checker.html',1,'cudf::detail']]],
   ['brotli_5fdictionary_5fs_67',['brotli_dictionary_s',['../structcudf_1_1io_1_1brotli__dictionary__s.html',1,'cudf::io']]],

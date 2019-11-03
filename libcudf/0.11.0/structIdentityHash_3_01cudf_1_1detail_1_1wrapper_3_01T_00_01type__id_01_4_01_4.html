@@ -82,12 +82,17 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>result_type</b> = ha
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0579c4c474d3515c08ce6a6405907778"><td class="memItemLeft" align="right" valign="top"><a id="a0579c4c474d3515c08ce6a6405907778"></a>
-__host__ __device__ result_type&#160;</td><td class="memItemRight" valign="bottom"><b>hash_combine</b> (result_type lhs, result_type rhs) const</td></tr>
-<tr class="separator:a0579c4c474d3515c08ce6a6405907778"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacb1366513c81d3ae8dc9b8c0fe53582"><td class="memItemLeft" align="right" valign="top"><a id="aacb1366513c81d3ae8dc9b8c0fe53582"></a>
-__forceinline__ __host__ __device__ result_type&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::detail::wrapper</a>&lt; T, type_id &gt; const &amp;key) const</td></tr>
-<tr class="separator:aacb1366513c81d3ae8dc9b8c0fe53582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6df3480dafe4c11350b2c22328abe75"><td class="memItemLeft" align="right" valign="top"><a id="ae6df3480dafe4c11350b2c22328abe75"></a>
+CUDA_HOST_DEVICE_CALLABLE result_type&#160;</td><td class="memItemRight" valign="bottom"><b>hash_combine</b> (result_type lhs, result_type rhs) const</td></tr>
+<tr class="separator:ae6df3480dafe4c11350b2c22328abe75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af623c0c23ca7760030050a76c3929f59"><td class="memTemplParams" colspan="2"><a id="af623c0c23ca7760030050a76c3929f59"></a>
+template&lt;gdf_dtype dtype = type_id&gt; </td></tr>
+<tr class="memitem:af623c0c23ca7760030050a76c3929f59"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt;(dtype==GDF_BOOL8), result_type &gt; CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::detail::wrapper</a>&lt; T, dtype &gt; const &amp;key) const</td></tr>
+<tr class="separator:af623c0c23ca7760030050a76c3929f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdf7cf325ddc23e3b5f8a8a8cfc1a237"><td class="memTemplParams" colspan="2"><a id="abdf7cf325ddc23e3b5f8a8a8cfc1a237"></a>
+template&lt;gdf_dtype dtype = type_id&gt; </td></tr>
+<tr class="memitem:abdf7cf325ddc23e3b5f8a8a8cfc1a237"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt;(dtype !=GDF_BOOL8), result_type &gt; CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::detail::wrapper</a>&lt; T, dtype &gt; const &amp;key) const</td></tr>
+<tr class="separator:abdf7cf325ddc23e3b5f8a8a8cfc1a237"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T, gdf_dtype type_id&gt;<br />

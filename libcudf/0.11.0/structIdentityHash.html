@@ -82,12 +82,12 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>result_type</b> = ha
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa0e3de5cc511d4a45bbe687af3a210aa"><td class="memItemLeft" align="right" valign="top">__host__ __device__ result_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIdentityHash.html#aa0e3de5cc511d4a45bbe687af3a210aa">hash_combine</a> (result_type lhs, result_type rhs) const</td></tr>
-<tr class="memdesc:aa0e3de5cc511d4a45bbe687af3a210aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combines two hash values into a new single hash value. Called repeatedly to create a hash value from several variables. Taken from the Boost hash_combine function <a href="https://www.boost.org/doc/libs/1_35_0/doc/html/boost/hash_combine_id241013.html">https://www.boost.org/doc/libs/1_35_0/doc/html/boost/hash_combine_id241013.html</a>.  <a href="structIdentityHash.html#aa0e3de5cc511d4a45bbe687af3a210aa">More...</a><br /></td></tr>
-<tr class="separator:aa0e3de5cc511d4a45bbe687af3a210aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30fc7cbd7d6134ce1608adb1f0550770"><td class="memItemLeft" align="right" valign="top"><a id="a30fc7cbd7d6134ce1608adb1f0550770"></a>
-__forceinline__ __host__ __device__ result_type&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const Key &amp;key) const</td></tr>
-<tr class="separator:a30fc7cbd7d6134ce1608adb1f0550770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af49b2d7967935c4be0e447428a4f4eb2"><td class="memItemLeft" align="right" valign="top">CUDA_HOST_DEVICE_CALLABLE result_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIdentityHash.html#af49b2d7967935c4be0e447428a4f4eb2">hash_combine</a> (result_type lhs, result_type rhs) const</td></tr>
+<tr class="memdesc:af49b2d7967935c4be0e447428a4f4eb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combines two hash values into a new single hash value. Called repeatedly to create a hash value from several variables. Taken from the Boost hash_combine function <a href="https://www.boost.org/doc/libs/1_35_0/doc/html/boost/hash_combine_id241013.html">https://www.boost.org/doc/libs/1_35_0/doc/html/boost/hash_combine_id241013.html</a>.  <a href="structIdentityHash.html#af49b2d7967935c4be0e447428a4f4eb2">More...</a><br /></td></tr>
+<tr class="separator:af49b2d7967935c4be0e447428a4f4eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dfc82c5ba7565b2d92b2caa216a7d61"><td class="memItemLeft" align="right" valign="top"><a id="a0dfc82c5ba7565b2d92b2caa216a7d61"></a>
+CUDA_HOST_DEVICE_CALLABLE result_type&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const Key &amp;key) const</td></tr>
+<tr class="separator:a0dfc82c5ba7565b2d92b2caa216a7d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename Key&gt;<br />
@@ -95,8 +95,8 @@ struct IdentityHash&lt; Key &gt;</h3>
 
 <p>This hash function simply returns the value that is asked to be hash reinterpreted as the result_type of the functor. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa0e3de5cc511d4a45bbe687af3a210aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0e3de5cc511d4a45bbe687af3a210aa">&#9670;&nbsp;</a></span>hash_combine()</h2>
+<a id="af49b2d7967935c4be0e447428a4f4eb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af49b2d7967935c4be0e447428a4f4eb2">&#9670;&nbsp;</a></span>hash_combine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -107,7 +107,7 @@ template&lt;typename Key &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ result_type <a class="el" href="structIdentityHash.html">IdentityHash</a>&lt; Key &gt;::hash_combine </td>
+          <td class="memname">CUDA_HOST_DEVICE_CALLABLE result_type <a class="el" href="structIdentityHash.html">IdentityHash</a>&lt; Key &gt;::hash_combine </td>
           <td>(</td>
           <td class="paramtype">result_type&#160;</td>
           <td class="paramname"><em>lhs</em>, </td>

@@ -83,25 +83,55 @@ $(function() {
 <code>#include &lt;cudf/utilities/cuda.cuh&gt;</code><br />
 <code>#include &lt;cudf/utilities/error.hpp&gt;</code><br />
 <code>#include &lt;utilities/release_assert.cuh&gt;</code><br />
+<code>#include &lt;cudf/wrappers/bool.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="timestamps_8hpp_source.html">cudf/wrappers/timestamps.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for type_dispatcher.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="type__dispatcher_8hpp__incl.png" border="0" usemap="#type__dispatcher_8hpp" alt=""/></div>
 <map name="type__dispatcher_8hpp" id="type__dispatcher_8hpp">
-<area shape="rect" title="Defines the mapping between cudf::type_id runtime type information." alt="" coords="507,5,719,32"/>
-<area shape="rect" href="types_8hpp.html" title="Type declarations for libcudf." alt="" coords="86,80,249,107"/>
-<area shape="rect" href="error_8hpp_source.html" title=" " alt="" coords="481,80,744,107"/>
-<area shape="rect" href="timestamps_8hpp.html" title="Concrete type definitions for int32_t and int64_t timestamps in." alt="" coords="865,80,1168,107"/>
-<area shape="rect" title=" " alt="" coords="5,155,97,181"/>
-<area shape="rect" title=" " alt="" coords="121,155,213,181"/>
-<area shape="rect" title=" " alt="" coords="238,155,321,181"/>
-<area shape="rect" title=" " alt="" coords="345,155,547,181"/>
-<area shape="rect" title=" " alt="" coords="571,155,654,181"/>
-<area shape="rect" title=" " alt="" coords="678,155,790,181"/>
-<area shape="rect" title=" " alt="" coords="814,155,926,181"/>
-<area shape="rect" title=" " alt="" coords="951,155,1083,181"/>
-<area shape="rect" title=" " alt="" coords="1107,155,1369,181"/>
+<area shape="rect" title="Defines the mapping between cudf::type_id runtime type information." alt="" coords="3326,5,3538,32"/>
+<area shape="rect" href="types_8hpp.html" title="Type declarations for libcudf." alt="" coords="1889,543,2052,569"/>
+<area shape="rect" href="error_8hpp_source.html" title=" " alt="" coords="2862,319,3125,345"/>
+<area shape="rect" href="bool_8hpp_source.html" title=" " alt="" coords="1712,80,1955,107"/>
+<area shape="rect" href="timestamps_8hpp.html" title="Concrete type definitions for int32_t and int64_t timestamps in." alt="" coords="3489,80,3791,107"/>
+<area shape="rect" title=" " alt="" coords="1925,617,2017,644"/>
+<area shape="rect" title=" " alt="" coords="282,617,374,644"/>
+<area shape="rect" title=" " alt="" coords="3104,393,3187,420"/>
+<area shape="rect" title=" " alt="" coords="3211,393,3413,420"/>
+<area shape="rect" title=" " alt="" coords="1800,468,1883,495"/>
+<area shape="rect" title=" " alt="" coords="2832,393,2944,420"/>
+<area shape="rect" title=" " alt="" coords="2968,393,3080,420"/>
+<area shape="rect" href="cudf__utils_8h_source.html" title=" " alt="" coords="1407,155,1649,181"/>
+<area shape="rect" title=" " alt="" coords="1831,155,2023,181"/>
+<area shape="rect" title=" " alt="" coords="2047,155,2129,181"/>
+<area shape="rect" title=" " alt="" coords="1674,155,1806,181"/>
+<area shape="rect" href="error__utils_8hpp_source.html" title=" " alt="" coords="1760,229,2003,271"/>
+<area shape="rect" href="cudf_8h_source.html" title=" " alt="" coords="1461,319,1593,345"/>
+<area shape="rect" title=" " alt="" coords="1271,543,1353,569"/>
+<area shape="rect" title=" " alt="" coords="723,543,815,569"/>
+<area shape="rect" href="bitmask__ops_8hpp.html" title=" " alt="" coords="320,229,563,271"/>
+<area shape="rect" href="bitmask_8hpp_source.html" title=" " alt="" coords="1483,237,1735,263"/>
+<area shape="rect" href="types_8h_source.html" title=" " alt="" coords="417,468,559,495"/>
+<area shape="rect" title=" " alt="" coords="437,543,539,569"/>
+<area shape="rect" title=" " alt="" coords="2037,393,2129,420"/>
+<area shape="rect" href="convert__types_8h_source.html" title=" " alt="" coords="2153,393,2325,420"/>
+<area shape="rect" href="io__types_8hpp_source.html" title=" " alt="" coords="1801,393,2013,420"/>
+<area shape="rect" href="io__types_8h_source.html" title=" " alt="" coords="2137,468,2380,495"/>
+<area shape="rect" href="io__functions_8hpp_source.html" title=" " alt="" coords="1267,393,1519,420"/>
+<area shape="rect" href="io__readers_8hpp_source.html" title=" " alt="" coords="1544,393,1776,420"/>
+<area shape="rect" href="io__writers_8hpp_source.html" title=" " alt="" coords="784,393,1016,420"/>
+<area shape="rect" href="legacy_2column_8hpp_source.html" title=" " alt="" coords="517,393,709,420"/>
+<area shape="rect" href="functions_8h_source.html" title=" " alt="" coords="1040,393,1243,420"/>
+<area shape="rect" href="io__functions_8h_source.html" title=" " alt="" coords="2424,393,2656,420"/>
+<area shape="rect" title=" " alt="" coords="1475,468,1557,495"/>
+<area shape="rect" title=" " alt="" coords="1683,468,1775,495"/>
+<area shape="rect" href="legacy_2table_8hpp_source.html" title=" " alt="" coords="1117,468,1349,495"/>
+<area shape="rect" title=" " alt="" coords="1063,543,1246,569"/>
+<area shape="rect" title=" " alt="" coords="400,319,563,345"/>
+<area shape="rect" title=" " alt="" coords="93,319,376,345"/>
+<area shape="rect" title=" " alt="" coords="3785,155,3917,181"/>
+<area shape="rect" title=" " alt="" coords="3498,155,3761,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -146,8 +176,11 @@ Functions</h2></td></tr>
 <tr class="memitem:a2b5b8575cc88f64e4462769d31a1f6b1"><td class="memTemplItemLeft" align="right" valign="top">constexpr type_id&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="type__dispatcher_8hpp.html#a2b5b8575cc88f64e4462769d31a1f6b1">cudf::experimental::type_to_id</a> ()</td></tr>
 <tr class="memdesc:a2b5b8575cc88f64e4462769d31a1f6b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a C++ type to it's corresponding <code><a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></code>  <a href="type__dispatcher_8hpp.html#a2b5b8575cc88f64e4462769d31a1f6b1">More...</a><br /></td></tr>
 <tr class="separator:a2b5b8575cc88f64e4462769d31a1f6b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ff6e0b5db7196157adfb5faa011f1b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="type__dispatcher_8hpp.html#a3ff6e0b5db7196157adfb5faa011f1b7">cudf::experimental::CUDF_TYPE_MAPPING</a> (int8_t, type_id::INT8)</td></tr>
-<tr class="memdesc:a3ff6e0b5db7196157adfb5faa011f1b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines all of the mappings between C++ types and their corresponding.  <a href="type__dispatcher_8hpp.html#a3ff6e0b5db7196157adfb5faa011f1b7">More...</a><br /></td></tr>
+<tr class="memitem:ad9f3553fd1261d377365d94c676fff9d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="type__dispatcher_8hpp.html#ad9f3553fd1261d377365d94c676fff9d">cudf::experimental::CUDF_TYPE_MAPPING</a> (<a class="el" href="structcudf_1_1experimental_1_1bool8.html">cudf::experimental::bool8</a>, type_id::BOOL8)</td></tr>
+<tr class="memdesc:ad9f3553fd1261d377365d94c676fff9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines all of the mappings between C++ types and their corresponding.  <a href="type__dispatcher_8hpp.html#ad9f3553fd1261d377365d94c676fff9d">More...</a><br /></td></tr>
+<tr class="separator:ad9f3553fd1261d377365d94c676fff9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ff6e0b5db7196157adfb5faa011f1b7"><td class="memItemLeft" align="right" valign="top"><a id="a3ff6e0b5db7196157adfb5faa011f1b7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>cudf::experimental::CUDF_TYPE_MAPPING</b> (int8_t, type_id::INT8)</td></tr>
 <tr class="separator:a3ff6e0b5db7196157adfb5faa011f1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a489fd1f060cf737cb26e4744026733c8"><td class="memItemLeft" align="right" valign="top"><a id="a489fd1f060cf737cb26e4744026733c8"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>cudf::experimental::CUDF_TYPE_MAPPING</b> (int16_t, type_id::INT16)</td></tr>
@@ -190,7 +223,7 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the mapping between <code><a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></code> runtime type information. </p>
 <p>------------------------------------------------------------------------&mdash;*</p>
-<h2><a class="anchor" id="autotoc_md504"></a>
+<h2><a class="anchor" id="autotoc_md511"></a>
 and concrete C++ types.</h2>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a7dcb8f2b1a2a8f0e2c965251ea4bbae1"></a>
@@ -234,7 +267,7 @@ and concrete C++ types.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md507"></a>
+<h2><a class="anchor" id="autotoc_md514"></a>
 @param Id The &lt;tt&gt;cudf::type_id&lt;/tt&gt; enum</h2>
 
 </div>
@@ -256,14 +289,14 @@ template&lt;cudf::type_id Id&gt; </div>
 
 <p>Maps a <code><a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></code> to it's corresponding concrete C++ type. </p>
 <p>------------------------------------------------------------------------&mdash;* Example: </p><div class="fragment"><div class="line">static_assert(std::is_same&lt;int32_t, id_to_type&lt;INT32&gt;);</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md506"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md513"></a>
 @tparam t The &lt;tt&gt;cudf::type_id&lt;/tt&gt; to map</h2>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="file_a3ff6e0b5db7196157adfb5faa011f1b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#file_a3ff6e0b5db7196157adfb5faa011f1b7">&#9670;&nbsp;</a></span>CUDF_TYPE_MAPPING()</h2>
+<a id="file_ad9f3553fd1261d377365d94c676fff9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#file_ad9f3553fd1261d377365d94c676fff9d">&#9670;&nbsp;</a></span>CUDF_TYPE_MAPPING()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -271,13 +304,13 @@ template&lt;cudf::type_id Id&gt; </div>
         <tr>
           <td class="memname">cudf::experimental::CUDF_TYPE_MAPPING </td>
           <td>(</td>
-          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramtype"><a class="el" href="structcudf_1_1experimental_1_1bool8.html">cudf::experimental::bool8</a>&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">type_id::INT8&#160;</td>
+          <td class="paramtype">type_id::BOOL8&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -290,7 +323,7 @@ template&lt;cudf::type_id Id&gt; </div>
 
 <p>Defines all of the mappings between C++ types and their corresponding. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md508"></a>
+<h2><a class="anchor" id="autotoc_md515"></a>
 &lt;tt&gt;cudf::type_id&lt;/tt&gt; values.</h2>
 
 </div>
@@ -388,7 +421,7 @@ template &lt; typename ColumnType,
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md509"></a>
+<h2><a class="anchor" id="autotoc_md516"></a>
 @return Whatever is returned by the callable's &lt;tt&gt;operator()&lt;/tt&gt;</h2>
 
 </div>
@@ -422,7 +455,7 @@ template&lt;typename T &gt; </div>
 <p>------------------------------------------------------------------------&mdash;* When explicitly passed a template argument of a given type, returns the appropriate <code>type_id</code> enum for the specified C++ type.</p>
 <p>For example:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">return</span> cudf::type_to_id&lt;int32_t&gt;();        <span class="comment">// Returns INT32</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md505"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md512"></a>
 @tparam T The type to map to a &lt;tt&gt;cudf::type_id&lt;/tt&gt;</h2>
 
 </div>
