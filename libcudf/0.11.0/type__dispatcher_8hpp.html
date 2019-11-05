@@ -139,8 +139,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="type__dispatcher_8hpp__dep__incl.png" border="0" usemap="#type__dispatcher_8hppdep" alt=""/></div>
 <map name="type__dispatcher_8hppdep" id="type__dispatcher_8hppdep">
-<area shape="rect" title="Defines the mapping between cudf::type_id runtime type information." alt="" coords="5,5,217,32"/>
-<area shape="rect" href="traits_8hpp_source.html" title=" " alt="" coords="50,80,173,107"/>
+<area shape="rect" title="Defines the mapping between cudf::type_id runtime type information." alt="" coords="11,5,223,32"/>
+<area shape="rect" href="scalar_8hpp_source.html" title=" " alt="" coords="55,155,178,181"/>
+<area shape="rect" href="traits_8hpp_source.html" title=" " alt="" coords="105,80,227,107"/>
+<area shape="rect" href="scalar__factories_8hpp_source.html" title=" " alt="" coords="5,229,228,256"/>
 </map>
 </div>
 </div>
@@ -149,6 +151,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1id__to__type__impl.html">cudf::experimental::id_to_type_impl&lt; t &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1type__to__scalar__type__impl.html">cudf::experimental::type_to_scalar_type_impl&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1type__to__scalar__type__impl_3_01cudf_1_1string__view_01_4.html">cudf::experimental::type_to_scalar_type_impl&lt; cudf::string_view &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -162,6 +168,10 @@ Macros</h2></td></tr>
 <tr class="memitem:a7dcb8f2b1a2a8f0e2c965251ea4bbae1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="type__dispatcher_8hpp.html#a7dcb8f2b1a2a8f0e2c965251ea4bbae1">CUDF_TYPE_MAPPING</a>(Type,  Id)</td></tr>
 <tr class="memdesc:a7dcb8f2b1a2a8f0e2c965251ea4bbae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro used to define a mapping between a concrete C++ type and a <code><a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></code> enum.  <a href="type__dispatcher_8hpp.html#a7dcb8f2b1a2a8f0e2c965251ea4bbae1">More...</a><br /></td></tr>
 <tr class="separator:a7dcb8f2b1a2a8f0e2c965251ea4bbae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc199495a79b7dedf7181b31a4f5af79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAP_NUMERIC_SCALAR</b>(Type)</td></tr>
+<tr class="separator:afc199495a79b7dedf7181b31a4f5af79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a194b03ace52ee49fad7a059de01a650b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAP_TIMESTAMP_SCALAR</b>(Type)</td></tr>
+<tr class="separator:a194b03ace52ee49fad7a059de01a650b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -169,6 +179,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a09ff9b3055486ff508a88bf2d891bce8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="type__dispatcher_8hpp.html#a09ff9b3055486ff508a88bf2d891bce8">cudf::experimental::id_to_type</a> = typename id_to_type_impl&lt; Id &gt;::type</td></tr>
 <tr class="memdesc:a09ff9b3055486ff508a88bf2d891bce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a <code><a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></code> to it's corresponding concrete C++ type.  <a href="type__dispatcher_8hpp.html#a09ff9b3055486ff508a88bf2d891bce8">More...</a><br /></td></tr>
 <tr class="separator:a09ff9b3055486ff508a88bf2d891bce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3198f71aa690ddfcd12b70245838c78"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab3198f71aa690ddfcd12b70245838c78"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="type__dispatcher_8hpp.html#ab3198f71aa690ddfcd12b70245838c78">cudf::experimental::scalar_type_t</a> = typename type_to_scalar_type_impl&lt; T &gt;::ScalarType</td></tr>
+<tr class="memdesc:ab3198f71aa690ddfcd12b70245838c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a C++ type to the scalar type required to hold its value.  <a href="type__dispatcher_8hpp.html#ab3198f71aa690ddfcd12b70245838c78">More...</a><br /></td></tr>
+<tr class="separator:ab3198f71aa690ddfcd12b70245838c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -223,7 +237,7 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the mapping between <code><a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></code> runtime type information. </p>
 <p>------------------------------------------------------------------------&mdash;*</p>
-<h2><a class="anchor" id="autotoc_md511"></a>
+<h2><a class="anchor" id="autotoc_md514"></a>
 and concrete C++ types.</h2>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a7dcb8f2b1a2a8f0e2c965251ea4bbae1"></a>
@@ -267,9 +281,53 @@ and concrete C++ types.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md514"></a>
+<h2><a class="anchor" id="autotoc_md517"></a>
 @param Id The &lt;tt&gt;cudf::type_id&lt;/tt&gt; enum</h2>
 
+</div>
+</div>
+<a id="afc199495a79b7dedf7181b31a4f5af79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc199495a79b7dedf7181b31a4f5af79">&#9670;&nbsp;</a></span>MAP_NUMERIC_SCALAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAP_NUMERIC_SCALAR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Type</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;&gt;                                         \</div>
+<div class="line">struct type_to_scalar_type_impl&lt;Type&gt; {             \</div>
+<div class="line">  using ScalarType = <a class="code" href="classcudf_1_1numeric__scalar.html">cudf::numeric_scalar&lt;Type&gt;</a>;    \</div>
+<div class="line">};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a194b03ace52ee49fad7a059de01a650b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a194b03ace52ee49fad7a059de01a650b">&#9670;&nbsp;</a></span>MAP_TIMESTAMP_SCALAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAP_TIMESTAMP_SCALAR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Type</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;&gt;                                         \</div>
+<div class="line">struct type_to_scalar_type_impl&lt;Type&gt; {             \</div>
+<div class="line">  using ScalarType = <a class="code" href="classcudf_1_1timestamp__scalar.html">cudf::timestamp_scalar&lt;Type&gt;</a>;  \</div>
+<div class="line">};</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -289,8 +347,32 @@ template&lt;cudf::type_id Id&gt; </div>
 
 <p>Maps a <code><a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></code> to it's corresponding concrete C++ type. </p>
 <p>------------------------------------------------------------------------&mdash;* Example: </p><div class="fragment"><div class="line">static_assert(std::is_same&lt;int32_t, id_to_type&lt;INT32&gt;);</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md513"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md516"></a>
 @tparam t The &lt;tt&gt;cudf::type_id&lt;/tt&gt; to map</h2>
+
+</div>
+</div>
+<a id="file_ab3198f71aa690ddfcd12b70245838c78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#file_ab3198f71aa690ddfcd12b70245838c78">&#9670;&nbsp;</a></span>scalar_type_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="type__dispatcher_8hpp.html#ab3198f71aa690ddfcd12b70245838c78">cudf::experimental::scalar_type_t</a> = typedef typename type_to_scalar_type_impl&lt;T&gt;::ScalarType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maps a C++ type to the scalar type required to hold its value. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The concrete C++ type to map </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -323,7 +405,7 @@ template&lt;cudf::type_id Id&gt; </div>
 
 <p>Defines all of the mappings between C++ types and their corresponding. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md515"></a>
+<h2><a class="anchor" id="autotoc_md518"></a>
 &lt;tt&gt;cudf::type_id&lt;/tt&gt; values.</h2>
 
 </div>
@@ -421,7 +503,7 @@ template &lt; typename ColumnType,
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md516"></a>
+<h2><a class="anchor" id="autotoc_md519"></a>
 @return Whatever is returned by the callable's &lt;tt&gt;operator()&lt;/tt&gt;</h2>
 
 </div>
@@ -455,15 +537,17 @@ template&lt;typename T &gt; </div>
 <p>------------------------------------------------------------------------&mdash;* When explicitly passed a template argument of a given type, returns the appropriate <code>type_id</code> enum for the specified C++ type.</p>
 <p>For example:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">return</span> cudf::type_to_id&lt;int32_t&gt;();        <span class="comment">// Returns INT32</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md512"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md515"></a>
 @tparam T The type to map to a &lt;tt&gt;cudf::type_id&lt;/tt&gt;</h2>
 
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="aclasscudf_1_1data__type_html"><div class="ttname"><a href="classcudf_1_1data__type.html">cudf::data_type</a></div><div class="ttdoc">Indicator for the logical data type of an element in a column.</div><div class="ttdef"><b>Definition:</b> types.hpp:139</div></div>
-<div class="ttc" id="anamespacecudf_html_acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae"><div class="ttname"><a href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae">cudf::INT32</a></div><div class="ttdoc">4 byte signed integer</div><div class="ttdef"><b>Definition:</b> types.hpp:117</div></div>
-<div class="ttc" id="anamespacecudf_html_acd4cd7157c4379954b5772936f89c59b"><div class="ttname"><a href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></div><div class="ttdeci">type_id</div><div class="ttdef"><b>Definition:</b> types.hpp:113</div></div>
+<div class="ttc" id="aclasscudf_1_1timestamp__scalar_html"><div class="ttname"><a href="classcudf_1_1timestamp__scalar.html">cudf::timestamp_scalar</a></div><div class="ttdoc">An owning class to represent a timestamp value in device memory.</div><div class="ttdef"><b>Definition:</b> scalar.hpp:251</div></div>
+<div class="ttc" id="aclasscudf_1_1numeric__scalar_html"><div class="ttname"><a href="classcudf_1_1numeric__scalar.html">cudf::numeric_scalar</a></div><div class="ttdoc">An owning class to represent a numerical value in device memory.</div><div class="ttdef"><b>Definition:</b> scalar.hpp:170</div></div>
+<div class="ttc" id="aclasscudf_1_1data__type_html"><div class="ttname"><a href="classcudf_1_1data__type.html">cudf::data_type</a></div><div class="ttdoc">Indicator for the logical data type of an element in a column.</div><div class="ttdef"><b>Definition:</b> types.hpp:150</div></div>
+<div class="ttc" id="anamespacecudf_html_acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae"><div class="ttname"><a href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae">cudf::INT32</a></div><div class="ttdoc">4 byte signed integer</div><div class="ttdef"><b>Definition:</b> types.hpp:128</div></div>
+<div class="ttc" id="anamespacecudf_html_acd4cd7157c4379954b5772936f89c59b"><div class="ttname"><a href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></div><div class="ttdeci">type_id</div><div class="ttdef"><b>Definition:</b> types.hpp:124</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

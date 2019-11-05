@@ -1,4 +1,6 @@
 <map id="type_dispatcher.hpp" name="type_dispatcher.hpp">
-<area shape="rect" id="node1" title="Defines the mapping between cudf::type_id runtime type information." alt="" coords="5,5,217,32"/>
-<area shape="rect" id="node2" href="$traits_8hpp_source.html" title=" " alt="" coords="50,80,173,107"/>
+<area shape="rect" id="node1" title="Defines the mapping between cudf::type_id runtime type information." alt="" coords="11,5,223,32"/>
+<area shape="rect" id="node2" href="$scalar_8hpp_source.html" title=" " alt="" coords="55,155,178,181"/>
+<area shape="rect" id="node4" href="$traits_8hpp_source.html" title=" " alt="" coords="105,80,227,107"/>
+<area shape="rect" id="node3" href="$scalar__factories_8hpp_source.html" title=" " alt="" coords="5,229,228,256"/>
 </map>

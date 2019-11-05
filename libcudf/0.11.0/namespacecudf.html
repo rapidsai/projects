@@ -148,6 +148,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1mutable__table__view.html">mutable_table_view</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A set of <code><a class="el" href="classcudf_1_1mutable__column__view.html" title="A non-owning, mutable view of device data as a column of elements, some of which may be null as indic...">mutable_column_view</a></code>s of the same size.  <a href="classcudf_1_1mutable__table__view.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1numeric__scalar.html">numeric_scalar</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An owning class to represent a numerical value in device memory.  <a href="classcudf_1_1numeric__scalar.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1numeric__scalar__device__view.html">numeric_scalar_device_view</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type of scalar_device_view that stores a pointer to a numerical value.  <a href="classcudf_1_1numeric__scalar__device__view.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1orc__read__arg.html">orc_read_arg</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1orc__write__arg.html">orc_write_arg</a></td></tr>
@@ -161,9 +167,18 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1parquet__read__arg.html">parquet_read_arg</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1scalar.html">scalar</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An owning class to represent a singular value.  <a href="classcudf_1_1scalar.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1sink__info.html">sink_info</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1source__info.html">source_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1string__scalar.html">string_scalar</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An owning class to represent a string in device memory.  <a href="classcudf_1_1string__scalar.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1string__scalar__device__view.html">string_scalar_device_view</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type of scalar_device_view that stores a pointer to a string value.  <a href="classcudf_1_1string__scalar__device__view.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1string__view.html">string_view</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A non-owning, immutable view of device data that is a variable length char array representing a UTF-8 string. The caller must maintain the device memory for the lifetime of this instance.  <a href="classcudf_1_1string__view.html#details">More...</a><br /></td></tr>
@@ -178,6 +193,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1table__view.html">table_view</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A set of <code><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></code>s of the same size.  <a href="classcudf_1_1table__view.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1timestamp__scalar.html">timestamp_scalar</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An owning class to represent a timestamp value in device memory.  <a href="classcudf_1_1timestamp__scalar.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1timestamp__scalar__device__view.html">timestamp_scalar_device_view</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A type of scalar_device_view that stores a pointer to a timestamp value.  <a href="classcudf_1_1timestamp__scalar__device__view.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1transformer__meanvar.html">transformer_meanvar</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses a scalar value to construct a <code>meanvar</code> object. This transforms <code>thrust::pair&lt;ElementType, bool&gt;</code> into <code>ResultType = meanvar&lt;ElementType&gt;</code> form.  <a href="structcudf_1_1transformer__meanvar.html#details">More...</a><br /></td></tr>
@@ -591,6 +612,12 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
 <tr class="memitem:a1a85c229c4f7d98d22f25894931f898d"><td class="memItemLeft" align="right" valign="top"><a id="a1a85c229c4f7d98d22f25894931f898d"></a>
 <a class="el" href="structgdf__column__.html">gdf_column</a>&#160;</td><td class="memItemRight" valign="bottom"><b>rolling_window</b> (<a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;input, cudf::size_type window, cudf::size_type min_periods, cudf::size_type forward_window, const std::string &amp;user_defined_aggregator, gdf_agg_op agg_op, gdf_dtype output_type, cudf::size_type const *window_col, cudf::size_type const *min_periods_col, cudf::size_type const *forward_window_col)</td></tr>
 <tr class="separator:a1a85c229c4f7d98d22f25894931f898d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a114a73a1397a4c17375599f3113172ff"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a114a73a1397a4c17375599f3113172ff">make_numeric_scalar</a> (<a class="el" href="classcudf_1_1data__type.html">data_type</a> type, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a114a73a1397a4c17375599f3113172ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct scalar with uninitialized storage to hold a value of the specified numeric <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> and a validity bool.  <a href="namespacecudf.html#a114a73a1397a4c17375599f3113172ff">More...</a><br /></td></tr>
+<tr class="separator:a114a73a1397a4c17375599f3113172ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a073f763f8f75e7aa3b551fe21e533bae"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a073f763f8f75e7aa3b551fe21e533bae">make_timestamp_scalar</a> (<a class="el" href="classcudf_1_1data__type.html">data_type</a> type, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a073f763f8f75e7aa3b551fe21e533bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct scalar with uninitialized storage to hold a value of the specified timestamp <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> and a validity bool.  <a href="namespacecudf.html#a073f763f8f75e7aa3b551fe21e533bae">More...</a><br /></td></tr>
+<tr class="separator:a073f763f8f75e7aa3b551fe21e533bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae90960c52c1f1fe3ab2257bad89b18fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgdf__column__.html">gdf_column</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ae90960c52c1f1fe3ab2257bad89b18fc">lower_bound</a> (<a class="el" href="structcudf_1_1table.html">table</a> const  &amp;t, <a class="el" href="structcudf_1_1table.html">table</a> const  &amp;values, std::vector&lt; bool &gt; const  &amp;desc_flags, bool nulls_as_largest=true)</td></tr>
 <tr class="memdesc:ae90960c52c1f1fe3ab2257bad89b18fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find smallest indices in a sorted table where values should be inserted to maintain order.  <a href="namespacecudf.html#ae90960c52c1f1fe3ab2257bad89b18fc">More...</a><br /></td></tr>
 <tr class="separator:ae90960c52c1f1fe3ab2257bad89b18fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -627,6 +654,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>contains</b> (<a clas
 <tr class="memitem:acabc5ec71f9be5db72e64ed461ac1fa6"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#acabc5ec71f9be5db72e64ed461ac1fa6">make_strings_column</a> (size_type num_strings, std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; offsets_column, std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; chars_column, size_type null_count, rmm::device_buffer &amp;&amp;null_mask, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:acabc5ec71f9be5db72e64ed461ac1fa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a STRING type column given offsets column, chars columns, and null mask and null count. The columns and mask are moved into the resulting strings column.  <a href="namespacecudf.html#acabc5ec71f9be5db72e64ed461ac1fa6">More...</a><br /></td></tr>
 <tr class="separator:acabc5ec71f9be5db72e64ed461ac1fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9baa6152d40906019ccc2e66eff4dab4"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a9baa6152d40906019ccc2e66eff4dab4">make_string_scalar</a> (std::string const  &amp;string, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a9baa6152d40906019ccc2e66eff4dab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct STRING type scalar given a <code>std::string</code>. The size of the <code>std::string</code> must not exceed the maximum size of size_type. The string characters are expected to be UTF-8 encoded sequence of char bytes.  <a href="namespacecudf.html#a9baa6152d40906019ccc2e66eff4dab4">More...</a><br /></td></tr>
+<tr class="separator:a9baa6152d40906019ccc2e66eff4dab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2f973d94c67ab3dc1a183c5adb3753d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; gdf_dtype &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ad2f973d94c67ab3dc1a183c5adb3753d">column_dtypes</a> (<a class="el" href="structcudf_1_1table.html">cudf::table</a> const  &amp;<a class="el" href="structcudf_1_1table.html">table</a>)</td></tr>
 <tr class="memdesc:ad2f973d94c67ab3dc1a183c5adb3753d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns vector of the dtypes of the columns in a table.  <a href="namespacecudf.html#ad2f973d94c67ab3dc1a183c5adb3753d">More...</a><br /></td></tr>
 <tr class="separator:ad2f973d94c67ab3dc1a183c5adb3753d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -708,6 +738,20 @@ std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 template&lt;typename BinaryOp &gt; </td></tr>
 <tr class="memitem:acafbd5dbae09b26c92b964e0122d5fc9"><td class="memTemplItemLeft" align="right" valign="top">__forceinline__ __device__ <a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::bool8</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>genericAtomicOperation</b> (<a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::bool8</a> *address, <a class="el" href="structcudf_1_1detail_1_1wrapper.html">cudf::bool8</a> const &amp;update_value, BinaryOp op)</td></tr>
 <tr class="separator:acafbd5dbae09b26c92b964e0122d5fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a786e49ed5e27ff8517c3b6402655d1af"><td class="memTemplParams" colspan="2"><a id="a786e49ed5e27ff8517c3b6402655d1af"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a786e49ed5e27ff8517c3b6402655d1af"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a786e49ed5e27ff8517c3b6402655d1af">get_scalar_device_view</a> (<a class="el" href="classcudf_1_1numeric__scalar.html">numeric_scalar</a>&lt; T &gt; &amp;s)</td></tr>
+<tr class="memdesc:a786e49ed5e27ff8517c3b6402655d1af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the device view of a <a class="el" href="classcudf_1_1numeric__scalar.html" title="An owning class to represent a numerical value in device memory.">numeric_scalar</a>. <br /></td></tr>
+<tr class="separator:a786e49ed5e27ff8517c3b6402655d1af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5287e6197c09c4828103bae453ab5c58"><td class="memItemLeft" align="right" valign="top"><a id="a5287e6197c09c4828103bae453ab5c58"></a>
+auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a5287e6197c09c4828103bae453ab5c58">get_scalar_device_view</a> (<a class="el" href="classcudf_1_1string__scalar.html">string_scalar</a> &amp;s)</td></tr>
+<tr class="memdesc:a5287e6197c09c4828103bae453ab5c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the device view of a <a class="el" href="classcudf_1_1string__scalar.html" title="An owning class to represent a string in device memory.">string_scalar</a>. <br /></td></tr>
+<tr class="separator:a5287e6197c09c4828103bae453ab5c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae22ceb0ce0a74a2f9d8876b5c8a33d2b"><td class="memTemplParams" colspan="2"><a id="ae22ceb0ce0a74a2f9d8876b5c8a33d2b"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae22ceb0ce0a74a2f9d8876b5c8a33d2b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ae22ceb0ce0a74a2f9d8876b5c8a33d2b">get_scalar_device_view</a> (<a class="el" href="classcudf_1_1timestamp__scalar.html">timestamp_scalar</a>&lt; T &gt; &amp;s)</td></tr>
+<tr class="memdesc:ae22ceb0ce0a74a2f9d8876b5c8a33d2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the device view of a <a class="el" href="classcudf_1_1timestamp__scalar.html" title="An owning class to represent a timestamp value in device memory.">timestamp_scalar</a>. <br /></td></tr>
+<tr class="separator:ae22ceb0ce0a74a2f9d8876b5c8a33d2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae84612c5efd7a5d2c6701581308a5d3b"><td class="memItemLeft" align="right" valign="top"><a id="ae84612c5efd7a5d2c6701581308a5d3b"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>has_nulls</b> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> view)</td></tr>
 <tr class="separator:ae84612c5efd7a5d2c6701581308a5d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -724,6 +768,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>has_nulls</b> (<a cla
 <tr class="memitem:aaabda3ecfba220ffdfd76a7076259483"><td class="memItemLeft" align="right" valign="top">CUDA_HOST_DEVICE_CALLABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aaabda3ecfba220ffdfd76a7076259483">clear_bit_unsafe</a> (bitmask_type *bitmask, size_type bit_index)</td></tr>
 <tr class="memdesc:aaabda3ecfba220ffdfd76a7076259483"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the specified bit to <code>0</code>  <a href="namespacecudf.html#aaabda3ecfba220ffdfd76a7076259483">More...</a><br /></td></tr>
 <tr class="separator:aaabda3ecfba220ffdfd76a7076259483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accd9af00974def8f416225ad650d33c9"><td class="memItemLeft" align="right" valign="top">CUDA_HOST_DEVICE_CALLABLE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#accd9af00974def8f416225ad650d33c9">bit_is_set</a> (bitmask_type const *bitmask, size_type bit_index)</td></tr>
+<tr class="memdesc:accd9af00974def8f416225ad650d33c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the specified bit is set to <code>1</code>  <a href="namespacecudf.html#accd9af00974def8f416225ad650d33c9">More...</a><br /></td></tr>
+<tr class="separator:accd9af00974def8f416225ad650d33c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86d39e2e08242477d4b58d05eff2b530"><td class="memItemLeft" align="right" valign="top">constexpr bitmask_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a86d39e2e08242477d4b58d05eff2b530">set_least_significant_bits</a> (size_type n)</td></tr>
+<tr class="memdesc:a86d39e2e08242477d4b58d05eff2b530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a bitmask word with the <code>n</code> least significant bits set.  <a href="namespacecudf.html#a86d39e2e08242477d4b58d05eff2b530">More...</a><br /></td></tr>
+<tr class="separator:a86d39e2e08242477d4b58d05eff2b530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad81169267c752128db3c0a391548a955"><td class="memItemLeft" align="right" valign="top">constexpr bitmask_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ad81169267c752128db3c0a391548a955">set_most_significant_bits</a> (size_type n)</td></tr>
+<tr class="memdesc:ad81169267c752128db3c0a391548a955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a bitmask word with the <code>n</code> most significant bits set.  <a href="namespacecudf.html#ad81169267c752128db3c0a391548a955">More...</a><br /></td></tr>
+<tr class="separator:ad81169267c752128db3c0a391548a955"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16ced5d0e49afdda2879ae5535a03167"><td class="memTemplParams" colspan="2"><a id="a16ced5d0e49afdda2879ae5535a03167"></a>
 template&lt;class functor_t , typename... Ts&gt; </td></tr>
 <tr class="memitem:a16ced5d0e49afdda2879ae5535a03167"><td class="memTemplItemLeft" align="right" valign="top">constexpr decltype(auto) CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memTemplItemRight" valign="bottom"><b>type_dispatcher</b> (gdf_dtype dtype, functor_t f, Ts &amp;&amp;... args)</td></tr>
@@ -927,7 +980,7 @@ typedef".</p>
 
 <p>Type alias representing an int32_t duration of days since the unix. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md520"></a>
+<h2><a class="anchor" id="autotoc_md523"></a>
 epoch.</h2>
 
 </div>
@@ -946,7 +999,7 @@ epoch.</h2>
 
 <p>Type alias representing an int64_t duration of milliseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md522"></a>
+<h2><a class="anchor" id="autotoc_md525"></a>
 the unix epoch.</h2>
 
 </div>
@@ -965,7 +1018,7 @@ the unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of nanoseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md524"></a>
+<h2><a class="anchor" id="autotoc_md527"></a>
 the unix epoch.</h2>
 
 </div>
@@ -984,7 +1037,7 @@ the unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of seconds since the. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md521"></a>
+<h2><a class="anchor" id="autotoc_md524"></a>
 unix epoch.</h2>
 
 </div>
@@ -1003,7 +1056,7 @@ unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of microseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md523"></a>
+<h2><a class="anchor" id="autotoc_md526"></a>
 the unix epoch.</h2>
 
 </div>
@@ -1889,6 +1942,45 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="accd9af00974def8f416225ad650d33c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accd9af00974def8f416225ad650d33c9">&#9670;&nbsp;</a></span>bit_is_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CUDA_HOST_DEVICE_CALLABLE bool cudf::bit_is_set </td>
+          <td>(</td>
+          <td class="paramtype">bitmask_type const *&#160;</td>
+          <td class="paramname"><em>bitmask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>bit_index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates whether the specified bit is set to <code>1</code> </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bit_index</td><td>Index of the bit to test </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true The specified bit is <code>1</code> </dd></dl>
+<h2><a class="anchor" id="autotoc_md483"></a>
+@return false  The specified bit is &lt;tt&gt;0&lt;/tt&gt;</h2>
 
 </div>
 </div>
@@ -3101,7 +3193,7 @@ template&lt;typename T &gt; </div>
 <p>------------------------------------------------------------------------&mdash;* When explicitly passed a template argument of a given type, returns the appropriate <code>gdf_dtype</code> for the specified C++ type.</p>
 <p>For example: </p><div class="fragment"><div class="line"><span class="keywordflow">return</span> gdf_dtype_of&lt;int32_t&gt;();        <span class="comment">// Returns GDF_INT32</span></div>
 <div class="line"><span class="keywordflow">return</span> gdf_dtype_of&lt;cudf::category&gt;(); <span class="comment">// Returns GDF_CATEGORY</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md489"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md492"></a>
 @tparam T The type to map to a &lt;tt&gt;gdf_dtype&lt;/tt&gt;</h2>
 
 </div>
@@ -3375,7 +3467,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a "compound" type </dd></dl>
-<h2><a class="anchor" id="autotoc_md507"></a>
+<h2><a class="anchor" id="autotoc_md510"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a "simple" type</h2>
 
 </div>
@@ -3413,7 +3505,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a compound type </dd></dl>
-<h2><a class="anchor" id="autotoc_md508"></a>
+<h2><a class="anchor" id="autotoc_md511"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is a simple type</h2>
 
 </div>
@@ -3452,7 +3544,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a fixed-width element type </dd></dl>
-<h2><a class="anchor" id="autotoc_md505"></a>
+<h2><a class="anchor" id="autotoc_md508"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a variable-width element type</h2>
 
 </div>
@@ -3490,7 +3582,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is fixed-width </dd></dl>
-<h2><a class="anchor" id="autotoc_md506"></a>
+<h2><a class="anchor" id="autotoc_md509"></a>
 @return false  &lt;tt&gt;type&lt;/tt&gt; is variable-width</h2>
 
 </div>
@@ -3582,7 +3674,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> is numeric </dd></dl>
-<h2><a class="anchor" id="autotoc_md501"></a>
+<h2><a class="anchor" id="autotoc_md504"></a>
 @return false  &lt;tt&gt;T&lt;/tt&gt; is not numeric</h2>
 
 </div>
@@ -3620,7 +3712,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is numeric </dd></dl>
-<h2><a class="anchor" id="autotoc_md502"></a>
+<h2><a class="anchor" id="autotoc_md505"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not numeric</h2>
 
 </div>
@@ -3660,7 +3752,7 @@ template&lt;typename L , typename R &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true Objects of types <code>L</code> and <code>R</code> can be relationally be compared </dd></dl>
-<h2><a class="anchor" id="autotoc_md500"></a>
+<h2><a class="anchor" id="autotoc_md503"></a>
 @return false Objects of types &lt;tt&gt;L&lt;/tt&gt; and &lt;tt&gt;R&lt;/tt&gt; cannot be compared</h2>
 
 </div>
@@ -3699,7 +3791,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a simple type </dd></dl>
-<h2><a class="anchor" id="autotoc_md509"></a>
+<h2><a class="anchor" id="autotoc_md512"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a compound type</h2>
 
 </div>
@@ -3737,7 +3829,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a simple type </dd></dl>
-<h2><a class="anchor" id="autotoc_md510"></a>
+<h2><a class="anchor" id="autotoc_md513"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is a compound type</h2>
 
 </div>
@@ -3820,7 +3912,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> is a timestamp </dd></dl>
-<h2><a class="anchor" id="autotoc_md503"></a>
+<h2><a class="anchor" id="autotoc_md506"></a>
 @return false  &lt;tt&gt;T&lt;/tt&gt; is not a timestamp</h2>
 
 </div>
@@ -3858,7 +3950,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a timestamp </dd></dl>
-<h2><a class="anchor" id="autotoc_md504"></a>
+<h2><a class="anchor" id="autotoc_md507"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not a timestamp</h2>
 
 </div>
@@ -4214,6 +4306,57 @@ allocation of the column's &lt;tt&gt;data&lt;/tt&gt; and &lt;tt&gt;null_mask&lt;
 
 </div>
 </div>
+<a id="a114a73a1397a4c17375599f3113172ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a114a73a1397a4c17375599f3113172ff">&#9670;&nbsp;</a></span>make_numeric_scalar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt; cudf::make_numeric_scalar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1data__type.html">data_type</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct scalar with uninitialized storage to hold a value of the specified numeric <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> and a validity bool. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>if device memory allocation fails </td></tr>
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if <code>type</code> is not a numeric type</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>The desired numeric element type </td></tr>
+    <tr><td class="paramname">stream</td><td>Optional stream on which to issue all memory allocations </td></tr>
+    <tr><td class="paramname">mr</td><td>Optional resource to use for device memory allocation of the scalar's <code>data</code> and <code>is_valid</code> bool. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a20b11ec1348ab46ae20792ea4e2c0ca4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a20b11ec1348ab46ae20792ea4e2c0ca4">&#9670;&nbsp;</a></span>make_pair_iterator()</h2>
 
@@ -4275,6 +4418,56 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
 </dl>
 <h2><a class="anchor" id="autotoc_md125"></a>
 @param[in] it       The index iterator, &lt;tt&gt;thrust::counting_iterator&lt;/tt&gt; by default</h2>
+
+</div>
+</div>
+<a id="a9baa6152d40906019ccc2e66eff4dab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9baa6152d40906019ccc2e66eff4dab4">&#9670;&nbsp;</a></span>make_string_scalar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt; cudf::make_string_scalar </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct STRING type scalar given a <code>std::string</code>. The size of the <code>std::string</code> must not exceed the maximum size of size_type. The string characters are expected to be UTF-8 encoded sequence of char bytes. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>if device memory allocation fails</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>The <code>std::string</code> to copy to device </td></tr>
+    <tr><td class="paramname">stream</td><td>Optional stream for use with all memory allocations </td></tr>
+    <tr><td class="paramname">mr</td><td>Optional resource to use for device memory allocation of the scalar's <code>data</code> and <code>is_valid</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -4620,6 +4813,57 @@ allocation of the column's &lt;tt&gt;null_mask&lt;/tt&gt; and children.</h2>
 </dl>
 <h2><a class="anchor" id="autotoc_md241"></a>
 allocation of the column's &lt;tt&gt;data&lt;/tt&gt; and &lt;tt&gt;null_mask&lt;/tt&gt;.</h2>
+
+</div>
+</div>
+<a id="a073f763f8f75e7aa3b551fe21e533bae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a073f763f8f75e7aa3b551fe21e533bae">&#9670;&nbsp;</a></span>make_timestamp_scalar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt; cudf::make_timestamp_scalar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1data__type.html">data_type</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct scalar with uninitialized storage to hold a value of the specified timestamp <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> and a validity bool. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>if device memory allocation fails </td></tr>
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if <code>type</code> is not a timestamp type</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>The desired timestamp element type </td></tr>
+    <tr><td class="paramname">stream</td><td>Optional stream on which to issue all memory allocations </td></tr>
+    <tr><td class="paramname">mr</td><td>Optional resource to use for device memory allocation of the scalar's <code>data</code> and <code>is_valid</code> bool. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -5493,6 +5737,80 @@ an exclusive scan if false.</h2>
 </dl>
 <h2><a class="anchor" id="autotoc_md481"></a>
 @param bit_index Index of the bit to set</h2>
+
+</div>
+</div>
+<a id="a86d39e2e08242477d4b58d05eff2b530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86d39e2e08242477d4b58d05eff2b530">&#9670;&nbsp;</a></span>set_least_significant_bits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bitmask_type cudf::set_least_significant_bits </td>
+          <td>(</td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a bitmask word with the <code>n</code> least significant bits set. </p>
+<p>------------------------------------------------------------------------&mdash;* Behavior is undefined if <code>n &lt; 0</code> or if <code>n &gt;= size_in_bits&lt;bitmask_type&gt;()</code></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>The number of least significant bits to set </td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="anchor" id="autotoc_md484"></a>
+@return A bitmask word with &lt;tt&gt;n&lt;/tt&gt; least significant bits set</h2>
+
+</div>
+</div>
+<a id="ad81169267c752128db3c0a391548a955"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad81169267c752128db3c0a391548a955">&#9670;&nbsp;</a></span>set_most_significant_bits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bitmask_type cudf::set_most_significant_bits </td>
+          <td>(</td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a bitmask word with the <code>n</code> most significant bits set. </p>
+<p>------------------------------------------------------------------------&mdash;* Behavior is undefined if <code>n &lt; 0</code> or if <code>n &gt;= size_in_bits&lt;bitmask_type&gt;()</code></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>The number of most significant bits to set </td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="anchor" id="autotoc_md485"></a>
+@return A bitmask word with &lt;tt&gt;n&lt;/tt&gt; most significant bits set</h2>
 
 </div>
 </div>
