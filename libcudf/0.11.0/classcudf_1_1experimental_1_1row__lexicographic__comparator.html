@@ -79,9 +79,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acc758985d30cd34e30d500b43c0bb8fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1row__lexicographic__comparator.html#acc758985d30cd34e30d500b43c0bb8fe">row_lexicographic_comparator</a> (<a class="el" href="classcudf_1_1table__device__view.html">table_device_view</a> lhs, <a class="el" href="classcudf_1_1table__device__view.html">table_device_view</a> rhs, <a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">null_order</a> null_precedence=<a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31a3525317285c6126ce3b62a8df8c00b07">null_order::BEFORE</a>, <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">order</a> *column_order=nullptr)</td></tr>
-<tr class="memdesc:acc758985d30cd34e30d500b43c0bb8fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a function object for performing a lexicographic comparison between the rows of two tables.  <a href="classcudf_1_1experimental_1_1row__lexicographic__comparator.html#acc758985d30cd34e30d500b43c0bb8fe">More...</a><br /></td></tr>
-<tr class="separator:acc758985d30cd34e30d500b43c0bb8fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67da56e1c377939d4bfe4b3a7e77ed08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1row__lexicographic__comparator.html#a67da56e1c377939d4bfe4b3a7e77ed08">row_lexicographic_comparator</a> (<a class="el" href="classcudf_1_1table__device__view.html">table_device_view</a> lhs, <a class="el" href="classcudf_1_1table__device__view.html">table_device_view</a> rhs, <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">order</a> *column_order=nullptr, <a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">null_order</a> *null_precedence=nullptr)</td></tr>
+<tr class="memdesc:a67da56e1c377939d4bfe4b3a7e77ed08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a function object for performing a lexicographic comparison between the rows of two tables.  <a href="classcudf_1_1experimental_1_1row__lexicographic__comparator.html#a67da56e1c377939d4bfe4b3a7e77ed08">More...</a><br /></td></tr>
+<tr class="separator:a67da56e1c377939d4bfe4b3a7e77ed08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad03c04a879ef1d38f06042d1db7d07ef"><td class="memItemLeft" align="right" valign="top">__device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1row__lexicographic__comparator.html#ad03c04a879ef1d38f06042d1db7d07ef">operator()</a> (size_type lhs_index, size_type rhs_index) const noexcept</td></tr>
 <tr class="memdesc:ad03c04a879ef1d38f06042d1db7d07ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the row at <code>lhs_index</code> in the <code>lhs</code> table compares lexicographically less than the row at <code>rhs_index</code> in the <code>rhs</code> table.  <a href="classcudf_1_1experimental_1_1row__lexicographic__comparator.html#ad03c04a879ef1d38f06042d1db7d07ef">More...</a><br /></td></tr>
 <tr class="separator:ad03c04a879ef1d38f06042d1db7d07ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -99,8 +99,8 @@ class cudf::experimental::row_lexicographic_comparator&lt; has_nulls &gt;</h3>
 <h2><a class="anchor" id="autotoc_md435"></a>
 @tparam has_nulls Indicates the potential for null values in either row.</h2>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="acc758985d30cd34e30d500b43c0bb8fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc758985d30cd34e30d500b43c0bb8fe">&#9670;&nbsp;</a></span>row_lexicographic_comparator()</h2>
+<a id="a67da56e1c377939d4bfe4b3a7e77ed08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67da56e1c377939d4bfe4b3a7e77ed08">&#9670;&nbsp;</a></span>row_lexicographic_comparator()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,14 +125,14 @@ template&lt;bool has_nulls = true&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">null_order</a>&#160;</td>
-          <td class="paramname"><em>null_precedence</em> = <code><a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31a3525317285c6126ce3b62a8df8c00b07">null_order::BEFORE</a></code>, </td>
+          <td class="paramtype"><a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">order</a> *&#160;</td>
+          <td class="paramname"><em>column_order</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">order</a> *&#160;</td>
-          <td class="paramname"><em>column_order</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">null_order</a> *&#160;</td>
+          <td class="paramname"><em>null_precedence</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -158,13 +158,13 @@ template&lt;bool has_nulls = true&gt; </div>
   <table class="params">
     <tr><td class="paramname">lhs</td><td>The first table </td></tr>
     <tr><td class="paramname">rhs</td><td>The second table (may be the same table as <code>lhs</code>) </td></tr>
-    <tr><td class="paramname">null_precedence</td><td>Indicates how null values compare to all other values. </td></tr>
-    <tr><td class="paramname">column_order</td><td>Optional, device array the same length as a row that indicates the desired ascending/descending order of each column in a row. </td></tr>
+    <tr><td class="paramname">column_order</td><td>Optional, device array the same length as a row that indicates the desired ascending/descending order of each column in a row. If <code>nullptr</code>, it is assumed all columns are sorted in ascending order. </td></tr>
+    <tr><td class="paramname">null_precedence</td><td>Optional, device array the same length as a row and indicates how null values compare to all other for every column. If it is nullptr, then null precedence would be <code><a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31a3525317285c6126ce3b62a8df8c00b07" title="NULL values ordered before all other values.">null_order::BEFORE</a></code> for all </td></tr>
   </table>
   </dd>
 </dl>
 <h2><a class="anchor" id="autotoc_md441"></a>
-If &lt;tt&gt;nullptr&lt;/tt&gt;, it is assumed all columns are sorted in ascending order.</h2>
+columns.</h2>
 
 </div>
 </div>

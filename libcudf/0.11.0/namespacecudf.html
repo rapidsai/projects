@@ -364,6 +364,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a3c26b8cbca80321602bc3f39ab6cce8d"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a3c26b8cbca80321602bc3f39ab6cce8d">bitmask_allocation_size_bytes</a> (size_type number_of_bits, std::size_t padding_boundary=64)</td></tr>
 <tr class="memdesc:a3c26b8cbca80321602bc3f39ab6cce8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the required bytes necessary to represent the specified number of bits with a given padding boundary.  <a href="namespacecudf.html#a3c26b8cbca80321602bc3f39ab6cce8d">More...</a><br /></td></tr>
 <tr class="separator:a3c26b8cbca80321602bc3f39ab6cce8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad62014db2c1d82cbd2f3e067d27088ab"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ad62014db2c1d82cbd2f3e067d27088ab">num_bitmask_words</a> (size_type number_of_bits)</td></tr>
+<tr class="memdesc:ad62014db2c1d82cbd2f3e067d27088ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of <code>bitmask_type</code> words required to represent the specified number of bits.  <a href="namespacecudf.html#ad62014db2c1d82cbd2f3e067d27088ab">More...</a><br /></td></tr>
+<tr class="separator:ad62014db2c1d82cbd2f3e067d27088ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5834edc8cde53fb6b23f2e95847c8066"><td class="memItemLeft" align="right" valign="top">rmm::device_buffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a5834edc8cde53fb6b23f2e95847c8066">create_null_mask</a> (size_type size, <a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbf">mask_state</a> state, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a5834edc8cde53fb6b23f2e95847c8066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <code>device_buffer</code> for use as a null value indicator bitmask of a <code>column</code>.  <a href="namespacecudf.html#a5834edc8cde53fb6b23f2e95847c8066">More...</a><br /></td></tr>
 <tr class="separator:a5834edc8cde53fb6b23f2e95847c8066"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -373,9 +376,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aeff1677d6e025ceb78e4fdc631125170"><td class="memItemLeft" align="right" valign="top">cudf::size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aeff1677d6e025ceb78e4fdc631125170">count_unset_bits</a> (bitmask_type const  *bitmask, size_type start, size_type stop)</td></tr>
 <tr class="memdesc:aeff1677d6e025ceb78e4fdc631125170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a bitmask, counts the number of unset (0) bits in the range <code>[start, stop)</code>.  <a href="namespacecudf.html#aeff1677d6e025ceb78e4fdc631125170">More...</a><br /></td></tr>
 <tr class="separator:aeff1677d6e025ceb78e4fdc631125170"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9918a37199420045fa0de42cbc8fd57"><td class="memItemLeft" align="right" valign="top">rmm::device_buffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aa9918a37199420045fa0de42cbc8fd57">copy_bitmask</a> (bitmask_type const *mask, size_type begin_bit, size_type end_bit, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
-<tr class="memdesc:aa9918a37199420045fa0de42cbc8fd57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <code>device_buffer</code> from a slice of bitmask defined by a range of indices <code>[begin_bit, end_bit)</code>.  <a href="namespacecudf.html#aa9918a37199420045fa0de42cbc8fd57">More...</a><br /></td></tr>
-<tr class="separator:aa9918a37199420045fa0de42cbc8fd57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17512d5f18a405bff0ec9b9987eaed6e"><td class="memItemLeft" align="right" valign="top">rmm::device_buffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a17512d5f18a405bff0ec9b9987eaed6e">copy_bitmask</a> (bitmask_type const  *mask, size_type begin_bit, size_type end_bit, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a17512d5f18a405bff0ec9b9987eaed6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <code>device_buffer</code> from a slice of bitmask defined by a range of indices <code>[begin_bit, end_bit)</code>.  <a href="namespacecudf.html#a17512d5f18a405bff0ec9b9987eaed6e">More...</a><br /></td></tr>
+<tr class="separator:a17512d5f18a405bff0ec9b9987eaed6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac61bb220c40f99e257d7db25e4e0fbf0"><td class="memItemLeft" align="right" valign="top">rmm::device_buffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ac61bb220c40f99e257d7db25e4e0fbf0">copy_bitmask</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;view, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream, rmm::mr::device_memory_resource *mr)</td></tr>
 <tr class="memdesc:ac61bb220c40f99e257d7db25e4e0fbf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies <code>view</code>'s bitmask from the bits <code>[view.offset(), view.offset() + view.size())</code> into a <code>device_buffer</code>  <a href="namespacecudf.html#ac61bb220c40f99e257d7db25e4e0fbf0">More...</a><br /></td></tr>
 <tr class="separator:ac61bb220c40f99e257d7db25e4e0fbf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2261,8 +2264,8 @@ template&lt;JoinType join_type, typename index_type &gt; </div>
 
 </div>
 </div>
-<a id="aa9918a37199420045fa0de42cbc8fd57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9918a37199420045fa0de42cbc8fd57">&#9670;&nbsp;</a></span>copy_bitmask() <span class="overload">[1/2]</span></h2>
+<a id="a17512d5f18a405bff0ec9b9987eaed6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17512d5f18a405bff0ec9b9987eaed6e">&#9670;&nbsp;</a></span>copy_bitmask() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4736,6 +4739,34 @@ allocation of the column's &lt;tt&gt;data&lt;/tt&gt; and &lt;tt&gt;null_mask&lt;
 <dl class="section return"><dt>Returns</dt><dd>vector A vector containing only the indices which are not present in </dd></dl>
 <h2><a class="anchor" id="autotoc_md152"></a>
 &lt;tt&gt;common_column_indices&lt;/tt&gt;</h2>
+
+</div>
+</div>
+<a id="ad62014db2c1d82cbd2f3e067d27088ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad62014db2c1d82cbd2f3e067d27088ab">&#9670;&nbsp;</a></span>num_bitmask_words()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_type cudf::num_bitmask_words </td>
+          <td>(</td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>number_of_bits</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the number of <code>bitmask_type</code> words required to represent the specified number of bits. </p>
+<p>Unlike <code>bitmask_allocation_size_bytes</code>, which returns the number of <em>bytes</em> needed for a bitmask allocation (including padding), this function returns the <em>actual</em> number <code>bitmask_type</code> elements necessary to represent <code>number_of_bits</code>. This is useful when one wishes to process all of the bits in a bitmask and ignore the padding/slack bits.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number_of_bits</td><td>The number of bits that need to be represented </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>size_type The necessary number of <code>bitmask_type</code> elements </dd></dl>
 
 </div>
 </div>
