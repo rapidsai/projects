@@ -68,10 +68,11 @@ var searchData=
   ['getstringsptr_379',['getStringsPtr',['../structnvstrings__ipc__transfer.html#a55aff8370a7988b01f2c788fd723eafb',1,'nvstrings_ipc_transfer::getStringsPtr()'],['../structnvcategory__ipc__transfer.html#a49bfec5214285d4edf3269c27f84c50d',1,'nvcategory_ipc_transfer::getStringsPtr()']]],
   ['gpu_5finflate_5finput_5fs_380',['gpu_inflate_input_s',['../structcudf_1_1io_1_1gpu__inflate__input__s.html',1,'cudf::io']]],
   ['gpu_5finflate_5fstatus_5fs_381',['gpu_inflate_status_s',['../structcudf_1_1io_1_1gpu__inflate__status__s.html',1,'cudf::io']]],
-  ['grid_5fconfig_5f1d_382',['grid_config_1d',['../classcudf_1_1util_1_1cuda_1_1grid__config__1d.html',1,'cudf::util::cuda::grid_config_1d'],['../classcudf_1_1util_1_1cuda_1_1grid__config__1d.html#a572cc152a5654ba692512142c3ed22d3',1,'cudf::util::cuda::grid_config_1d::grid_config_1d()']]],
-  ['group_5flabels_383',['group_labels',['../structcudf_1_1groupby_1_1sort_1_1detail_1_1helper.html#afa3fc53a8c72c464a711932b0610f432',1,'cudf::groupby::sort::detail::helper']]],
-  ['group_5foffsets_384',['group_offsets',['../structcudf_1_1groupby_1_1sort_1_1detail_1_1helper.html#a9b05aade0f8bb65bd5eb7b554b002ca5',1,'cudf::groupby::sort::detail::helper']]],
-  ['group_5fquantiles_385',['group_quantiles',['../namespacecudf.html#a6c828f318cb2c14c8ac0567f5084d1e7',1,'cudf']]],
-  ['gz_5farchive_5fs_386',['gz_archive_s',['../structcudf_1_1io_1_1gz__archive__s.html',1,'cudf::io']]],
-  ['gz_5ffile_5fheader_5fs_387',['gz_file_header_s',['../structcudf_1_1io_1_1gz__file__header__s.html',1,'cudf::io']]]
+  ['grid_5f1d_382',['grid_1d',['../classcudf_1_1experimental_1_1detail_1_1grid__1d.html',1,'cudf::experimental::detail::grid_1d'],['../classcudf_1_1experimental_1_1detail_1_1grid__1d.html#af2bd6e74375b24620898bd1f7957ef59',1,'cudf::experimental::detail::grid_1d::grid_1d()']]],
+  ['grid_5fconfig_5f1d_383',['grid_config_1d',['../classcudf_1_1util_1_1cuda_1_1grid__config__1d.html',1,'cudf::util::cuda::grid_config_1d'],['../classcudf_1_1util_1_1cuda_1_1grid__config__1d.html#a572cc152a5654ba692512142c3ed22d3',1,'cudf::util::cuda::grid_config_1d::grid_config_1d()']]],
+  ['group_5flabels_384',['group_labels',['../structcudf_1_1groupby_1_1sort_1_1detail_1_1helper.html#afa3fc53a8c72c464a711932b0610f432',1,'cudf::groupby::sort::detail::helper']]],
+  ['group_5foffsets_385',['group_offsets',['../structcudf_1_1groupby_1_1sort_1_1detail_1_1helper.html#a9b05aade0f8bb65bd5eb7b554b002ca5',1,'cudf::groupby::sort::detail::helper']]],
+  ['group_5fquantiles_386',['group_quantiles',['../namespacecudf.html#a6c828f318cb2c14c8ac0567f5084d1e7',1,'cudf']]],
+  ['gz_5farchive_5fs_387',['gz_archive_s',['../structcudf_1_1io_1_1gz__archive__s.html',1,'cudf::io']]],
+  ['gz_5ffile_5fheader_5fs_388',['gz_file_header_s',['../structcudf_1_1io_1_1gz__file__header__s.html',1,'cudf::io']]]
 ];

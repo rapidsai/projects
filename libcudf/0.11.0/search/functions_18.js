@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7edatasource_1754',['~datasource',['../classcudf_1_1io_1_1datasource.html#aa4486e8cfc15e495a15030f70d362437',1,'cudf::io::datasource']]]
+  ['_7edatasource_1757',['~datasource',['../classcudf_1_1io_1_1datasource.html#aa4486e8cfc15e495a15030f70d362437',1,'cudf::io::datasource']]]
 ];

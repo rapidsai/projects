@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['inferred_1907',['inferred',['../namespacecudf_1_1io_1_1csv_1_1column__parse.html#a35c8622fd61325c06ee43ade80c576b3ad7a062b2d836eadaf03e0f58496e933d',1,'cudf::io::csv::column_parse']]],
-  ['int16_1908',['INT16',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba7dafa1ea3755308998ff8c972342c099',1,'cudf']]],
-  ['int32_1909',['INT32',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae',1,'cudf']]],
-  ['int64_1910',['INT64',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59bab9c234f82eec5cb83e3ea67aac9c1166',1,'cudf']]],
-  ['int8_1911',['INT8',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba71f4b0467efae61c1e3ac5910178940f',1,'cudf']]]
+  ['inferred_1910',['inferred',['../namespacecudf_1_1io_1_1csv_1_1column__parse.html#a35c8622fd61325c06ee43ade80c576b3ad7a062b2d836eadaf03e0f58496e933d',1,'cudf::io::csv::column_parse']]],
+  ['int16_1911',['INT16',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba7dafa1ea3755308998ff8c972342c099',1,'cudf']]],
+  ['int32_1912',['INT32',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae',1,'cudf']]],
+  ['int64_1913',['INT64',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59bab9c234f82eec5cb83e3ea67aac9c1166',1,'cudf']]],
+  ['int8_1914',['INT8',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba71f4b0467efae61c1e3ac5910178940f',1,'cudf']]]
 ];
