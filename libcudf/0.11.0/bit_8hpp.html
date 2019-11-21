@@ -101,14 +101,14 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8a795e82764de6ef26f132a822cd51da"><td class="memTemplParams" colspan="2"><a id="a8a795e82764de6ef26f132a822cd51da"></a>
+<tr class="memitem:aa3c6100dd888deb7adae10a5d12eeae4"><td class="memTemplParams" colspan="2"><a id="aa3c6100dd888deb7adae10a5d12eeae4"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a8a795e82764de6ef26f132a822cd51da"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><b>cudf::detail::size_in_bits</b> ()</td></tr>
-<tr class="separator:a8a795e82764de6ef26f132a822cd51da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2593239ffa44cbbf91dfe65d4305b685"><td class="memItemLeft" align="right" valign="top">constexpr size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a2593239ffa44cbbf91dfe65d4305b685">cudf::word_index</a> (size_type bit_index)</td></tr>
-<tr class="separator:a2593239ffa44cbbf91dfe65d4305b685"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44729d059fab01a9b7d27bbb7372a734"><td class="memItemLeft" align="right" valign="top">constexpr size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a44729d059fab01a9b7d27bbb7372a734">cudf::intra_word_index</a> (size_type bit_index)</td></tr>
-<tr class="separator:a44729d059fab01a9b7d27bbb7372a734"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3c6100dd888deb7adae10a5d12eeae4"><td class="memTemplItemLeft" align="right" valign="top">constexpr CUDA_HOST_DEVICE_CALLABLE std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><b>cudf::detail::size_in_bits</b> ()</td></tr>
+<tr class="separator:aa3c6100dd888deb7adae10a5d12eeae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fd7d3be7317e7621d5b073c7176a582"><td class="memItemLeft" align="right" valign="top">constexpr CUDA_HOST_DEVICE_CALLABLE size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a9fd7d3be7317e7621d5b073c7176a582">cudf::word_index</a> (size_type bit_index)</td></tr>
+<tr class="separator:a9fd7d3be7317e7621d5b073c7176a582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ce276d67cc17e299f29de43a391af75"><td class="memItemLeft" align="right" valign="top">constexpr CUDA_HOST_DEVICE_CALLABLE size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a7ce276d67cc17e299f29de43a391af75">cudf::intra_word_index</a> (size_type bit_index)</td></tr>
+<tr class="separator:a7ce276d67cc17e299f29de43a391af75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c4063fafa03398865ddae121b3ca939"><td class="memItemLeft" align="right" valign="top">CUDA_HOST_DEVICE_CALLABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a3c4063fafa03398865ddae121b3ca939">cudf::set_bit_unsafe</a> (bitmask_type *bitmask, size_type bit_index)</td></tr>
 <tr class="memdesc:a3c4063fafa03398865ddae121b3ca939"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the specified bit to <code>1</code>  <a href="namespacecudf.html#a3c4063fafa03398865ddae121b3ca939">More...</a><br /></td></tr>
 <tr class="separator:a3c4063fafa03398865ddae121b3ca939"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,12 +118,12 @@ template&lt;typename T &gt; </td></tr>
 <tr class="memitem:accd9af00974def8f416225ad650d33c9"><td class="memItemLeft" align="right" valign="top">CUDA_HOST_DEVICE_CALLABLE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#accd9af00974def8f416225ad650d33c9">cudf::bit_is_set</a> (bitmask_type const *bitmask, size_type bit_index)</td></tr>
 <tr class="memdesc:accd9af00974def8f416225ad650d33c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the specified bit is set to <code>1</code>  <a href="namespacecudf.html#accd9af00974def8f416225ad650d33c9">More...</a><br /></td></tr>
 <tr class="separator:accd9af00974def8f416225ad650d33c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86d39e2e08242477d4b58d05eff2b530"><td class="memItemLeft" align="right" valign="top">constexpr bitmask_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a86d39e2e08242477d4b58d05eff2b530">cudf::set_least_significant_bits</a> (size_type n)</td></tr>
-<tr class="memdesc:a86d39e2e08242477d4b58d05eff2b530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a bitmask word with the <code>n</code> least significant bits set.  <a href="namespacecudf.html#a86d39e2e08242477d4b58d05eff2b530">More...</a><br /></td></tr>
-<tr class="separator:a86d39e2e08242477d4b58d05eff2b530"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad81169267c752128db3c0a391548a955"><td class="memItemLeft" align="right" valign="top">constexpr bitmask_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ad81169267c752128db3c0a391548a955">cudf::set_most_significant_bits</a> (size_type n)</td></tr>
-<tr class="memdesc:ad81169267c752128db3c0a391548a955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a bitmask word with the <code>n</code> most significant bits set.  <a href="namespacecudf.html#ad81169267c752128db3c0a391548a955">More...</a><br /></td></tr>
-<tr class="separator:ad81169267c752128db3c0a391548a955"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a265021448d5a11e023232cb649865092"><td class="memItemLeft" align="right" valign="top">constexpr CUDA_HOST_DEVICE_CALLABLE bitmask_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a265021448d5a11e023232cb649865092">cudf::set_least_significant_bits</a> (size_type n)</td></tr>
+<tr class="memdesc:a265021448d5a11e023232cb649865092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a bitmask word with the <code>n</code> least significant bits set.  <a href="namespacecudf.html#a265021448d5a11e023232cb649865092">More...</a><br /></td></tr>
+<tr class="separator:a265021448d5a11e023232cb649865092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d621017e15820e37826a73484fe5376"><td class="memItemLeft" align="right" valign="top">constexpr CUDA_HOST_DEVICE_CALLABLE bitmask_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a1d621017e15820e37826a73484fe5376">cudf::set_most_significant_bits</a> (size_type n)</td></tr>
+<tr class="memdesc:a1d621017e15820e37826a73484fe5376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a bitmask word with the <code>n</code> most significant bits set.  <a href="namespacecudf.html#a1d621017e15820e37826a73484fe5376">More...</a><br /></td></tr>
+<tr class="separator:a1d621017e15820e37826a73484fe5376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Utilities for bit and bitmask operations. </p>

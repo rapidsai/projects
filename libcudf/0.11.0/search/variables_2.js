@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['category_1771',['category',['../structgdf__dtype__extra__info.html#ace7145a05b6d489d60117b5b2774b1db',1,'gdf_dtype_extra_info']]],
-  ['col_5fname_1772',['col_name',['../structgdf__column__.html#ae42ce179f2e0abd909f511114a9fdfd6',1,'gdf_column_']]],
-  ['columns_1773',['columns',['../structcudf_1_1avro__read__arg.html#ac1a2a8bd454a44a26e29c1c3f2ce8ad8',1,'cudf::avro_read_arg::columns()'],['../structcudf_1_1orc__read__arg.html#a613596108f256b91a3f4719987707cb1',1,'cudf::orc_read_arg::columns()'],['../structcudf_1_1parquet__read__arg.html#a24121d0c07e8c342f1cd4c3e5451272d',1,'cudf::parquet_read_arg::columns()']]],
-  ['comment_1774',['comment',['../structcudf_1_1io_1_1csv_1_1reader__options.html#ab7a40d0200f285b0254e185004592591',1,'cudf::io::csv::reader_options::comment()'],['../structcudf_1_1csv__read__arg.html#ac3fecc248c15d006308af37ebf68c174',1,'cudf::csv_read_arg::comment()']]],
-  ['compression_1775',['compression',['../structcudf_1_1io_1_1csv_1_1reader__options.html#a09f6c19330a69732b79520995b4ca590',1,'cudf::io::csv::reader_options::compression()'],['../structcudf_1_1csv__read__arg.html#a43cc89520fae84fc17228be05be8baed',1,'cudf::csv_read_arg::compression()'],['../structcudf_1_1json__read__arg.html#a2418c5ffdbc61b6dbf837d9af9d2487d',1,'cudf::json_read_arg::compression()']]],
-  ['corresponding_5fcolumn_5ftype_1776',['corresponding_column_type',['../structcudf_1_1detail_1_1wrapper.html#a363155d601be28d9979f088c3d846ecd',1,'cudf::detail::wrapper']]],
-  ['count_1777',['count',['../structcudf_1_1meanvar.html#a7dfa9f740a05add289adf4ca77daf89d',1,'cudf::meanvar']]]
+  ['b08_1833',['b08',['../uniongdf__data.html#af20248858f6004041c1d55e210432cce',1,'gdf_data']]],
+  ['bitmask_1834',['bitmask',['../structcudf_1_1value__accessor_3_01ElementType_00_01ResultType_00_01true_01_4.html#a84a07f37b9488a4ce57c8f1154d684a8',1,'cudf::value_accessor&lt; ElementType, ResultType, true &gt;']]],
+  ['block_5fsize_1835',['block_size',['../structBlockSumArray.html#a1d278705f6112181ad427b162832b4e5',1,'BlockSumArray']]],
+  ['byte_5frange_5foffset_1836',['byte_range_offset',['../structcudf_1_1csv__read__arg.html#a01d793f4f4a47925d4c75b3afdd839ce',1,'cudf::csv_read_arg::byte_range_offset()'],['../structcudf_1_1json__read__arg.html#a92382ad0e6d64ec06898dcb14914b99b',1,'cudf::json_read_arg::byte_range_offset()']]],
+  ['byte_5frange_5fsize_1837',['byte_range_size',['../structcudf_1_1csv__read__arg.html#a32a8a0a1b38d71f410ebff5465eefb7f',1,'cudf::csv_read_arg::byte_range_size()'],['../structcudf_1_1json__read__arg.html#aff28e4b4f04bac1910c2ed1a4174be81',1,'cudf::json_read_arg::byte_range_size()']]]
 ];

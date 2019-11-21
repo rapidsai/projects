@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['valid_1851',['valid',['../structgdf__column__.html#aab16b9467d41db5f36d2a708cba7d612',1,'gdf_column_']]],
-  ['value_1852',['value',['../structcudf_1_1detail_1_1wrapper.html#a5914e8dde1ed708adda58f7ad68561f7',1,'cudf::detail::wrapper']]],
-  ['value_5fsquared_1853',['value_squared',['../structcudf_1_1meanvar.html#a1e4fbdcc540474102b9f4400c591c527',1,'cudf::meanvar::value_squared()'],['../structcudf_1_1reduction_1_1var__std.html#af19bfaba48b854fbfb619ca445323527',1,'cudf::reduction::var_std::value_squared()']]]
+  ['use_5fcols_5findexes_1917',['use_cols_indexes',['../structcudf_1_1io_1_1csv_1_1reader__options.html#a231b17f78c11175f5e27837eb01c537b',1,'cudf::io::csv::reader_options::use_cols_indexes()'],['../structcudf_1_1csv__read__arg.html#a2a5f6de6e75b44283ccec22fa8c93a51',1,'cudf::csv_read_arg::use_cols_indexes()']]],
+  ['use_5fcols_5fnames_1918',['use_cols_names',['../structcudf_1_1io_1_1csv_1_1reader__options.html#a552b629a078571bbcddef24311c06820',1,'cudf::io::csv::reader_options::use_cols_names()'],['../structcudf_1_1csv__read__arg.html#ad5c5ec9539815f56b87d14105e6f8ee0',1,'cudf::csv_read_arg::use_cols_names()']]],
+  ['use_5findex_1919',['use_index',['../structcudf_1_1orc__read__arg.html#a340fe0db1c5a2aa3a0c6e0ad87f10d7b',1,'cudf::orc_read_arg']]],
+  ['use_5fnp_5fdtypes_1920',['use_np_dtypes',['../structcudf_1_1orc__read__arg.html#a2d767dea6fc49ac1753f0024fefce217',1,'cudf::orc_read_arg']]],
+  ['use_5fpandas_5fmetadata_1921',['use_pandas_metadata',['../structcudf_1_1parquet__read__arg.html#ad8373021dda8a756ee6d90230b88edb7',1,'cudf::parquet_read_arg']]]
 ];

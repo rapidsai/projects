@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['row_5fgroup_1824',['row_group',['../structcudf_1_1parquet__read__arg.html#a6efca93a08b886a018457bc02615f649',1,'cudf::parquet_read_arg']]]
+  ['quotechar_1892',['quotechar',['../structcudf_1_1io_1_1csv_1_1reader__options.html#afe9a6b6021443128f0472b206f201d4a',1,'cudf::io::csv::reader_options::quotechar()'],['../structcudf_1_1csv__read__arg.html#a58f8dcaaa06038f116b800851b59d205',1,'cudf::csv_read_arg::quotechar()']]],
+  ['quoting_1893',['quoting',['../structcudf_1_1io_1_1csv_1_1reader__options.html#aed97da3c4e2b2064ac67abf3ab3db551',1,'cudf::io::csv::reader_options::quoting()'],['../structcudf_1_1csv__read__arg.html#a262059e03235b1572cd2562ccd6fd152',1,'cudf::csv_read_arg::quoting()']]]
 ];

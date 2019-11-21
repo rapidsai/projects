@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10 Minutes to cuDF and Dask-cuDF &mdash; cudf 0.11.0a+2130.g53c05f021 documentation</title>
+  <title>10 Minutes to cuDF and Dask-cuDF &mdash; cudf 0.11.0a+3121.ga49a20aa3 documentation</title>
   
 
   
@@ -202,16 +202,16 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput,
-div.nbinput div.prompt,
-div.nbinput div.input_area,
-div.nbinput div[class*=highlight],
-div.nbinput div[class*=highlight] pre,
-div.nboutput,
-div.nbinput div.prompt,
-div.nbinput div.output_area,
-div.nboutput div[class*=highlight],
-div.nboutput div[class*=highlight] pre {
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
     background: none;
     border: none;
     padding: 0 0;
@@ -220,13 +220,13 @@ div.nboutput div[class*=highlight] pre {
 }
 
 /* avoid gaps between output lines */
-div.nboutput div[class*=highlight] pre {
+div.nboutput.container div[class*=highlight] pre {
     line-height: normal;
 }
 
 /* input/output containers */
-div.nbinput,
-div.nboutput {
+div.nbinput.container,
+div.nboutput.container {
     display: -webkit-flex;
     display: flex;
     align-items: flex-start;
@@ -234,35 +234,35 @@ div.nboutput {
     width: 100%;
 }
 @media (max-width: 540px) {
-    div.nbinput,
-    div.nboutput {
+    div.nbinput.container,
+    div.nboutput.container {
         flex-direction: column;
     }
 }
 
 /* input container */
-div.nbinput {
+div.nbinput.container {
     padding-top: 5px;
 }
 
 /* last container */
-div.nblast {
+div.nblast.container {
     padding-bottom: 5px;
 }
 
 /* input prompt */
-div.nbinput div.prompt pre {
+div.nbinput.container div.prompt pre {
     color: #307FC1;
 }
 
 /* output prompt */
-div.nboutput div.prompt pre {
+div.nboutput.container div.prompt pre {
     color: #BF5B3D;
 }
 
 /* all prompts */
-div.nbinput div.prompt,
-div.nboutput div.prompt {
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
     min-width: 5ex;
     padding-top: 0.4em;
     padding-right: 0.4em;
@@ -270,56 +270,56 @@ div.nboutput div.prompt {
     flex: 0;
 }
 @media (max-width: 540px) {
-    div.nbinput div.prompt,
-    div.nboutput div.prompt {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
         text-align: left;
         padding: 0.4em;
     }
-    div.nboutput div.prompt.empty {
+    div.nboutput.container div.prompt.empty {
         padding: 0;
     }
 }
 
 /* disable scrollbars on prompts */
-div.nbinput div.prompt pre,
-div.nboutput div.prompt pre {
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
     overflow: hidden;
 }
 
 /* input/output area */
-div.nbinput div.input_area,
-div.nboutput div.output_area {
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
     padding: 0.4em;
     -webkit-flex: 1;
     flex: 1;
     overflow: auto;
 }
 @media (max-width: 540px) {
-    div.nbinput div.input_area,
-    div.nboutput div.output_area {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
         width: 100%;
     }
 }
 
 /* input area */
-div.nbinput div.input_area {
+div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
     background: #f5f5f5;
 }
 
 /* override MathJax center alignment in output cells */
-div.nboutput div[class*=MathJax] {
+div.nboutput.container div[class*=MathJax] {
     text-align: left !important;
 }
 
 /* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput div.math p {
+div.nboutput.container div.math p {
     text-align: left;
 }
 
 /* standard error */
-div.nboutput div.output_area.stderr {
+div.nboutput.container div.output_area.stderr {
     background: #fdd;
 }
 
@@ -400,13 +400,13 @@ div.rendered_html tbody tr:hover {
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -468,15 +468,15 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0       1
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0       1
 1       2
 2       3
 3    null
 4       4
 dtype: int64
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -492,15 +492,15 @@ dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0       1
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0       1
 1       2
 2       3
 3    null
 4       4
 dtype: int64
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <p>Creating a <code class="docutils literal notranslate"><span class="pre">cudf.DataFrame</span></code> and a <code class="docutils literal notranslate"><span class="pre">dask_cudf.DataFrame</span></code> by specifying values for each column.</p>
 <div class="nbinput docutils container">
@@ -1415,8 +1415,9 @@ dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0      0
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0      0
 1      1
 2      2
 3      3
@@ -1437,8 +1438,7 @@ dtype: int64
 18    18
 19    19
 Name: a, dtype: int64
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -1453,8 +1453,9 @@ Name: a, dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0      0
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0      0
 1      1
 2      2
 3      3
@@ -1475,8 +1476,7 @@ Name: a, dtype: int64
 18    18
 19    19
 Name: a, dtype: int64
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Selection-by-Label">
@@ -1621,13 +1621,13 @@ Name: a, dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>a     0
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+a     0
 b    19
 c     0
 Name: 0, dtype: int64
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
@@ -1753,12 +1753,12 @@ Name: 0, dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>3    null
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+3    null
 4       4
 dtype: int64
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Boolean-Indexing">
@@ -2168,8 +2168,9 @@ dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>MultiIndex(levels=[0    a
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+MultiIndex(levels=[0    a
 1    b
 dtype: object, 0    1
 1    2
@@ -2181,8 +2182,7 @@ codes=   0  1
 1  0  1
 2  1  2
 3  1  3)
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <p>This index can back either axis of a DataFrame.</p>
 <div class="nbinput docutils container">
@@ -2381,15 +2381,15 @@ codes=   0  1
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0      1
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0      1
 1      2
 2      3
 3    999
 4      4
 dtype: int64
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
@@ -2404,15 +2404,15 @@ dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0      1
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0      1
 1      2
 2      3
 3    999
 4      4
 dtype: int64
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Operations">
@@ -2434,10 +2434,10 @@ dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(2.5, 1.666666666666666)
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(2.5, 1.666666666666666)
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
@@ -2452,10 +2452,10 @@ dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>(2.5, 1.6666666666666667)
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(2.5, 1.6666666666666667)
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Applymap">
@@ -2477,8 +2477,9 @@ dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0     10
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0     10
 1     11
 2     12
 3     13
@@ -2499,8 +2500,7 @@ dtype: int64
 18    28
 19    29
 Name: a, dtype: int64
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
@@ -2515,8 +2515,9 @@ Name: a, dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0     10
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0     10
 1     11
 2     12
 3     13
@@ -2537,8 +2538,7 @@ Name: a, dtype: int64
 18    28
 19    29
 Name: a, dtype: int64
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Histogramming">
@@ -2557,8 +2557,9 @@ Name: a, dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0     1
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0     1
 1     1
 2     1
 3     1
@@ -2579,8 +2580,7 @@ Name: a, dtype: int64
 18    1
 19    1
 Name: a, dtype: int32
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
@@ -2595,8 +2595,9 @@ Name: a, dtype: int32
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0     1
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0     1
 1     1
 2     1
 3     1
@@ -2617,8 +2618,7 @@ Name: a, dtype: int32
 18    1
 19    1
 Name: a, dtype: int64
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="String-Methods">
@@ -2638,8 +2638,9 @@ Name: a, dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0       a
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0       a
 1       b
 2       c
 3    aaba
@@ -2649,8 +2650,7 @@ Name: a, dtype: int64
 7     dog
 8     cat
 dtype: object
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
@@ -2666,8 +2666,9 @@ dtype: object
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0       a
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0       a
 1       b
 2       c
 3    aaba
@@ -2677,8 +2678,7 @@ dtype: object
 7     dog
 8     cat
 dtype: object
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Concat">
@@ -2698,8 +2698,9 @@ dtype: object
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0       1
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0       1
 1       2
 2       3
 3    null
@@ -2710,8 +2711,7 @@ dtype: object
 3    null
 4       5
 dtype: int64
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
@@ -2727,8 +2727,9 @@ dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0       1
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0       1
 1       2
 2       3
 3    null
@@ -2739,8 +2740,7 @@ dtype: int64
 3    null
 4       5
 dtype: int64
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Join">
@@ -2920,8 +2920,9 @@ dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0       1
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0       1
 1       2
 2       3
 3    null
@@ -2932,8 +2933,7 @@ dtype: int64
 3    null
 4       5
 dtype: int64
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
@@ -2948,8 +2948,9 @@ dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0       1
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0       1
 1       2
 2       3
 3    null
@@ -2960,8 +2961,7 @@ dtype: int64
 3    null
 4       5
 dtype: int64
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Grouping">
@@ -3796,10 +3796,10 @@ dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>StringIndex([&#39;a&#39; &#39;b&#39; &#39;e&#39;], dtype=&#39;object&#39;)
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+StringIndex([&#39;a&#39; &#39;b&#39; &#39;e&#39;], dtype=&#39;object&#39;)
+</pre></div></div>
 </div>
 <p>Accessing the underlying code values of each categorical observation.</p>
 <div class="nbinput docutils container">
@@ -3815,16 +3815,16 @@ dtype: int64
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0    0
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0    0
 1    1
 2    1
 3    0
 4    0
 5    2
 Name: grade, dtype: int32
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
@@ -3839,16 +3839,16 @@ Name: grade, dtype: int32
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0    0
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0    0
 1    1
 2    1
 0    0
 1    0
 2    2
 Name: grade, dtype: int32
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Converting-Data-Representation">
@@ -4042,8 +4042,9 @@ Name: grade, dtype: int32
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([[ 0, 19,  0,  1,  1],
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[ 0, 19,  0,  1,  1],
        [ 1, 18,  1,  0,  0],
        [ 2, 17,  2,  1,  0],
        [ 3, 16,  3,  0,  1],
@@ -4063,8 +4064,7 @@ Name: grade, dtype: int32
        [17,  2, 17,  0,  0],
        [18,  1, 18,  1,  1],
        [19,  0, 19,  0,  0]])
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
@@ -4079,8 +4079,9 @@ Name: grade, dtype: int32
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([[ 0, 19,  0,  1,  1],
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[ 0, 19,  0,  1,  1],
        [ 1, 18,  1,  0,  0],
        [ 2, 17,  2,  1,  0],
        [ 3, 16,  3,  0,  1],
@@ -4100,8 +4101,7 @@ Name: grade, dtype: int32
        [17,  2, 17,  0,  0],
        [18,  1, 18,  1,  1],
        [19,  0, 19,  0,  0]])
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <p>Converting a cuDF or Dask-cuDF <code class="docutils literal notranslate"><span class="pre">Series</span></code> to a numpy <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>.</p>
 <div class="nbinput docutils container">
@@ -4117,11 +4117,11 @@ Name: grade, dtype: int32
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
        17, 18, 19])
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
@@ -4136,11 +4136,11 @@ Name: grade, dtype: int32
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
        17, 18, 19])
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Arrow">
@@ -4159,8 +4159,9 @@ Name: grade, dtype: int32
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[69]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>pyarrow.Table
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+pyarrow.Table
 a: int64
 b: int64
 c: int64
@@ -4168,22 +4169,21 @@ agg_col1: int64
 agg_col2: int64
 metadata
 --------
-{b&#39;pandas&#39;: b&#39;{&quot;index_columns&quot;: [{&quot;kind&quot;: &quot;range&quot;, &quot;name&quot;: null, &quot;start&quot;: 0, &quot;&#39;
-            b&#39;stop&quot;: 20, &quot;step&quot;: 1}], &quot;column_indexes&quot;: [{&quot;name&quot;: null, &quot;field&#39;
-            b&#39;_name&quot;: null, &quot;pandas_type&quot;: &quot;unicode&quot;, &quot;numpy_type&quot;: &quot;object&quot;, &#39;
-            b&#39;&quot;metadata&quot;: {&quot;encoding&quot;: &quot;UTF-8&quot;}}], &quot;columns&quot;: [{&quot;name&quot;: &quot;a&quot;, &quot;&#39;
-            b&#39;field_name&quot;: &quot;a&quot;, &quot;pandas_type&quot;: &quot;int64&quot;, &quot;numpy_type&quot;: &quot;int64&quot;,&#39;
-            b&#39; &quot;metadata&quot;: null}, {&quot;name&quot;: &quot;b&quot;, &quot;field_name&quot;: &quot;b&quot;, &quot;pandas_typ&#39;
-            b&#39;e&quot;: &quot;int64&quot;, &quot;numpy_type&quot;: &quot;int64&quot;, &quot;metadata&quot;: null}, {&quot;name&quot;: &#39;
-            b&#39;&quot;c&quot;, &quot;field_name&quot;: &quot;c&quot;, &quot;pandas_type&quot;: &quot;int64&quot;, &quot;numpy_type&quot;: &quot;i&#39;
-            b&#39;nt64&quot;, &quot;metadata&quot;: null}, {&quot;name&quot;: &quot;agg_col1&quot;, &quot;field_name&quot;: &quot;ag&#39;
-            b&#39;g_col1&quot;, &quot;pandas_type&quot;: &quot;int64&quot;, &quot;numpy_type&quot;: &quot;int64&quot;, &quot;metadat&#39;
-            b&#39;a&quot;: null}, {&quot;name&quot;: &quot;agg_col2&quot;, &quot;field_name&quot;: &quot;agg_col2&quot;, &quot;panda&#39;
-            b&#39;s_type&quot;: &quot;int64&quot;, &quot;numpy_type&quot;: &quot;int64&quot;, &quot;metadata&quot;: null}], &quot;cr&#39;
-            b&#39;eator&quot;: {&quot;library&quot;: &quot;pyarrow&quot;, &quot;version&quot;: &quot;0.14.1&quot;}, &quot;pandas_ver&#39;
-            b&#39;sion&quot;: &quot;0.24.2&quot;}&#39;}
-</pre></div>
-</div>
+{b&#39;pandas&#39;: b&#39;{&#34;index_columns&#34;: [{&#34;kind&#34;: &#34;range&#34;, &#34;name&#34;: null, &#34;start&#34;: 0, &#34;&#39;
+            b&#39;stop&#34;: 20, &#34;step&#34;: 1}], &#34;column_indexes&#34;: [{&#34;name&#34;: null, &#34;field&#39;
+            b&#39;_name&#34;: null, &#34;pandas_type&#34;: &#34;unicode&#34;, &#34;numpy_type&#34;: &#34;object&#34;, &#39;
+            b&#39;&#34;metadata&#34;: {&#34;encoding&#34;: &#34;UTF-8&#34;}}], &#34;columns&#34;: [{&#34;name&#34;: &#34;a&#34;, &#34;&#39;
+            b&#39;field_name&#34;: &#34;a&#34;, &#34;pandas_type&#34;: &#34;int64&#34;, &#34;numpy_type&#34;: &#34;int64&#34;,&#39;
+            b&#39; &#34;metadata&#34;: null}, {&#34;name&#34;: &#34;b&#34;, &#34;field_name&#34;: &#34;b&#34;, &#34;pandas_typ&#39;
+            b&#39;e&#34;: &#34;int64&#34;, &#34;numpy_type&#34;: &#34;int64&#34;, &#34;metadata&#34;: null}, {&#34;name&#34;: &#39;
+            b&#39;&#34;c&#34;, &#34;field_name&#34;: &#34;c&#34;, &#34;pandas_type&#34;: &#34;int64&#34;, &#34;numpy_type&#34;: &#34;i&#39;
+            b&#39;nt64&#34;, &#34;metadata&#34;: null}, {&#34;name&#34;: &#34;agg_col1&#34;, &#34;field_name&#34;: &#34;ag&#39;
+            b&#39;g_col1&#34;, &#34;pandas_type&#34;: &#34;int64&#34;, &#34;numpy_type&#34;: &#34;int64&#34;, &#34;metadat&#39;
+            b&#39;a&#34;: null}, {&#34;name&#34;: &#34;agg_col2&#34;, &#34;field_name&#34;: &#34;agg_col2&#34;, &#34;panda&#39;
+            b&#39;s_type&#34;: &#34;int64&#34;, &#34;numpy_type&#34;: &#34;int64&#34;, &#34;metadata&#34;: null}], &#34;cr&#39;
+            b&#39;eator&#34;: {&#34;library&#34;: &#34;pyarrow&#34;, &#34;version&#34;: &#34;0.14.1&#34;}, &#34;pandas_ver&#39;
+            b&#39;sion&#34;: &#34;0.24.2&#34;}&#39;}
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[70]:
@@ -4198,8 +4198,9 @@ metadata
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[70]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>pyarrow.Table
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+pyarrow.Table
 a: int64
 b: int64
 c: int64
@@ -4208,23 +4209,22 @@ agg_col2: int64
 __index_level_0__: int64
 metadata
 --------
-{b&#39;pandas&#39;: b&#39;{&quot;index_columns&quot;: [&quot;__index_level_0__&quot;], &quot;column_indexes&quot;: [{&quot;na&#39;
-            b&#39;me&quot;: null, &quot;field_name&quot;: null, &quot;pandas_type&quot;: &quot;unicode&quot;, &quot;numpy_&#39;
-            b&#39;type&quot;: &quot;object&quot;, &quot;metadata&quot;: {&quot;encoding&quot;: &quot;UTF-8&quot;}}], &quot;columns&quot;:&#39;
-            b&#39; [{&quot;name&quot;: &quot;a&quot;, &quot;field_name&quot;: &quot;a&quot;, &quot;pandas_type&quot;: &quot;int64&quot;, &quot;nump&#39;
-            b&#39;y_type&quot;: &quot;int64&quot;, &quot;metadata&quot;: null}, {&quot;name&quot;: &quot;b&quot;, &quot;field_name&quot;:&#39;
-            b&#39; &quot;b&quot;, &quot;pandas_type&quot;: &quot;int64&quot;, &quot;numpy_type&quot;: &quot;int64&quot;, &quot;metadata&quot;:&#39;
-            b&#39; null}, {&quot;name&quot;: &quot;c&quot;, &quot;field_name&quot;: &quot;c&quot;, &quot;pandas_type&quot;: &quot;int64&quot;,&#39;
-            b&#39; &quot;numpy_type&quot;: &quot;int64&quot;, &quot;metadata&quot;: null}, {&quot;name&quot;: &quot;agg_col1&quot;, &#39;
-            b&#39;&quot;field_name&quot;: &quot;agg_col1&quot;, &quot;pandas_type&quot;: &quot;int64&quot;, &quot;numpy_type&quot;: &#39;
-            b&#39;&quot;int64&quot;, &quot;metadata&quot;: null}, {&quot;name&quot;: &quot;agg_col2&quot;, &quot;field_name&quot;: &quot;&#39;
-            b&#39;agg_col2&quot;, &quot;pandas_type&quot;: &quot;int64&quot;, &quot;numpy_type&quot;: &quot;int64&quot;, &quot;metad&#39;
-            b&#39;ata&quot;: null}, {&quot;name&quot;: null, &quot;field_name&quot;: &quot;__index_level_0__&quot;, &quot;&#39;
-            b&#39;pandas_type&quot;: &quot;int64&quot;, &quot;numpy_type&quot;: &quot;int64&quot;, &quot;metadata&quot;: null}]&#39;
-            b&#39;, &quot;creator&quot;: {&quot;library&quot;: &quot;pyarrow&quot;, &quot;version&quot;: &quot;0.14.1&quot;}, &quot;panda&#39;
-            b&#39;s_version&quot;: &quot;0.24.2&quot;}&#39;}
-</pre></div>
-</div>
+{b&#39;pandas&#39;: b&#39;{&#34;index_columns&#34;: [&#34;__index_level_0__&#34;], &#34;column_indexes&#34;: [{&#34;na&#39;
+            b&#39;me&#34;: null, &#34;field_name&#34;: null, &#34;pandas_type&#34;: &#34;unicode&#34;, &#34;numpy_&#39;
+            b&#39;type&#34;: &#34;object&#34;, &#34;metadata&#34;: {&#34;encoding&#34;: &#34;UTF-8&#34;}}], &#34;columns&#34;:&#39;
+            b&#39; [{&#34;name&#34;: &#34;a&#34;, &#34;field_name&#34;: &#34;a&#34;, &#34;pandas_type&#34;: &#34;int64&#34;, &#34;nump&#39;
+            b&#39;y_type&#34;: &#34;int64&#34;, &#34;metadata&#34;: null}, {&#34;name&#34;: &#34;b&#34;, &#34;field_name&#34;:&#39;
+            b&#39; &#34;b&#34;, &#34;pandas_type&#34;: &#34;int64&#34;, &#34;numpy_type&#34;: &#34;int64&#34;, &#34;metadata&#34;:&#39;
+            b&#39; null}, {&#34;name&#34;: &#34;c&#34;, &#34;field_name&#34;: &#34;c&#34;, &#34;pandas_type&#34;: &#34;int64&#34;,&#39;
+            b&#39; &#34;numpy_type&#34;: &#34;int64&#34;, &#34;metadata&#34;: null}, {&#34;name&#34;: &#34;agg_col1&#34;, &#39;
+            b&#39;&#34;field_name&#34;: &#34;agg_col1&#34;, &#34;pandas_type&#34;: &#34;int64&#34;, &#34;numpy_type&#34;: &#39;
+            b&#39;&#34;int64&#34;, &#34;metadata&#34;: null}, {&#34;name&#34;: &#34;agg_col2&#34;, &#34;field_name&#34;: &#34;&#39;
+            b&#39;agg_col2&#34;, &#34;pandas_type&#34;: &#34;int64&#34;, &#34;numpy_type&#34;: &#34;int64&#34;, &#34;metad&#39;
+            b&#39;ata&#34;: null}, {&#34;name&#34;: null, &#34;field_name&#34;: &#34;__index_level_0__&#34;, &#34;&#39;
+            b&#39;pandas_type&#34;: &#34;int64&#34;, &#34;numpy_type&#34;: &#34;int64&#34;, &#34;metadata&#34;: null}]&#39;
+            b&#39;, &#34;creator&#34;: {&#34;library&#34;: &#34;pyarrow&#34;, &#34;version&#34;: &#34;0.14.1&#34;}, &#34;panda&#39;
+            b&#39;s_version&#34;: &#34;0.24.2&#34;}&#39;}
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Getting-Data-In/Out">
@@ -5622,10 +5622,10 @@ Tue Aug 20 18:50:29 2019
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[89]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>DoneAndNotDoneFutures(done={&lt;Future: status: finished, type: DataFrame, key: (&#39;func-ce75665b80c984639a37a86847d7de7d&#39;, 3)&gt;, &lt;Future: status: finished, type: DataFrame, key: (&#39;func-ce75665b80c984639a37a86847d7de7d&#39;, 4)&gt;, &lt;Future: status: finished, type: DataFrame, key: (&#39;func-ce75665b80c984639a37a86847d7de7d&#39;, 1)&gt;, &lt;Future: status: finished, type: DataFrame, key: (&#39;func-ce75665b80c984639a37a86847d7de7d&#39;, 0)&gt;, &lt;Future: status: finished, type: DataFrame, key: (&#39;func-ce75665b80c984639a37a86847d7de7d&#39;, 2)&gt;}, not_done=set())
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+DoneAndNotDoneFutures(done={&lt;Future: status: finished, type: DataFrame, key: (&#39;func-ce75665b80c984639a37a86847d7de7d&#39;, 3)&gt;, &lt;Future: status: finished, type: DataFrame, key: (&#39;func-ce75665b80c984639a37a86847d7de7d&#39;, 4)&gt;, &lt;Future: status: finished, type: DataFrame, key: (&#39;func-ce75665b80c984639a37a86847d7de7d&#39;, 1)&gt;, &lt;Future: status: finished, type: DataFrame, key: (&#39;func-ce75665b80c984639a37a86847d7de7d&#39;, 0)&gt;, &lt;Future: status: finished, type: DataFrame, key: (&#39;func-ce75665b80c984639a37a86847d7de7d&#39;, 2)&gt;}, not_done=set())
+</pre></div></div>
 </div>
 <p>With <code class="docutils literal notranslate"><span class="pre">wait</span></code>, we can safely proceed on in our workflow.</p>
 </div>

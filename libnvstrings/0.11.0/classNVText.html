@@ -100,6 +100,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a135859b69d8a3eeed217c979331a541d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classNVStrings.html">NVStrings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVText.html#a135859b69d8a3eeed217c979331a541d">unique_tokens</a> (<a class="el" href="classNVStrings.html">NVStrings</a> &amp;strs, const char *delimiter=nullptr)</td></tr>
 <tr class="memdesc:a135859b69d8a3eeed217c979331a541d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenize all the strings into a single instance of unique tokens only.  <a href="classNVText.html#a135859b69d8a3eeed217c979331a541d">More...</a><br /></td></tr>
 <tr class="separator:a135859b69d8a3eeed217c979331a541d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a121a9d0e70341afb609e682fbab81628"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classNVStrings.html">NVStrings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVText.html#a121a9d0e70341afb609e682fbab81628">character_tokenize</a> (<a class="el" href="classNVStrings.html">NVStrings</a> const &amp;strings)</td></tr>
+<tr class="memdesc:a121a9d0e70341afb609e682fbab81628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenize all input strings into single-character strings.  <a href="classNVText.html#a121a9d0e70341afb609e682fbab81628">More...</a><br /></td></tr>
+<tr class="separator:a121a9d0e70341afb609e682fbab81628"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb15302606db2cb94263c887830df19f"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVText.html#abb15302606db2cb94263c887830df19f">token_count</a> (<a class="el" href="classNVStrings.html">NVStrings</a> &amp;strs, const char *delimiter, unsigned int *results, bool devmem=true)</td></tr>
 <tr class="memdesc:abb15302606db2cb94263c887830df19f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the number of tokens in each string.  <a href="classNVText.html#abb15302606db2cb94263c887830df19f">More...</a><br /></td></tr>
 <tr class="separator:abb15302606db2cb94263c887830df19f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,6 +194,45 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a121a9d0e70341afb609e682fbab81628"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a121a9d0e70341afb609e682fbab81628">&#9670;&nbsp;</a></span>character_tokenize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classNVStrings.html">NVStrings</a>* NVText::character_tokenize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classNVStrings.html">NVStrings</a> const &amp;&#160;</td>
+          <td class="paramname"><em>strings</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tokenize all input strings into single-character strings. </p>
+<p>Example </p><div class="fragment"><div class="line">s = [<span class="stringliteral">&#39;apple&#39;</span>,<span class="stringliteral">&#39;pear&#39;</span>]</div>
+<div class="line">r = <a class="code" href="classNVText.html#a121a9d0e70341afb609e682fbab81628">character_tokenize</a>(s)</div>
+<div class="line">r is now [<span class="charliteral">&#39;a&#39;</span>,<span class="charliteral">&#39;p&#39;</span>,<span class="charliteral">&#39;p&#39;</span>,<span class="charliteral">&#39;l&#39;</span>,<span class="charliteral">&#39;e&#39;</span>,<span class="charliteral">&#39;p&#39;</span>,<span class="charliteral">&#39;e&#39;</span>,<span class="charliteral">&#39;a&#39;</span>,<span class="charliteral">&#39;r&#39;</span>]</div>
+</div><!-- fragment --><p>Note these are UTF-8 characters and so each string may be one or more bytes.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strings</td><td>Strings to tokenize </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Strings with single characters. </dd></dl>
+
+</div>
+</div>
 <a id="ac28b75cbb4c30cf28bc2ef1f0473b877"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac28b75cbb4c30cf28bc2ef1f0473b877">&#9670;&nbsp;</a></span>contains_strings()</h2>
 
@@ -1216,6 +1258,7 @@ Static Public Member Functions</h2></td></tr>
 <li><a class="el" href="NVText_8h_source.html">NVText.h</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassNVText_html_a121a9d0e70341afb609e682fbab81628"><div class="ttname"><a href="classNVText.html#a121a9d0e70341afb609e682fbab81628">NVText::character_tokenize</a></div><div class="ttdeci">static NVStrings * character_tokenize(NVStrings const &amp;strings)</div><div class="ttdoc">Tokenize all input strings into single-character strings.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

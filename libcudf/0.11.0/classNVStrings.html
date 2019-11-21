@@ -119,9 +119,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad3f4f0afb3ce81b689af581610c52e9f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVStrings.html#ad3f4f0afb3ce81b689af581610c52e9f">create_index</a> (std::pair&lt; const char *, size_t &gt; *strs, bool devmem=true)</td></tr>
 <tr class="memdesc:ad3f4f0afb3ce81b689af581610c52e9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an index for the device strings contained in this instance.  <a href="classNVStrings.html#ad3f4f0afb3ce81b689af581610c52e9f">More...</a><br /></td></tr>
 <tr class="separator:ad3f4f0afb3ce81b689af581610c52e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ddf0181988136d5bf3cae02f7ba375a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVStrings.html#a0ddf0181988136d5bf3cae02f7ba375a">create_custring_index</a> (custring_view **strs, bool devmem=true)</td></tr>
-<tr class="memdesc:a0ddf0181988136d5bf3cae02f7ba375a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a list to the internal <code>custring_view</code> pointers for this instance.  <a href="classNVStrings.html#a0ddf0181988136d5bf3cae02f7ba375a">More...</a><br /></td></tr>
-<tr class="separator:a0ddf0181988136d5bf3cae02f7ba375a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54f4b15664c2ea580584f3cdea219499"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVStrings.html#a54f4b15664c2ea580584f3cdea219499">create_custring_index</a> (custring_view **strs, bool devmem=true) const</td></tr>
+<tr class="memdesc:a54f4b15664c2ea580584f3cdea219499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a list to the internal <code>custring_view</code> pointers for this instance.  <a href="classNVStrings.html#a54f4b15664c2ea580584f3cdea219499">More...</a><br /></td></tr>
+<tr class="separator:a54f4b15664c2ea580584f3cdea219499"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ec46344fcc2f2f6a5b068716b9ee4b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVStrings.html#a6ec46344fcc2f2f6a5b068716b9ee4b9">create_offsets</a> (char *strs, int *offsets, unsigned char *nullbitmask=0, bool devmem=true)</td></tr>
 <tr class="memdesc:a6ec46344fcc2f2f6a5b068716b9ee4b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy strings into single memory buffer provided.  <a href="classNVStrings.html#a6ec46344fcc2f2f6a5b068716b9ee4b9">More...</a><br /></td></tr>
 <tr class="separator:a6ec46344fcc2f2f6a5b068716b9ee4b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,9 +134,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adaaa1f3326fb1a25d3193d16d4fdb336"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVStrings.html#adaaa1f3326fb1a25d3193d16d4fdb336">get_nulls</a> (unsigned int *pos, bool emptyIsNull=false, bool devmem=true)</td></tr>
 <tr class="memdesc:adaaa1f3326fb1a25d3193d16d4fdb336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set int array with position of null strings.  <a href="classNVStrings.html#adaaa1f3326fb1a25d3193d16d4fdb336">More...</a><br /></td></tr>
 <tr class="separator:adaaa1f3326fb1a25d3193d16d4fdb336"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2f3c0d0decd673840cbf9cdaea1b3ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNVStrings.html">NVStrings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVStrings.html#ad2f3c0d0decd673840cbf9cdaea1b3ba">copy</a> ()</td></tr>
-<tr class="memdesc:ad2f3c0d0decd673840cbf9cdaea1b3ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance from this instance.  <a href="classNVStrings.html#ad2f3c0d0decd673840cbf9cdaea1b3ba">More...</a><br /></td></tr>
-<tr class="separator:ad2f3c0d0decd673840cbf9cdaea1b3ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4504cca8fc5594f3813ac86f2b4e156"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNVStrings.html">NVStrings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVStrings.html#ac4504cca8fc5594f3813ac86f2b4e156">copy</a> () const</td></tr>
+<tr class="memdesc:ac4504cca8fc5594f3813ac86f2b4e156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance from this instance.  <a href="classNVStrings.html#ac4504cca8fc5594f3813ac86f2b4e156">More...</a><br /></td></tr>
+<tr class="separator:ac4504cca8fc5594f3813ac86f2b4e156"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11b45be9b52d01835d510245cf4a0f10"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVStrings.html#a11b45be9b52d01835d510245cf4a0f10">to_host</a> (char **list, int start, int end)</td></tr>
 <tr class="memdesc:a11b45be9b52d01835d510245cf4a0f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the list of strings into the provided host memory.  <a href="classNVStrings.html#a11b45be9b52d01835d510245cf4a0f10">More...</a><br /></td></tr>
 <tr class="separator:a11b45be9b52d01835d510245cf4a0f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,9 +164,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af47e5bf838dfe8f75620ad539d90cfc8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVStrings.html#af47e5bf838dfe8f75620ad539d90cfc8">order</a> (<a class="el" href="classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831">sorttype</a> stype, bool ascending, unsigned int *indexes, bool nullfirst=true, bool devmem=true)</td></tr>
 <tr class="memdesc:af47e5bf838dfe8f75620ad539d90cfc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns new row index positions for strings sorted in this instance.  <a href="classNVStrings.html#af47e5bf838dfe8f75620ad539d90cfc8">More...</a><br /></td></tr>
 <tr class="separator:af47e5bf838dfe8f75620ad539d90cfc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a252aac2dd35bb84c972feb5498057603"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVStrings.html#a252aac2dd35bb84c972feb5498057603">len</a> (int *lengths, bool devmem=true)</td></tr>
-<tr class="memdesc:a252aac2dd35bb84c972feb5498057603"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the number of characters in each string.  <a href="classNVStrings.html#a252aac2dd35bb84c972feb5498057603">More...</a><br /></td></tr>
-<tr class="separator:a252aac2dd35bb84c972feb5498057603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e22a977c3d75aa43923fee20c49a194"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVStrings.html#a3e22a977c3d75aa43923fee20c49a194">len</a> (int *lengths, bool devmem=true) const</td></tr>
+<tr class="memdesc:a3e22a977c3d75aa43923fee20c49a194"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the number of characters in each string.  <a href="classNVStrings.html#a3e22a977c3d75aa43923fee20c49a194">More...</a><br /></td></tr>
+<tr class="separator:a3e22a977c3d75aa43923fee20c49a194"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0079100118fa07b92d98b4f32a881e47"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNVStrings.html#a0079100118fa07b92d98b4f32a881e47">byte_count</a> (int *lengths, bool devmem=true)</td></tr>
 <tr class="memdesc:a0079100118fa07b92d98b4f32a881e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the number of bytes for each string.  <a href="classNVStrings.html#a0079100118fa07b92d98b4f32a881e47">More...</a><br /></td></tr>
 <tr class="separator:a0079100118fa07b92d98b4f32a881e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -928,8 +928,8 @@ Create NVStrings instance from strings</h2></td></tr>
 
 </div>
 </div>
-<a id="ad2f3c0d0decd673840cbf9cdaea1b3ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2f3c0d0decd673840cbf9cdaea1b3ba">&#9670;&nbsp;</a></span>copy()</h2>
+<a id="ac4504cca8fc5594f3813ac86f2b4e156"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4504cca8fc5594f3813ac86f2b4e156">&#9670;&nbsp;</a></span>copy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -938,7 +938,7 @@ Create NVStrings instance from strings</h2></td></tr>
           <td class="memname"><a class="el" href="classNVStrings.html">NVStrings</a>* NVStrings::copy </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -993,8 +993,8 @@ Create NVStrings instance from strings</h2></td></tr>
 
 </div>
 </div>
-<a id="a0ddf0181988136d5bf3cae02f7ba375a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ddf0181988136d5bf3cae02f7ba375a">&#9670;&nbsp;</a></span>create_custring_index()</h2>
+<a id="a54f4b15664c2ea580584f3cdea219499"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54f4b15664c2ea580584f3cdea219499">&#9670;&nbsp;</a></span>create_custring_index()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1014,7 +1014,7 @@ Create NVStrings instance from strings</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -2915,8 +2915,8 @@ Create NVStrings instance from strings</h2></td></tr>
 
 </div>
 </div>
-<a id="a252aac2dd35bb84c972feb5498057603"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a252aac2dd35bb84c972feb5498057603">&#9670;&nbsp;</a></span>len()</h2>
+<a id="a3e22a977c3d75aa43923fee20c49a194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e22a977c3d75aa43923fee20c49a194">&#9670;&nbsp;</a></span>len()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2936,7 +2936,7 @@ Create NVStrings instance from strings</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">

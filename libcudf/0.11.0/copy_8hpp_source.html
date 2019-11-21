@@ -88,39 +88,68 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma once </span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;cudf/cudf.h&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="types_8hpp.html">cudf/types.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;cudf/copying.hpp&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span>experimental {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>detail {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * Initializes and returns an empty column of the same type as the `input`.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * @param[in] input Immutable view of input column to emulate</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * @param[in] stream Optional CUDA stream on which to execute kernels</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * @return std::unique_ptr&lt;column&gt; An empty column of same type as `input`</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;std::unique_ptr&lt;column&gt; empty_like(column_view input, cudaStream_t stream = 0);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;std::unique_ptr&lt;column&gt; <a class="code" href="namespacecudf.html#ac72ee052f776990ab9240e757d8493ad">allocate_like</a>(column_view input, size_type size,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                      <a class="code" href="namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6">mask_allocation_policy</a> mask_alloc = </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                          mask_allocation_policy::RETAIN,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                      rmm::mr::device_memory_resource *mr =</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                          rmm::mr::get_default_resource(),</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                      cudaStream_t stream = 0);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;std::unique_ptr&lt;table&gt; empty_like(table_view input_table, cudaStream_t stream = 0);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}  <span class="comment">// namespace detail</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}  <span class="comment">// namespace experimental</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}  <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="types_8hpp.html">cudf/types.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;cudf/column/column_view.hpp&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;cudf/utilities/traits.hpp&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;cudf/copying.hpp&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>experimental {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>detail {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ColumnView&gt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;ColumnView <a class="code" href="namespacecudf.html#a4c2052fccb1d1278d538c598cda51e0b">slice</a>(ColumnView <span class="keyword">const</span>&amp; input,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                  cudf::size_type begin,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                  cudf::size_type end) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;   static_assert(std::is_same&lt;ColumnView, cudf::column_view&gt;::value or</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                    std::is_same&lt;ColumnView, cudf::mutable_column_view&gt;::value,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="stringliteral">&quot;slice can be performed only on column_view and mutable_column_view&quot;</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;   CUDF_EXPECTS(begin &gt;= 0, <span class="stringliteral">&quot;Invalid beginning of range.&quot;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;   CUDF_EXPECTS(end &gt;= begin, <span class="stringliteral">&quot;Invalid end of range.&quot;</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;   CUDF_EXPECTS(end &lt;= input.size(), <span class="stringliteral">&quot;Slice range out of bounds.&quot;</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;   std::vector&lt;ColumnView&gt; children {};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;   children.reserve(input.num_children());</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   <span class="keywordflow">for</span> (size_type index = 0; index &lt; input.num_children(); index++) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;       children.emplace_back(input.child(index));</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   <span class="keywordflow">return</span> ColumnView(input.type(), end - begin,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                     input.head(), input.null_mask(),</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                     cudf::UNKNOWN_NULL_COUNT,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                     input.offset() + begin, children);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"> * Initializes and returns an empty column of the same type as the `input`.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"> * @param[in] input Immutable view of input column to emulate</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"> * @param[in] stream Optional CUDA stream on which to execute kernels</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> * @return std::unique_ptr&lt;column&gt; An empty column of same type as `input`</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;std::unique_ptr&lt;column&gt; empty_like(column_view input, cudaStream_t stream = 0);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;std::unique_ptr&lt;column&gt; <a class="code" href="namespacecudf.html#ac72ee052f776990ab9240e757d8493ad">allocate_like</a>(column_view input, size_type size,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                      <a class="code" href="namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6">mask_allocation_policy</a> mask_alloc = </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                          mask_allocation_policy::RETAIN,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                      rmm::mr::device_memory_resource *mr =</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                          rmm::mr::get_default_resource(),</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                      cudaStream_t stream = 0);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;std::unique_ptr&lt;table&gt; empty_like(table_view input_table, cudaStream_t stream = 0);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;std::unique_ptr&lt;column&gt; copy_if_else( column_view <span class="keyword">const</span>&amp; lhs, column_view <span class="keyword">const</span>&amp; rhs, column_view <span class="keyword">const</span>&amp; boolean_mask,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                                    rmm::mr::device_memory_resource *mr = rmm::mr::get_default_resource(),</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                    cudaStream_t stream = 0);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}  <span class="comment">// namespace detail</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}  <span class="comment">// namespace experimental</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}  <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespacecudf_html_ac72ee052f776990ab9240e757d8493ad"><div class="ttname"><a href="namespacecudf.html#ac72ee052f776990ab9240e757d8493ad">cudf::allocate_like</a></div><div class="ttdeci">gdf_column allocate_like(gdf_column const &amp;input, mask_allocation_policy mask_alloc, cudaStream_t stream)</div><div class="ttdoc">Allocates a new column of the same size and type as the input.</div><div class="ttdef"><b>Definition:</b> legacy/copy.cpp:58</div></div>
 <div class="ttc" id="anamespacecudf_html_a267e03474dcfd85242d2fdc6e5846ec6"><div class="ttname"><a href="namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6">cudf::mask_allocation_policy</a></div><div class="ttdeci">mask_allocation_policy</div><div class="ttdef"><b>Definition:</b> legacy/copying.hpp:31</div></div>
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div><div class="ttdoc">Type declarations for libcudf.</div></div>
-<div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> binaryop.cpp:44</div></div>
+<div class="ttc" id="anamespacecudf_html_a4c2052fccb1d1278d538c598cda51e0b"><div class="ttname"><a href="namespacecudf.html#a4c2052fccb1d1278d538c598cda51e0b">cudf::slice</a></div><div class="ttdeci">std::vector&lt; gdf_column * &gt; slice(gdf_column const &amp;input_column, cudf::size_type const *indices, cudf::size_type num_indices)</div><div class="ttdoc">Slices a column (including null values) into a set of columns according to a set of indices.</div><div class="ttdef"><b>Definition:</b> slice.cu:289</div></div>
+<div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:22</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

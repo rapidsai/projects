@@ -115,6 +115,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af532b7d68dcff37aedcf09c86055ec5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcudf_1_1table__view.html">table_view</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1table.html#af532b7d68dcff37aedcf09c86055ec5a">select</a> (std::vector&lt; cudf::size_type &gt; const &amp;column_indices) const</td></tr>
 <tr class="memdesc:af532b7d68dcff37aedcf09c86055ec5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a> with set of specified columns.  <a href="classcudf_1_1experimental_1_1table.html#af532b7d68dcff37aedcf09c86055ec5a">More...</a><br /></td></tr>
 <tr class="separator:af532b7d68dcff37aedcf09c86055ec5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9a2d056f05161e391222093b57f2c1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcudf_1_1column.html">column</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1table.html#ae9a2d056f05161e391222093b57f2c1b">get_column</a> (cudf::size_type column_index)</td></tr>
+<tr class="memdesc:ae9a2d056f05161e391222093b57f2c1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the specified column.  <a href="classcudf_1_1experimental_1_1table.html#ae9a2d056f05161e391222093b57f2c1b">More...</a><br /></td></tr>
+<tr class="separator:ae9a2d056f05161e391222093b57f2c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca3daa7f73e352190e73951af2505680"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcudf_1_1column.html">column</a> const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1table.html#aca3daa7f73e352190e73951af2505680">get_column</a> (cudf::size_type i) const</td></tr>
+<tr class="memdesc:aca3daa7f73e352190e73951af2505680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const reference to the specified column.  <a href="classcudf_1_1experimental_1_1table.html#aca3daa7f73e352190e73951af2505680">More...</a><br /></td></tr>
+<tr class="separator:aca3daa7f73e352190e73951af2505680"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a03f18ebf37fb2b5a7fe19440b9f483a8"></a>
@@ -133,7 +139,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md444"></a>
+<h2><a class="anchor" id="autotoc_md418"></a>
 @brief Construct a new table by copying the contents of another table.</h2>
 
 </div>
@@ -161,7 +167,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md445"></a>
+<h2><a class="anchor" id="autotoc_md419"></a>
 be moved into the new table.</h2>
 
 </div>
@@ -207,12 +213,96 @@ be moved into the new table.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md446"></a>
+<h2><a class="anchor" id="autotoc_md420"></a>
 the device memory for the new columns</h2>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae9a2d056f05161e391222093b57f2c1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9a2d056f05161e391222093b57f2c1b">&#9670;&nbsp;</a></span>get_column() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcudf_1_1column.html">column</a>&amp; cudf::experimental::table::get_column </td>
+          <td>(</td>
+          <td class="paramtype">cudf::size_type&#160;</td>
+          <td class="paramname"><em>column_index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a reference to the specified column. </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::out_of_range</td><td>If i is out of the range [0, num_columns)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Index of the desired column </td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="anchor" id="autotoc_md429"></a>
+@return A reference to the desired column</h2>
+
+</div>
+</div>
+<a id="aca3daa7f73e352190e73951af2505680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca3daa7f73e352190e73951af2505680">&#9670;&nbsp;</a></span>get_column() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcudf_1_1column.html">column</a> const&amp; cudf::experimental::table::get_column </td>
+          <td>(</td>
+          <td class="paramtype">cudf::size_type&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a const reference to the specified column. </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::out_of_range</td><td>If i is out of the range [0, num_columns)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Index of the desired column </td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="anchor" id="autotoc_md430"></a>
+@return A const reference to the desired column</h2>
+
+</div>
+</div>
 <a id="a976b0160308e5bc7f71c197347180ca0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a976b0160308e5bc7f71c197347180ca0">&#9670;&nbsp;</a></span>mutable_view()</h2>
 
@@ -230,7 +320,7 @@ the device memory for the new columns</h2>
 
 <p>Returns a mutable, non-owning <code><a class="el" href="classcudf_1_1mutable__table__view.html" title="A set of mutable_column_views of the same size.">mutable_table_view</a></code> of the contents. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md451"></a>
+<h2><a class="anchor" id="autotoc_md425"></a>
 of this &lt;tt&gt;table&lt;/tt&gt;.</h2>
 
 </div>
@@ -258,7 +348,7 @@ of this &lt;tt&gt;table&lt;/tt&gt;.</h2>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md447"></a>
+<h2><a class="anchor" id="autotoc_md421"></a>
 @brief Returns the number of columns in the table</h2>
 
 </div>
@@ -286,7 +376,7 @@ of this &lt;tt&gt;table&lt;/tt&gt;.</h2>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md448"></a>
+<h2><a class="anchor" id="autotoc_md422"></a>
 @brief Returns the number of rows</h2>
 
 </div>
@@ -316,7 +406,7 @@ of this &lt;tt&gt;table&lt;/tt&gt;.</h2>
 
 <p>Conversion operator to a mutable, non-owning <code><a class="el" href="classcudf_1_1mutable__table__view.html" title="A set of mutable_column_views of the same size.">mutable_table_view</a></code> of. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md452"></a>
+<h2><a class="anchor" id="autotoc_md426"></a>
 the contents of this &lt;tt&gt;table&lt;/tt&gt;.</h2>
 
 </div>
@@ -346,7 +436,7 @@ the contents of this &lt;tt&gt;table&lt;/tt&gt;.</h2>
 
 <p>Conversion operator to an immutable, non-owning <code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code> of the. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md450"></a>
+<h2><a class="anchor" id="autotoc_md424"></a>
 contents of this &lt;tt&gt;table&lt;/tt&gt;.</h2>
 
 </div>
@@ -368,7 +458,7 @@ contents of this &lt;tt&gt;table&lt;/tt&gt;.</h2>
 
 <p>Releases ownership of the <code>column</code>s by returning a vector of <code>unique_ptr</code>s to the constituent columns. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md453"></a>
+<h2><a class="anchor" id="autotoc_md427"></a>
 After &lt;tt&gt;release()&lt;/tt&gt;, &lt;tt&gt;num_columns() == 0&lt;/tt&gt; and &lt;tt&gt;num_rows() == 0&lt;/tt&gt;</h2>
 
 </div>
@@ -392,7 +482,7 @@ After &lt;tt&gt;release()&lt;/tt&gt;, &lt;tt&gt;num_columns() == 0&lt;/tt&gt; an
 <p>Returns a <a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a> with set of specified columns. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>If any element in <code>column_indices</code> is outside [0, <a class="el" href="classcudf_1_1experimental_1_1table.html#aa5c69baf28d80d5a29e01af17c52e78e">num_columns()</a>)</td></tr>
+    <tr><td class="paramname">std::out_of_range</td><td>If any element in <code>column_indices</code> is outside [0, <a class="el" href="classcudf_1_1experimental_1_1table.html#aa5c69baf28d80d5a29e01af17c52e78e">num_columns()</a>)</td></tr>
   </table>
   </dd>
 </dl>
@@ -403,7 +493,7 @@ After &lt;tt&gt;release()&lt;/tt&gt;, &lt;tt&gt;num_columns() == 0&lt;/tt&gt; an
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a> consisting of columns from the original table </dd></dl>
-<h2><a class="anchor" id="autotoc_md454"></a>
+<h2><a class="anchor" id="autotoc_md428"></a>
 specified by the elements of &lt;tt&gt;column_indices&lt;/tt&gt;</h2>
 
 </div>
@@ -425,7 +515,7 @@ specified by the elements of &lt;tt&gt;column_indices&lt;/tt&gt;</h2>
 
 <p>Returns an immutable, non-owning <code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code> of the contents of. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md449"></a>
+<h2><a class="anchor" id="autotoc_md423"></a>
 this &lt;tt&gt;table&lt;/tt&gt;.</h2>
 
 </div>

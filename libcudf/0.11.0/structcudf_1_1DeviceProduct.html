@@ -77,10 +77,14 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a75afd8ecde60ac0b8f6f70aef14c9592"><td class="memTemplParams" colspan="2"><a id="a75afd8ecde60ac0b8f6f70aef14c9592"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a75afd8ecde60ac0b8f6f70aef14c9592"><td class="memTemplItemLeft" align="right" valign="top">CUDA_HOST_DEVICE_CALLABLE T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (const T &amp;lhs, const T &amp;rhs)</td></tr>
-<tr class="separator:a75afd8ecde60ac0b8f6f70aef14c9592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a920044bee68097a74b6afd5ad899393a"><td class="memTemplParams" colspan="2"><a id="a920044bee68097a74b6afd5ad899393a"></a>
+template&lt;typename T , typename std::enable_if_t&lt; cudf::is_timestamp&lt; T &gt;()&gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:a920044bee68097a74b6afd5ad899393a"><td class="memTemplItemLeft" align="right" valign="top">CUDA_HOST_DEVICE_CALLABLE T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (const T &amp;lhs, const T &amp;rhs)</td></tr>
+<tr class="separator:a920044bee68097a74b6afd5ad899393a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a920044bee68097a74b6afd5ad899393a"><td class="memTemplParams" colspan="2"><a id="a920044bee68097a74b6afd5ad899393a"></a>
+template&lt;typename T , typename std::enable_if_t&lt;!cudf::is_timestamp&lt; T &gt;()&gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:a920044bee68097a74b6afd5ad899393a"><td class="memTemplItemLeft" align="right" valign="top">CUDA_HOST_DEVICE_CALLABLE T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (const T &amp;lhs, const T &amp;rhs)</td></tr>
+<tr class="separator:a920044bee68097a74b6afd5ad899393a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>

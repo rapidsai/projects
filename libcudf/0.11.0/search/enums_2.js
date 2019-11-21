@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['letter_5ftype_1868',['letter_type',['../classNVText.html#af974314b036ba255dd5f71b108d1ffde',1,'NVText']]]
+  ['kind_1941',['Kind',['../classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189d',1,'cudf::experimental::aggregation']]]
 ];

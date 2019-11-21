@@ -74,6 +74,9 @@ $(function() {
 <div class="title">cudf::string_view::const_iterator Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Handy iterator for navigating through encoded characters.  
+ <a href="classcudf_1_1string__view_1_1const__iterator.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -116,12 +119,21 @@ __device__ <a class="el" href="classcudf_1_1string__view_1_1const__iterator.html
 <tr class="memitem:a13e103f29dceb093a13d2c4c05cb13e3"><td class="memItemLeft" align="right" valign="top"><a id="a13e103f29dceb093a13d2c4c05cb13e3"></a>
 __device__ <a class="el" href="classcudf_1_1string__view_1_1const__iterator.html">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> (int)</td></tr>
 <tr class="separator:a13e103f29dceb093a13d2c4c05cb13e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf2f3c103eb22bcb391fe8b8be61088c"><td class="memItemLeft" align="right" valign="top"><a id="adf2f3c103eb22bcb391fe8b8be61088c"></a>
+__device__ <a class="el" href="classcudf_1_1string__view_1_1const__iterator.html">const_iterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+=</b> (difference_type)</td></tr>
+<tr class="separator:adf2f3c103eb22bcb391fe8b8be61088c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc0bc65de9eef00f11ab4fe57c210b02"><td class="memItemLeft" align="right" valign="top"><a id="abc0bc65de9eef00f11ab4fe57c210b02"></a>
+__device__ <a class="el" href="classcudf_1_1string__view_1_1const__iterator.html">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (difference_type)</td></tr>
+<tr class="separator:abc0bc65de9eef00f11ab4fe57c210b02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a725953e487ee3d3a6ec44f85542b1715"><td class="memItemLeft" align="right" valign="top"><a id="a725953e487ee3d3a6ec44f85542b1715"></a>
 __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classcudf_1_1string__view_1_1const__iterator.html">const_iterator</a> &amp;rhs) const</td></tr>
 <tr class="separator:a725953e487ee3d3a6ec44f85542b1715"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0337200693e8e128361b8856919bb23"><td class="memItemLeft" align="right" valign="top"><a id="af0337200693e8e128361b8856919bb23"></a>
 __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classcudf_1_1string__view_1_1const__iterator.html">const_iterator</a> &amp;rhs) const</td></tr>
 <tr class="separator:af0337200693e8e128361b8856919bb23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfb32aaa3726e9773db899c361e767ff"><td class="memItemLeft" align="right" valign="top"><a id="adfb32aaa3726e9773db899c361e767ff"></a>
+__device__ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;</b> (const <a class="el" href="classcudf_1_1string__view_1_1const__iterator.html">const_iterator</a> &amp;rhs) const</td></tr>
+<tr class="separator:adfb32aaa3726e9773db899c361e767ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f432a7706fa39f961dae1d53f38a313"><td class="memItemLeft" align="right" valign="top"><a id="a9f432a7706fa39f961dae1d53f38a313"></a>
 __device__ char_utf8&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> () const</td></tr>
 <tr class="separator:a9f432a7706fa39f961dae1d53f38a313"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,11 +145,9 @@ __device__ size_type&#160;</td><td class="memItemRight" valign="bottom"><b>byte_
 <tr class="separator:a4cbe9e2dd35a9152bef5b3d0f50a3ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md395"></a>
-@brief Handy iterator for navigating through encoded characters.</h2>
+<div class="textblock"><p>Handy iterator for navigating through encoded characters. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>string_view.cuh</li>
+<li><a class="el" href="string__view_8cuh.html">string_view.cuh</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

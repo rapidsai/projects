@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10 Minutes to cuDF and CuPy &mdash; cudf 0.11.0a+2130.g53c05f021 documentation</title>
+  <title>10 Minutes to cuDF and CuPy &mdash; cudf 0.11.0a+3121.ga49a20aa3 documentation</title>
   
 
   
@@ -172,16 +172,16 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput,
-div.nbinput div.prompt,
-div.nbinput div.input_area,
-div.nbinput div[class*=highlight],
-div.nbinput div[class*=highlight] pre,
-div.nboutput,
-div.nbinput div.prompt,
-div.nbinput div.output_area,
-div.nboutput div[class*=highlight],
-div.nboutput div[class*=highlight] pre {
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
     background: none;
     border: none;
     padding: 0 0;
@@ -190,13 +190,13 @@ div.nboutput div[class*=highlight] pre {
 }
 
 /* avoid gaps between output lines */
-div.nboutput div[class*=highlight] pre {
+div.nboutput.container div[class*=highlight] pre {
     line-height: normal;
 }
 
 /* input/output containers */
-div.nbinput,
-div.nboutput {
+div.nbinput.container,
+div.nboutput.container {
     display: -webkit-flex;
     display: flex;
     align-items: flex-start;
@@ -204,35 +204,35 @@ div.nboutput {
     width: 100%;
 }
 @media (max-width: 540px) {
-    div.nbinput,
-    div.nboutput {
+    div.nbinput.container,
+    div.nboutput.container {
         flex-direction: column;
     }
 }
 
 /* input container */
-div.nbinput {
+div.nbinput.container {
     padding-top: 5px;
 }
 
 /* last container */
-div.nblast {
+div.nblast.container {
     padding-bottom: 5px;
 }
 
 /* input prompt */
-div.nbinput div.prompt pre {
+div.nbinput.container div.prompt pre {
     color: #307FC1;
 }
 
 /* output prompt */
-div.nboutput div.prompt pre {
+div.nboutput.container div.prompt pre {
     color: #BF5B3D;
 }
 
 /* all prompts */
-div.nbinput div.prompt,
-div.nboutput div.prompt {
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
     min-width: 5ex;
     padding-top: 0.4em;
     padding-right: 0.4em;
@@ -240,56 +240,56 @@ div.nboutput div.prompt {
     flex: 0;
 }
 @media (max-width: 540px) {
-    div.nbinput div.prompt,
-    div.nboutput div.prompt {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
         text-align: left;
         padding: 0.4em;
     }
-    div.nboutput div.prompt.empty {
+    div.nboutput.container div.prompt.empty {
         padding: 0;
     }
 }
 
 /* disable scrollbars on prompts */
-div.nbinput div.prompt pre,
-div.nboutput div.prompt pre {
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
     overflow: hidden;
 }
 
 /* input/output area */
-div.nbinput div.input_area,
-div.nboutput div.output_area {
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
     padding: 0.4em;
     -webkit-flex: 1;
     flex: 1;
     overflow: auto;
 }
 @media (max-width: 540px) {
-    div.nbinput div.input_area,
-    div.nboutput div.output_area {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
         width: 100%;
     }
 }
 
 /* input area */
-div.nbinput div.input_area {
+div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
     background: #f5f5f5;
 }
 
 /* override MathJax center alignment in output cells */
-div.nboutput div[class*=MathJax] {
+div.nboutput.container div[class*=MathJax] {
     text-align: left !important;
 }
 
 /* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput div.math p {
+div.nboutput.container div.math p {
     text-align: left;
 }
 
 /* standard error */
-div.nboutput div.output_area.stderr {
+div.nboutput.container div.output_area.stderr {
     background: #fdd;
 }
 
@@ -370,13 +370,13 @@ div.rendered_html tbody tr:hover {
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 
@@ -448,16 +448,16 @@ Wall time: 576 µs
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([[    0,   500,  1000],
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[    0,   500,  1000],
        [    1,   501,  1001],
        [    2,   502,  1002],
        ...,
        [ 9997, 10497, 10997],
        [ 9998, 10498, 10998],
        [ 9999, 10499, 10999]])
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -472,16 +472,16 @@ Wall time: 576 µs
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([[    0,   500,  1000],
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[    0,   500,  1000],
        [    1,   501,  1001],
        [    2,   502,  1002],
        ...,
        [ 9997, 10497, 10997],
        [ 9998, 10498, 10998],
        [ 9999, 10499, 10999]])
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Converting-a-cuDF-Series-to-a-CuPy-Array">
@@ -518,10 +518,10 @@ Wall time: 569 µs
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>cupy.core.core.ndarray
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+cupy.core.core.ndarray
+</pre></div></div>
 </div>
 <p>From here, we can proceed with normal CuPy workflows, such as reshaping the array, getting the diagonal, or calculating the norm.</p>
 <div class="nbinput docutils container">
@@ -538,16 +538,16 @@ Wall time: 569 µs
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([[   0,    1,    2, ...,  197,  198,  199],
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[   0,    1,    2, ...,  197,  198,  199],
        [ 200,  201,  202, ...,  397,  398,  399],
        [ 400,  401,  402, ...,  597,  598,  599],
        ...,
        [9400, 9401, 9402, ..., 9597, 9598, 9599],
        [9600, 9601, 9602, ..., 9797, 9798, 9799],
        [9800, 9801, 9802, ..., 9997, 9998, 9999]])
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
@@ -562,14 +562,14 @@ Wall time: 569 µs
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([   0,  201,  402,  603,  804, 1005, 1206, 1407, 1608, 1809, 2010,
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([   0,  201,  402,  603,  804, 1005, 1206, 1407, 1608, 1809, 2010,
        2211, 2412, 2613, 2814, 3015, 3216, 3417, 3618, 3819, 4020, 4221,
        4422, 4623, 4824, 5025, 5226, 5427, 5628, 5829, 6030, 6231, 6432,
        6633, 6834, 7035, 7236, 7437, 7638, 7839, 8040, 8241, 8442, 8643,
        8844, 9045, 9246, 9447, 9648, 9849])
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -584,10 +584,10 @@ Wall time: 569 µs
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array(577306.967739)
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array(577306.967739)
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Converting-a-CuPy-Array-to-a-cuDF-DataFrame">
@@ -607,10 +607,10 @@ Wall time: 569 µs
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>False
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
 </div>
 <p>In this case, we’ll need to convert it before going to a cuDF DataFrame. In the next two cells, we create the DataFrame by leveraging dlpack and the CUDA array interface, respectively.</p>
 <div class="nbinput docutils container">
@@ -1005,15 +1005,15 @@ Wall time: 569 µs
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>0      0
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0      0
 1    201
 2    402
 3    603
 4    804
 dtype: int64
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 </div>
 <div class="section" id="Interweaving-CuDF-and-CuPy-for-Smooth-PyData-Workflows">
@@ -1217,8 +1217,9 @@ depending on your data’s shape, and writing a UDF can be time intensive.</p>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>array([  19900,   59900,   99900,  139900,  179900,  219900,  259900,
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([  19900,   59900,   99900,  139900,  179900,  219900,  259900,
         299900,  339900,  379900,  419900,  459900,  499900,  539900,
         579900,  619900,  659900,  699900,  739900,  779900,  819900,
         859900,  899900,  939900,  979900, 1019900, 1059900, 1099900,
@@ -1226,8 +1227,7 @@ depending on your data’s shape, and writing a UDF can be time intensive.</p>
        1419900, 1459900, 1499900, 1539900, 1579900, 1619900, 1659900,
        1699900, 1739900, 1779900, 1819900, 1859900, 1899900, 1939900,
        1979900])
-</pre></div>
-</div>
+</pre></div></div>
 </div>
 <p>With just that single line, we’re able to seamlessly move between data structures in this ecosystem, giving us enormous flexibility without sacrificing speed.</p>
 </div>
@@ -1458,10 +1458,10 @@ depending on your data’s shape, and writing a UDF can be time intensive.</p>
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&lt;cupyx.scipy.sparse.csc.csc_matrix at 0x7f32f0abada0&gt;
-</pre></div>
-</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;cupyx.scipy.sparse.csc.csc_matrix at 0x7f32f0abada0&gt;
+</pre></div></div>
 </div>
 <p>From here, we could continue our workflow with a CuPy sparse matrix.</p>
 <p>For a full list of the functionality built into these libraries, we encourage you to check out the API docs for <a class="reference external" href="https://docs.rapids.ai/api/cudf/nightly/">cuDF</a> and <a class="reference external" href="https://docs-cupy.chainer.org/en/stable/index.html">CuPy</a>.</p>

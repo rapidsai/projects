@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Multi-GPU with Dask-cuDF &mdash; cudf 0.11.0a+2130.g53c05f021 documentation</title>
+  <title>Multi-GPU with Dask-cuDF &mdash; cudf 0.11.0a+3121.ga49a20aa3 documentation</title>
   
 
   
@@ -169,13 +169,13 @@
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
-.nbinput.nblast,
-.nboutput.nblast {
+.nbinput.nblast.container,
+.nboutput.nblast.container {
     margin-bottom: 19px;  /* padding has already 5px */
 }
 
 /* ... except between code cells! */
-.nblast + .nbinput {
+.nblast.container + .nbinput.container {
     margin-top: -19px;
 }
 

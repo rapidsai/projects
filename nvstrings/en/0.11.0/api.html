@@ -3310,6 +3310,31 @@ of int32 values for this instance.</p>
 <div class="section" id="module-nvtext">
 <span id="nvtext"></span><h2>nvtext<a class="headerlink" href="#module-nvtext" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
+<dt id="nvtext.character_tokenize">
+<code class="sig-prename descclassname">nvtext.</code><code class="sig-name descname">character_tokenize</code><span class="sig-paren">(</span><em class="sig-param">strs</em><span class="sig-paren">)</span><a class="headerlink" href="#nvtext.character_tokenize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Each string is split into individual characters.
+The nvstrings instance returned contains each character as an
+individual string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>strs</strong><span class="classifier">nvstrings</span></dt><dd><p>The strings for this operation</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello world&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                         <span class="s2">&quot;goodbye&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">nvtext</span><span class="o">.</span><span class="n">character_tokenize</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="go">[&quot;h&quot;,&quot;e&quot;,&quot;l&quot;,&quot;l&quot;,&quot;o&quot;,&quot; &quot;,&quot;w&quot;,&quot;o&quot;,&quot;r&quot;,&quot;l&quot;,&quot;d&quot;,&quot;g&quot;,&quot;o&quot;,&quot;o&quot;,&quot;d&quot;,&quot;b&quot;,&quot;y&quot;,&quot;e&quot;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="nvtext.contains_strings">
 <code class="sig-prename descclassname">nvtext.</code><code class="sig-name descname">contains_strings</code><span class="sig-paren">(</span><em class="sig-param">strs</em>, <em class="sig-param">tgts</em>, <em class="sig-param">devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvtext.contains_strings" title="Permalink to this definition">¶</a></dt>
 <dd><p>The tgts strings are searched for within each strs.
