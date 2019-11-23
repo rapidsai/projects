@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['name_2002',['name',['../classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831a2f5d336f9e795adab8ed537aa190ff23',1,'NVStrings']]],
-  ['nearest_2003',['NEAREST',['../namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8a04fd403d483f6415e0b006bc67bd8fac',1,'cudf']]],
-  ['never_2004',['NEVER',['../namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6a615857bddd061281abf998989fb2ba8f',1,'cudf']]],
-  ['none_2005',['none',['../classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831a0b5479f46e32a0b52419271376591269',1,'NVStrings::none()'],['../classNVText.html#af974314b036ba255dd5f71b108d1ffdeabeae3c6c6f53e34ef4987d73b1d04daa',1,'NVText::none()']]],
-  ['not_2006',['NOT',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba5e654d9830c09fc254d4f9f19fbdfe6e',1,'cudf']]],
-  ['ns_2007',['ns',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a4d185b3b79bf8f4cf83d5eb349427294',1,'NVStrings']]],
-  ['num_5ftype_5fids_2008',['NUM_TYPE_IDS',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba0f6b1e874ab643a0f237082cb35acad5',1,'cudf']]]
+  ['midpoint_2174',['MIDPOINT',['../namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8a7b5062e7868e9d05c598ef7ad6619014',1,'cudf::MIDPOINT()'],['../namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151aafa8fd4b90a3f8123b4bd30446518a7e',1,'cudf::experimental::MIDPOINT()']]],
+  ['minimal_2175',['MINIMAL',['../namespacecudf_1_1experimental_1_1io.html#ac67f859abc53aa9cac54d0a769da6fa1a02f2534ad4997e23ec250e1015eeb929',1,'cudf::experimental::io']]],
+  ['minutes_2176',['minutes',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a4262801072819bc89e488b9a111135f9',1,'NVStrings']]],
+  ['months_2177',['months',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049aeed9e40cde5808e62979d57dbc381f51',1,'NVStrings']]],
+  ['ms_2178',['ms',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a03457e192cd793d83b4553f1a3822e71',1,'NVStrings']]]
 ];

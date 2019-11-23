@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['empty_1976',['EMPTY',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59bab2c14e467fcbf9a215ccc679f35bb027',1,'cudf']]],
-  ['enabled_1977',['enabled',['../namespacecudf_1_1io_1_1csv_1_1column__parse.html#a35c8622fd61325c06ee43ade80c576b3acf681afc0692328d3abc5894206dacce',1,'cudf::io::csv::column_parse']]],
-  ['exp_1978',['EXP',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba6e272b8c75625066b2c8994cec6c8f73',1,'cudf']]]
+  ['empty_2146',['EMPTY',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59bab2c14e467fcbf9a215ccc679f35bb027',1,'cudf']]],
+  ['enabled_2147',['enabled',['../namespacecudf_1_1io_1_1csv_1_1column__parse.html#a19fbcb16ae3b789ee4c842c828f44b2ba961c6729d59432754c067f44069fb892',1,'cudf::io::csv::column_parse']]],
+  ['equivalent_2148',['EQUIVALENT',['../namespacecudf_1_1experimental.html#a57a49aef820830d7830862408645b8c7acd1908d025919ff975513ff143c3e34c',1,'cudf::experimental']]],
+  ['exp_2149',['EXP',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba6e272b8c75625066b2c8994cec6c8f73',1,'cudf']]]
 ];

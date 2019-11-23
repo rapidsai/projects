@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['inferred_1984',['inferred',['../namespacecudf_1_1io_1_1csv_1_1column__parse.html#a35c8622fd61325c06ee43ade80c576b3ad7a062b2d836eadaf03e0f58496e933d',1,'cudf::io::csv::column_parse']]],
-  ['int16_1985',['INT16',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba7dafa1ea3755308998ff8c972342c099',1,'cudf']]],
-  ['int32_1986',['INT32',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae',1,'cudf']]],
-  ['int64_1987',['INT64',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59bab9c234f82eec5cb83e3ea67aac9c1166',1,'cudf']]],
-  ['int8_1988',['INT8',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba71f4b0467efae61c1e3ac5910178940f',1,'cudf']]]
+  ['higher_2156',['HIGHER',['../namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8ae5385a7a8eb742f08471ba73ea2d77ba',1,'cudf::HIGHER()'],['../namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151a5bc0a7ce2c77ccd49169277e9289e5d1',1,'cudf::experimental::HIGHER()']]],
+  ['host_5fbuffer_2157',['HOST_BUFFER',['../namespacecudf_1_1experimental_1_1io.html#a3f77dec4b25aa464af5e0c7fef427b5fa0a4c208cf95063151fc52d4e293b7071',1,'cudf::experimental::io']]],
+  ['hours_2158',['hours',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a046925b9e4b8b8bb927942bc4648f981',1,'NVStrings']]]
 ];

@@ -85,6 +85,14 @@ template&lt;typename T , typename std::enable_if_t&lt; cudf::is_timestamp&lt; T 
 template&lt;typename T , typename std::enable_if_t&lt;!cudf::is_timestamp&lt; T &gt;()&gt; *  = nullptr&gt; </td></tr>
 <tr class="memitem:ad8b413370bbcf71aca5dc919425d14cf"><td class="memTemplItemLeft" align="right" valign="top">CUDA_HOST_DEVICE_CALLABLE T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (const T &amp;lhs, const T &amp;rhs)</td></tr>
 <tr class="separator:ad8b413370bbcf71aca5dc919425d14cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b413370bbcf71aca5dc919425d14cf"><td class="memTemplParams" colspan="2"><a id="ad8b413370bbcf71aca5dc919425d14cf"></a>
+template&lt;typename T , typename std::enable_if_t&lt; cudf::is_timestamp&lt; T &gt;()&gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ad8b413370bbcf71aca5dc919425d14cf"><td class="memTemplItemLeft" align="right" valign="top">CUDA_HOST_DEVICE_CALLABLE T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (const T &amp;lhs, const T &amp;rhs)</td></tr>
+<tr class="separator:ad8b413370bbcf71aca5dc919425d14cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b413370bbcf71aca5dc919425d14cf"><td class="memTemplParams" colspan="2"><a id="ad8b413370bbcf71aca5dc919425d14cf"></a>
+template&lt;typename T , typename std::enable_if_t&lt;!cudf::is_timestamp&lt; T &gt;()&gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ad8b413370bbcf71aca5dc919425d14cf"><td class="memTemplItemLeft" align="right" valign="top">CUDA_HOST_DEVICE_CALLABLE T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (const T &amp;lhs, const T &amp;rhs)</td></tr>
+<tr class="separator:ad8b413370bbcf71aca5dc919425d14cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -92,9 +100,13 @@ Static Public Member Functions</h2></td></tr>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a46247967da4adf8fae2625865d48a05b"><td class="memTemplItemLeft" align="right" valign="top">static constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>identity</b> ()</td></tr>
 <tr class="separator:a46247967da4adf8fae2625865d48a05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46247967da4adf8fae2625865d48a05b"><td class="memTemplParams" colspan="2"><a id="a46247967da4adf8fae2625865d48a05b"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a46247967da4adf8fae2625865d48a05b"><td class="memTemplItemLeft" align="right" valign="top">static constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>identity</b> ()</td></tr>
+<tr class="separator:a46247967da4adf8fae2625865d48a05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="device__operators_8cuh.html">device_operators.cuh</a></li>
+<li><a class="el" href="src_2utilities_2legacy_2device__operators_8cuh.html">src/utilities/legacy/device_operators.cuh</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

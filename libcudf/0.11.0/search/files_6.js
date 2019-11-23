@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['parsing_5futils_2ecu_1403',['parsing_utils.cu',['../parsing__utils_8cu.html',1,'']]],
-  ['parsing_5futils_2ecuh_1404',['parsing_utils.cuh',['../parsing__utils_8cuh.html',1,'']]]
+  ['reader_5fimpl_2ecu_1522',['reader_impl.cu',['../orc_2reader__impl_8cu.html',1,'']]],
+  ['reader_5fimpl_2ehpp_1523',['reader_impl.hpp',['../orc_2reader__impl_8hpp.html',1,'']]]
 ];

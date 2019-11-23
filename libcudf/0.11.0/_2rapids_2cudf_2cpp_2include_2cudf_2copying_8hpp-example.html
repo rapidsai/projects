@@ -104,7 +104,7 @@ $(function() {
 <div class="line"><span class="preprocessor">#pragma once</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;cudf.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="types_8hpp.html">types.hpp</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;types.hpp&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;cudf/cudf.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="types_8hpp.html">cudf/types.hpp</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;cudf/column/column_view.hpp&gt;</span></div>
@@ -115,15 +115,15 @@ $(function() {
 <div class="line"><span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
 <div class="line"><span class="keyword">namespace </span>experimental {</div>
 <div class="line"> </div>
-<div class="line">std::unique_ptr&lt;table&gt; <a name="a0"></a><a class="code" href="namespacecudf.html#a3571c0c6314b622d87a18281ad08e212">gather</a>(table_view <span class="keyword">const</span>&amp; source_table, column_view <span class="keyword">const</span>&amp; gather_map,</div>
+<div class="line">std::unique_ptr&lt;table&gt; <a name="a0"></a><a class="code" href="namespacecudf_1_1experimental.html#a1edcfa60adcae62ead9197feeaf87ba0">gather</a>(table_view <span class="keyword">const</span>&amp; source_table, column_view <span class="keyword">const</span>&amp; gather_map,</div>
 <div class="line">                  <span class="keywordtype">bool</span> check_bounds = <span class="keyword">false</span>,</div>
 <div class="line">                  rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
 <div class="line"> </div>
 <div class="line">                   </div>
-<div class="line"><span class="keyword">enum class</span>  <a name="a1"></a><a class="code" href="namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6">mask_allocation_policy</a> {</div>
-<div class="line">    <a class="code" href="namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6a615857bddd061281abf998989fb2ba8f">NEVER</a>, </div>
-<div class="line">    <a class="code" href="namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6aae077198d21c34fd782bf2616a040c56">RETAIN</a>, </div>
-<div class="line">    <a class="code" href="namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6a995bafc1b2e35df60002e61e2ec0c6df">ALWAYS</a> </div>
+<div class="line"><span class="keyword">enum class</span>  <a name="a1"></a><a class="code" href="namespacecudf_1_1experimental.html#ad483c874f6010437111325063b87daef">mask_allocation_policy</a> {</div>
+<div class="line">    <a name="a2"></a><a class="code" href="namespacecudf_1_1experimental.html#ad483c874f6010437111325063b87daefa443475558f0168dff92ecde26b98ae5a">NEVER</a>, </div>
+<div class="line">    <a name="a3"></a><a class="code" href="namespacecudf_1_1experimental.html#ad483c874f6010437111325063b87daefa47e9136fa770199f6a8a9727b6173eb4">RETAIN</a>, </div>
+<div class="line">    <a name="a4"></a><a class="code" href="namespacecudf_1_1experimental.html#ad483c874f6010437111325063b87daefaf3fc827ade4b968e50406496907ef962">ALWAYS</a> </div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -133,42 +133,55 @@ $(function() {
 <div class="line"><span class="comment"> * @param[in] input Immutable view of input column to emulate</span></div>
 <div class="line"><span class="comment"> * @return std::unique_ptr&lt;column&gt; An empty column of same type as `input`</span></div>
 <div class="line"><span class="comment"> */</span></div>
-<div class="line">std::unique_ptr&lt;column&gt; empty_like(column_view input);</div>
+<div class="line">std::unique_ptr&lt;column&gt; empty_like(column_view <span class="keyword">const</span>&amp; input);</div>
 <div class="line"> </div>
-<div class="line">std::unique_ptr&lt;column&gt; <a name="a2"></a><a class="code" href="namespacecudf.html#ac72ee052f776990ab9240e757d8493ad">allocate_like</a>(column_view input,</div>
-<div class="line">                                      <a class="code" href="namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6">mask_allocation_policy</a> mask_alloc = mask_allocation_policy::RETAIN,</div>
+<div class="line">std::unique_ptr&lt;column&gt; <a name="a5"></a><a class="code" href="namespacecudf_1_1experimental.html#a20ce6302e4458066d832420207ea7a02">allocate_like</a>(column_view <span class="keyword">const</span>&amp; input,</div>
+<div class="line">                                      <a class="code" href="namespacecudf_1_1experimental.html#ad483c874f6010437111325063b87daef">mask_allocation_policy</a> mask_alloc = <a class="code" href="namespacecudf_1_1experimental.html#ad483c874f6010437111325063b87daefa47e9136fa770199f6a8a9727b6173eb4">mask_allocation_policy::RETAIN</a>,</div>
 <div class="line">                                      rmm::mr::device_memory_resource *mr =</div>
 <div class="line">                                          rmm::mr::get_default_resource());</div>
 <div class="line"> </div>
-<div class="line">std::unique_ptr&lt;column&gt; <a class="code" href="namespacecudf.html#ac72ee052f776990ab9240e757d8493ad">allocate_like</a>(column_view input, size_type size,</div>
-<div class="line">                                      <a class="code" href="namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6">mask_allocation_policy</a> mask_alloc = mask_allocation_policy::RETAIN,</div>
+<div class="line">std::unique_ptr&lt;column&gt; <a class="code" href="namespacecudf_1_1experimental.html#a20ce6302e4458066d832420207ea7a02">allocate_like</a>(column_view <span class="keyword">const</span>&amp; input, size_type size,</div>
+<div class="line">                                      <a class="code" href="namespacecudf_1_1experimental.html#ad483c874f6010437111325063b87daef">mask_allocation_policy</a> mask_alloc = <a class="code" href="namespacecudf_1_1experimental.html#ad483c874f6010437111325063b87daefa47e9136fa770199f6a8a9727b6173eb4">mask_allocation_policy::RETAIN</a>,</div>
 <div class="line">                                      rmm::mr::device_memory_resource *mr =</div>
 <div class="line">                                          rmm::mr::get_default_resource());</div>
 <div class="line"> </div>
-<div class="line">std::unique_ptr&lt;table&gt; empty_like(table_view input_table);</div>
+<div class="line">std::unique_ptr&lt;table&gt; empty_like(table_view <span class="keyword">const</span>&amp; input_table);</div>
 <div class="line"> </div>
-<div class="line">std::vector&lt;column_view&gt; <a name="a3"></a><a class="code" href="namespacecudf.html#a4c2052fccb1d1278d538c598cda51e0b">slice</a>(column_view <span class="keyword">const</span>&amp; input,</div>
+<div class="line"><span class="keywordtype">void</span> <a name="a6"></a><a class="code" href="namespacecudf_1_1experimental.html#ac649c525d788647c5d6bf3b6b4cedb87">copy_range</a>(column_view <span class="keyword">const</span>&amp; source,</div>
+<div class="line">                mutable_column_view&amp; target,</div>
+<div class="line">                size_type source_begin, size_type source_end,</div>
+<div class="line">                size_type target_begin);</div>
+<div class="line"> </div>
+<div class="line">std::unique_ptr&lt;column&gt; <a class="code" href="namespacecudf_1_1experimental.html#ac649c525d788647c5d6bf3b6b4cedb87">copy_range</a>(column_view <span class="keyword">const</span>&amp; source,</div>
+<div class="line">                                   column_view <span class="keyword">const</span>&amp; target,</div>
+<div class="line">                                   size_type source_begin, size_type source_end,</div>
+<div class="line">                                   size_type target_begin,</div>
+<div class="line">                                   rmm::mr::device_memory_resource* mr =</div>
+<div class="line">                                       rmm::mr::get_default_resource());</div>
+<div class="line"> </div>
+<div class="line">std::vector&lt;column_view&gt; slice(column_view <span class="keyword">const</span>&amp; input,</div>
 <div class="line">                               std::vector&lt;size_type&gt; <span class="keyword">const</span>&amp; indices);</div>
 <div class="line"> </div>
-<div class="line">std::vector&lt;column_view&gt; <a name="a4"></a><a class="code" href="namespacecudf.html#a7d6b5215c4e4be3ee20f107451d81411">split</a>(column_view <span class="keyword">const</span>&amp; input,</div>
+<div class="line">std::vector&lt;column_view&gt; <a name="a7"></a><a class="code" href="namespacecudf_1_1experimental.html#aa08f61e372c72069f45fcd2bcf9936e8">split</a>(column_view <span class="keyword">const</span>&amp; input,</div>
 <div class="line">                               std::vector&lt;size_type&gt; <span class="keyword">const</span>&amp; splits);</div>
 <div class="line"> </div>
-<div class="line">std::unique_ptr&lt;column&gt; copy_if_else(column_view <span class="keyword">const</span>&amp; lhs, column_view <span class="keyword">const</span>&amp; rhs, column_view <span class="keyword">const</span>&amp; boolean_mask,</div>
+<div class="line">std::unique_ptr&lt;column&gt; <a name="a8"></a><a class="code" href="namespacecudf_1_1experimental.html#ad11643d0378285cf1d7b17826fbb35bb">copy_if_else</a>(column_view <span class="keyword">const</span>&amp; lhs, column_view <span class="keyword">const</span>&amp; rhs, column_view <span class="keyword">const</span>&amp; boolean_mask,</div>
 <div class="line">                                    rmm::mr::device_memory_resource *mr = rmm::mr::get_default_resource());</div>
 <div class="line">                                 </div>
 <div class="line">}  <span class="comment">// namespace experimental</span></div>
 <div class="line">}  <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --> </div><!-- contents -->
-<div class="ttc" id="anamespacecudf_html_a3571c0c6314b622d87a18281ad08e212"><div class="ttname"><a href="namespacecudf.html#a3571c0c6314b622d87a18281ad08e212">cudf::gather</a></div><div class="ttdeci">table gather(table const *source_table, gdf_column const &amp;gather_map, bool check_bounds)</div><div class="ttdoc">Gathers the the specified rows (including null values) of a set of columns, returning the result as a...</div><div class="ttdef"><b>Definition:</b> legacy/gather.cu:145</div></div>
-<div class="ttc" id="anamespacecudf_html_ac72ee052f776990ab9240e757d8493ad"><div class="ttname"><a href="namespacecudf.html#ac72ee052f776990ab9240e757d8493ad">cudf::allocate_like</a></div><div class="ttdeci">gdf_column allocate_like(gdf_column const &amp;input, mask_allocation_policy mask_alloc, cudaStream_t stream)</div><div class="ttdoc">Allocates a new column of the same size and type as the input.</div><div class="ttdef"><b>Definition:</b> legacy/copy.cpp:58</div></div>
-<div class="ttc" id="anamespacecudf_html_a267e03474dcfd85242d2fdc6e5846ec6"><div class="ttname"><a href="namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6">cudf::mask_allocation_policy</a></div><div class="ttdeci">mask_allocation_policy</div><div class="ttdef"><b>Definition:</b> legacy/copying.hpp:31</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_ad483c874f6010437111325063b87daefa47e9136fa770199f6a8a9727b6173eb4"><div class="ttname"><a href="namespacecudf_1_1experimental.html#ad483c874f6010437111325063b87daefa47e9136fa770199f6a8a9727b6173eb4">cudf::experimental::mask_allocation_policy::RETAIN</a></div><div class="ttdoc">Allocate a null mask if the input contains one.</div></div>
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div><div class="ttdoc">Type declarations for libcudf.</div></div>
-<div class="ttc" id="anamespacecudf_html_a267e03474dcfd85242d2fdc6e5846ec6a615857bddd061281abf998989fb2ba8f"><div class="ttname"><a href="namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6a615857bddd061281abf998989fb2ba8f">cudf::NEVER</a></div><div class="ttdoc">Do not allocate a null mask, regardless of input.</div><div class="ttdef"><b>Definition:</b> legacy/copying.hpp:32</div></div>
-<div class="ttc" id="anamespacecudf_html_a267e03474dcfd85242d2fdc6e5846ec6a995bafc1b2e35df60002e61e2ec0c6df"><div class="ttname"><a href="namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6a995bafc1b2e35df60002e61e2ec0c6df">cudf::ALWAYS</a></div><div class="ttdoc">Allocate a null mask, regardless of input.</div><div class="ttdef"><b>Definition:</b> legacy/copying.hpp:34</div></div>
-<div class="ttc" id="anamespacecudf_html_a4c2052fccb1d1278d538c598cda51e0b"><div class="ttname"><a href="namespacecudf.html#a4c2052fccb1d1278d538c598cda51e0b">cudf::slice</a></div><div class="ttdeci">std::vector&lt; gdf_column * &gt; slice(gdf_column const &amp;input_column, cudf::size_type const *indices, cudf::size_type num_indices)</div><div class="ttdoc">Slices a column (including null values) into a set of columns according to a set of indices.</div><div class="ttdef"><b>Definition:</b> slice.cu:289</div></div>
-<div class="ttc" id="anamespacecudf_html_a267e03474dcfd85242d2fdc6e5846ec6aae077198d21c34fd782bf2616a040c56"><div class="ttname"><a href="namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6aae077198d21c34fd782bf2616a040c56">cudf::RETAIN</a></div><div class="ttdoc">Allocate a null mask if the input contains one.</div><div class="ttdef"><b>Definition:</b> legacy/copying.hpp:33</div></div>
-<div class="ttc" id="anamespacecudf_html_a7d6b5215c4e4be3ee20f107451d81411"><div class="ttname"><a href="namespacecudf.html#a7d6b5215c4e4be3ee20f107451d81411">cudf::split</a></div><div class="ttdeci">std::vector&lt; gdf_column * &gt; split(gdf_column const &amp;input_column, cudf::size_type const *splits, cudf::size_type num_splits)</div><div class="ttdoc">Splits a column (including null values) into a set of columns according to a set of indices.</div><div class="ttdef"><b>Definition:</b> split.cu:41</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_ad11643d0378285cf1d7b17826fbb35bb"><div class="ttname"><a href="namespacecudf_1_1experimental.html#ad11643d0378285cf1d7b17826fbb35bb">cudf::experimental::copy_if_else</a></div><div class="ttdeci">std::unique_ptr&lt; column &gt; copy_if_else(column_view const &amp;lhs, column_view const &amp;rhs, column_view const &amp;boolean_mask, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Returns a new column, where each element is selected from either lhs or rhs based on the value of the...</div><div class="ttdef"><b>Definition:</b> copy.cu:44</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_ad483c874f6010437111325063b87daefa443475558f0168dff92ecde26b98ae5a"><div class="ttname"><a href="namespacecudf_1_1experimental.html#ad483c874f6010437111325063b87daefa443475558f0168dff92ecde26b98ae5a">cudf::experimental::mask_allocation_policy::NEVER</a></div><div class="ttdoc">Do not allocate a null mask, regardless of input.</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_ad483c874f6010437111325063b87daef"><div class="ttname"><a href="namespacecudf_1_1experimental.html#ad483c874f6010437111325063b87daef">cudf::experimental::mask_allocation_policy</a></div><div class="ttdeci">mask_allocation_policy</div><div class="ttdef"><b>Definition:</b> copying.hpp:62</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_ac649c525d788647c5d6bf3b6b4cedb87"><div class="ttname"><a href="namespacecudf_1_1experimental.html#ac649c525d788647c5d6bf3b6b4cedb87">cudf::experimental::copy_range</a></div><div class="ttdeci">void copy_range(column_view const &amp;source, mutable_column_view &amp;target, size_type source_begin, size_type source_end, size_type target_begin)</div><div class="ttdoc">Copies a range of elements in-place from one column to another.</div><div class="ttdef"><b>Definition:</b> copy_range.cu:147</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:22</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_aa08f61e372c72069f45fcd2bcf9936e8"><div class="ttname"><a href="namespacecudf_1_1experimental.html#aa08f61e372c72069f45fcd2bcf9936e8">cudf::experimental::split</a></div><div class="ttdeci">std::vector&lt; cudf::column_view &gt; split(cudf::column_view const &amp;input, std::vector&lt; size_type &gt; const &amp;splits)</div><div class="ttdoc">Splits a column_view into a set of column_views according to a set of indices derived from expected s...</div><div class="ttdef"><b>Definition:</b> split.cpp:26</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_a20ce6302e4458066d832420207ea7a02"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a20ce6302e4458066d832420207ea7a02">cudf::experimental::allocate_like</a></div><div class="ttdeci">std::unique_ptr&lt; column &gt; allocate_like(column_view const &amp;input, mask_allocation_policy mask_alloc, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Creates an uninitialized new column of the same size and type as the input. Supports only fixed-width...</div><div class="ttdef"><b>Definition:</b> copy.cpp:104</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_ad483c874f6010437111325063b87daefaf3fc827ade4b968e50406496907ef962"><div class="ttname"><a href="namespacecudf_1_1experimental.html#ad483c874f6010437111325063b87daefaf3fc827ade4b968e50406496907ef962">cudf::experimental::mask_allocation_policy::ALWAYS</a></div><div class="ttdoc">Allocate a null mask, regardless of input.</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_a1edcfa60adcae62ead9197feeaf87ba0"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a1edcfa60adcae62ead9197feeaf87ba0">cudf::experimental::gather</a></div><div class="ttdeci">std::unique_ptr&lt; table &gt; gather(table_view const &amp;source_table, column_view const &amp;gather_map, bool check_bounds, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Gathers the specified rows (including null values) of a set of columns.</div><div class="ttdef"><b>Definition:</b> gather.cu:112</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

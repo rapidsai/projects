@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['left_1992',['left',['../classNVStrings.html#ae632539abce4f345d9c6995cc407281ea27a6f390cacbee032b9099765c3277dd',1,'NVStrings']]],
-  ['length_1993',['length',['../classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831a744462e227edbd3642f8baf46d35b4ca',1,'NVStrings']]],
-  ['levenshtein_1994',['levenshtein',['../classNVText.html#a44215a8d5d167d45e5e6ccf7f25927b3af07b2315327db14019b5e4282109ae92',1,'NVText']]],
-  ['linear_1995',['LINEAR',['../namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8ab424744b6ce548ac355f5830c0a8c5e1',1,'cudf']]],
-  ['log_1996',['LOG',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba1509f8449abb15062ad85e15fb3861d7',1,'cudf']]],
-  ['lower_1997',['LOWER',['../namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8a00b75d21f696dc9d435e8b4b3c3bc58d',1,'cudf']]]
+  ['keep_5ffirst_2164',['KEEP_FIRST',['../namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa86ea4bfd2b3121412b0a63a3697926ec',1,'cudf::KEEP_FIRST()'],['../namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cda5968b12bf2e72e702a998c7fa6c83b1e',1,'cudf::experimental::KEEP_FIRST()']]],
+  ['keep_5flast_2165',['KEEP_LAST',['../namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa1d1398f646d74e801389737f07d89d1c',1,'cudf::KEEP_LAST()'],['../namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cda4583fc151efe5098dd96eeec8cf74699',1,'cudf::experimental::KEEP_LAST()']]],
+  ['keep_5fnone_2166',['KEEP_NONE',['../namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3aa6fb3154b77231184b596b4add407aa2a',1,'cudf::KEEP_NONE()'],['../namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cda40c4abe57c2fda3e580eee916b9e0558',1,'cudf::experimental::KEEP_NONE()']]]
 ];

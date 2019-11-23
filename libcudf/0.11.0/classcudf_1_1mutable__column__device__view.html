@@ -236,7 +236,7 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A mutable, non-owning view of device data as a column of elements. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md198"></a>
+<h2><a class="anchor" id="autotoc_md202"></a>
 that is trivially copyable and usable in CUDA device code.</h2>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a51edace56545b6c243b647ad70890974"></a>
@@ -279,7 +279,7 @@ that is trivially copyable and usable in CUDA device code.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md225"></a>
+<h2><a class="anchor" id="autotoc_md229"></a>
 @param d_ptr Device memory pointer on which to base any child pointers.</h2>
 
 </div>
@@ -316,7 +316,7 @@ that is trivially copyable and usable in CUDA device code.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md231"></a>
+<h2><a class="anchor" id="autotoc_md235"></a>
 @return column_view The requested child &lt;tt&gt;column_view&lt;/tt&gt;</h2>
 
 </div>
@@ -368,7 +368,7 @@ that is trivially copyable and usable in CUDA device code.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <code>unique_ptr</code> to a <code><a class="el" href="classcudf_1_1mutable__column__device__view.html" title="A mutable, non-owning view of device data as a column of elements.">mutable_column_device_view</a></code> that makes the </dd></dl>
-<h2><a class="anchor" id="autotoc_md226"></a>
+<h2><a class="anchor" id="autotoc_md230"></a>
 data from &lt;tt&gt;source_view&lt;/tt&gt; available in device memory.</h2>
 
 </div>
@@ -407,7 +407,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md228"></a>
+<h2><a class="anchor" id="autotoc_md232"></a>
 @return T* Typed pointer to underlying data, including the offset</h2>
 
 </div>
@@ -446,7 +446,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md229"></a>
+<h2><a class="anchor" id="autotoc_md233"></a>
 @param element_index Position of the desired element</h2>
 
 </div>
@@ -477,7 +477,7 @@ template&lt;typename T &gt; </div>
 
 <p>Return the size in bytes of the amount of memory needed to hold a device view of the specified column and it's children. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md235"></a>
+<h2><a class="anchor" id="autotoc_md239"></a>
 @param source_view The &lt;tt&gt;column_view&lt;/tt&gt; to use for this calculation.</h2>
 
 </div>
@@ -517,7 +517,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md227"></a>
+<h2><a class="anchor" id="autotoc_md231"></a>
 @return T* Typed pointer to underlying data</h2>
 
 </div>
@@ -547,7 +547,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
 
 <p>Returns raw pointer to the underlying bitmask allocation. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>This function does <em>not</em> account for the <code><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#aa8f046548c2db522f00cfe801b59a120" title="Returns the index of the first element relative to the base memory.">offset()</a></code>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md230"></a>
+<h2><a class="anchor" id="autotoc_md234"></a>
 @note If &lt;tt&gt;null_count() == 0&lt;/tt&gt;, this may return &lt;tt&gt;nullptr&lt;/tt&gt;.</h2>
 
 </div>
@@ -594,7 +594,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md234"></a>
+<h2><a class="anchor" id="autotoc_md238"></a>
 @param new_element The new bitmask element</h2>
 
 </div>
@@ -627,7 +627,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>This operation requires a global atomic operation. Therefore, it is not reccomended to use this function in performance critical regions. When possible, it is more efficient to compute and update an entire word at once using <code>set_mask_word</code>.</dd>
 <dd>
 It is undefined behavior to call this function if <code><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#a7044712e12d75fc976e93babe2747558" title="Indicates whether the column can contain null elements, i.e., if it has an allocated bitmask.">nullable()</a> == false</code>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md233"></a>
+<h2><a class="anchor" id="autotoc_md237"></a>
 @param element_index The index of the element to update</h2>
 
 </div>
@@ -660,7 +660,7 @@ It is undefined behavior to call this function if <code><a class="el" href="clas
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>This operation requires a global atomic operation. Therefore, it is not reccomended to use this function in performance critical regions. When possible, it is more efficient to compute and update an entire word at once using <code>set_mask_word</code>.</dd>
 <dd>
 It is undefined behavior to call this function if <code><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#a7044712e12d75fc976e93babe2747558" title="Indicates whether the column can contain null elements, i.e., if it has an allocated bitmask.">nullable()</a> == false</code>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md232"></a>
+<h2><a class="anchor" id="autotoc_md236"></a>
 @param element_index The index of the element to update</h2>
 
 </div>

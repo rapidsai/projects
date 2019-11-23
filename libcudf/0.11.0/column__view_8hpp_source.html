@@ -204,17 +204,17 @@ $(function() {
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00395"></a><span class="lineno"><a class="line" href="classcudf_1_1mutable__column__view.html#aa11563bfbf77123decd7a397c24b9459">  395</a></span>&#160;  T* <a class="code" href="classcudf_1_1mutable__column__view.html#aa11563bfbf77123decd7a397c24b9459">data</a>() const noexcept {</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordflow">return</span> head&lt;T&gt;() + <a class="code" href="classcudf_1_1detail_1_1column__view__base.html#a1ac97d1e5a49bb5a297c9041d4191d75">_offset</a>;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordflow">return</span> const_cast&lt;T*&gt;(detail::column_view_base::data&lt;T&gt;());</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  }</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00407"></a><span class="lineno"><a class="line" href="classcudf_1_1mutable__column__view.html#a02ec72f58e2b4fe8828664e361cfc1e0">  407</a></span>&#160;  T* <a class="code" href="classcudf_1_1mutable__column__view.html#a02ec72f58e2b4fe8828664e361cfc1e0">begin</a>() const noexcept {</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keywordflow">return</span> data&lt;T&gt;();</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keywordflow">return</span> const_cast&lt;T*&gt;(detail::column_view_base::begin&lt;T&gt;());</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;  }</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00419"></a><span class="lineno"><a class="line" href="classcudf_1_1mutable__column__view.html#ad228eef3222d6ea85ca3886b92d7bf5c">  419</a></span>&#160;  T* <a class="code" href="classcudf_1_1mutable__column__view.html#ad228eef3222d6ea85ca3886b92d7bf5c">end</a>() const noexcept {</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordflow">return</span> begin&lt;T&gt;() + <a class="code" href="classcudf_1_1detail_1_1column__view__base.html#a754fdc0ebe297a466d1b377638c6920a">size</a>();</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordflow">return</span> const_cast&lt;T*&gt;(detail::column_view_base::end&lt;T&gt;());</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;  }</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
 <div class="line"><a name="l00430"></a><span class="lineno"><a class="line" href="classcudf_1_1mutable__column__view.html#aca31ef528570eb57ba1b210f14c941c0">  430</a></span>&#160;  bitmask_type* <a class="code" href="classcudf_1_1mutable__column__view.html#aca31ef528570eb57ba1b210f14c941c0">null_mask</a>() const noexcept {</div>

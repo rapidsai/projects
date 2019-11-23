@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['seconds_2015',['seconds',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049ad305a26f0c3deec9fa4bf14d8f778a40',1,'NVStrings']]],
-  ['sin_2016',['SIN',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba6b585cf453d36fbb0381b38bc2c966e1',1,'cudf']]],
-  ['sqrt_2017',['SQRT',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba6ac653ea3d15f23b0f6e61b447f783ea',1,'cudf']]],
-  ['string_2018',['STRING',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59bae008ab0db4e9b28f33e1e3c9c3daf444',1,'cudf']]]
+  ['retain_2191',['RETAIN',['../namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6aae077198d21c34fd782bf2616a040c56',1,'cudf::RETAIN()'],['../namespacecudf_1_1experimental.html#ad483c874f6010437111325063b87daefa47e9136fa770199f6a8a9727b6173eb4',1,'cudf::experimental::RETAIN()']]],
+  ['right_2192',['right',['../classNVStrings.html#ae632539abce4f345d9c6995cc407281ea410c51e93c57cfd4df319a7b925a2dec',1,'NVStrings']]]
 ];

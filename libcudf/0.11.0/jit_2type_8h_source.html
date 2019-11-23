@@ -93,12 +93,13 @@ $(function() {
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span>jit {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::string <span class="keyword">inline</span> get_type_name(data_type type) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> experimental::type_dispatcher(type, experimental::type_to_name{});</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacecudf_1_1experimental.html#a06b272ff7f81fde5d649dd75fd72144c">experimental::type_dispatcher</a>(type, experimental::type_to_name{});</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;} <span class="comment">// namespace jit</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespacecudf_1_1experimental_html_a06b272ff7f81fde5d649dd75fd72144c"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a06b272ff7f81fde5d649dd75fd72144c">cudf::experimental::type_dispatcher</a></div><div class="ttdeci">constexpr decltype(auto) CUDA_HOST_DEVICE_CALLABLE type_dispatcher(cudf::data_type dtype, Functor f, Ts &amp;&amp;... args)</div><div class="ttdoc">Invokes an operator() template with the type instantiation based on the specified cudf::data_type's i...</div><div class="ttdef"><b>Definition:</b> type_dispatcher.hpp:263</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:22</div></div>
 <div class="ttc" id="atype__dispatcher_8hpp_html"><div class="ttname"><a href="type__dispatcher_8hpp.html">type_dispatcher.hpp</a></div><div class="ttdoc">Defines the mapping between cudf::type_id runtime type information.</div></div>
 <!-- start footer part -->

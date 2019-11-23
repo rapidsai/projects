@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['wrapper_5ftypes_2ehpp_1413',['wrapper_types.hpp',['../wrapper__types_8hpp.html',1,'']]]
+  ['device_5fatomics_2ecuh_1529',['device_atomics.cuh',['../src_2utilities_2legacy_2device__atomics_8cuh.html',1,'']]],
+  ['device_5foperators_2ecuh_1530',['device_operators.cuh',['../src_2utilities_2legacy_2device__operators_8cuh.html',1,'']]],
+  ['iterator_2ecuh_1531',['iterator.cuh',['../src_2iterator_2legacy_2iterator_8cuh.html',1,'']]],
+  ['string_5fview_2ecuh_1532',['string_view.cuh',['../string__view_8cuh.html',1,'']]]
 ];

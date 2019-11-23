@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_4010bc87a0115613477f89ebf589f29d.html">cudf</a></li><li class="navelem"><a class="el" href="dir_eeea53a8fae276279952df3b2a0336fd.html">legacy</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_4010bc87a0115613477f89ebf589f29d.html">cudf</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -86,33 +86,41 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * limitations under the License.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef FILLING_HPP</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define FILLING_HPP</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;cudf/cudf.h&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecudf.html#a9e4c06ce5a604ed1019a523036529b83">fill</a>(<a class="code" href="structgdf__column__.html">gdf_column</a> *column, <a class="code" href="structgdf__scalar.html">gdf_scalar</a> <span class="keyword">const</span>&amp; value, </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;          cudf::size_type begin, cudf::size_type end);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<a class="code" href="structcudf_1_1table.html">cudf::table</a> <a class="code" href="namespacecudf.html#ae7c4ffa4dba2b1e23f4f4322f7b06408">repeat</a>(<span class="keyword">const</span> <a class="code" href="structcudf_1_1table.html">cudf::table</a> &amp;in, <span class="keyword">const</span> <a class="code" href="structgdf__column__.html">gdf_column</a>&amp; count);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<a class="code" href="structcudf_1_1table.html">cudf::table</a> <a class="code" href="namespacecudf.html#ae7c4ffa4dba2b1e23f4f4322f7b06408">repeat</a>(<span class="keyword">const</span> <a class="code" href="structcudf_1_1table.html">cudf::table</a> &amp;in, <span class="keyword">const</span> <a class="code" href="structgdf__scalar.html">gdf_scalar</a>&amp; count);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<a class="code" href="structcudf_1_1table.html">cudf::table</a> <a class="code" href="namespacecudf.html#ac8135c27fbc0411c711c13f7ac77733d">tile</a>(<span class="keyword">const</span> <a class="code" href="structcudf_1_1table.html">cudf::table</a> &amp;in, gdf_size_type count);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}; <span class="comment">// namespace cudf</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif // FILLING_HPP</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="types_8hpp.html">cudf/types.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;rmm/mr/default_memory_resource.hpp&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;rmm/mr/device_memory_resource.hpp&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>experimental {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecudf_1_1experimental.html#abdcc600a269f9142df29f43dd61d6521">fill</a>(mutable_column_view&amp; destination, size_type begin, size_type end,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;          scalar <span class="keyword">const</span>&amp; value);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;std::unique_ptr&lt;column&gt; <a class="code" href="namespacecudf_1_1experimental.html#abdcc600a269f9142df29f43dd61d6521">fill</a>(</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    column_view <span class="keyword">const</span>&amp; input, size_type begin, size_type end,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    scalar <span class="keyword">const</span>&amp; value,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;std::unique_ptr&lt;table&gt; <a class="code" href="namespacecudf_1_1experimental.html#a821183b38dc84793cf9ccc43abd3c86a">repeat</a>(</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    table_view <span class="keyword">const</span>&amp; input_table, column_view <span class="keyword">const</span>&amp; count,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">bool</span> check_count = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;std::unique_ptr&lt;table&gt; <a class="code" href="namespacecudf_1_1experimental.html#a821183b38dc84793cf9ccc43abd3c86a">repeat</a>(</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    table_view <span class="keyword">const</span>&amp; input_table, scalar <span class="keyword">const</span>&amp; count,</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}  <span class="comment">// namespace experimental</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}  <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacecudf_html_ac8135c27fbc0411c711c13f7ac77733d"><div class="ttname"><a href="namespacecudf.html#ac8135c27fbc0411c711c13f7ac77733d">cudf::tile</a></div><div class="ttdeci">cudf::table tile(const cudf::table &amp;in, gdf_size_type count)</div><div class="ttdoc">Construct a new table by tiling the input table.</div><div class="ttdef"><b>Definition:</b> tile.cu:67</div></div>
-<div class="ttc" id="astructgdf__column___html"><div class="ttname"><a href="structgdf__column__.html">gdf_column_</a></div><div class="ttdoc">The C representation of a column in CUDF. This is the main unit of operation.</div><div class="ttdef"><b>Definition:</b> types.h:138</div></div>
-<div class="ttc" id="anamespacecudf_html_a9e4c06ce5a604ed1019a523036529b83"><div class="ttname"><a href="namespacecudf.html#a9e4c06ce5a604ed1019a523036529b83">cudf::fill</a></div><div class="ttdeci">void fill(gdf_column *column, gdf_scalar const &amp;value, cudf::size_type begin, cudf::size_type end)</div><div class="ttdoc">Fills a range of elements in a column with a scalar value.</div><div class="ttdef"><b>Definition:</b> filling/legacy/fill.cu:48</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_abdcc600a269f9142df29f43dd61d6521"><div class="ttname"><a href="namespacecudf_1_1experimental.html#abdcc600a269f9142df29f43dd61d6521">cudf::experimental::fill</a></div><div class="ttdeci">void fill(mutable_column_view &amp;destination, size_type begin, size_type end, scalar const &amp;value)</div><div class="ttdoc">Fills a range of elements in-place in a column with a scalar value.</div><div class="ttdef"><b>Definition:</b> filling/fill.cu:131</div></div>
+<div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div><div class="ttdoc">Type declarations for libcudf.</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_a821183b38dc84793cf9ccc43abd3c86a"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a821183b38dc84793cf9ccc43abd3c86a">cudf::experimental::repeat</a></div><div class="ttdeci">std::unique_ptr&lt; table &gt; repeat(table_view const &amp;input_table, column_view const &amp;count, bool check_count, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Repeat rows of a Table.</div><div class="ttdef"><b>Definition:</b> repeat.cu:179</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:22</div></div>
-<div class="ttc" id="astructgdf__scalar_html"><div class="ttname"><a href="structgdf__scalar.html">gdf_scalar</a></div><div class="ttdoc">A struct to hold a scalar (single) value and its type information.</div><div class="ttdef"><b>Definition:</b> types.h:126</div></div>
-<div class="ttc" id="astructcudf_1_1table_html"><div class="ttname"><a href="structcudf_1_1table.html">cudf::table</a></div><div class="ttdoc">A wrapper for a set of gdf_columns of equal number of rows.</div><div class="ttdef"><b>Definition:</b> legacy/table.hpp:36</div></div>
-<div class="ttc" id="anamespacecudf_html_ae7c4ffa4dba2b1e23f4f4322f7b06408"><div class="ttname"><a href="namespacecudf.html#ae7c4ffa4dba2b1e23f4f4322f7b06408">cudf::repeat</a></div><div class="ttdeci">cudf::table repeat(const cudf::table &amp;in, const gdf_column &amp;count)</div><div class="ttdoc">Repeat rows of a Table.</div><div class="ttdef"><b>Definition:</b> repeat.cu:102</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

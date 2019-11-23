@@ -1,0 +1,4 @@
+<map id="device_operators.cuh" name="device_operators.cuh">
+<area shape="rect" id="node1" title="definition of the device operators" alt="" coords="5,5,228,32"/>
+<area shape="rect" id="node2" href="$include_2cudf_2detail_2utilities_2device__atomics_8cuh.html" title="overloads for CUDA atomic operations" alt="" coords="15,80,218,107"/>
+</map>

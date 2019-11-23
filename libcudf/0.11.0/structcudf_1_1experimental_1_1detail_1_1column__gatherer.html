@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespacecudf.html">cudf</a></li><li class="navelem"><b>experimental</b></li><li class="navelem"><b>detail</b></li><li class="navelem"><a class="el" href="structcudf_1_1experimental_1_1detail_1_1column__gatherer.html">column_gatherer</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacecudf.html">cudf</a></li><li class="navelem"><a class="el" href="namespacecudf_1_1experimental.html">experimental</a></li><li class="navelem"><b>detail</b></li><li class="navelem"><a class="el" href="structcudf_1_1experimental_1_1detail_1_1column__gatherer.html">column_gatherer</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -79,26 +79,22 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9d839f67c9b75b86d6d023389bf301fa"><td class="memTemplParams" colspan="2">template&lt;typename Element , typename MapIterator , std::enable_if_t&lt; is_fixed_width&lt; Element &gt;()&gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:a9d839f67c9b75b86d6d023389bf301fa"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1detail_1_1column__gatherer.html#a9d839f67c9b75b86d6d023389bf301fa">operator()</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;source_column, MapIterator gather_map_begin, MapIterator gather_map_end, bool ignore_out_of_bounds, rmm::mr::device_memory_resource *mr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
-<tr class="memdesc:a9d839f67c9b75b86d6d023389bf301fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type-dispatched function to gather from one column to another based on a <code>gather_map</code>.  <a href="structcudf_1_1experimental_1_1detail_1_1column__gatherer.html#a9d839f67c9b75b86d6d023389bf301fa">More...</a><br /></td></tr>
-<tr class="separator:a9d839f67c9b75b86d6d023389bf301fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d839f67c9b75b86d6d023389bf301fa"><td class="memTemplParams" colspan="2"><a id="a9d839f67c9b75b86d6d023389bf301fa"></a>
-template&lt;typename Element , typename MapIterator , std::enable_if_t&lt; not is_fixed_width&lt; Element &gt;()&gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:a9d839f67c9b75b86d6d023389bf301fa"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;source_column, MapIterator gather_map_begin, MapIterator gather_map_end, bool ignore_out_of_bounds, rmm::mr::device_memory_resource *mr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
-<tr class="separator:a9d839f67c9b75b86d6d023389bf301fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e4c97d54b2d847b2969f953b833c07d"><td class="memTemplParams" colspan="2">template&lt;typename Element , typename MapIterator &gt; </td></tr>
+<tr class="memitem:a1e4c97d54b2d847b2969f953b833c07d"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1detail_1_1column__gatherer.html#a1e4c97d54b2d847b2969f953b833c07d">operator()</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;source_column, MapIterator gather_map_begin, MapIterator gather_map_end, bool ignore_out_of_bounds, rmm::mr::device_memory_resource *mr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
+<tr class="memdesc:a1e4c97d54b2d847b2969f953b833c07d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type-dispatched function to gather from one column to another based on a <code>gather_map</code>.  <a href="structcudf_1_1experimental_1_1detail_1_1column__gatherer.html#a1e4c97d54b2d847b2969f953b833c07d">More...</a><br /></td></tr>
+<tr class="separator:a1e4c97d54b2d847b2969f953b833c07d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Function object for gathering a type-erased column. To be used with the cudf::type_dispatcher. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><hr  />
  </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9d839f67c9b75b86d6d023389bf301fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d839f67c9b75b86d6d023389bf301fa">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="a1e4c97d54b2d847b2969f953b833c07d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e4c97d54b2d847b2969f953b833c07d">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Element , typename MapIterator , std::enable_if_t&lt; is_fixed_width&lt; Element &gt;()&gt; *  = nullptr&gt; </div>
+template&lt;typename Element , typename MapIterator &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -170,7 +166,7 @@ template&lt;typename Element , typename MapIterator , std::enable_if_t&lt; is_fi
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md274"></a>
+<h2><a class="anchor" id="autotoc_md284"></a>
 @param stream CUDA stream on which to execute kernels</h2>
 
 </div>

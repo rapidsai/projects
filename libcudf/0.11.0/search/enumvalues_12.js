@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['years_2029',['years',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a8667ec773f6dbfafbbfe0d0b9deecd14',1,'NVStrings']]]
+  ['vowel_2207',['vowel',['../classNVText.html#af974314b036ba255dd5f71b108d1ffdea7db4fdbec25c7e9c82051d5eeb14a4af',1,'NVText']]]
 ];

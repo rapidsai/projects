@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['vowel_2028',['vowel',['../classNVText.html#af974314b036ba255dd5f71b108d1ffdea7db4fdbec25c7e9c82051d5eeb14a4af',1,'NVText']]]
+  ['unallocated_2204',['UNALLOCATED',['../namespacecudf.html#aa481249b705132999f4d082aacd21dbfa74ad69efae4a12aec59682147aac9344',1,'cudf']]],
+  ['uninitialized_2205',['UNINITIALIZED',['../namespacecudf.html#aa481249b705132999f4d082aacd21dbfa37d7c1f4781c3276729ed1678c0c0844',1,'cudf']]],
+  ['us_2206',['us',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049abc729d3656e7635668dcacdd7f5b68d9',1,'NVStrings']]]
 ];

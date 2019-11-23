@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['tan_2019',['TAN',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19baa91cdd09214d36d756b5f13803ddd890',1,'cudf']]],
-  ['timestamp_5fdays_2020',['TIMESTAMP_DAYS',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba8a653791c2c90530cd2452ef46a01ab2',1,'cudf']]],
-  ['timestamp_5fmicroseconds_2021',['TIMESTAMP_MICROSECONDS',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59bab892ce722f86206a6496700f2c4a3abf',1,'cudf']]],
-  ['timestamp_5fmilliseconds_2022',['TIMESTAMP_MILLISECONDS',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba5cb4e0f1d7d608d8801707a376e43b64',1,'cudf']]],
-  ['timestamp_5fnanoseconds_2023',['TIMESTAMP_NANOSECONDS',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba9864c6a53387a840e7c6ed2672fed2c9',1,'cudf']]],
-  ['timestamp_5fseconds_2024',['TIMESTAMP_SECONDS',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba75e3c065f03583dc3b94ec069c4fe34d',1,'cudf']]]
+  ['seconds_2193',['seconds',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049ad305a26f0c3deec9fa4bf14d8f778a40',1,'NVStrings']]],
+  ['sin_2194',['SIN',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba6b585cf453d36fbb0381b38bc2c966e1',1,'cudf']]],
+  ['snappy_2195',['SNAPPY',['../namespacecudf_1_1experimental_1_1io.html#a748faef899f436d65047ac2241261457a2069e5c0aea54224dcd6b9b6c78c4902',1,'cudf::experimental::io']]],
+  ['sqrt_2196',['SQRT',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba6ac653ea3d15f23b0f6e61b447f783ea',1,'cudf']]],
+  ['string_2197',['STRING',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59bae008ab0db4e9b28f33e1e3c9c3daf444',1,'cudf']]]
 ];

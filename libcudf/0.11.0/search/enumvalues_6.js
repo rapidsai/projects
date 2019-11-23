@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['higher_1982',['HIGHER',['../namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8ae5385a7a8eb742f08471ba73ea2d77ba',1,'cudf']]],
-  ['hours_1983',['hours',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a046925b9e4b8b8bb927942bc4648f981',1,'NVStrings']]]
+  ['greater_2154',['GREATER',['../namespacecudf_1_1experimental.html#a57a49aef820830d7830862408645b8c7ae7e72355289e404b762d4cf88824d23b',1,'cudf::experimental']]],
+  ['gzip_2155',['GZIP',['../namespacecudf_1_1experimental_1_1io.html#a748faef899f436d65047ac2241261457af1cd28417b03cfab3a8e16d66e34e18a',1,'cudf::experimental::io']]]
 ];
