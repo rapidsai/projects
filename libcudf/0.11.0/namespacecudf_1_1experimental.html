@@ -219,6 +219,12 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt
 <tr class="memitem:a1edcfa60adcae62ead9197feeaf87ba0"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a1edcfa60adcae62ead9197feeaf87ba0">gather</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;source_table, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;gather_map, bool check_bounds=false, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a1edcfa60adcae62ead9197feeaf87ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gathers the specified rows (including null values) of a set of columns.  <a href="namespacecudf_1_1experimental.html#a1edcfa60adcae62ead9197feeaf87ba0">More...</a><br /></td></tr>
 <tr class="separator:a1edcfa60adcae62ead9197feeaf87ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66e9825f07db3744b175c518c687b537"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a66e9825f07db3744b175c518c687b537">scatter</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;source, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;scatter_map, <a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;target, bool check_bounds=false, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a66e9825f07db3744b175c518c687b537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scatters the rows of the source table into a copy of the target table according to a scatter map.  <a href="namespacecudf_1_1experimental.html#a66e9825f07db3744b175c518c687b537">More...</a><br /></td></tr>
+<tr class="separator:a66e9825f07db3744b175c518c687b537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71c7d359043b804ba7b6b0c38606c8d9"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a71c7d359043b804ba7b6b0c38606c8d9">scatter</a> (std::vector&lt; std::unique_ptr&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt;&gt; const  &amp;source, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;indices, <a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;target, bool check_bounds=false, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a71c7d359043b804ba7b6b0c38606c8d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scatters a row of scalar values into a copy of the target table according to a scatter map.  <a href="namespacecudf_1_1experimental.html#a71c7d359043b804ba7b6b0c38606c8d9">More...</a><br /></td></tr>
+<tr class="separator:a71c7d359043b804ba7b6b0c38606c8d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bdcbe43fbe08248f14d1db5411b1336"><td class="memItemLeft" align="right" valign="top"><a id="a5bdcbe43fbe08248f14d1db5411b1336"></a>
 std::vector&lt; <a class="el" href="classcudf_1_1column__view.html">cudf::column_view</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>slice</b> (<a class="el" href="classcudf_1_1column__view.html">cudf::column_view</a> const &amp;input, std::vector&lt; size_type &gt; const &amp;indices)</td></tr>
 <tr class="separator:a5bdcbe43fbe08248f14d1db5411b1336"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -273,6 +279,9 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html"
 <tr class="memitem:a9cf88ec3542f2af93dfd48fbd38976c1"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a9cf88ec3542f2af93dfd48fbd38976c1">transform</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, std::string const  &amp;unary_udf, <a class="el" href="classcudf_1_1data__type.html">data_type</a> output_type, bool is_ptx, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a9cf88ec3542f2af93dfd48fbd38976c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new column by applying a unary function against every element of an input column.  <a href="namespacecudf_1_1experimental.html#a9cf88ec3542f2af93dfd48fbd38976c1">More...</a><br /></td></tr>
 <tr class="separator:a9cf88ec3542f2af93dfd48fbd38976c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3fc07ab285374a3c0227870f10a86ce"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ad3fc07ab285374a3c0227870f10a86ce">cast</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, <a class="el" href="classcudf_1_1data__type.html">data_type</a> out_type, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:ad3fc07ab285374a3c0227870f10a86ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts data from dtype specified in input to dtype specified in output. Supports only fixed-width types.  <a href="namespacecudf_1_1experimental.html#ad3fc07ab285374a3c0227870f10a86ce">More...</a><br /></td></tr>
+<tr class="separator:ad3fc07ab285374a3c0227870f10a86ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b02f12f93710b16e26d1f9854f7700e"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a1b02f12f93710b16e26d1f9854f7700e">is_null</a> (<a class="el" href="classcudf_1_1column__view.html">cudf::column_view</a> const  &amp;input)</td></tr>
 <tr class="memdesc:a1b02f12f93710b16e26d1f9854f7700e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a column of <code>BOOL8</code> elements where for every element in <code>input</code> <code>true</code> indicates the value is null and <code>false</code> indicates the value is valid.  <a href="namespacecudf_1_1experimental.html#a1b02f12f93710b16e26d1f9854f7700e">More...</a><br /></td></tr>
 <tr class="separator:a1b02f12f93710b16e26d1f9854f7700e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -354,7 +363,7 @@ template&lt;cudf::type_id Id&gt; </div>
 
 <p>Maps a <code><a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></code> to it's corresponding concrete C++ type. </p>
 <p>------------------------------------------------------------------------&mdash;* Example: </p><div class="fragment"><div class="line">static_assert(std::is_same&lt;int32_t, id_to_type&lt;INT32&gt;);</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md532"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md536"></a>
 @tparam t The &lt;tt&gt;cudf::type_id&lt;/tt&gt; to map</h2>
 
 </div>
@@ -472,7 +481,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md273"></a>
+<h2><a class="anchor" id="autotoc_md275"></a>
 @brief Indicates when to allocate a mask, based on an existing mask.</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad483c874f6010437111325063b87daefa443475558f0168dff92ecde26b98ae5a"></a>NEVER&#160;</td><td class="fielddoc"><p>Do not allocate a null mask, regardless of input. </p>
@@ -482,7 +491,7 @@ template&lt;typename T &gt; </div>
 <tr><td class="fieldname"><a id="ad483c874f6010437111325063b87daefaf3fc827ade4b968e50406496907ef962"></a>ALWAYS&#160;</td><td class="fielddoc"><p>Allocate a null mask, regardless of input. </p>
 </td></tr>
 </table>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a1">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a2">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
 </dl>
 
 </div>
@@ -565,7 +574,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;column&gt; A column with sufficient uninitialized capacity to hold the same number of elements as <code>input</code> of the same type as <code>input.type()</code> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a5">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a6">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
 </dl>
 
 </div>
@@ -678,6 +687,56 @@ containing copy of all rows of <code>input</code> passing the filter defined by 
 
 </div>
 </div>
+<a id="ad3fc07ab285374a3c0227870f10a86ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3fc07ab285374a3c0227870f10a86ce">&#9670;&nbsp;</a></span>cast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; cudf::experimental::cast </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1data__type.html">data_type</a>&#160;</td>
+          <td class="paramname"><em>out_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Casts data from dtype specified in input to dtype specified in output. Supports only fixed-width types. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></td><td>Input column </td></tr>
+    <tr><td class="paramname">out_type</td><td>Desired datatype of output column</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>unique_ptr&lt;column&gt; Result of the cast operation </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if <code>out_type</code> is not a fixed-width type </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a1b56089ab0490194a96cdfd249a72181"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b56089ab0490194a96cdfd249a72181">&#9670;&nbsp;</a></span>concatenate()</h2>
 
@@ -734,7 +793,7 @@ containing copy of all rows of <code>input</code> passing the filter defined by 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Unique pointer to a single table having all the rows from the </dd></dl>
-<h2><a class="anchor" id="autotoc_md454"></a>
+<h2><a class="anchor" id="autotoc_md458"></a>
 elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order.</h2>
 
 </div>
@@ -800,7 +859,7 @@ elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>new column with the selected elements </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a8">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a9">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
 </dl>
 
 </div>
@@ -947,7 +1006,7 @@ elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a6">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a7">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
 </dl>
 
 </div>
@@ -980,7 +1039,7 @@ elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order
 
 <p>Defines all of the mappings between C++ types and their corresponding. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md534"></a>
+<h2><a class="anchor" id="autotoc_md538"></a>
 &lt;tt&gt;cudf::type_id&lt;/tt&gt; values.</h2>
 
 </div>
@@ -1122,7 +1181,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md439"></a>
+<h2><a class="anchor" id="autotoc_md443"></a>
 @return bool &lt;tt&gt;true&lt;/tt&gt; if &lt;tt&gt;lhs&lt;/tt&gt; == &lt;tt&gt;rhs&lt;/tt&gt; else &lt;tt&gt;false&lt;/tt&gt;.</h2>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1131,7 +1190,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md440"></a>
+<h2><a class="anchor" id="autotoc_md444"></a>
 @return bool &lt;tt&gt;true&lt;/tt&gt; if &lt;tt&gt;lhs&lt;/tt&gt; == &lt;tt&gt;rhs&lt;/tt&gt; else &lt;tt&gt;false&lt;/tt&gt;.</h2>
 
 </div>
@@ -1199,7 +1258,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md314"></a>
+<h2><a class="anchor" id="autotoc_md318"></a>
 @return std::unique_ptr&lt;column&gt; The result output column</h2>
 
 </div>
@@ -1263,7 +1322,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md313"></a>
+<h2><a class="anchor" id="autotoc_md317"></a>
 @return void</h2>
 
 </div>
@@ -1319,11 +1378,12 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">source_table</td><td>The input columns whose rows will be gathered </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">gather_map</td><td>View into a non-nullable column of integral indices that maps the rows in the source columns to rows in the destination columns. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">check_bounds</td><td>Optionally perform bounds checking on the values of <code>gather_map</code> and throw an error if any of its values are out of bounds. @params[in] mr The resource to use for all allocations </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">check_bounds</td><td>Optionally perform bounds checking on the values of <code>gather_map</code> and throw an error if any of its values are out of bounds. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mr</td><td>The resource to use for all allocations </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structcudf_1_1table.html" title="A wrapper for a set of gdf_columns of equal number of rows.">cudf::table</a> Result of the gather </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;table&gt; Result of the gather </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a0">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
 </dl>
 
@@ -1397,7 +1457,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md427"></a>
+<h2><a class="anchor" id="autotoc_md431"></a>
 @returns bool                true if sorted as expected, false if not.</h2>
 
 </div>
@@ -1489,7 +1549,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;column&gt; A non-nullable column of cudf::size_type elements </dd></dl>
-<h2><a class="anchor" id="autotoc_md423"></a>
+<h2><a class="anchor" id="autotoc_md427"></a>
 containing the insertion points.</h2>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2search_8hpp-example.html#a0">/rapids/cudf/cpp/include/cudf/search.hpp</a>.</dd>
 </dl>
@@ -1571,7 +1631,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>weak_ordering Indicates the relationship between the elements in </dd></dl>
-<h2><a class="anchor" id="autotoc_md437"></a>
+<h2><a class="anchor" id="autotoc_md441"></a>
 the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1581,7 +1641,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>weak_ordering Indicates the relationship between the elements in </dd></dl>
-<h2><a class="anchor" id="autotoc_md438"></a>
+<h2><a class="anchor" id="autotoc_md442"></a>
 the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 
 </div>
@@ -1647,7 +1707,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md315"></a>
+<h2><a class="anchor" id="autotoc_md319"></a>
 @return std::unique_ptr&lt;table&gt; The result table containing the repetitions</h2>
 
 </div>
@@ -1704,8 +1764,149 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md316"></a>
+<h2><a class="anchor" id="autotoc_md320"></a>
 @return std::unique_ptr&lt;table&gt; The result table containing the repetitions</h2>
+
+</div>
+</div>
+<a id="a71c7d359043b804ba7b6b0c38606c8d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71c7d359043b804ba7b6b0c38606c8d9">&#9670;&nbsp;</a></span>scatter() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt; cudf::experimental::scatter </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt;&gt; const &amp;&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>indices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>check_bounds</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scatters a row of scalar values into a copy of the target table according to a scatter map. </p>
+<p>Scatters values from the source row into the target table out-of-place, returning a "destination table". The scatter is performed according to a scatter map such that row <code>scatter_map[i]</code> of the destination table is replaced by the source row. All other rows of the destination table equal corresponding rows of the target table.</p>
+<p>The number of elements in source must match the number of columns in target and their corresponding datatypes must be the same.</p>
+<p>If the same index appears more than once in the scatter map, the result is undefined.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">&lt;tt&gt;cudf::logic_error&lt;/tt&gt;</td><td>if <code>check_bounds == true</code> and an index exists in <code>scatter_map</code> outside the range <code>[-n, n)</code>, where <code>n</code> is the number of rows in the target table. If <code>check_bounds == false</code>, the behavior is undefined.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>The input scalars containing values to be scattered into the target columns </td></tr>
+    <tr><td class="paramname">indices</td><td>A non-nullable column of integral indices that indicate the rows in the target table to be replaced by source. </td></tr>
+    <tr><td class="paramname">target</td><td>The set of columns into which values from the source_table are to be scattered </td></tr>
+    <tr><td class="paramname">check_bounds</td><td>Optionally perform bounds checking on the values of <code>scatter_map</code> and throw an error if any of its values are out of bounds. </td></tr>
+    <tr><td class="paramname">mr</td><td>The resource to use for all allocations </td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="anchor" id="autotoc_md274"></a>
+@return Result of scattering values from source to target</h2>
+
+</div>
+</div>
+<a id="a66e9825f07db3744b175c518c687b537"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66e9825f07db3744b175c518c687b537">&#9670;&nbsp;</a></span>scatter() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt; cudf::experimental::scatter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>scatter_map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>check_bounds</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scatters the rows of the source table into a copy of the target table according to a scatter map. </p>
+<p>Scatters values from the source table into the target table out-of-place, returning a "destination table". The scatter is performed according to a scatter map such that row <code>scatter_map[i]</code> of the destination table gets row <code>i</code> of the source table. All other rows of the destination table equal corresponding rows of the target table.</p>
+<p>The number of columns in source must match the number of columns in target and their corresponding datatypes must be the same.</p>
+<p>If the same index appears more than once in the scatter map, the result is undefined.</p>
+<p>A negative value <code>i</code> in the <code>scatter_map</code> is interpreted as <code>i+n</code>, where <code>n</code> is the number of rows in the <code>target</code> table.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">&lt;tt&gt;cudf::logic_error&lt;/tt&gt;</td><td>if <code>check_bounds == true</code> and an index exists in <code>scatter_map</code> outside the range <code>[-n, n)</code>, where <code>n</code> is the number of rows in the target table. If <code>check_bounds == false</code>, the behavior is undefined.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>The input columns containing values to be scattered into the target columns </td></tr>
+    <tr><td class="paramname">scatter_map</td><td>A non-nullable column of integral indices that maps the rows in the source table to rows in the target table. The size must be equal to or less than the number of elements in the source columns. </td></tr>
+    <tr><td class="paramname">target</td><td>The set of columns into which values from the source_table are to be scattered </td></tr>
+    <tr><td class="paramname">check_bounds</td><td>Optionally perform bounds checking on the values of <code>scatter_map</code> and throw an error if any of its values are out of bounds. </td></tr>
+    <tr><td class="paramname">mr</td><td>The resource to use for all allocations </td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="anchor" id="autotoc_md273"></a>
+@return Result of scattering values from source to target</h2>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a1">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -1757,7 +1958,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;column&gt; A non-nullable column of INT32 elements </dd></dl>
-<h2><a class="anchor" id="autotoc_md426"></a>
+<h2><a class="anchor" id="autotoc_md430"></a>
 containing the permuted row indices of &lt;tt&gt;input&lt;/tt&gt; if it were sorted</h2>
 
 </div>
@@ -1809,7 +2010,7 @@ containing the permuted row indices of &lt;tt&gt;input&lt;/tt&gt; if it were sor
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The set of requested views of <code>input</code> indicated by the <code>splits</code>. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a7">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a8">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
 </dl>
 
 </div>
@@ -1968,7 +2169,7 @@ template &lt; typename ColumnType,
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md535"></a>
+<h2><a class="anchor" id="autotoc_md539"></a>
 @return Whatever is returned by the callable's &lt;tt&gt;operator()&lt;/tt&gt;</h2>
 
 </div>
@@ -2002,7 +2203,7 @@ template&lt;typename T &gt; </div>
 <p>------------------------------------------------------------------------&mdash;* When explicitly passed a template argument of a given type, returns the appropriate <code>type_id</code> enum for the specified C++ type.</p>
 <p>For example:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">return</span> cudf::type_to_id&lt;int32_t&gt;();        <span class="comment">// Returns INT32</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md531"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md535"></a>
 @tparam T The type to map to a &lt;tt&gt;cudf::type_id&lt;/tt&gt;</h2>
 
 </div>
@@ -2120,7 +2321,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;column&gt; A non-nullable column of cudf::size_type elements </dd></dl>
-<h2><a class="anchor" id="autotoc_md424"></a>
+<h2><a class="anchor" id="autotoc_md428"></a>
 containing the insertion points.</h2>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2search_8hpp-example.html#a1">/rapids/cudf/cpp/include/cudf/search.hpp</a>.</dd>
 </dl>

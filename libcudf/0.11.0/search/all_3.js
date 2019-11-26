@@ -3,7 +3,7 @@ var searchData=
   ['avro_96',['avro',['../namespacecudf_1_1experimental_1_1io_1_1detail_1_1avro.html',1,'cudf::experimental::io::detail']]],
   ['calculatemaxrowsize_97',['calculateMaxRowSize',['../namespacecudf_1_1experimental_1_1io_1_1detail_1_1csv.html#a3bd45d7a7fd3930c1f2b18a6e4a6be62',1,'cudf::experimental::io::detail::csv']]],
   ['capitalize_98',['capitalize',['../classNVStrings.html#a2c71da05b27c0df1488a55ca5985f266',1,'NVStrings']]],
-  ['cast_99',['cast',['../namespacecudf.html#aca9904c47d7ae6d33143b6441cba45d2',1,'cudf']]],
+  ['cast_99',['cast',['../namespacecudf_1_1experimental.html#ad3fc07ab285374a3c0227870f10a86ce',1,'cudf::experimental::cast()'],['../namespacecudf.html#aca9904c47d7ae6d33143b6441cba45d2',1,'cudf::cast()']]],
   ['castdateto_5fdispatcher_100',['CastDateTo_Dispatcher',['../structcudf_1_1detail_1_1CastDateTo__Dispatcher.html',1,'cudf::detail']]],
   ['castfrom_5fdispatcher_101',['CastFrom_Dispatcher',['../structcudf_1_1detail_1_1CastFrom__Dispatcher.html',1,'cudf::detail']]],
   ['casttimestampto_5fdispatcher_102',['CastTimestampTo_Dispatcher',['../structcudf_1_1detail_1_1CastTimestampTo__Dispatcher.html',1,'cudf::detail']]],

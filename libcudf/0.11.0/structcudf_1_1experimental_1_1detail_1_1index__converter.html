@@ -117,7 +117,7 @@ struct cudf::experimental::detail::index_converter&lt; map_type &gt;</h3>
 
 <p>Function object for applying a transformation on the gathermap that converts negative indices to positive indices. </p>
 <p>------------------------------------------------------------------------&mdash;* A negative index <code>i</code> is transformed to <code>i + size</code>, where <code>size</code> is the number of elements in the column being gathered from. Allowable values for the index <code>i</code> are in the range <code>[-size, size)</code>. Thus, when gathering from a column of size <code>10</code>, the index <code>-1</code> is transformed to <code>9</code> (i.e., the last element), <code>-2</code> is transformed to <code>8</code> (the second-to-last element) and so on. </p>
-<h2><a class="anchor" id="autotoc_md281"></a>
+<h2><a class="anchor" id="autotoc_md283"></a>
 Positive indices are unchanged by this transformation.</h2>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/cudf/detail/gather.cuh</li>

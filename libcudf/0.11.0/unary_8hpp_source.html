@@ -88,7 +88,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma once </span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;cudf/cudf.h&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="types_8hpp.html">cudf/types.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
@@ -98,11 +98,15 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;std::unique_ptr&lt;cudf::column&gt; <a class="code" href="namespacecudf_1_1experimental.html#aa5d63048cdec020a53e53c9759a6d1c5">is_valid</a>(<a class="code" href="classcudf_1_1column__view.html">cudf::column_view</a> <span class="keyword">const</span>&amp; input);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;} <span class="comment">// namespace experimental</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;} <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;std::unique_ptr&lt;column&gt; <a class="code" href="namespacecudf_1_1experimental.html#ad3fc07ab285374a3c0227870f10a86ce">cast</a>(column_view <span class="keyword">const</span>&amp; input, data_type out_type,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                             rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;} <span class="comment">// namespace experimental</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;} <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclasscudf_1_1column__view_html"><div class="ttname"><a href="classcudf_1_1column__view.html">cudf::column_view</a></div><div class="ttdoc">A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...</div><div class="ttdef"><b>Definition:</b> column_view.hpp:236</div></div>
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div><div class="ttdoc">Type declarations for libcudf.</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_ad3fc07ab285374a3c0227870f10a86ce"><div class="ttname"><a href="namespacecudf_1_1experimental.html#ad3fc07ab285374a3c0227870f10a86ce">cudf::experimental::cast</a></div><div class="ttdeci">std::unique_ptr&lt; column &gt; cast(column_view const &amp;input, data_type type, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Casts data from dtype specified in input to dtype specified in output. Supports only fixed-width type...</div><div class="ttdef"><b>Definition:</b> cast_ops.cu:117</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:22</div></div>
 <div class="ttc" id="anamespacecudf_1_1experimental_html_aa5d63048cdec020a53e53c9759a6d1c5"><div class="ttname"><a href="namespacecudf_1_1experimental.html#aa5d63048cdec020a53e53c9759a6d1c5">cudf::experimental::is_valid</a></div><div class="ttdeci">std::unique_ptr&lt; column &gt; is_valid(cudf::column_view const &amp;input)</div><div class="ttdoc">Creates a column of BOOL8 elements where for every element in input true indicates the value is valid...</div><div class="ttdef"><b>Definition:</b> null_ops.cu:39</div></div>
 <div class="ttc" id="anamespacecudf_1_1experimental_html_a1b02f12f93710b16e26d1f9854f7700e"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a1b02f12f93710b16e26d1f9854f7700e">cudf::experimental::is_null</a></div><div class="ttdeci">std::unique_ptr&lt; column &gt; is_null(cudf::column_view const &amp;input)</div><div class="ttdoc">Creates a column of BOOL8 elements where for every element in input true indicates the value is null ...</div><div class="ttdef"><b>Definition:</b> null_ops.cu:28</div></div>
