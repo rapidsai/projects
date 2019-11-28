@@ -213,16 +213,17 @@
 <blockquote>
 <div><span class="target" id="module-cuml.preprocessing.model_selection"></span><dl class="function">
 <dt id="cuml.preprocessing.model_selection.train_test_split">
-<code class="sig-prename descclassname">cuml.preprocessing.model_selection.</code><code class="sig-name descname">train_test_split</code><span class="sig-paren">(</span><em class="sig-param">X: cudf.core.dataframe.DataFrame, y: Union[str, cudf.core.series.Series], train_size: Union[float, int] = 0.8, shuffle: bool = True, seed: int = None</em><span class="sig-paren">)</span> &#x2192; Tuple[cudf.core.dataframe.DataFrame, cudf.core.dataframe.DataFrame, cudf.core.dataframe.DataFrame, cudf.core.dataframe.DataFrame]<a class="headerlink" href="#cuml.preprocessing.model_selection.train_test_split" title="Permalink to this definition">¶</a></dt>
-<dd><p>Partitions the data into four collated dataframes, mimicing sklearn’s
-<cite>train_test_split</cite></p>
+<code class="sig-prename descclassname">cuml.preprocessing.model_selection.</code><code class="sig-name descname">train_test_split</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">test_size: Union[float</em>, <em class="sig-param">int] = None</em>, <em class="sig-param">train_size: Union[float</em>, <em class="sig-param">int] = None</em>, <em class="sig-param">shuffle: bool = True</em>, <em class="sig-param">seed: Union[int</em>, <em class="sig-param">cupy.random.generator.RandomState</em>, <em class="sig-param">mtrand.RandomState] = None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.preprocessing.model_selection.train_test_split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Partitions device data into four collated objects, mimicking
+Scikit-learn’s <cite>train_test_split</cite></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">cudf.DataFrame</span></dt><dd><p>Data to split, has shape (n_samples, n_features)</p>
+<dt><strong>X</strong><span class="classifier">cudf.DataFrame or cuda_array_interface compliant device array</span></dt><dd><p>Data to split, has shape (n_samples, n_features)</p>
 </dd>
-<dt><strong>y</strong><span class="classifier">str or cudf.Series</span></dt><dd><p>Set of labels for the data, either a series of shape (n_samples) or
-the string label of a column in X containing the labels</p>
+<dt><strong>y</strong><span class="classifier">str, cudf.Series or cuda_array_interface compliant device array</span></dt><dd><p>Set of labels for the data, either a series of shape (n_samples) or
+the string label of a column in X (if it is a cuDF DataFrame)
+containing the labels</p>
 </dd>
 <dt><strong>train_size</strong><span class="classifier">float or int, optional</span></dt><dd><p>If float, represents the proportion [0, 1] of the data
 to be assigned to the training set. If an int, represents the number
@@ -230,7 +231,7 @@ of instances to be assigned to the training set. Defaults to 0.8</p>
 </dd>
 <dt><strong>shuffle</strong><span class="classifier">bool, optional</span></dt><dd><p>Whether or not to shuffle inputs before splitting</p>
 </dd>
-<dt><strong>seed</strong><span class="classifier">int, optional</span></dt><dd><p>If shuffle is true, seeds the generator. Unseeded by default</p>
+<dt><strong>seed</strong><span class="classifier">int, CuPy RandomState or NumPy RandomState optional</span></dt><dd><p>If shuffle is true, seeds the generator. Unseeded by default</p>
 </dd>
 </dl>
 </dd>
@@ -249,15 +250,15 @@ column was dropped from the <a href="#id1"><span class="problematic" id="id2">`<
 <span class="c1"># Generate some sample data</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
                      <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span><span class="p">})</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Original data: {df.shape[0]} elements&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Original data: </span><span class="si">{df.shape[0]}</span><span class="s1"> elements&#39;</span><span class="p">)</span>
 
 <span class="c1"># Suppose we want an 80/20 split</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span>
                                                     <span class="n">train_size</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;X_train: {X_train.shape[0]} elements&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;X_test: {X_test.shape[0]} elements&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;y_train: {y_train.shape[0]} elements&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;y_test: {y_test.shape[0]} elements&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;X_train: </span><span class="si">{X_train.shape[0]}</span><span class="s1"> elements&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;X_test: </span><span class="si">{X_test.shape[0]}</span><span class="s1"> elements&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y_train: </span><span class="si">{y_train.shape[0]}</span><span class="s1"> elements&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y_test: </span><span class="si">{y_test.shape[0]}</span><span class="s1"> elements&#39;</span><span class="p">)</span>
 
 <span class="c1"># Alternatively, if our labels are stored separately</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
@@ -428,8 +429,8 @@ If centers is None, 3 centers are generated.</p>
 
 <span class="n">data</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
-<span class="k">print</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -576,7 +577,7 @@ index and is corrected for chance.</p>
 <blockquote>
 <div><span class="target" id="module-cuml.benchmark.algorithms"></span><dl class="class">
 <dt id="cuml.benchmark.algorithms.AlgorithmPair">
-<em class="property">class </em><code class="sig-prename descclassname">cuml.benchmark.algorithms.</code><code class="sig-name descname">AlgorithmPair</code><span class="sig-paren">(</span><em class="sig-param">cpu_class</em>, <em class="sig-param">cuml_class</em>, <em class="sig-param">shared_args</em>, <em class="sig-param">cuml_args={}</em>, <em class="sig-param">cpu_args={}</em>, <em class="sig-param">name=None</em>, <em class="sig-param">accepts_labels=True</em>, <em class="sig-param">data_prep_hook=None</em>, <em class="sig-param">accuracy_function=None</em>, <em class="sig-param">bench_func=&lt;function fit&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.benchmark.algorithms.AlgorithmPair" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.benchmark.algorithms.</code><code class="sig-name descname">AlgorithmPair</code><span class="sig-paren">(</span><em class="sig-param">cpu_class</em>, <em class="sig-param">cuml_class</em>, <em class="sig-param">shared_args</em>, <em class="sig-param">cuml_args={}</em>, <em class="sig-param">cpu_args={}</em>, <em class="sig-param">name=None</em>, <em class="sig-param">accepts_labels=True</em>, <em class="sig-param">cpu_data_prep_hook=None</em>, <em class="sig-param">cuml_data_prep_hook=None</em>, <em class="sig-param">accuracy_function=None</em>, <em class="sig-param">bench_func=&lt;function fit&gt;</em>, <em class="sig-param">setup_cpu_func=None</em>, <em class="sig-param">setup_cuml_func=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.benchmark.algorithms.AlgorithmPair" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wraps a cuML algorithm and (optionally) a cpu-based algorithm
 (typically scikit-learn, but does not need to be as long as it offers
 <cite>fit</cite> and <cite>predict</cite> or <cite>transform</cite> methods).
@@ -595,6 +596,20 @@ cpu_class when instantiating</p>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.benchmark.algorithms.AlgorithmPair.run_cuml" title="cuml.benchmark.algorithms.AlgorithmPair.run_cuml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_cuml</span></code></a>(self, data, \*\*override_args)</p></td>
 <td><p>Runs the cuml-based algorithm’s fit method on specified data</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 58%" />
+<col style="width: 42%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>setup_cpu</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setup_cuml</strong></p></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -627,15 +642,40 @@ cpu_class when instantiating</p>
 <span class="target" id="module-cuml.benchmark.runners"></span><p>Wrappers to run ML benchmarks</p>
 <dl class="class">
 <dt id="cuml.benchmark.runners.AccuracyComparisonRunner">
-<em class="property">class </em><code class="sig-prename descclassname">cuml.benchmark.runners.</code><code class="sig-name descname">AccuracyComparisonRunner</code><span class="sig-paren">(</span><em class="sig-param">bench_rows</em>, <em class="sig-param">bench_dims</em>, <em class="sig-param">dataset_name='blobs'</em>, <em class="sig-param">input_type='numpy'</em>, <em class="sig-param">test_fraction=0.1</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.benchmark.runners.AccuracyComparisonRunner" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.benchmark.runners.</code><code class="sig-name descname">AccuracyComparisonRunner</code><span class="sig-paren">(</span><em class="sig-param">bench_rows</em>, <em class="sig-param">bench_dims</em>, <em class="sig-param">dataset_name='blobs'</em>, <em class="sig-param">input_type='numpy'</em>, <em class="sig-param">test_fraction=0.1</em>, <em class="sig-param">n_reps=1</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.benchmark.runners.AccuracyComparisonRunner" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wrapper to run an algorithm with multiple dataset sizes
 and compute accuracy and speedup of cuml relative to sklearn
 baseline.</p>
 </dd></dl>
 
 <dl class="class">
+<dt id="cuml.benchmark.runners.BenchmarkTimer">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.benchmark.runners.</code><code class="sig-name descname">BenchmarkTimer</code><span class="sig-paren">(</span><em class="sig-param">reps=1</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.benchmark.runners.BenchmarkTimer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides a context manager that runs a code block <cite>reps</cite> times
+and records results to the instance variable <cite>timings</cite>. Use like:</p>
+<p>timer = BenchmarkTimer(rep=5)
+for _ in timer.benchmark_runs():</p>
+<blockquote>
+<div><p>… do something …</p>
+</div></blockquote>
+<p>print(np.min(timer.timings))</p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 64%" />
+<col style="width: 36%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>benchmark_runs</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
 <dt id="cuml.benchmark.runners.SpeedupComparisonRunner">
-<em class="property">class </em><code class="sig-prename descclassname">cuml.benchmark.runners.</code><code class="sig-name descname">SpeedupComparisonRunner</code><span class="sig-paren">(</span><em class="sig-param">bench_rows</em>, <em class="sig-param">bench_dims</em>, <em class="sig-param">dataset_name='blobs'</em>, <em class="sig-param">input_type='numpy'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.benchmark.runners.SpeedupComparisonRunner" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.benchmark.runners.</code><code class="sig-name descname">SpeedupComparisonRunner</code><span class="sig-paren">(</span><em class="sig-param">bench_rows</em>, <em class="sig-param">bench_dims</em>, <em class="sig-param">dataset_name='blobs'</em>, <em class="sig-param">input_type='numpy'</em>, <em class="sig-param">n_reps=1</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.benchmark.runners.SpeedupComparisonRunner" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wrapper to run an algorithm with multiple dataset sizes
 and compute speedup of cuml relative to sklearn baseline.</p>
 <p class="rubric">Methods</p>
@@ -654,7 +694,7 @@ and compute speedup of cuml relative to sklearn baseline.</p>
 
 <dl class="function">
 <dt id="cuml.benchmark.runners.run_variations">
-<code class="sig-prename descclassname">cuml.benchmark.runners.</code><code class="sig-name descname">run_variations</code><span class="sig-paren">(</span><em class="sig-param">algos, dataset_name, bench_rows, bench_dims, param_override_list=[{}], cuml_param_override_list=[{}], input_type='numpy', run_cpu=True, raise_on_error=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.benchmark.runners.run_variations" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cuml.benchmark.runners.</code><code class="sig-name descname">run_variations</code><span class="sig-paren">(</span><em class="sig-param">algos, dataset_name, bench_rows, bench_dims, param_override_list=[{}], cuml_param_override_list=[{}], input_type='numpy', run_cpu=True, raise_on_error=False, n_reps=1</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.benchmark.runners.run_variations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs each algo in <cite>algos</cite> once per
 <cite>bench_rows X bench_dims X params_override_list X cuml_param_override_list</cite>
 combination and returns a dataframe containing timing and accuracy data.</p>
@@ -1010,14 +1050,14 @@ is a regression task (predicting a continuous variable).</p>
 <p>For additional docs, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">scikitlearn’s OLS</a>.</p>
 <p>For an additional example see <a class="reference external" href="https://github.com/rapidsai/cuml/blob/master/python/notebooks/linear_regression_demo.ipynb">the OLS notebook</a>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">cudf</span>
 
 <span class="c1"># Both import methods supported</span>
 <span class="kn">from</span> <span class="nn">cuml</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
 <span class="kn">from</span> <span class="nn">cuml.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
 
-<span class="n">lr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">(</span><span class="n">fit_intercept</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">normalize</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">(</span><span class="n">fit_intercept</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">normalize</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                       <span class="n">algorithm</span> <span class="o">=</span> <span class="s2">&quot;eig&quot;</span><span class="p">)</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
@@ -1027,18 +1067,18 @@ is a regression task (predicting a continuous variable).</p>
 <span class="n">y</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="p">)</span>
 
 <span class="n">reg</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Intercept:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Intercept:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
 
 <span class="n">X_new</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 <span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">preds</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Predictions:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predictions:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -1205,13 +1245,16 @@ If False, the model expects that you have centered the data.</p>
 </dd>
 <dt><strong>max_iter: int (default = 1000)</strong></dt><dd><p>Maximum number of iterations taken for the solvers to converge.</p>
 </dd>
-<dt><strong>verbose: bool (optional, default False)</strong></dt><dd><p>Controls verbosity of logging.</p>
+<dt><strong>linesearch_max_iter: int (default = 50)</strong></dt><dd><p>Max number of linesearch iterations per outer iteration used in the
+lbfgs and owl QN solvers.</p>
+</dd>
+<dt><strong>verbose: int (optional, default 0)</strong></dt><dd><p>Controls verbosity level of logging.</p>
 </dd>
 <dt><strong>l1_ratio: float or None, optional (default=None)</strong></dt><dd><p>The Elastic-Net mixing parameter, with <cite>0 &lt;= l1_ratio &lt;= 1</cite></p>
 </dd>
 <dt><strong>solver: ‘qn’, ‘lbfgs’, ‘owl’ (default=qn).</strong></dt><dd><p>Algorithm to use in the optimization problem. Currently only <cite>qn</cite> is
 supported, which automatically selects either L-BFGS or OWL-QN
-depending on the condictions of the l1 regularization described
+depending on the conditions of the l1 regularization described
 above. Options ‘lbfgs’ and ‘owl’ are just convenience values that
 end up using the same solver following the same rules.</p>
 </dd>
@@ -1228,7 +1271,7 @@ using different solvers in Scikit-learn.</p>
 &lt;<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html">https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html</a>&gt;`_.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Both import methods supported</span>
 <span class="c1"># from cuml import LogisticRegression</span>
@@ -1242,10 +1285,10 @@ using different solvers in Scikit-learn.</p>
 <span class="n">reg</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
 <span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Intercept:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">intercept_</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Intercept:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">intercept_</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
 
 <span class="n">X_new</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 <span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
@@ -1253,8 +1296,8 @@ using different solvers in Scikit-learn.</p>
 
 <span class="n">preds</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Predictions:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predictions:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -1280,6 +1323,9 @@ using different solvers in Scikit-learn.</p>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.LogisticRegression.predict" title="cuml.LogisticRegression.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Predicts the y for X.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LogisticRegression.score" title="cuml.LogisticRegression.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, convert_dtype])</p></td>
+<td><p>Calculates the accuracy metric score of the model for X.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1333,6 +1379,24 @@ will increase memory used for the method.</p>
 </dl>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="cuml.LogisticRegression.score">
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LogisticRegression.score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the accuracy metric score of the model for X.</p>
+<dl class="simple">
+<dt>X<span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Observations for which labels score will be calculated.
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt>y<span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1).
+Ground truth labels to compare predictions to for the score.
+Acceptable formats: cuDF Series, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </div>
@@ -1376,18 +1440,17 @@ If False, no scaling will be done.</p>
 <p class="rubric">Notes</p>
 <p>Ridge provides L2 regularization. This means that the coefficients can
 shrink to become very small, but not zero. This can cause issues of
-interpretabiliy on the coefficients.
+interpretability on the coefficients.
 Consider using Lasso, or thresholding small coefficients to zero.</p>
 <p><strong>Applications of Ridge</strong></p>
 <blockquote>
-<div><p>Ridge Regression is used in the same way as LinearRegression, but is
-used frequently as it does not suffer from multicollinearity issues.
-Ridge is used in insurance premium prediction, stock market analysis
-and much more.</p>
+<div><p>Ridge Regression is used in the same way as LinearRegression, but does
+not suffer from multicollinearity issues.  Ridge is used in insurance
+premium prediction, stock market analysis and much more.</p>
 </div></blockquote>
 <p>For additional docs, see <a class="reference external" href="https://github.com/rapidsai/notebooks/blob/master/cuml/ridge_regression_demo.ipynb">scikitlearn’s Ridge</a>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">cudf</span>
 
 <span class="c1"># Both import methods supported</span>
@@ -1395,7 +1458,7 @@ and much more.</p>
 <span class="kn">from</span> <span class="nn">cuml.linear_model</span> <span class="kn">import</span> <span class="n">Ridge</span>
 
 <span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1e-5</span><span class="p">])</span>
-<span class="n">ridge</span> <span class="o">=</span> <span class="n">Ridge</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">fit_intercept</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">normalize</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span>
+<span class="n">ridge</span> <span class="o">=</span> <span class="n">Ridge</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">fit_intercept</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">normalize</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
               <span class="n">solver</span> <span class="o">=</span> <span class="s2">&quot;eig&quot;</span><span class="p">)</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
@@ -1405,18 +1468,18 @@ and much more.</p>
 <span class="n">y</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="p">)</span>
 
 <span class="n">result_ridge</span> <span class="o">=</span> <span class="n">ridge</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result_ridge</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Intercept:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result_ridge</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_ridge</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Intercept:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_ridge</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
 
 <span class="n">X_new</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 <span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">preds</span> <span class="o">=</span> <span class="n">result_ridge</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Predictions:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predictions:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -1552,8 +1615,8 @@ will increase memory used for the method.</p>
 <dd><p>Lasso extends LinearRegression by providing L1 regularization on the
 coefficients when predicting response y with a linear combination of the
 predictors in X. It can zero some of the coefficients for feature
-selection, and improves the conditioning of the problem.</p>
-<p>cuML’s Lasso an array-like object or cuDF DataFrame, and
+selection and improves the conditioning of the problem.</p>
+<p>cuML’s Lasso an array-like object or cuDF DataFrame and
 uses coordinate descent to fit a linear model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1587,7 +1650,7 @@ convergence especially when tol is higher than 1e-4.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">cudf</span>
 <span class="kn">from</span> <span class="nn">cuml.linear_model</span> <span class="kn">import</span> <span class="n">Lasso</span>
 
@@ -1600,17 +1663,17 @@ convergence especially when tol is higher than 1e-4.</p>
 <span class="n">y</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="p">)</span>
 
 <span class="n">result_lasso</span> <span class="o">=</span> <span class="n">ls</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result_lasso</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;intercept:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result_lasso</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_lasso</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;intercept:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_lasso</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
 
 <span class="n">X_new</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 <span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">preds</span> <span class="o">=</span> <span class="n">result_lasso</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -1744,7 +1807,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dd><p>ElasticNet extends LinearRegression with combined L1 and L2 regularizations
 on the coefficients when predicting response y with a linear combination of
 the predictors in X. It can reduce the variance of the predictors, force
-some coefficients to be smaell, and improves the conditioning of the
+some coefficients to be small, and improves the conditioning of the
 problem.</p>
 <p>cuML’s ElasticNet an array-like object or cuDF DataFrame, uses coordinate
 descent to fit a linear model.</p>
@@ -1784,7 +1847,7 @@ convergence especially when tol is higher than 1e-4.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">cudf</span>
 <span class="kn">from</span> <span class="nn">cuml.linear_model</span> <span class="kn">import</span> <span class="n">ElasticNet</span>
 
@@ -1797,17 +1860,17 @@ convergence especially when tol is higher than 1e-4.</p>
 <span class="n">y</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="p">)</span>
 
 <span class="n">result_enet</span> <span class="o">=</span> <span class="n">enet</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result_enet</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;intercept:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result_enet</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_enet</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;intercept:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_enet</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
 
 <span class="n">X_new</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 <span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">preds</span> <span class="o">=</span> <span class="n">result_enet</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -2457,20 +2520,10 @@ tree classifiers in an ensemble.</p>
 used in scikit-learn. By default, the cuML Random Forest uses a
 histogram-based algorithms to determine splits, rather than an exact
 count. You can tune the size of the histograms with the n_bins parameter.</p>
-<p><strong>Known Limitations</strong>: This is an initial release of the cuML
-Random Forest code. It contains a few known limitations:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Inference/prediction takes place on the CPU. A GPU-based inference
-solution based on the forest inference library is planned for a
-near-future release.</p></li>
-<li><p>Instances of RandomForestClassifier cannot be pickled currently.</p></li>
-</ul>
-</div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>n_estimators</strong><span class="classifier">int (default = 10)</span></dt><dd><p>number of trees in the forest.</p>
+<dt><strong>n_estimators</strong><span class="classifier">int (default = 10)</span></dt><dd><p>Number of trees in the forest.</p>
 </dd>
 <dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
 </dd>
@@ -2478,15 +2531,15 @@ near-future release.</p></li>
 2 and 3 not valid for classification
 (default = 0)</p>
 </dd>
-<dt><strong>split_algo</strong><span class="classifier">0 for HIST and 1 for GLOBAL_QUANTILE</span></dt><dd><p>(default = 1)
-the algorithm to determine how nodes are split in the tree.
-HIST curently uses a slower tree-building algorithm
-so GLOBAL_QUANTILE is recommended for most cases.</p>
+<dt><strong>split_algo</strong><span class="classifier">int (default = 1)</span></dt><dd><p>The algorithm to determine how nodes are split in the tree.
+0 for HIST and 1 for GLOBAL_QUANTILE. HIST curently uses a slower
+tree-building algorithm so GLOBAL_QUANTILE is recommended for most
+cases.</p>
 </dd>
 <dt><strong>bootstrap</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>Control bootstrapping.
-If set, each tree in the forest is built
+If True, each tree in the forest is built
 on a bootstrapped sample with replacement.
-If false, sampling without replacement is done.</p>
+If False, sampling without replacement is done.</p>
 </dd>
 <dt><strong>bootstrap_features</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>Control bootstrapping for features.
 If features are drawn with or without replacement</p>
@@ -2501,19 +2554,16 @@ random forest, which defaults to unlimited depth.</em></p>
 <dt><strong>max_leaves</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum leaf nodes per tree. Soft constraint. Unlimited,
 if -1.</p>
 </dd>
-<dt><strong>max_features</strong><span class="classifier">int or float or string or None (default = ‘auto’)</span></dt><dd><p>Ratio of number of features (columns) to consider
-per node split.
+<dt><strong>max_features</strong><span class="classifier">int, float, or string (default = ‘auto’)</span></dt><dd><p>Ratio of number of features (columns) to consider per node split.
 If int then max_features/n_features.
-If float then max_features is a fraction.
+If float then max_features is used as a fraction.
 If ‘auto’ then max_features=1/sqrt(n_features).
 If ‘sqrt’ then max_features=1/sqrt(n_features).
-If ‘log2’ then max_features=log2(n_features)/n_features.
-If None, then max_features=1/sqrt(n_features).</p>
+If ‘log2’ then max_features=log2(n_features)/n_features.</p>
 </dd>
 <dt><strong>n_bins</strong><span class="classifier">int (default = 8)</span></dt><dd><p>Number of bins used by the split algorithm.</p>
 </dd>
-<dt><strong>min_rows_per_node</strong><span class="classifier">int or float (default = 2)</span></dt><dd><p>The minimum number of samples (rows) needed
-to split a node.
+<dt><strong>min_rows_per_node</strong><span class="classifier">int or float (default = 2)</span></dt><dd><p>The minimum number of samples (rows) needed to split a node.
 If int then number of sample rows
 If float the min_rows_per_sample*n_rows</p>
 </dd>
@@ -2523,11 +2573,13 @@ node to be spilt.</p>
 <dt><strong>quantile_per_tree</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>Whether quantile is computed for individal trees in RF.
 Only relevant for GLOBAL_QUANTILE split_algo.</p>
 </dd>
+<dt><strong>seed</strong><span class="classifier">int (default = None)</span></dt><dd><p>Seed for the random number generator. Unseeded by default.</p>
+</dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">cuml.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span> <span class="k">as</span> <span class="n">cuRFC</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
@@ -2539,7 +2591,7 @@ Only relevant for GLOBAL_QUANTILE split_algo.</p>
 <span class="n">cuml_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 <span class="n">cuml_predict</span> <span class="o">=</span> <span class="n">cuml_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Predicted labels : &quot;</span><span class="p">,</span> <span class="n">cuml_predict</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicted labels : &quot;</span><span class="p">,</span> <span class="n">cuml_predict</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -2613,7 +2665,7 @@ required to configure this estimator as a dictionary.</p>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestClassifier.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">predict_model=u'GPU'</em>, <em class="sig-param">output_class=True</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'BATCH_TREE_REORG'</em>, <em class="sig-param">num_classes=2</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">predict_model=u'GPU'</em>, <em class="sig-param">output_class=True</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'BATCH_TREE_REORG'</em>, <em class="sig-param">num_classes=2</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the labels for X.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2622,17 +2674,17 @@ required to configure this estimator as a dictionary.</p>
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
-<dt><strong>predict_model</strong><span class="classifier">String</span></dt><dd><p>“GPU” if prediction should be carried out on the GPU
-“CPU” or None if prediction should be carried out
-on the CPU</p>
+<dt><strong>predict_model</strong><span class="classifier">String (default = ‘GPU’)</span></dt><dd><p>‘GPU’ to predict using the GPU, ‘CPU’ otherwise. The GPU can only
+be used if the model was trained on float32 data and <cite>X</cite> is float32
+or convert_dtype is set to True.</p>
 </dd>
-<dt><strong>output_class: boolean</strong></dt><dd><p>This is optional and required only while performing the
+<dt><strong>output_class: boolean (default = True)</strong></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
 If true, return a 1 or 0 depending on whether the raw
 prediction exceeds the threshold. If False, just return
 the raw prediction.</p>
 </dd>
-<dt><strong>algo</strong><span class="classifier">string name of the algo from (from algo_t enum)</span></dt><dd><p>This is optional and required only while performing the
+<dt><strong>algo</strong><span class="classifier">string (default = ‘BATCH_TREE_REORG’)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
 ‘NAIVE’ - simple inference using shared memory
 ‘TREE_REORG’ - similar to naive but trees rearranged to be more</p>
@@ -2644,12 +2696,15 @@ predict operation on the GPU.
 </dd>
 </dl>
 </dd>
-<dt><strong>threshold</strong><span class="classifier">float</span></dt><dd><p>threshold is used to for classification
-This is optional and required only while performing the
-predict operation on the GPU.
+<dt><strong>threshold</strong><span class="classifier">float (default = 0.5)</span></dt><dd><p>Threshold used for classification. Optional and required only
+while performing the predict operation on the GPU.
 It is applied if output_class == True, else it is ignored</p>
 </dd>
-<dt><strong>num_classes</strong><span class="classifier">integer</span></dt><dd><p>number of different classes present in the dataset</p>
+<dt><strong>num_classes</strong><span class="classifier">int (default = 2)</span></dt><dd><p>number of different classes present in the dataset</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
+the input to the data type which was used to train the model. This
+will increase memory used for the method.</p>
 </dd>
 </dl>
 </dd>
@@ -2679,9 +2734,9 @@ train and test the Random Forest model</p>
 <dt id="cuml.ensemble.RandomForestClassifier.score">
 <code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'BATCH_TREE_REORG'</em>, <em class="sig-param">num_classes=2</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the accuracy metric score of the model for X.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
@@ -2691,14 +2746,10 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dt><strong>algo</strong><span class="classifier">string name of the algo from (from algo_t enum)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
 ‘NAIVE’ - simple inference using shared memory
-‘TREE_REORG’ - similar to naive but trees rearranged to be more</p>
-<blockquote>
-<div><p>coalescing-friendly</p>
-</div></blockquote>
-<dl class="simple">
-<dt>‘BATCH_TREE_REORG’ - similar to TREE_REORG but predicting</dt><dd><p>multiple rows per thread block</p>
-</dd>
-</dl>
+‘TREE_REORG’ - similar to naive but trees rearranged to be more
+coalescing-friendly
+‘BATCH_TREE_REORG’ - similar to TREE_REORG but predicting
+multiple rows per thread block</p>
 </dd>
 <dt><strong>threshold</strong><span class="classifier">float</span></dt><dd><p>threshold is used to for classification
 This is optional and required only while performing the
@@ -2739,39 +2790,38 @@ the sklearn set_params.</p>
 trees in an ensemble.
 Note that the underlying algorithm for tree node splits differs from that
 used in scikit-learn. By default, the cuML Random Forest uses a
-histogram-based algorithms to determine splits, rather than an exact
+histogram-based algorithm to determine splits, rather than an exact
 count. You can tune the size of the histograms with the n_bins parameter.</p>
 <p><strong>Known Limitations</strong>: This is an initial release of the cuML
 Random Forest code. It contains a few known limitations:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Inference/prediction takes place on the CPU. A GPU-based inference
-solution based on the forest inference library is planned for a
-near-future release.</p></li>
-<li><p>Instances of RandomForestRegressor cannot be pickled currently.</p></li>
+<li><p>Instances of RandomForestRegressor cannot be fully pickled currently.</p></li>
 </ul>
 </div></blockquote>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>n_estimators</strong><span class="classifier">int (default = 10)</span></dt><dd><p>number of trees in the forest.</p>
+<dd class="field-odd"><dl>
+<dt><strong>n_estimators</strong><span class="classifier">int (default = 10)</span></dt><dd><p>Number of trees in the forest.</p>
 </dd>
 <dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
 </dd>
-<dt><strong>split_algo</strong><span class="classifier">int (default = 1)</span></dt><dd><p>0 for HIST, 1 for GLOBAL_QUANTILE
-The type of algorithm to be used to create the trees.
-HIST curently uses a slower tree-building algorithm
-so GLOBAL_QUANTILE is recommended for most cases.</p>
+<dt><strong>split_algo</strong><span class="classifier">int (default = 1)</span></dt><dd><p>The algorithm to determine how nodes are split in the tree.
+0 for HIST and 1 for GLOBAL_QUANTILE. HIST curently uses a slower
+tree-building algorithm so GLOBAL_QUANTILE is recommended for most
+cases.</p>
 </dd>
 <dt><strong>split_criterion: int (default = 2)</strong></dt><dd><p>The criterion used to split nodes.
 0 for GINI, 1 for ENTROPY,
 2 for MSE, or 3 for MAE
 0 and 1 not valid for regression</p>
 </dd>
-<dt><strong>bootstrap</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>Control bootstrapping.
-If set, each tree in the forest is built
+<dt><strong>bootstrap</strong><span class="classifier">boolean (default = True)</span></dt><dd><dl class="simple">
+<dt>Control bootstrapping.</dt><dd><p>If True, each tree in the forest is built
 on a bootstrapped sample with replacement.
-If false, sampling without replacement is done.</p>
+If False, sampling without replacement is done.</p>
+</dd>
+</dl>
 </dd>
 <dt><strong>bootstrap_features</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>Control bootstrapping for features.
 If features are drawn with or without replacement</p>
@@ -2783,30 +2833,30 @@ if -1. Unlimited depth is not supported with split_algo=1.
 <em>Note that this default differs from scikit-learn’s
 random forest, which defaults to unlimited depth.</em></p>
 </dd>
-<dt><strong>max_leaves</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum leaf nodes per tree. Soft constraint. Unlimited,
+<dt><strong>max_leaves</strong><span class="classifier">int (default = -1)</span></dt><dd><blockquote>
+<div><p>Maximum leaf nodes per tree. Soft constraint. Unlimited,
 if -1.</p>
-</dd>
-<dt><strong>max_features</strong><span class="classifier">int or float or string or None (default = ‘auto’)</span></dt><dd><p>Ratio of number of features (columns) to consider
+</div></blockquote>
+<dl class="simple">
+<dt>max_features<span class="classifier">int, float, or string (default = ‘auto’)</span></dt><dd><p>Ratio of number of features (columns) to consider
 per node split.
 If int then max_features/n_features.
-If float then max_features is a fraction.
-If ‘auto’ then max_features=n_features which is 1.0.
+If float then max_features is used as a fraction.
+If ‘auto’ then max_features=1/sqrt(n_features).
 If ‘sqrt’ then max_features=1/sqrt(n_features).
-If ‘log2’ then max_features=log2(n_features)/n_features.
-If None, then max_features=n_features which is 1.0.</p>
+If ‘log2’ then max_features=log2(n_features)/n_features.</p>
+</dd>
+</dl>
 </dd>
 <dt><strong>n_bins</strong><span class="classifier">int (default = 8)</span></dt><dd><p>Number of bins used by the split algorithm.</p>
 </dd>
-<dt><strong>min_rows_per_node</strong><span class="classifier">int or float (default = 2)</span></dt><dd><p>The minimum number of samples (rows) needed
-to split a node.
+<dt><strong>min_rows_per_node</strong><span class="classifier">int or float (default = 2)</span></dt><dd><p>The minimum number of samples (rows) needed to split a node.
 If int then number of sample rows
 If float the min_rows_per_sample*n_rows</p>
 </dd>
-<dt><strong>min_impurity_decrease</strong><span class="classifier">float (default = 0.0)</span></dt><dd><p>The minimum decrease in impurity required
-for node to be split</p>
+<dt><strong>min_impurity_decrease</strong><span class="classifier">float (default = 0.0)</span></dt><dd><p>The minimum decrease in impurity required for node to be split</p>
 </dd>
-<dt><strong>accuracy_metric</strong><span class="classifier">string (default = ‘mse’)</span></dt><dd><p>Decides the metric used to evaluate the performance
-of the model.
+<dt><strong>accuracy_metric</strong><span class="classifier">string (default = ‘mse’)</span></dt><dd><p>Decides the metric used to evaluate the performance of the model.
 for median of abs error : ‘median_ae’
 for mean of abs error : ‘mean_ae’
 for mean square error’ : ‘mse’</p>
@@ -2814,11 +2864,14 @@ for mean square error’ : ‘mse’</p>
 <dt><strong>quantile_per_tree</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>Whether quantile is computed for individal trees in RF.
 Only relevant for GLOBAL_QUANTILE split_algo.</p>
 </dd>
+<dt><strong>seed</strong><span class="classifier">int (default = None)</span></dt><dd><p>Seed for the random number generator. Unseeded by default. Does not
+currently fully guarantee the exact same results.</p>
+</dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">cuml.test.utils</span> <span class="kn">import</span> <span class="n">get_handle</span>
 <span class="kn">from</span> <span class="nn">cuml.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span> <span class="k">as</span> <span class="n">curfc</span>
 <span class="kn">from</span> <span class="nn">cuml.test.utils</span> <span class="kn">import</span> <span class="n">get_handle</span>
@@ -2829,7 +2882,7 @@ Only relevant for GLOBAL_QUANTILE split_algo.</p>
                    <span class="n">n_estimators</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">accuracy_metric</span><span class="o">=</span><span class="s1">&#39;mse&#39;</span><span class="p">)</span>
 <span class="n">cuml_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 <span class="n">cuml_score</span> <span class="o">=</span> <span class="n">cuml_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;MSE score of cuml : &quot;</span><span class="p">,</span> <span class="n">cuml_score</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MSE score of cuml : &quot;</span><span class="p">,</span> <span class="n">cuml_score</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -2849,7 +2902,7 @@ Only relevant for GLOBAL_QUANTILE split_algo.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.get_params" title="cuml.ensemble.RandomForestRegressor.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
 <td><p>Returns the value of all parameters required to configure this estimator as a dictionary.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.predict" title="cuml.ensemble.RandomForestRegressor.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, predict_model, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.predict" title="cuml.ensemble.RandomForestRegressor.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, predict_model, algo, …])</p></td>
 <td><p>Predicts the labels for X.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.print_detailed" title="cuml.ensemble.RandomForestRegressor.print_detailed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_detailed</span></code></a>(self)</p></td>
@@ -2899,7 +2952,7 @@ deep : boolean (default = True)</p>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestRegressor.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">predict_model=u'GPU'</em>, <em class="sig-param">output_class=False</em>, <em class="sig-param">algo=u'BATCH_TREE_REORG'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">predict_model=u'GPU'</em>, <em class="sig-param">algo=u'BATCH_TREE_REORG'</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the labels for X.
 Parameters
 ———-
@@ -2909,28 +2962,22 @@ X : array-like (device or host) shape = (n_samples, n_features)</p>
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </div></blockquote>
-<dl>
-<dt>predict_model<span class="classifier">String</span></dt><dd><p>“GPU” if prediction should be carried out on the GPU
-“CPU” or None if prediction should be carried out
-on the CPU</p>
+<dl class="simple">
+<dt>predict_model<span class="classifier">String (default = ‘GPU’)</span></dt><dd><p>‘GPU’ to predict using the GPU, ‘CPU’ otherwise. The GPU can only
+be used if the model was trained on float32 data and <cite>X</cite> is float32
+or convert_dtype is set to True.</p>
 </dd>
-<dt>output_class: boolean</dt><dd><p>This is optional and required only while performing the
-predict operation on the GPU.
-If true, return a 1 or 0 depending on whether the raw
-prediction exceeds the threshold. If False, just return
-the raw prediction.</p>
-</dd>
-<dt>algo<span class="classifier">string name of the algo from (from algo_t enum)</span></dt><dd><p>This is optional and required only while performing the
+<dt>algo<span class="classifier">string (default = ‘BATCH_TREE_REORG’)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
 ‘NAIVE’ - simple inference using shared memory
-‘TREE_REORG’ - similar to naive but trees rearranged to be more</p>
-<blockquote>
-<div><p>coalescing-friendly</p>
-</div></blockquote>
-<dl class="simple">
-<dt>‘BATCH_TREE_REORG’ - similar to TREE_REORG but predicting</dt><dd><p>multiple rows per thread block</p>
+‘TREE_REORG’ - similar to naive but trees rearranged to be more
+coalescing-friendly
+‘BATCH_TREE_REORG’ - similar to TREE_REORG but predicting
+multiple rows per thread block</p>
 </dd>
-</dl>
+<dt>convert_dtype<span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
+the input to the data type which was used to train the model. This
+will increase memory used for the method.</p>
 </dd>
 </dl>
 <dl class="simple">
@@ -2964,20 +3011,16 @@ X : array-like (device or host) shape = (n_samples, n_features)</p>
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </div></blockquote>
-<dl>
+<dl class="simple">
 <dt>y: NumPy</dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
 </dd>
 <dt>algo<span class="classifier">string name of the algo from (from algo_t enum)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
 ‘NAIVE’ - simple inference using shared memory
-‘TREE_REORG’ - similar to naive but trees rearranged to be more</p>
-<blockquote>
-<div><p>coalescing-friendly</p>
-</div></blockquote>
-<dl class="simple">
-<dt>‘BATCH_TREE_REORG’ - similar to TREE_REORG but predicting</dt><dd><p>multiple rows per thread block</p>
-</dd>
-</dl>
+‘TREE_REORG’ - similar to naive but trees rearranged to be more
+coalescing-friendly
+‘BATCH_TREE_REORG’ - similar to TREE_REORG but predicting
+multiple rows per thread block</p>
 </dd>
 </dl>
 <p>mean_square_error : float or
@@ -3040,14 +3083,14 @@ problems but will be suboptimal for sparse datasets.</p></li>
 <p>For additional usage examples, see the sample notebook at
 <a class="reference external" href="https://github.com/rapidsai/notebooks/blob/branch-0.9/cuml/forest_inference_demo.ipynb">https://github.com/rapidsai/notebooks/blob/branch-0.9/cuml/forest_inference_demo.ipynb</a> # noqa</p>
 <p>In the example below, synthetic data is copied to the host before
-infererence. ForestInference can also accept a numpy array directly at the
+inference. ForestInference can also accept a numpy array directly at the
 cost of a slight performance overhead.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Assume that the file &#39;xgb.model&#39; contains a classifier model that was</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># previously saved by XGBoost&#39;s save_model function.</span>
 <span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sklearn</span><span class="o">,</span> <span class="nn">sklearn.datasets</span><span class="o">,</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numba</span> <span class="k">import</span> <span class="n">cuda</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">cuml</span> <span class="k">import</span> <span class="n">ForestInference</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">cuda</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">cuml</span> <span class="kn">import</span> <span class="n">ForestInference</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">model_path</span> <span class="o">=</span> <span class="s1">&#39;xgb.model&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">make_classification</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">X_gpu</span> <span class="o">=</span> <span class="n">cuda</span><span class="o">.</span><span class="n">to_device</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)))</span>
@@ -3070,17 +3113,20 @@ cost of a slight performance overhead.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.ForestInference.load_from_randomforest" title="cuml.ForestInference.load_from_randomforest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_from_randomforest</span></code></a>(self, model_handle[, …])</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ForestInference.load_from_treelite_model" title="cuml.ForestInference.load_from_treelite_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_from_treelite_model</span></code></a>(self, model, …[, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ForestInference.load_from_sklearn" title="cuml.ForestInference.load_from_sklearn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_from_sklearn</span></code></a>(skl_model[, output_class, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ForestInference.load_from_treelite_model" title="cuml.ForestInference.load_from_treelite_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_from_treelite_model</span></code></a>(self, model, …[, …])</p></td>
 <td><p>Creates a FIL model using the treelite model passed to the function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ForestInference.predict" title="cuml.ForestInference.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, preds])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ForestInference.predict" title="cuml.ForestInference.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, preds])</p></td>
 <td><p>Predicts the labels for X with the loaded forest model.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="attribute">
 <dt id="cuml.ForestInference.load">
-<code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">output_class=False</em>, <em class="sig-param">threshold=0.50</em>, <em class="sig-param">algo=u'TREE_REORG'</em>, <em class="sig-param">model_type=u'xgboost'</em>, <em class="sig-param">handle=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ForestInference.load" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">output_class=False</em>, <em class="sig-param">threshold=0.50</em>, <em class="sig-param">algo=u'TREE_REORG'</em>, <em class="sig-param">storage_type=u'DENSE'</em>, <em class="sig-param">model_type=u'xgboost'</em>, <em class="sig-param">handle=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ForestInference.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a FIL instance containing the forest saved in ‘filename’
 This uses Treelite to load the saved model.</p>
 <dl class="field-list simple">
@@ -3098,6 +3144,9 @@ Only used if the model is classification and output_class is True</p>
 <dt><strong>algo</strong><span class="classifier">string</span></dt><dd><p>Which inference algorithm to use.
 See documentation in FIL.load_from_treelite_model</p>
 </dd>
+<dt><strong>storage_type</strong><span class="classifier">string name of the storage type</span></dt><dd><p>(from storage_type_t enum) for the FIL forest.
+See documentation in FIL.load_from_treelite_model</p>
+</dd>
 <dt><strong>model_type</strong><span class="classifier">str</span></dt><dd><p>Format of saved treelite model to load.
 Can be ‘xgboost’, ‘lightgbm’, or ‘protobuf’</p>
 </dd>
@@ -3108,12 +3157,17 @@ Can be ‘xgboost’, ‘lightgbm’, or ‘protobuf’</p>
 
 <dl class="attribute">
 <dt id="cuml.ForestInference.load_from_randomforest">
-<code class="sig-name descname">load_from_randomforest</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">model_handle</em>, <em class="sig-param">output_class=False</em>, <em class="sig-param">algo=u'TREE_REORG'</em>, <em class="sig-param">threshold=0.50</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ForestInference.load_from_randomforest" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">load_from_randomforest</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">model_handle</em>, <em class="sig-param">output_class=False</em>, <em class="sig-param">algo=u'TREE_REORG'</em>, <em class="sig-param">storage_type=u'DENSE'</em>, <em class="sig-param">threshold=0.50</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ForestInference.load_from_randomforest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ForestInference.load_from_sklearn">
+<code class="sig-name descname">load_from_sklearn</code><span class="sig-paren">(</span><em class="sig-param">skl_model</em>, <em class="sig-param">output_class=False</em>, <em class="sig-param">threshold=0.50</em>, <em class="sig-param">algo=u'TREE_REORG'</em>, <em class="sig-param">storage_type=u'DENSE'</em>, <em class="sig-param">handle=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ForestInference.load_from_sklearn" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.ForestInference.load_from_treelite_model">
-<code class="sig-name descname">load_from_treelite_model</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">model</em>, <em class="sig-param">output_class</em>, <em class="sig-param">algo=u'TREE_REORG'</em>, <em class="sig-param">threshold=0.5</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ForestInference.load_from_treelite_model" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">load_from_treelite_model</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">model</em>, <em class="sig-param">output_class</em>, <em class="sig-param">algo=u'TREE_REORG'</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">storage_type=u'DENSE'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ForestInference.load_from_treelite_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a FIL model using the treelite model
 passed to the function.</p>
 <dl class="field-list">
@@ -3125,17 +3179,31 @@ passed to the function.</p>
 <dt><strong>output_class: boolean</strong></dt><dd><p>If true, return a 1 or 0 depending on whether the raw prediction
 exceeds the threshold. If False, just return the raw prediction.</p>
 </dd>
-<dt><strong>algo</strong><span class="classifier">string name of the algo from (from algo_t enum)</span></dt><dd><p>‘NAIVE’ - simple inference using shared memory
-‘TREE_REORG’ - similar to naive but trees rearranged to be more</p>
+<dt><strong>algo</strong><span class="classifier">string name of the algo from (from algo_t enum)</span></dt><dd><p>‘NAIVE’ or ‘naive’ - simple inference using shared memory
+‘TREE_REORG’ or ‘tree_reorg’ - similar to naive but trees</p>
 <blockquote>
-<div><p>coalescing-friendly</p>
+<div><p>rearranged to be more coalescing-friendly</p>
 </div></blockquote>
 <dl class="simple">
-<dt>‘BATCH_TREE_REORG’ - similar to TREE_REORG but predicting</dt><dd><p>multiple rows per thread block</p>
+<dt>‘BATCH_TREE_REORG’ or ‘batch_tree_reorg’ - similar to TREE_REORG</dt><dd><p>but predicting multiple rows
+per thread block</p>
 </dd>
 </dl>
 </dd>
 <dt><strong>threshold</strong><span class="classifier">threshold is used to for classification</span></dt><dd><p>applied if output_class == True, else it is ignored</p>
+</dd>
+<dt><strong>storage_type</strong><span class="classifier">string name of the storage type</span></dt><dd><dl>
+<dt>(from storage_type_t enum) for the FIL forest</dt><dd><dl class="simple">
+<dt>‘AUTO’ or ‘auto’ - choose the storage type automatically</dt><dd><p>(currently DENSE is always used)</p>
+</dd>
+</dl>
+<p>‘DENSE’ or ‘dense’ - create a dense forest
+‘SPARSE’ or ‘sparse’ - create a sparse forest;</p>
+<blockquote>
+<div><p>requires algo=’NAIVE’</p>
+</div></blockquote>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd>
@@ -3217,7 +3285,7 @@ algorithm.</p>
 <dt><strong>lbfgs_memory: int (default = 5)</strong></dt><dd><p>Rank of the lbfgs inverse-Hessian approximation. Method will use
 O(lbfgs_memory * D) memory.</p>
 </dd>
-<dt><strong>verbose: bool (optional, default False)</strong></dt><dd><p>Controls verbosity of logging.</p>
+<dt><strong>verbose: int (optional, default 0)</strong></dt><dd><p>Controls verbosity level of logging.</p>
 </dd>
 </dl>
 </dd>
@@ -3231,7 +3299,7 @@ Wright - Numerical Optimization (1999)]
 &lt;<a class="reference external" href="https://www.microsoft.com/en-us/research/publication/scalable-training-of-l1-regularized-log-linear-models/">https://www.microsoft.com/en-us/research/publication/scalable-training-of-l1-regularized-log-linear-models/</a>&gt;</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Both import methods supported</span>
 <span class="c1"># from cuml import QN</span>
@@ -3247,10 +3315,10 @@ Wright - Numerical Optimization (1999)]
 
 <span class="c1"># Note: for now, the coefficients also include the intercept in the</span>
 <span class="c1"># last position if fit_intercept=True</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">coef_</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Intercept:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">intercept_</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coefficients:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">coef_</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Intercept:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">intercept_</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">())</span>
 
 <span class="n">X_new</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 <span class="n">X_new</span><span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
@@ -3258,8 +3326,8 @@ Wright - Numerical Optimization (1999)]
 
 <span class="n">preds</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Predictions:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predictions:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">preds</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -3374,14 +3442,17 @@ Parallel and Distributed Systems, vol 28, no 12, 3330, (2017)</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.svm.SVC.fit" title="cuml.svm.SVC.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.svm.SVC.decision_function" title="cuml.svm.SVC.decision_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decision_function</span></code></a>(self, X)</p></td>
+<td><p>Calculates the decision function values for X.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.svm.SVC.fit" title="cuml.svm.SVC.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
 <td><p>Fit the model with X and y.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.svm.SVC.get_param_names" title="cuml.svm.SVC.get_param_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_param_names</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.svm.SVC.get_param_names" title="cuml.svm.SVC.get_param_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_param_names</span></code></a>(self)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.svm.SVC.predict" title="cuml.svm.SVC.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
-<td><p>Predicts the y for X.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.svm.SVC.predict" title="cuml.svm.SVC.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<td><p>Predicts the class labels for X.</p></td>
 </tr>
 </tbody>
 </table>
@@ -3389,6 +3460,28 @@ Parallel and Distributed Systems, vol 28, no 12, 3330, (2017)</p>
 <dt id="cuml.svm.SVC.coef_">
 <em class="property">property </em><code class="sig-name descname">coef_</code><a class="headerlink" href="#cuml.svm.SVC.coef_" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.svm.SVC.decision_function">
+<code class="sig-name descname">decision_function</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.svm.SVC.decision_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the decision function values for X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">cuDF Series</span></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.svm.SVC.fit">
@@ -3418,7 +3511,8 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dl class="attribute">
 <dt id="cuml.svm.SVC.predict">
 <code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.svm.SVC.predict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Predicts the y for X.</p>
+<dd><p>Predicts the class labels for X. The returned y values are the class
+labels associated to sign(decision_function(X)).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -3449,13 +3543,13 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dt id="cuml.KMeans">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">KMeans</code><a class="headerlink" href="#cuml.KMeans" title="Permalink to this definition">¶</a></dt>
 <dd><p>KMeans is a basic but powerful clustering method which is optimized via
-Expectation Maximization. It randomnly selects K data points in X, and
+Expectation Maximization. It randomly selects K data points in X, and
 computes which samples are close to these points.
 For every cluster of points, a mean is computed (hence the name), and this
 becomes the new centroid.</p>
 <p>cuML’s KMeans expects an array-like object or cuDF DataFrame, and supports
-the scalable KMeans++ intialization method. This method is more stable
-than randomnly selecting K points.</p>
+the scalable KMeans++ initialization method. This method is more stable
+than randomly selecting K points.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
@@ -3467,7 +3561,7 @@ than randomnly selecting K points.</p>
 </dd>
 <dt><strong>tol</strong><span class="classifier">float64 (default = 1e-4)</span></dt><dd><p>Stopping criterion when centroid means do not change much.</p>
 </dd>
-<dt><strong>verbose</strong><span class="classifier">boolean (default = 0)</span></dt><dd><p>If True, prints diagnositc information.</p>
+<dt><strong>verbose</strong><span class="classifier">boolean (default = 0)</span></dt><dd><p>If True, prints diagnostic information.</p>
 </dd>
 <dt><strong>random_state</strong><span class="classifier">int (default = 1)</span></dt><dd><p>If you want results to be the same when you restart Python, select a
 state.</p>
@@ -3476,7 +3570,7 @@ state.</p>
 <div><p>(default = ‘scalable-k-means++’)</p>
 </div></blockquote>
 <p>‘scalable-k-means++’ or ‘k-means||’: Uses fast and stable scalable
-kmeans++ intialization.
+kmeans++ initialization.
 ‘random’: Choose ‘n_cluster’ observations (rows) at random from data
 for the initial centroids. If an ndarray is passed, it should be of
 shape (n_clusters, n_features) and gives the initial centers.</p>
@@ -3520,8 +3614,8 @@ image segmentation and medical clustering.</p>
 <span class="kn">from</span> <span class="nn">cuml.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
 
 <span class="kn">import</span> <span class="nn">cudf</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="k">def</span> <span class="nf">np2cudf</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
     <span class="c1"># convert numpy array to cuDF dataframe</span>
@@ -3534,17 +3628,17 @@ image segmentation and medical clustering.</p>
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]],</span>
                <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np2cudf</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;input:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;input:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Calling fit&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Calling fit&quot;</span><span class="p">)</span>
 <span class="n">kmeans_float</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_gpu</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">kmeans_float</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;labels:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">kmeans_float</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;cluster_centers:&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">kmeans_float</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;labels:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kmeans_float</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cluster_centers:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kmeans_float</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -3783,7 +3877,7 @@ clusters to be constructed.</p>
 <div><p>DBSCAN’s main benefit is that the number of clusters is not a
 hyperparameter, and that it can find non-linearly shaped clusters.
 This also allows DBSCAN to be robust to noise.
-DBSCAN has been applied to analyzing particle collisons in the
+DBSCAN has been applied to analyzing particle collisions in the
 Large Hadron Collider, customer segmentation in marketing analyses,
 and much more.</p>
 </div></blockquote>
@@ -3795,7 +3889,7 @@ For additional docs, see <a class="reference external" href="http://scikit-learn
 <span class="kn">from</span> <span class="nn">cuml.cluster</span> <span class="kn">import</span> <span class="n">DBSCAN</span>
 
 <span class="kn">import</span> <span class="nn">cudf</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">gdf_float</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 <span class="n">gdf_float</span><span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">5.0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
@@ -3804,7 +3898,7 @@ For additional docs, see <a class="reference external" href="http://scikit-learn
 
 <span class="n">dbscan_float</span> <span class="o">=</span> <span class="n">DBSCAN</span><span class="p">(</span><span class="n">eps</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">min_samples</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">dbscan_float</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">dbscan_float</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dbscan_float</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -3944,7 +4038,7 @@ tasks like LinearRegression where correlated features cause problems.</p>
 </dl>
 <p class="rubric">Notes</p>
 <p>PCA considers linear combinations of features, specifically those that
-maximise global variance structure. This means PCA is fantastic for global
+maximize global variance structure. This means PCA is fantastic for global
 structure analyses, but weak for local relationships. Consider UMAP or
 T-SNE for a locally important embedding.</p>
 <p><strong>Applications of PCA</strong></p>
@@ -3963,7 +4057,7 @@ For additional docs, see <a class="reference external" href="http://scikit-learn
 <span class="kn">from</span> <span class="nn">cuml.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
 
 <span class="kn">import</span> <span class="nn">cudf</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">gdf_float</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 <span class="n">gdf_float</span><span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">5.0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
@@ -3973,20 +4067,20 @@ For additional docs, see <a class="reference external" href="http://scikit-learn
 <span class="n">pca_float</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">pca_float</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;components: {pca_float.components_}&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;explained variance: {pca_float.explained_variance_}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;components: </span><span class="si">{pca_float.components_}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance: </span><span class="si">{pca_float.explained_variance_}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">exp_var</span> <span class="o">=</span> <span class="n">pca_float</span><span class="o">.</span><span class="n">explained_variance_ratio_</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;explained variance ratio: {exp_var}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance ratio: </span><span class="si">{exp_var}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;singular values: {pca_float.singular_values_}&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;mean: {pca_float.mean_}&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;noise variance: {pca_float.noise_variance_}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;singular values: </span><span class="si">{pca_float.singular_values_}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;mean: </span><span class="si">{pca_float.mean_}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;noise variance: </span><span class="si">{pca_float.noise_variance_}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="n">trans_gdf_float</span> <span class="o">=</span> <span class="n">pca_float</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Inverse: {trans_gdf_float}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Inverse: </span><span class="si">{trans_gdf_float}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="n">input_gdf_float</span> <span class="o">=</span> <span class="n">pca_float</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">trans_gdf_float</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Input: {input_gdf_float}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Input: </span><span class="si">{input_gdf_float}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -4226,7 +4320,7 @@ but but will slow down the algorithm’s convergence.</p>
 <p>TruncatedSVD (the randomized version [Jacobi]) is fantastic when the number
 of components you want is much smaller than the number of features. The
 approximation to the largest singular values and vectors is very robust,
-however, this method loses a lot of accuracy when you want many many
+however, this method loses a lot of accuracy when you want many, many
 components.</p>
 <p><strong>Applications of TruncatedSVD</strong></p>
 <blockquote>
@@ -4244,7 +4338,7 @@ For additional documentation, see <a class="reference external" href="http://sci
 <span class="kn">from</span> <span class="nn">cuml.decomposition</span> <span class="kn">import</span> <span class="n">TruncatedSVD</span>
 
 <span class="kn">import</span> <span class="nn">cudf</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">gdf_float</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
 <span class="n">gdf_float</span><span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">5.0</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
@@ -4255,17 +4349,17 @@ For additional documentation, see <a class="reference external" href="http://sci
                           <span class="n">n_iter</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-9</span><span class="p">)</span>
 <span class="n">tsvd_float</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;components: {tsvd_float.components_}&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;explained variance: {tsvd_float.explained_variance_}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;components: </span><span class="si">{tsvd_float.components_}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance: </span><span class="si">{tsvd_float.explained_variance_}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">exp_var</span> <span class="o">=</span> <span class="n">tsvd_float</span><span class="o">.</span><span class="n">explained_variance_ratio_</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;explained variance ratio: {exp_var}&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;singular values: {tsvd_float.singular_values_}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance ratio: </span><span class="si">{exp_var}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;singular values: </span><span class="si">{tsvd_float.singular_values_}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="n">trans_gdf_float</span> <span class="o">=</span> <span class="n">tsvd_float</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Transformed matrix: {trans_gdf_float}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Transformed matrix: </span><span class="si">{trans_gdf_float}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="n">input_gdf_float</span> <span class="o">=</span> <span class="n">tsvd_float</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">trans_gdf_float</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Input matrix: {input_gdf_float}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Input matrix: </span><span class="si">{input_gdf_float}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -4444,9 +4538,9 @@ model.</p>
 Finds a low dimensional embedding of the data that approximates
 an underlying manifold.</p>
 <p>Adapted from <a class="reference external" href="https://github.com/lmcinnes/umap/blob/master/umap/">https://github.com/lmcinnes/umap/blob/master/umap/</a><a class="reference internal" href="#umap">umap</a>.py</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>n_neighbors: float (optional, default 15)</strong></dt><dd><p>The size of local neighborhood (in terms of number of neighboring
 sample points) used for manifold approximation. Larger values
 result in more global views of the manifold, while smaller
@@ -4517,6 +4611,32 @@ values are set automatically as determined by <code class="docutils literal notr
 values are set automatically as determined by <code class="docutils literal notranslate"><span class="pre">min_dist</span></code> and
 <code class="docutils literal notranslate"><span class="pre">spread</span></code>.</p>
 </dd>
+<dt><strong>hash_input: UMAP can hash the training input so that exact embeddings</strong></dt><dd><p>are returned when transform is called on the same data upon
+which the model was trained. This enables consistent
+behavior between calling model.fit_transform(X) and
+calling model.fit(X).transform(X). Not that the CPU-based
+UMAP reference implementation does this by default. This
+feature is made optional in the GPU version due to the
+significant overhead in copying memory to the host for
+computing the hash. (default = False)</p>
+</dd>
+<dt><strong>callback: An instance of GraphBasedDimRedCallback class to intercept</strong></dt><dd><p>the internal state of embeddings while they are being trained.
+Example of callback usage:</p>
+<blockquote>
+<div><p>from cuml.internals import GraphBasedDimRedCallback
+class CustomCallback(GraphBasedDimRedCallback):</p>
+<blockquote>
+<div><dl class="simple">
+<dt>def on_preprocess_end(self, embeddings):</dt><dd><p>print(embeddings.copy_to_host())</p>
+</dd>
+<dt>def on_epoch_end(self, embeddings):</dt><dd><p>print(embeddings.copy_to_host())</p>
+</dd>
+<dt>def on_train_end(self, embeddings):</dt><dd><p>print(embeddings.copy_to_host())</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</dd>
 <dt><strong>verbose: bool (optional, default False)</strong></dt><dd><p>Controls verbosity of logging.</p>
 </dd>
 </dl>
@@ -4529,8 +4649,8 @@ implemented in cuml.umap:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>Specifying the random seed</p></li>
-<li><p>Using a non-euclidean distance metric (support for a fixed set
-of non-euclidean metrics is planned for an upcoming release).</p></li>
+<li><p>Using a non-Euclidean distance metric (support for a fixed set
+of non-Euclidean metrics is planned for an upcoming release).</p></li>
 <li><p>Using a pre-computed pairwise distance matrix (under consideration
 for future releases)</p></li>
 <li><p>Manual initialization of initial embedding positions</p></li>
@@ -4568,7 +4688,7 @@ Reduction
 </table>
 <dl class="attribute">
 <dt id="cuml.UMAP.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit X into an embedded space.
 Parameters
 ———-
@@ -4588,26 +4708,34 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.UMAP.fit_transform">
-<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit X into an embedded space and return that transformed
-output.
-Parameters
-———-
-X : array-like (device or host) shape = (n_samples, n_features)</p>
-<blockquote>
-<div><p>X contains a sample per row.
+output.</p>
+<p>There is a subtle difference between calling fit_transform(X)
+and calling fit().transform(). Calling fit_transform(X) will
+train the embeddings on X and return the embeddings. Calling
+fit(X).transform(X) will train the embeddings on X and then
+run a second optimization
+return the embedding after it is trained while calling</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>X contains a sample per row.
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
-</div></blockquote>
-<dl class="simple">
-<dt>X_new<span class="classifier">array, shape (n_samples, n_components)</span></dt><dd><p>Embedding of the training data in low-dimensional space.</p>
+</dd>
+<dt><strong>Returns</strong></dt><dd></dd>
+<dt><strong>——-</strong></dt><dd></dd>
+<dt><strong>X_new</strong><span class="classifier">array, shape (n_samples, n_components)</span></dt><dd><p>Embedding of the training data in low-dimensional space.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.UMAP.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform X into the existing embedded space and return that
 transformed output.</p>
 <p>Please refer to the reference UMAP implementation for information
@@ -4773,7 +4901,7 @@ perplexity values from 5 to 50 and see the output differences.</p>
 <dt><strong>learning_rate</strong><span class="classifier">float (default 200.0)</span></dt><dd><p>The learning rate usually between (10, 1000). If this is too high,
 TSNE could look like a cloud / ball of points.</p>
 </dd>
-<dt><strong>n_iter</strong><span class="classifier">int (default 1000)</span></dt><dd><p>The more epochs, the more stable/accruate the final embedding.</p>
+<dt><strong>n_iter</strong><span class="classifier">int (default 1000)</span></dt><dd><p>The more epochs, the more stable/accurate the final embedding.</p>
 </dd>
 <dt><strong>n_iter_without_progress</strong><span class="classifier">int (default 300)</span></dt><dd><p>When the KL Divergence becomes too small after some iterations,
 terminate TSNE early.</p>
@@ -4795,7 +4923,7 @@ to possibly counteract this problem.
 It is known that small perturbations can directly
 change the result of the embedding for parallel TSNE implementations.</p>
 </dd>
-<dt><strong>method</strong><span class="classifier">str ‘barnes_hut’ or ‘exact’ (default ‘barnes_hut’)</span></dt><dd><p>Options are either barnes_hut or exact. It is recommend that you use
+<dt><strong>method</strong><span class="classifier">str ‘barnes_hut’ or ‘exact’ (default ‘barnes_hut’)</span></dt><dd><p>Options are either barnes_hut or exact. It is recommended that you use
 the barnes hut approximation for superior O(nlogn) complexity.</p>
 </dd>
 <dt><strong>angle</strong><span class="classifier">float (default 0.5)</span></dt><dd><p>Tradeoff between accuracy and speed. Choose between (0,2 0.8) where
@@ -4810,7 +4938,7 @@ attractive forces. Smaller values are better for preserving
 local structure, whilst larger values can improve global structure
 preservation. Default is 3 * 30 (perplexity)</p>
 </dd>
-<dt><strong>perplexity_max_iter</strong><span class="classifier">int (default 100)</span></dt><dd><p>The number of epochs the best guassian bands are found for.</p>
+<dt><strong>perplexity_max_iter</strong><span class="classifier">int (default 100)</span></dt><dd><p>The number of epochs the best gaussian bands are found for.</p>
 </dd>
 <dt><strong>exaggeration_iter</strong><span class="classifier">int (default 250)</span></dt><dd><p>To promote the growth of clusters, set this higher.</p>
 </dd>
@@ -4820,7 +4948,7 @@ preservation. Default is 3 * 30 (perplexity)</p>
 </dd>
 <dt><strong>should_downcast</strong><span class="classifier">bool (default True)</span></dt><dd><p>Whether to reduce to dataset to float32 or not.</p>
 </dd>
-<dt><strong>handle</strong><span class="classifier">(cuML Handle, default None)</span></dt><dd><p>You can pass in a past handle that was intialized, or we will create
+<dt><strong>handle</strong><span class="classifier">(cuML Handle, default None)</span></dt><dd><p>You can pass in a past handle that was initialized, or we will create
 one for you anew!</p>
 </dd>
 </dl>
@@ -4906,17 +5034,16 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dl class="class">
 <dt id="cuml.NearestNeighbors">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">NearestNeighbors</code><a class="headerlink" href="#cuml.NearestNeighbors" title="Permalink to this definition">¶</a></dt>
-<dd><p>NearestNeighbors is an unsupervised algorithm for querying neighborhoods
-from a given set of datapoints. Currently, cuML supports k-NN queries,
-which define the neighborhood as the closest <cite>k</cite> neighbors to each query
-point.
-Note: Should_downcast is deprecated and will be removed in 0.10,</p>
-<blockquote>
-<div><p>please use the convert_dtypes variable instead.</p>
-</div></blockquote>
+<dd><p>NearestNeighbors is an queries neighborhoods from a given set of
+datapoints. Currently, cuML supports k-NN queries, which define
+the neighborhood as the closest <cite>k</cite> neighbors to each query point.</p>
+<p class="rubric">Notes</p>
+<p>For an additional example see <a class="reference external" href="https://github.com/rapidsai/notebook/blob/master/python/notebooks/knn_demo.ipynb">the NearestNeighbors notebook</a>.</p>
+<p>For additional docs, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html#sklearn.neighbors.NearestNeighbors">scikitlearn’s NearestNeighbors</a>.</p>
+<p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span>
 <span class="kn">from</span> <span class="nn">cuml.neighbors</span> <span class="kn">import</span> <span class="n">NearestNeighbors</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">np_float</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
   <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="c1"># Point 1</span>
@@ -4929,16 +5056,16 @@ Note: Should_downcast is deprecated and will be removed in 0.10,</p>
 <span class="n">gdf_float</span><span class="p">[</span><span class="s1">&#39;dim_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">np_float</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">gdf_float</span><span class="p">[</span><span class="s1">&#39;dim_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">np_float</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;n_samples = 3, n_dims = 3&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n_samples = 3, n_dims = 3&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
 
 <span class="n">nn_float</span> <span class="o">=</span> <span class="n">NearestNeighbors</span><span class="p">()</span>
 <span class="n">nn_float</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
 <span class="c1"># get 3 nearest neighbors</span>
 <span class="n">distances</span><span class="p">,</span><span class="n">indices</span> <span class="o">=</span> <span class="n">nn_float</span><span class="o">.</span><span class="n">kneighbors</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">indices</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -4970,22 +5097,6 @@ Note: Should_downcast is deprecated and will be removed in 0.10,</p>
 <span class="mi">2</span>                 <span class="mf">0.0</span>                 <span class="mf">1.0</span>                 <span class="mf">2.0</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>n_neighbors: int (default = 5)</strong></dt><dd><p>The top K closest datapoints you want the algorithm to return.
-Currently, this value must be &lt; 1024.</p>
-</dd>
-<dt><strong>should_downcast</strong><span class="classifier">bool (default = None)</span></dt><dd><p>Currently only single precision is supported in the underlying undex.
-Setting this to true will allow single-precision input arrays to be
-automatically downcasted to single precision.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>For an additional example see <a class="reference external" href="https://github.com/rapidsai/notebook/blob/master/python/notebooks/knn_demo.ipynb">the NearestNeighbors notebook</a>.</p>
-<p>For additional docs, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html#sklearn.neighbors.NearestNeighbors">scikitlearn’s NearestNeighbors</a>.</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -4996,7 +5107,7 @@ automatically downcasted to single precision.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.NearestNeighbors.fit" title="cuml.NearestNeighbors.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Fit GPU index for performing nearest neighbor queries.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.NearestNeighbors.kneighbors" title="cuml.NearestNeighbors.kneighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kneighbors</span></code></a>(self, X[, k, convert_dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.NearestNeighbors.kneighbors" title="cuml.NearestNeighbors.kneighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kneighbors</span></code></a>(self[, X, n_neighbors, …])</p></td>
 <td><p>Query the GPU index for the k nearest neighbors of column vectors in X.</p></td>
 </tr>
 </tbody>
@@ -5005,19 +5116,15 @@ automatically downcasted to single precision.</p>
 <dt id="cuml.NearestNeighbors.fit">
 <code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit GPU index for performing nearest neighbor queries.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 <dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit method will automatically
-convert the inputs to np.float32.
-Note: Convert dtype will be set to False once should_downcast is</p>
-<blockquote>
-<div><p>deprecated in 0.10</p>
-</div></blockquote>
+convert the inputs to np.float32.</p>
 </dd>
 </dl>
 </dd>
@@ -5026,23 +5133,22 @@ Note: Convert dtype will be set to False once should_downcast is</p>
 
 <dl class="attribute">
 <dt id="cuml.NearestNeighbors.kneighbors">
-<code class="sig-name descname">kneighbors</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">k=None</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.kneighbors" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kneighbors</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X=None</em>, <em class="sig-param">n_neighbors=None</em>, <em class="sig-param">return_distance=True</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.kneighbors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Query the GPU index for the k nearest neighbors of column vectors in X.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
-<dt><strong>k: Integer</strong></dt><dd><p>Number of neighbors to search</p>
+<dt><strong>n_neighbors</strong><span class="classifier">Integer</span></dt><dd><p>Number of neighbors to search. If not provided, the n_neighbors
+from the model instance is used (default=10)</p>
+</dd>
+<dt><strong>return_distance: Boolean</strong></dt><dd><p>If False, distances will not be returned</p>
 </dd>
 <dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the kneighbors method will automatically
-convert the inputs to np.float32.
-Note: Convert dtype will be set to False once should_downcast is</p>
-<blockquote>
-<div><p>deprecated in 0.10</p>
-</div></blockquote>
+convert the inputs to np.float32.</p>
 </dd>
 <dt><strong>Returns</strong></dt><dd></dd>
 <dt><strong>———-</strong></dt><dd></dd>
@@ -5277,13 +5383,13 @@ but you must specify the values for each.</p>
 <dt><strong>dim_x</strong><span class="classifier">int</span></dt><dd><p>Number of state variables for the Kalman filter.
 This is used to set the default size of P, Q, and u</p>
 </dd>
-<dt><strong>dim_z</strong><span class="classifier">int</span></dt><dd><p>Number of of measurement inputs.</p>
+<dt><strong>dim_z</strong><span class="classifier">int</span></dt><dd><p>Number of measurement inputs.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cuml</span> <span class="k">import</span> <span class="n">KalmanFilter</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cuml</span> <span class="kn">import</span> <span class="n">KalmanFilter</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">KalmanFilter</span><span class="p">(</span><span class="n">dim_x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dim_z</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">2.</span><span class="p">],</span>    <span class="c1"># position</span>
                 <span class="p">[</span><span class="mf">0.</span><span class="p">]])</span>   <span class="c1"># velocity</span>
@@ -5310,7 +5416,7 @@ this variable.</p>
 updates this variable.</p>
 </dd>
 <dt><strong>x_prior</strong><span class="classifier">numba device array, numpy array or cuDF series(dim_x, 1)</span></dt><dd><p>Prior (predicted) state estimate. The <a href="#id7"><span class="problematic" id="id8">*</span></a>_prior and <a href="#id9"><span class="problematic" id="id10">*</span></a>_post attributes
-are for convienence; they store the  prior and posterior of the
+are for convenience; they store the  prior and posterior of the
 current epoch. Read Only.</p>
 </dd>
 <dt><strong>P_prior</strong><span class="classifier">numba device array, numpy array or cuDF dataframe(dim_x, dim_x)</span></dt><dd><p>Prior (predicted) state covariance matrix. Read Only.</p>
@@ -5432,18 +5538,6 @@ documentation for single-GPU K-Means.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.fit_transform" title="cuml.dask.cluster.KMeans.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X)</p></td>
 <td><p>Calls fit followed by transform using a distributed KMeans model :param X: dask_cudf.Dataframe to fit &amp; predict :return: A dask_cudf.Dataframe containing label predictions</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.func_fit" title="cuml.dask.cluster.KMeans.func_fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">func_fit</span></code></a>(sessionId, dfs, \*\*kwargs)</p></td>
-<td><p>Runs on each worker to call fit on local KMeans instance.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.func_predict" title="cuml.dask.cluster.KMeans.func_predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">func_predict</span></code></a>(model, dfs)</p></td>
-<td><p>Runs on each worker to call fit on local KMeans instance :param model: Local KMeans instance :param dfs: List of cudf.Dataframes to use :param r: Stops memoization caching :return: cudf.Series with predictions</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.func_score" title="cuml.dask.cluster.KMeans.func_score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">func_score</span></code></a>(model, dfs)</p></td>
-<td><p>Runs on each worker to call fit on local KMeans instance :param model: Local KMeans instance :param dfs: List of cudf.Dataframes to use :param r: Stops memoization caching :return: cudf.Series with predictions</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.func_transform" title="cuml.dask.cluster.KMeans.func_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">func_transform</span></code></a>(model, dfs)</p></td>
-<td><p>Runs on each worker to call fit on local KMeans instance :param model: Local KMeans instance :param dfs: List of cudf.Dataframes to use :param r: Stops memoizatiion caching :return: The fit model</p></td>
-</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.parallel_func" title="cuml.dask.cluster.KMeans.parallel_func"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parallel_func</span></code></a>(self, X, func)</p></td>
 <td><p>Predicts the labels using a distributed KMeans model :param X: dask_cudf.Dataframe to predict :return: A dask_cudf.Dataframe containing label predictions</p></td>
 </tr>
@@ -5489,47 +5583,6 @@ documentation for single-GPU K-Means.</p>
 <dd><p>Calls fit followed by transform using a distributed KMeans model
 :param X: dask_cudf.Dataframe to fit &amp; predict
 :return: A dask_cudf.Dataframe containing label predictions</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cuml.dask.cluster.KMeans.func_fit">
-<em class="property">static </em><code class="sig-name descname">func_fit</code><span class="sig-paren">(</span><em class="sig-param">sessionId</em>, <em class="sig-param">dfs</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.func_fit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Runs on each worker to call fit on local KMeans instance.
-Extracts centroids
-:param model: Local KMeans instance
-:param dfs: List of cudf.Dataframes to use
-:param r: Stops memoizatiion caching
-:return: The fit model</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cuml.dask.cluster.KMeans.func_predict">
-<em class="property">static </em><code class="sig-name descname">func_predict</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">dfs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.func_predict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Runs on each worker to call fit on local KMeans instance
-:param model: Local KMeans instance
-:param dfs: List of cudf.Dataframes to use
-:param r: Stops memoization caching
-:return: cudf.Series with predictions</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cuml.dask.cluster.KMeans.func_score">
-<em class="property">static </em><code class="sig-name descname">func_score</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">dfs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.func_score" title="Permalink to this definition">¶</a></dt>
-<dd><p>Runs on each worker to call fit on local KMeans instance
-:param model: Local KMeans instance
-:param dfs: List of cudf.Dataframes to use
-:param r: Stops memoization caching
-:return: cudf.Series with predictions</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cuml.dask.cluster.KMeans.func_transform">
-<em class="property">static </em><code class="sig-name descname">func_transform</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">dfs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.func_transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Runs on each worker to call fit on local KMeans instance
-:param model: Local KMeans instance
-:param dfs: List of cudf.Dataframes to use
-:param r: Stops memoizatiion caching
-:return: The fit model</p>
 </dd></dl>
 
 <dl class="method">
@@ -5640,7 +5693,7 @@ per node split.</p>
 <dt><strong>min_rows_per_node</strong><span class="classifier">int (default = 2)</span></dt><dd><p>The minimum number of samples (rows) needed
 to split a node.</p>
 </dd>
-<dt><strong>quantile_per_tree</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>Whether quantile is computed for individal trees in RF.
+<dt><strong>quantile_per_tree</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>Whether quantile is computed for individual RF trees.
 Only relevant for GLOBAL_QUANTILE split_algo.</p>
 </dd>
 <dt><strong>n_streams</strong><span class="classifier">int (default = 4 )</span></dt><dd><p>Number of parallel streams used for forest building</p>
@@ -5652,7 +5705,7 @@ If None, all available Dask workers will be used.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>For usage examples, please see the RAPIDS notebookss repository:
+<p>For usage examples, please see the RAPIDS notebooks repository:
 <a class="reference external" href="https://github.com/rapidsai/notebooks/blob/branch-0.9/cuml/random_forest_demo_mnmg.ipynb">https://github.com/rapidsai/notebooks/blob/branch-0.9/cuml/random_forest_demo_mnmg.ipynb</a></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
