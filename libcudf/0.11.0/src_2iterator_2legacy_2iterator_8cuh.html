@@ -208,7 +208,7 @@ template&lt;bool has_nulls, typename ElementType , typename ResultType  = Elemen
 <li>template parameter for using <code>meanvar</code> using ResultType = cudf::meanvar&lt;T_upcast&gt;; cudf::transformer_meanvar&lt;T_upcast&gt; transformer{}; auto it_pair = make_pair_iterator&lt;has_nulls, T, T_upcast&gt;(column, T{0}); auto it_meanvar = thrust::make_transform_iterator(it_pair, transformer);</li>
 <li>template parameter for custom indexed iterator cudf::size_type *indices; </li>
 </ol>
-<h2><a class="anchor" id="autotoc_md118"></a>
+<h2><a class="anchor" id="autotoc_md119"></a>
 auto it = make_iterator&lt;has_nulls, T, T, T_index*&gt;(column, T{0}, indices);</h2>
 </div></div><!-- contents -->
 <!-- start footer part -->

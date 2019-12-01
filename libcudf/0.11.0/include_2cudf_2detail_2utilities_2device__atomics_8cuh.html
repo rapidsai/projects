@@ -237,7 +237,7 @@ template&lt;typename BinaryOp &gt; </td></tr>
 <div class="textblock"><p>overloads for CUDA atomic operations </p>
 <p>------------------------------------------------------------------------&mdash;*</p>
 <p>Provides the overloads for all of possible cudf's data types, where cudf's data types are, int8_t, int16_t, int32_t, int64_t, float, double, cudf::detail::timestamp_D, cudf::detail::timestamp_s, cudf::detail::timestamp_ms cudf::detail::timestamp_us, cudf::detail::timestamp_ns and <a class="el" href="structcudf_1_1experimental_1_1bool8.html">cudf::experimental::bool8</a> where CUDA atomic operations are, <code>atomicAdd</code>, <code>atomicMin</code>, <code>atomicMax</code>, <code>atomicCAS</code>. <code>atomicAnd</code>, <code>atomicOr</code>, <code>atomicXor</code> are also supported for integer data types. Also provides <code><a class="el" href="namespacecudf.html#ac63f5b61fc23af128d77caf9ed921309" title="compute atomic binary operation reads the old located at the address in global or shared memory,...">cudf::genericAtomicOperation</a></code> which performs atomic operation </p>
-<h2><a class="anchor" id="autotoc_md304"></a>
+<h2><a class="anchor" id="autotoc_md306"></a>
 with the given binary operator.</h2>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="ae5d56a957e435f0b5d4a3d7abc53b5a7"></a>
@@ -278,7 +278,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md305"></a>
+<h2><a class="anchor" id="autotoc_md307"></a>
 @returns The old value at &lt;tt&gt;address&lt;/tt&gt;</h2>
 
 </div>
@@ -320,7 +320,7 @@ template&lt;typename T , typename std::enable_if_t&lt; std::is_integral&lt; T &g
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md309"></a>
+<h2><a class="anchor" id="autotoc_md311"></a>
 @returns The old value at &lt;tt&gt;address&lt;/tt&gt;</h2>
 
 </div>
@@ -369,7 +369,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md308"></a>
+<h2><a class="anchor" id="autotoc_md310"></a>
 @returns The old value at &lt;tt&gt;address&lt;/tt&gt;</h2>
 
 </div>
@@ -411,7 +411,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md307"></a>
+<h2><a class="anchor" id="autotoc_md309"></a>
 @returns The old value at &lt;tt&gt;address&lt;/tt&gt;</h2>
 
 </div>
@@ -453,7 +453,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md306"></a>
+<h2><a class="anchor" id="autotoc_md308"></a>
 @returns The old value at &lt;tt&gt;address&lt;/tt&gt;</h2>
 
 </div>
@@ -495,7 +495,7 @@ template&lt;typename T , typename std::enable_if_t&lt; std::is_integral&lt; T &g
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md310"></a>
+<h2><a class="anchor" id="autotoc_md312"></a>
 @returns The old value at &lt;tt&gt;address&lt;/tt&gt;</h2>
 
 </div>
@@ -537,7 +537,7 @@ template&lt;typename T , typename std::enable_if_t&lt; std::is_integral&lt; T &g
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md311"></a>
+<h2><a class="anchor" id="autotoc_md313"></a>
 @returns The old value at &lt;tt&gt;address&lt;/tt&gt;</h2>
 
 </div>

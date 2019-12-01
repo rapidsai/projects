@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10 Minutes to cuDF and CuPy &mdash; cudf 0.11.0a+3458.gc021a74ca documentation</title>
+  <title>10 Minutes to cuDF and CuPy &mdash; cudf 0.11.0a+3687.g26a957192 documentation</title>
   
 
   
@@ -405,7 +405,7 @@ div.rendered_html tbody tr:hover {
 
 <span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">cuda</span>
 
-<span class="kn">import</span> <span class="nn">cupy</span> <span class="kn">as</span> <span class="nn">cp</span>
+<span class="kn">import</span> <span class="nn">cupy</span> <span class="k">as</span> <span class="nn">cp</span>
 <span class="kn">import</span> <span class="nn">cudf</span>
 </pre></div>
 </div>
@@ -1265,7 +1265,7 @@ array([  19900,   59900,   99900,  139900,  179900,  219900,  259900,
 <span class="n">nonzero</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
     <span class="n">arr</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">nelem</span><span class="p">)</span>
-    <span class="n">arr</span><span class="p">[</span><span class="n">cp</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">nelem</span><span class="o">-</span><span class="n">nonzero</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">False</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">arr</span><span class="p">[</span><span class="n">cp</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">nelem</span><span class="o">-</span><span class="n">nonzero</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">df</span><span class="p">[</span><span class="s1">&#39;a&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 </pre></div>
 </div>

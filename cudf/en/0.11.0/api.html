@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.11.0a+3458.gc021a74ca documentation</title>
+  <title>API Reference &mdash; cudf 0.11.0a+3687.g26a957192 documentation</title>
   
 
   
@@ -224,7 +224,7 @@
 <p>Build DataFrame via dict of columns:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cudf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t0</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s1">&#39;2018-10-07 12:00:00&#39;</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span>
@@ -738,7 +738,7 @@ for the chunk.</p>
 <p>By looping over the range
 <code class="docutils literal notranslate"><span class="pre">range(cuda.threadIdx.x,</span> <span class="pre">in1.size,</span> <span class="pre">cuda.blockDim.x)</span></code>, the <em>kernel</em>
 function can be used with any <em>tpb</em> in a efficient manner.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numba</span> <span class="k">import</span> <span class="n">cuda</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">cuda</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nd">@cuda</span><span class="o">.</span><span class="n">jit</span>
 <span class="gp">... </span><span class="k">def</span> <span class="nf">kernel</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">,</span> <span class="n">in3</span><span class="p">,</span> <span class="n">out1</span><span class="p">):</span>
 <span class="gp">... </span>     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cuda</span><span class="o">.</span><span class="n">threadIdx</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">in1</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">cuda</span><span class="o">.</span><span class="n">blockDim</span><span class="o">.</span><span class="n">x</span><span class="p">):</span>
@@ -5236,7 +5236,7 @@ on the grouped chunk.</p>
   <span class="k">return</span> <span class="n">df</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">mult</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -5277,7 +5277,7 @@ the function.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cudf</span> <span class="kn">import</span> <span class="n">DataFrame</span>
 <span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">cuda</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">()</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
@@ -5297,7 +5297,7 @@ the function.</p>
                               <span class="c1"># threads per block</span>
                               <span class="n">tpb</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -5312,9 +5312,9 @@ the function.</p>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">cuda</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
 
 <span class="c1"># Create a random 15 row dataframe with one categorical</span>
@@ -5349,7 +5349,7 @@ the function.</p>
 <span class="n">results</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">apply_grouped</span><span class="p">(</span><span class="n">rolling_avg</span><span class="p">,</span>
                                <span class="n">incols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;val&#39;</span><span class="p">],</span>
                                <span class="n">outcols</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">avg</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Results:&quot;</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Results:&quot;</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span>
 
 <span class="c1"># Note this gives the same result as its pandas equivalent</span>
 <span class="n">pdf</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
@@ -5406,10 +5406,10 @@ groups.</p>
 <span class="n">df_groups</span> <span class="o">=</span> <span class="n">groups</span><span class="o">.</span><span class="n">as_df</span><span class="p">()</span>
 
 <span class="c1"># DataFrame indexes of group starts</span>
-<span class="k">print</span><span class="p">(</span><span class="n">df_groups</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_groups</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="c1"># DataFrame itself</span>
-<span class="k">print</span><span class="p">(</span><span class="n">df_groups</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_groups</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>Output:</p>
