@@ -123,6 +123,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1DeviceXor.html">DeviceXor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1is__boolean__impl.html">is_boolean_impl</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1is__compound__impl.html">is_compound_impl</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1is__fixed__width__impl.html">is_fixed_width_impl</a></td></tr>
@@ -905,6 +907,13 @@ template&lt;&gt; </td></tr>
 <tr class="memitem:ac193df7b5be153a88978c2e6564bf4f2"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ac193df7b5be153a88978c2e6564bf4f2">is_numeric</a> (<a class="el" href="classcudf_1_1data__type.html">data_type</a> type)</td></tr>
 <tr class="memdesc:ac193df7b5be153a88978c2e6564bf4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether <code>type</code> is a numeric <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code>.  <a href="namespacecudf.html#ac193df7b5be153a88978c2e6564bf4f2">More...</a><br /></td></tr>
 <tr class="separator:ac193df7b5be153a88978c2e6564bf4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1b9dd3a6ee95fa52224a53869cd164e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aa1b9dd3a6ee95fa52224a53869cd164e"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aa1b9dd3a6ee95fa52224a53869cd164e">is_boolean</a> ()</td></tr>
+<tr class="memdesc:aa1b9dd3a6ee95fa52224a53869cd164e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether <code>T</code> is a Boolean type.  <a href="namespacecudf.html#aa1b9dd3a6ee95fa52224a53869cd164e">More...</a><br /></td></tr>
+<tr class="separator:aa1b9dd3a6ee95fa52224a53869cd164e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96675e30be80f4236360466adcf9a70c"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a96675e30be80f4236360466adcf9a70c">is_boolean</a> (<a class="el" href="classcudf_1_1data__type.html">data_type</a> type)</td></tr>
+<tr class="memdesc:a96675e30be80f4236360466adcf9a70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether <code>type</code> is a Boolean <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code>.  <a href="namespacecudf.html#a96675e30be80f4236360466adcf9a70c">More...</a><br /></td></tr>
+<tr class="separator:a96675e30be80f4236360466adcf9a70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90ebb90931abfed637396889b7829173"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a90ebb90931abfed637396889b7829173"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a90ebb90931abfed637396889b7829173">is_timestamp</a> ()</td></tr>
 <tr class="memdesc:a90ebb90931abfed637396889b7829173"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the type <code>T</code> is a timestamp type.  <a href="namespacecudf.html#a90ebb90931abfed637396889b7829173">More...</a><br /></td></tr>
@@ -1038,7 +1047,7 @@ typedef".</p>
 
 <p>Type alias representing an int32_t duration of days since the unix. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md542"></a>
+<h2><a class="anchor" id="autotoc_md544"></a>
 epoch.</h2>
 
 </div>
@@ -1057,7 +1066,7 @@ epoch.</h2>
 
 <p>Type alias representing an int64_t duration of milliseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md544"></a>
+<h2><a class="anchor" id="autotoc_md546"></a>
 the unix epoch.</h2>
 
 </div>
@@ -1076,7 +1085,7 @@ the unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of nanoseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md546"></a>
+<h2><a class="anchor" id="autotoc_md548"></a>
 the unix epoch.</h2>
 
 </div>
@@ -1095,7 +1104,7 @@ the unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of seconds since the. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md543"></a>
+<h2><a class="anchor" id="autotoc_md545"></a>
 unix epoch.</h2>
 
 </div>
@@ -1114,7 +1123,7 @@ unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of microseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md545"></a>
+<h2><a class="anchor" id="autotoc_md547"></a>
 the unix epoch.</h2>
 
 </div>
@@ -3734,6 +3743,83 @@ template&lt;typename T , typename BinaryOp &gt; </div>
 
 </div>
 </div>
+<a id="aa1b9dd3a6ee95fa52224a53869cd164e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1b9dd3a6ee95fa52224a53869cd164e">&#9670;&nbsp;</a></span>is_boolean() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool cudf::is_boolean </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates whether <code>T</code> is a Boolean type. </p>
+<p>------------------------------------------------------------------------&mdash;* <code>cudf::bool8</code> is cudf's Boolean type.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>The <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> to verify </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is Boolean </dd></dl>
+<h2><a class="anchor" id="autotoc_md525"></a>
+@return false &lt;tt&gt;type&lt;/tt&gt; is not Boolean</h2>
+
+</div>
+</div>
+<a id="a96675e30be80f4236360466adcf9a70c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96675e30be80f4236360466adcf9a70c">&#9670;&nbsp;</a></span>is_boolean() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool cudf::is_boolean </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1data__type.html">data_type</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates whether <code>type</code> is a Boolean <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code>. </p>
+<p>------------------------------------------------------------------------&mdash;* <code>cudf::bool8</code> is cudf's Boolean type.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>The <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> to verify </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a Boolean </dd></dl>
+<h2><a class="anchor" id="autotoc_md526"></a>
+@return false &lt;tt&gt;type&lt;/tt&gt; is not a Boolean</h2>
+
+</div>
+</div>
 <a id="a14e1cea4200d1d92d7f38d596333d28a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a14e1cea4200d1d92d7f38d596333d28a">&#9670;&nbsp;</a></span>is_compound() <span class="overload">[1/2]</span></h2>
 
@@ -3768,7 +3854,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a "compound" type </dd></dl>
-<h2><a class="anchor" id="autotoc_md529"></a>
+<h2><a class="anchor" id="autotoc_md531"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a "simple" type</h2>
 
 </div>
@@ -3806,7 +3892,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a compound type </dd></dl>
-<h2><a class="anchor" id="autotoc_md530"></a>
+<h2><a class="anchor" id="autotoc_md532"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is a simple type</h2>
 
 </div>
@@ -3845,7 +3931,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a fixed-width element type </dd></dl>
-<h2><a class="anchor" id="autotoc_md527"></a>
+<h2><a class="anchor" id="autotoc_md529"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a variable-width element type</h2>
 
 </div>
@@ -3883,7 +3969,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is fixed-width </dd></dl>
-<h2><a class="anchor" id="autotoc_md528"></a>
+<h2><a class="anchor" id="autotoc_md530"></a>
 @return false  &lt;tt&gt;type&lt;/tt&gt; is variable-width</h2>
 
 </div>
@@ -4092,7 +4178,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a simple type </dd></dl>
-<h2><a class="anchor" id="autotoc_md531"></a>
+<h2><a class="anchor" id="autotoc_md533"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a compound type</h2>
 
 </div>
@@ -4130,7 +4216,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a simple type </dd></dl>
-<h2><a class="anchor" id="autotoc_md532"></a>
+<h2><a class="anchor" id="autotoc_md534"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is a compound type</h2>
 
 </div>
@@ -4213,7 +4299,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> is a timestamp </dd></dl>
-<h2><a class="anchor" id="autotoc_md525"></a>
+<h2><a class="anchor" id="autotoc_md527"></a>
 @return false  &lt;tt&gt;T&lt;/tt&gt; is not a timestamp</h2>
 
 </div>
@@ -4251,7 +4337,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a timestamp </dd></dl>
-<h2><a class="anchor" id="autotoc_md526"></a>
+<h2><a class="anchor" id="autotoc_md528"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not a timestamp</h2>
 
 </div>
