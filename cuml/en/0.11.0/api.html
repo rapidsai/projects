@@ -694,7 +694,7 @@ and compute speedup of cuml relative to sklearn baseline.</p>
 
 <dl class="function">
 <dt id="cuml.benchmark.runners.run_variations">
-<code class="sig-prename descclassname">cuml.benchmark.runners.</code><code class="sig-name descname">run_variations</code><span class="sig-paren">(</span><em class="sig-param">algos, dataset_name, bench_rows, bench_dims, param_override_list=[{}], cuml_param_override_list=[{}], input_type='numpy', run_cpu=True, raise_on_error=False, n_reps=1</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.benchmark.runners.run_variations" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cuml.benchmark.runners.</code><code class="sig-name descname">run_variations</code><span class="sig-paren">(</span><em class="sig-param">algos, dataset_name, bench_rows, bench_dims, param_override_list=[{}], cuml_param_override_list=[{}], input_type='numpy', test_fraction=0.1, run_cpu=True, raise_on_error=False, n_reps=1</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.benchmark.runners.run_variations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs each algo in <cite>algos</cite> once per
 <cite>bench_rows X bench_dims X params_override_list X cuml_param_override_list</cite>
 combination and returns a dataframe containing timing and accuracy data.</p>
@@ -713,6 +713,8 @@ combination and returns a dataframe containing timing and accuracy data.</p>
 Each dict specifies parameters to override in one run of the algorithm.</p>
 </dd>
 <dt><strong>cuml_param_override_list</strong><span class="classifier">list of dict</span></dt><dd><p>Dicts containing parameters to pass to __init__ of the cuml algo only.</p>
+</dd>
+<dt><strong>test_fraction</strong><span class="classifier">float</span></dt><dd><p>The fraction of data to use for testing.</p>
 </dd>
 <dt><strong>run_cpu</strong><span class="classifier">boolean</span></dt><dd><p>If True, run the cpu-based algorithm for comparison</p>
 </dd>
