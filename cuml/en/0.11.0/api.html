@@ -213,7 +213,7 @@
 <blockquote>
 <div><span class="target" id="module-cuml.preprocessing.model_selection"></span><dl class="function">
 <dt id="cuml.preprocessing.model_selection.train_test_split">
-<code class="sig-prename descclassname">cuml.preprocessing.model_selection.</code><code class="sig-name descname">train_test_split</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">test_size: Union[float</em>, <em class="sig-param">int] = None</em>, <em class="sig-param">train_size: Union[float</em>, <em class="sig-param">int] = None</em>, <em class="sig-param">shuffle: bool = True</em>, <em class="sig-param">seed: Union[int</em>, <em class="sig-param">cupy.random.generator.RandomState</em>, <em class="sig-param">mtrand.RandomState] = None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.preprocessing.model_selection.train_test_split" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cuml.preprocessing.model_selection.</code><code class="sig-name descname">train_test_split</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">test_size: Union[float</em>, <em class="sig-param">int] = None</em>, <em class="sig-param">train_size: Union[float</em>, <em class="sig-param">int] = None</em>, <em class="sig-param">shuffle: bool = True</em>, <em class="sig-param">random_state: Union[int</em>, <em class="sig-param">cupy.random.generator.RandomState</em>, <em class="sig-param">mtrand.RandomState] = None</em>, <em class="sig-param">seed: Union[int</em>, <em class="sig-param">cupy.random.generator.RandomState</em>, <em class="sig-param">mtrand.RandomState] = None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.preprocessing.model_selection.train_test_split" title="Permalink to this definition">¶</a></dt>
 <dd><p>Partitions device data into four collated objects, mimicking
 Scikit-learn’s <cite>train_test_split</cite></p>
 <dl class="field-list simple">
@@ -231,7 +231,10 @@ of instances to be assigned to the training set. Defaults to 0.8</p>
 </dd>
 <dt><strong>shuffle</strong><span class="classifier">bool, optional</span></dt><dd><p>Whether or not to shuffle inputs before splitting</p>
 </dd>
-<dt><strong>seed</strong><span class="classifier">int, CuPy RandomState or NumPy RandomState optional</span></dt><dd><p>If shuffle is true, seeds the generator. Unseeded by default</p>
+<dt><strong>random_state</strong><span class="classifier">int, CuPy RandomState or NumPy RandomState optional</span></dt><dd><p>If shuffle is true, seeds the generator. Unseeded by default</p>
+</dd>
+<dt><strong>seed: random_state</strong><span class="classifier">int, CuPy RandomState or NumPy RandomState optional</span></dt><dd><p>Deprecated in favor of <cite>random_state</cite>.
+If shuffle is true, seeds the generator. Unseeded by default</p>
 </dd>
 </dl>
 </dd>
@@ -2525,7 +2528,7 @@ count. You can tune the size of the histograms with the n_bins parameter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>n_estimators</strong><span class="classifier">int (default = 10)</span></dt><dd><p>Number of trees in the forest.</p>
+<dt><strong>n_estimators</strong><span class="classifier">int (default = 100)</span></dt><dd><p>Number of trees in the forest. (Default changed to 100 in cuML 0.11)</p>
 </dd>
 <dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
 </dd>
@@ -2804,7 +2807,7 @@ Random Forest code. It contains a few known limitations:</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>n_estimators</strong><span class="classifier">int (default = 10)</span></dt><dd><p>Number of trees in the forest.</p>
+<dt><strong>n_estimators</strong><span class="classifier">int (default = 100)</span></dt><dd><p>Number of trees in the forest. (Default changed to 100 in cuML 0.11)</p>
 </dd>
 <dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
 </dd>
