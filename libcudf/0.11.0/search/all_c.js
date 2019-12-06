@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['launch_559',['launch',['../classcudf_1_1jit_1_1launcher.html#ae126ad28c7fbec2a283d50130d38af90',1,'cudf::jit::launcher']]],
-  ['launch_5fextract_5fcomponent_560',['launch_extract_component',['../structcudf_1_1datetime_1_1detail_1_1launch__extract__component.html',1,'cudf::datetime::detail']]],
-  ['launcher_561',['launcher',['../classcudf_1_1jit_1_1launcher.html',1,'cudf::jit::launcher'],['../structcudf_1_1unary_1_1Launcher.html',1,'cudf::unary::Launcher&lt; T, Tout, F &gt;'],['../structcudf_1_1experimental_1_1unary_1_1launcher.html',1,'cudf::experimental::unary::launcher&lt; T, Tout, F &gt;'],['../classcudf_1_1jit_1_1launcher.html#a54a2732b513cb768eed5d75669d3f1a0',1,'cudf::jit::launcher::launcher()']]],
-  ['left_562',['left',['../classNVStrings.html#ae632539abce4f345d9c6995cc407281ea27a6f390cacbee032b9099765c3277dd',1,'NVStrings']]],
-  ['legacy_5fallocator_563',['legacy_allocator',['../structlegacy__allocator.html',1,'']]],
+  ['launch_560',['launch',['../classcudf_1_1jit_1_1launcher.html#ae126ad28c7fbec2a283d50130d38af90',1,'cudf::jit::launcher']]],
+  ['launch_5fextract_5fcomponent_561',['launch_extract_component',['../structcudf_1_1datetime_1_1detail_1_1launch__extract__component.html',1,'cudf::datetime::detail']]],
+  ['launcher_562',['launcher',['../classcudf_1_1jit_1_1launcher.html',1,'cudf::jit::launcher'],['../structcudf_1_1unary_1_1Launcher.html',1,'cudf::unary::Launcher&lt; T, Tout, F &gt;'],['../structcudf_1_1experimental_1_1unary_1_1launcher.html',1,'cudf::experimental::unary::launcher&lt; T, Tout, F &gt;'],['../classcudf_1_1jit_1_1launcher.html#a54a2732b513cb768eed5d75669d3f1a0',1,'cudf::jit::launcher::launcher()']]],
+  ['left_563',['left',['../classNVStrings.html#ae632539abce4f345d9c6995cc407281ea27a6f390cacbee032b9099765c3277dd',1,'NVStrings']]],
   ['len_564',['len',['../classNVStrings.html#a3e22a977c3d75aa43923fee20c49a194',1,'NVStrings']]],
   ['length_565',['length',['../structBlockSumArray.html#a2b9b50037f253271720da42753bcf927',1,'BlockSumArray::length()'],['../classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831a744462e227edbd3642f8baf46d35b4ca',1,'NVStrings::length()'],['../classBitMask.html#aa6df9c32a8d99bfbc647cf8fc187162a',1,'BitMask::length()'],['../classcudf_1_1string__view.html#a183cdfbfa799e8fa292382d060ea5b4d',1,'cudf::string_view::length()']]],
   ['less_566',['LESS',['../namespacecudf_1_1experimental.html#a57a49aef820830d7830862408645b8c7a1798e8c3621ca53d9e3a80d257306000',1,'cudf::experimental']]],

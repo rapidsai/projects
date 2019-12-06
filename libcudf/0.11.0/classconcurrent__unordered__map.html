@@ -146,9 +146,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> ()</td></tr
 <tr class="memitem:ab12873068796732a1a39eeea34125c6e"><td class="memItemLeft" align="right" valign="top"><a id="ab12873068796732a1a39eeea34125c6e"></a>
 gdf_error&#160;</td><td class="memItemRight" valign="bottom"><b>prefetch</b> (const int dev_id, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
 <tr class="separator:ab12873068796732a1a39eeea34125c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48b7f9e9decd2c8312adb5a90aa95429"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconcurrent__unordered__map.html#a48b7f9e9decd2c8312adb5a90aa95429">destroy</a> ()</td></tr>
-<tr class="memdesc:a48b7f9e9decd2c8312adb5a90aa95429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the contents of the map and destroys the map object.  <a href="classconcurrent__unordered__map.html#a48b7f9e9decd2c8312adb5a90aa95429">More...</a><br /></td></tr>
-<tr class="separator:a48b7f9e9decd2c8312adb5a90aa95429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b44f3983e78757ef025363c9544a4fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconcurrent__unordered__map.html#a1b44f3983e78757ef025363c9544a4fb">destroy</a> (<a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
+<tr class="memdesc:a1b44f3983e78757ef025363c9544a4fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the contents of the map and destroys the map object.  <a href="classconcurrent__unordered__map.html#a1b44f3983e78757ef025363c9544a4fb">More...</a><br /></td></tr>
+<tr class="separator:a1b44f3983e78757ef025363c9544a4fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab16fc1881a921163b6932fcf564a04b5"><td class="memItemLeft" align="right" valign="top"><a id="ab16fc1881a921163b6932fcf564a04b5"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>concurrent_unordered_map</b> (<a class="el" href="classconcurrent__unordered__map.html">concurrent_unordered_map</a> const &amp;)=default</td></tr>
 <tr class="separator:ab16fc1881a921163b6932fcf564a04b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,12 +164,12 @@ gdf_error&#160;</td><td class="memItemRight" valign="bottom"><b>prefetch</b> (co
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ac2f0f71403f82f7ca0aa258f11fc01ba"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconcurrent__unordered__map.html#ac2f0f71403f82f7ca0aa258f11fc01ba">create</a> (size_type capacity, const mapped_type unused_element=std::numeric_limits&lt; key_type &gt;::max(), const key_type unused_key=std::numeric_limits&lt; key_type &gt;::max(), const Hasher &amp;hash_function=hasher(), const Equality &amp;equal=key_equal(), const allocator_type &amp;allocator=allocator_type())</td></tr>
-<tr class="memdesc:ac2f0f71403f82f7ca0aa258f11fc01ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to construct a new concurrent unordered map.  <a href="classconcurrent__unordered__map.html#ac2f0f71403f82f7ca0aa258f11fc01ba">More...</a><br /></td></tr>
-<tr class="separator:ac2f0f71403f82f7ca0aa258f11fc01ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ec2ebb3baca5a6c8c3744bec40845bf"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconcurrent__unordered__map.html#a4ec2ebb3baca5a6c8c3744bec40845bf">create</a> (size_type capacity, const mapped_type unused_element=std::numeric_limits&lt; key_type &gt;::max(), const key_type unused_key=std::numeric_limits&lt; key_type &gt;::max(), const Hasher &amp;hash_function=hasher(), const Equality &amp;equal=key_equal(), const allocator_type &amp;allocator=allocator_type(), <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
+<tr class="memdesc:a4ec2ebb3baca5a6c8c3744bec40845bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to construct a new concurrent unordered map.  <a href="classconcurrent__unordered__map.html#a4ec2ebb3baca5a6c8c3744bec40845bf">More...</a><br /></td></tr>
+<tr class="separator:a4ec2ebb3baca5a6c8c3744bec40845bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename Key, typename Element, typename Hasher = default_hash&lt;Key&gt;, typename Equality = equal_to&lt;Key&gt;, typename Allocator = legacy_allocator&lt;thrust::pair&lt;Key, Element&gt;&gt;&gt;<br />
+<div class="textblock"><h3>template&lt;typename Key, typename Element, typename Hasher = default_hash&lt;Key&gt;, typename Equality = equal_to&lt;Key&gt;, typename Allocator = default_allocator&lt;thrust::pair&lt;Key, Element&gt;&gt;&gt;<br />
 class concurrent_unordered_map&lt; Key, Element, Hasher, Equality, Allocator &gt;</h3>
 
 <p>Supports concurrent insert, but not concurrent insert and find.</p>
@@ -178,13 +178,13 @@ class concurrent_unordered_map&lt; Key, Element, Hasher, Equality, Allocator &gt
 <li>extend interface to accept streams </li>
 </ul>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac2f0f71403f82f7ca0aa258f11fc01ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2f0f71403f82f7ca0aa258f11fc01ba">&#9670;&nbsp;</a></span>create()</h2>
+<a id="a4ec2ebb3baca5a6c8c3744bec40845bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ec2ebb3baca5a6c8c3744bec40845bf">&#9670;&nbsp;</a></span>create()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt;Key&gt;, typename Equality  = equal_to&lt;Key&gt;, typename Allocator  = legacy_allocator&lt;thrust::pair&lt;Key, Element&gt;&gt;&gt; </div>
+template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt;Key&gt;, typename Equality  = equal_to&lt;Key&gt;, typename Allocator  = default_allocator&lt;thrust::pair&lt;Key, Element&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -223,7 +223,13 @@ template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const allocator_type &amp;&#160;</td>
-          <td class="paramname"><em>allocator</em> = <code>allocator_type()</code>&#160;</td>
+          <td class="paramname"><em>allocator</em> = <code>allocator_type()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -248,22 +254,22 @@ template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt
     <tr><td class="paramname">unused_key</td><td>The sentinel value to use for an empty key </td></tr>
     <tr><td class="paramname">hash_function</td><td>The hash function to use for hashing keys </td></tr>
     <tr><td class="paramname">equal</td><td>The equality comparison function for comparing if two keys are equal </td></tr>
-    <tr><td class="paramname">allocator</td><td>The allocator to use for allocation the hash table's </td></tr>
+    <tr><td class="paramname">allocator</td><td>The allocator to use for allocation the hash table's storage </td></tr>
   </table>
   </dd>
 </dl>
 <h2><a class="anchor" id="autotoc_md57"></a>
-storage</h2>
+@param stream CUDA stream to use for device operations.</h2>
 
 </div>
 </div>
-<a id="a48b7f9e9decd2c8312adb5a90aa95429"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48b7f9e9decd2c8312adb5a90aa95429">&#9670;&nbsp;</a></span>destroy()</h2>
+<a id="a1b44f3983e78757ef025363c9544a4fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b44f3983e78757ef025363c9544a4fb">&#9670;&nbsp;</a></span>destroy()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt;Key&gt;, typename Equality  = equal_to&lt;Key&gt;, typename Allocator  = legacy_allocator&lt;thrust::pair&lt;Key, Element&gt;&gt;&gt; </div>
+template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt;Key&gt;, typename Equality  = equal_to&lt;Key&gt;, typename Allocator  = default_allocator&lt;thrust::pair&lt;Key, Element&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -271,7 +277,8 @@ template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt
         <tr>
           <td class="memname">void <a class="el" href="classconcurrent__unordered__map.html">concurrent_unordered_map</a>&lt; Key, Element, Hasher, Equality, Allocator &gt;::destroy </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -283,9 +290,9 @@ template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt
 </div><div class="memdoc">
 
 <p>Frees the contents of the map and destroys the map object. </p>
-<p>------------------------------------------------------------------------&mdash;* This function is invoked as the deleter of the <code>std::unique_ptr</code> returned </p>
+<p>------------------------------------------------------------------------&mdash;* This function is invoked as the deleter of the <code>std::unique_ptr</code> returned from the <code><a class="el" href="classconcurrent__unordered__map.html#a4ec2ebb3baca5a6c8c3744bec40845bf" title="Factory to construct a new concurrent unordered map.">create()</a></code> factory function.</p>
 <h2><a class="anchor" id="autotoc_md63"></a>
-from the &lt;tt&gt;create()&lt;/tt&gt; factory function.</h2>
+@param stream CUDA stream to use for device operations.</h2>
 
 </div>
 </div>
@@ -295,7 +302,7 @@ from the &lt;tt&gt;create()&lt;/tt&gt; factory function.</h2>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt;Key&gt;, typename Equality  = equal_to&lt;Key&gt;, typename Allocator  = legacy_allocator&lt;thrust::pair&lt;Key, Element&gt;&gt;&gt; </div>
+template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt;Key&gt;, typename Equality  = equal_to&lt;Key&gt;, typename Allocator  = default_allocator&lt;thrust::pair&lt;Key, Element&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -334,7 +341,7 @@ template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt;Key&gt;, typename Equality  = equal_to&lt;Key&gt;, typename Allocator  = legacy_allocator&lt;thrust::pair&lt;Key, Element&gt;&gt;&gt; </div>
+template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt;Key&gt;, typename Equality  = equal_to&lt;Key&gt;, typename Allocator  = default_allocator&lt;thrust::pair&lt;Key, Element&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

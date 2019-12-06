@@ -79,17 +79,17 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1e4c97d54b2d847b2969f953b833c07d"><td class="memTemplParams" colspan="2">template&lt;typename Element , typename MapIterator &gt; </td></tr>
-<tr class="memitem:a1e4c97d54b2d847b2969f953b833c07d"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1detail_1_1column__gatherer.html#a1e4c97d54b2d847b2969f953b833c07d">operator()</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;source_column, MapIterator gather_map_begin, MapIterator gather_map_end, bool ignore_out_of_bounds, rmm::mr::device_memory_resource *mr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
-<tr class="memdesc:a1e4c97d54b2d847b2969f953b833c07d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type-dispatched function to gather from one column to another based on a <code>gather_map</code>.  <a href="structcudf_1_1experimental_1_1detail_1_1column__gatherer.html#a1e4c97d54b2d847b2969f953b833c07d">More...</a><br /></td></tr>
-<tr class="separator:a1e4c97d54b2d847b2969f953b833c07d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d89d56577002befd1a2765fc8fef955"><td class="memTemplParams" colspan="2">template&lt;typename Element , typename MapIterator &gt; </td></tr>
+<tr class="memitem:a3d89d56577002befd1a2765fc8fef955"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1detail_1_1column__gatherer.html#a3d89d56577002befd1a2765fc8fef955">operator()</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;source_column, MapIterator gather_map_begin, MapIterator gather_map_end, bool nullify_out_of_bounds, rmm::mr::device_memory_resource *mr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
+<tr class="memdesc:a3d89d56577002befd1a2765fc8fef955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type-dispatched function to gather from one column to another based on a <code>gather_map</code>.  <a href="structcudf_1_1experimental_1_1detail_1_1column__gatherer.html#a3d89d56577002befd1a2765fc8fef955">More...</a><br /></td></tr>
+<tr class="separator:a3d89d56577002befd1a2765fc8fef955"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Function object for gathering a type-erased column. To be used with the cudf::type_dispatcher. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><hr  />
  </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1e4c97d54b2d847b2969f953b833c07d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e4c97d54b2d847b2969f953b833c07d">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="a3d89d56577002befd1a2765fc8fef955"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d89d56577002befd1a2765fc8fef955">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -121,7 +121,7 @@ template&lt;typename Element , typename MapIterator &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>ignore_out_of_bounds</em>, </td>
+          <td class="paramname"><em>nullify_out_of_bounds</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -161,7 +161,7 @@ template&lt;typename Element , typename MapIterator &gt; </div>
     <tr><td class="paramname">source_column</td><td>View into the column to gather from </td></tr>
     <tr><td class="paramname">gather_map_begin</td><td>Beginning of iterator range of integral values representing the gather map </td></tr>
     <tr><td class="paramname">gather_map_end</td><td>End of iterator range of integral values representing the gather map </td></tr>
-    <tr><td class="paramname">ignore_out_of_bounds</td><td>Ignore values in <code>gather_map</code> that are out of bounds </td></tr>
+    <tr><td class="paramname">nullify_out_of_bounds</td><td>Nullify values in <code>gather_map</code> that are out of bounds </td></tr>
     <tr><td class="paramname">mr</td><td>Memory resource to use for all allocations </td></tr>
   </table>
   </dd>

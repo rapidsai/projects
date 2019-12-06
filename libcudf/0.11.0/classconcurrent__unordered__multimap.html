@@ -102,9 +102,9 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>const_iterator</b> =
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8355fe5e587067418dbd26edbc4d4f74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconcurrent__unordered__multimap.html#a8355fe5e587067418dbd26edbc4d4f74">destroy</a> ()</td></tr>
-<tr class="memdesc:a8355fe5e587067418dbd26edbc4d4f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the contents of the map and destroys the map object.  <a href="classconcurrent__unordered__multimap.html#a8355fe5e587067418dbd26edbc4d4f74">More...</a><br /></td></tr>
-<tr class="separator:a8355fe5e587067418dbd26edbc4d4f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a38a14d35fc3a13549518c691a79e4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconcurrent__unordered__multimap.html#a2a38a14d35fc3a13549518c691a79e4b">destroy</a> (<a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
+<tr class="memdesc:a2a38a14d35fc3a13549518c691a79e4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the contents of the map and destroys the map object.  <a href="classconcurrent__unordered__multimap.html#a2a38a14d35fc3a13549518c691a79e4b">More...</a><br /></td></tr>
+<tr class="separator:a2a38a14d35fc3a13549518c691a79e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a177b8d37df923061a61db75030d7aeea"><td class="memItemLeft" align="right" valign="top"><a id="a177b8d37df923061a61db75030d7aeea"></a>
 __host__ __device__ <a class="el" href="classcycle__iterator__adapter.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> ()</td></tr>
 <tr class="separator:a177b8d37df923061a61db75030d7aeea"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,9 +167,9 @@ gdf_error&#160;</td><td class="memItemRight" valign="bottom"><b>prefetch</b> (co
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a3cf5afd93e222d3a370e9d4e8fdad6e9"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconcurrent__unordered__multimap.html#a3cf5afd93e222d3a370e9d4e8fdad6e9">create</a> (size_type capacity, const bool init=true, const Hasher &amp;hash_function=hasher(), const Equality &amp;equal=key_equal(), const allocator_type &amp;allocator=allocator_type())</td></tr>
-<tr class="memdesc:a3cf5afd93e222d3a370e9d4e8fdad6e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to construct a new concurrent unordered multimap.  <a href="classconcurrent__unordered__multimap.html#a3cf5afd93e222d3a370e9d4e8fdad6e9">More...</a><br /></td></tr>
-<tr class="separator:a3cf5afd93e222d3a370e9d4e8fdad6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4deb7961b9abdd51b9044b48db04d1f"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconcurrent__unordered__multimap.html#ae4deb7961b9abdd51b9044b48db04d1f">create</a> (size_type capacity, const bool init=true, const Hasher &amp;hash_function=hasher(), const Equality &amp;equal=key_equal(), const allocator_type &amp;allocator=allocator_type(), <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
+<tr class="memdesc:ae4deb7961b9abdd51b9044b48db04d1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to construct a new concurrent unordered multimap.  <a href="classconcurrent__unordered__multimap.html#ae4deb7961b9abdd51b9044b48db04d1f">More...</a><br /></td></tr>
+<tr class="separator:ae4deb7961b9abdd51b9044b48db04d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e04af80d4469efb961b7b05103c8297"><td class="memItemLeft" align="right" valign="top"><a id="a0e04af80d4469efb961b7b05103c8297"></a>
 static constexpr __forceinline__ __host__ __device__ key_type&#160;</td><td class="memItemRight" valign="bottom"><b>get_unused_key</b> ()</td></tr>
 <tr class="separator:a0e04af80d4469efb961b7b05103c8297"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,8 +184,8 @@ class concurrent_unordered_multimap&lt; Key, Element, size_type, unused_key, unu
 <li>extend interface to accept streams </li>
 </ul>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3cf5afd93e222d3a370e9d4e8fdad6e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cf5afd93e222d3a370e9d4e8fdad6e9">&#9670;&nbsp;</a></span>create()</h2>
+<a id="ae4deb7961b9abdd51b9044b48db04d1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4deb7961b9abdd51b9044b48db04d1f">&#9670;&nbsp;</a></span>create()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,7 +223,13 @@ template&lt;typename Key , typename Element , typename size_type , Key unused_ke
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const allocator_type &amp;&#160;</td>
-          <td class="paramname"><em>allocator</em> = <code>allocator_type()</code>&#160;</td>
+          <td class="paramname"><em>allocator</em> = <code>allocator_type()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -247,16 +253,17 @@ template&lt;typename Key , typename Element , typename size_type , Key unused_ke
     <tr><td class="paramname">init</td><td>Indicates if the map should be initialized with the unused key/values </td></tr>
     <tr><td class="paramname">hash_function</td><td>The hash function to use for hashing keys </td></tr>
     <tr><td class="paramname">equal</td><td>The equality comparison function for comparing if two keys are equal </td></tr>
+    <tr><td class="paramname">allocator</td><td>The allocator to use for allocation of the map's storage </td></tr>
   </table>
   </dd>
 </dl>
 <h2><a class="anchor" id="autotoc_md65"></a>
-@param allocator The allocator to use for allocation of the map's storage.</h2>
+@param stream CUDA stream to use for device operations.</h2>
 
 </div>
 </div>
-<a id="a8355fe5e587067418dbd26edbc4d4f74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8355fe5e587067418dbd26edbc4d4f74">&#9670;&nbsp;</a></span>destroy()</h2>
+<a id="a2a38a14d35fc3a13549518c691a79e4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a38a14d35fc3a13549518c691a79e4b">&#9670;&nbsp;</a></span>destroy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,7 +276,8 @@ template&lt;typename Key , typename Element , typename size_type , Key unused_ke
         <tr>
           <td class="memname">void <a class="el" href="classconcurrent__unordered__multimap.html">concurrent_unordered_multimap</a>&lt; Key, Element, size_type, unused_key, unused_element, Hasher, Equality, Allocator, count_collisions &gt;::destroy </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -281,9 +289,9 @@ template&lt;typename Key , typename Element , typename size_type , Key unused_ke
 </div><div class="memdoc">
 
 <p>Frees the contents of the map and destroys the map object. </p>
-<p>------------------------------------------------------------------------&mdash;* This function is invoked as the deleter of the <code>std::unique_ptr</code> returned </p>
+<p>------------------------------------------------------------------------&mdash;* This function is invoked as the deleter of the <code>std::unique_ptr</code> returned from the <code><a class="el" href="classconcurrent__unordered__multimap.html#ae4deb7961b9abdd51b9044b48db04d1f" title="Factory to construct a new concurrent unordered multimap.">create()</a></code> factory function.</p>
 <h2><a class="anchor" id="autotoc_md66"></a>
-from the &lt;tt&gt;create()&lt;/tt&gt; factory function.</h2>
+@param stream CUDA stream to use for device operations.</h2>
 
 </div>
 </div>

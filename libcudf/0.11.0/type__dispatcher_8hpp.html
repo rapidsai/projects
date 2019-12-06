@@ -119,16 +119,17 @@ This graph shows which files directly or indirectly include this file:</div>
 <map name="type__dispatcher_8hppdep" id="type__dispatcher_8hppdep">
 <area shape="rect" title="Defines the mapping between cudf::type_id runtime type information." alt="" coords="823,5,1035,32"/>
 <area shape="rect" href="jit_2type_8h_source.html" title=" " alt="" coords="761,80,844,107"/>
-<area shape="rect" href="scalar_8hpp_source.html" title=" " alt="" coords="1861,155,1984,181"/>
+<area shape="rect" href="scalar_8hpp_source.html" title=" " alt="" coords="1875,155,1997,181"/>
 <area shape="rect" href="traits_8hpp_source.html" title=" " alt="" coords="868,80,991,107"/>
-<area shape="rect" href="copying_8hpp_source.html" title=" " alt="" coords="1458,229,1590,256"/>
-<area shape="rect" href="scalar__factories_8hpp_source.html" title=" " alt="" coords="1614,229,1837,256"/>
-<area shape="rect" href="search_8hpp_source.html" title=" " alt="" coords="1861,229,1984,256"/>
-<area shape="rect" href="combine_8hpp_source.html" title=" " alt="" coords="2009,229,2141,256"/>
-<area shape="rect" href="convert__booleans_8hpp_source.html" title=" " alt="" coords="2165,229,2387,256"/>
-<area shape="rect" href="find_8hpp_source.html" title=" " alt="" coords="2411,229,2514,256"/>
-<area shape="rect" href="padding_8hpp_source.html" title=" " alt="" coords="2538,229,2670,256"/>
-<area shape="rect" href="copy_8hpp_source.html" title=" " alt="" coords="1439,304,1542,331"/>
+<area shape="rect" href="copying_8hpp_source.html" title=" " alt="" coords="1770,229,1902,256"/>
+<area shape="rect" href="scalar__factories_8hpp_source.html" title=" " alt="" coords="1926,229,2149,256"/>
+<area shape="rect" href="search_8hpp_source.html" title=" " alt="" coords="2173,229,2296,256"/>
+<area shape="rect" href="combine_8hpp_source.html" title=" " alt="" coords="2321,229,2453,256"/>
+<area shape="rect" href="convert__booleans_8hpp_source.html" title=" " alt="" coords="2477,229,2699,256"/>
+<area shape="rect" href="find_8hpp_source.html" title=" " alt="" coords="2723,229,2826,256"/>
+<area shape="rect" href="padding_8hpp_source.html" title=" " alt="" coords="1458,229,1590,256"/>
+<area shape="rect" href="strings_2replace_8hpp_source.html" title=" " alt="" coords="1614,229,1746,256"/>
+<area shape="rect" href="copy_8hpp_source.html" title=" " alt="" coords="1595,304,1698,331"/>
 <area shape="rect" href="avro_2reader__impl_8cu.html" title="cuDF&#45;IO Avro reader class implementation" alt="" coords="387,379,549,405"/>
 <area shape="rect" href="orc_2reader__impl_8cu.html" title="cuDF&#45;IO ORC reader class implementation" alt="" coords="1167,379,1329,405"/>
 <area shape="rect" href="parquet_2reader__impl_8cu.html" title="cuDF&#45;IO Parquet reader class implementation" alt="" coords="5,379,168,405"/>
@@ -191,6 +192,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ab3198f71aa690ddfcd12b70245838c78"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ab3198f71aa690ddfcd12b70245838c78">cudf::experimental::scalar_type_t</a> = typename type_to_scalar_type_impl&lt; T &gt;::ScalarType</td></tr>
 <tr class="memdesc:ab3198f71aa690ddfcd12b70245838c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a C++ type to the scalar type required to hold its value.  <a href="namespacecudf_1_1experimental.html#ab3198f71aa690ddfcd12b70245838c78">More...</a><br /></td></tr>
 <tr class="separator:ab3198f71aa690ddfcd12b70245838c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad13b7818063c9611a7cc83bedd435174"><td class="memTemplParams" colspan="2"><a id="ad13b7818063c9611a7cc83bedd435174"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ad13b7818063c9611a7cc83bedd435174"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>cudf::experimental::scalar_device_type_t</b> = typename type_to_scalar_type_impl&lt; T &gt;::ScalarDeviceType</td></tr>
+<tr class="separator:ad13b7818063c9611a7cc83bedd435174"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -317,6 +322,7 @@ and concrete C++ types.</h2>
 <b>Value:</b><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;&gt;                                         \</div>
 <div class="line">struct type_to_scalar_type_impl&lt;Type&gt; {             \</div>
 <div class="line">  using ScalarType = <a class="code" href="classcudf_1_1numeric__scalar.html">cudf::numeric_scalar&lt;Type&gt;</a>;    \</div>
+<div class="line">  using ScalarDeviceType = <a class="code" href="classcudf_1_1numeric__scalar__device__view.html">cudf::numeric_scalar_device_view&lt;Type&gt;</a>; \</div>
 <div class="line">};</div>
 </div><!-- fragment -->
 </div>
@@ -339,13 +345,16 @@ and concrete C++ types.</h2>
 <b>Value:</b><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;&gt;                                         \</div>
 <div class="line">struct type_to_scalar_type_impl&lt;Type&gt; {             \</div>
 <div class="line">  using ScalarType = <a class="code" href="classcudf_1_1timestamp__scalar.html">cudf::timestamp_scalar&lt;Type&gt;</a>;  \</div>
+<div class="line">  using ScalarDeviceType = <a class="code" href="classcudf_1_1timestamp__scalar__device__view.html">cudf::timestamp_scalar_device_view&lt;Type&gt;</a>;       \</div>
 <div class="line">};</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="aclasscudf_1_1timestamp__scalar_html"><div class="ttname"><a href="classcudf_1_1timestamp__scalar.html">cudf::timestamp_scalar</a></div><div class="ttdoc">An owning class to represent a timestamp value in device memory.</div><div class="ttdef"><b>Definition:</b> scalar.hpp:256</div></div>
+<div class="ttc" id="aclasscudf_1_1timestamp__scalar_html"><div class="ttname"><a href="classcudf_1_1timestamp__scalar.html">cudf::timestamp_scalar</a></div><div class="ttdoc">An owning class to represent a timestamp value in device memory.</div><div class="ttdef"><b>Definition:</b> scalar.hpp:263</div></div>
+<div class="ttc" id="aclasscudf_1_1timestamp__scalar__device__view_html"><div class="ttname"><a href="classcudf_1_1timestamp__scalar__device__view.html">cudf::timestamp_scalar_device_view</a></div><div class="ttdoc">A type of scalar_device_view that stores a pointer to a timestamp value.</div><div class="ttdef"><b>Definition:</b> scalar_device_view.cuh:180</div></div>
 <div class="ttc" id="aclasscudf_1_1numeric__scalar_html"><div class="ttname"><a href="classcudf_1_1numeric__scalar.html">cudf::numeric_scalar</a></div><div class="ttdoc">An owning class to represent a numerical value in device memory.</div><div class="ttdef"><b>Definition:</b> scalar.hpp:175</div></div>
+<div class="ttc" id="aclasscudf_1_1numeric__scalar__device__view_html"><div class="ttname"><a href="classcudf_1_1numeric__scalar__device__view.html">cudf::numeric_scalar_device_view</a></div><div class="ttdoc">A type of scalar_device_view that stores a pointer to a numerical value.</div><div class="ttdef"><b>Definition:</b> scalar_device_view.cuh:135</div></div>
 <div class="ttc" id="anamespacecudf_html_acd4cd7157c4379954b5772936f89c59b"><div class="ttname"><a href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></div><div class="ttdeci">type_id</div><div class="ttdef"><b>Definition:</b> types.hpp:138</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -79,9 +79,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aeaf1beb66a480725346574a124dcb0c6"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1detail_1_1column__gatherer__impl_3_01string__view_00_01MapItType_01_4.html#aeaf1beb66a480725346574a124dcb0c6">operator()</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;source_column, MapItType gather_map_begin, MapItType gather_map_end, bool ignore_out_of_bounds, rmm::mr::device_memory_resource *mr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
-<tr class="memdesc:aeaf1beb66a480725346574a124dcb0c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type-dispatched function to gather from one column to another based on a <code>gather_map</code>. This handles <a class="el" href="classcudf_1_1string__view.html" title="A non-owning, immutable view of device data that is a variable length char array representing a UTF-8...">string_view</a> type column_views only.  <a href="structcudf_1_1experimental_1_1detail_1_1column__gatherer__impl_3_01string__view_00_01MapItType_01_4.html#aeaf1beb66a480725346574a124dcb0c6">More...</a><br /></td></tr>
-<tr class="separator:aeaf1beb66a480725346574a124dcb0c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a671a34629b42333bfed45515dda707"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1detail_1_1column__gatherer__impl_3_01string__view_00_01MapItType_01_4.html#a2a671a34629b42333bfed45515dda707">operator()</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;source_column, MapItType gather_map_begin, MapItType gather_map_end, bool nullify_out_of_bounds, rmm::mr::device_memory_resource *mr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
+<tr class="memdesc:a2a671a34629b42333bfed45515dda707"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type-dispatched function to gather from one column to another based on a <code>gather_map</code>. This handles <a class="el" href="classcudf_1_1string__view.html" title="A non-owning, immutable view of device data that is a variable length char array representing a UTF-8...">string_view</a> type column_views only.  <a href="structcudf_1_1experimental_1_1detail_1_1column__gatherer__impl_3_01string__view_00_01MapItType_01_4.html#a2a671a34629b42333bfed45515dda707">More...</a><br /></td></tr>
+<tr class="separator:a2a671a34629b42333bfed45515dda707"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename MapItType&gt;<br />
@@ -92,8 +92,8 @@ struct cudf::experimental::detail::column_gatherer_impl&lt; string_view, MapItTy
 <h2><a class="anchor" id="autotoc_md283"></a>
 @tparam MapIterator Iterator type for the gather map</h2>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aeaf1beb66a480725346574a124dcb0c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeaf1beb66a480725346574a124dcb0c6">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="a2a671a34629b42333bfed45515dda707"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a671a34629b42333bfed45515dda707">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,7 +125,7 @@ template&lt;typename MapItType &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>ignore_out_of_bounds</em>, </td>
+          <td class="paramname"><em>nullify_out_of_bounds</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -158,7 +158,7 @@ template&lt;typename MapItType &gt; </div>
     <tr><td class="paramname">source_column</td><td>View into the column to gather from </td></tr>
     <tr><td class="paramname">gather_map_begin</td><td>Beginning of iterator range of integral values representing the gather map </td></tr>
     <tr><td class="paramname">gather_map_end</td><td>End of iterator range of integral values representing the gather map </td></tr>
-    <tr><td class="paramname">ignore_out_of_bounds</td><td>Ignore values in <code>gather_map</code> that are out of bounds </td></tr>
+    <tr><td class="paramname">nullify_out_of_bounds</td><td>Nullify values in <code>gather_map</code> that are out of bounds </td></tr>
     <tr><td class="paramname">mr</td><td>Memory resource to use for all allocations </td></tr>
   </table>
   </dd>

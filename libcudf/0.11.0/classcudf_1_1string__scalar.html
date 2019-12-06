@@ -123,9 +123,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0235feb2c44269ea4a022615f92069cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1string__scalar.html#a0235feb2c44269ea4a022615f92069cd">string_scalar</a> (std::string const &amp;string, bool <a class="el" href="classcudf_1_1scalar.html#a46999dab108e346408946d0935ab0a84">is_valid</a>=true, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a0235feb2c44269ea4a022615f92069cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new string scalar object.  <a href="classcudf_1_1string__scalar.html#a0235feb2c44269ea4a022615f92069cd">More...</a><br /></td></tr>
 <tr class="separator:a0235feb2c44269ea4a022615f92069cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a88476fd3670103ee08b8d70fffed58"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1string__scalar.html#a6a88476fd3670103ee08b8d70fffed58">value</a> (<a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0) const</td></tr>
-<tr class="memdesc:a6a88476fd3670103ee08b8d70fffed58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the scalar in a host std::string.  <a href="classcudf_1_1string__scalar.html#a6a88476fd3670103ee08b8d70fffed58">More...</a><br /></td></tr>
-<tr class="separator:a6a88476fd3670103ee08b8d70fffed58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50a6e54a81384dc15729004b319475d2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1string__scalar.html#a50a6e54a81384dc15729004b319475d2">to_string</a> (<a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0) const</td></tr>
+<tr class="memdesc:a50a6e54a81384dc15729004b319475d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the scalar in a host std::string.  <a href="classcudf_1_1string__scalar.html#a50a6e54a81384dc15729004b319475d2">More...</a><br /></td></tr>
+<tr class="separator:a50a6e54a81384dc15729004b319475d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fa374e789cd2efa153252c6fc2fd821"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcudf_1_1string__view.html">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1string__scalar.html#a9fa374e789cd2efa153252c6fc2fd821">value</a> (<a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0) const</td></tr>
+<tr class="memdesc:a9fa374e789cd2efa153252c6fc2fd821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the scalar as a <a class="el" href="classcudf_1_1string__view.html" title="A non-owning, immutable view of device data that is a variable length char array representing a UTF-8...">string_view</a>.  <a href="classcudf_1_1string__scalar.html#a9fa374e789cd2efa153252c6fc2fd821">More...</a><br /></td></tr>
+<tr class="separator:a9fa374e789cd2efa153252c6fc2fd821"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d02805b8a223903a3b809e4ab9215f5"><td class="memItemLeft" align="right" valign="top"><a id="a3d02805b8a223903a3b809e4ab9215f5"></a>
 size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1string__scalar.html#a3d02805b8a223903a3b809e4ab9215f5">size</a> () const</td></tr>
 <tr class="memdesc:a3d02805b8a223903a3b809e4ab9215f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the string in bytes. <br /></td></tr>
@@ -248,14 +251,14 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6a88476fd3670103ee08b8d70fffed58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a88476fd3670103ee08b8d70fffed58">&#9670;&nbsp;</a></span>value()</h2>
+<a id="a50a6e54a81384dc15729004b319475d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50a6e54a81384dc15729004b319475d2">&#9670;&nbsp;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string cudf::string_scalar::value </td>
+          <td class="memname">std::string cudf::string_scalar::to_string </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
           <td class="paramname"><em>stream</em> = <code>0</code></td><td>)</td>
@@ -265,6 +268,40 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the value of the scalar in a host std::string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stream</td><td>The CUDA stream to do the operation in </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9fa374e789cd2efa153252c6fc2fd821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fa374e789cd2efa153252c6fc2fd821">&#9670;&nbsp;</a></span>value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcudf_1_1string__view.html">value_type</a> cudf::string_scalar::value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the value of the scalar as a <a class="el" href="classcudf_1_1string__view.html" title="A non-owning, immutable view of device data that is a variable length char array representing a UTF-8...">string_view</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">stream</td><td>The CUDA stream to do the operation in </td></tr>

@@ -264,9 +264,9 @@ $(function() {
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  gdf_column_view(output_l, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, 0, N_GDF_TYPES);</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  gdf_column_view(output_r, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, 0, N_GDF_TYPES);</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="comment">// The LEGACY allocator allocates the hash table array with normal cudaMalloc,</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="comment">// the non-legacy allocator uses managed memory</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">#ifdef HT_LEGACY_ALLOCATOR</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="comment">// The default allocator allocates the hash table array with default RMM memory resource,</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="comment">// the non-default allocator uses managed memory</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">#ifdef HT_DEFAULT_ALLOCATOR</span></div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="keyword">using</span> multimap_type = <a class="code" href="classconcurrent__unordered__multimap.html">concurrent_unordered_multimap</a>&lt;hash_value_type,</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                                                      output_index_type,</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                                                      size_t,</div>
@@ -274,7 +274,7 @@ $(function() {
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                                                      std::numeric_limits&lt;output_index_type&gt;::max(),</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                                                      <a class="code" href="structMurmurHash3__32.html">default_hash&lt;hash_value_type&gt;</a>,</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                                                      <a class="code" href="structequal__to.html">equal_to&lt;hash_value_type&gt;</a>,</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                                                      <a class="code" href="structlegacy__allocator.html">legacy_allocator&lt; thrust::pair&lt;hash_value_type, output_index_type&gt;</a> &gt; &gt;;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                                                      <a class="code" href="structdefault__allocator.html">default_allocator&lt; thrust::pair&lt;hash_value_type, output_index_type&gt;</a> &gt; &gt;;</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keyword">using</span> multimap_type = <a class="code" href="classconcurrent__unordered__multimap.html">concurrent_unordered_multimap</a>&lt;hash_value_type,</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                                      output_index_type,</div>
@@ -463,13 +463,13 @@ $(function() {
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructgdf__column___html"><div class="ttname"><a href="structgdf__column__.html">gdf_column_</a></div><div class="ttdoc">The C representation of a column in CUDF. This is the main unit of operation.</div><div class="ttdef"><b>Definition:</b> types.h:138</div></div>
+<div class="ttc" id="astructdefault__allocator_html"><div class="ttname"><a href="structdefault__allocator.html">default_allocator</a></div><div class="ttdef"><b>Definition:</b> hash_allocator.cuh:51</div></div>
 <div class="ttc" id="afull__join_8cuh_html_ac234d83f65cafbba0a2fa151f43558f9"><div class="ttname"><a href="full__join_8cuh.html#ac234d83f65cafbba0a2fa151f43558f9">append_full_join_indices</a></div><div class="ttdeci">gdf_error append_full_join_indices(index_type **l_index_ptr, index_type **r_index_ptr, size_type &amp;index_capacity, size_type &amp;index_size, const size_type max_index_value, cudaStream_t stream)</div><div class="ttdef"><b>Definition:</b> full_join.cuh:163</div></div>
 <div class="ttc" id="astructequal__to_html"><div class="ttname"><a href="structequal__to.html">equal_to</a></div><div class="ttdef"><b>Definition:</b> helper_functions.cuh:167</div></div>
 <div class="ttc" id="astructMurmurHash3__32_html"><div class="ttname"><a href="structMurmurHash3__32.html">MurmurHash3_32</a></div><div class="ttdef"><b>Definition:</b> hash_functions.cuh:34</div></div>
 <div class="ttc" id="aclassdevice__table_html"><div class="ttname"><a href="classdevice__table.html">device_table</a></div><div class="ttdoc">Lightweight wrapper for a device array of gdf_columns of the same size.</div><div class="ttdef"><b>Definition:</b> device_table.cuh:40</div></div>
 <div class="ttc" id="afull__join_8cuh_html"><div class="ttname"><a href="full__join_8cuh.html">full_join.cuh</a></div><div class="ttdoc">Implementation of full join.</div></div>
 <div class="ttc" id="aclassdevice__table_html_aedb876cd396fce49024bf51926ec205e"><div class="ttname"><a href="classdevice__table.html#aedb876cd396fce49024bf51926ec205e">device_table::create</a></div><div class="ttdeci">static auto create(cudf::size_type num_columns, gdf_column const *const *cols, cudaStream_t stream=0)</div><div class="ttdoc">Factory function to construct a device_table wrapped in a unique_ptr.</div><div class="ttdef"><b>Definition:</b> device_table.cuh:75</div></div>
-<div class="ttc" id="astructlegacy__allocator_html"><div class="ttname"><a href="structlegacy__allocator.html">legacy_allocator</a></div><div class="ttdef"><b>Definition:</b> managed_allocator.cuh:56</div></div>
 <div class="ttc" id="astructcudf_1_1table_html"><div class="ttname"><a href="structcudf_1_1table.html">cudf::table</a></div><div class="ttdoc">A wrapper for a set of gdf_columns of equal number of rows.</div><div class="ttdef"><b>Definition:</b> legacy/table.hpp:36</div></div>
 <div class="ttc" id="aclassconcurrent__unordered__multimap_html"><div class="ttname"><a href="classconcurrent__unordered__multimap.html">concurrent_unordered_multimap</a></div><div class="ttdef"><b>Definition:</b> concurrent_unordered_multimap.cuh:48</div></div>
 <!-- start footer part -->

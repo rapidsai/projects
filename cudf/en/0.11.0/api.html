@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.11.0a+3711.gc27db8bcf documentation</title>
+  <title>API Reference &mdash; cudf 0.11.0a+3832.gf9f10802c documentation</title>
   
 
   
@@ -329,7 +329,7 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.describe" title="cudf.core.dataframe.DataFrame.describe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code></a>(self[, percentiles, include, exclude])</p></td>
 <td><p>Compute summary statistics of a DataFrame’s columns.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.drop" title="cudf.core.dataframe.DataFrame.drop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop</span></code></a>(self[, labels, axis, columns, errors])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.drop" title="cudf.core.dataframe.DataFrame.drop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop</span></code></a>(self[, labels, axis, columns, errors, …])</p></td>
 <td><p>Drop column(s)</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.drop_column" title="cudf.core.dataframe.DataFrame.drop_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop_column</span></code></a>(self, name)</p></td>
@@ -1010,7 +1010,7 @@ are returned.</p>
 
 <dl class="method">
 <dt id="cudf.core.dataframe.DataFrame.drop">
-<code class="sig-name descname">drop</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">labels=None</em>, <em class="sig-param">axis=None</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">errors='raise'</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.dataframe.DataFrame.drop" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">drop</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">labels=None</em>, <em class="sig-param">axis=None</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">errors='raise'</em>, <em class="sig-param">inplace=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.dataframe.DataFrame.drop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Drop column(s)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1021,6 +1021,8 @@ are returned.</p>
 </dd>
 <dt><strong>columns: array of column names, the same as using labels and axis=1</strong></dt><dd></dd>
 <dt><strong>errors</strong><span class="classifier">{‘ignore’, ‘raise’}, default ‘raise’</span></dt><dd><p>This parameter is currently ignored.</p>
+</dd>
+<dt><strong>inplace</strong><span class="classifier">bool, default False</span></dt><dd><p>If True, do operation inplace and return <cite>self</cite>.</p>
 </dd>
 </dl>
 </dd>
