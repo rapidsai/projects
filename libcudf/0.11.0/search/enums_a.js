@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sorttype_2161',['sorttype',['../classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831',1,'NVStrings']]]
+  ['rolling_5foperator_2172',['rolling_operator',['../namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22a',1,'cudf::experimental']]]
 ];

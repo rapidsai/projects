@@ -84,7 +84,7 @@ Inheritance diagram for cudf::column_view:</div>
 <div class="center"><img src="classcudf_1_1column__view__inherit__graph.png" border="0" usemap="#cudf_1_1column__view_inherit__map" alt="Inheritance graph"/></div>
 <map name="cudf_1_1column__view_inherit__map" id="cudf_1_1column__view_inherit__map">
 <area shape="rect" title="A non&#45;owning, immutable view of device data as a column of elements, some of which may be null as ind..." alt="" coords="45,95,237,121"/>
-<area shape="rect" href="classcudf_1_1strings__column__view.html" title="Given a column&#45;view of strings type, an instance of this class." alt="" coords="5,169,277,196"/>
+<area shape="rect" href="classcudf_1_1strings__column__view.html" title="Given a column&#45;view of strings type, an instance of this class provides a wrapper on this compound co..." alt="" coords="5,169,277,196"/>
 <area shape="rect" href="classcudf_1_1detail_1_1column__view__base.html" title="A non&#45;owning, immutable view of device data as a column of elements, some of which may be null as ind..." alt="" coords="30,5,253,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -140,6 +140,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4b152c1d0bccdb6ea150cfacc49e5920 inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a754fdc0ebe297a466d1b377638c6920a inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a754fdc0ebe297a466d1b377638c6920a">size</a> () const noexcept</td></tr>
 <tr class="separator:a754fdc0ebe297a466d1b377638c6920a inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe9b6c62a22d6e7cc38841954c63e025 inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#abe9b6c62a22d6e7cc38841954c63e025">is_empty</a> () const noexcept</td></tr>
+<tr class="separator:abe9b6c62a22d6e7cc38841954c63e025 inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16452c9fb08f36de42cd13884f0933e1 inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcudf_1_1data__type.html">data_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a16452c9fb08f36de42cd13884f0933e1">type</a> () const noexcept</td></tr>
 <tr class="separator:a16452c9fb08f36de42cd13884f0933e1 inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4654a81e14e2390ea36d3a52d0f08fa inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#af4654a81e14e2390ea36d3a52d0f08fa">nullable</a> () const noexcept</td></tr>
@@ -148,9 +150,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4b3a32978413e9c0246f31b4d083bf30 inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a4b3a32978413e9c0246f31b4d083bf30">null_count</a> () const</td></tr>
 <tr class="memdesc:a4b3a32978413e9c0246f31b4d083bf30 inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of null elements.  <a href="classcudf_1_1detail_1_1column__view__base.html#a4b3a32978413e9c0246f31b4d083bf30">More...</a><br /></td></tr>
 <tr class="separator:a4b3a32978413e9c0246f31b4d083bf30 inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1449e5de056f7c1ac2b58861dd9d40f4 inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a1449e5de056f7c1ac2b58861dd9d40f4">null_count</a> (size_type <a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a3cb84f137f167738cd3a45cb5ad51659">begin</a>, size_type <a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a4b152c1d0bccdb6ea150cfacc49e5920">end</a>) const</td></tr>
+<tr class="memdesc:a1449e5de056f7c1ac2b58861dd9d40f4 inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of null elements in the range [begin, end)  <a href="classcudf_1_1detail_1_1column__view__base.html#a1449e5de056f7c1ac2b58861dd9d40f4">More...</a><br /></td></tr>
+<tr class="separator:a1449e5de056f7c1ac2b58861dd9d40f4 inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad67d943ff841c3fd4b460db3cc8277f3 inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#ad67d943ff841c3fd4b460db3cc8277f3">has_nulls</a> () const</td></tr>
 <tr class="memdesc:ad67d943ff841c3fd4b460db3cc8277f3 inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the column contains null elements, i.e., <code><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a4b3a32978413e9c0246f31b4d083bf30" title="Returns the count of null elements.">null_count()</a> &gt; 0</code>  <a href="classcudf_1_1detail_1_1column__view__base.html#ad67d943ff841c3fd4b460db3cc8277f3">More...</a><br /></td></tr>
 <tr class="separator:ad67d943ff841c3fd4b460db3cc8277f3 inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0971782b5003a69c3395ba7d2fcd356 inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#ad0971782b5003a69c3395ba7d2fcd356">has_nulls</a> (size_type <a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a3cb84f137f167738cd3a45cb5ad51659">begin</a>, size_type <a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a4b152c1d0bccdb6ea150cfacc49e5920">end</a>) const</td></tr>
+<tr class="memdesc:ad0971782b5003a69c3395ba7d2fcd356 inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the column contains null elements in the range [begin, end), i.e., <code>null_count(begin, end) &gt; 0</code>  <a href="classcudf_1_1detail_1_1column__view__base.html#ad0971782b5003a69c3395ba7d2fcd356">More...</a><br /></td></tr>
+<tr class="separator:ad0971782b5003a69c3395ba7d2fcd356 inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb21801d9f87e78e4efa464bf9b4512b inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memItemLeft" align="right" valign="top">bitmask_type const  *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#adb21801d9f87e78e4efa464bf9b4512b">null_mask</a> () const noexcept</td></tr>
 <tr class="memdesc:adb21801d9f87e78e4efa464bf9b4512b inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns raw pointer to the underlying bitmask allocation.  <a href="classcudf_1_1detail_1_1column__view__base.html#adb21801d9f87e78e4efa464bf9b4512b">More...</a><br /></td></tr>
 <tr class="separator:adb21801d9f87e78e4efa464bf9b4512b inherit pub_methods_classcudf_1_1detail_1_1column__view__base"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -288,7 +296,7 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md261"></a>
+<h2><a class="anchor" id="autotoc_md264"></a>
 contain additional data</h2>
 
 </div>
@@ -325,7 +333,7 @@ contain additional data</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md262"></a>
+<h2><a class="anchor" id="autotoc_md265"></a>
 @return column_view The requested child &lt;tt&gt;column_view&lt;/tt&gt;</h2>
 
 </div>
@@ -353,7 +361,7 @@ contain additional data</h2>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md263"></a>
+<h2><a class="anchor" id="autotoc_md266"></a>
 @brief Returns the number of child columns.</h2>
 
 </div>

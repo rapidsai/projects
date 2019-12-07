@@ -89,7 +89,7 @@ Inheritance diagram for cudf::detail::column_view_base:</div>
 <area shape="rect" href="classcudf_1_1column__view.html" title="A non&#45;owning, immutable view of device data as a column of elements, some of which may be null as ind..." alt="" coords="45,102,237,129"/>
 <area shape="rect" href="classcudf_1_1detail_1_1mutable__column__view__base.html" title=" " alt="" coords="261,95,493,136"/>
 <area shape="rect" href="classcudf_1_1mutable__column__view.html" title="A non&#45;owning, mutable view of device data as a column of elements, some of which may be null as indic..." alt="" coords="517,102,789,129"/>
-<area shape="rect" href="classcudf_1_1strings__column__view.html" title="Given a column&#45;view of strings type, an instance of this class." alt="" coords="5,184,277,211"/>
+<area shape="rect" href="classcudf_1_1strings__column__view.html" title="Given a column&#45;view of strings type, an instance of this class provides a wrapper on this compound co..." alt="" coords="5,184,277,211"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -122,6 +122,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4b152c1d0bccdb6ea150cfacc49e5920"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a754fdc0ebe297a466d1b377638c6920a"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a754fdc0ebe297a466d1b377638c6920a">size</a> () const noexcept</td></tr>
 <tr class="separator:a754fdc0ebe297a466d1b377638c6920a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe9b6c62a22d6e7cc38841954c63e025"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#abe9b6c62a22d6e7cc38841954c63e025">is_empty</a> () const noexcept</td></tr>
+<tr class="separator:abe9b6c62a22d6e7cc38841954c63e025"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16452c9fb08f36de42cd13884f0933e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcudf_1_1data__type.html">data_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a16452c9fb08f36de42cd13884f0933e1">type</a> () const noexcept</td></tr>
 <tr class="separator:a16452c9fb08f36de42cd13884f0933e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4654a81e14e2390ea36d3a52d0f08fa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#af4654a81e14e2390ea36d3a52d0f08fa">nullable</a> () const noexcept</td></tr>
@@ -130,9 +132,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4b3a32978413e9c0246f31b4d083bf30"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a4b3a32978413e9c0246f31b4d083bf30">null_count</a> () const</td></tr>
 <tr class="memdesc:a4b3a32978413e9c0246f31b4d083bf30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of null elements.  <a href="classcudf_1_1detail_1_1column__view__base.html#a4b3a32978413e9c0246f31b4d083bf30">More...</a><br /></td></tr>
 <tr class="separator:a4b3a32978413e9c0246f31b4d083bf30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1449e5de056f7c1ac2b58861dd9d40f4"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a1449e5de056f7c1ac2b58861dd9d40f4">null_count</a> (size_type <a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a3cb84f137f167738cd3a45cb5ad51659">begin</a>, size_type <a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a4b152c1d0bccdb6ea150cfacc49e5920">end</a>) const</td></tr>
+<tr class="memdesc:a1449e5de056f7c1ac2b58861dd9d40f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of null elements in the range [begin, end)  <a href="classcudf_1_1detail_1_1column__view__base.html#a1449e5de056f7c1ac2b58861dd9d40f4">More...</a><br /></td></tr>
+<tr class="separator:a1449e5de056f7c1ac2b58861dd9d40f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad67d943ff841c3fd4b460db3cc8277f3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#ad67d943ff841c3fd4b460db3cc8277f3">has_nulls</a> () const</td></tr>
 <tr class="memdesc:ad67d943ff841c3fd4b460db3cc8277f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the column contains null elements, i.e., <code><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a4b3a32978413e9c0246f31b4d083bf30" title="Returns the count of null elements.">null_count()</a> &gt; 0</code>  <a href="classcudf_1_1detail_1_1column__view__base.html#ad67d943ff841c3fd4b460db3cc8277f3">More...</a><br /></td></tr>
 <tr class="separator:ad67d943ff841c3fd4b460db3cc8277f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0971782b5003a69c3395ba7d2fcd356"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#ad0971782b5003a69c3395ba7d2fcd356">has_nulls</a> (size_type <a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a3cb84f137f167738cd3a45cb5ad51659">begin</a>, size_type <a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a4b152c1d0bccdb6ea150cfacc49e5920">end</a>) const</td></tr>
+<tr class="memdesc:ad0971782b5003a69c3395ba7d2fcd356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the column contains null elements in the range [begin, end), i.e., <code>null_count(begin, end) &gt; 0</code>  <a href="classcudf_1_1detail_1_1column__view__base.html#ad0971782b5003a69c3395ba7d2fcd356">More...</a><br /></td></tr>
+<tr class="separator:ad0971782b5003a69c3395ba7d2fcd356"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb21801d9f87e78e4efa464bf9b4512b"><td class="memItemLeft" align="right" valign="top">bitmask_type const  *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#adb21801d9f87e78e4efa464bf9b4512b">null_mask</a> () const noexcept</td></tr>
 <tr class="memdesc:adb21801d9f87e78e4efa464bf9b4512b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns raw pointer to the underlying bitmask allocation.  <a href="classcudf_1_1detail_1_1column__view__base.html#adb21801d9f87e78e4efa464bf9b4512b">More...</a><br /></td></tr>
 <tr class="separator:adb21801d9f87e78e4efa464bf9b4512b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -273,7 +281,7 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md260"></a>
+<h2><a class="anchor" id="autotoc_md263"></a>
 contain additional data</h2>
 
 </div>
@@ -393,7 +401,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="ad67d943ff841c3fd4b460db3cc8277f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad67d943ff841c3fd4b460db3cc8277f3">&#9670;&nbsp;</a></span>has_nulls()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad67d943ff841c3fd4b460db3cc8277f3">&#9670;&nbsp;</a></span>has_nulls() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -417,8 +425,62 @@ template&lt;typename T &gt; </div>
 
 <p>Indicates if the column contains null elements, i.e., <code><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a4b3a32978413e9c0246f31b4d083bf30" title="Returns the count of null elements.">null_count()</a> &gt; 0</code> </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section return"><dt>Returns</dt><dd>true One or more elements are null </dd></dl>
-<h2><a class="anchor" id="autotoc_md257"></a>
+<h2><a class="anchor" id="autotoc_md259"></a>
 @return false All elements are valid</h2>
+
+</div>
+</div>
+<a id="ad0971782b5003a69c3395ba7d2fcd356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0971782b5003a69c3395ba7d2fcd356">&#9670;&nbsp;</a></span>has_nulls() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cudf::detail::column_view_base::has_nulls </td>
+          <td>(</td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates if the column contains null elements in the range [begin, end), i.e., <code>null_count(begin, end) &gt; 0</code> </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">&lt;tt&gt;cudf::logic_error&lt;/tt&gt;</td><td>for invalid range (if <code>begin &lt; 0</code>, <code>begin &gt; end</code>, <code>begin &gt;= <a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a754fdc0ebe297a466d1b377638c6920a">size()</a></code>, or <code>end &gt; <a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a754fdc0ebe297a466d1b377638c6920a">size()</a></code>).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>The starting index of the range (inclusive). </td></tr>
+    <tr><td class="paramname">end</td><td>The index of the last element in the range (exlusive). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true One or more elements are null in the range [begin, end) </dd></dl>
+<h2><a class="anchor" id="autotoc_md260"></a>
+@return false All elements are valid in the range [begin, end)</h2>
 
 </div>
 </div>
@@ -462,8 +524,36 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
 
 </div>
 </div>
+<a id="abe9b6c62a22d6e7cc38841954c63e025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe9b6c62a22d6e7cc38841954c63e025">&#9670;&nbsp;</a></span>is_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_type cudf::detail::column_view_base::is_empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>------------------------------------------------------------------------&mdash;* </p>
+<h2><a class="anchor" id="autotoc_md254"></a>
+@brief Returns true if &lt;tt&gt;size()&lt;/tt&gt; returns zero, or false otherwise</h2>
+
+</div>
+</div>
 <a id="a4b3a32978413e9c0246f31b4d083bf30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b3a32978413e9c0246f31b4d083bf30">&#9670;&nbsp;</a></span>null_count()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b3a32978413e9c0246f31b4d083bf30">&#9670;&nbsp;</a></span>null_count() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -479,8 +569,53 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
 
 <p>Returns the count of null elements. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>If the column was constructed with <code>UNKNOWN_NULL_COUNT</code>, or if at any point <code>set_null_count(UNKNOWN_NULL_COUNT)</code> was invoked, then the first invocation of <code><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a4b3a32978413e9c0246f31b4d083bf30" title="Returns the count of null elements.">null_count()</a></code> will compute and store the count of null </dd></dl>
-<h2><a class="anchor" id="autotoc_md256"></a>
+<h2><a class="anchor" id="autotoc_md257"></a>
 elements indicated by the &lt;tt&gt;null_mask&lt;/tt&gt; (if it exists).</h2>
+
+</div>
+</div>
+<a id="a1449e5de056f7c1ac2b58861dd9d40f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1449e5de056f7c1ac2b58861dd9d40f4">&#9670;&nbsp;</a></span>null_count() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_type cudf::detail::column_view_base::null_count </td>
+          <td>(</td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the count of null elements in the range [begin, end) </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>If <code><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a4b3a32978413e9c0246f31b4d083bf30" title="Returns the count of null elements.">null_count()</a> != 0</code>, every invocation of <code>null_count(begin, end)</code> will recompute the count of null elements indicated by the <code>null_mask</code> in the range [begin, end).</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">&lt;tt&gt;cudf::logic_error&lt;/tt&gt;</td><td>for invalid range (if <code>begin &lt; 0</code>, <code>begin &gt; end</code>, <code>begin &gt;= <a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a754fdc0ebe297a466d1b377638c6920a">size()</a></code>, or <code>end &gt; <a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a754fdc0ebe297a466d1b377638c6920a">size()</a></code>).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">begin</td><td>The starting index of the range (inclusive). </td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="anchor" id="autotoc_md258"></a>
+@param[in] end The index of the last element in the range (exlusive).</h2>
 
 </div>
 </div>
@@ -509,7 +644,7 @@ elements indicated by the &lt;tt&gt;null_mask&lt;/tt&gt; (if it exists).</h2>
 
 <p>Returns raw pointer to the underlying bitmask allocation. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>This function does <em>not</em> account for the <code><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a8bf33063791c751052a8ef20cf20468c" title="Returns the index of the first element relative to the base memory.">offset()</a></code>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md258"></a>
+<h2><a class="anchor" id="autotoc_md261"></a>
 @note If &lt;tt&gt;null_count() == 0&lt;/tt&gt;, this may return &lt;tt&gt;nullptr&lt;/tt&gt;.</h2>
 
 </div>
@@ -540,7 +675,7 @@ elements indicated by the &lt;tt&gt;null_mask&lt;/tt&gt; (if it exists).</h2>
 <p>Indicates if the column can contain null elements, i.e., if it has an allocated bitmask. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>If <code><a class="el" href="classcudf_1_1detail_1_1column__view__base.html#a4b3a32978413e9c0246f31b4d083bf30" title="Returns the count of null elements.">null_count()</a> &gt; 0</code>, this function must always return <code>true</code>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true The bitmask is allocated </dd></dl>
-<h2><a class="anchor" id="autotoc_md255"></a>
+<h2><a class="anchor" id="autotoc_md256"></a>
 @return false The bitmask is not allocated</h2>
 
 </div>
@@ -570,7 +705,7 @@ elements indicated by the &lt;tt&gt;null_mask&lt;/tt&gt; (if it exists).</h2>
 
 <p>Returns the index of the first element relative to the base memory. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md259"></a>
+<h2><a class="anchor" id="autotoc_md262"></a>
 allocation, i.e., what is returned from &lt;tt&gt;head&lt;T&gt;()&lt;/tt&gt;.</h2>
 
 </div>
@@ -626,7 +761,7 @@ allocation, i.e., what is returned from &lt;tt&gt;head&lt;T&gt;()&lt;/tt&gt;.</h
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md254"></a>
+<h2><a class="anchor" id="autotoc_md255"></a>
 @brief Returns the element &lt;tt&gt;data_type&lt;/tt&gt;</h2>
 
 </div>

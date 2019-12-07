@@ -131,7 +131,7 @@ class cudf::detail::table_view_base&lt; ColumnView &gt;</h3>
 <p>Base class for a table of <code>ColumnView</code>s. </p>
 <p>------------------------------------------------------------------------&mdash;* This class should not be used directly. Instead: -<code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code> should be used for a table of <code><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></code>s -<code><a class="el" href="classcudf_1_1mutable__table__view.html" title="A set of mutable_column_views of the same size.">mutable_table_view</a></code> should be used for a table of <code><a class="el" href="classcudf_1_1mutable__column__view.html" title="A non-owning, mutable view of device data as a column of elements, some of which may be null as indic...">mutable_column_view</a></code>s</p>
 <p>All public constructors and member functions of <code><a class="el" href="classcudf_1_1detail_1_1table__view__base.html" title="Base class for a table of ColumnViews.">table_view_base</a></code> are available in both <code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code> and <code><a class="el" href="classcudf_1_1mutable__table__view.html" title="A set of mutable_column_views of the same size.">mutable_table_view</a></code>.</p>
-<h2><a class="anchor" id="autotoc_md474"></a>
+<h2><a class="anchor" id="autotoc_md475"></a>
 @tparam ColumnView The type of column view the table contains</h2>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1efbcc85f85d8e30b06e29633df0ca38"></a>
@@ -171,7 +171,7 @@ template&lt;typename ColumnView&gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md475"></a>
+<h2><a class="anchor" id="autotoc_md476"></a>
 @param cols The vector of columns to construct the table from</h2>
 
 </div>
@@ -202,7 +202,7 @@ template&lt;typename ColumnView&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md477"></a>
+<h2><a class="anchor" id="autotoc_md478"></a>
 @brief Returns an iterator to the first view in the &lt;tt&gt;table&lt;/tt&gt;.</h2>
 
 </div>
@@ -232,7 +232,7 @@ template&lt;typename ColumnView&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md476"></a>
+<h2><a class="anchor" id="autotoc_md477"></a>
 @brief Returns an iterator to the first view in the &lt;tt&gt;table&lt;/tt&gt;.</h2>
 
 </div>
@@ -268,7 +268,7 @@ template&lt;typename ColumnView &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md480"></a>
+<h2><a class="anchor" id="autotoc_md481"></a>
 @return A reference to the desired column</h2>
 
 </div>
@@ -300,7 +300,7 @@ template&lt;typename ColumnView&gt; </div>
 
 <p>Returns an iterator one past the last column view in the <code>table</code>. </p>
 <p>------------------------------------------------------------------------&mdash;* <code><a class="el" href="classcudf_1_1detail_1_1table__view__base.html#ab046219cffed16909286da3b260418c5" title="Returns an iterator one past the last column view in the table.">end()</a></code> acts as a place holder. Attempting to dereference it results in </p>
-<h2><a class="anchor" id="autotoc_md479"></a>
+<h2><a class="anchor" id="autotoc_md480"></a>
 undefined behavior.</h2>
 
 </div>
@@ -332,7 +332,7 @@ template&lt;typename ColumnView&gt; </div>
 
 <p>Returns an iterator one past the last column view in the <code>table</code>. </p>
 <p>------------------------------------------------------------------------&mdash;* <code><a class="el" href="classcudf_1_1detail_1_1table__view__base.html#ab046219cffed16909286da3b260418c5" title="Returns an iterator one past the last column view in the table.">end()</a></code> acts as a place holder. Attempting to dereference it results in </p>
-<h2><a class="anchor" id="autotoc_md478"></a>
+<h2><a class="anchor" id="autotoc_md479"></a>
 undefined behavior.</h2>
 
 </div>
@@ -362,7 +362,7 @@ template&lt;typename ColumnView&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md481"></a>
+<h2><a class="anchor" id="autotoc_md482"></a>
 @brief Returns the number of columns</h2>
 
 </div>
@@ -392,7 +392,7 @@ template&lt;typename ColumnView&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md482"></a>
+<h2><a class="anchor" id="autotoc_md483"></a>
 @brief Returns the number of rows</h2>
 
 </div>

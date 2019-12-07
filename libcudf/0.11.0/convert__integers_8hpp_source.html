@@ -102,8 +102,12 @@ $(function() {
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;std::unique_ptr&lt;column&gt; from_integers( column_view <span class="keyword">const</span>&amp; integers,</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                       rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;} <span class="comment">// namespace strings</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;std::unique_ptr&lt;column&gt; hex_to_integers( strings_column_view <span class="keyword">const</span>&amp; strings,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                         data_type output_type,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                         rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;} <span class="comment">// namespace strings</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;} <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:23</div></div>
 <!-- start footer part -->

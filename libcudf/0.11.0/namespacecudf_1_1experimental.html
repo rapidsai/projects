@@ -146,6 +146,19 @@ Enumerations</h2></td></tr>
 <a class="el" href="namespacecudf_1_1experimental.html#ad483c874f6010437111325063b87daefaf3fc827ade4b968e50406496907ef962">mask_allocation_policy::ALWAYS</a>
  }</td></tr>
 <tr class="separator:ad483c874f6010437111325063b87daef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86dd75929a008df2311021ba0753c22a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22a">rolling_operator</a> { <br />
+&#160;&#160;<a class="el" href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22aa6970bdc2201030b9c03fbdcf3973858a">rolling_operator::SUM</a>, 
+<a class="el" href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22aace31e2a082d17e038fcc6e3006166653">rolling_operator::MIN</a>, 
+<a class="el" href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22aa26a4b44a837bf97b972628509912b4a5">rolling_operator::MAX</a>, 
+<a class="el" href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22aa4ea6d1161ea24d7599365f574aff6610">rolling_operator::MEAN</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22aa4905ac9d6a22bdfc1ae096094ce6248d">rolling_operator::COUNT</a>, 
+<a class="el" href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22aa4a0dd49d9250ae06cebde3075e441df9">rolling_operator::NUMBA_UDF</a>, 
+<a class="el" href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22aa67f303e1658c4b438f74b2f02e626d92">rolling_operator::CUDA_UDF</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a86dd75929a008df2311021ba0753c22a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rolling window aggregation operations.  <a href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22a">More...</a><br /></td></tr>
+<tr class="separator:a86dd75929a008df2311021ba0753c22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43b073c676d07d514a051888b2b753cd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cd">duplicate_keep_option</a> { <a class="el" href="namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cda5968b12bf2e72e702a998c7fa6c83b1e">duplicate_keep_option::KEEP_FIRST</a> = 0, 
 <a class="el" href="namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cda4583fc151efe5098dd96eeec8cf74699">duplicate_keep_option::KEEP_LAST</a>, 
 <a class="el" href="namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cda40c4abe57c2fda3e580eee916b9e0558">duplicate_keep_option::KEEP_NONE</a>
@@ -280,6 +293,18 @@ std::vector&lt; <a class="el" href="classcudf_1_1column__view.html">cudf::column
 <tr class="memitem:ac4485649fdaa0a76de6b7fd2a90a5ffd"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">cudf::column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ac4485649fdaa0a76de6b7fd2a90a5ffd">replace_nulls</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;replacement, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:ac4485649fdaa0a76de6b7fd2a90a5ffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces all null values in a column with a scalar.  <a href="namespacecudf_1_1experimental.html#ac4485649fdaa0a76de6b7fd2a90a5ffd">More...</a><br /></td></tr>
 <tr class="separator:ac4485649fdaa0a76de6b7fd2a90a5ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37f3992f2b8b1d39234de4854a9e245f"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a37f3992f2b8b1d39234de4854a9e245f">rolling_window</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, size_type preceding_window, size_type following_window, size_type min_periods, <a class="el" href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22a">rolling_operator</a> op, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a37f3992f2b8b1d39234de4854a9e245f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a fixed-size rolling window function to the values in a column.  <a href="namespacecudf_1_1experimental.html#a37f3992f2b8b1d39234de4854a9e245f">More...</a><br /></td></tr>
+<tr class="separator:a37f3992f2b8b1d39234de4854a9e245f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cb700f25d3bba6a9eefed85aab47fec"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a2cb700f25d3bba6a9eefed85aab47fec">rolling_window</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;preceding_window, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;following_window, size_type min_periods, <a class="el" href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22a">rolling_operator</a> op, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a2cb700f25d3bba6a9eefed85aab47fec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a variable-size rolling window function to the values in a column.  <a href="namespacecudf_1_1experimental.html#a2cb700f25d3bba6a9eefed85aab47fec">More...</a><br /></td></tr>
+<tr class="separator:a2cb700f25d3bba6a9eefed85aab47fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6440d8b1727cd90cdfaa0f01a1760dbd"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a6440d8b1727cd90cdfaa0f01a1760dbd">rolling_window</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, size_type preceding_window, size_type following_window, size_type min_periods, std::string const  &amp;udf, <a class="el" href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22a">rolling_operator</a> op, <a class="el" href="classcudf_1_1data__type.html">data_type</a> output_type, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a6440d8b1727cd90cdfaa0f01a1760dbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a fixed-size user-defined rolling window function to the values in a column.  <a href="namespacecudf_1_1experimental.html#a6440d8b1727cd90cdfaa0f01a1760dbd">More...</a><br /></td></tr>
+<tr class="separator:a6440d8b1727cd90cdfaa0f01a1760dbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e3ce1e1b142b9b0c4a4e6772dd2f56b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a7e3ce1e1b142b9b0c4a4e6772dd2f56b">rolling_window</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;preceding_window, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;following_window, size_type min_periods, std::string const  &amp;udf, <a class="el" href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22a">rolling_operator</a> op, <a class="el" href="classcudf_1_1data__type.html">data_type</a> output_type, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a7e3ce1e1b142b9b0c4a4e6772dd2f56b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a variable-size user-defined rolling window function to the values in a column.  <a href="namespacecudf_1_1experimental.html#a7e3ce1e1b142b9b0c4a4e6772dd2f56b">More...</a><br /></td></tr>
+<tr class="separator:a7e3ce1e1b142b9b0c4a4e6772dd2f56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9da07e36844255fd5bc535c5718a155a"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a9da07e36844255fd5bc535c5718a155a">lower_bound</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;t, <a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;values, std::vector&lt; <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">order</a> &gt; const  &amp;column_order, std::vector&lt; <a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">null_order</a> &gt; const  &amp;null_precedence, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a9da07e36844255fd5bc535c5718a155a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find smallest indices in a sorted table where values should be inserted to maintain order.  <a href="namespacecudf_1_1experimental.html#a9da07e36844255fd5bc535c5718a155a">More...</a><br /></td></tr>
 <tr class="separator:a9da07e36844255fd5bc535c5718a155a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -406,7 +431,7 @@ template&lt;cudf::type_id Id&gt; </div>
 
 <p>Maps a <code><a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></code> to it's corresponding concrete C++ type. </p>
 <p>------------------------------------------------------------------------&mdash;* Example: </p><div class="fragment"><div class="line">static_assert(std::is_same&lt;int32_t, id_to_type&lt;INT32&gt;);</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md537"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md538"></a>
 @tparam t The &lt;tt&gt;cudf::type_id&lt;/tt&gt; to map</h2>
 
 </div>
@@ -524,7 +549,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md276"></a>
+<h2><a class="anchor" id="autotoc_md279"></a>
 @brief Indicates when to allocate a mask, based on an existing mask.</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad483c874f6010437111325063b87daefa443475558f0168dff92ecde26b98ae5a"></a>NEVER&#160;</td><td class="fielddoc"><p>Do not allocate a null mask, regardless of input. </p>
@@ -536,6 +561,46 @@ template&lt;typename T &gt; </div>
 </table>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a3">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
 </dl>
+
+</div>
+</div>
+<a id="a86dd75929a008df2311021ba0753c22a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86dd75929a008df2311021ba0753c22a">&#9670;&nbsp;</a></span>rolling_operator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22a">cudf::experimental::rolling_operator</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rolling window aggregation operations. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a86dd75929a008df2311021ba0753c22aa6970bdc2201030b9c03fbdcf3973858a"></a>SUM&#160;</td><td class="fielddoc"><p>Computes the sum of all values in the window. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a86dd75929a008df2311021ba0753c22aace31e2a082d17e038fcc6e3006166653"></a>MIN&#160;</td><td class="fielddoc"><p>Computes minimum value in the window. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a86dd75929a008df2311021ba0753c22aa26a4b44a837bf97b972628509912b4a5"></a>MAX&#160;</td><td class="fielddoc"><p>Computes maximum value in the window. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a86dd75929a008df2311021ba0753c22aa4ea6d1161ea24d7599365f574aff6610"></a>MEAN&#160;</td><td class="fielddoc"><p>Computes arithmetic mean of all values in the window. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a86dd75929a008df2311021ba0753c22aa4905ac9d6a22bdfc1ae096094ce6248d"></a>COUNT&#160;</td><td class="fielddoc"><p>Computes the number of values in the window. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a86dd75929a008df2311021ba0753c22aa4a0dd49d9250ae06cebde3075e441df9"></a>NUMBA_UDF&#160;</td><td class="fielddoc"><p>A user-defined aggregation operation defined in PTX code generated by <code>numba</code> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a86dd75929a008df2311021ba0753c22aa67f303e1658c4b438f74b2f02e626d92"></a>CUDA_UDF&#160;</td><td class="fielddoc"><p>A generic aggregation operation defined in CUDA code. </p>
+</td></tr>
+</table>
 
 </div>
 </div>
@@ -836,7 +901,7 @@ containing copy of all rows of <code>input</code> passing the filter defined by 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Unique pointer to a single table having all the rows from the </dd></dl>
-<h2><a class="anchor" id="autotoc_md457"></a>
+<h2><a class="anchor" id="autotoc_md458"></a>
 elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order.</h2>
 
 </div>
@@ -1082,7 +1147,7 @@ elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order
 
 <p>Defines all of the mappings between C++ types and their corresponding. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md539"></a>
+<h2><a class="anchor" id="autotoc_md540"></a>
 &lt;tt&gt;cudf::type_id&lt;/tt&gt; values.</h2>
 
 </div>
@@ -1224,7 +1289,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md442"></a>
+<h2><a class="anchor" id="autotoc_md443"></a>
 @return bool &lt;tt&gt;true&lt;/tt&gt; if &lt;tt&gt;lhs&lt;/tt&gt; == &lt;tt&gt;rhs&lt;/tt&gt; else &lt;tt&gt;false&lt;/tt&gt;.</h2>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1233,7 +1298,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md443"></a>
+<h2><a class="anchor" id="autotoc_md444"></a>
 @return bool &lt;tt&gt;true&lt;/tt&gt; if &lt;tt&gt;lhs&lt;/tt&gt; == &lt;tt&gt;rhs&lt;/tt&gt; else &lt;tt&gt;false&lt;/tt&gt;.</h2>
 
 </div>
@@ -1301,7 +1366,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md320"></a>
+<h2><a class="anchor" id="autotoc_md325"></a>
 @return std::unique_ptr&lt;column&gt; The result output column</h2>
 
 </div>
@@ -1365,7 +1430,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md319"></a>
+<h2><a class="anchor" id="autotoc_md324"></a>
 @return void</h2>
 
 </div>
@@ -1553,7 +1618,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md430"></a>
+<h2><a class="anchor" id="autotoc_md437"></a>
 @returns bool                true if sorted as expected, false if not.</h2>
 
 </div>
@@ -1725,7 +1790,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>weak_ordering Indicates the relationship between the elements in </dd></dl>
-<h2><a class="anchor" id="autotoc_md440"></a>
+<h2><a class="anchor" id="autotoc_md441"></a>
 the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1735,7 +1800,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>weak_ordering Indicates the relationship between the elements in </dd></dl>
-<h2><a class="anchor" id="autotoc_md441"></a>
+<h2><a class="anchor" id="autotoc_md442"></a>
 the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 
 </div>
@@ -1801,7 +1866,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md321"></a>
+<h2><a class="anchor" id="autotoc_md326"></a>
 @return std::unique_ptr&lt;table&gt; The result table containing the repetitions</h2>
 
 </div>
@@ -1858,7 +1923,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md322"></a>
+<h2><a class="anchor" id="autotoc_md327"></a>
 @return std::unique_ptr&lt;table&gt; The result table containing the repetitions</h2>
 
 </div>
@@ -1955,6 +2020,329 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 
 </div>
 </div>
+<a id="a2cb700f25d3bba6a9eefed85aab47fec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cb700f25d3bba6a9eefed85aab47fec">&#9670;&nbsp;</a></span>rolling_window() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; cudf::experimental::rolling_window </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>preceding_window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>following_window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>min_periods</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22a">rolling_operator</a>&#160;</td>
+          <td class="paramname"><em>op</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applies a variable-size rolling window function to the values in a column. </p>
+<p>This function aggregates values in a window around each element i of the input column, and invalidates the bit mask for element i if there are not enough observations. The window size is dynamic (varying for each element). This matches Pandas' API for DataFrame.rolling with a few notable differences:</p><ul>
+<li>instead of the center flag it uses a two-part window to allow for more flexible windows. The total window size = <code>preceding_window + following_window + 1</code>. Element <code>i</code> uses elements <code>[i-preceding_window, i+following_window]</code> to do the window computation.</li>
+<li>instead of storing NA/NaN for output rows that do not meet the minimum number of observations this function updates the valid bitmask of the column to indicate which elements are valid.</li>
+<li>support for dynamic rolling windows, i.e. window size can be specified for each element using an additional array.</li>
+</ul>
+<p>The returned column for <code>op == COUNT</code> always has INT32 type. All other operators return a column of the same type as the input. Therefore it is suggested to convert integer column types (especially low-precision integers) to <code>FLOAT32</code> or <code>FLOAT64</code> before doing a rolling <code>MEAN</code>.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if window column type is not INT32</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">input_col</td><td>The input column </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">preceding_window</td><td>A non-nullable column of INT32 window sizes in the forward direction. <code>preceding_window[i]</code> specifies preceding window size for element <code>i</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">following_window</td><td>A non-nullable column of INT32 window sizes in the backward direction. <code>following_window[i]</code> specifies following window size for element <code>i</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">min_periods</td><td>Minimum number of observations in window required to have a value, otherwise element <code>i</code> is null. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">op</td><td>The rolling window aggregation type (sum, max, min, etc.)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A nullable output column containing the rolling window results </dd></dl>
+
+</div>
+</div>
+<a id="a7e3ce1e1b142b9b0c4a4e6772dd2f56b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e3ce1e1b142b9b0c4a4e6772dd2f56b">&#9670;&nbsp;</a></span>rolling_window() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; cudf::experimental::rolling_window </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>preceding_window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>following_window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>min_periods</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>udf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22a">rolling_operator</a>&#160;</td>
+          <td class="paramname"><em>op</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1data__type.html">data_type</a>&#160;</td>
+          <td class="paramname"><em>output_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applies a variable-size user-defined rolling window function to the values in a column. </p>
+<p>This function aggregates values in a window around each element i of the input column with a user defined aggregator, and invalidates the bit mask for element i if there are not enough observations. The window size is dynamic (varying for each element). This matches Pandas' API for DataFrame.rolling with a few notable differences:</p><ul>
+<li>instead of the center flag it uses a two-part window to allow for more flexible windows. The total window size = <code>preceding_window + following_window + 1</code>. Element <code>i</code> uses elements <code>[i-preceding_window, i+following_window]</code> to do the window computation.</li>
+<li>instead of storing NA/NaN for output rows that do not meet the minimum number of observations this function updates the valid bitmask of the column to indicate which elements are valid.</li>
+</ul>
+<p>This function is asynchronous with respect to the GPU, i.e. the call will return before the operation is completed on the GPU (unless built in debug).</p>
+<p>Currently the handling of the null values is only partially implemented: it acts as if every element of the input column is valid, i.e. the validity of the individual elements in the input column is not checked when the number of (valid) observations are counted and the aggregator is applied.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if window column type is not INT32</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">input_col</td><td>The input column </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">preceding_window</td><td>A non-nullable column of INT32 window sizes in the forward direction. <code>preceding_window[i]</code> specifies preceding window size for element <code>i</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">following_window</td><td>A non-nullable column of INT32 window sizes in the backward direction. <code>following_window[i]</code> specifies following window size for element <code>i</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">min_periods</td><td>Minimum number of observations in window required to have a value, otherwise element <code>i</code> is null. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">udf</td><td>A CUDA string or a PTX string compiled by numba that contains the implementation of the user defined aggregator function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">op</td><td>The user-defined rolling window aggregation type: NUMBA_UDF (PTX string compiled by numba) or CUDA_UDF (CUDA string) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">output_type</td><td>Output type of the user-defined aggregator (only used for NUMBA_UDF)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A nullable output column containing the rolling window results </dd></dl>
+
+</div>
+</div>
+<a id="a37f3992f2b8b1d39234de4854a9e245f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37f3992f2b8b1d39234de4854a9e245f">&#9670;&nbsp;</a></span>rolling_window() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; cudf::experimental::rolling_window </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>preceding_window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>following_window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>min_periods</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22a">rolling_operator</a>&#160;</td>
+          <td class="paramname"><em>op</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applies a fixed-size rolling window function to the values in a column. </p>
+<p>This function aggregates values in a window around each element i of the input column, and invalidates the bit mask for element i if there are not enough observations. The window size is static (the same for each element). This matches Pandas' API for DataFrame.rolling with a few notable differences:</p><ul>
+<li>instead of the center flag it uses a two-part window to allow for more flexible windows. The total window size = <code>preceding_window + following_window + 1</code>. Element <code>i</code> uses elements <code>[i-preceding_window, i+following_window]</code> to do the window computation.</li>
+<li>instead of storing NA/NaN for output rows that do not meet the minimum number of observations this function updates the valid bitmask of the column to indicate which elements are valid.</li>
+</ul>
+<p>The returned column for <code>op == COUNT</code> always has <code>INT32</code> type. All other operators return a column of the same type as the input. Therefore it is suggested to convert integer column types (especially low-precision integers) to <code>FLOAT32</code> or <code>FLOAT64</code> before doing a rolling <code>MEAN</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">input_col</td><td>The input column </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">preceding_window</td><td>The static rolling window size in the backward direction. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">following_window</td><td>The static rolling window size in the forward direction. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">min_periods</td><td>Minimum number of observations in window required to have a value, otherwise element <code>i</code> is null. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">op</td><td>The rolling window aggregation type (SUM, MAX, MIN, etc.)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A nullable output column containing the rolling window results </dd></dl>
+
+</div>
+</div>
+<a id="a6440d8b1727cd90cdfaa0f01a1760dbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6440d8b1727cd90cdfaa0f01a1760dbd">&#9670;&nbsp;</a></span>rolling_window() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; cudf::experimental::rolling_window </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>preceding_window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>following_window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>min_periods</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>udf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacecudf_1_1experimental.html#a86dd75929a008df2311021ba0753c22a">rolling_operator</a>&#160;</td>
+          <td class="paramname"><em>op</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1data__type.html">data_type</a>&#160;</td>
+          <td class="paramname"><em>output_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applies a fixed-size user-defined rolling window function to the values in a column. </p>
+<p>This function aggregates values in a window around each element i of the input column with a user defined aggregator, and invalidates the bit mask for element i if there are not enough observations. The window size is static (the same for each element). This matches Pandas' API for DataFrame.rolling with a few notable differences:</p><ul>
+<li>instead of the center flag it uses a two-part window to allow for more flexible windows. The total window size = <code>preceding_window + following_window + 1</code>. Element <code>i</code> uses elements <code>[i-preceding_window, i+following_window]</code> to do the window computation.</li>
+<li>instead of storing NA/NaN for output rows that do not meet the minimum number of observations this function updates the valid bitmask of the column to indicate which elements are valid.</li>
+</ul>
+<p>This function is asynchronous with respect to the GPU, i.e. the call will return before the operation is completed on the GPU (unless built in debug).</p>
+<p>Currently the handling of the null values is only partially implemented: it acts as if every element of the input column is valid, i.e. the validity of the individual elements in the input column is not checked when the number of (valid) observations are counted and the aggregator is applied.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">input_col</td><td>The input column </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">preceding_window</td><td>The static rolling window size in the backward direction. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">following_window</td><td>The static rolling window size in the forward direction. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">min_periods</td><td>Minimum number of observations in window required to have a value, otherwise element <code>i</code> is null. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">udf</td><td>A CUDA string or a PTX string compiled by numba that contains the implementation of the user defined aggregator function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">op</td><td>The user-defined rolling window aggregation type: NUMBA_UDF (PTX string compiled by numba) or CUDA_UDF (CUDA string) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">output_type</td><td>Output type of the user-defined aggregator (only used for NUMBA_UDF)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A nullable output column containing the rolling window results </dd></dl>
+
+</div>
+</div>
 <a id="a71c7d359043b804ba7b6b0c38606c8d9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a71c7d359043b804ba7b6b0c38606c8d9">&#9670;&nbsp;</a></span>scatter() <span class="overload">[1/2]</span></h2>
 
@@ -2019,7 +2407,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md275"></a>
+<h2><a class="anchor" id="autotoc_md278"></a>
 @return Result of scattering values from source to target</h2>
 
 </div>
@@ -2089,7 +2477,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md274"></a>
+<h2><a class="anchor" id="autotoc_md277"></a>
 @return Result of scattering values from source to target</h2>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a1">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
 </dl>
@@ -2202,7 +2590,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;column&gt; A non-nullable column of INT32 elements </dd></dl>
-<h2><a class="anchor" id="autotoc_md429"></a>
+<h2><a class="anchor" id="autotoc_md436"></a>
 containing the permuted row indices of &lt;tt&gt;input&lt;/tt&gt; if it were sorted</h2>
 
 </div>
@@ -2413,7 +2801,7 @@ template &lt; typename ColumnType,
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md540"></a>
+<h2><a class="anchor" id="autotoc_md541"></a>
 @return Whatever is returned by the callable's &lt;tt&gt;operator()&lt;/tt&gt;</h2>
 
 </div>
@@ -2447,7 +2835,7 @@ template&lt;typename T &gt; </div>
 <p>------------------------------------------------------------------------&mdash;* When explicitly passed a template argument of a given type, returns the appropriate <code>type_id</code> enum for the specified C++ type.</p>
 <p>For example:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">return</span> cudf::type_to_id&lt;int32_t&gt;();        <span class="comment">// Returns INT32</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md536"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md537"></a>
 @tparam T The type to map to a &lt;tt&gt;cudf::type_id&lt;/tt&gt;</h2>
 
 </div>
