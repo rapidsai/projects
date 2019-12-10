@@ -79,9 +79,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a67da56e1c377939d4bfe4b3a7e77ed08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1row__lexicographic__comparator.html#a67da56e1c377939d4bfe4b3a7e77ed08">row_lexicographic_comparator</a> (<a class="el" href="classcudf_1_1table__device__view.html">table_device_view</a> lhs, <a class="el" href="classcudf_1_1table__device__view.html">table_device_view</a> rhs, <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">order</a> *column_order=nullptr, <a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">null_order</a> *null_precedence=nullptr)</td></tr>
-<tr class="memdesc:a67da56e1c377939d4bfe4b3a7e77ed08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a function object for performing a lexicographic comparison between the rows of two tables.  <a href="classcudf_1_1experimental_1_1row__lexicographic__comparator.html#a67da56e1c377939d4bfe4b3a7e77ed08">More...</a><br /></td></tr>
-<tr class="separator:a67da56e1c377939d4bfe4b3a7e77ed08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1076f5621b1aa04b71203e63ff80a853"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1row__lexicographic__comparator.html#a1076f5621b1aa04b71203e63ff80a853">row_lexicographic_comparator</a> (<a class="el" href="classcudf_1_1table__device__view.html">table_device_view</a> lhs, <a class="el" href="classcudf_1_1table__device__view.html">table_device_view</a> rhs, <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">order</a> const *column_order=nullptr, <a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">null_order</a> const *null_precedence=nullptr)</td></tr>
+<tr class="memdesc:a1076f5621b1aa04b71203e63ff80a853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a function object for performing a lexicographic comparison between the rows of two tables.  <a href="classcudf_1_1experimental_1_1row__lexicographic__comparator.html#a1076f5621b1aa04b71203e63ff80a853">More...</a><br /></td></tr>
+<tr class="separator:a1076f5621b1aa04b71203e63ff80a853"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad03c04a879ef1d38f06042d1db7d07ef"><td class="memItemLeft" align="right" valign="top">__device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1row__lexicographic__comparator.html#ad03c04a879ef1d38f06042d1db7d07ef">operator()</a> (size_type lhs_index, size_type rhs_index) const noexcept</td></tr>
 <tr class="memdesc:ad03c04a879ef1d38f06042d1db7d07ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the row at <code>lhs_index</code> in the <code>lhs</code> table compares lexicographically less than the row at <code>rhs_index</code> in the <code>rhs</code> table.  <a href="classcudf_1_1experimental_1_1row__lexicographic__comparator.html#ad03c04a879ef1d38f06042d1db7d07ef">More...</a><br /></td></tr>
 <tr class="separator:ad03c04a879ef1d38f06042d1db7d07ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -96,11 +96,11 @@ class cudf::experimental::row_lexicographic_comparator&lt; has_nulls &gt;</h3>
 <li>The first mismatching element defines which row is lexicographically less or greater than the other.</li>
 </ul>
 <p>Lexicographic ordering is exactly equivalent to doing an alphabetical sort of two words, for example, <code>aac</code> would be <em>less</em> than (or precede) <code>abb</code>. The second letter in both words is the first non-equal letter, and <code>a &lt; b</code>, thus <code>aac &lt; abb</code>.</p>
-<h2><a class="anchor" id="autotoc_md447"></a>
+<h2><a class="anchor" id="autotoc_md448"></a>
 @tparam has_nulls Indicates the potential for null values in either row.</h2>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a67da56e1c377939d4bfe4b3a7e77ed08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67da56e1c377939d4bfe4b3a7e77ed08">&#9670;&nbsp;</a></span>row_lexicographic_comparator()</h2>
+<a id="a1076f5621b1aa04b71203e63ff80a853"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1076f5621b1aa04b71203e63ff80a853">&#9670;&nbsp;</a></span>row_lexicographic_comparator()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,13 +125,13 @@ template&lt;bool has_nulls = true&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">order</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">order</a> const *&#160;</td>
           <td class="paramname"><em>column_order</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">null_order</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">null_order</a> const *&#160;</td>
           <td class="paramname"><em>null_precedence</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
@@ -163,7 +163,7 @@ template&lt;bool has_nulls = true&gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md456"></a>
+<h2><a class="anchor" id="autotoc_md457"></a>
 columns.</h2>
 
 </div>
@@ -214,7 +214,7 @@ template&lt;bool has_nulls = true&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if row from the <code>lhs</code> table compares less than row in the </dd></dl>
-<h2><a class="anchor" id="autotoc_md457"></a>
+<h2><a class="anchor" id="autotoc_md458"></a>
 &lt;tt&gt;rhs&lt;/tt&gt; table</h2>
 
 </div>

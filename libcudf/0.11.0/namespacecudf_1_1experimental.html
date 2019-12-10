@@ -284,6 +284,9 @@ std::vector&lt; <a class="el" href="classcudf_1_1column__view.html">cudf::column
 <tr class="memitem:a536b3d7781bb64ae0d9b8a64a0328be7"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a536b3d7781bb64ae0d9b8a64a0328be7">repeat</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;input_table, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;count, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a536b3d7781bb64ae0d9b8a64a0328be7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Repeat rows of a Table.  <a href="namespacecudf_1_1experimental.html#a536b3d7781bb64ae0d9b8a64a0328be7">More...</a><br /></td></tr>
 <tr class="separator:a536b3d7781bb64ae0d9b8a64a0328be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99d54d902dca3ba2fda445aa97c3fd76"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">cudf::experimental::table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a99d54d902dca3ba2fda445aa97c3fd76">merge</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;left_table, <a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;right_table, std::vector&lt; cudf::size_type &gt; const  &amp;key_cols, std::vector&lt; <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">cudf::order</a> &gt; const  &amp;column_order, std::vector&lt; <a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">cudf::null_order</a> &gt; const  &amp;null_precedence={}, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a99d54d902dca3ba2fda445aa97c3fd76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge sorted tables.  <a href="namespacecudf_1_1experimental.html#a99d54d902dca3ba2fda445aa97c3fd76">More...</a><br /></td></tr>
+<tr class="separator:a99d54d902dca3ba2fda445aa97c3fd76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a785dc5fa5540c9b0e6329847216ac89b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">cudf::column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a785dc5fa5540c9b0e6329847216ac89b">find_and_replace_all</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input_col, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;values_to_replace, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;replacement_values, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a785dc5fa5540c9b0e6329847216ac89b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace elements from <code>input_col</code> according to the mapping <code>old_values</code> to.  <a href="namespacecudf_1_1experimental.html#a785dc5fa5540c9b0e6329847216ac89b">More...</a><br /></td></tr>
 <tr class="separator:a785dc5fa5540c9b0e6329847216ac89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -431,7 +434,7 @@ template&lt;cudf::type_id Id&gt; </div>
 
 <p>Maps a <code><a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></code> to it's corresponding concrete C++ type. </p>
 <p>------------------------------------------------------------------------&mdash;* Example: </p><div class="fragment"><div class="line">static_assert(std::is_same&lt;int32_t, id_to_type&lt;INT32&gt;);</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md538"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md540"></a>
 @tparam t The &lt;tt&gt;cudf::type_id&lt;/tt&gt; to map</h2>
 
 </div>
@@ -901,7 +904,7 @@ containing copy of all rows of <code>input</code> passing the filter defined by 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Unique pointer to a single table having all the rows from the </dd></dl>
-<h2><a class="anchor" id="autotoc_md458"></a>
+<h2><a class="anchor" id="autotoc_md459"></a>
 elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order.</h2>
 
 </div>
@@ -1147,7 +1150,7 @@ elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order
 
 <p>Defines all of the mappings between C++ types and their corresponding. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md540"></a>
+<h2><a class="anchor" id="autotoc_md542"></a>
 &lt;tt&gt;cudf::type_id&lt;/tt&gt; values.</h2>
 
 </div>
@@ -1289,7 +1292,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md443"></a>
+<h2><a class="anchor" id="autotoc_md444"></a>
 @return bool &lt;tt&gt;true&lt;/tt&gt; if &lt;tt&gt;lhs&lt;/tt&gt; == &lt;tt&gt;rhs&lt;/tt&gt; else &lt;tt&gt;false&lt;/tt&gt;.</h2>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1298,7 +1301,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md444"></a>
+<h2><a class="anchor" id="autotoc_md445"></a>
 @return bool &lt;tt&gt;true&lt;/tt&gt; if &lt;tt&gt;lhs&lt;/tt&gt; == &lt;tt&gt;rhs&lt;/tt&gt; else &lt;tt&gt;false&lt;/tt&gt;.</h2>
 
 </div>
@@ -1618,7 +1621,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md437"></a>
+<h2><a class="anchor" id="autotoc_md438"></a>
 @returns bool                true if sorted as expected, false if not.</h2>
 
 </div>
@@ -1752,6 +1755,71 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
 
 </div>
 </div>
+<a id="a99d54d902dca3ba2fda445aa97c3fd76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99d54d902dca3ba2fda445aa97c3fd76">&#9670;&nbsp;</a></span>merge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">cudf::experimental::table</a> &gt; cudf::experimental::merge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>left_table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>right_table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; cudf::size_type &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>key_cols</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">cudf::order</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>column_order</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">cudf::null_order</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>null_precedence</em> = <code>{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Merge sorted tables. </p>
+<p>Merges two sorted tables into one sorted table containing data from both tables.</p>
+<p>Example 1: input: table 1 =&gt; col 1 {0, 1, 2, 3} col 2 {4, 5, 6, 7} table 2 =&gt; col 1 {1, 2} col 2 {8, 9} output: table =&gt; col 1 {0, 1, 1, 2, 2, 3} col 2 {4, 5, 8, 6, 9, 7}</p>
+<p>Example 2: input: table 1 =&gt; col 0 {1, 0} col 1 {'c', 'b'} col 2 {RED, GREEN}</p>
+<p>table 2 =&gt; col 0 {1} col 1 {'a'} col 2 {NULL}</p>
+<p>with key_cols[] = {0,1} and asc_desc[] = {ASC, ASC};</p>
+<p>Lex-sorting is on columns {0,1}; hence, lex-sorting of ((L0 x L1) V (R0 x R1)) is: (0,'b', GREEN), (1,'a', NULL), (1,'c', RED)</p>
+<p>(third column, the "color", just "goes along for the ride"; meaning is permutted according to the data movements dictated by lexicographic ordering of columns 0 and 1);</p>
+<p>with result columns:</p>
+<p>Res0 = {0,1,1} Res1 = {'b', 'a', 'c'} Res2 = {GREEN, NULL, RED}</p>
+<p>@Param[in] left_table A sorted table to be merged @Param[in] right_table A sorted table to be merged @Param[in] key_cols Indices of left_cols and right_cols to be used for comparison criteria @Param[in] column_order Sort order types of columns indexed by key_cols @Param[in] null_precedence Array indicating the order of nulls with respect to non-nulls for the indexing columns (key_cols)</p>
+<p>@Returns A table containing sorted data from left_table and right_table </p>
+
+</div>
+</div>
 <a id="a9616e7fc22050601796328dfa9b4bb8c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9616e7fc22050601796328dfa9b4bb8c">&#9670;&nbsp;</a></span>relational_compare()</h2>
 
@@ -1790,7 +1858,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>weak_ordering Indicates the relationship between the elements in </dd></dl>
-<h2><a class="anchor" id="autotoc_md441"></a>
+<h2><a class="anchor" id="autotoc_md442"></a>
 the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1800,7 +1868,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>weak_ordering Indicates the relationship between the elements in </dd></dl>
-<h2><a class="anchor" id="autotoc_md442"></a>
+<h2><a class="anchor" id="autotoc_md443"></a>
 the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 
 </div>
@@ -2590,7 +2658,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;column&gt; A non-nullable column of INT32 elements </dd></dl>
-<h2><a class="anchor" id="autotoc_md436"></a>
+<h2><a class="anchor" id="autotoc_md437"></a>
 containing the permuted row indices of &lt;tt&gt;input&lt;/tt&gt; if it were sorted</h2>
 
 </div>
@@ -2801,7 +2869,7 @@ template &lt; typename ColumnType,
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md541"></a>
+<h2><a class="anchor" id="autotoc_md543"></a>
 @return Whatever is returned by the callable's &lt;tt&gt;operator()&lt;/tt&gt;</h2>
 
 </div>
@@ -2835,7 +2903,7 @@ template&lt;typename T &gt; </div>
 <p>------------------------------------------------------------------------&mdash;* When explicitly passed a template argument of a given type, returns the appropriate <code>type_id</code> enum for the specified C++ type.</p>
 <p>For example:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">return</span> cudf::type_to_id&lt;int32_t&gt;();        <span class="comment">// Returns INT32</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md537"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md539"></a>
 @tparam T The type to map to a &lt;tt&gt;cudf::type_id&lt;/tt&gt;</h2>
 
 </div>
