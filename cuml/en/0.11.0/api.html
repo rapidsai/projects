@@ -111,6 +111,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#forest-inferencing">Forest Inferencing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#quasi-newton">Quasi-Newton</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#support-vector-machines">Support Vector Machines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nearest-neighbors-classification">Nearest Neighbors Classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nearest-neighbors-regression">Nearest Neighbors Regression</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#clustering">Clustering</a><ul>
@@ -128,6 +130,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#neighbors">Neighbors</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#nearest-neighbors">Nearest Neighbors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Nearest Neighbors Classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Nearest Neighbors Classification</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#time-series">Time Series</a><ul>
@@ -137,11 +141,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#multi-node-multi-gpu-algorithms">Multi-Node, Multi-GPU Algorithms</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id11">K-Means Clustering</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id12">Random Forest</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id13">Nearest Neighbors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id14">Principal Component Analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id17">Truncated SVD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">K-Means Clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">Random Forest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Nearest Neighbors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">Principal Component Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">Truncated SVD</a></li>
 </ul>
 </li>
 </ul>
@@ -1307,7 +1311,7 @@ is a regression task (predicting a continuous variable).</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id18"><span class="problematic" id="id19">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id23"><span class="problematic" id="id24">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -1526,7 +1530,7 @@ using different solvers in Scikit-learn.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_: device array, shape (n_classes, n_features)</strong></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_: device array (n_classes, 1)</strong></dt><dd><p>The independent term. If <a href="#id20"><span class="problematic" id="id21">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_: device array (n_classes, 1)</strong></dt><dd><p>The independent term. If <a href="#id25"><span class="problematic" id="id26">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -1722,7 +1726,7 @@ premium prediction, stock market analysis and much more.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id22"><span class="problematic" id="id23">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id27"><span class="problematic" id="id28">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -1916,7 +1920,7 @@ convergence especially when tol is higher than 1e-4.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id24"><span class="problematic" id="id25">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id29"><span class="problematic" id="id30">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 <dt><strong>For additional docs, see `scikitlearn’s Lasso</strong></dt><dd></dd>
 <dt><strong>&lt;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html&gt;`_.</strong></dt><dd></dd>
@@ -2113,7 +2117,7 @@ convergence especially when tol is higher than 1e-4.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id26"><span class="problematic" id="id27">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id31"><span class="problematic" id="id32">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 <dt><strong>For additional docs, see `scikitlearn’s ElasticNet</strong></dt><dd></dd>
 <dt><strong>&lt;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html&gt;`_.</strong></dt><dd></dd>
@@ -3657,7 +3661,7 @@ Wright - Numerical Optimization (1999)]
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_classes, n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.
 Note: shape is (n_classes, n_features + 1) if fit_intercept = True.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array (n_classes, 1)</span></dt><dd><p>The independent term. If <a href="#id28"><span class="problematic" id="id29">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array (n_classes, 1)</span></dt><dd><p>The independent term. If <a href="#id33"><span class="problematic" id="id34">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -3846,6 +3850,279 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dd class="field-even"><dl class="simple">
 <dt><strong>y</strong><span class="classifier">cuDF Series</span></dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
 </dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="nearest-neighbors-classification">
+<h3>Nearest Neighbors Classification<a class="headerlink" href="#nearest-neighbors-classification" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.neighbors.KNeighborsClassifier">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.neighbors.</code><code class="sig-name descname">KNeighborsClassifier</code><a class="headerlink" href="#cuml.neighbors.KNeighborsClassifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>K-Nearest Neighbors Classifier is an instance-based learning technique,
+that keeps training samples around for prediction, rather than trying
+to learn a generalizable set of model parameters.</p>
+<p class="rubric">Notes</p>
+<p>For additional docs, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">scikitlearn’s KNeighborsClassifier</a>.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cuml.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                  <span class="n">n_features</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span>
+  <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.80</span><span class="p">)</span>
+
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.fit" title="cuml.neighbors.KNeighborsClassifier.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
+<td><p>Fit a GPU index for k-nearest neighbors classifier model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.predict" title="cuml.neighbors.KNeighborsClassifier.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
+<td><p>Use the trained k-nearest neighbors classifier to predict the labels for X</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.predict_proba" title="cuml.neighbors.KNeighborsClassifier.predict_proba"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict_proba</span></code></a>(self, X[, convert_dtype])</p></td>
+<td><p>Use the trained k-nearest neighbors classifier to predict the label probabilities for X</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.score" title="cuml.neighbors.KNeighborsClassifier.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, convert_dtype])</p></td>
+<td><p>Compute the accuracy score using the given labels and the trained k-nearest neighbors classifier to predict the classes for X.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cuml.neighbors.KNeighborsClassifier.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.neighbors.KNeighborsClassifier.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit a GPU index for k-nearest neighbors classifier model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_outputs)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_outputs).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit method will automatically
+convert the inputs to np.float32.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.neighbors.KNeighborsClassifier.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.neighbors.KNeighborsClassifier.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the trained k-nearest neighbors classifier to
+predict the labels for X</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit method will automatically
+convert the inputs to np.float32.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.neighbors.KNeighborsClassifier.predict_proba">
+<code class="sig-name descname">predict_proba</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.neighbors.KNeighborsClassifier.predict_proba" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the trained k-nearest neighbors classifier to
+predict the label probabilities for X</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit method will automatically
+convert the inputs to np.float32.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.neighbors.KNeighborsClassifier.score">
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.neighbors.KNeighborsClassifier.score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the accuracy score using the given labels and
+the trained k-nearest neighbors classifier to predict
+the classes for X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit method will automatically
+convert the inputs to np.float32.</p>
+</dd>
+<dt><strong>:param sample_weight</strong><span class="classifier">This parameter is curren</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="nearest-neighbors-regression">
+<h3>Nearest Neighbors Regression<a class="headerlink" href="#nearest-neighbors-regression" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.neighbors.KNeighborsRegressor">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.neighbors.</code><code class="sig-name descname">KNeighborsRegressor</code><a class="headerlink" href="#cuml.neighbors.KNeighborsRegressor" title="Permalink to this definition">¶</a></dt>
+<dd><p>K-Nearest Neighbors Regressor is an instance-based learning technique,
+that keeps training samples around for prediction, rather than trying
+to learn a generalizable set of model parameters.</p>
+<p>The K-Nearest Neighbors Regressor will compute the average of the
+labels for the k closest neighbors and use it as the label.</p>
+<p class="rubric">Notes</p>
+<p>For additional docs, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">scikitlearn’s KNeighborsClassifier</a>.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cuml.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsRegressor</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                  <span class="n">n_features</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span>
+  <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.80</span><span class="p">)</span>
+
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span><span class="mf">3.</span>        <span class="p">,</span> <span class="mf">1.</span>        <span class="p">,</span> <span class="mf">1.</span>        <span class="p">,</span> <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">2.</span>        <span class="p">,</span>
+       <span class="mf">0.</span>        <span class="p">,</span> <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">0.</span>        <span class="p">,</span>
+       <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">0.</span>        <span class="p">,</span> <span class="mf">1.</span>        <span class="p">,</span> <span class="mf">2.</span>        <span class="p">,</span> <span class="mf">3.</span>        <span class="p">,</span>
+       <span class="mf">1.</span>        <span class="p">,</span> <span class="mf">0.</span>        <span class="p">,</span> <span class="mf">0.</span>        <span class="p">,</span> <span class="mf">0.</span>        <span class="p">,</span> <span class="mf">2.</span>        <span class="p">,</span>
+       <span class="mf">3.</span>        <span class="p">,</span> <span class="mf">3.</span>        <span class="p">,</span> <span class="mf">0.</span>        <span class="p">,</span> <span class="mf">3.</span>        <span class="p">,</span> <span class="mf">3.79999995</span><span class="p">,</span>
+       <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">3.</span>        <span class="p">,</span> <span class="mf">2.</span>        <span class="p">,</span>
+       <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">0.</span>        <span class="p">])</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsRegressor.fit" title="cuml.neighbors.KNeighborsRegressor.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
+<td><p>Fit a GPU index for k-nearest neighbors regression model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsRegressor.predict" title="cuml.neighbors.KNeighborsRegressor.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
+<td><p>Use the trained k-nearest neighbors regression model to predict the labels for X</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsRegressor.score" title="cuml.neighbors.KNeighborsRegressor.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, convert_dtype])</p></td>
+<td><p>Fit a GPU index for k-nearest neighbors regression model.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cuml.neighbors.KNeighborsRegressor.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.neighbors.KNeighborsRegressor.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit a GPU index for k-nearest neighbors regression model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_outputs)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_outputs).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit method will automatically
+convert the inputs to np.float32.</p>
+</dd>
+<dt><strong>:return :</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.neighbors.KNeighborsRegressor.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.neighbors.KNeighborsRegressor.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the trained k-nearest neighbors regression model to
+predict the labels for X</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit method will automatically
+convert the inputs to np.float32.</p>
+</dd>
+<dt><strong>:return:</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.neighbors.KNeighborsRegressor.score">
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.neighbors.KNeighborsRegressor.score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit a GPU index for k-nearest neighbors regression model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit method will automatically
+convert the inputs to np.float32.</p>
+</dd>
+<dt><strong>:return :</strong></dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -4918,7 +5195,7 @@ in the optimization process. Increasing this value will result
 in greater repulsive force being applied, greater optimization
 cost, but slightly more accuracy.</p>
 </dd>
-<dt><strong>transform_queue_size: float (optional, default 4.0)</strong></dt><dd><p>For transform operations (embedding new points using a trained <a href="#id30"><span class="problematic" id="id31">model_</span></a>
+<dt><strong>transform_queue_size: float (optional, default 4.0)</strong></dt><dd><p>For transform operations (embedding new points using a trained <a href="#id35"><span class="problematic" id="id36">model_</span></a>
 this will control how aggressively to search for nearest neighbors.
 Larger values will result in slower performance but more accurate
 nearest neighbor evaluation.</p>
@@ -5352,8 +5629,8 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <div class="section" id="nearest-neighbors">
 <h3>Nearest Neighbors<a class="headerlink" href="#nearest-neighbors" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
-<dt id="cuml.NearestNeighbors">
-<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">NearestNeighbors</code><a class="headerlink" href="#cuml.NearestNeighbors" title="Permalink to this definition">¶</a></dt>
+<dt id="cuml.neighbors.NearestNeighbors">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.neighbors.</code><code class="sig-name descname">NearestNeighbors</code><a class="headerlink" href="#cuml.neighbors.NearestNeighbors" title="Permalink to this definition">¶</a></dt>
 <dd><p>NearestNeighbors is an queries neighborhoods from a given set of
 datapoints. Currently, cuML supports k-NN queries, which define
 the neighborhood as the closest <cite>k</cite> neighbors to each query point.</p>
@@ -5422,17 +5699,17 @@ the neighborhood as the closest <cite>k</cite> neighbors to each query point.</p
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.NearestNeighbors.fit" title="cuml.NearestNeighbors.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, convert_dtype])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.neighbors.NearestNeighbors.fit" title="cuml.neighbors.NearestNeighbors.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Fit GPU index for performing nearest neighbor queries.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.NearestNeighbors.kneighbors" title="cuml.NearestNeighbors.kneighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kneighbors</span></code></a>(self[, X, n_neighbors, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.neighbors.NearestNeighbors.kneighbors" title="cuml.neighbors.NearestNeighbors.kneighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kneighbors</span></code></a>(self[, X, n_neighbors, …])</p></td>
 <td><p>Query the GPU index for the k nearest neighbors of column vectors in X.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="cuml.NearestNeighbors.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.fit" title="Permalink to this definition">¶</a></dt>
+<dt id="cuml.neighbors.NearestNeighbors.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.neighbors.NearestNeighbors.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit GPU index for performing nearest neighbor queries.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -5450,8 +5727,8 @@ convert the inputs to np.float32.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="cuml.NearestNeighbors.kneighbors">
-<code class="sig-name descname">kneighbors</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X=None</em>, <em class="sig-param">n_neighbors=None</em>, <em class="sig-param">return_distance=True</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.NearestNeighbors.kneighbors" title="Permalink to this definition">¶</a></dt>
+<dt id="cuml.neighbors.NearestNeighbors.kneighbors">
+<code class="sig-name descname">kneighbors</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X=None</em>, <em class="sig-param">n_neighbors=None</em>, <em class="sig-param">return_distance=True</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.neighbors.NearestNeighbors.kneighbors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Query the GPU index for the k nearest neighbors of column vectors in X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -5475,6 +5752,279 @@ in X</p>
 </dd>
 <dt><strong>indices: cuDF DataFrame of numpy ndarray</strong></dt><dd><p>The indices of the k-nearest neighbors for each column vector in X</p>
 </dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="id6">
+<h3>Nearest Neighbors Classification<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.neighbors.</code><code class="sig-name descname">KNeighborsClassifier</code></dt>
+<dd><p>K-Nearest Neighbors Classifier is an instance-based learning technique,
+that keeps training samples around for prediction, rather than trying
+to learn a generalizable set of model parameters.</p>
+<p class="rubric">Notes</p>
+<p>For additional docs, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">scikitlearn’s KNeighborsClassifier</a>.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cuml.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                  <span class="n">n_features</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span>
+  <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.80</span><span class="p">)</span>
+
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.fit" title="cuml.neighbors.KNeighborsClassifier.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
+<td><p>Fit a GPU index for k-nearest neighbors classifier model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.predict" title="cuml.neighbors.KNeighborsClassifier.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
+<td><p>Use the trained k-nearest neighbors classifier to predict the labels for X</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.predict_proba" title="cuml.neighbors.KNeighborsClassifier.predict_proba"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict_proba</span></code></a>(self, X[, convert_dtype])</p></td>
+<td><p>Use the trained k-nearest neighbors classifier to predict the label probabilities for X</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.score" title="cuml.neighbors.KNeighborsClassifier.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, convert_dtype])</p></td>
+<td><p>Compute the accuracy score using the given labels and the trained k-nearest neighbors classifier to predict the classes for X.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span></dt>
+<dd><p>Fit a GPU index for k-nearest neighbors classifier model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_outputs)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_outputs).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit method will automatically
+convert the inputs to np.float32.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span></dt>
+<dd><p>Use the trained k-nearest neighbors classifier to
+predict the labels for X</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit method will automatically
+convert the inputs to np.float32.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">predict_proba</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span></dt>
+<dd><p>Use the trained k-nearest neighbors classifier to
+predict the label probabilities for X</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit method will automatically
+convert the inputs to np.float32.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span></dt>
+<dd><p>Compute the accuracy score using the given labels and
+the trained k-nearest neighbors classifier to predict
+the classes for X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit method will automatically
+convert the inputs to np.float32.</p>
+</dd>
+<dt><strong>:param sample_weight</strong><span class="classifier">This parameter is curren</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="id8">
+<h3>Nearest Neighbors Classification<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.neighbors.</code><code class="sig-name descname">KNeighborsRegressor</code></dt>
+<dd><p>K-Nearest Neighbors Regressor is an instance-based learning technique,
+that keeps training samples around for prediction, rather than trying
+to learn a generalizable set of model parameters.</p>
+<p>The K-Nearest Neighbors Regressor will compute the average of the
+labels for the k closest neighbors and use it as the label.</p>
+<p class="rubric">Notes</p>
+<p>For additional docs, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">scikitlearn’s KNeighborsClassifier</a>.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cuml.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsRegressor</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                  <span class="n">n_features</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span>
+  <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.80</span><span class="p">)</span>
+
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span><span class="mf">3.</span>        <span class="p">,</span> <span class="mf">1.</span>        <span class="p">,</span> <span class="mf">1.</span>        <span class="p">,</span> <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">2.</span>        <span class="p">,</span>
+       <span class="mf">0.</span>        <span class="p">,</span> <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">0.</span>        <span class="p">,</span>
+       <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">0.</span>        <span class="p">,</span> <span class="mf">1.</span>        <span class="p">,</span> <span class="mf">2.</span>        <span class="p">,</span> <span class="mf">3.</span>        <span class="p">,</span>
+       <span class="mf">1.</span>        <span class="p">,</span> <span class="mf">0.</span>        <span class="p">,</span> <span class="mf">0.</span>        <span class="p">,</span> <span class="mf">0.</span>        <span class="p">,</span> <span class="mf">2.</span>        <span class="p">,</span>
+       <span class="mf">3.</span>        <span class="p">,</span> <span class="mf">3.</span>        <span class="p">,</span> <span class="mf">0.</span>        <span class="p">,</span> <span class="mf">3.</span>        <span class="p">,</span> <span class="mf">3.79999995</span><span class="p">,</span>
+       <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">3.</span>        <span class="p">,</span> <span class="mf">2.</span>        <span class="p">,</span>
+       <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">3.79999995</span><span class="p">,</span> <span class="mf">0.</span>        <span class="p">])</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsRegressor.fit" title="cuml.neighbors.KNeighborsRegressor.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
+<td><p>Fit a GPU index for k-nearest neighbors regression model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsRegressor.predict" title="cuml.neighbors.KNeighborsRegressor.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
+<td><p>Use the trained k-nearest neighbors regression model to predict the labels for X</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsRegressor.score" title="cuml.neighbors.KNeighborsRegressor.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, convert_dtype])</p></td>
+<td><p>Fit a GPU index for k-nearest neighbors regression model.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span></dt>
+<dd><p>Fit a GPU index for k-nearest neighbors regression model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_outputs)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_outputs).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit method will automatically
+convert the inputs to np.float32.</p>
+</dd>
+<dt><strong>:return :</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span></dt>
+<dd><p>Use the trained k-nearest neighbors regression model to
+predict the labels for X</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit method will automatically
+convert the inputs to np.float32.</p>
+</dd>
+<dt><strong>:return:</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span></dt>
+<dd><p>Fit a GPU index for k-nearest neighbors regression model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit method will automatically
+convert the inputs to np.float32.</p>
+</dd>
+<dt><strong>:return :</strong></dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -5677,7 +6227,7 @@ DataFrame of all forecasted points if index=None.</p>
 <code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ExponentialSmoothing.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the score of the model.</p>
 <dl class="simple">
-<dt><a href="#id5"><span class="problematic" id="id6">**</span></a>Note: Currently returns the SSE, rather than the gradient of the</dt><dd><p>LogLikelihood. <a class="reference external" href="https://github.com/rapidsai/cuml/issues/876">https://github.com/rapidsai/cuml/issues/876</a></p>
+<dt><a href="#id10"><span class="problematic" id="id11">**</span></a>Note: Currently returns the SSE, rather than the gradient of the</dt><dd><p>LogLikelihood. <a class="reference external" href="https://github.com/rapidsai/cuml/issues/876">https://github.com/rapidsai/cuml/issues/876</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -5733,7 +6283,7 @@ this variable.</p>
 <dt><strong>P</strong><span class="classifier">numba device array, numpy array or cuDF dataframe(dim_x, dim_x)</span></dt><dd><p>Current state covariance matrix. Any call to update() or predict()
 updates this variable.</p>
 </dd>
-<dt><strong>x_prior</strong><span class="classifier">numba device array, numpy array or cuDF series(dim_x, 1)</span></dt><dd><p>Prior (predicted) state estimate. The <a href="#id7"><span class="problematic" id="id8">*</span></a>_prior and <a href="#id9"><span class="problematic" id="id10">*</span></a>_post attributes
+<dt><strong>x_prior</strong><span class="classifier">numba device array, numpy array or cuDF series(dim_x, 1)</span></dt><dd><p>Prior (predicted) state estimate. The <a href="#id12"><span class="problematic" id="id13">*</span></a>_prior and <a href="#id14"><span class="problematic" id="id15">*</span></a>_post attributes
 are for convenience; they store the  prior and posterior of the
 current epoch. Read Only.</p>
 </dd>
@@ -5834,8 +6384,8 @@ one call, otherwise self.H will be used.</p>
 </div>
 <div class="section" id="multi-node-multi-gpu-algorithms">
 <h2>Multi-Node, Multi-GPU Algorithms<a class="headerlink" href="#multi-node-multi-gpu-algorithms" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id11">
-<h3>K-Means Clustering<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id16">
+<h3>K-Means Clustering<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.dask.cluster.KMeans">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.dask.cluster.</code><code class="sig-name descname">KMeans</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans" title="Permalink to this definition">¶</a></dt>
@@ -5940,8 +6490,8 @@ an exception</p>
 </dd></dl>
 
 </div>
-<div class="section" id="id12">
-<h3>Random Forest<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id17">
+<h3>Random Forest<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.dask.ensemble.RandomForestClassifier">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.dask.ensemble.</code><code class="sig-name descname">RandomForestClassifier</code><span class="sig-paren">(</span><em class="sig-param">n_estimators=10</em>, <em class="sig-param">max_depth=-1</em>, <em class="sig-param">max_features=1.0</em>, <em class="sig-param">n_bins=8</em>, <em class="sig-param">split_algo=1</em>, <em class="sig-param">split_criterion=0</em>, <em class="sig-param">min_rows_per_node=2</em>, <em class="sig-param">bootstrap=True</em>, <em class="sig-param">bootstrap_features=False</em>, <em class="sig-param">type_model='classifier'</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">rows_sample=1.0</em>, <em class="sig-param">max_leaves=-1</em>, <em class="sig-param">n_streams=4</em>, <em class="sig-param">quantile_per_tree=False</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">criterion=None</em>, <em class="sig-param">min_samples_leaf=None</em>, <em class="sig-param">min_weight_fraction_leaf=None</em>, <em class="sig-param">max_leaf_nodes=None</em>, <em class="sig-param">min_impurity_decrease=None</em>, <em class="sig-param">min_impurity_split=None</em>, <em class="sig-param">oob_score=None</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">warm_start=None</em>, <em class="sig-param">class_weight=None</em>, <em class="sig-param">workers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestClassifier" title="Permalink to this definition">¶</a></dt>
@@ -6334,8 +6884,8 @@ params : dict of new params</p>
 </dd></dl>
 
 </div>
-<div class="section" id="id13">
-<h3>Nearest Neighbors<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id18">
+<h3>Nearest Neighbors<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.dask.neighbors.NearestNeighbors">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.dask.neighbors.</code><code class="sig-name descname">NearestNeighbors</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">streams_per_handle=0</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.neighbors.NearestNeighbors" title="Permalink to this definition">¶</a></dt>
@@ -6396,8 +6946,8 @@ model are used.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="id14">
-<h3>Principal Component Analysis<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id19">
+<h3>Principal Component Analysis<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.dask.decomposition.PCA">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.dask.decomposition.</code><code class="sig-name descname">PCA</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA" title="Permalink to this definition">¶</a></dt>
@@ -6624,8 +7174,8 @@ from a training set.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="id17">
-<h3>Truncated SVD<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id22">
+<h3>Truncated SVD<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.dask.decomposition.TruncatedSVD">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.dask.decomposition.</code><code class="sig-name descname">TruncatedSVD</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.TruncatedSVD" title="Permalink to this definition">¶</a></dt>
