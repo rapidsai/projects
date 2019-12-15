@@ -95,9 +95,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#a5faf59fd6e00874015d93d8b39921ab7">~writer</a> ()</td></tr>
 <tr class="memdesc:a5faf59fd6e00874015d93d8b39921ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor explicitly-declared to avoid inlined in header. <br /></td></tr>
 <tr class="separator:a5faf59fd6e00874015d93d8b39921ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dc1c7c1c67fbe11db62e8803d1d7323"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#a6dc1c7c1c67fbe11db62e8803d1d7323">write_all</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;<a class="el" href="classcudf_1_1experimental_1_1table.html">table</a>, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
-<tr class="memdesc:a6dc1c7c1c67fbe11db62e8803d1d7323"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the entire dataset.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#a6dc1c7c1c67fbe11db62e8803d1d7323">More...</a><br /></td></tr>
-<tr class="separator:a6dc1c7c1c67fbe11db62e8803d1d7323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accbdaf4c53e45a4f62bde1ad0fbfed71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#accbdaf4c53e45a4f62bde1ad0fbfed71">write_all</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;<a class="el" href="classcudf_1_1experimental_1_1table.html">table</a>, const <a class="el" href="structcudf_1_1experimental_1_1io_1_1table__metadata.html">table_metadata</a> *<a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1metadata.html">metadata</a>=nullptr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
+<tr class="memdesc:accbdaf4c53e45a4f62bde1ad0fbfed71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the entire dataset.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#accbdaf4c53e45a4f62bde1ad0fbfed71">More...</a><br /></td></tr>
+<tr class="separator:accbdaf4c53e45a4f62bde1ad0fbfed71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to write ORC dataset data into columns. </p>
@@ -155,8 +155,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6dc1c7c1c67fbe11db62e8803d1d7323"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6dc1c7c1c67fbe11db62e8803d1d7323">&#9670;&nbsp;</a></span>write_all()</h2>
+<a id="accbdaf4c53e45a4f62bde1ad0fbfed71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accbdaf4c53e45a4f62bde1ad0fbfed71">&#9670;&nbsp;</a></span>write_all()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -166,6 +166,12 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;&#160;</td>
           <td class="paramname"><em>table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcudf_1_1experimental_1_1io_1_1table__metadata.html">table_metadata</a> *&#160;</td>
+          <td class="paramname"><em>metadata</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -185,6 +191,7 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">table</td><td>Set of columns to output </td></tr>
+    <tr><td class="paramname">metadata</td><td>Table metadata and column names </td></tr>
     <tr><td class="paramname">stream</td><td>Optional stream to use for device memory alloc and kernels </td></tr>
   </table>
   </dd>

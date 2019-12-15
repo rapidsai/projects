@@ -84,19 +84,20 @@ Collaboration diagram for cudf::experimental::io::write_parquet_args:</div>
 <div class="dyncontent">
 <div class="center"><img src="structcudf_1_1experimental_1_1io_1_1write__parquet__args__coll__graph.png" border="0" usemap="#cudf_1_1experimental_1_1io_1_1write__parquet__args_coll__map" alt="Collaboration graph"/></div>
 <map name="cudf_1_1experimental_1_1io_1_1write__parquet__args_coll__map" id="cudf_1_1experimental_1_1io_1_1write__parquet__args_coll__map">
-<area shape="rect" title="Settings to use for write_parquet()" alt="" coords="118,213,381,255"/>
-<area shape="rect" href="classcudf_1_1table__view.html" title="A set of column_views of the same size." alt="" coords="50,117,233,143"/>
+<area shape="rect" title="Settings to use for write_parquet()" alt="" coords="777,64,1040,105"/>
+<area shape="rect" href="classcudf_1_1table__view.html" title="A set of column_views of the same size." alt="" coords="436,13,619,39"/>
 <area shape="rect" href="classcudf_1_1detail_1_1table__view__base.html" title=" " alt="" coords="5,5,277,47"/>
-<area shape="rect" href="structcudf_1_1experimental_1_1io_1_1sink__info.html" title="Destination information for write interfaces." alt="" coords="257,109,460,151"/>
-<area shape="rect" title=" " alt="" coords="317,13,400,39"/>
+<area shape="rect" href="structcudf_1_1experimental_1_1io_1_1sink__info.html" title="Destination information for write interfaces." alt="" coords="426,64,629,105"/>
+<area shape="rect" title=" " alt="" coords="100,71,183,98"/>
+<area shape="rect" href="structcudf_1_1experimental_1_1io_1_1table__metadata.html" title="Table metadata for io readers/writers (primarily column names) For nested types (structs,..." alt="" coords="416,129,639,171"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7789937f9a506461327e1aaaf51fc1ca"><td class="memItemLeft" align="right" valign="top"><a id="a7789937f9a506461327e1aaaf51fc1ca"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>write_parquet_args</b> (<a class="el" href="structcudf_1_1experimental_1_1io_1_1sink__info.html">sink_info</a> const &amp;sink_, <a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;table_, <a class="el" href="namespacecudf_1_1experimental_1_1io.html#a748faef899f436d65047ac2241261457">compression_type</a> compression_=<a class="el" href="namespacecudf_1_1experimental_1_1io.html#a748faef899f436d65047ac2241261457ae1f2d5134ed2543d38a0de9751cf75d9">compression_type::AUTO</a>, <a class="el" href="namespacecudf_1_1experimental_1_1io.html#a3b49efcc68437e81c995a1b5851fc7fb">statistics_freq</a> stats_lvl_=statistics_freq::STATISTICS_ROWGROUP)</td></tr>
-<tr class="separator:a7789937f9a506461327e1aaaf51fc1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabdd2058c2b360c7e7264db4cdcd5058"><td class="memItemLeft" align="right" valign="top"><a id="aabdd2058c2b360c7e7264db4cdcd5058"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>write_parquet_args</b> (<a class="el" href="structcudf_1_1experimental_1_1io_1_1sink__info.html">sink_info</a> const &amp;sink_, <a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;table_, const <a class="el" href="structcudf_1_1experimental_1_1io_1_1table__metadata.html">table_metadata</a> *metadata_=nullptr, <a class="el" href="namespacecudf_1_1experimental_1_1io.html#a748faef899f436d65047ac2241261457">compression_type</a> compression_=<a class="el" href="namespacecudf_1_1experimental_1_1io.html#a748faef899f436d65047ac2241261457ae1f2d5134ed2543d38a0de9751cf75d9">compression_type::AUTO</a>, <a class="el" href="namespacecudf_1_1experimental_1_1io.html#a3b49efcc68437e81c995a1b5851fc7fb">statistics_freq</a> stats_lvl_=statistics_freq::STATISTICS_ROWGROUP)</td></tr>
+<tr class="separator:aabdd2058c2b360c7e7264db4cdcd5058"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -116,6 +117,10 @@ Public Attributes</h2></td></tr>
 <a class="el" href="classcudf_1_1table__view.html">table_view</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1write__parquet__args.html#adfad59e9810d109f1096469b55705f59">table</a></td></tr>
 <tr class="memdesc:adfad59e9810d109f1096469b55705f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of columns to output. <br /></td></tr>
 <tr class="separator:adfad59e9810d109f1096469b55705f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c3930943e78664a8bac7692a596b79d"><td class="memItemLeft" align="right" valign="top"><a id="a6c3930943e78664a8bac7692a596b79d"></a>
+const <a class="el" href="structcudf_1_1experimental_1_1io_1_1table__metadata.html">table_metadata</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1write__parquet__args.html#a6c3930943e78664a8bac7692a596b79d">metadata</a></td></tr>
+<tr class="memdesc:a6c3930943e78664a8bac7692a596b79d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional associated metadata. <br /></td></tr>
+<tr class="separator:a6c3930943e78664a8bac7692a596b79d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Settings to use for <code><a class="el" href="namespacecudf_1_1experimental_1_1io.html#a85ee25fc2cd472e2cb922897119363a3" title="Writes a set of columns to parquet format.">write_parquet()</a></code> </p>

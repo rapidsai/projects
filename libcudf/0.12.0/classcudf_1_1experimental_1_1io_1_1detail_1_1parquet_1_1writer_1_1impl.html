@@ -84,9 +84,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2e1420eaaec4c7adf562a22a4e6b7e94"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer_1_1impl.html#a2e1420eaaec4c7adf562a22a4e6b7e94">impl</a> (std::string filepath, <a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer__options.html">writer_options</a> const &amp;options, rmm::mr::device_memory_resource *mr)</td></tr>
 <tr class="memdesc:a2e1420eaaec4c7adf562a22a4e6b7e94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with writer options.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer_1_1impl.html#a2e1420eaaec4c7adf562a22a4e6b7e94">More...</a><br /></td></tr>
 <tr class="separator:a2e1420eaaec4c7adf562a22a4e6b7e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a620347f455680ecd5740bfac10f90ca8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer_1_1impl.html#a620347f455680ecd5740bfac10f90ca8">write</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;<a class="el" href="classcudf_1_1experimental_1_1table.html">table</a>, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
-<tr class="memdesc:a620347f455680ecd5740bfac10f90ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write an entire dataset to parquet format.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer_1_1impl.html#a620347f455680ecd5740bfac10f90ca8">More...</a><br /></td></tr>
-<tr class="separator:a620347f455680ecd5740bfac10f90ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d140695c088c54f7d4bdecfceebf5b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer_1_1impl.html#a2d140695c088c54f7d4bdecfceebf5b0">write</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;<a class="el" href="classcudf_1_1experimental_1_1table.html">table</a>, const <a class="el" href="structcudf_1_1experimental_1_1io_1_1table__metadata.html">table_metadata</a> *<a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1metadata.html">metadata</a>, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
+<tr class="memdesc:a2d140695c088c54f7d4bdecfceebf5b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write an entire dataset to parquet format.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer_1_1impl.html#a2d140695c088c54f7d4bdecfceebf5b0">More...</a><br /></td></tr>
+<tr class="separator:a2d140695c088c54f7d4bdecfceebf5b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation for parquet writer. </p>
@@ -144,8 +144,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a620347f455680ecd5740bfac10f90ca8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a620347f455680ecd5740bfac10f90ca8">&#9670;&nbsp;</a></span>write()</h2>
+<a id="a2d140695c088c54f7d4bdecfceebf5b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d140695c088c54f7d4bdecfceebf5b0">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -155,6 +155,12 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;&#160;</td>
           <td class="paramname"><em>table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcudf_1_1experimental_1_1io_1_1table__metadata.html">table_metadata</a> *&#160;</td>
+          <td class="paramname"><em>metadata</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -174,6 +180,7 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">table</td><td>The set of columns </td></tr>
+    <tr><td class="paramname">metadata</td><td>The metadata associated with the table </td></tr>
     <tr><td class="paramname">stream</td><td>Stream to use for memory allocation and kernels </td></tr>
   </table>
   </dd>

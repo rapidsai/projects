@@ -78,15 +78,23 @@ $(function() {
 <p>cuDF-IO API type definitions  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;<a class="el" href="types_8hpp_source.html">cudf/types.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for io/types.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="io_2types_8hpp__incl.png" border="0" usemap="#types_8hpp" alt=""/></div>
 <map name="types_8hpp" id="types_8hpp">
-<area shape="rect" title="cuDF&#45;IO API type definitions" alt="" coords="44,5,156,32"/>
+<area shape="rect" title="cuDF&#45;IO API type definitions" alt="" coords="204,5,316,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,88,107"/>
 <area shape="rect" title=" " alt="" coords="112,80,195,107"/>
+<area shape="rect" title=" " alt="" coords="219,80,301,107"/>
+<area shape="rect" title=" " alt="" coords="326,80,378,107"/>
+<area shape="rect" href="types_8hpp.html" title="Type declarations for libcudf." alt="" coords="403,80,565,107"/>
+<area shape="rect" title=" " alt="" coords="379,155,471,181"/>
+<area shape="rect" title=" " alt="" coords="495,155,587,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -117,6 +125,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__metadata.html">cudf::experimental::io::table_metadata</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Table metadata for io readers/writers (primarily column names) For nested types (structs, maps, unions), the ordering of names in the column_names vector corresponds to a pre-order traversal of the column tree. In the example below (2 top-level columns: struct column "col1" and string column "col2"), column_names = {"col1", "s3", "f5", "f6", "f4", "col2"}.  <a href="structcudf_1_1experimental_1_1io_1_1table__metadata.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">cudf::experimental::io::table_with_metadata</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Table with table metadata used by io readers to return the metadata by value.  <a href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1source__info.html">cudf::experimental::io::source_info</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source information for read interfaces.  <a href="structcudf_1_1experimental_1_1io_1_1source__info.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>

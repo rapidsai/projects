@@ -84,9 +84,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a47ae7bec50d8d81fe924ec0af078238f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader_1_1impl.html#a47ae7bec50d8d81fe924ec0af078238f">impl</a> (std::unique_ptr&lt; <a class="el" href="classcudf_1_1io_1_1datasource.html">datasource</a> &gt; source, <a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader__options.html">reader_options</a> const &amp;options, rmm::mr::device_memory_resource *mr)</td></tr>
 <tr class="memdesc:a47ae7bec50d8d81fe924ec0af078238f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from a dataset source with reader options.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader_1_1impl.html#a47ae7bec50d8d81fe924ec0af078238f">More...</a><br /></td></tr>
 <tr class="separator:a47ae7bec50d8d81fe924ec0af078238f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa9f95072305a9217271d92f63e16521"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader_1_1impl.html#afa9f95072305a9217271d92f63e16521">read</a> (int skip_rows, int num_rows, int stripe, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
-<tr class="memdesc:afa9f95072305a9217271d92f63e16521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read an entire set or a subset of data and returns a set of columns.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader_1_1impl.html#afa9f95072305a9217271d92f63e16521">More...</a><br /></td></tr>
-<tr class="separator:afa9f95072305a9217271d92f63e16521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4edd58113d9f212c8ed3ef1340d80d2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader_1_1impl.html#a4edd58113d9f212c8ed3ef1340d80d2b">read</a> (int skip_rows, int num_rows, int stripe, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
+<tr class="memdesc:a4edd58113d9f212c8ed3ef1340d80d2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read an entire set or a subset of data and returns a set of columns.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader_1_1impl.html#a4edd58113d9f212c8ed3ef1340d80d2b">More...</a><br /></td></tr>
+<tr class="separator:a4edd58113d9f212c8ed3ef1340d80d2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation for ORC reader. </p>
@@ -144,14 +144,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="afa9f95072305a9217271d92f63e16521"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa9f95072305a9217271d92f63e16521">&#9670;&nbsp;</a></span>read()</h2>
+<a id="a4edd58113d9f212c8ed3ef1340d80d2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4edd58113d9f212c8ed3ef1340d80d2b">&#9670;&nbsp;</a></span>read()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt; cudf::experimental::io::detail::orc::reader::impl::read </td>
+          <td class="memname"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a> cudf::experimental::io::detail::orc::reader::impl::read </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>skip_rows</em>, </td>
@@ -192,7 +192,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The set of columns </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The set of columns along with metadata </dd></dl>
 
 </div>
 </div>

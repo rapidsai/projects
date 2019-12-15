@@ -101,12 +101,12 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1avro_1_1reader.html#a3bacc7d4cb8ac61ca042c549814cc5cb">~reader</a> ()</td></tr>
 <tr class="memdesc:a3bacc7d4cb8ac61ca042c549814cc5cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor explicitly-declared to avoid inlined in header. <br /></td></tr>
 <tr class="separator:a3bacc7d4cb8ac61ca042c549814cc5cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0da0b4a1f019931fc065be333ce4549a"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1avro_1_1reader.html#a0da0b4a1f019931fc065be333ce4549a">read_all</a> (<a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
-<tr class="memdesc:a0da0b4a1f019931fc065be333ce4549a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the entire dataset.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1avro_1_1reader.html#a0da0b4a1f019931fc065be333ce4549a">More...</a><br /></td></tr>
-<tr class="separator:a0da0b4a1f019931fc065be333ce4549a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff1b7d2666e8856828228ad9e2f0ea82"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1avro_1_1reader.html#aff1b7d2666e8856828228ad9e2f0ea82">read_rows</a> (size_type skip_rows, size_type num_rows, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
-<tr class="memdesc:aff1b7d2666e8856828228ad9e2f0ea82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads and returns a range of rows.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1avro_1_1reader.html#aff1b7d2666e8856828228ad9e2f0ea82">More...</a><br /></td></tr>
-<tr class="separator:aff1b7d2666e8856828228ad9e2f0ea82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf08653766ce5a353f9d127a2e3a9711"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1avro_1_1reader.html#acf08653766ce5a353f9d127a2e3a9711">read_all</a> (<a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
+<tr class="memdesc:acf08653766ce5a353f9d127a2e3a9711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the entire dataset.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1avro_1_1reader.html#acf08653766ce5a353f9d127a2e3a9711">More...</a><br /></td></tr>
+<tr class="separator:acf08653766ce5a353f9d127a2e3a9711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af976b6b97299c9a0c48b7d4bf77b47e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1avro_1_1reader.html#af976b6b97299c9a0c48b7d4bf77b47e1">read_rows</a> (size_type skip_rows, size_type num_rows, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
+<tr class="memdesc:af976b6b97299c9a0c48b7d4bf77b47e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads and returns a range of rows.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1avro_1_1reader.html#af976b6b97299c9a0c48b7d4bf77b47e1">More...</a><br /></td></tr>
+<tr class="separator:af976b6b97299c9a0c48b7d4bf77b47e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to read Avro dataset data into columns. </p>
@@ -275,14 +275,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0da0b4a1f019931fc065be333ce4549a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0da0b4a1f019931fc065be333ce4549a">&#9670;&nbsp;</a></span>read_all()</h2>
+<a id="acf08653766ce5a353f9d127a2e3a9711"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf08653766ce5a353f9d127a2e3a9711">&#9670;&nbsp;</a></span>read_all()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt; cudf::experimental::io::detail::avro::reader::read_all </td>
+          <td class="memname"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a> cudf::experimental::io::detail::avro::reader::read_all </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
           <td class="paramname"><em>stream</em> = <code>0</code></td><td>)</td>
@@ -298,18 +298,18 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The set of columns </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The set of columns along with table metadata </dd></dl>
 
 </div>
 </div>
-<a id="aff1b7d2666e8856828228ad9e2f0ea82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff1b7d2666e8856828228ad9e2f0ea82">&#9670;&nbsp;</a></span>read_rows()</h2>
+<a id="af976b6b97299c9a0c48b7d4bf77b47e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af976b6b97299c9a0c48b7d4bf77b47e1">&#9670;&nbsp;</a></span>read_rows()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt; cudf::experimental::io::detail::avro::reader::read_rows </td>
+          <td class="memname"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a> cudf::experimental::io::detail::avro::reader::read_rows </td>
           <td>(</td>
           <td class="paramtype">size_type&#160;</td>
           <td class="paramname"><em>skip_rows</em>, </td>
@@ -339,11 +339,12 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">skip_rows</td><td>Number of rows to skip from the start </td></tr>
     <tr><td class="paramname">num_rows</td><td>Number of rows to read; use <code>0</code> for all remaining data </td></tr>
+    <tr><td class="paramname">metadata</td><td>Optional location to return table metadata </td></tr>
     <tr><td class="paramname">stream</td><td>Optional stream to use for device memory alloc and kernels</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The set of columns </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The set of columns along with table metadata </dd></dl>
 
 </div>
 </div>

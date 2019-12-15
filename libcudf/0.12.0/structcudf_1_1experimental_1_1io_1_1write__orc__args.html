@@ -84,19 +84,20 @@ Collaboration diagram for cudf::experimental::io::write_orc_args:</div>
 <div class="dyncontent">
 <div class="center"><img src="structcudf_1_1experimental_1_1io_1_1write__orc__args__coll__graph.png" border="0" usemap="#cudf_1_1experimental_1_1io_1_1write__orc__args_coll__map" alt="Collaboration graph"/></div>
 <map name="cudf_1_1experimental_1_1io_1_1write__orc__args_coll__map" id="cudf_1_1experimental_1_1io_1_1write__orc__args_coll__map">
-<area shape="rect" title="Settings to use for write_orc()" alt="" coords="138,213,361,255"/>
-<area shape="rect" href="classcudf_1_1table__view.html" title="A set of column_views of the same size." alt="" coords="50,117,233,143"/>
+<area shape="rect" title="Settings to use for write_orc()" alt="" coords="777,64,1000,105"/>
+<area shape="rect" href="classcudf_1_1table__view.html" title="A set of column_views of the same size." alt="" coords="436,13,619,39"/>
 <area shape="rect" href="classcudf_1_1detail_1_1table__view__base.html" title=" " alt="" coords="5,5,277,47"/>
-<area shape="rect" href="structcudf_1_1experimental_1_1io_1_1sink__info.html" title="Destination information for write interfaces." alt="" coords="257,109,460,151"/>
-<area shape="rect" title=" " alt="" coords="317,13,400,39"/>
+<area shape="rect" href="structcudf_1_1experimental_1_1io_1_1sink__info.html" title="Destination information for write interfaces." alt="" coords="426,64,629,105"/>
+<area shape="rect" title=" " alt="" coords="100,71,183,98"/>
+<area shape="rect" href="structcudf_1_1experimental_1_1io_1_1table__metadata.html" title="Table metadata for io readers/writers (primarily column names) For nested types (structs,..." alt="" coords="416,129,639,171"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a94d3c9945482b8948f08a3142b4214b8"><td class="memItemLeft" align="right" valign="top"><a id="a94d3c9945482b8948f08a3142b4214b8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>write_orc_args</b> (<a class="el" href="structcudf_1_1experimental_1_1io_1_1sink__info.html">sink_info</a> const &amp;snk, <a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;table_, <a class="el" href="namespacecudf_1_1experimental_1_1io.html#a748faef899f436d65047ac2241261457">compression_type</a> compression_=<a class="el" href="namespacecudf_1_1experimental_1_1io.html#a748faef899f436d65047ac2241261457ae1f2d5134ed2543d38a0de9751cf75d9">compression_type::AUTO</a>)</td></tr>
-<tr class="separator:a94d3c9945482b8948f08a3142b4214b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52816af8eff72045f7c3f55f45987c89"><td class="memItemLeft" align="right" valign="top"><a id="a52816af8eff72045f7c3f55f45987c89"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>write_orc_args</b> (<a class="el" href="structcudf_1_1experimental_1_1io_1_1sink__info.html">sink_info</a> const &amp;snk, <a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;table_, const <a class="el" href="structcudf_1_1experimental_1_1io_1_1table__metadata.html">table_metadata</a> *metadata_=nullptr, <a class="el" href="namespacecudf_1_1experimental_1_1io.html#a748faef899f436d65047ac2241261457">compression_type</a> compression_=<a class="el" href="namespacecudf_1_1experimental_1_1io.html#a748faef899f436d65047ac2241261457ae1f2d5134ed2543d38a0de9751cf75d9">compression_type::AUTO</a>)</td></tr>
+<tr class="separator:a52816af8eff72045f7c3f55f45987c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -112,6 +113,10 @@ Public Attributes</h2></td></tr>
 <a class="el" href="classcudf_1_1table__view.html">table_view</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1write__orc__args.html#a4a0145e71da9648d11f89e418b378ec6">table</a></td></tr>
 <tr class="memdesc:a4a0145e71da9648d11f89e418b378ec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of columns to output. <br /></td></tr>
 <tr class="separator:a4a0145e71da9648d11f89e418b378ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a894ea0599d558378ed2a3cb3985472d5"><td class="memItemLeft" align="right" valign="top"><a id="a894ea0599d558378ed2a3cb3985472d5"></a>
+const <a class="el" href="structcudf_1_1experimental_1_1io_1_1table__metadata.html">table_metadata</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1write__orc__args.html#a894ea0599d558378ed2a3cb3985472d5">metadata</a></td></tr>
+<tr class="memdesc:a894ea0599d558378ed2a3cb3985472d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional associated metadata. <br /></td></tr>
+<tr class="separator:a894ea0599d558378ed2a3cb3985472d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Settings to use for <code><a class="el" href="namespacecudf_1_1experimental_1_1io.html#a7ce621c16b3adaced5a661bb7ca97ca0" title="Writes a set of columns to ORC format.">write_orc()</a></code> </p>

@@ -104,15 +104,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ada1b0d243e25c5e9d022f74d7e6455a3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader.html#ada1b0d243e25c5e9d022f74d7e6455a3">get_pandas_index</a> ()</td></tr>
 <tr class="memdesc:ada1b0d243e25c5e9d022f74d7e6455a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the PANDAS-specific index column derived from the metadata.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader.html#ada1b0d243e25c5e9d022f74d7e6455a3">More...</a><br /></td></tr>
 <tr class="separator:ada1b0d243e25c5e9d022f74d7e6455a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a238521c7722d6aacde58bc4992345dd1"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader.html#a238521c7722d6aacde58bc4992345dd1">read_all</a> (<a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
-<tr class="memdesc:a238521c7722d6aacde58bc4992345dd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the entire dataset.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader.html#a238521c7722d6aacde58bc4992345dd1">More...</a><br /></td></tr>
-<tr class="separator:a238521c7722d6aacde58bc4992345dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60180e0a16327189b7889f2322fd747b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader.html#a60180e0a16327189b7889f2322fd747b">read_row_group</a> (size_type row_group, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
-<tr class="memdesc:a60180e0a16327189b7889f2322fd747b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a specific group of rows.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader.html#a60180e0a16327189b7889f2322fd747b">More...</a><br /></td></tr>
-<tr class="separator:a60180e0a16327189b7889f2322fd747b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d9ca824d6bc1256107ee02d70ace850"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader.html#a1d9ca824d6bc1256107ee02d70ace850">read_rows</a> (size_type skip_rows, size_type num_rows, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
-<tr class="memdesc:a1d9ca824d6bc1256107ee02d70ace850"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a range of rows.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader.html#a1d9ca824d6bc1256107ee02d70ace850">More...</a><br /></td></tr>
-<tr class="separator:a1d9ca824d6bc1256107ee02d70ace850"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31a7a82df31fddcef17fb72b6412a7cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader.html#a31a7a82df31fddcef17fb72b6412a7cb">read_all</a> (<a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
+<tr class="memdesc:a31a7a82df31fddcef17fb72b6412a7cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the entire dataset.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader.html#a31a7a82df31fddcef17fb72b6412a7cb">More...</a><br /></td></tr>
+<tr class="separator:a31a7a82df31fddcef17fb72b6412a7cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a230ccf4122e4c8a16e6f0fa4cd03ab9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader.html#a230ccf4122e4c8a16e6f0fa4cd03ab9e">read_row_group</a> (size_type row_group, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
+<tr class="memdesc:a230ccf4122e4c8a16e6f0fa4cd03ab9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a specific group of rows.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader.html#a230ccf4122e4c8a16e6f0fa4cd03ab9e">More...</a><br /></td></tr>
+<tr class="separator:a230ccf4122e4c8a16e6f0fa4cd03ab9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef53c5b621732d6a12c96ed81aeec359"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader.html#aef53c5b621732d6a12c96ed81aeec359">read_rows</a> (size_type skip_rows, size_type num_rows, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
+<tr class="memdesc:aef53c5b621732d6a12c96ed81aeec359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a range of rows.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader.html#aef53c5b621732d6a12c96ed81aeec359">More...</a><br /></td></tr>
+<tr class="separator:aef53c5b621732d6a12c96ed81aeec359"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to read Parquet dataset data into columns. </p>
@@ -301,14 +301,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a238521c7722d6aacde58bc4992345dd1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a238521c7722d6aacde58bc4992345dd1">&#9670;&nbsp;</a></span>read_all()</h2>
+<a id="a31a7a82df31fddcef17fb72b6412a7cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31a7a82df31fddcef17fb72b6412a7cb">&#9670;&nbsp;</a></span>read_all()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt; cudf::experimental::io::detail::parquet::reader::read_all </td>
+          <td class="memname"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a> cudf::experimental::io::detail::parquet::reader::read_all </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
           <td class="paramname"><em>stream</em> = <code>0</code></td><td>)</td>
@@ -324,18 +324,18 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The set of columns </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The set of columns along with table metadata </dd></dl>
 
 </div>
 </div>
-<a id="a60180e0a16327189b7889f2322fd747b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60180e0a16327189b7889f2322fd747b">&#9670;&nbsp;</a></span>read_row_group()</h2>
+<a id="a230ccf4122e4c8a16e6f0fa4cd03ab9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a230ccf4122e4c8a16e6f0fa4cd03ab9e">&#9670;&nbsp;</a></span>read_row_group()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt; cudf::experimental::io::detail::parquet::reader::read_row_group </td>
+          <td class="memname"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a> cudf::experimental::io::detail::parquet::reader::read_row_group </td>
           <td>(</td>
           <td class="paramtype">size_type&#160;</td>
           <td class="paramname"><em>row_group</em>, </td>
@@ -362,18 +362,18 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The set of columns </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The set of columns along with table metadata </dd></dl>
 
 </div>
 </div>
-<a id="a1d9ca824d6bc1256107ee02d70ace850"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d9ca824d6bc1256107ee02d70ace850">&#9670;&nbsp;</a></span>read_rows()</h2>
+<a id="aef53c5b621732d6a12c96ed81aeec359"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef53c5b621732d6a12c96ed81aeec359">&#9670;&nbsp;</a></span>read_rows()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt; cudf::experimental::io::detail::parquet::reader::read_rows </td>
+          <td class="memname"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a> cudf::experimental::io::detail::parquet::reader::read_rows </td>
           <td>(</td>
           <td class="paramtype">size_type&#160;</td>
           <td class="paramname"><em>skip_rows</em>, </td>
@@ -407,7 +407,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The set of columns </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The set of columns along with table metadata </dd></dl>
 
 </div>
 </div>
