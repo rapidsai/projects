@@ -508,6 +508,12 @@ rmm::device_vector&lt; cudf::size_type &gt;&#160;</td><td class="memItemRight" v
 <tr class="memitem:a7d6b5215c4e4be3ee20f107451d81411"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structgdf__column__.html">gdf_column</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a7d6b5215c4e4be3ee20f107451d81411">split</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> const &amp;input, cudf::size_type const  *splits, cudf::size_type num_splits)</td></tr>
 <tr class="memdesc:a7d6b5215c4e4be3ee20f107451d81411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a column (including null values) into a set of columns according to a set of indices.  <a href="namespacecudf.html#a7d6b5215c4e4be3ee20f107451d81411">More...</a><br /></td></tr>
 <tr class="separator:a7d6b5215c4e4be3ee20f107451d81411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96182c5521d8723e0a2a0532d2c39bb1"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">experimental::table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a96182c5521d8723e0a2a0532d2c39bb1">from_dlpack</a> (DLManagedTensor const  *managed_tensor, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a96182c5521d8723e0a2a0532d2c39bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a DLPack DLTensor into a cudf table.  <a href="namespacecudf.html#a96182c5521d8723e0a2a0532d2c39bb1">More...</a><br /></td></tr>
+<tr class="separator:a96182c5521d8723e0a2a0532d2c39bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bafde3c29e61d8443804eac18a22c87"><td class="memItemLeft" align="right" valign="top">DLManagedTensor *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a0bafde3c29e61d8443804eac18a22c87">to_dlpack</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;input, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a0bafde3c29e61d8443804eac18a22c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a cudf table into a DLPack DLTensor.  <a href="namespacecudf.html#a0bafde3c29e61d8443804eac18a22c87">More...</a><br /></td></tr>
+<tr class="separator:a0bafde3c29e61d8443804eac18a22c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e4c06ce5a604ed1019a523036529b83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a9e4c06ce5a604ed1019a523036529b83">fill</a> (<a class="el" href="structgdf__column__.html">gdf_column</a> *<a class="el" href="classcudf_1_1column.html">column</a>, <a class="el" href="structgdf__scalar.html">gdf_scalar</a> const  &amp;value, cudf::size_type begin, cudf::size_type end)</td></tr>
 <tr class="memdesc:a9e4c06ce5a604ed1019a523036529b83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills a range of elements in a column with a scalar value.  <a href="namespacecudf.html#a9e4c06ce5a604ed1019a523036529b83">More...</a><br /></td></tr>
 <tr class="separator:a9e4c06ce5a604ed1019a523036529b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3158,6 +3164,52 @@ satisfying the desired size and state</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>output gdf_column with the modified data </dd></dl>
+
+</div>
+</div>
+<a id="a96182c5521d8723e0a2a0532d2c39bb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96182c5521d8723e0a2a0532d2c39bb1">&#9670;&nbsp;</a></span>from_dlpack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">experimental::table</a> &gt; cudf::from_dlpack </td>
+          <td>(</td>
+          <td class="paramtype">DLManagedTensor const *&#160;</td>
+          <td class="paramname"><em>managed_tensor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert a DLPack DLTensor into a cudf table. </p>
+<p>The <code>device_type</code> of the DLTensor must be <code>kDLGPU</code>, <code>kDLCPU</code>, or <code>kDLCPUPinned</code>, and <code>device_id</code> must match the current device. The <code>ndim</code> must be set to 1 or 2. The <code>dtype</code> must have 1 lane and the bitsize must match a supported <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">cudf::data_type</a></code>.</p>
+<dl class="section note"><dt>Note</dt><dd>The managed tensor is not deleted by this function.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if the any of the DLTensor fields are unsupported</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">managed_tensor</td><td>a 1D or 2D column-major (Fortran order) tensor </td></tr>
+    <tr><td class="paramname">mr</td><td>Optional resource to use for device memory allocation</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Table with a copy of the tensor data </dd></dl>
 
 </div>
 </div>
@@ -7046,6 +7098,52 @@ will be submitted</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structcudf_1_1table.html" title="A wrapper for a set of gdf_columns of equal number of rows.">cudf::table</a> The result table containing the tiled columns </dd></dl>
+
+</div>
+</div>
+<a id="a0bafde3c29e61d8443804eac18a22c87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bafde3c29e61d8443804eac18a22c87">&#9670;&nbsp;</a></span>to_dlpack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DLManagedTensor * cudf::to_dlpack </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert a cudf table into a DLPack DLTensor. </p>
+<p>All columns must have the same data type and this type must be numeric. The columns may be nullable, but the null count must be zero. If the input table is empty or has zero rows, the result will be nullptr.</p>
+<dl class="section note"><dt>Note</dt><dd>The <code>deleter</code> method of the returned <code>DLManagedTensor</code> must be used to free the memory allocated for the tensor.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if the data types are not equal or not numeric, or if any of columns have non-zero null count</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>Table to convert to DLPack </td></tr>
+    <tr><td class="paramname">mr</td><td>Optional resource to use for device memory allocation</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1D or 2D DLPack tensor with a copy of the table data, or nullptr </dd></dl>
 
 </div>
 </div>

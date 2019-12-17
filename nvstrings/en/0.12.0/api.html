@@ -467,7 +467,7 @@ and return a new instance.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span><span class="s1">&#39;pear&#39;</span><span class="p">,</span><span class="s1">&#39;banana&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span><span class="s1">&#39;pear&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s3</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">add_strings</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
@@ -493,13 +493,13 @@ None can be specified if only the total count is required.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">rmm</span>
 </pre></div>
 </div>
 <p>Example passing device memory pointer</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span><span class="s2">&quot;d&quot;</span><span class="p">,</span><span class="s2">&quot;ef&quot;</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span><span class="s2">&quot;d&quot;</span><span class="p">,</span><span class="s2">&quot;ef&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d_arr</span> <span class="o">=</span> <span class="n">rmm</span><span class="o">.</span><span class="n">to_device</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">byte_count</span><span class="p">(</span><span class="n">d_arr</span><span class="o">.</span><span class="n">device_ctypes_pointer</span><span class="o">.</span><span class="n">value</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
@@ -515,7 +515,7 @@ None can be specified if only the total count is required.</p>
 <dd><p>Capitalize first character of each string.
 This only applies to ASCII characters at this time.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello, friend&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye, friend&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
 <span class="go">[&#39;Hello, friend&quot;, &quot;Goodbye, friend&quot;]</span>
@@ -545,7 +545,7 @@ before appending the others.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span><span class="s1">&#39;goodbye&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;world&#39;</span><span class="p">,</span><span class="s1">&#39;globe&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">na_rep</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">))</span>
@@ -572,7 +572,7 @@ Default is space character. Only the first character is used.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">,</span><span class="s2">&quot;well&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
 <span class="go">[&#39; hello &#39;, &#39;goodbye&#39;, &#39; well  &#39;]</span>
@@ -596,7 +596,7 @@ of uint32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">rmm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;xyz&quot;</span><span class="p">,</span> <span class="s2">&quot;éee&quot;</span><span class="p">])</span>
@@ -631,7 +631,7 @@ Must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">))</span>
 <span class="go">[0,15]</span>
@@ -661,7 +661,7 @@ Must be able to hold at least size() of np.byte values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">))</span>
 <span class="go">[True, False, True]</span>
@@ -674,7 +674,7 @@ Must be able to hold at least size() of np.byte values.</p>
 <code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a new instance as a copy of this instance.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span><span class="s1">&#39;pear&#39;</span><span class="p">,</span><span class="s1">&#39;banana&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
@@ -705,7 +705,7 @@ Memory must be able to hold at least size() of int32 values.</p>
 <code class="sig-name descname">device_memory</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvstrings.nvstrings.device_memory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the total device memory used by this instance</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="go">&gt;&gt; s = nvstrings.to_device([&#39;a&#39;*7])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">device_memory</span><span class="p">())</span>
 <span class="go">24</span>
@@ -730,7 +730,7 @@ Memory must be able to hold at least size() of np.byte values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">))</span>
 <span class="go">[False, False, True]</span>
@@ -753,7 +753,7 @@ vertically.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="s2">&quot;b2&quot;</span><span class="p">,</span><span class="s2">&quot;c3&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">&#39;([ab])(\d)&#39;</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -777,7 +777,7 @@ A new array of nvstrings is created for each string in this instance.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;a1&quot;</span><span class="p">,</span><span class="s2">&quot;b2&quot;</span><span class="p">,</span><span class="s2">&quot;c3&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">extract_record</span><span class="p">(</span><span class="s1">&#39;([ab])(\d)&#39;</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -804,7 +804,7 @@ Corresponding strings are replaced only if null.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;goodbye&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">))</span>
 <span class="go">[&#39;hello&#39;, &#39;&#39;, &#39;goodbye&#39;]</span>
@@ -834,7 +834,7 @@ Memory size must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">))</span>
 <span class="go">[4,-1,1]</span>
@@ -868,7 +868,7 @@ Memory size must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">cuda</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">])</span>
@@ -899,7 +899,7 @@ of int32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hare&quot;</span><span class="p">,</span><span class="s2">&quot;bunny&quot;</span><span class="p">,</span><span class="s2">&quot;rabbit&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="s2">&quot;i&quot;</span><span class="p">,</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="s2">&quot;u&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">find_multiple</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
@@ -922,7 +922,7 @@ results vertically.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hare&quot;</span><span class="p">,</span><span class="s2">&quot;bunny&quot;</span><span class="p">,</span><span class="s2">&quot;rabbit&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;[ab]&#39;</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -947,7 +947,7 @@ A new array of nvstrings is created for each string in this instance.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hare&quot;</span><span class="p">,</span><span class="s2">&quot;bunny&quot;</span><span class="p">,</span><span class="s2">&quot;rabbit&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">findall_record</span><span class="p">(</span><span class="s1">&#39;[ab]&#39;</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -975,7 +975,7 @@ Otherwise it is ignored.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">gather</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]))</span>
 <span class="go">[&#39;hello&#39;, &#39;world&#39;]</span>
@@ -998,7 +998,7 @@ in each string to return.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello world&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">,</span><span class="s2">&quot;well said&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
 <span class="go">[&#39;h&#39;, &#39;g&#39;, &#39;w&#39;]</span>
@@ -1033,15 +1033,15 @@ the makeup of the data and how the operations may perform.</p>
 </dl>
 <blockquote>
 <div></div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="go">    ..</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ipc_data</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">get_ipc_data</span><span class="p">()</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ipc_data</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">get_ipc_data</span><span class="p">()</span>
 <span class="go">    ..</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ipc_data</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ipc_data</span><span class="p">)</span>
 <span class="go">    ..</span>
 </pre></div>
 </div>
@@ -1063,7 +1063,7 @@ Must be able to hold at least size() of uint32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">hash</span><span class="p">()</span>
 <span class="go">[99162322, 113318802]</span>
@@ -1086,7 +1086,7 @@ Memory must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span><span class="s2">&quot;ABCDEF&quot;</span><span class="p">,</span><span class="s2">&quot;1A2&quot;</span><span class="p">,</span><span class="s2">&quot;cafe&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">htoi</span><span class="p">())</span>
 <span class="go">[4660, 11259375, 418, 51966]</span>
@@ -1115,7 +1115,7 @@ Memory size must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;l&#39;</span><span class="p">))</span>
 <span class="go">[2,3]</span>
@@ -1141,7 +1141,7 @@ Specify -1 to insert at the end of each string.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">strs</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;abcdefghij&quot;</span><span class="p">,</span><span class="s2">&quot;0123456789&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">strs</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">))</span>
 <span class="go">[&#39;ab_cdefghij&#39;, &#39;01_23456789&#39;]</span>
@@ -1164,7 +1164,7 @@ Memory must be able to hold at least size() of uint32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;192.168.0.1&quot;</span><span class="p">,</span><span class="s2">&quot;10.0.0.1&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">ip2int</span><span class="p">())</span>
 <span class="go">[3232235521, 167772161]</span>
@@ -1178,7 +1178,7 @@ Memory must be able to hold at least size() of uint32 values.</p>
 <dd><p>Return array of boolean values with True for strings that contain
 at least one character.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;goodbye&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">isempty</span><span class="p">())</span>
 <span class="go">[True, True,False,False]</span>
@@ -1193,7 +1193,7 @@ at least one character.</p>
 only alpha-numeric characters.
 Equivalent to: isalpha() or isdigit() or isnumeric() or isdecimal()</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;1234&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;1.75&#39;</span><span class="p">,</span> <span class="s1">&#39;-34&#39;</span><span class="p">,</span> <span class="s1">&#39;+9.8&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">isalnum</span><span class="p">())</span>
 <span class="go">[True, True, False, False, False, False]</span>
@@ -1207,7 +1207,7 @@ Equivalent to: isalpha() or isdigit() or isnumeric() or isdecimal()</p>
 <dd><p>Return array of boolean values with True for strings that contain
 only alphabetic characters.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;1234&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;1.75&#39;</span><span class="p">,</span> <span class="s1">&#39;-34&#39;</span><span class="p">,</span> <span class="s1">&#39;+9.8&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">isalpha</span><span class="p">())</span>
 <span class="go">[False, True, False, False, False, False]</span>
@@ -1221,7 +1221,7 @@ only alphabetic characters.</p>
 <dd><p>Return array of boolean values with True for strings that contain only
 decimal characters – those that can be used to extract base10 numbers.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;1234&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;1.75&#39;</span><span class="p">,</span> <span class="s1">&#39;-34&#39;</span><span class="p">,</span> <span class="s1">&#39;+9.8&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">isdecimal</span><span class="p">())</span>
 <span class="go">[True, False, False, False, False, False]</span>
@@ -1235,7 +1235,7 @@ decimal characters – those that can be used to extract base10 numbers.</p>
 <dd><p>Return array of boolean values with True for strings that contain
 only decimal and digit characters.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;1234&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;1.75&#39;</span><span class="p">,</span> <span class="s1">&#39;-34&#39;</span><span class="p">,</span> <span class="s1">&#39;+9.8&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">isdigit</span><span class="p">())</span>
 <span class="go">[True, False, False, False, False, False]</span>
@@ -1249,7 +1249,7 @@ only decimal and digit characters.</p>
 <dd><p>Return array of boolean values with True for strings that contain
 only lowercase characters.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Goodbye&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">islower</span><span class="p">())</span>
 <span class="go">[True, False]</span>
@@ -1263,7 +1263,7 @@ only lowercase characters.</p>
 <dd><p>Return array of boolean values with True for strings that contain
 only numeric characters. These include digit and numeric characters.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;1234&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;1.75&#39;</span><span class="p">,</span> <span class="s1">&#39;-34&#39;</span><span class="p">,</span> <span class="s1">&#39;+9.8&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">())</span>
 <span class="go">[True, False, False, False, False, False]</span>
@@ -1277,7 +1277,7 @@ only numeric characters. These include digit and numeric characters.</p>
 <dd><p>Return array of boolean values with True for strings that contain
 only whitespace characters.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;1234&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">,</span> <span class="s1">&#39;1.75&#39;</span><span class="p">,</span> <span class="s1">&#39;-34&#39;</span><span class="p">,</span> <span class="s1">&#39;+9.8&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">isspace</span><span class="p">())</span>
 <span class="go">[False, False, False, False, False, True]</span>
@@ -1291,7 +1291,7 @@ only whitespace characters.</p>
 <dd><p>Return array of boolean values with True for strings that contain
 only uppercase characters.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Goodbye&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">isupper</span><span class="p">())</span>
 <span class="go">[False, True]</span>
@@ -1313,7 +1313,7 @@ appending the next.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">))</span>
 <span class="go">[&#39;hello:goodbye&#39;]</span>
@@ -1335,13 +1335,13 @@ Must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">rmm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 <p>Example passing device memory pointer</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span><span class="s2">&quot;d&quot;</span><span class="p">,</span><span class="s2">&quot;ef&quot;</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span><span class="s2">&quot;d&quot;</span><span class="p">,</span><span class="s2">&quot;ef&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d_arr</span> <span class="o">=</span> <span class="n">rmm</span><span class="o">.</span><span class="n">to_device</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">len</span><span class="p">(</span><span class="n">d_arr</span><span class="o">.</span><span class="n">device_ctypes_pointer</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
@@ -1369,7 +1369,7 @@ Default is space character. Only the first character is used.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">,</span><span class="s2">&quot;well&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">6</span><span class="p">))</span>
 <span class="go">[&#39;hello &#39;, &#39;goodbye&#39;, &#39;well  &#39;]</span>
@@ -1383,7 +1383,7 @@ Default is space character. Only the first character is used.</p>
 <dd><p>Convert each string to lowercase.
 This only applies to ASCII characters at this time.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;Hello, Friend&quot;</span><span class="p">,</span><span class="s2">&quot;Goodbye, Friend&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
 <span class="go">[&#39;hello, friend&#39;, &#39;goodbye, friend&#39;]</span>
@@ -1404,7 +1404,7 @@ This only applies to ASCII characters at this time.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;oh&quot;</span><span class="p">,</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">))</span>
 <span class="go">[&#39;h&#39;, &#39;hello&#39;, &#39;goodbye&#39;]</span>
@@ -1430,7 +1430,7 @@ np.byte values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">))</span>
 <span class="go">[True, False, False]</span>
@@ -1458,7 +1458,7 @@ np.byte or np.int8 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;here&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">match_strings</span><span class="p">(</span><span class="n">s2</span><span class="p">))</span>
@@ -1481,11 +1481,11 @@ Default is False.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 </pre></div>
 </div>
 <p>Example passing device memory pointer</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="kc">None</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="kc">None</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nulls&quot;</span><span class="p">,</span><span class="n">s</span><span class="o">.</span><span class="n">null_count</span><span class="p">())</span>
 <span class="go">nulls 1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nulls+empty&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">null_count</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>
@@ -1520,7 +1520,7 @@ Must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span> <span class="s2">&quot;bb&quot;</span><span class="p">,</span> <span class="s2">&quot;aaaabb&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">order</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="go">[1, 0, 2]</span>
@@ -1548,7 +1548,7 @@ Default is space character. Only the first character is used.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">,</span><span class="s2">&quot;well&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 <span class="go">[&#39;  hello&#39;, &#39;goodbye&#39;, &#39;   well&#39;]</span>
@@ -1572,7 +1572,7 @@ string. Default is space.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">strs</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello world&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">,</span><span class="s2">&quot;up in arms&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">strs</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -1601,7 +1601,7 @@ Otherwise it is ignored.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">remove_strings</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]))</span>
 <span class="go">[&#39;there&#39;]</span>
@@ -1624,7 +1624,7 @@ Repeat count of 0 or 1 will just return copy of each string.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">,</span><span class="s2">&quot;well&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="go">[&#39;hellohello&#39;, &#39;goodbyegoodbye&#39;, &#39;wellwell&#39;]</span>
@@ -1650,7 +1650,7 @@ This can also be a regex expression – not a compiled regex.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span>
 <span class="go">[&#39;hllo&#39;, &#39;goodby&#39;]</span>
@@ -1681,7 +1681,7 @@ and would be used as replacement for each string found.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">replace_multi</span><span class="p">([</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">],[</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;O&#39;</span><span class="p">]))</span>
 <span class="go">[&#39;hEllO&#39;, &#39;gOOdbyE&#39;]</span>
@@ -1706,7 +1706,7 @@ This should not be a compiled regex.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;A543&quot;</span><span class="p">,</span><span class="s2">&quot;Z756&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">replace_with_backrefs</span><span class="p">(</span><span class="s1">&#39;(\d)(\d)&#39;</span><span class="p">,</span> <span class="s1">&#39;V</span><span class="se">\2\1</span><span class="s1">&#39;</span><span class="p">))</span>
 <span class="go">[&#39;V45&#39;, &#39;V57&#39;]</span>
@@ -1736,7 +1736,7 @@ Default is 0(beginning of each string).</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">))</span>
 <span class="go">[4, -1, 1]</span>
@@ -1765,7 +1765,7 @@ Memory size must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">rindex</span><span class="p">(</span><span class="s1">&#39;l&#39;</span><span class="p">))</span>
 <span class="go">[3,3]</span>
@@ -1791,7 +1791,7 @@ Default is space character. Only the first character is used.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">,</span><span class="s2">&quot;well&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">6</span><span class="p">))</span>
 <span class="go">[&#39; hello&#39;, &#39;goodbye&#39;, &#39;  well&#39;]</span>
@@ -1815,7 +1815,7 @@ Default is space.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">strs</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello world&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">,</span><span class="s2">&quot;up in arms&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">strs</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -1841,7 +1841,7 @@ Default is space.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello world&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">,</span><span class="s2">&quot;well said&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -1869,7 +1869,7 @@ string. Default is space.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">strs</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello world&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">,</span><span class="s2">&quot;up in arms&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">strs</span><span class="o">.</span><span class="n">rsplit_record</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -1893,7 +1893,7 @@ string. Default is space.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;oh&quot;</span><span class="p">,</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">))</span>
 <span class="go">[&#39;oh&#39;, &#39;hell&#39;, &#39;goodbye&#39;]</span>
@@ -1922,7 +1922,7 @@ Values must be of type int32.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="s2">&quot;d&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">scalar_scatter</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
 <span class="go">[&#39;a&#39;, &#39;_&#39;, &#39;c&#39;, &#39;_&#39;]</span>
@@ -1950,7 +1950,7 @@ will cause undefined results.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">,</span><span class="s2">&quot;d&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="s2">&quot;f&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
@@ -1974,7 +1974,7 @@ will cause undefined results.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="kc">None</span><span class="p">,</span><span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="s1">&#39;l&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nulls</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span>
@@ -1998,7 +1998,7 @@ will cause undefined results.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
 <span class="go">2</span>
@@ -2026,7 +2026,7 @@ Default is every character.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="go">[&#39;llo&#39;, &#39;odb&#39;]</span>
@@ -2054,7 +2054,7 @@ Use -1 to specify to the end of that string.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">cuda</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">])</span>
@@ -2084,7 +2084,7 @@ Default is end of each string.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">strs</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;abcdefghij&quot;</span><span class="p">,</span><span class="s2">&quot;0123456789&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">strs</span><span class="o">.</span><span class="n">slice_replace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;z&#39;</span><span class="p">))</span>
 <span class="go">[&#39;abzfghij&#39;, &#39;01z56789&#39;]</span>
@@ -2114,7 +2114,7 @@ alphabetically</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span> <span class="s2">&quot;bb&quot;</span><span class="p">,</span> <span class="s2">&quot;aaaabb&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 <span class="go">[&#39;bb&#39;, &#39;aaa&#39;, &#39;aaaabb&#39;]</span>
@@ -2137,7 +2137,7 @@ Default is space.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello world&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">,</span><span class="s2">&quot;well said&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -2164,7 +2164,7 @@ each string. Default is space.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello world&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">,</span><span class="s2">&quot;well said&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">split_record</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -2192,7 +2192,7 @@ Memory must be able to hold at least size() of np.byte values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">))</span>
 <span class="go">[True, False, False]</span>
@@ -2214,7 +2214,7 @@ Memory must be able to hold at least size() of float64 values</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span><span class="s2">&quot;-876&quot;</span><span class="p">,</span><span class="s2">&quot;543.2&quot;</span><span class="p">,</span><span class="s2">&quot;-0.12&quot;</span><span class="p">,</span><span class="s2">&quot;.55&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">stod</span><span class="p">())</span>
 <span class="go">[1234.0, -876.0, 543.2000122070312,</span>
@@ -2237,7 +2237,7 @@ Memory must be able to hold at least size() of float32 values</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span><span class="s2">&quot;-876&quot;</span><span class="p">,</span><span class="s2">&quot;543.2&quot;</span><span class="p">,</span><span class="s2">&quot;-0.12&quot;</span><span class="p">,</span><span class="s2">&quot;.55&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">stof</span><span class="p">())</span>
 <span class="go">[1234.0, -876.0, 543.2000122070312,</span>
@@ -2260,7 +2260,7 @@ Memory must be able to hold at least size() of int32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span><span class="s2">&quot;-876&quot;</span><span class="p">,</span><span class="s2">&quot;543.2&quot;</span><span class="p">,</span><span class="s2">&quot;-0.12&quot;</span><span class="p">,</span><span class="s2">&quot;.55&quot;&quot;])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">stoi</span><span class="p">())</span>
 <span class="go">[1234, -876, 543, 0, 0]</span>
@@ -2282,7 +2282,7 @@ Memory must be able to hold at least size() of int64 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span><span class="s2">&quot;-876&quot;</span><span class="p">,</span><span class="s2">&quot;543.2&quot;</span><span class="p">,</span><span class="s2">&quot;-0.12&quot;</span><span class="p">,</span><span class="s2">&quot;.55&quot;&quot;])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">stol</span><span class="p">())</span>
 <span class="go">[1234, -876, 543, 0, 0]</span>
@@ -2303,7 +2303,7 @@ Memory must be able to hold at least size() of int64 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;oh, hello&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">))</span>
 <span class="go">[&#39;h, hell&#39;, &#39;goodbye&#39;]</span>
@@ -2323,7 +2323,7 @@ Memory must be able to hold at least size() of int64 values.</p>
 <dd><p>Change each lowercase character to uppercase and vice versa.
 This only applies to ASCII characters at this time.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;Hello, Friend&quot;</span><span class="p">,</span><span class="s2">&quot;Goodbye, Friend&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">swapcase</span><span class="p">())</span>
 <span class="go">[&#39;hELLO, fRIEND&#39;, &#39;gOODBYE, fRIEND&#39;]</span>
@@ -2356,7 +2356,7 @@ Memory must be able to hold at least size() of int64 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;2019-03-20T12:34:56Z&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">timestamp2int</span><span class="p">())</span>
 <span class="go">[1553085296]</span>
@@ -2371,7 +2371,7 @@ Memory must be able to hold at least size() of int64 values.</p>
 and lowercase the rest.
 This only applies to ASCII characters at this time.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;Hello friend&quot;</span><span class="p">,</span><span class="s2">&quot;goodnight moon&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
 <span class="go">[&#39;Hello Friend&#39;, &#39;Goodnight Moon&#39;]</span>
@@ -2395,7 +2395,7 @@ Memory must be able to hold at least size() of uint32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;True&quot;</span><span class="p">,</span><span class="s2">&quot;False&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="kc">None</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">to_booleans</span><span class="p">())</span>
 <span class="go">[True, False, False, None]</span>
@@ -2416,7 +2416,7 @@ Memory must be able to hold at least size() of uint32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">to_host</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
@@ -2446,7 +2446,7 @@ string in sbuf. This should be able to hold size()+1 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="s1">&#39;l&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span>
@@ -2475,7 +2475,7 @@ Unspecified characters are unchanged.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;there&quot;</span><span class="p">,</span><span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">&#39;elh&#39;</span><span class="p">,</span><span class="s1">&#39;ELH&#39;</span><span class="p">)))</span>
 <span class="go">[&#39;HELLo&#39;, &#39;tHErE&#39;, &#39;worLd]</span>
@@ -2489,7 +2489,7 @@ Unspecified characters are unchanged.</p>
 <dd><p>Convert each string to uppercase.
 This only applies to ASCII characters at this time.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;Hello, friend&quot;</span><span class="p">,</span><span class="s2">&quot;Goodbye, friend&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
 <span class="go">[&#39;HELLO, FRIEND&#39;, &#39;GOODBYE, FRIEND&#39;]</span>
@@ -2504,7 +2504,7 @@ This only applies to ASCII characters at this time.</p>
 No format checking is performed. All characters are
 expected to be encoded as UTF-8 hex values.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;A</span><span class="si">%2F</span><span class="s1">B-C</span><span class="si">%2F</span><span class="s1">D&#39;</span><span class="p">,</span> <span class="s1">&#39;e</span><span class="si">%20f</span><span class="s1">.g&#39;</span><span class="p">,</span> <span class="s1">&#39;4-5%2C6&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">url_decode</span><span class="p">())</span>
 <span class="go">[&#39;A/B-C/D&#39;, &#39;e f.g&#39;, &#39;4-5,6&#39;]</span>
@@ -2520,7 +2520,7 @@ No format checking is performed. All characters are encoded except
 for ASCII letters, digits, and these characters: ‘.’,’_’,’-‘,’~’.
 Encoding converts to hex using UTF-8 encoded bytes.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;a/b-c/d&quot;</span><span class="p">,</span><span class="s2">&quot;E F.G&quot;</span><span class="p">,</span><span class="s2">&quot;1-2,3&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">url_encode</span><span class="p">())</span>
 <span class="go">[&#39;a%2Fb-c%2Fd&#39;, &#39;E%20F.G&#39;, &#39;1-2%2C3&#39;]</span>
@@ -2544,7 +2544,7 @@ will be inserted.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello there&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye all&quot;</span><span class="p">,</span><span class="s2">&quot;well ok&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">wrap</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 <span class="go">[&#39;hello\nthere&#39;, &#39;goodbye\nall&#39;, &#39;well\nok&#39;]</span>
@@ -2569,7 +2569,7 @@ no padding is performed.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span><span class="s2">&quot;-9876&quot;</span><span class="p">,</span><span class="s2">&quot;+5.34&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">6</span><span class="p">))</span>
 <span class="go">[&#39;0hello&#39;, &#39;001234&#39;, &#39;-09876&#39;, &#39;+05.34&#39;]</span>
@@ -2684,7 +2684,7 @@ values to the new key indexes.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
@@ -2711,7 +2711,7 @@ The index values will appear as if appended.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span><span class="o">,</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span><span class="o">,</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;ggg&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_strings</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
@@ -2751,7 +2751,7 @@ Otherwise it is ignored.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;aa&quot;</span><span class="p">,</span><span class="s2">&quot;bb&quot;</span><span class="p">,</span><span class="s2">&quot;bb&quot;</span><span class="p">,</span><span class="s2">&quot;ff&quot;</span><span class="p">,</span><span class="s2">&quot;cc&quot;</span><span class="p">,</span><span class="s2">&quot;ff&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 <span class="go">[&#39;aa&#39;, &#39;bb&#39;, &#39;cc&#39;, &#39;ff&#39;] [0, 1, 1, 3, 2, 3]</span>
@@ -2796,7 +2796,7 @@ Otherwise it is ignored.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;aa&quot;</span><span class="p">,</span><span class="s2">&quot;bb&quot;</span><span class="p">,</span><span class="s2">&quot;bb&quot;</span><span class="p">,</span><span class="s2">&quot;ff&quot;</span><span class="p">,</span><span class="s2">&quot;cc&quot;</span><span class="p">,</span><span class="s2">&quot;ff&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 <span class="go">[&#39;aa&#39;, &#39;bb&#39;, &#39;cc&#39;, &#39;ff&#39;] [0, 1, 1, 3, 2, 3]</span>
@@ -2832,7 +2832,7 @@ the narr output array.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">narr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">narr</span><span class="p">)</span>
@@ -2867,7 +2867,7 @@ Otherwise it is ignored.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 <span class="go">[&#39;aaa&#39;,&#39;dddd&#39;,&#39;eee&#39;]</span>
@@ -2901,7 +2901,7 @@ Must be able to hold int32 values for this key.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">indexes_for_key</span><span class="p">(</span><span class="s1">&#39;aaa&#39;</span><span class="p">))</span>
 <span class="go">[1]</span>
@@ -2935,7 +2935,7 @@ of type keys_type().</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 <span class="go">[&#39;aaa&#39;,&#39;dddd&#39;,&#39;eee&#39;]</span>
@@ -2963,7 +2963,7 @@ of type keys_type().</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 <span class="go">[&#39;aaa&#39;,&#39;dddd&#39;,&#39;eee&#39;]</span>
@@ -2978,7 +2978,7 @@ of type keys_type().</p>
 <code class="sig-name descname">keys_type</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#nvcategory.nvcategory.keys_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return string with name of the keys type.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">narr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">narr</span><span class="p">)</span>
@@ -3004,7 +3004,7 @@ Values are appended and will be remapped to the new keys.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cat1</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cat1</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">cat1</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
@@ -3053,7 +3053,7 @@ mapped to -1.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
@@ -3079,7 +3079,7 @@ The returned category will have new set of key values and indexes.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span><span class="o">,</span> <span class="nn">nvstrings</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span><span class="o">,</span> <span class="nn">nvstrings</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;aaa&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_strings</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
@@ -3102,7 +3102,7 @@ The returned category will have new set of key values and indexes.</p>
 <dd><p>Create new category removing any keys that have no corresponding
 values. Values are remapped to match the new keyset.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
@@ -3134,7 +3134,7 @@ remapped values. Values with removed keys are mapped to -1.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
@@ -3159,7 +3159,7 @@ remapped values. Values with removed keys are mapped to -1.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 <span class="go">[2, 0, 2, 1]</span>
@@ -3188,7 +3188,7 @@ entries.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">narr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nc</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">from_numbers</span><span class="p">(</span><span class="n">narr</span><span class="p">)</span>
@@ -3213,7 +3213,7 @@ entries.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 <span class="go">[&#39;aaa&#39;,&#39;dddd&#39;,&#39;eee&#39;]</span>
@@ -3238,7 +3238,7 @@ entries.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">&#39;aaa&#39;</span><span class="p">))</span>
 <span class="go">0</span>
@@ -3261,7 +3261,7 @@ entries.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">value_for_index</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 <span class="go">1</span>
@@ -3283,7 +3283,7 @@ Must be able to hold size() of int32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvcategory</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">nvcategory</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span><span class="s2">&quot;eee&quot;</span><span class="p">,</span><span class="s2">&quot;dddd&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 <span class="go">[2, 0, 2, 1]</span>
@@ -3325,7 +3325,7 @@ individual string.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello world&quot;</span><span class="p">,</span>
 <span class="gp">... </span>                         <span class="s2">&quot;goodbye&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">nvtext</span><span class="o">.</span><span class="n">character_tokenize</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -3354,7 +3354,7 @@ of int8 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">nvtext</span><span class="o">.</span><span class="n">contains_strings</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
@@ -3384,7 +3384,7 @@ Edit distance is how many character changes between strings.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;honda&quot;</span><span class="p">,</span><span class="s2">&quot;hyundai&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">nvtext</span><span class="o">.</span><span class="n">edit_distance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s2">&quot;honda&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -3411,7 +3411,7 @@ Edit distance is how many character changes between strings.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;honda&quot;</span><span class="p">,</span><span class="s2">&quot;hyundai&quot;</span><span class="p">,</span><span class="s2">&quot;suzuki&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">nvtext</span><span class="o">.</span><span class="n">edit_distance_matrix</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -3452,7 +3452,7 @@ Default is ‘y’</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;berry&quot;</span><span class="p">,</span> <span class="s2">&quot;blast&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">nvtext</span><span class="o">.</span><span class="n">is_consonant</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -3491,7 +3491,7 @@ Default is ‘y’</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;twelve&quot;</span><span class="p">,</span> <span class="s2">&quot;berry&quot;</span><span class="p">,</span> <span class="s2">&quot;blazing&quot;</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">nvtext</span><span class="o">.</span><span class="n">is_consonant</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -3521,7 +3521,7 @@ Default is ‘_’.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dstrings</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;this is my&#39;</span><span class="p">,</span> <span class="s1">&#39;favorite book&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nvtext</span><span class="o">.</span><span class="n">ngrams</span><span class="p">(</span><span class="n">dstrings</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">))</span>
 <span class="go">[&#39;this_is&#39;, &#39;is_my&#39;, &#39;my_favorite&#39;, &#39;favorite_book&#39;]</span>
@@ -3543,7 +3543,7 @@ from the beginning and the end of each string.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello          world&quot;</span><span class="p">,</span><span class="s2">&quot; test string  &quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">nvtext</span><span class="o">.</span><span class="n">normalize_spaces</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -3573,7 +3573,7 @@ Default is ‘y’</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;tr&quot;</span><span class="p">,</span><span class="s2">&quot;trouble&quot;</span><span class="p">,</span> <span class="s2">&quot;troubles&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">nvtext</span><span class="o">.</span><span class="n">porter_stemmer_measure</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -3606,7 +3606,7 @@ Default is whitespace.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;this is me&quot;</span><span class="p">,</span><span class="s2">&quot;theme music&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;is&#39;</span><span class="p">,</span><span class="s1">&#39;me&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">nvtext</span><span class="o">.</span><span class="n">replace_tokens</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
@@ -3634,7 +3634,7 @@ string is duplicated in the output instance.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dstrings</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;aaa&#39;</span><span class="p">,</span> <span class="s1">&#39;bbb&#39;</span><span class="p">,</span> <span class="s1">&#39;ccc&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nvtext</span><span class="o">.</span><span class="n">scatter_count</span><span class="p">(</span><span class="n">dstrings</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]))</span>
 <span class="go">[&#39;aaa&#39;, &#39;bbb&#39;, &#39;bbb&#39;, &#39;ccc&#39;, &#39;ccc&#39;, &#39;ccc&#39;]</span>
@@ -3661,7 +3661,7 @@ of int32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">nvtext</span><span class="o">.</span><span class="n">strings_counts</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
@@ -3690,7 +3690,7 @@ Default is space.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello world&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">nvtext</span><span class="o">.</span><span class="n">token_count</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -3717,7 +3717,7 @@ Default is whitespace.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello world&quot;</span><span class="p">,</span>
 <span class="gp">... </span>                         <span class="s2">&quot;goodbye world&quot;</span><span class="p">,</span>
 <span class="gp">... </span>                         <span class="s2">&quot;hello goodbye&quot;</span><span class="p">])</span>
@@ -3750,7 +3750,7 @@ of int32 values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;this is me&quot;</span><span class="p">,</span><span class="s2">&quot;goodbye me&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;is&#39;</span><span class="p">,</span><span class="s1">&#39;me&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="n">nvtext</span><span class="o">.</span><span class="n">tokens_counts</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
@@ -3777,7 +3777,7 @@ Default is space.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s2">&quot;hello world&quot;</span><span class="p">,</span>
 <span class="gp">... </span>                         <span class="s2">&quot;goodbye world&quot;</span><span class="p">,</span>
 <span class="gp">... </span>                         <span class="s2">&quot;hello goodbye&quot;</span><span class="p">])</span>
