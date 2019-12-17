@@ -208,7 +208,7 @@ identifiers and the corresponding PageRank values.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dask_cugraph.pagerank</span> <span class="k">as</span> <span class="nn">dcg</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">dask_cugraph.pagerank</span> <span class="k">as</span> <span class="nn">dcg</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">chunksize</span> <span class="o">=</span> <span class="n">dcg</span><span class="o">.</span><span class="n">get_chunksize</span><span class="p">(</span><span class="n">edge_list</span><span class="o">.</span><span class="n">csv</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ddf_edge_list</span> <span class="o">=</span> <span class="n">dask_cudf</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">edge_list</span><span class="o">.</span><span class="n">csv</span><span class="p">,</span>
 <span class="gp">&gt;&gt;&gt; </span>                                   <span class="n">chunksize</span> <span class="o">=</span> <span class="n">chunksize</span><span class="p">,</span>
