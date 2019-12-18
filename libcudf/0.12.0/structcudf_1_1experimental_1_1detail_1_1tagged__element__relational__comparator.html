@@ -107,7 +107,7 @@ struct cudf::experimental::detail::tagged_element_relational_comparator&lt; has_
 <p>Because of that, one cannot rely on the predicate having <em>fixed</em> references to the containers. Each invocation may land in a different situation (among the 4 above) than any other invocation. Also, one cannot just manipulate lhs, rhs (indices) alone; because, if predicate always applies one index to one container and the other index to the other container, switching the indices alone won't suffice in the cases (3) or (4), where the also the containers must be changed (to just one instead of two) independently of indices;</p>
 <p>As a result, a special comparison logic is necessary whereby the index is "tagged" with side information and consequently comparator functors (predicates) must operate on these tagged indices rather than on raw indices. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>merge.cuh</li>
+<li>detail/merge.cuh</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

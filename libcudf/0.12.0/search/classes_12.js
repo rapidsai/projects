@@ -15,7 +15,7 @@ var searchData=
   ['sink_5finfo_1561',['sink_info',['../structcudf_1_1experimental_1_1io_1_1sink__info.html',1,'cudf::experimental::io::sink_info'],['../structcudf_1_1sink__info.html',1,'cudf::sink_info']]],
   ['size_5fof_5fhelper_1562',['size_of_helper',['../structcudf_1_1detail_1_1size__of__helper.html',1,'cudf::detail']]],
   ['snap_5fstate_5fs_1563',['snap_state_s',['../structcudf_1_1io_1_1snap__state__s.html',1,'cudf::io']]],
-  ['source_5finfo_1564',['source_info',['../structcudf_1_1source__info.html',1,'cudf::source_info'],['../structcudf_1_1experimental_1_1io_1_1source__info.html',1,'cudf::experimental::io::source_info']]],
+  ['source_5finfo_1564',['source_info',['../structcudf_1_1experimental_1_1io_1_1source__info.html',1,'cudf::experimental::io::source_info'],['../structcudf_1_1source__info.html',1,'cudf::source_info']]],
   ['standard_5fdeviation_1565',['standard_deviation',['../structcudf_1_1reduction_1_1op_1_1standard__deviation.html',1,'cudf::reduction::op']]],
   ['statistics_5fchunk_1566',['statistics_chunk',['../structcudf_1_1io_1_1statistics__chunk.html',1,'cudf::io']]],
   ['statistics_5fgroup_1567',['statistics_group',['../structcudf_1_1io_1_1statistics__group.html',1,'cudf::io']]],

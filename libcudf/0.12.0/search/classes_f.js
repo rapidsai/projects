@@ -11,7 +11,7 @@ var searchData=
   ['parquet_5fcolumn_5fview_1519',['parquet_column_view',['../classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1parquet__column__view.html',1,'cudf::experimental::io::detail::parquet']]],
   ['parquet_5fread_5farg_1520',['parquet_read_arg',['../structcudf_1_1parquet__read__arg.html',1,'cudf']]],
   ['parquetmetadata_1521',['ParquetMetadata',['../structcudf_1_1io_1_1parquet_1_1ParquetMetadata.html',1,'cudf::io::parquet']]],
-  ['parseoptions_1522',['ParseOptions',['../structParseOptions.html',1,'ParseOptions'],['../structcudf_1_1io_1_1csv_1_1ParseOptions.html',1,'cudf::io::csv::ParseOptions']]],
+  ['parseoptions_1522',['ParseOptions',['../structcudf_1_1io_1_1csv_1_1ParseOptions.html',1,'cudf::io::csv::ParseOptions'],['../structParseOptions.html',1,'ParseOptions']]],
   ['postscript_1523',['PostScript',['../structcudf_1_1io_1_1orc_1_1PostScript.html',1,'cudf::io::orc']]],
   ['predicate_5fnot_5fnan_1524',['predicate_not_nan',['../structcudf_1_1detail_1_1predicate__not__nan.html',1,'cudf::detail']]],
   ['prefetch_5fqueue_5fs_1525',['prefetch_queue_s',['../structcudf_1_1io_1_1prefetch__queue__s.html',1,'cudf::io']]],

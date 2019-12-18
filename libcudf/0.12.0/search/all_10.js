@@ -17,7 +17,7 @@ var searchData=
   ['parquet_5fread_5farg_803',['parquet_read_arg',['../structcudf_1_1parquet__read__arg.html',1,'cudf']]],
   ['parquetmetadata_804',['ParquetMetadata',['../structcudf_1_1io_1_1parquet_1_1ParquetMetadata.html',1,'cudf::io::parquet']]],
   ['parse_805',['parse',['../classcudf_1_1io_1_1avro_1_1schema__parser.html#af270f496fc1a40af3052ca0caff68fc0',1,'cudf::io::avro::schema_parser::parse()'],['../classcudf_1_1io_1_1avro_1_1container.html#adacb6096165f32e4cc501ead3aaac66b',1,'cudf::io::avro::container::parse()']]],
-  ['parseoptions_806',['ParseOptions',['../structParseOptions.html',1,'ParseOptions'],['../structcudf_1_1io_1_1csv_1_1ParseOptions.html',1,'cudf::io::csv::ParseOptions']]],
+  ['parseoptions_806',['ParseOptions',['../structcudf_1_1io_1_1csv_1_1ParseOptions.html',1,'cudf::io::csv::ParseOptions'],['../structParseOptions.html',1,'ParseOptions']]],
   ['parsing_5futils_2ecu_807',['parsing_utils.cu',['../parsing__utils_8cu.html',1,'']]],
   ['parsing_5futils_2ecuh_808',['parsing_utils.cuh',['../parsing__utils_8cuh.html',1,'']]],
   ['partition_809',['partition',['../classNVStrings.html#a1f18538ef786a0599246e0ea4324d4b5',1,'NVStrings']]],

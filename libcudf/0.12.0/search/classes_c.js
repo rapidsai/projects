@@ -8,7 +8,7 @@ var searchData=
   ['meanvar_1456',['meanvar',['../structcudf_1_1meanvar.html',1,'cudf']]],
   ['memory_5fmapped_5fsource_1457',['memory_mapped_source',['../classcudf_1_1io_1_1memory__mapped__source.html',1,'cudf::io']]],
   ['merge_5fstate_5fs_1458',['merge_state_s',['../structcudf_1_1io_1_1merge__state__s.html',1,'cudf::io']]],
-  ['metadata_1459',['metadata',['../structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1metadata.html',1,'cudf::experimental::io::detail::parquet::metadata'],['../classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1metadata.html',1,'cudf::experimental::io::detail::orc::metadata'],['../classcudf_1_1experimental_1_1io_1_1detail_1_1avro_1_1metadata.html',1,'cudf::experimental::io::detail::avro::metadata']]],
+  ['metadata_1459',['metadata',['../classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1metadata.html',1,'cudf::experimental::io::detail::orc::metadata'],['../structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1metadata.html',1,'cudf::experimental::io::detail::parquet::metadata'],['../classcudf_1_1experimental_1_1io_1_1detail_1_1avro_1_1metadata.html',1,'cudf::experimental::io::detail::avro::metadata']]],
   ['min_1460',['min',['../structcudf_1_1reduction_1_1op_1_1min.html',1,'cudf::reduction::op']]],
   ['modulo_5fpartitioner_1461',['modulo_partitioner',['../structmodulo__partitioner.html',1,'']]],
   ['multi_5fcontains_5fdispatch_1462',['multi_contains_dispatch',['../structcudf_1_1experimental_1_1detail_1_1multi__contains__dispatch.html',1,'cudf::experimental::detail']]],
