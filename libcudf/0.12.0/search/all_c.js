@@ -18,7 +18,7 @@ var searchData=
   ['log_619',['LOG',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba1509f8449abb15062ad85e15fb3861d7',1,'cudf']]],
   ['logic_5ferror_620',['logic_error',['../structcudf_1_1logic__error.html',1,'cudf']]],
   ['logicalop_621',['LogicalOp',['../structcudf_1_1binops_1_1compiled_1_1LogicalOp.html',1,'cudf::binops::compiled']]],
-  ['logicalopdispatcher_622',['LogicalOpDispatcher',['../structcudf_1_1detail_1_1LogicalOpDispatcher.html',1,'cudf::detail::LogicalOpDispatcher&lt; F &gt;'],['../structcudf_1_1experimental_1_1detail_1_1LogicalOpDispatcher.html',1,'cudf::experimental::detail::LogicalOpDispatcher&lt; F &gt;']]],
+  ['logicalopdispatcher_622',['LogicalOpDispatcher',['../structcudf_1_1experimental_1_1detail_1_1LogicalOpDispatcher.html',1,'cudf::experimental::detail::LogicalOpDispatcher&lt; F &gt;'],['../structcudf_1_1detail_1_1LogicalOpDispatcher.html',1,'cudf::detail::LogicalOpDispatcher&lt; F &gt;']]],
   ['long2timestamp_623',['long2timestamp',['../classNVStrings.html#a7371eaa7ddca3e72843adeb6787cb427',1,'NVStrings']]],
   ['lower_624',['lower',['../classNVStrings.html#ab97f8a71d6c2709f02dc9c14ee645f20',1,'NVStrings::lower()'],['../namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8a00b75d21f696dc9d435e8b4b3c3bc58d',1,'cudf::LOWER()'],['../namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151aa7c48ba367e019d004bfb0239b85f2b3',1,'cudf::experimental::LOWER()']]],
   ['lower_5fbound_625',['lower_bound',['../namespacecudf.html#ae90960c52c1f1fe3ab2257bad89b18fc',1,'cudf::lower_bound()'],['../namespacecudf_1_1experimental.html#a9da07e36844255fd5bc535c5718a155a',1,'cudf::experimental::lower_bound()']]],

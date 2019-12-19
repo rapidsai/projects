@@ -36,7 +36,7 @@ var searchData=
   ['column_5fdevice_5fview_5fbase_130',['column_device_view_base',['../classcudf_1_1detail_1_1column__device__view__base.html',1,'cudf::detail']]],
   ['column_5fdtype_5finfos_131',['column_dtype_infos',['../namespacecudf.html#ad2c2c74e4d88e3c0b67e7dea9f7086cc',1,'cudf']]],
   ['column_5fdtypes_132',['column_dtypes',['../namespacecudf.html#ad2f973d94c67ab3dc1a183c5adb3753d',1,'cudf']]],
-  ['column_5fgatherer_133',['column_gatherer',['../structcudf_1_1detail_1_1column__gatherer.html',1,'cudf::detail::column_gatherer'],['../structcudf_1_1experimental_1_1detail_1_1column__gatherer.html',1,'cudf::experimental::detail::column_gatherer']]],
+  ['column_5fgatherer_133',['column_gatherer',['../structcudf_1_1experimental_1_1detail_1_1column__gatherer.html',1,'cudf::experimental::detail::column_gatherer'],['../structcudf_1_1detail_1_1column__gatherer.html',1,'cudf::detail::column_gatherer']]],
   ['column_5fgatherer_5fimpl_134',['column_gatherer_impl',['../structcudf_1_1experimental_1_1detail_1_1column__gatherer__impl.html',1,'cudf::experimental::detail']]],
   ['column_5fgatherer_5fimpl_3c_20string_5fview_2c_20mapittype_20_3e_135',['column_gatherer_impl&lt; string_view, MapItType &gt;',['../structcudf_1_1experimental_1_1detail_1_1column__gatherer__impl_3_01string__view_00_01MapItType_01_4.html',1,'cudf::experimental::detail']]],
   ['column_5fmerger_136',['column_merger',['../structcudf_1_1experimental_1_1detail_1_1column__merger.html',1,'cudf::experimental::detail']]],

@@ -169,6 +169,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1orc__write__arg.html">orc_write_arg</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1order__info.html">order_info</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1pair__accessor.html">pair_accessor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">pair accessor with/without null bitmask A unary function returns <code>thrust::pair&lt;ResultType, bool&gt;</code>. If the element at index <code>i</code> is valid, returns <code>ResultType{data[i]}</code> and <code>true</code> indicating the value was valid. If the element at <code>i</code> is null, returns <code>ResultType{identity}</code> and <code>false</code> indicating the element was null.  <a href="structcudf_1_1pair__accessor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1072,7 +1074,7 @@ typedef".</p>
 
 <p>Type alias representing an int32_t duration of days since the unix. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md547"></a>
+<h2><a class="anchor" id="autotoc_md548"></a>
 epoch.</h2>
 
 </div>
@@ -1091,7 +1093,7 @@ epoch.</h2>
 
 <p>Type alias representing an int64_t duration of milliseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md549"></a>
+<h2><a class="anchor" id="autotoc_md550"></a>
 the unix epoch.</h2>
 
 </div>
@@ -1110,7 +1112,7 @@ the unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of nanoseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md551"></a>
+<h2><a class="anchor" id="autotoc_md552"></a>
 the unix epoch.</h2>
 
 </div>
@@ -1129,7 +1131,7 @@ the unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of seconds since the. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md548"></a>
+<h2><a class="anchor" id="autotoc_md549"></a>
 unix epoch.</h2>
 
 </div>
@@ -1148,7 +1150,7 @@ unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of microseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md550"></a>
+<h2><a class="anchor" id="autotoc_md551"></a>
 the unix epoch.</h2>
 
 </div>
@@ -1243,7 +1245,7 @@ the unix epoch.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md495"></a>
+<h2><a class="anchor" id="autotoc_md496"></a>
 @brief Controls the allocation/initialization of a null mask.</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa481249b705132999f4d082aacd21dbfa74ad69efae4a12aec59682147aac9344"></a>UNALLOCATED&#160;</td><td class="fielddoc"><p>Null mask not allocated, (all elements are valid) </p>
@@ -1332,7 +1334,7 @@ the unix epoch.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md496"></a>
+<h2><a class="anchor" id="autotoc_md497"></a>
 @brief Identifies a column's logical element type</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acd4cd7157c4379954b5772936f89c59bab2c14e467fcbf9a215ccc679f35bb027"></a>EMPTY&#160;</td><td class="fielddoc"><p>Always null with no underlying data. </p>
@@ -2067,7 +2069,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true The specified bit is <code>1</code> </dd></dl>
-<h2><a class="anchor" id="autotoc_md505"></a>
+<h2><a class="anchor" id="autotoc_md506"></a>
 @return false  The specified bit is &lt;tt&gt;0&lt;/tt&gt;</h2>
 
 </div>
@@ -2192,7 +2194,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md504"></a>
+<h2><a class="anchor" id="autotoc_md505"></a>
 @param bit_index The index of the bit to clear</h2>
 
 </div>
@@ -3419,7 +3421,7 @@ template&lt;typename T &gt; </div>
 <p>------------------------------------------------------------------------&mdash;* When explicitly passed a template argument of a given type, returns the appropriate <code>gdf_dtype</code> for the specified C++ type.</p>
 <p>For example: </p><div class="fragment"><div class="line"><span class="keywordflow">return</span> gdf_dtype_of&lt;int32_t&gt;();        <span class="comment">// Returns GDF_INT32</span></div>
 <div class="line"><span class="keywordflow">return</span> gdf_dtype_of&lt;cudf::category&gt;(); <span class="comment">// Returns GDF_CATEGORY</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md514"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md515"></a>
 @tparam T The type to map to a &lt;tt&gt;gdf_dtype&lt;/tt&gt;</h2>
 
 </div>
@@ -3962,7 +3964,7 @@ template&lt;typename T , typename BinaryOp &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md502"></a>
+<h2><a class="anchor" id="autotoc_md503"></a>
 @brief Returns the position within a word of the specified bit.</h2>
 
 </div>
@@ -4001,7 +4003,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is Boolean </dd></dl>
-<h2><a class="anchor" id="autotoc_md528"></a>
+<h2><a class="anchor" id="autotoc_md529"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not Boolean</h2>
 
 </div>
@@ -4039,7 +4041,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a Boolean </dd></dl>
-<h2><a class="anchor" id="autotoc_md529"></a>
+<h2><a class="anchor" id="autotoc_md530"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not a Boolean</h2>
 
 </div>
@@ -4078,7 +4080,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a "compound" type </dd></dl>
-<h2><a class="anchor" id="autotoc_md534"></a>
+<h2><a class="anchor" id="autotoc_md535"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a "simple" type</h2>
 
 </div>
@@ -4116,7 +4118,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a compound type </dd></dl>
-<h2><a class="anchor" id="autotoc_md535"></a>
+<h2><a class="anchor" id="autotoc_md536"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is a simple type</h2>
 
 </div>
@@ -4155,7 +4157,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a fixed-width element type </dd></dl>
-<h2><a class="anchor" id="autotoc_md532"></a>
+<h2><a class="anchor" id="autotoc_md533"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a variable-width element type</h2>
 
 </div>
@@ -4193,7 +4195,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is fixed-width </dd></dl>
-<h2><a class="anchor" id="autotoc_md533"></a>
+<h2><a class="anchor" id="autotoc_md534"></a>
 @return false  &lt;tt&gt;type&lt;/tt&gt; is variable-width</h2>
 
 </div>
@@ -4285,7 +4287,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> is numeric </dd></dl>
-<h2><a class="anchor" id="autotoc_md526"></a>
+<h2><a class="anchor" id="autotoc_md527"></a>
 @return false  &lt;tt&gt;T&lt;/tt&gt; is not numeric</h2>
 
 </div>
@@ -4323,7 +4325,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is numeric </dd></dl>
-<h2><a class="anchor" id="autotoc_md527"></a>
+<h2><a class="anchor" id="autotoc_md528"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not numeric</h2>
 
 </div>
@@ -4363,7 +4365,7 @@ template&lt;typename L , typename R &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true Objects of types <code>L</code> and <code>R</code> can be relationally be compared </dd></dl>
-<h2><a class="anchor" id="autotoc_md525"></a>
+<h2><a class="anchor" id="autotoc_md526"></a>
 @return false Objects of types &lt;tt&gt;L&lt;/tt&gt; and &lt;tt&gt;R&lt;/tt&gt; cannot be compared</h2>
 
 </div>
@@ -4402,7 +4404,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a simple type </dd></dl>
-<h2><a class="anchor" id="autotoc_md536"></a>
+<h2><a class="anchor" id="autotoc_md537"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a compound type</h2>
 
 </div>
@@ -4440,7 +4442,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a simple type </dd></dl>
-<h2><a class="anchor" id="autotoc_md537"></a>
+<h2><a class="anchor" id="autotoc_md538"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is a compound type</h2>
 
 </div>
@@ -4523,7 +4525,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> is a timestamp </dd></dl>
-<h2><a class="anchor" id="autotoc_md530"></a>
+<h2><a class="anchor" id="autotoc_md531"></a>
 @return false  &lt;tt&gt;T&lt;/tt&gt; is not a timestamp</h2>
 
 </div>
@@ -4561,7 +4563,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a timestamp </dd></dl>
-<h2><a class="anchor" id="autotoc_md531"></a>
+<h2><a class="anchor" id="autotoc_md532"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not a timestamp</h2>
 
 </div>
@@ -6054,7 +6056,7 @@ template&lt;typename B &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>lhs</code> is equal to <code>rhs</code> </dd></dl>
-<h2><a class="anchor" id="autotoc_md498"></a>
+<h2><a class="anchor" id="autotoc_md499"></a>
 @return false &lt;tt&gt;lhs&lt;/tt&gt; is not equal to &lt;tt&gt;rhs&lt;/tt&gt;</h2>
 
 </div>
@@ -6731,7 +6733,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md503"></a>
+<h2><a class="anchor" id="autotoc_md504"></a>
 @param bit_index Index of the bit to set</h2>
 
 </div>
@@ -6768,7 +6770,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md506"></a>
+<h2><a class="anchor" id="autotoc_md507"></a>
 @return A bitmask word with &lt;tt&gt;n&lt;/tt&gt; least significant bits set</h2>
 
 </div>
@@ -6805,7 +6807,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md507"></a>
+<h2><a class="anchor" id="autotoc_md508"></a>
 @return A bitmask word with &lt;tt&gt;n&lt;/tt&gt; most significant bits set</h2>
 
 </div>
@@ -7545,7 +7547,7 @@ template&lt;typename bit_container , typename predicate , typename size_type &gt
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md501"></a>
+<h2><a class="anchor" id="autotoc_md502"></a>
 @brief Returns the index of the word containing the specified bit.</h2>
 
 </div>

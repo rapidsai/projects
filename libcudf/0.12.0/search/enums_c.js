@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['timestamp_5funits_2373',['timestamp_units',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049',1,'NVStrings']]],
-  ['type_5fid_2374',['type_id',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59b',1,'cudf']]]
+  ['timestamp_5funits_2375',['timestamp_units',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049',1,'NVStrings']]],
+  ['type_5fid_2376',['type_id',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59b',1,'cudf']]]
 ];

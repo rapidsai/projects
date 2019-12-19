@@ -37,9 +37,10 @@ var searchData=
   ['orcmetadata_781',['OrcMetadata',['../classcudf_1_1io_1_1orc_1_1OrcMetadata.html',1,'cudf::io::orc']]],
   ['orcstreaminfo_782',['OrcStreamInfo',['../structcudf_1_1io_1_1orc_1_1OrcStreamInfo.html',1,'cudf::io::orc']]],
   ['order_783',['order',['../classNVStrings.html#af47e5bf838dfe8f75620ad539d90cfc8',1,'NVStrings::order()'],['../namespacecudf.html#a750f02016b046079f7062d334890b4fc',1,'cudf::order()']]],
-  ['out_5ftime_5funit_784',['out_time_unit',['../structcudf_1_1io_1_1csv_1_1reader__options.html#ae53fb55e43e3c324af8608468e4b7b77',1,'cudf::io::csv::reader_options::out_time_unit()'],['../structcudf_1_1csv__read__arg.html#a6c3619d91ca37b1e5a3c847ac70c6e1b',1,'cudf::csv_read_arg::out_time_unit()']]],
-  ['reader_5fimpl_2ecu_785',['reader_impl.cu',['../orc_2reader__impl_8cu.html',1,'']]],
-  ['reader_5fimpl_2ehpp_786',['reader_impl.hpp',['../orc_2reader__impl_8hpp.html',1,'']]],
-  ['writer_5fimpl_2ecu_787',['writer_impl.cu',['../orc_2writer__impl_8cu.html',1,'']]],
-  ['writer_5fimpl_2ehpp_788',['writer_impl.hpp',['../orc_2writer__impl_8hpp.html',1,'']]]
+  ['order_5finfo_784',['order_info',['../structcudf_1_1order__info.html',1,'cudf']]],
+  ['out_5ftime_5funit_785',['out_time_unit',['../structcudf_1_1io_1_1csv_1_1reader__options.html#ae53fb55e43e3c324af8608468e4b7b77',1,'cudf::io::csv::reader_options::out_time_unit()'],['../structcudf_1_1csv__read__arg.html#a6c3619d91ca37b1e5a3c847ac70c6e1b',1,'cudf::csv_read_arg::out_time_unit()']]],
+  ['reader_5fimpl_2ecu_786',['reader_impl.cu',['../orc_2reader__impl_8cu.html',1,'']]],
+  ['reader_5fimpl_2ehpp_787',['reader_impl.hpp',['../orc_2reader__impl_8hpp.html',1,'']]],
+  ['writer_5fimpl_2ecu_788',['writer_impl.cu',['../orc_2writer__impl_8cu.html',1,'']]],
+  ['writer_5fimpl_2ehpp_789',['writer_impl.hpp',['../orc_2writer__impl_8hpp.html',1,'']]]
 ];
