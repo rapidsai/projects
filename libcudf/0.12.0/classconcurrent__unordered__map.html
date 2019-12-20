@@ -104,17 +104,17 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>const_iterator</b> =
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a10bd43ed2cf6c7dff722e2a41ac4c6a1"><td class="memItemLeft" align="right" valign="top"><a id="a10bd43ed2cf6c7dff722e2a41ac4c6a1"></a>
-__device__ <a class="el" href="classcycle__iterator__adapter.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> ()</td></tr>
+<tr class="memitem:a10bd43ed2cf6c7dff722e2a41ac4c6a1"><td class="memItemLeft" align="right" valign="top">__device__ <a class="el" href="classcycle__iterator__adapter.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconcurrent__unordered__map.html#a10bd43ed2cf6c7dff722e2a41ac4c6a1">begin</a> ()</td></tr>
+<tr class="memdesc:a10bd43ed2cf6c7dff722e2a41ac4c6a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first element in the map.  <a href="classconcurrent__unordered__map.html#a10bd43ed2cf6c7dff722e2a41ac4c6a1">More...</a><br /></td></tr>
 <tr class="separator:a10bd43ed2cf6c7dff722e2a41ac4c6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39fa4a74a9a0a560a22b60daa6bc1d58"><td class="memItemLeft" align="right" valign="top"><a id="a39fa4a74a9a0a560a22b60daa6bc1d58"></a>
-__device__ <a class="el" href="classcycle__iterator__adapter.html">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> () const</td></tr>
+<tr class="memitem:a39fa4a74a9a0a560a22b60daa6bc1d58"><td class="memItemLeft" align="right" valign="top">__device__ <a class="el" href="classcycle__iterator__adapter.html">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconcurrent__unordered__map.html#a39fa4a74a9a0a560a22b60daa6bc1d58">begin</a> () const</td></tr>
+<tr class="memdesc:a39fa4a74a9a0a560a22b60daa6bc1d58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a constant iterator to the first element in the map.  <a href="classconcurrent__unordered__map.html#a39fa4a74a9a0a560a22b60daa6bc1d58">More...</a><br /></td></tr>
 <tr class="separator:a39fa4a74a9a0a560a22b60daa6bc1d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c37fe63c20c8bd3fcf78e426750c0f7"><td class="memItemLeft" align="right" valign="top"><a id="a4c37fe63c20c8bd3fcf78e426750c0f7"></a>
-__device__ <a class="el" href="classcycle__iterator__adapter.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> ()</td></tr>
+<tr class="memitem:a4c37fe63c20c8bd3fcf78e426750c0f7"><td class="memItemLeft" align="right" valign="top">__device__ <a class="el" href="classcycle__iterator__adapter.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconcurrent__unordered__map.html#a4c37fe63c20c8bd3fcf78e426750c0f7">end</a> ()</td></tr>
+<tr class="memdesc:a4c37fe63c20c8bd3fcf78e426750c0f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the one past the last element in the map.  <a href="classconcurrent__unordered__map.html#a4c37fe63c20c8bd3fcf78e426750c0f7">More...</a><br /></td></tr>
 <tr class="separator:a4c37fe63c20c8bd3fcf78e426750c0f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a9835c42f992c4d32fc3aa43747e3a2"><td class="memItemLeft" align="right" valign="top"><a id="a0a9835c42f992c4d32fc3aa43747e3a2"></a>
-__device__ <a class="el" href="classcycle__iterator__adapter.html">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> () const</td></tr>
+<tr class="memitem:a0a9835c42f992c4d32fc3aa43747e3a2"><td class="memItemLeft" align="right" valign="top">__device__ <a class="el" href="classcycle__iterator__adapter.html">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconcurrent__unordered__map.html#a0a9835c42f992c4d32fc3aa43747e3a2">end</a> () const</td></tr>
+<tr class="memdesc:a0a9835c42f992c4d32fc3aa43747e3a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a constant iterator to the one past the last element in the map.  <a href="classconcurrent__unordered__map.html#a0a9835c42f992c4d32fc3aa43747e3a2">More...</a><br /></td></tr>
 <tr class="separator:a0a9835c42f992c4d32fc3aa43747e3a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a5919d3fe41727b8778a5eb3949e422"><td class="memItemLeft" align="right" valign="top"><a id="a6a5919d3fe41727b8778a5eb3949e422"></a>
 __device__ value_type *&#160;</td><td class="memItemRight" valign="bottom"><b>data</b> () const</td></tr>
@@ -173,11 +173,77 @@ Static Public Member Functions</h2></td></tr>
 class concurrent_unordered_map&lt; Key, Element, Hasher, Equality, Allocator &gt;</h3>
 
 <p>Supports concurrent insert, but not concurrent insert and find.</p>
+<dl class="section note"><dt>Note</dt><dd>The user is responsible for the following stream semantics:<ul>
+<li>Either the same stream should be used to create the map as is used by the kernels that access it, or</li>
+<li>the stream used to create the map should be synchronized before it is accessed from a different stream or from host code.</li>
+</ul>
+</dd></dl>
 <p>TODO:</p><ul>
-<li>add constructor that takes pointer to hash_table to avoid allocations</li>
-<li>extend interface to accept streams </li>
+<li>add constructor that takes pointer to hash_table to avoid allocations </li>
 </ul>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a10bd43ed2cf6c7dff722e2a41ac4c6a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10bd43ed2cf6c7dff722e2a41ac4c6a1">&#9670;&nbsp;</a></span>begin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt;Key&gt;, typename Equality  = equal_to&lt;Key&gt;, typename Allocator  = default_allocator&lt;thrust::pair&lt;Key, Element&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__device__ <a class="el" href="classcycle__iterator__adapter.html">iterator</a> <a class="el" href="classconcurrent__unordered__map.html">concurrent_unordered_map</a>&lt; Key, Element, Hasher, Equality, Allocator &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an iterator to the first element in the map. </p>
+<dl class="section note"><dt>Note</dt><dd><code>__device__</code> code that calls this function should either run in the same stream as <code><a class="el" href="classconcurrent__unordered__map.html#a4ec2ebb3baca5a6c8c3744bec40845bf" title="Factory to construct a new concurrent unordered map.">create()</a></code>, or the accessing stream either be running on the same stream as <a class="el" href="classconcurrent__unordered__map.html#a4ec2ebb3baca5a6c8c3744bec40845bf" title="Factory to construct a new concurrent unordered map.">create()</a>, or the accessing stream should be appropriately synchronized with the creating stream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>iterator to the first element in the map. </dd></dl>
+
+</div>
+</div>
+<a id="a39fa4a74a9a0a560a22b60daa6bc1d58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39fa4a74a9a0a560a22b60daa6bc1d58">&#9670;&nbsp;</a></span>begin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt;Key&gt;, typename Equality  = equal_to&lt;Key&gt;, typename Allocator  = default_allocator&lt;thrust::pair&lt;Key, Element&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__device__ <a class="el" href="classcycle__iterator__adapter.html">const_iterator</a> <a class="el" href="classconcurrent__unordered__map.html">concurrent_unordered_map</a>&lt; Key, Element, Hasher, Equality, Allocator &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a constant iterator to the first element in the map. </p>
+<dl class="section note"><dt>Note</dt><dd><code>__device__</code> code that calls this function should either run in the same stream as <code><a class="el" href="classconcurrent__unordered__map.html#a4ec2ebb3baca5a6c8c3744bec40845bf" title="Factory to construct a new concurrent unordered map.">create()</a></code>, or the accessing stream either be running on the same stream as <a class="el" href="classconcurrent__unordered__map.html#a4ec2ebb3baca5a6c8c3744bec40845bf" title="Factory to construct a new concurrent unordered map.">create()</a>, or the accessing stream should be appropriately synchronized with the creating stream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>constant iterator to the first element in the map. </dd></dl>
+
+</div>
+</div>
 <a id="a4ec2ebb3baca5a6c8c3744bec40845bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4ec2ebb3baca5a6c8c3744bec40845bf">&#9670;&nbsp;</a></span>create()</h2>
 
@@ -246,7 +312,9 @@ template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt
 
 <p>Factory to construct a new concurrent unordered map. </p>
 <p>------------------------------------------------------------------------&mdash;* Returns a <code>std::unique_ptr</code> to a new concurrent unordered map object. The map is non-owning and trivially copyable and should be passed by value into kernels. The <code>unique_ptr</code> contains a custom deleter that will free the map's contents.</p>
-<dl class="section note"><dt>Note</dt><dd>The implementation of this unordered_map uses sentinel values to indicate an entry in the hash table that is empty, i.e., if a hash bucket is empty, the pair residing there will be equal to (unused_key, unused_element). As a result, attempting to insert a key equal to <code>unused_key</code> results in undefined behavior.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The implementation of this unordered_map uses sentinel values to indicate an entry in the hash table that is empty, i.e., if a hash bucket is empty, the pair residing there will be equal to (unused_key, unused_element). As a result, attempting to insert a key equal to <code>unused_key</code> results in undefined behavior.</dd>
+<dd>
+All allocations, kernels and copies in the constructor take place on stream but the constructor does not synchronize the stream. It is the user's responsibility to synchronize or use the same stream to access the map.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">capacity</td><td>The maximum number of pairs the map may hold </td></tr>
@@ -293,6 +361,68 @@ template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt
 <p>------------------------------------------------------------------------&mdash;* This function is invoked as the deleter of the <code>std::unique_ptr</code> returned from the <code><a class="el" href="classconcurrent__unordered__map.html#a4ec2ebb3baca5a6c8c3744bec40845bf" title="Factory to construct a new concurrent unordered map.">create()</a></code> factory function.</p>
 <h2><a class="anchor" id="autotoc_md63"></a>
 @param stream CUDA stream to use for device operations.</h2>
+
+</div>
+</div>
+<a id="a4c37fe63c20c8bd3fcf78e426750c0f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c37fe63c20c8bd3fcf78e426750c0f7">&#9670;&nbsp;</a></span>end() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt;Key&gt;, typename Equality  = equal_to&lt;Key&gt;, typename Allocator  = default_allocator&lt;thrust::pair&lt;Key, Element&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__device__ <a class="el" href="classcycle__iterator__adapter.html">iterator</a> <a class="el" href="classconcurrent__unordered__map.html">concurrent_unordered_map</a>&lt; Key, Element, Hasher, Equality, Allocator &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an iterator to the one past the last element in the map. </p>
+<dl class="section note"><dt>Note</dt><dd><code>__device__</code> code that calls this function should either run in the same stream as <code><a class="el" href="classconcurrent__unordered__map.html#a4ec2ebb3baca5a6c8c3744bec40845bf" title="Factory to construct a new concurrent unordered map.">create()</a></code>, or the accessing stream either be running on the same stream as <a class="el" href="classconcurrent__unordered__map.html#a4ec2ebb3baca5a6c8c3744bec40845bf" title="Factory to construct a new concurrent unordered map.">create()</a>, or the accessing stream should be appropriately synchronized with the creating stream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>iterator to the one past the last element in the map. </dd></dl>
+
+</div>
+</div>
+<a id="a0a9835c42f992c4d32fc3aa43747e3a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a9835c42f992c4d32fc3aa43747e3a2">&#9670;&nbsp;</a></span>end() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt;Key&gt;, typename Equality  = equal_to&lt;Key&gt;, typename Allocator  = default_allocator&lt;thrust::pair&lt;Key, Element&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__device__ <a class="el" href="classcycle__iterator__adapter.html">const_iterator</a> <a class="el" href="classconcurrent__unordered__map.html">concurrent_unordered_map</a>&lt; Key, Element, Hasher, Equality, Allocator &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a constant iterator to the one past the last element in the map. </p>
+<dl class="section note"><dt>Note</dt><dd>When called in a device code, user should make sure that it should either be running on the same stream as <a class="el" href="classconcurrent__unordered__map.html#a4ec2ebb3baca5a6c8c3744bec40845bf" title="Factory to construct a new concurrent unordered map.">create()</a>, or the accessing stream should be appropriately synchronized with the creating stream.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>constant iterator to the one past the last element in the map. </dd></dl>
 
 </div>
 </div>

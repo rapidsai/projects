@@ -190,12 +190,6 @@ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <tr class="memitem:a7d8085d631f72ef8a2c467bd370c1b6f"><td class="memItemLeft" align="right" valign="top">__device__ <a class="el" href="classcudf_1_1string__view.html">string_view</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1string__view.html#a7d8085d631f72ef8a2c467bd370c1b6f">substr</a> (size_type start, size_type <a class="el" href="classcudf_1_1string__view.html#a183cdfbfa799e8fa292382d060ea5b4d">length</a>) const</td></tr>
 <tr class="memdesc:a7d8085d631f72ef8a2c467bd370c1b6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a sub-string of this string. The original string and device memory must still be maintained for the lifetime of the returned instance.  <a href="classcudf_1_1string__view.html#a7d8085d631f72ef8a2c467bd370c1b6f">More...</a><br /></td></tr>
 <tr class="separator:a7d8085d631f72ef8a2c467bd370c1b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71f0f4dce4b615dac8e1a6cfdb6e3d2c"><td class="memItemLeft" align="right" valign="top">__device__ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1string__view.html#a71f0f4dce4b615dac8e1a6cfdb6e3d2c">split</a> (const char *delimiter, size_type count, <a class="el" href="classcudf_1_1string__view.html">string_view</a> *strs) const</td></tr>
-<tr class="memdesc:a71f0f4dce4b615dac8e1a6cfdb6e3d2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenizes this string around the given delimiter up to count times.  <a href="classcudf_1_1string__view.html#a71f0f4dce4b615dac8e1a6cfdb6e3d2c">More...</a><br /></td></tr>
-<tr class="separator:a71f0f4dce4b615dac8e1a6cfdb6e3d2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade3c5846c556e6a6dbe53b5497fd090f"><td class="memItemLeft" align="right" valign="top">__device__ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1string__view.html#ade3c5846c556e6a6dbe53b5497fd090f">rsplit</a> (const char *delimiter, size_type count, <a class="el" href="classcudf_1_1string__view.html">string_view</a> *strs) const</td></tr>
-<tr class="memdesc:ade3c5846c556e6a6dbe53b5497fd090f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenizes this string around the given delimiter up to count times starting at the end of the string.  <a href="classcudf_1_1string__view.html#ade3c5846c556e6a6dbe53b5497fd090f">More...</a><br /></td></tr>
-<tr class="separator:ade3c5846c556e6a6dbe53b5497fd090f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A non-owning, immutable view of device data that is a variable length char array representing a UTF-8 string. The caller must maintain the device memory for the lifetime of this instance. </p>
@@ -637,96 +631,6 @@ __device__ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>-1 if arg string is not found in this string. </dd></dl>
-
-</div>
-</div>
-<a id="ade3c5846c556e6a6dbe53b5497fd090f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade3c5846c556e6a6dbe53b5497fd090f">&#9670;&nbsp;</a></span>rsplit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">__device__ size_type cudf::string_view::rsplit </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>delimiter</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_type&#160;</td>
-          <td class="paramname"><em>count</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classcudf_1_1string__view.html">string_view</a> *&#160;</td>
-          <td class="paramname"><em>strs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Tokenizes this string around the given delimiter up to count times starting at the end of the string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">delimiter</td><td>Character to use for separating tokens. </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">count</td><td>Maximum number of tokens to return. Specify -1 to indicate all tokens. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">Array</td><td>to hold output tokens. Specify nullptr here to return just the token count. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Number of tokens. </dd></dl>
-
-</div>
-</div>
-<a id="a71f0f4dce4b615dac8e1a6cfdb6e3d2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71f0f4dce4b615dac8e1a6cfdb6e3d2c">&#9670;&nbsp;</a></span>split()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">__device__ size_type cudf::string_view::split </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>delimiter</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_type&#160;</td>
-          <td class="paramname"><em>count</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classcudf_1_1string__view.html">string_view</a> *&#160;</td>
-          <td class="paramname"><em>strs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Tokenizes this string around the given delimiter up to count times. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">delimiter</td><td>Character to use for separating tokens. </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">count</td><td>Maximum number of tokens to return. Specify -1 to indicate all tokens. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">Array</td><td>to hold output tokens. Specify nullptr here to return just the token count. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Number of tokens. </dd></dl>
 
 </div>
 </div>
