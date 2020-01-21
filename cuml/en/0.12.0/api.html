@@ -142,9 +142,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#multi-node-multi-gpu-algorithms">Multi-Node, Multi-GPU Algorithms</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id16">K-Means Clustering</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id17">Random Forest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">Nearest Neighbors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id18">Principal Component Analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id21">Truncated SVD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">Random Forest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">Truncated SVD</a></li>
 </ul>
 </li>
 </ul>
@@ -600,7 +601,7 @@ coef is True.</p>
 <blockquote>
 <div><span class="target" id="module-cuml.dask.datasets.blobs"></span><dl class="function">
 <dt id="cuml.dask.datasets.blobs.make_blobs">
-<code class="sig-prename descclassname">cuml.dask.datasets.blobs.</code><code class="sig-name descname">make_blobs</code><span class="sig-paren">(</span><em class="sig-param">nrows</em>, <em class="sig-param">ncols</em>, <em class="sig-param">centers=8</em>, <em class="sig-param">n_parts=None</em>, <em class="sig-param">cluster_std=1.0</em>, <em class="sig-param">center_box=(-10</em>, <em class="sig-param">10)</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">dtype=&lt;class 'numpy.float32'&gt;</em>, <em class="sig-param">output='dataframe'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.datasets.blobs.make_blobs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cuml.dask.datasets.blobs.</code><code class="sig-name descname">make_blobs</code><span class="sig-paren">(</span><em class="sig-param">nrows</em>, <em class="sig-param">ncols</em>, <em class="sig-param">centers=8</em>, <em class="sig-param">n_parts=None</em>, <em class="sig-param">cluster_std=1.0</em>, <em class="sig-param">center_box=(-10</em>, <em class="sig-param">10)</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">dtype=&lt;class 'numpy.float32'&gt;</em>, <em class="sig-param">output='dataframe'</em>, <em class="sig-param">order='F'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.datasets.blobs.make_blobs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes labeled dask.Dataframe and dask_cudf.Dataframes containing blobs
 for a randomly generated set of centroids.</p>
 <p>This function calls <cite>make_blobs</cite> from Scikitlearn on each Dask worker
@@ -1373,7 +1374,7 @@ is a regression task (predicting a continuous variable).</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id22"><span class="problematic" id="id23">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id23"><span class="problematic" id="id24">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -1590,9 +1591,11 @@ using different solvers in Scikit-learn.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>coef_: device array, shape (n_classes, n_features)</strong></dt><dd><p>The estimated coefficients for the linear regression model.</p>
+<dt><strong>coef_: dev array, dim (n_classes, n_features) or (n_classes, n_features+1)</strong></dt><dd><p>The estimated coefficients for the linear regression model.
+Note: this includes the intercept as the last column if fit_intercept
+is True</p>
 </dd>
-<dt><strong>intercept_: device array (n_classes, 1)</strong></dt><dd><p>The independent term. If <a href="#id24"><span class="problematic" id="id25">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_: device array (n_classes, 1)</strong></dt><dd><p>The independent term. If <a href="#id25"><span class="problematic" id="id26">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -1607,10 +1610,13 @@ using different solvers in Scikit-learn.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LogisticRegression.fit" title="cuml.LogisticRegression.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Fit the model with X and y.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.LogisticRegression.predict" title="cuml.LogisticRegression.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.LogisticRegression.get_param_names" title="cuml.LogisticRegression.get_param_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_param_names</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LogisticRegression.predict" title="cuml.LogisticRegression.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Predicts the y for X.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LogisticRegression.score" title="cuml.LogisticRegression.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, convert_dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.LogisticRegression.score" title="cuml.LogisticRegression.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Calculates the accuracy metric score of the model for X.</p></td>
 </tr>
 </tbody>
@@ -1638,6 +1644,11 @@ will increase memory used for the method.</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.LogisticRegression.get_param_names">
+<code class="sig-name descname">get_param_names</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LogisticRegression.get_param_names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.LogisticRegression.predict">
@@ -1788,7 +1799,7 @@ premium prediction, stock market analysis and much more.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id26"><span class="problematic" id="id27">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id27"><span class="problematic" id="id28">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -1982,7 +1993,7 @@ convergence especially when tol is higher than 1e-4.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id28"><span class="problematic" id="id29">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id29"><span class="problematic" id="id30">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 <dt><strong>For additional docs, see `scikitlearn’s Lasso</strong></dt><dd></dd>
 <dt><strong>&lt;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html&gt;`_.</strong></dt><dd></dd>
@@ -2179,7 +2190,7 @@ convergence especially when tol is higher than 1e-4.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id30"><span class="problematic" id="id31">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id31"><span class="problematic" id="id32">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 <dt><strong>For additional docs, see `scikitlearn’s ElasticNet</strong></dt><dd></dd>
 <dt><strong>&lt;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html&gt;`_.</strong></dt><dd></dd>
@@ -2985,7 +2996,7 @@ Only relevant for GLOBAL_QUANTILE split_algo.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.print_summary" title="cuml.ensemble.RandomForestClassifier.print_summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_summary</span></code></a>(self)</p></td>
 <td><p>prints the summary of the forest used to train and test the model</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.score" title="cuml.ensemble.RandomForestClassifier.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, threshold, algo, num_classes])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.score" title="cuml.ensemble.RandomForestClassifier.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, threshold, algo, …])</p></td>
 <td><p>Calculates the accuracy metric score of the model for X.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.set_params" title="cuml.ensemble.RandomForestClassifier.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
@@ -3097,7 +3108,7 @@ train and test the Random Forest model</p>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestClassifier.score">
-<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'BATCH_TREE_REORG'</em>, <em class="sig-param">num_classes=2</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.score" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'BATCH_TREE_REORG'</em>, <em class="sig-param">num_classes=2</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the accuracy metric score of the model for X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -3122,9 +3133,13 @@ predict operation on the GPU.</p>
 </dd>
 <dt><strong>num_classes</strong><span class="classifier">integer</span></dt><dd><p>number of different classes present in the dataset</p>
 </dd>
-<dt><strong>Returns</strong></dt><dd></dd>
-<dt><strong>——-</strong></dt><dd></dd>
-<dt><strong>float</strong></dt><dd><p>Accuracy of the model [0.0 - 1.0]</p>
+<dt><strong>convert_dtype</strong><span class="classifier">boolean, default=True</span></dt><dd><p>whether to convert input data to correct dtype automatically</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>float</dt><dd><p>Accuracy of the model [0.0 - 1.0]</p>
 </dd>
 </dl>
 </dd>
@@ -3281,7 +3296,7 @@ currently fully guarantee the exact same results.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.print_summary" title="cuml.ensemble.RandomForestRegressor.print_summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_summary</span></code></a>(self)</p></td>
 <td><p>prints the summary of the forest used to train and test the model</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.score" title="cuml.ensemble.RandomForestRegressor.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, algo])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.score" title="cuml.ensemble.RandomForestRegressor.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, algo, convert_dtype])</p></td>
 <td><p>Calculates the accuracy metric score of the model for X.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.set_params" title="cuml.ensemble.RandomForestRegressor.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
@@ -3371,7 +3386,7 @@ train and test the Random Forest model</p>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestRegressor.score">
-<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">algo=u'BATCH_TREE_REORG'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.score" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">algo=u'BATCH_TREE_REORG'</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the accuracy metric score of the model for X.
 Parameters
 ———-
@@ -3391,6 +3406,8 @@ predict operation on the GPU.
 coalescing-friendly
 ‘BATCH_TREE_REORG’ - similar to TREE_REORG but predicting
 multiple rows per thread block</p>
+</dd>
+<dt>convert_dtype<span class="classifier">boolean, default=True</span></dt><dd><p>whether to convert input data to correct dtype automatically</p>
 </dd>
 </dl>
 <p>mean_square_error : float or
@@ -3723,7 +3740,7 @@ Wright - Numerical Optimization (1999)]
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_classes, n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.
 Note: shape is (n_classes, n_features + 1) if fit_intercept = True.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array (n_classes, 1)</span></dt><dd><p>The independent term. If <a href="#id32"><span class="problematic" id="id33">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array (n_classes, 1)</span></dt><dd><p>The independent term. If <a href="#id33"><span class="problematic" id="id34">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -3738,8 +3755,14 @@ Note: shape is (n_classes, n_features + 1) if fit_intercept = True.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.QN.fit" title="cuml.QN.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Fit the model with X and y.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.QN.predict" title="cuml.QN.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.QN.get_param_names" title="cuml.QN.get_param_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_param_names</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.QN.predict" title="cuml.QN.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Predicts the y for X.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.QN.score" title="cuml.QN.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y)</p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -3768,6 +3791,11 @@ will increase memory used for the method.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="cuml.QN.get_param_names">
+<code class="sig-name descname">get_param_names</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.QN.get_param_names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="cuml.QN.predict">
 <code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.QN.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the y for X.
@@ -3791,6 +3819,11 @@ will increase memory used for the method.</p>
 </dl>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="cuml.QN.score">
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.QN.score" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -3813,14 +3846,6 @@ Parallel and Distributed Systems, vol 28, no 12, 3330, (2017)</p>
 <blockquote>
 <div><p><a class="reference external" href="https://github.com/Xtra-Computing/thundersvm">https://github.com/Xtra-Computing/thundersvm</a></p>
 </div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><a class="reference internal" href="#cuml.svm.SVC.coef_" title="cuml.svm.SVC.coef_"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coef_</span></code></a></dt><dd><p>SVC.coef_(self)</p>
-</dd>
-</dl>
-</dd>
-</dl>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -3834,19 +3859,11 @@ Parallel and Distributed Systems, vol 28, no 12, 3330, (2017)</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.svm.SVC.fit" title="cuml.svm.SVC.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
 <td><p>Fit the model with X and y.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.svm.SVC.get_param_names" title="cuml.svm.SVC.get_param_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_param_names</span></code></a>(self)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.svm.SVC.predict" title="cuml.svm.SVC.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.svm.SVC.predict" title="cuml.svm.SVC.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
 <td><p>Predicts the class labels for X.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="method">
-<dt id="cuml.svm.SVC.coef_">
-<em class="property">property </em><code class="sig-name descname">coef_</code><a class="headerlink" href="#cuml.svm.SVC.coef_" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 <dl class="attribute">
 <dt id="cuml.svm.SVC.decision_function">
 <code class="sig-name descname">decision_function</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.svm.SVC.decision_function" title="Permalink to this definition">¶</a></dt>
@@ -3888,11 +3905,6 @@ ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 </dl>
 </dd></dl>
-
-<dl class="attribute">
-<dt id="cuml.svm.SVC.get_param_names">
-<code class="sig-name descname">get_param_names</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.svm.SVC.get_param_names" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.svm.SVC.predict">
@@ -3959,13 +3971,16 @@ to learn a generalizable set of model parameters.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.fit" title="cuml.neighbors.KNeighborsClassifier.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Fit a GPU index for k-nearest neighbors classifier model.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.predict" title="cuml.neighbors.KNeighborsClassifier.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.get_param_names" title="cuml.neighbors.KNeighborsClassifier.get_param_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_param_names</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.predict" title="cuml.neighbors.KNeighborsClassifier.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Use the trained k-nearest neighbors classifier to predict the labels for X</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.predict_proba" title="cuml.neighbors.KNeighborsClassifier.predict_proba"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict_proba</span></code></a>(self, X[, convert_dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.predict_proba" title="cuml.neighbors.KNeighborsClassifier.predict_proba"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict_proba</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Use the trained k-nearest neighbors classifier to predict the label probabilities for X</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.score" title="cuml.neighbors.KNeighborsClassifier.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, convert_dtype])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.score" title="cuml.neighbors.KNeighborsClassifier.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Compute the accuracy score using the given labels and the trained k-nearest neighbors classifier to predict the classes for X.</p></td>
 </tr>
 </tbody>
@@ -3992,6 +4007,11 @@ convert the inputs to np.float32.</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.neighbors.KNeighborsClassifier.get_param_names">
+<code class="sig-name descname">get_param_names</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.neighbors.KNeighborsClassifier.get_param_names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.neighbors.KNeighborsClassifier.predict">
@@ -5257,7 +5277,7 @@ in the optimization process. Increasing this value will result
 in greater repulsive force being applied, greater optimization
 cost, but slightly more accuracy.</p>
 </dd>
-<dt><strong>transform_queue_size: float (optional, default 4.0)</strong></dt><dd><p>For transform operations (embedding new points using a trained <a href="#id34"><span class="problematic" id="id35">model_</span></a>
+<dt><strong>transform_queue_size: float (optional, default 4.0)</strong></dt><dd><p>For transform operations (embedding new points using a trained <a href="#id35"><span class="problematic" id="id36">model_</span></a>
 this will control how aggressively to search for nearest neighbors.
 Larger values will result in slower performance but more accurate
 nearest neighbor evaluation.</p>
@@ -5320,6 +5340,8 @@ the final embeddings differing between cuml.umap and the reference
 UMAP. In particular, the reference UMAP uses an approximate kNN
 algorithm for large data sizes while cuml.umap always uses exact
 kNN.</p>
+<p>Known issue: If a UMAP model has not yet been fit, it cannot be pickled.
+However, after fitting, a UMAP mode.</p>
 <p class="rubric">References</p>
 <ul class="simple">
 <li><p>Leland McInnes, John Healy, James Melville
@@ -5861,13 +5883,16 @@ to learn a generalizable set of model parameters.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.fit" title="cuml.neighbors.KNeighborsClassifier.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Fit a GPU index for k-nearest neighbors classifier model.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.predict" title="cuml.neighbors.KNeighborsClassifier.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.get_param_names" title="cuml.neighbors.KNeighborsClassifier.get_param_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_param_names</span></code></a>(self)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.predict" title="cuml.neighbors.KNeighborsClassifier.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Use the trained k-nearest neighbors classifier to predict the labels for X</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.predict_proba" title="cuml.neighbors.KNeighborsClassifier.predict_proba"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict_proba</span></code></a>(self, X[, convert_dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.predict_proba" title="cuml.neighbors.KNeighborsClassifier.predict_proba"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict_proba</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Use the trained k-nearest neighbors classifier to predict the label probabilities for X</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.score" title="cuml.neighbors.KNeighborsClassifier.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, convert_dtype])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.neighbors.KNeighborsClassifier.score" title="cuml.neighbors.KNeighborsClassifier.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Compute the accuracy score using the given labels and the trained k-nearest neighbors classifier to predict the classes for X.</p></td>
 </tr>
 </tbody>
@@ -5894,6 +5919,11 @@ convert the inputs to np.float32.</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="sig-name descname">get_param_names</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt>
@@ -6707,7 +6737,297 @@ an exception</p>
 
 </div>
 <div class="section" id="id17">
-<h3>Random Forest<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<h3>Nearest Neighbors<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.dask.neighbors.NearestNeighbors">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.neighbors.</code><code class="sig-name descname">NearestNeighbors</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">streams_per_handle=0</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.neighbors.NearestNeighbors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multi-node Multi-GPU NearestNeighbors Model.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.neighbors.NearestNeighbors.fit" title="cuml.dask.neighbors.NearestNeighbors.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X)</p></td>
+<td><p>Fit a multi-node multi-GPU Nearest Neighbors index :param X : dask_cudf.Dataframe :return : NearestNeighbors model</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.neighbors.NearestNeighbors.get_neighbors" title="cuml.dask.neighbors.NearestNeighbors.get_neighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_neighbors</span></code></a>(self, n_neighbors)</p></td>
+<td><p>Returns the default n_neighbors, initialized from the constructor, if n_neighbors is None :param n_neighbors: :return:</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.neighbors.NearestNeighbors.kneighbors" title="cuml.dask.neighbors.NearestNeighbors.kneighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kneighbors</span></code></a>(self[, X, n_neighbors, …])</p></td>
+<td><p>Query the distributed nearest neighbors index :param X : dask_cudf.Dataframe Vectors to query.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="cuml.dask.neighbors.NearestNeighbors.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.neighbors.NearestNeighbors.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit a multi-node multi-GPU Nearest Neighbors index
+:param X : dask_cudf.Dataframe
+:return : NearestNeighbors model</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.neighbors.NearestNeighbors.get_neighbors">
+<code class="sig-name descname">get_neighbors</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">n_neighbors</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.neighbors.NearestNeighbors.get_neighbors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the default n_neighbors, initialized from the constructor,
+if n_neighbors is None
+:param n_neighbors:
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.neighbors.NearestNeighbors.kneighbors">
+<code class="sig-name descname">kneighbors</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X=None</em>, <em class="sig-param">n_neighbors=None</em>, <em class="sig-param">return_distance=True</em>, <em class="sig-param">_return_futures=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.neighbors.NearestNeighbors.kneighbors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query the distributed nearest neighbors index
+:param X : dask_cudf.Dataframe Vectors to query. If not</p>
+<blockquote>
+<div><p>provided, neighbors of each indexed point are returned.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>:param n_neighbors<span class="classifier">Number of neighbors to query for each row in</span></dt><dd><p>X. If not provided, the n_neighbors on the
+model are used.</p>
+</dd>
+</dl>
+<p>:param return_distance : If false, only indices are returned
+:return : dask_cudf.DataFrame containing distances
+:return : dask_cudf.DataFrame containing indices</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="id18">
+<h3>Principal Component Analysis<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.dask.decomposition.PCA">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.decomposition.</code><code class="sig-name descname">PCA</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA" title="Permalink to this definition">¶</a></dt>
+<dd><p>PCA (Principal Component Analysis) is a fundamental dimensionality
+reduction technique used to combine features in X in linear combinations
+such that each new component captures the most information or variance of
+the data. N_components is usually small, say at 3, where it can be used for
+data visualization, data compression and exploratory analysis.</p>
+<p>cuML’s multi-node multi-gpu (MNMG) PCA expects a dask cuDF input, and
+provides a “Full” algorithm. It uses a full eigendecomposition
+then selects the top K eigenvectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class</p>
+</dd>
+<dt><strong>n_components</strong><span class="classifier">int (default = 1)</span></dt><dd><p>The number of top K singular vectors / values you want.
+Must be &lt;= number(columns).</p>
+</dd>
+<dt><strong>svd_solver</strong><span class="classifier">‘full’</span></dt><dd><p>Only Full algorithm is supported since it’s significantly faster on GPU
+then the other solvers including randomized SVD.</p>
+</dd>
+<dt><strong>verbose</strong><span class="classifier">bool</span></dt><dd><p>Whether to print debug spews</p>
+</dd>
+<dt><strong>whiten</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>If True, de-correlates the components. This is done by dividing them by
+the corresponding singular values then multiplying by sqrt(n_samples).
+Whitening allows each component to have unit variance and removes
+multi-collinearity. It might be beneficial for downstream
+tasks like LinearRegression where correlated features cause problems.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>PCA considers linear combinations of features, specifically those that
+maximise global variance structure. This means PCA is fantastic for global
+structure analyses, but weak for local relationships. Consider UMAP or
+T-SNE for a locally important embedding.</p>
+<p><strong>Applications of PCA</strong></p>
+<blockquote>
+<div><p>PCA is used extensively in practice for data visualization and data
+compression. It has been used to visualize extremely large word
+embeddings like Word2Vec and GloVe in 2 or 3 dimensions, large
+datasets of everyday objects and images, and used to distinguish
+between cancerous cells from healthy cells.</p>
+</div></blockquote>
+<p>For an additional example see <a class="reference external" href="https://github.com/rapidsai/notebooks/blob/master/cuml/pca_demo.ipynb">the PCA notebook</a>.
+For additional docs, see <a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html">scikitlearn’s PCA</a>.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask_cuda</span> <span class="kn">import</span> <span class="n">LocalCUDACluster</span>
+<span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">wait</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">cuml.dask.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span> <span class="nn">cuml.dask.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+
+<span class="n">cluster</span> <span class="o">=</span> <span class="n">LocalCUDACluster</span><span class="p">(</span><span class="n">threads_per_worker</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
+
+<span class="n">nrows</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">ncols</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">n_parts</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">X_cudf</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_parts</span><span class="p">,</span>
+                <span class="n">cluster_std</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">random_state</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+<span class="n">wait</span><span class="p">(</span><span class="n">X_cudf</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Input Matrix&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X_cudf</span><span class="o">.</span><span class="n">compute</span><span class="p">())</span>
+
+<span class="n">cumlModel</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">whiten</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">XT</span> <span class="o">=</span> <span class="n">cumlModel</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_cudf</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Transformed Input Matrix&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">XT</span><span class="o">.</span><span class="n">compute</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span> <span class="n">Matrix</span><span class="p">:</span>
+          <span class="mi">0</span>         <span class="mi">1</span>         <span class="mi">2</span>
+          <span class="mi">0</span> <span class="o">-</span><span class="mf">6.520953</span>  <span class="mf">0.015584</span> <span class="o">-</span><span class="mf">8.828546</span>
+          <span class="mi">1</span> <span class="o">-</span><span class="mf">6.507554</span>  <span class="mf">0.016524</span> <span class="o">-</span><span class="mf">8.836799</span>
+          <span class="mi">2</span> <span class="o">-</span><span class="mf">6.518214</span>  <span class="mf">0.010457</span> <span class="o">-</span><span class="mf">8.821301</span>
+          <span class="mi">0</span> <span class="o">-</span><span class="mf">6.520953</span>  <span class="mf">0.015584</span> <span class="o">-</span><span class="mf">8.828546</span>
+          <span class="mi">1</span> <span class="o">-</span><span class="mf">6.507554</span>  <span class="mf">0.016524</span> <span class="o">-</span><span class="mf">8.836799</span>
+          <span class="mi">2</span> <span class="o">-</span><span class="mf">6.518214</span>  <span class="mf">0.010457</span> <span class="o">-</span><span class="mf">8.821301</span>
+
+<span class="n">Transformed</span> <span class="n">Input</span> <span class="n">Matrix</span><span class="p">:</span>
+                    <span class="mi">0</span>
+          <span class="mi">0</span> <span class="o">-</span><span class="mf">0.003271</span>
+          <span class="mi">1</span>  <span class="mf">0.011454</span>
+          <span class="mi">2</span> <span class="o">-</span><span class="mf">0.008182</span>
+          <span class="mi">0</span> <span class="o">-</span><span class="mf">0.003271</span>
+          <span class="mi">1</span>  <span class="mf">0.011454</span>
+          <span class="mi">2</span> <span class="o">-</span><span class="mf">0.008182</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Note: Everytime this code is run, the output will be different because</dt><dd><p>“make_blobs” function generates random matrices.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>components_</strong><span class="classifier">array</span></dt><dd><p>The top K components (VT.T[:,:n_components]) in U, S, VT = svd(X)</p>
+</dd>
+<dt><strong>explained_variance_</strong><span class="classifier">array</span></dt><dd><p>How much each component explains the variance in the data given by S**2</p>
+</dd>
+<dt><strong>explained_variance_ratio_</strong><span class="classifier">array</span></dt><dd><p>How much in % the variance is explained given by S**2/sum(S**2)</p>
+</dd>
+<dt><strong>singular_values_</strong><span class="classifier">array</span></dt><dd><p>The top K singular values. Remember all singular values &gt;= 0</p>
+</dd>
+<dt><strong>mean_</strong><span class="classifier">array</span></dt><dd><p>The column wise mean of X. Used to mean - center the data first.</p>
+</dd>
+<dt><strong>noise_variance_</strong><span class="classifier">float</span></dt><dd><p>From Bishop 1999’s Textbook. Used in later tasks like calculating the
+estimated covariance of X.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.decomposition.PCA.fit" title="cuml.dask.decomposition.PCA.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, _transform])</p></td>
+<td><p>Fit the model with X.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.decomposition.PCA.fit_transform" title="cuml.dask.decomposition.PCA.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X)</p></td>
+<td><p>Fit the model with X and apply the dimensionality reduction on X.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.decomposition.PCA.inverse_transform" title="cuml.dask.decomposition.PCA.inverse_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_transform</span></code></a>(self, X)</p></td>
+<td><p>Transform data back to its original space.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.decomposition.PCA.transform" title="cuml.dask.decomposition.PCA.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X)</p></td>
+<td><p>Apply dimensionality reduction to X.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 34%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>get_param_names</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="cuml.dask.decomposition.PCA.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">_transform=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model with X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">dask cuDF input</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.decomposition.PCA.fit_transform">
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA.fit_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model with X and apply the dimensionality reduction on X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">dask cuDF</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>X_new</strong><span class="classifier">dask cuDF</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.decomposition.PCA.inverse_transform">
+<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA.inverse_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform data back to its original space.</p>
+<p>In other words, return an input X_original whose transform would be X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">dask cuDF</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>X_original</strong><span class="classifier">dask cuDF</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.decomposition.PCA.transform">
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply dimensionality reduction to X.</p>
+<p>X is projected on the first principal components previously extracted
+from a training set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">dask cuDF</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>X_new</strong><span class="classifier">dask cuDF</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="id21">
+<h3>Random Forest<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.dask.ensemble.RandomForestClassifier">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.dask.ensemble.</code><code class="sig-name descname">RandomForestClassifier</code><span class="sig-paren">(</span><em class="sig-param">n_estimators=10</em>, <em class="sig-param">max_depth=-1</em>, <em class="sig-param">max_features=1.0</em>, <em class="sig-param">n_bins=8</em>, <em class="sig-param">split_algo=1</em>, <em class="sig-param">split_criterion=0</em>, <em class="sig-param">min_rows_per_node=2</em>, <em class="sig-param">bootstrap=True</em>, <em class="sig-param">bootstrap_features=False</em>, <em class="sig-param">type_model='classifier'</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">rows_sample=1.0</em>, <em class="sig-param">max_leaves=-1</em>, <em class="sig-param">n_streams=4</em>, <em class="sig-param">quantile_per_tree=False</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">criterion=None</em>, <em class="sig-param">min_samples_leaf=None</em>, <em class="sig-param">min_weight_fraction_leaf=None</em>, <em class="sig-param">max_leaf_nodes=None</em>, <em class="sig-param">min_impurity_decrease=None</em>, <em class="sig-param">min_impurity_split=None</em>, <em class="sig-param">oob_score=None</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">warm_start=None</em>, <em class="sig-param">class_weight=None</em>, <em class="sig-param">workers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestClassifier" title="Permalink to this definition">¶</a></dt>
@@ -7100,236 +7420,8 @@ params : dict of new params</p>
 </dd></dl>
 
 </div>
-<div class="section" id="id18">
-<h3>Principal Component Analysis<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
-<dt id="cuml.dask.decomposition.PCA">
-<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.decomposition.</code><code class="sig-name descname">PCA</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA" title="Permalink to this definition">¶</a></dt>
-<dd><p>PCA (Principal Component Analysis) is a fundamental dimensionality
-reduction technique used to combine features in X in linear combinations
-such that each new component captures the most information or variance of
-the data. N_components is usually small, say at 3, where it can be used for
-data visualization, data compression and exploratory analysis.</p>
-<p>cuML’s multi-node multi-gpu (MNMG) PCA expects a dask cuDF input, and
-provides a “Full” algorithm. It uses a full eigendecomposition
-then selects the top K eigenvectors.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class</p>
-</dd>
-<dt><strong>n_components</strong><span class="classifier">int (default = 1)</span></dt><dd><p>The number of top K singular vectors / values you want.
-Must be &lt;= number(columns).</p>
-</dd>
-<dt><strong>svd_solver</strong><span class="classifier">‘full’</span></dt><dd><p>Only Full algorithm is supported since it’s significantly faster on GPU
-then the other solvers including randomized SVD.</p>
-</dd>
-<dt><strong>verbose</strong><span class="classifier">bool</span></dt><dd><p>Whether to print debug spews</p>
-</dd>
-<dt><strong>whiten</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>If True, de-correlates the components. This is done by dividing them by
-the corresponding singular values then multiplying by sqrt(n_samples).
-Whitening allows each component to have unit variance and removes
-multi-collinearity. It might be beneficial for downstream
-tasks like LinearRegression where correlated features cause problems.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>PCA considers linear combinations of features, specifically those that
-maximise global variance structure. This means PCA is fantastic for global
-structure analyses, but weak for local relationships. Consider UMAP or
-T-SNE for a locally important embedding.</p>
-<p><strong>Applications of PCA</strong></p>
-<blockquote>
-<div><p>PCA is used extensively in practice for data visualization and data
-compression. It has been used to visualize extremely large word
-embeddings like Word2Vec and GloVe in 2 or 3 dimensions, large
-datasets of everyday objects and images, and used to distinguish
-between cancerous cells from healthy cells.</p>
-</div></blockquote>
-<p>For an additional example see <a class="reference external" href="https://github.com/rapidsai/notebooks/blob/master/cuml/pca_demo.ipynb">the PCA notebook</a>.
-For additional docs, see <a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html">scikitlearn’s PCA</a>.</p>
-<p class="rubric">Examples</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dask_cuda</span> <span class="kn">import</span> <span class="n">LocalCUDACluster</span>
-<span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">wait</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">cuml.dask.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
-<span class="kn">from</span> <span class="nn">cuml.dask.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
-
-<span class="n">cluster</span> <span class="o">=</span> <span class="n">LocalCUDACluster</span><span class="p">(</span><span class="n">threads_per_worker</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
-
-<span class="n">nrows</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">ncols</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">n_parts</span> <span class="o">=</span> <span class="mi">2</span>
-
-<span class="n">X_cudf</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_parts</span><span class="p">,</span>
-                <span class="n">cluster_std</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                <span class="n">random_state</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
-
-<span class="n">wait</span><span class="p">(</span><span class="n">X_cudf</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Input Matrix&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">X_cudf</span><span class="o">.</span><span class="n">compute</span><span class="p">())</span>
-
-<span class="n">cumlModel</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">whiten</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">XT</span> <span class="o">=</span> <span class="n">cumlModel</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_cudf</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Transformed Input Matrix&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">XT</span><span class="o">.</span><span class="n">compute</span><span class="p">())</span>
-</pre></div>
-</div>
-<p>Output:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span> <span class="n">Matrix</span><span class="p">:</span>
-          <span class="mi">0</span>         <span class="mi">1</span>         <span class="mi">2</span>
-          <span class="mi">0</span> <span class="o">-</span><span class="mf">6.520953</span>  <span class="mf">0.015584</span> <span class="o">-</span><span class="mf">8.828546</span>
-          <span class="mi">1</span> <span class="o">-</span><span class="mf">6.507554</span>  <span class="mf">0.016524</span> <span class="o">-</span><span class="mf">8.836799</span>
-          <span class="mi">2</span> <span class="o">-</span><span class="mf">6.518214</span>  <span class="mf">0.010457</span> <span class="o">-</span><span class="mf">8.821301</span>
-          <span class="mi">0</span> <span class="o">-</span><span class="mf">6.520953</span>  <span class="mf">0.015584</span> <span class="o">-</span><span class="mf">8.828546</span>
-          <span class="mi">1</span> <span class="o">-</span><span class="mf">6.507554</span>  <span class="mf">0.016524</span> <span class="o">-</span><span class="mf">8.836799</span>
-          <span class="mi">2</span> <span class="o">-</span><span class="mf">6.518214</span>  <span class="mf">0.010457</span> <span class="o">-</span><span class="mf">8.821301</span>
-
-<span class="n">Transformed</span> <span class="n">Input</span> <span class="n">Matrix</span><span class="p">:</span>
-                    <span class="mi">0</span>
-          <span class="mi">0</span> <span class="o">-</span><span class="mf">0.003271</span>
-          <span class="mi">1</span>  <span class="mf">0.011454</span>
-          <span class="mi">2</span> <span class="o">-</span><span class="mf">0.008182</span>
-          <span class="mi">0</span> <span class="o">-</span><span class="mf">0.003271</span>
-          <span class="mi">1</span>  <span class="mf">0.011454</span>
-          <span class="mi">2</span> <span class="o">-</span><span class="mf">0.008182</span>
-</pre></div>
-</div>
-<dl class="simple">
-<dt>Note: Everytime this code is run, the output will be different because</dt><dd><p>“make_blobs” function generates random matrices.</p>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>components_</strong><span class="classifier">array</span></dt><dd><p>The top K components (VT.T[:,:n_components]) in U, S, VT = svd(X)</p>
-</dd>
-<dt><strong>explained_variance_</strong><span class="classifier">array</span></dt><dd><p>How much each component explains the variance in the data given by S**2</p>
-</dd>
-<dt><strong>explained_variance_ratio_</strong><span class="classifier">array</span></dt><dd><p>How much in % the variance is explained given by S**2/sum(S**2)</p>
-</dd>
-<dt><strong>singular_values_</strong><span class="classifier">array</span></dt><dd><p>The top K singular values. Remember all singular values &gt;= 0</p>
-</dd>
-<dt><strong>mean_</strong><span class="classifier">array</span></dt><dd><p>The column wise mean of X. Used to mean - center the data first.</p>
-</dd>
-<dt><strong>noise_variance_</strong><span class="classifier">float</span></dt><dd><p>From Bishop 1999’s Textbook. Used in later tasks like calculating the
-estimated covariance of X.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.decomposition.PCA.fit" title="cuml.dask.decomposition.PCA.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, _transform])</p></td>
-<td><p>Fit the model with X.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.decomposition.PCA.fit_transform" title="cuml.dask.decomposition.PCA.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X)</p></td>
-<td><p>Fit the model with X and apply the dimensionality reduction on X.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.decomposition.PCA.inverse_transform" title="cuml.dask.decomposition.PCA.inverse_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_transform</span></code></a>(self, X)</p></td>
-<td><p>Transform data back to its original space.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.decomposition.PCA.transform" title="cuml.dask.decomposition.PCA.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X)</p></td>
-<td><p>Apply dimensionality reduction to X.</p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 66%" />
-<col style="width: 34%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>get_param_names</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
-<dt id="cuml.dask.decomposition.PCA.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">_transform=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA.fit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fit the model with X.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">dask cuDF input</span></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="cuml.dask.decomposition.PCA.fit_transform">
-<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA.fit_transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fit the model with X and apply the dimensionality reduction on X.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">dask cuDF</span></dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>X_new</strong><span class="classifier">dask cuDF</span></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="cuml.dask.decomposition.PCA.inverse_transform">
-<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA.inverse_transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Transform data back to its original space.</p>
-<p>In other words, return an input X_original whose transform would be X.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">dask cuDF</span></dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>X_original</strong><span class="classifier">dask cuDF</span></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="cuml.dask.decomposition.PCA.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA.transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Apply dimensionality reduction to X.</p>
-<p>X is projected on the first principal components previously extracted
-from a training set.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">dask cuDF</span></dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>X_new</strong><span class="classifier">dask cuDF</span></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="section" id="id21">
-<h3>Truncated SVD<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id22">
+<h3>Truncated SVD<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.dask.decomposition.TruncatedSVD">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.dask.decomposition.</code><code class="sig-name descname">TruncatedSVD</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.TruncatedSVD" title="Permalink to this definition">¶</a></dt>

@@ -219,8 +219,6 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#cuml.svm.SVC.coef_">coef_() (cuml.svm.SVC property)</a>
-</li>
       <li><a href="api.html#cuml.utils.input_utils.convert_dtype">convert_dtype() (in module cuml.utils.input_utils)</a>
 </li>
       <li><a href="api.html#module-cuml.benchmark.algorithms">cuml.benchmark.algorithms (module)</a>
@@ -344,6 +342,8 @@
 </li>
         <li><a href="api.html#cuml.dask.ensemble.RandomForestRegressor.fit">(cuml.dask.ensemble.RandomForestRegressor method)</a>
 </li>
+        <li><a href="api.html#cuml.dask.neighbors.NearestNeighbors.fit">(cuml.dask.neighbors.NearestNeighbors method)</a>
+</li>
         <li><a href="api.html#cuml.preprocessing.LabelEncoder.fit">(cuml.preprocessing.LabelEncoder method)</a>
 </li>
       </ul></li>
@@ -403,14 +403,20 @@
 </li>
       <li><a href="api.html#cuml.ExponentialSmoothing.get_level">get_level (cuml.ExponentialSmoothing attribute)</a>
 </li>
+      <li><a href="api.html#cuml.dask.neighbors.NearestNeighbors.get_neighbors">get_neighbors() (cuml.dask.neighbors.NearestNeighbors method)</a>
+</li>
       <li><a href="api.html#cuml.DBSCAN.get_param_names">get_param_names (cuml.DBSCAN attribute)</a>
 
       <ul>
         <li><a href="api.html#cuml.KMeans.get_param_names">(cuml.KMeans attribute)</a>
 </li>
+        <li><a href="api.html#cuml.LogisticRegression.get_param_names">(cuml.LogisticRegression attribute)</a>
+</li>
+        <li><a href="api.html#cuml.neighbors.KNeighborsClassifier.get_param_names">(cuml.neighbors.KNeighborsClassifier attribute)</a>, <a href="api.html#cuml.neighbors.KNeighborsClassifier.get_param_names">[1]</a>
+</li>
         <li><a href="api.html#cuml.PCA.get_param_names">(cuml.PCA attribute)</a>
 </li>
-        <li><a href="api.html#cuml.svm.SVC.get_param_names">(cuml.svm.SVC attribute)</a>
+        <li><a href="api.html#cuml.QN.get_param_names">(cuml.QN attribute)</a>
 </li>
         <li><a href="api.html#cuml.TruncatedSVD.get_param_names">(cuml.TruncatedSVD attribute)</a>
 </li>
@@ -493,6 +499,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#cuml.neighbors.NearestNeighbors.kneighbors">kneighbors (cuml.neighbors.NearestNeighbors attribute)</a>
 </li>
+      <li><a href="api.html#cuml.dask.neighbors.NearestNeighbors.kneighbors">kneighbors() (cuml.dask.neighbors.NearestNeighbors method)</a>
+</li>
       <li><a href="api.html#cuml.neighbors.KNeighborsClassifier">KNeighborsClassifier (class in cuml.neighbors)</a>, <a href="api.html#cuml.neighbors.KNeighborsClassifier">[1]</a>
 </li>
       <li><a href="api.html#cuml.neighbors.KNeighborsRegressor">KNeighborsRegressor (class in cuml.neighbors)</a>, <a href="api.html#cuml.neighbors.KNeighborsRegressor">[1]</a>
@@ -551,12 +559,16 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#cuml.utils.input_utils.inp_array.n_cols">n_cols() (cuml.utils.input_utils.inp_array property)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#cuml.utils.input_utils.inp_array.n_rows">n_rows() (cuml.utils.input_utils.inp_array property)</a>
 </li>
-      <li><a href="api.html#cuml.neighbors.NearestNeighbors">NearestNeighbors (class in cuml.neighbors)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#cuml.dask.neighbors.NearestNeighbors">NearestNeighbors (class in cuml.dask.neighbors)</a>
+
+      <ul>
+        <li><a href="api.html#cuml.neighbors.NearestNeighbors">(class in cuml.neighbors)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -707,6 +719,8 @@
         <li><a href="api.html#cuml.neighbors.KNeighborsClassifier.score">(cuml.neighbors.KNeighborsClassifier attribute)</a>, <a href="api.html#cuml.neighbors.KNeighborsClassifier.score">[1]</a>
 </li>
         <li><a href="api.html#cuml.neighbors.KNeighborsRegressor.score">(cuml.neighbors.KNeighborsRegressor attribute)</a>, <a href="api.html#cuml.neighbors.KNeighborsRegressor.score">[1]</a>
+</li>
+        <li><a href="api.html#cuml.QN.score">(cuml.QN attribute)</a>
 </li>
       </ul></li>
       <li><a href="api.html#cuml.dask.common.utils.select_device">select_device() (in module cuml.dask.common.utils)</a>
