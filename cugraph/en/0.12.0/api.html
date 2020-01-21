@@ -101,6 +101,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#community">Community</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#module-cugraph.community.louvain">Louvain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cugraph.community.ecg">ECG</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-cugraph.community.spectral_clustering">Spectral Clustering</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-cugraph.community.subgraph_extraction">Subgraph Extraction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-cugraph.community.triangle_count">Triangle Counting</a></li>
@@ -208,7 +209,7 @@
 <h3>Graph<a class="headerlink" href="#graph" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cugraph.structure.graph.Graph">
-<em class="property">class </em><code class="sig-prename descclassname">cugraph.structure.graph.</code><code class="sig-name descname">Graph</code><span class="sig-paren">(</span><em class="sig-param">symmetrized=False</em>, <em class="sig-param">bipartite=False</em>, <em class="sig-param">multi=False</em>, <em class="sig-param">dynamic=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.structure.graph.Graph" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cugraph.structure.graph.</code><code class="sig-name descname">Graph</code><span class="sig-paren">(</span><em class="sig-param">m_graph=None</em>, <em class="sig-param">edge_attr=None</em>, <em class="sig-param">symmetrized=False</em>, <em class="sig-param">bipartite=False</em>, <em class="sig-param">multi=False</em>, <em class="sig-param">dynamic=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.structure.graph.Graph" title="Permalink to this definition">¶</a></dt>
 <dd><p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -455,7 +456,7 @@ number.</p>
 
 <dl class="method">
 <dt id="cugraph.structure.graph.Graph.from_cudf_edgelist">
-<code class="sig-name descname">from_cudf_edgelist</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">input_df</em>, <em class="sig-param">source='source'</em>, <em class="sig-param">destination='destination'</em>, <em class="sig-param">edge_attr=None</em>, <em class="sig-param">renumber=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.structure.graph.Graph.from_cudf_edgelist" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">from_cudf_edgelist</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">input_df</em>, <em class="sig-param">source='source'</em>, <em class="sig-param">destination='destination'</em>, <em class="sig-param">edge_attr=None</em>, <em class="sig-param">renumber=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.structure.graph.Graph.from_cudf_edgelist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize a graph from the edge list. It is an error to call this
 method on an initialized Graph object. The passed input_df argument
 wraps gdf_column objects that represent a graph using the edge list
@@ -727,6 +728,42 @@ original ids.</p>
 </div>
 </dd></dl>
 
+<dl class="function">
+<dt id="cugraph.structure.renumber.renumber_from_cudf">
+<code class="sig-prename descclassname">cugraph.structure.renumber.</code><code class="sig-name descname">renumber_from_cudf</code><span class="sig-paren">(</span><em class="sig-param">_df</em>, <em class="sig-param">source_cols_names</em>, <em class="sig-param">dest_cols_names</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.structure.renumber.renumber_from_cudf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take a set, collection (lists) of source and destination columns, and
+renumber the vertices to create a dense set of contiguously vertex ids
+from 0 to the number of unique vertices - 1.</p>
+<p>Input columns can be any data type.</p>
+<p>The output will be mapped to int32, since many of the cugraph functions
+are limited to int32. If the number of unique values is &gt; 2^31-1 then
+this function will return an error.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>src_ids</strong><span class="classifier">cudf.Series</span></dt><dd><p>The new source vertex IDs</p>
+</dd>
+<dt><strong>dst_ids</strong><span class="classifier">cudf.Series</span></dt><dd><p>The new destination vertex IDs</p>
+</dd>
+<dt><strong>numbering_df</strong><span class="classifier">cudf.DataFrame</span></dt><dd><p>a dataframe that maps a vertex ID to the unique</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gdf</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/karate.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                  <span class="n">dtype</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int32&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">,</span> <span class="s1">&#39;float32&#39;</span><span class="p">],</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">source_col</span><span class="p">,</span> <span class="n">dest_col</span><span class="p">,</span> <span class="n">numbering_map</span> <span class="o">=</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="n">cugraph</span><span class="o">.</span><span class="n">renumber_from_cudf</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">])</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge_list</span><span class="p">(</span><span class="n">source_col</span><span class="p">,</span> <span class="n">dest_col</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </div>
 <div class="section" id="module-cugraph.structure.symmetrize">
 <span id="symmetrize"></span><h3>Symmetrize<a class="headerlink" href="#module-cugraph.structure.symmetrize" title="Permalink to this headline">¶</a></h3>
@@ -904,7 +941,7 @@ identifiers and the corresponding katz centrality values.</p>
 <span id="louvain"></span><h3>Louvain<a class="headerlink" href="#module-cugraph.community.louvain" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
 <dt id="cugraph.community.louvain.louvain">
-<code class="sig-prename descclassname">cugraph.community.louvain.</code><code class="sig-name descname">louvain</code><span class="sig-paren">(</span><em class="sig-param">input_graph</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.community.louvain.louvain" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cugraph.community.louvain.</code><code class="sig-name descname">louvain</code><span class="sig-paren">(</span><em class="sig-param">input_graph</em>, <em class="sig-param">max_iter=100</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.community.louvain.louvain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the modularity optimizing partition of the input graph using the
 Louvain heuristic</p>
 <dl class="field-list simple">
@@ -915,6 +952,11 @@ as an edge list.
 The adjacency list will be computed if not already present. The graph
 should be undirected where an undirected edge is represented by a
 directed edge in both direction.</p>
+</dd>
+<dt><strong>max_iter</strong><span class="classifier">integer</span></dt><dd><p>This controls the maximum number of levels/iterations of the Louvain
+algorithm. When specified the algorithm will terminate after no more
+than the specified number of iterations. No error occurs when the
+algorithm terminates early in this manner.</p>
 </dd>
 </dl>
 </dd>
@@ -937,6 +979,58 @@ partitioning.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge_list</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="n">destinations</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">parts</span><span class="p">,</span> <span class="n">modularity_score</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">louvain</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cugraph.community.ecg">
+<span id="ecg"></span><h3>ECG<a class="headerlink" href="#module-cugraph.community.ecg" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="cugraph.community.ecg.ecg">
+<code class="sig-prename descclassname">cugraph.community.ecg.</code><code class="sig-name descname">ecg</code><span class="sig-paren">(</span><em class="sig-param">input_graph</em>, <em class="sig-param">min_weight=0.05</em>, <em class="sig-param">ensemble_size=16</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.community.ecg.ecg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the ensemble clustering for graphs (ECG) partition of the input
+graph ECG runs truncated Louvain on an ensemble of permutations of the
+input graph, then uses the ensemble partitions to determine weights for
+the input graph.The final result is found by running full Louvain on
+the input graph using the determined weights.
+See <a class="reference external" href="https://arxiv.org/abs/1809.05578">https://arxiv.org/abs/1809.05578</a> for further information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>input_graph</strong><span class="classifier">cugraph.Graph</span></dt><dd><p>cuGraph graph descriptor, should contain the connectivity information
+and weights.The adjacency list will be computed if not already
+present.</p>
+</dd>
+<dt><strong>min_weight</strong><span class="classifier">floating point</span></dt><dd><p>The minimum value to assign as an edgeweight in the ECG algorithm.
+It should be a value in the range (0,1] usually left as the default
+value of .05</p>
+</dd>
+<dt><strong>ensemble_size</strong><span class="classifier">integer</span></dt><dd><p>The number of graph permutations to use for the ensemble.
+The default value is 16, larger values may produce higher quality
+partitions for some graphs.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>parts</strong><span class="classifier">cudf.DataFrame</span></dt><dd><p>GPU data frame of size V containing two columns, the vertex id and
+the partition id it is assigned to.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/karate.csv&#39;</span><span class="p">,</span>
+<span class="go">                      delimiter = &#39; &#39;,</span>
+<span class="go">                      dtype=[&#39;int32&#39;, &#39;int32&#39;, &#39;float32&#39;],</span>
+<span class="go">                      header=None)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sources</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">destinations</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">values</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="s1">&#39;2&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span><span class="o">.</span><span class="n">add_edge_list</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="n">destinations</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parts</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">ecg</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1501,7 +1595,7 @@ identifiers and the corresponding PageRank values.</p>
 <span id="jaccard-coefficient"></span><h3>Jaccard Coefficient<a class="headerlink" href="#module-cugraph.link_prediction.jaccard" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
 <dt id="cugraph.link_prediction.jaccard.jaccard">
-<code class="sig-prename descclassname">cugraph.link_prediction.jaccard.</code><code class="sig-name descname">jaccard</code><span class="sig-paren">(</span><em class="sig-param">input_graph</em>, <em class="sig-param">first=None</em>, <em class="sig-param">second=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.link_prediction.jaccard.jaccard" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cugraph.link_prediction.jaccard.</code><code class="sig-name descname">jaccard</code><span class="sig-paren">(</span><em class="sig-param">input_graph</em>, <em class="sig-param">vertex_pair=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.link_prediction.jaccard.jaccard" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the Jaccard similarity between each pair of vertices connected by
 an edge, or between arbitrary pairs of vertices specified by the user.
 Jaccard similarity is defined between two sets as the ratio of the volume
@@ -1520,11 +1614,9 @@ graph should be undirected where an undirected edge is represented by a
 directed edge in both direction. The adjacency list will be computed if
 not already present.</p>
 </dd>
-<dt><strong>first</strong><span class="classifier">cudf.Series</span></dt><dd><p>Specifies the first vertices of each pair of vertices to compute for,
-must be specified along with second.</p>
-</dd>
-<dt><strong>second</strong><span class="classifier">cudf.Series</span></dt><dd><p>Specifies the second vertices of each pair of vertices to compute for,
-must be specified along with first.</p>
+<dt><strong>vertex_pair</strong><span class="classifier">cudf.DataFrame</span></dt><dd><p>A GPU dataframe consisting of two columns representing pairs of
+vertices. If provided, the jaccard coefficient is computed for the
+given vertex pairs, else, it is computed for all vertex pairs.</p>
 </dd>
 </dl>
 </dd>
@@ -1562,7 +1654,7 @@ vertices</p>
 
 <span class="target" id="module-cugraph.link_prediction.wjaccard"></span><dl class="function">
 <dt id="cugraph.link_prediction.wjaccard.jaccard_w">
-<code class="sig-prename descclassname">cugraph.link_prediction.wjaccard.</code><code class="sig-name descname">jaccard_w</code><span class="sig-paren">(</span><em class="sig-param">input_graph</em>, <em class="sig-param">weights</em>, <em class="sig-param">first=None</em>, <em class="sig-param">second=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.link_prediction.wjaccard.jaccard_w" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cugraph.link_prediction.wjaccard.</code><code class="sig-name descname">jaccard_w</code><span class="sig-paren">(</span><em class="sig-param">input_graph</em>, <em class="sig-param">weights</em>, <em class="sig-param">vertex_pair=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.link_prediction.wjaccard.jaccard_w" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the weighted Jaccard similarity between each pair of vertices
 connected by an edge, or between arbitrary pairs of vertices specified by
 the user. Jaccard similarity is defined between two sets as the ratio of
@@ -1581,11 +1673,9 @@ adjacency list will be computed if not already present.</p>
 </dd>
 <dt><strong>weights</strong><span class="classifier">cudf.Series</span></dt><dd><p>Specifies the weights to be used for each vertex.</p>
 </dd>
-<dt><strong>first</strong><span class="classifier">cudf.Series</span></dt><dd><p>Specifies the first vertices of each pair of vertices to compute for,
-must be specified along with second.</p>
-</dd>
-<dt><strong>second</strong><span class="classifier">cudf.Series</span></dt><dd><p>Specifies the second vertices of each pair of vertices to compute for,
-must be specified along with first.</p>
+<dt><strong>vertex_pair</strong><span class="classifier">cudf.DataFrame</span></dt><dd><p>A GPU dataframe consisting of two columns representing pairs of
+vertices. If provided, the jaccard coefficient is computed for the
+given vertex pairs, else, it is computed for all vertex pairs.</p>
 </dd>
 </dl>
 </dd>
@@ -1627,7 +1717,7 @@ destination vertices.</p>
 <span id="overlap-coefficient"></span><h3>Overlap Coefficient<a class="headerlink" href="#module-cugraph.link_prediction.overlap" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
 <dt id="cugraph.link_prediction.overlap.overlap">
-<code class="sig-prename descclassname">cugraph.link_prediction.overlap.</code><code class="sig-name descname">overlap</code><span class="sig-paren">(</span><em class="sig-param">input_graph</em>, <em class="sig-param">first=None</em>, <em class="sig-param">second=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.link_prediction.overlap.overlap" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cugraph.link_prediction.overlap.</code><code class="sig-name descname">overlap</code><span class="sig-paren">(</span><em class="sig-param">input_graph</em>, <em class="sig-param">vertex_pair=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.link_prediction.overlap.overlap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the Overlap Coefficient between each pair of vertices connected by
 an edge, or between arbitrary pairs of vertices specified by the user.
 Overlap Coefficient is defined between two sets as the ratio of the volume
@@ -1644,11 +1734,9 @@ exception will be thrown.</p>
 as an edge list (edge weights are not used for this algorithm). The
 adjacency list will be computed if not already present.</p>
 </dd>
-<dt><strong>first</strong><span class="classifier">cudf.Series</span></dt><dd><p>Specifies the first vertices of each pair of vertices to compute for,
-must be specified along with second.</p>
-</dd>
-<dt><strong>second</strong><span class="classifier">cudf.Series</span></dt><dd><p>Specifies the second vertices of each pair of vertices to compute for,
-must be specified along with first.</p>
+<dt><strong>vertex_pair</strong><span class="classifier">cudf.DataFrame</span></dt><dd><p>A GPU dataframe consisting of two columns representing pairs of
+vertices. If provided, the overlap coefficient is computed for the
+given vertex pairs, else, it is computed for all vertex pairs.</p>
 </dd>
 </dl>
 </dd>
@@ -1686,7 +1774,7 @@ vertices.</p>
 
 <span class="target" id="module-cugraph.link_prediction.woverlap"></span><dl class="function">
 <dt id="cugraph.link_prediction.woverlap.overlap_w">
-<code class="sig-prename descclassname">cugraph.link_prediction.woverlap.</code><code class="sig-name descname">overlap_w</code><span class="sig-paren">(</span><em class="sig-param">input_graph</em>, <em class="sig-param">weights</em>, <em class="sig-param">first=None</em>, <em class="sig-param">second=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.link_prediction.woverlap.overlap_w" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cugraph.link_prediction.woverlap.</code><code class="sig-name descname">overlap_w</code><span class="sig-paren">(</span><em class="sig-param">input_graph</em>, <em class="sig-param">weights</em>, <em class="sig-param">vertex_pair=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.link_prediction.woverlap.overlap_w" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the weighted Overlap Coefficient between each pair of vertices
 connected by an edge, or between arbitrary pairs of vertices specified by
 the user. Overlap Coefficient is defined between two sets as the ratio of
@@ -1705,11 +1793,9 @@ adjacency list will be computed if not already present.</p>
 </dd>
 <dt><strong>weights</strong><span class="classifier">cudf.Series</span></dt><dd><p>Specifies the weights to be used for each vertex.</p>
 </dd>
-<dt><strong>first</strong><span class="classifier">cudf.Series</span></dt><dd><p>Specifies the first vertices of each pair of vertices to compute for,
-must be specified along with second.</p>
-</dd>
-<dt><strong>second</strong><span class="classifier">cudf.Series</span></dt><dd><p>Specifies the second vertices of each pair of vertices to compute for,
-must be specified along with first.</p>
+<dt><strong>vertex_pair</strong><span class="classifier">cudf.DataFrame</span></dt><dd><p>A GPU dataframe consisting of two columns representing pairs of
+vertices. If provided, the overlap coefficient is computed for the
+given vertex pairs, else, it is computed for all vertex pairs.</p>
 </dd>
 </dl>
 </dd>
