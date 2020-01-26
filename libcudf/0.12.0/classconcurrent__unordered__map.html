@@ -134,6 +134,10 @@ __host__ __device__ size_type&#160;</td><td class="memItemRight" valign="bottom"
 <tr class="memitem:af0639cdcc2dbd60d21393b642073275b"><td class="memItemLeft" align="right" valign="top">__device__ <a class="el" href="classcycle__iterator__adapter.html">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classconcurrent__unordered__map.html#af0639cdcc2dbd60d21393b642073275b">find</a> (key_type const &amp;k) const</td></tr>
 <tr class="memdesc:af0639cdcc2dbd60d21393b642073275b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the map for the specified key.  <a href="classconcurrent__unordered__map.html#af0639cdcc2dbd60d21393b642073275b">More...</a><br /></td></tr>
 <tr class="separator:af0639cdcc2dbd60d21393b642073275b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff6a168974f29bfff690496f1fc1b3e"><td class="memTemplParams" colspan="2">template&lt;typename find_hasher , typename find_key_equal &gt; </td></tr>
+<tr class="memitem:a7ff6a168974f29bfff690496f1fc1b3e"><td class="memTemplItemLeft" align="right" valign="top">__device__ <a class="el" href="classcycle__iterator__adapter.html">const_iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classconcurrent__unordered__map.html#a7ff6a168974f29bfff690496f1fc1b3e">find</a> (key_type const &amp;k, find_hasher f_hash, find_key_equal f_equal) const</td></tr>
+<tr class="memdesc:a7ff6a168974f29bfff690496f1fc1b3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the map for the specified key.  <a href="classconcurrent__unordered__map.html#a7ff6a168974f29bfff690496f1fc1b3e">More...</a><br /></td></tr>
+<tr class="separator:a7ff6a168974f29bfff690496f1fc1b3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf7a0322180d742a5a360232de945d14"><td class="memItemLeft" align="right" valign="top"><a id="abf7a0322180d742a5a360232de945d14"></a>
 gdf_error&#160;</td><td class="memItemRight" valign="bottom"><b>assign_async</b> (const <a class="el" href="classconcurrent__unordered__map.html">concurrent_unordered_map</a> &amp;other, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
 <tr class="separator:abf7a0322180d742a5a360232de945d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -359,7 +363,7 @@ template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt
 
 <p>Frees the contents of the map and destroys the map object. </p>
 <p>------------------------------------------------------------------------&mdash;* This function is invoked as the deleter of the <code>std::unique_ptr</code> returned from the <code><a class="el" href="classconcurrent__unordered__map.html#a4ec2ebb3baca5a6c8c3744bec40845bf" title="Factory to construct a new concurrent unordered map.">create()</a></code> factory function.</p>
-<h2><a class="anchor" id="autotoc_md63"></a>
+<h2><a class="anchor" id="autotoc_md64"></a>
 @param stream CUDA stream to use for device operations.</h2>
 
 </div>
@@ -427,7 +431,7 @@ template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt
 </div>
 </div>
 <a id="af0639cdcc2dbd60d21393b642073275b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0639cdcc2dbd60d21393b642073275b">&#9670;&nbsp;</a></span>find()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af0639cdcc2dbd60d21393b642073275b">&#9670;&nbsp;</a></span>find() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -461,6 +465,73 @@ template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt
   </dd>
 </dl>
 <h2><a class="anchor" id="autotoc_md62"></a>
+@return An iterator to the key if it exists, else map.end()</h2>
+
+</div>
+</div>
+<a id="a7ff6a168974f29bfff690496f1fc1b3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ff6a168974f29bfff690496f1fc1b3e">&#9670;&nbsp;</a></span>find() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Key , typename Element , typename Hasher  = default_hash&lt;Key&gt;, typename Equality  = equal_to&lt;Key&gt;, typename Allocator  = default_allocator&lt;thrust::pair&lt;Key, Element&gt;&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename find_hasher , typename find_key_equal &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">__device__ <a class="el" href="classcycle__iterator__adapter.html">const_iterator</a> <a class="el" href="classconcurrent__unordered__map.html">concurrent_unordered_map</a>&lt; Key, Element, Hasher, Equality, Allocator &gt;::find </td>
+          <td>(</td>
+          <td class="paramtype">key_type const &amp;&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">find_hasher&#160;</td>
+          <td class="paramname"><em>f_hash</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">find_key_equal&#160;</td>
+          <td class="paramname"><em>f_equal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches the map for the specified key. </p>
+<p>------------------------------------------------------------------------&mdash;* This version of the find function specifies a hashing function and an equality comparison. This allows the caller to use different functions for insert and find (for example, when you want to insert keys from one table and use find to match keys from a different table with the keys from the first table).</p>
+<dl class="section note"><dt>Note</dt><dd><code>find</code> is not threadsafe with <code>insert</code>. I.e., it is not safe to do concurrent <code>insert</code> and <code>find</code> operations.</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">find_hasher</td><td>Type of hashing function </td></tr>
+    <tr><td class="paramname">find_key_equal</td><td>Type of equality comparison</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">k</td><td>The key to search for </td></tr>
+    <tr><td class="paramname">f_hash</td><td>The hashing function to use to hash this key </td></tr>
+    <tr><td class="paramname">f_equal</td><td>The equality function to use to compare this key with the contents of the hash table </td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="anchor" id="autotoc_md63"></a>
 @return An iterator to the key if it exists, else map.end()</h2>
 
 </div>

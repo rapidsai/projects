@@ -170,7 +170,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Construct a new column by deep copying the contents of <code>other</code>. </p>
 <p>------------------------------------------------------------------------&mdash;* All device memory allocation and copying is done using the <code>device_memory_resource</code> and <code>stream</code> from <code>other</code>.</p>
-<h2><a class="anchor" id="autotoc_md180"></a>
+<h2><a class="anchor" id="autotoc_md179"></a>
 @param other The column to copy</h2>
 
 </div>
@@ -216,7 +216,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md181"></a>
+<h2><a class="anchor" id="autotoc_md180"></a>
 @param mr The resource to use for all allocations</h2>
 
 </div>
@@ -247,7 +247,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Move the contents from <code>other</code> to create a new column. </p>
 <p>------------------------------------------------------------------------&mdash;* After the move, <code>other.size() == 0</code> and <code>other.type() = {EMPTY}</code></p>
-<h2><a class="anchor" id="autotoc_md182"></a>
+<h2><a class="anchor" id="autotoc_md181"></a>
 @param other The column whose contents will be moved into the new column</h2>
 
 </div>
@@ -324,7 +324,7 @@ template&lt;typename B1 , typename B2  = rmm::device_buffer&gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md183"></a>
+<h2><a class="anchor" id="autotoc_md182"></a>
 @param children Optional, vector of child columns</h2>
 
 </div>
@@ -378,7 +378,7 @@ template&lt;typename B1 , typename B2  = rmm::device_buffer&gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md184"></a>
+<h2><a class="anchor" id="autotoc_md183"></a>
 @param mr The resource to use for all allocations</h2>
 
 </div>
@@ -415,7 +415,7 @@ template&lt;typename B1 , typename B2  = rmm::device_buffer&gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md195"></a>
+<h2><a class="anchor" id="autotoc_md194"></a>
 @return column const&amp; Const reference to the desired child</h2>
 
 </div>
@@ -451,7 +451,7 @@ template&lt;typename B1 , typename B2  = rmm::device_buffer&gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md194"></a>
+<h2><a class="anchor" id="autotoc_md193"></a>
 @return column&amp; Reference to the desired child</h2>
 
 </div>
@@ -481,7 +481,7 @@ template&lt;typename B1 , typename B2  = rmm::device_buffer&gt; </div>
 
 <p>Indicates whether the column contains null elements. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section return"><dt>Returns</dt><dd>true One or more elements are null </dd></dl>
-<h2><a class="anchor" id="autotoc_md192"></a>
+<h2><a class="anchor" id="autotoc_md191"></a>
 @return false Zero elements are null</h2>
 
 </div>
@@ -503,7 +503,7 @@ template&lt;typename B1 , typename B2  = rmm::device_buffer&gt; </div>
 
 <p>Creates a mutable, non-owning view of the column's data and children. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>Creating a mutable view of a <code>column</code> invalidates the <code>column</code>'s <code><a class="el" href="classcudf_1_1column.html#a2d92092a5214eb9ea8205eea0adbd9bc" title="Returns the count of null elements.">null_count()</a></code> by setting it to <code>UNKNOWN_NULL_COUNT</code>. The user can either explicitly update the null count with <code><a class="el" href="classcudf_1_1column.html#ae3b18509d779b105420b96aa771a339a" title="Updates the count of null elements.">set_null_count()</a></code>, or if not, the null count will be recomputed on the next invocation of <code><a class="el" href="classcudf_1_1column.html#a2d92092a5214eb9ea8205eea0adbd9bc" title="Returns the count of null elements.">null_count()</a></code>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md200"></a>
+<h2><a class="anchor" id="autotoc_md199"></a>
 @return mutable_column_view The mutable, non-owning view</h2>
 
 </div>
@@ -525,7 +525,7 @@ template&lt;typename B1 , typename B2  = rmm::device_buffer&gt; </div>
 
 <p>Returns the count of null elements. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>If the column was constructed with <code>UNKNOWN_NULL_COUNT</code>, or if at any point <code>set_null_count(UNKNOWN_NULL_COUNT)</code> was invoked, then the first invocation of <code><a class="el" href="classcudf_1_1column.html#a2d92092a5214eb9ea8205eea0adbd9bc" title="Returns the count of null elements.">null_count()</a></code> will compute and store the count of null </dd></dl>
-<h2><a class="anchor" id="autotoc_md187"></a>
+<h2><a class="anchor" id="autotoc_md186"></a>
 elements indicated by the &lt;tt&gt;null_mask&lt;/tt&gt; (if it exists).</h2>
 
 </div>
@@ -557,7 +557,7 @@ elements indicated by the &lt;tt&gt;null_mask&lt;/tt&gt; (if it exists).</h2>
 <p>------------------------------------------------------------------------&mdash;* This may return <code>false</code> iff <code><a class="el" href="classcudf_1_1column.html#a2d92092a5214eb9ea8205eea0adbd9bc" title="Returns the count of null elements.">null_count()</a> == 0</code>.</p>
 <p>May return true even if <code><a class="el" href="classcudf_1_1column.html#a2d92092a5214eb9ea8205eea0adbd9bc" title="Returns the count of null elements.">null_count()</a> == 0</code>. This function simply indicates whether the column has an allocated null mask.</p>
 <dl class="section return"><dt>Returns</dt><dd>true The column can hold null values </dd></dl>
-<h2><a class="anchor" id="autotoc_md191"></a>
+<h2><a class="anchor" id="autotoc_md190"></a>
 @return false The column cannot hold null values</h2>
 
 </div>
@@ -585,7 +585,7 @@ elements indicated by the &lt;tt&gt;null_mask&lt;/tt&gt; (if it exists).</h2>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md193"></a>
+<h2><a class="anchor" id="autotoc_md192"></a>
 @brief Returns the number of child columns</h2>
 
 </div>
@@ -615,7 +615,7 @@ elements indicated by the &lt;tt&gt;null_mask&lt;/tt&gt; (if it exists).</h2>
 
 <p>Implicit conversion operator to a <code><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></code>. </p>
 <p>------------------------------------------------------------------------&mdash;* This allows passing a <code>column</code> object directly into a function that requires a <code><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></code>. The conversion is automatic.</p>
-<h2><a class="anchor" id="autotoc_md199"></a>
+<h2><a class="anchor" id="autotoc_md198"></a>
 @return column_view Immutable, non-owning &lt;tt&gt;column_view&lt;/tt&gt;</h2>
 
 </div>
@@ -646,7 +646,7 @@ elements indicated by the &lt;tt&gt;null_mask&lt;/tt&gt; (if it exists).</h2>
 <p>Implicit conversion operator to a <code><a class="el" href="classcudf_1_1mutable__column__view.html" title="A non-owning, mutable view of device data as a column of elements, some of which may be null as indic...">mutable_column_view</a></code>. </p>
 <p>------------------------------------------------------------------------&mdash;* This allows pasing a <code>column</code> object into a function that accepts a <code><a class="el" href="classcudf_1_1mutable__column__view.html" title="A non-owning, mutable view of device data as a column of elements, some of which may be null as indic...">mutable_column_view</a></code>. The conversion is automatic.</p>
 <dl class="section note"><dt>Note</dt><dd>Creating a mutable view of a <code>column</code> invalidates the <code>column</code>'s <code><a class="el" href="classcudf_1_1column.html#a2d92092a5214eb9ea8205eea0adbd9bc" title="Returns the count of null elements.">null_count()</a></code> by setting it to <code>UNKNOWN_NULL_COUNT</code>. For best performance, the user should explicitly update the null count with <code><a class="el" href="classcudf_1_1column.html#ae3b18509d779b105420b96aa771a339a" title="Updates the count of null elements.">set_null_count()</a></code>. Otherwise, the null count will be recomputed on the next invocation of <code><a class="el" href="classcudf_1_1column.html#a2d92092a5214eb9ea8205eea0adbd9bc" title="Returns the count of null elements.">null_count()</a></code>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md201"></a>
+<h2><a class="anchor" id="autotoc_md200"></a>
 @return mutable_column_view Mutable, non-owning &lt;tt&gt;mutable_column_view&lt;/tt&gt;</h2>
 
 </div>
@@ -683,7 +683,7 @@ elements indicated by the &lt;tt&gt;null_mask&lt;/tt&gt; (if it exists).</h2>
 <li><code><a class="el" href="classcudf_1_1column.html#a38c6d502a24f01b09c73882f5ac335bd">num_children()</a> == 0</code></li>
 </ul>
 <dl class="section return"><dt>Returns</dt><dd>A <code>contents</code> struct containing the data, null mask, and children of </dd></dl>
-<h2><a class="anchor" id="autotoc_md197"></a>
+<h2><a class="anchor" id="autotoc_md196"></a>
 the column.</h2>
 
 </div>
@@ -712,7 +712,7 @@ the column.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md190"></a>
+<h2><a class="anchor" id="autotoc_md189"></a>
 @param new_null_count The new null count.</h2>
 
 </div>
@@ -757,7 +757,7 @@ the column.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md188"></a>
+<h2><a class="anchor" id="autotoc_md187"></a>
 computed on the first invocation of &lt;tt&gt;null_count()&lt;/tt&gt;.</h2>
 
 </div>
@@ -802,7 +802,7 @@ computed on the first invocation of &lt;tt&gt;null_count()&lt;/tt&gt;.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md189"></a>
+<h2><a class="anchor" id="autotoc_md188"></a>
 computed on the first invocation of &lt;tt&gt;null_count()&lt;/tt&gt;.</h2>
 
 </div>
@@ -830,7 +830,7 @@ computed on the first invocation of &lt;tt&gt;null_count()&lt;/tt&gt;.</h2>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md186"></a>
+<h2><a class="anchor" id="autotoc_md185"></a>
 @brief Returns the number of elements</h2>
 
 </div>
@@ -858,7 +858,7 @@ computed on the first invocation of &lt;tt&gt;null_count()&lt;/tt&gt;.</h2>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md185"></a>
+<h2><a class="anchor" id="autotoc_md184"></a>
 @brief Returns the column's logical element type</h2>
 
 </div>
@@ -880,7 +880,7 @@ computed on the first invocation of &lt;tt&gt;null_count()&lt;/tt&gt;.</h2>
 
 <p>Creates an immutable, non-owning view of the column's data and children. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md198"></a>
+<h2><a class="anchor" id="autotoc_md197"></a>
 @return column_view The immutable, non-owning view</h2>
 
 </div>

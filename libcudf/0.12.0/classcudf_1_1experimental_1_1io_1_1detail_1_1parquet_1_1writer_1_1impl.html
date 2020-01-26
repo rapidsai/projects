@@ -81,9 +81,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2e1420eaaec4c7adf562a22a4e6b7e94"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer_1_1impl.html#a2e1420eaaec4c7adf562a22a4e6b7e94">impl</a> (std::string filepath, <a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer__options.html">writer_options</a> const &amp;options, rmm::mr::device_memory_resource *mr)</td></tr>
-<tr class="memdesc:a2e1420eaaec4c7adf562a22a4e6b7e94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with writer options.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer_1_1impl.html#a2e1420eaaec4c7adf562a22a4e6b7e94">More...</a><br /></td></tr>
-<tr class="separator:a2e1420eaaec4c7adf562a22a4e6b7e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1377485788447741747f5fedf5b961b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer_1_1impl.html#a1377485788447741747f5fedf5b961b8">impl</a> (std::unique_ptr&lt; <a class="el" href="classcudf_1_1io_1_1data__sink.html">data_sink</a> &gt; sink, <a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer__options.html">writer_options</a> const &amp;options, rmm::mr::device_memory_resource *mr)</td></tr>
+<tr class="memdesc:a1377485788447741747f5fedf5b961b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with writer options.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer_1_1impl.html#a1377485788447741747f5fedf5b961b8">More...</a><br /></td></tr>
+<tr class="separator:a1377485788447741747f5fedf5b961b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d140695c088c54f7d4bdecfceebf5b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer_1_1impl.html#a2d140695c088c54f7d4bdecfceebf5b0">write</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;<a class="el" href="classcudf_1_1experimental_1_1table.html">table</a>, const <a class="el" href="structcudf_1_1experimental_1_1io_1_1table__metadata.html">table_metadata</a> *<a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1metadata.html">metadata</a>, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
 <tr class="memdesc:a2d140695c088c54f7d4bdecfceebf5b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write an entire dataset to parquet format.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer_1_1impl.html#a2d140695c088c54f7d4bdecfceebf5b0">More...</a><br /></td></tr>
 <tr class="separator:a2d140695c088c54f7d4bdecfceebf5b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -91,8 +91,8 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation for parquet writer. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2e1420eaaec4c7adf562a22a4e6b7e94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e1420eaaec4c7adf562a22a4e6b7e94">&#9670;&nbsp;</a></span>impl()</h2>
+<a id="a1377485788447741747f5fedf5b961b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1377485788447741747f5fedf5b961b8">&#9670;&nbsp;</a></span>impl()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -103,8 +103,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">cudf::experimental::io::detail::parquet::writer::impl::impl </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>filepath</em>, </td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classcudf_1_1io_1_1data__sink.html">data_sink</a> &gt;&#160;</td>
+          <td class="paramname"><em>sink</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

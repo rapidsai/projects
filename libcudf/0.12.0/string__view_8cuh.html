@@ -81,18 +81,20 @@ $(function() {
 <div class="textblock"><code>#include &lt;cstddef&gt;</code><br />
 <code>#include &lt;cuda_runtime.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="types_8hpp_source.html">cudf/types.hpp</a>&gt;</code><br />
+<code>#include &lt;iterator&gt;</code><br />
 <code>#include &quot;./string_view.inl&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for string_view.cuh:</div>
 <div class="dyncontent">
 <div class="center"><img src="string__view_8cuh__incl.png" border="0" usemap="#string__view_8cuh" alt=""/></div>
 <map name="string__view_8cuh" id="string__view_8cuh">
-<area shape="rect" title="Class definition for cudf::string_view." alt="" coords="206,5,378,32"/>
+<area shape="rect" title="Class definition for cudf::string_view." alt="" coords="284,5,456,32"/>
 <area shape="rect" title=" " alt="" coords="35,155,127,181"/>
 <area shape="rect" title=" " alt="" coords="24,80,186,107"/>
 <area shape="rect" href="types_8hpp.html" title="Type declarations for libcudf." alt="" coords="210,80,373,107"/>
-<area shape="rect" title=" " alt="" coords="397,80,589,107"/>
-<area shape="rect" title=" " alt="" coords="614,80,706,107"/>
+<area shape="rect" title=" " alt="" coords="398,80,500,107"/>
+<area shape="rect" title=" " alt="" coords="525,80,717,107"/>
+<area shape="rect" title=" " alt="" coords="742,80,834,107"/>
 <area shape="rect" title=" " alt="" coords="246,155,338,181"/>
 </map>
 </div>
@@ -101,39 +103,51 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="string__view_8cuh__dep__incl.png" border="0" usemap="#string__view_8cuhdep" alt=""/></div>
 <map name="string__view_8cuhdep" id="string__view_8cuhdep">
-<area shape="rect" title="Class definition for cudf::string_view." alt="" coords="946,5,1118,32"/>
-<area shape="rect" href="src_2strings_2utilities_8hpp_source.html" title=" " alt="" coords="876,80,1028,107"/>
-<area shape="rect" href="traits_8hpp_source.html" title=" " alt="" coords="1052,80,1175,107"/>
+<area shape="rect" title="Class definition for cudf::string_view." alt="" coords="1082,5,1254,32"/>
+<area shape="rect" href="src_2strings_2utilities_8hpp_source.html" title=" " alt="" coords="1012,80,1164,107"/>
+<area shape="rect" href="traits_8hpp_source.html" title=" " alt="" coords="1188,80,1311,107"/>
 <area shape="rect" href="avro_2reader__impl_8cu.html" title="cuDF&#45;IO Avro reader class implementation" alt="" coords="5,379,168,405"/>
-<area shape="rect" href="orc_2reader__impl_8cu.html" title="cuDF&#45;IO ORC reader class implementation" alt="" coords="741,379,904,405"/>
-<area shape="rect" href="parquet_2reader__impl_8cu.html" title="cuDF&#45;IO Parquet reader class implementation" alt="" coords="240,379,403,405"/>
-<area shape="rect" href="column__buffer_8hpp.html" title="cuDF&#45;IO Column&#45;backing buffer utilities" alt="" coords="484,229,676,256"/>
-<area shape="rect" href="rolling__detail_8hpp_source.html" title=" " alt="" coords="907,229,1109,256"/>
-<area shape="rect" href="src_2utilities_2legacy_2device__atomics_8cuh.html" title="overloads for CUDA atomic operations" alt="" coords="1557,229,1760,256"/>
-<area shape="rect" href="src_2utilities_2legacy_2device__operators_8cuh.html" title="definition of the device operators" alt="" coords="1547,155,1770,181"/>
-<area shape="rect" href="column__factories_8hpp_source.html" title=" " alt="" coords="469,155,691,181"/>
-<area shape="rect" href="copy_8hpp_source.html" title=" " alt="" coords="3627,304,3730,331"/>
-<area shape="rect" href="include_2cudf_2detail_2utilities_2device__atomics_8cuh.html" title="overloads for CUDA atomic operations" alt="" coords="1331,229,1533,256"/>
-<area shape="rect" href="include_2cudf_2detail_2utilities_2device__operators_8cuh.html" title="definition of the device operators" alt="" coords="1077,155,1299,181"/>
-<area shape="rect" href="scalar_8hpp_source.html" title=" " alt="" coords="2799,155,2921,181"/>
-<area shape="rect" href="avro_2reader__impl_8hpp.html" title="cuDF&#45;IO Avro reader class implementation header" alt="" coords="87,304,259,331"/>
-<area shape="rect" href="csv_2reader__impl_8hpp.html" title="cuDF&#45;IO CSV reader class implementation header" alt="" coords="479,304,651,331"/>
-<area shape="rect" href="orc_2reader__impl_8hpp.html" title="cuDF&#45;IO ORC reader class implementation header" alt="" coords="675,304,847,331"/>
-<area shape="rect" href="parquet_2reader__impl_8hpp.html" title="cuDF&#45;IO Parquet reader class implementation header" alt="" coords="283,304,455,331"/>
-<area shape="rect" href="csv_2reader__impl_8cu.html" title="cuDF&#45;IO CSV reader class implementation" alt="" coords="484,379,647,405"/>
-<area shape="rect" href="legacy_2rolling__detail_8hpp_source.html" title=" " alt="" coords="1784,229,1987,256"/>
-<area shape="rect" href="detail_2unary_8hpp_source.html" title=" " alt="" coords="348,229,460,256"/>
-<area shape="rect" href="detail_2aggregation_8hpp_source.html" title=" " alt="" coords="1134,229,1306,256"/>
-<area shape="rect" href="copying_8hpp_source.html" title=" " alt="" coords="3561,229,3693,256"/>
-<area shape="rect" href="quantiles_8hpp_source.html" title=" " alt="" coords="3384,229,3536,256"/>
-<area shape="rect" href="scalar__factories_8hpp_source.html" title=" " alt="" coords="2011,229,2234,256"/>
-<area shape="rect" href="search_8hpp_source.html" title=" " alt="" coords="2259,229,2381,256"/>
-<area shape="rect" href="combine_8hpp_source.html" title=" " alt="" coords="2406,229,2538,256"/>
-<area shape="rect" href="convert__booleans_8hpp_source.html" title=" " alt="" coords="2562,229,2785,256"/>
-<area shape="rect" href="find_8hpp_source.html" title=" " alt="" coords="2809,229,2911,256"/>
-<area shape="rect" href="padding_8hpp_source.html" title=" " alt="" coords="2935,229,3067,256"/>
-<area shape="rect" href="strings_2replace_8hpp_source.html" title=" " alt="" coords="3091,229,3223,256"/>
-<area shape="rect" href="split_8hpp_source.html" title=" " alt="" coords="3248,229,3360,256"/>
+<area shape="rect" href="orc_2reader__impl_8cu.html" title="cuDF&#45;IO ORC reader class implementation" alt="" coords="463,379,625,405"/>
+<area shape="rect" href="parquet_2reader__impl_8cu.html" title="cuDF&#45;IO Parquet reader class implementation" alt="" coords="741,379,904,405"/>
+<area shape="rect" href="column__buffer_8hpp.html" title="cuDF&#45;IO Column&#45;backing buffer utilities" alt="" coords="444,229,636,256"/>
+<area shape="rect" href="rolling__detail_8hpp_source.html" title=" " alt="" coords="1572,304,1775,331"/>
+<area shape="rect" href="src_2utilities_2legacy_2device__atomics_8cuh.html" title="overloads for CUDA atomic operations" alt="" coords="948,229,1151,256"/>
+<area shape="rect" href="src_2utilities_2legacy_2device__operators_8cuh.html" title="definition of the device operators" alt="" coords="1138,155,1361,181"/>
+<area shape="rect" href="column__factories_8hpp_source.html" title=" " alt="" coords="601,155,823,181"/>
+<area shape="rect" href="detail_2aggregation_2aggregation_8hpp_source.html" title=" " alt="" coords="1458,155,1630,181"/>
+<area shape="rect" href="copy_8hpp_source.html" title=" " alt="" coords="2050,304,2153,331"/>
+<area shape="rect" href="include_2cudf_2detail_2utilities_2device__atomics_8cuh.html" title="overloads for CUDA atomic operations" alt="" coords="1811,304,2013,331"/>
+<area shape="rect" href="include_2cudf_2detail_2utilities_2device__operators_8cuh.html" title="definition of the device operators" alt="" coords="1710,229,1933,256"/>
+<area shape="rect" href="scalar_8hpp_source.html" title=" " alt="" coords="3315,155,3437,181"/>
+<area shape="rect" href="avro_2reader__impl_8hpp.html" title="cuDF&#45;IO Avro reader class implementation header" alt="" coords="62,304,234,331"/>
+<area shape="rect" href="csv_2reader__impl_8hpp.html" title="cuDF&#45;IO CSV reader class implementation header" alt="" coords="258,304,430,331"/>
+<area shape="rect" href="orc_2reader__impl_8hpp.html" title="cuDF&#45;IO ORC reader class implementation header" alt="" coords="454,304,626,331"/>
+<area shape="rect" href="parquet_2reader__impl_8hpp.html" title="cuDF&#45;IO Parquet reader class implementation header" alt="" coords="650,304,822,331"/>
+<area shape="rect" href="csv_2reader__impl_8cu.html" title="cuDF&#45;IO CSV reader class implementation" alt="" coords="263,379,425,405"/>
+<area shape="rect" href="legacy_2rolling__detail_8hpp_source.html" title=" " alt="" coords="1175,229,1377,256"/>
+<area shape="rect" href="detail_2unary_8hpp_source.html" title=" " alt="" coords="660,229,772,256"/>
+<area shape="rect" href="result__cache_8hpp_source.html" title=" " alt="" coords="1453,229,1635,256"/>
+<area shape="rect" href="binaryop_8hpp_source.html" title=" " alt="" coords="3838,229,3981,256"/>
+<area shape="rect" href="copying_8hpp_source.html" title=" " alt="" coords="2058,229,2190,256"/>
+<area shape="rect" href="include_2cudf_2detail_2iterator_8cuh.html" title="provides column input iterator with nulls replaced with a specified value" alt="" coords="4005,229,4147,256"/>
+<area shape="rect" href="reduction__functions_8hpp_source.html" title=" " alt="" coords="4171,229,4423,256"/>
+<area shape="rect" href="detail_2search_8hpp_source.html" title=" " alt="" coords="4448,229,4571,256"/>
+<area shape="rect" href="quantiles_8hpp_source.html" title=" " alt="" coords="4595,229,4747,256"/>
+<area shape="rect" href="reduction_8hpp_source.html" title=" " alt="" coords="4771,229,4923,256"/>
+<area shape="rect" href="scalar__factories_8hpp_source.html" title=" " alt="" coords="4947,229,5170,256"/>
+<area shape="rect" href="search_8hpp_source.html" title=" " alt="" coords="2215,229,2337,256"/>
+<area shape="rect" href="combine_8hpp_source.html" title=" " alt="" coords="2362,229,2494,256"/>
+<area shape="rect" href="convert__booleans_8hpp_source.html" title=" " alt="" coords="2518,229,2741,256"/>
+<area shape="rect" href="find_8hpp_source.html" title=" " alt="" coords="2765,229,2867,256"/>
+<area shape="rect" href="padding_8hpp_source.html" title=" " alt="" coords="2891,229,3023,256"/>
+<area shape="rect" href="strings_2replace_8hpp_source.html" title=" " alt="" coords="3047,229,3179,256"/>
+<area shape="rect" href="replace__re_8hpp_source.html" title=" " alt="" coords="3204,229,3367,256"/>
+<area shape="rect" href="partition_8hpp_source.html" title=" " alt="" coords="3391,229,3543,256"/>
+<area shape="rect" href="split_8hpp_source.html" title=" " alt="" coords="3567,229,3679,256"/>
+<area shape="rect" href="strip_8hpp_source.html" title=" " alt="" coords="3703,229,3815,256"/>
+<area shape="rect" href="compiled_2binary__ops_8hpp_source.html" title=" " alt="" coords="3828,304,3991,331"/>
+<area shape="rect" href="util_8hpp_source.html" title=" " alt="" coords="4015,304,4118,331"/>
+<area shape="rect" href="detail_2binaryop_8hpp_source.html" title=" " alt="" coords="3661,304,3803,331"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -149,7 +163,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacecudf"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html">cudf</a></td></tr>
-<tr class="memdesc:namespacecudf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse and Transform a piece of PTX code that contains the implementation of a <code>__device__</code> function into a CUDA <code>__device__</code> <code>__inline__</code> function. <br /></td></tr>
+<tr class="memdesc:namespacecudf"><td class="mdescLeft">&#160;</td><td class="mdescRight">cuDF interfaces <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>

@@ -82,14 +82,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a99a2d6e3700f45c116fdc5fec774c348"><td class="memItemLeft" align="right" valign="top"><a id="a99a2d6e3700f45c116fdc5fec774c348"></a>
 __host__ __device__&#160;</td><td class="memItemRight" valign="bottom"><b>tagged_element_relational_comparator</b> (<a class="el" href="classcudf_1_1column__device__view.html">column_device_view</a> lhs, <a class="el" href="classcudf_1_1column__device__view.html">column_device_view</a> rhs, <a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">null_order</a> null_precedence)</td></tr>
 <tr class="separator:a99a2d6e3700f45c116fdc5fec774c348"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d031338241c3562a3a124a8e7a2534e"><td class="memTemplParams" colspan="2"><a id="a6d031338241c3562a3a124a8e7a2534e"></a>
-template&lt;typename Element , std::enable_if_t&lt; cudf::is_relationally_comparable&lt; Element, Element &gt;()&gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:a6d031338241c3562a3a124a8e7a2534e"><td class="memTemplItemLeft" align="right" valign="top">__device__ <a class="el" href="namespacecudf_1_1experimental.html#a57a49aef820830d7830862408645b8c7">weak_ordering</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (index_type lhs_tagged_index, index_type rhs_tagged_index) const noexcept</td></tr>
-<tr class="separator:a6d031338241c3562a3a124a8e7a2534e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d031338241c3562a3a124a8e7a2534e"><td class="memTemplParams" colspan="2"><a id="a6d031338241c3562a3a124a8e7a2534e"></a>
-template&lt;typename Element , std::enable_if_t&lt; not cudf::is_relationally_comparable&lt; Element, Element &gt;()&gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:a6d031338241c3562a3a124a8e7a2534e"><td class="memTemplItemLeft" align="right" valign="top">__device__ <a class="el" href="namespacecudf_1_1experimental.html#a57a49aef820830d7830862408645b8c7">weak_ordering</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (index_type lhs_tagged_index, index_type rhs_tagged_index) const noexcept</td></tr>
-<tr class="separator:a6d031338241c3562a3a124a8e7a2534e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b5c41fa62dfe6b06d61c67ef37b926d"><td class="memItemLeft" align="right" valign="top"><a id="a9b5c41fa62dfe6b06d61c67ef37b926d"></a>
+__device__ <a class="el" href="namespacecudf_1_1experimental.html#a57a49aef820830d7830862408645b8c7">weak_ordering</a>&#160;</td><td class="memItemRight" valign="bottom"><b>compare</b> (index_type lhs_tagged_index, index_type rhs_tagged_index) const noexcept</td></tr>
+<tr class="separator:a9b5c41fa62dfe6b06d61c67ef37b926d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;bool has_nulls = true&gt;<br />

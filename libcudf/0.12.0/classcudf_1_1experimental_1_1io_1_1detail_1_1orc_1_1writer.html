@@ -88,9 +88,12 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a49259d4325cfb0cb577153166cae5f2c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#a49259d4325cfb0cb577153166cae5f2c">writer</a> (std::string filepath, <a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer__options.html">writer_options</a> const &amp;options, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
-<tr class="memdesc:a49259d4325cfb0cb577153166cae5f2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for output to a file.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#a49259d4325cfb0cb577153166cae5f2c">More...</a><br /></td></tr>
-<tr class="separator:a49259d4325cfb0cb577153166cae5f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88504bd5b1fd9e1b0953f0c8522d4159"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#a88504bd5b1fd9e1b0953f0c8522d4159">writer</a> (std::string const &amp;filepath, <a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer__options.html">writer_options</a> const &amp;options, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a88504bd5b1fd9e1b0953f0c8522d4159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for output to a file.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#a88504bd5b1fd9e1b0953f0c8522d4159">More...</a><br /></td></tr>
+<tr class="separator:a88504bd5b1fd9e1b0953f0c8522d4159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82455934c1ccc8b32d9deea2301e2b5a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#a82455934c1ccc8b32d9deea2301e2b5a">writer</a> (std::vector&lt; char &gt; *buffer, <a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer__options.html">writer_options</a> const &amp;options, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a82455934c1ccc8b32d9deea2301e2b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for output to host buffer.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#a82455934c1ccc8b32d9deea2301e2b5a">More...</a><br /></td></tr>
+<tr class="separator:a82455934c1ccc8b32d9deea2301e2b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5faf59fd6e00874015d93d8b39921ab7"><td class="memItemLeft" align="right" valign="top"><a id="a5faf59fd6e00874015d93d8b39921ab7"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#a5faf59fd6e00874015d93d8b39921ab7">~writer</a> ()</td></tr>
 <tr class="memdesc:a5faf59fd6e00874015d93d8b39921ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor explicitly-declared to avoid inlined in header. <br /></td></tr>
@@ -102,8 +105,8 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to write ORC dataset data into columns. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a49259d4325cfb0cb577153166cae5f2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49259d4325cfb0cb577153166cae5f2c">&#9670;&nbsp;</a></span>writer()</h2>
+<a id="a88504bd5b1fd9e1b0953f0c8522d4159"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88504bd5b1fd9e1b0953f0c8522d4159">&#9670;&nbsp;</a></span>writer() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -114,7 +117,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">cudf::experimental::io::detail::orc::writer::writer </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
           <td class="paramname"><em>filepath</em>, </td>
         </tr>
         <tr>
@@ -146,6 +149,58 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filepath</td><td>Path to the output file </td></tr>
+    <tr><td class="paramname">options</td><td>Settings for controlling writing behavior </td></tr>
+    <tr><td class="paramname">mr</td><td>Optional resource to use for device memory allocation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a82455934c1ccc8b32d9deea2301e2b5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82455934c1ccc8b32d9deea2301e2b5a">&#9670;&nbsp;</a></span>writer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cudf::experimental::io::detail::orc::writer::writer </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; char &gt; *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer__options.html">writer_options</a> const &amp;&#160;</td>
+          <td class="paramname"><em>options</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for output to host buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Pointer to the output vector </td></tr>
     <tr><td class="paramname">options</td><td>Settings for controlling writing behavior </td></tr>
     <tr><td class="paramname">mr</td><td>Optional resource to use for device memory allocation </td></tr>
   </table>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10 Minutes to cuDF and CuPy &mdash; cudf 0.12.0b+379.gcb089966a documentation</title>
+  <title>10 Minutes to cuDF and CuPy &mdash; cudf 0.12.0b+2007.g03d22b30c documentation</title>
   
 
   
@@ -407,6 +407,7 @@ div.rendered_html tbody tr:hover {
 
 <span class="kn">import</span> <span class="nn">cupy</span> <span class="k">as</span> <span class="nn">cp</span>
 <span class="kn">import</span> <span class="nn">cudf</span>
+
 </pre></div>
 </div>
 </div>
@@ -431,17 +432,8 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-CPU times: user 0 ns, sys: 0 ns, total: 0 ns
-Wall time: 576 µs
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/opt/conda/envs/rapids/lib/python3.7/site-packages/cudf/io/dlpack.py:82: UserWarning: WARNING: cuDF to_dlpack() produces column-major (Fortran order) output. If the output tensor needs to be row major, transpose the output of this function.
-  return cpp_dlpack.to_dlpack(gdf_cols)
+CPU times: user 94 µs, sys: 64 µs, total: 158 µs
+Wall time: 162 µs
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -506,12 +498,12 @@ array([[    0,   500,  1000],
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-CPU times: user 0 ns, sys: 0 ns, total: 0 ns
-Wall time: 252 µs
-CPU times: user 0 ns, sys: 0 ns, total: 0 ns
-Wall time: 202 µs
-CPU times: user 4 ms, sys: 0 ns, total: 4 ms
-Wall time: 569 µs
+CPU times: user 276 µs, sys: 175 µs, total: 451 µs
+Wall time: 460 µs
+CPU times: user 193 µs, sys: 122 µs, total: 315 µs
+Wall time: 322 µs
+CPU times: user 1.27 ms, sys: 0 ns, total: 1.27 ms
+Wall time: 713 µs
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -623,15 +615,6 @@ False
 <span class="n">reshaped_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/opt/conda/envs/rapids/lib/python3.7/site-packages/cudf/io/dlpack.py:35: UserWarning: WARNING: cuDF from_dlpack() assumes column-major (Fortran order) input. If the input tensor is row-major, transpose it before passing it to this function.
-  res, valids = cpp_dlpack.from_dlpack(pycapsule_obj)
-</pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
@@ -1327,15 +1310,9 @@ array([  19900,   59900,   99900,  139900,  179900,  219900,  259900,
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
       <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -1345,20 +1322,20 @@ array([  19900,   59900,   99900,  139900,  179900,  219900,  259900,
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>8.246217</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -1367,21 +1344,21 @@ array([  19900,   59900,   99900,  139900,  179900,  219900,  259900,
       <td>0.0</td>
       <td>0.000000</td>
       <td>0.0</td>
-      <td>12.235729</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>11.435023</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0000</td>
+      <td>10.801844</td>
+      <td>10.778168</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -1390,35 +1367,45 @@ array([  19900,   59900,   99900,  139900,  179900,  219900,  259900,
       <td>0.0</td>
       <td>0.000000</td>
       <td>0.0</td>
+      <td>2.798217</td>
       <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
       <td>0.000000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>-1.0624</td>
+      <td>0.000000</td>
+      <td>0.013275</td>
       <td>0.000000</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
-      <td>0.000000</td>
+      <td>8.592336</td>
       <td>0.0</td>
       <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
     <tr>
       <th>4</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>9.780155</td>
       <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
@@ -1426,17 +1413,13 @@ array([  19900,   59900,   99900,  139900,  179900,  219900,  259900,
       <td>0.0</td>
       <td>0.000000</td>
       <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0000</td>
-      <td>8.390756</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>9.769928</td>
-      <td>0.0</td>
       <td>0.000000</td>
+      <td>10.016119</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.0</td>
       <td>0.0</td>
     </tr>
@@ -1460,7 +1443,7 @@ array([  19900,   59900,   99900,  139900,  179900,  219900,  259900,
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;cupyx.scipy.sparse.csc.csc_matrix at 0x7f32f0abada0&gt;
+&lt;cupyx.scipy.sparse.csc.csc_matrix at 0x7fbe29d542e8&gt;
 </pre></div></div>
 </div>
 <p>From here, we could continue our workflow with a CuPy sparse matrix.</p>

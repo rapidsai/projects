@@ -123,6 +123,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0235feb2c44269ea4a022615f92069cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1string__scalar.html#a0235feb2c44269ea4a022615f92069cd">string_scalar</a> (std::string const &amp;string, bool <a class="el" href="classcudf_1_1scalar.html#a46999dab108e346408946d0935ab0a84">is_valid</a>=true, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a0235feb2c44269ea4a022615f92069cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new string scalar object.  <a href="classcudf_1_1string__scalar.html#a0235feb2c44269ea4a022615f92069cd">More...</a><br /></td></tr>
 <tr class="separator:a0235feb2c44269ea4a022615f92069cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a603580869a241b73f4fd8348e22488d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1string__scalar.html#a603580869a241b73f4fd8348e22488d2">string_scalar</a> (<a class="el" href="classcudf_1_1string__view.html">value_type</a> const &amp;source, bool <a class="el" href="classcudf_1_1scalar.html#a46999dab108e346408946d0935ab0a84">is_valid</a>=true, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a603580869a241b73f4fd8348e22488d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new string scalar object from <a class="el" href="classcudf_1_1string__view.html" title="A non-owning, immutable view of device data that is a variable length char array representing a UTF-8...">string_view</a> Note that this function copies the data pointed by <a class="el" href="classcudf_1_1string__view.html" title="A non-owning, immutable view of device data that is a variable length char array representing a UTF-8...">string_view</a>.  <a href="classcudf_1_1string__scalar.html#a603580869a241b73f4fd8348e22488d2">More...</a><br /></td></tr>
+<tr class="separator:a603580869a241b73f4fd8348e22488d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab49cd06a8e4a5e14ef6c7b89e350b033"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1string__scalar.html#ab49cd06a8e4a5e14ef6c7b89e350b033">string_scalar</a> (rmm::device_scalar&lt; <a class="el" href="classcudf_1_1string__view.html">value_type</a> &gt; &amp;<a class="el" href="classcudf_1_1string__scalar.html#a024d1db09717ca301a3bb4dbcc3e49b0">data</a>, bool <a class="el" href="classcudf_1_1scalar.html#a46999dab108e346408946d0935ab0a84">is_valid</a>=true, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:ab49cd06a8e4a5e14ef6c7b89e350b033"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new string scalar object from <a class="el" href="classcudf_1_1string__view.html" title="A non-owning, immutable view of device data that is a variable length char array representing a UTF-8...">string_view</a> in device memory Note that this function copies the data pointed by <a class="el" href="classcudf_1_1string__view.html" title="A non-owning, immutable view of device data that is a variable length char array representing a UTF-8...">string_view</a>.  <a href="classcudf_1_1string__scalar.html#ab49cd06a8e4a5e14ef6c7b89e350b033">More...</a><br /></td></tr>
+<tr class="separator:ab49cd06a8e4a5e14ef6c7b89e350b033"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a7ae61bbbf85127da2c2d2837cd2042"><td class="memItemLeft" align="right" valign="top"><a id="a6a7ae61bbbf85127da2c2d2837cd2042"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1string__scalar.html#a6a7ae61bbbf85127da2c2d2837cd2042">operator std::string</a> () const</td></tr>
+<tr class="memdesc:a6a7ae61bbbf85127da2c2d2837cd2042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implicit conversion operator to get the value of the scalar in a host std::string. <br /></td></tr>
+<tr class="separator:a6a7ae61bbbf85127da2c2d2837cd2042"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50a6e54a81384dc15729004b319475d2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1string__scalar.html#a50a6e54a81384dc15729004b319475d2">to_string</a> (<a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0) const</td></tr>
 <tr class="memdesc:a50a6e54a81384dc15729004b319475d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the scalar in a host std::string.  <a href="classcudf_1_1string__scalar.html#a50a6e54a81384dc15729004b319475d2">More...</a><br /></td></tr>
 <tr class="separator:a50a6e54a81384dc15729004b319475d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,7 +202,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>An owning class to represent a string in device memory. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0235feb2c44269ea4a022615f92069cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0235feb2c44269ea4a022615f92069cd">&#9670;&nbsp;</a></span>string_scalar()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0235feb2c44269ea4a022615f92069cd">&#9670;&nbsp;</a></span>string_scalar() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,6 +251,124 @@ Additional Inherited Members</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>The value of the string </td></tr>
+    <tr><td class="paramname">is_valid</td><td>Whether the value held by the scalar is valid </td></tr>
+    <tr><td class="paramname">stream</td><td>The CUDA stream to do the allocation in </td></tr>
+    <tr><td class="paramname">mr</td><td>The memory resource to use for allocation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a603580869a241b73f4fd8348e22488d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a603580869a241b73f4fd8348e22488d2">&#9670;&nbsp;</a></span>string_scalar() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cudf::string_scalar::string_scalar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1string__view.html">value_type</a> const &amp;&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_valid</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new string scalar object from <a class="el" href="classcudf_1_1string__view.html" title="A non-owning, immutable view of device data that is a variable length char array representing a UTF-8...">string_view</a> Note that this function copies the data pointed by <a class="el" href="classcudf_1_1string__view.html" title="A non-owning, immutable view of device data that is a variable length char array representing a UTF-8...">string_view</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td><a class="el" href="classcudf_1_1string__view.html" title="A non-owning, immutable view of device data that is a variable length char array representing a UTF-8...">string_view</a> pointing string value to copy </td></tr>
+    <tr><td class="paramname">is_valid</td><td>Whether the value held by the scalar is valid </td></tr>
+    <tr><td class="paramname">stream</td><td>The CUDA stream to do the allocation in </td></tr>
+    <tr><td class="paramname">mr</td><td>The memory resource to use for allocation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab49cd06a8e4a5e14ef6c7b89e350b033"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab49cd06a8e4a5e14ef6c7b89e350b033">&#9670;&nbsp;</a></span>string_scalar() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cudf::string_scalar::string_scalar </td>
+          <td>(</td>
+          <td class="paramtype">rmm::device_scalar&lt; <a class="el" href="classcudf_1_1string__view.html">value_type</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_valid</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new string scalar object from <a class="el" href="classcudf_1_1string__view.html" title="A non-owning, immutable view of device data that is a variable length char array representing a UTF-8...">string_view</a> in device memory Note that this function copies the data pointed by <a class="el" href="classcudf_1_1string__view.html" title="A non-owning, immutable view of device data that is a variable length char array representing a UTF-8...">string_view</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>device_scalar <a class="el" href="classcudf_1_1string__view.html" title="A non-owning, immutable view of device data that is a variable length char array representing a UTF-8...">string_view</a> pointing string value to copy </td></tr>
     <tr><td class="paramname">is_valid</td><td>Whether the value held by the scalar is valid </td></tr>
     <tr><td class="paramname">stream</td><td>The CUDA stream to do the allocation in </td></tr>
     <tr><td class="paramname">mr</td><td>The memory resource to use for allocation </td></tr>

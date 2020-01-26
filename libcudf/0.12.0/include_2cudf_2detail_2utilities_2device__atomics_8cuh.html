@@ -85,40 +85,48 @@ $(function() {
 <code>#include &lt;cudf/utilities/error.hpp&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
 <code>#include &lt;<a class="el" href="include_2cudf_2detail_2utilities_2device__operators_8cuh.html">cudf/detail/utilities/device_operators.cuh</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="wrapper__types_8hpp_source.html">cudf/utilities/legacy/wrapper_types.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for include/cudf/detail/utilities/device_atomics.cuh:</div>
 <div class="dyncontent">
 <div class="center"><img src="include_2cudf_2detail_2utilities_2device__atomics_8cuh__incl.png" border="0" usemap="#device__atomics_8cuh" alt=""/></div>
 <map name="device__atomics_8cuh" id="device__atomics_8cuh">
-<area shape="rect" title="overloads for CUDA atomic operations" alt="" coords="1287,5,1490,32"/>
-<area shape="rect" href="types_8hpp.html" title="Type declarations for libcudf." alt="" coords="731,423,894,449"/>
-<area shape="rect" href="bool_8hpp_source.html" title=" " alt="" coords="1191,341,1434,367"/>
-<area shape="rect" title=" " alt="" coords="1752,423,1884,449"/>
-<area shape="rect" href="timestamps_8hpp.html" title="Concrete type definitions for int32_t and int64_t timestamps in." alt="" coords="763,341,1065,367"/>
-<area shape="rect" href="traits_8hpp_source.html" title=" " alt="" coords="929,169,1201,196"/>
-<area shape="rect" href="error_8hpp_source.html" title=" " alt="" coords="1975,341,2237,367"/>
-<area shape="rect" href="include_2cudf_2detail_2utilities_2device__operators_8cuh.html" title="definition of the device operators" alt="" coords="1434,80,1666,121"/>
-<area shape="rect" title=" " alt="" coords="637,497,729,524"/>
-<area shape="rect" title=" " alt="" coords="895,497,987,524"/>
-<area shape="rect" title=" " alt="" coords="918,423,1081,449"/>
-<area shape="rect" title=" " alt="" coords="1369,423,1561,449"/>
-<area shape="rect" title=" " alt="" coords="1262,423,1345,449"/>
-<area shape="rect" title=" " alt="" coords="1155,423,1238,449"/>
-<area shape="rect" href="chrono_8hpp_source.html" title=" " alt="" coords="51,423,323,449"/>
-<area shape="rect" title=" " alt="" coords="212,497,344,524"/>
-<area shape="rect" title=" " alt="" coords="5,497,188,524"/>
-<area shape="rect" href="type__dispatcher_8hpp.html" title="Defines the mapping between cudf::type_id runtime type information." alt="" coords="1140,244,1352,285"/>
-<area shape="rect" href="string__view_8cuh.html" title="Class definition for cudf::string_view." alt="" coords="425,333,637,375"/>
-<area shape="rect" title=" " alt="" coords="1909,423,1991,449"/>
-<area shape="rect" title=" " alt="" coords="2514,423,2597,449"/>
-<area shape="rect" title=" " alt="" coords="2015,423,2218,449"/>
-<area shape="rect" title=" " alt="" coords="2242,423,2354,449"/>
-<area shape="rect" title=" " alt="" coords="2378,423,2490,449"/>
-<area shape="rect" title=" " alt="" coords="398,423,590,449"/>
-<area shape="rect" title=" " alt="" coords="615,423,707,449"/>
-<area shape="rect" href="wrapper__types_8hpp.html" title="Wrapper structs for for the non&#45;fundamental gdf_dtype types." alt="" coords="1458,333,1690,375"/>
-<area shape="rect" href="types_8h_source.html" title=" " alt="" coords="1585,423,1728,449"/>
-<area shape="rect" title=" " alt="" coords="1605,497,1708,524"/>
+<area shape="rect" title="overloads for CUDA atomic operations" alt="" coords="307,5,510,32"/>
+<area shape="rect" href="types_8hpp.html" title="Type declarations for libcudf." alt="" coords="995,512,1158,539"/>
+<area shape="rect" href="bool_8hpp_source.html" title=" " alt="" coords="475,430,718,457"/>
+<area shape="rect" title=" " alt="" coords="5,512,137,539"/>
+<area shape="rect" href="timestamps_8hpp.html" title="Concrete type definitions for int32_t and int64_t timestamps in." alt="" coords="1163,430,1465,457"/>
+<area shape="rect" href="traits_8hpp_source.html" title=" " alt="" coords="1817,251,2089,278"/>
+<area shape="rect" href="error_8hpp_source.html" title=" " alt="" coords="2048,430,2311,457"/>
+<area shape="rect" href="include_2cudf_2detail_2utilities_2device__operators_8cuh.html" title="definition of the device operators" alt="" coords="498,80,730,121"/>
+<area shape="rect" href="wrapper__types_8hpp.html" title="Wrapper structs for for the non&#45;fundamental gdf_dtype types." alt="" coords="219,423,451,464"/>
+<area shape="rect" title=" " alt="" coords="1244,587,1336,613"/>
+<area shape="rect" title=" " alt="" coords="877,587,969,613"/>
+<area shape="rect" title=" " alt="" coords="809,512,971,539"/>
+<area shape="rect" title=" " alt="" coords="329,512,521,539"/>
+<area shape="rect" title=" " alt="" coords="545,512,627,539"/>
+<area shape="rect" title=" " alt="" coords="651,512,734,539"/>
+<area shape="rect" title=" " alt="" coords="1216,512,1348,539"/>
+<area shape="rect" href="type__dispatcher_8hpp.html" title="Defines the mapping between cudf::type_id runtime type information." alt="" coords="1673,333,1885,375"/>
+<area shape="rect" href="string__view_8cuh.html" title="Class definition for cudf::string_view." alt="" coords="1489,423,1701,464"/>
+<area shape="rect" title=" " alt="" coords="1883,512,1966,539"/>
+<area shape="rect" title=" " alt="" coords="1990,512,2073,539"/>
+<area shape="rect" title=" " alt="" coords="2097,512,2299,539"/>
+<area shape="rect" title=" " alt="" coords="2323,512,2435,539"/>
+<area shape="rect" title=" " alt="" coords="2459,512,2571,539"/>
+<area shape="rect" title=" " alt="" coords="1540,512,1643,539"/>
+<area shape="rect" title=" " alt="" coords="1667,512,1859,539"/>
+<area shape="rect" title=" " alt="" coords="1372,512,1464,539"/>
+<area shape="rect" href="scalar_8hpp_source.html" title=" " alt="" coords="606,169,849,196"/>
+<area shape="rect" title=" " alt="" coords="702,251,934,278"/>
+<area shape="rect" title=" " alt="" coords="958,251,1190,278"/>
+<area shape="rect" title=" " alt="" coords="1214,251,1497,278"/>
+<area shape="rect" title=" " alt="" coords="1520,244,1743,285"/>
+<area shape="rect" title=" " alt="" coords="321,251,403,278"/>
+<area shape="rect" title=" " alt="" coords="479,251,571,278"/>
+<area shape="rect" title=" " alt="" coords="595,251,678,278"/>
+<area shape="rect" href="types_8h_source.html" title=" " alt="" coords="161,512,304,539"/>
+<area shape="rect" title=" " alt="" coords="181,587,284,613"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -174,7 +182,7 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacecudf"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html">cudf</a></td></tr>
-<tr class="memdesc:namespacecudf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse and Transform a piece of PTX code that contains the implementation of a <code>__device__</code> function into a CUDA <code>__device__</code> <code>__inline__</code> function. <br /></td></tr>
+<tr class="memdesc:namespacecudf"><td class="mdescLeft">&#160;</td><td class="mdescRight">cuDF interfaces <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -237,7 +245,7 @@ template&lt;typename BinaryOp &gt; </td></tr>
 <div class="textblock"><p>overloads for CUDA atomic operations </p>
 <p>------------------------------------------------------------------------&mdash;*</p>
 <p>Provides the overloads for all of possible cudf's data types, where cudf's data types are, int8_t, int16_t, int32_t, int64_t, float, double, cudf::detail::timestamp_D, cudf::detail::timestamp_s, cudf::detail::timestamp_ms cudf::detail::timestamp_us, cudf::detail::timestamp_ns and <a class="el" href="structcudf_1_1experimental_1_1bool8.html">cudf::experimental::bool8</a> where CUDA atomic operations are, <code>atomicAdd</code>, <code>atomicMin</code>, <code>atomicMax</code>, <code>atomicCAS</code>. <code>atomicAnd</code>, <code>atomicOr</code>, <code>atomicXor</code> are also supported for integer data types. Also provides <code><a class="el" href="namespacecudf.html#ac63f5b61fc23af128d77caf9ed921309" title="compute atomic binary operation reads the old located at the address in global or shared memory,...">cudf::genericAtomicOperation</a></code> which performs atomic operation </p>
-<h2><a class="anchor" id="autotoc_md311"></a>
+<h2><a class="anchor" id="autotoc_md321"></a>
 with the given binary operator.</h2>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="ae5d56a957e435f0b5d4a3d7abc53b5a7"></a>
@@ -278,7 +286,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md312"></a>
+<h2><a class="anchor" id="autotoc_md322"></a>
 @returns The old value at &lt;tt&gt;address&lt;/tt&gt;</h2>
 
 </div>
@@ -320,7 +328,7 @@ template&lt;typename T , typename std::enable_if_t&lt; std::is_integral&lt; T &g
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md316"></a>
+<h2><a class="anchor" id="autotoc_md326"></a>
 @returns The old value at &lt;tt&gt;address&lt;/tt&gt;</h2>
 
 </div>
@@ -369,7 +377,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md315"></a>
+<h2><a class="anchor" id="autotoc_md325"></a>
 @returns The old value at &lt;tt&gt;address&lt;/tt&gt;</h2>
 
 </div>
@@ -411,7 +419,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md314"></a>
+<h2><a class="anchor" id="autotoc_md324"></a>
 @returns The old value at &lt;tt&gt;address&lt;/tt&gt;</h2>
 
 </div>
@@ -453,7 +461,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md313"></a>
+<h2><a class="anchor" id="autotoc_md323"></a>
 @returns The old value at &lt;tt&gt;address&lt;/tt&gt;</h2>
 
 </div>
@@ -495,7 +503,7 @@ template&lt;typename T , typename std::enable_if_t&lt; std::is_integral&lt; T &g
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md317"></a>
+<h2><a class="anchor" id="autotoc_md327"></a>
 @returns The old value at &lt;tt&gt;address&lt;/tt&gt;</h2>
 
 </div>
@@ -537,7 +545,7 @@ template&lt;typename T , typename std::enable_if_t&lt; std::is_integral&lt; T &g
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md318"></a>
+<h2><a class="anchor" id="autotoc_md328"></a>
 @returns The old value at &lt;tt&gt;address&lt;/tt&gt;</h2>
 
 </div>

@@ -73,17 +73,33 @@ $(function() {
 <div class="title">cudf::jit::ptx_parser Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Parse and transform a piece of PTX code that contains the implementation of a <code>__device__</code> function into a CUDA <code>__device__</code> <code>__inline__</code> function.  
+ <a href="classcudf_1_1jit_1_1ptx__parser.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="parser_8h_source.html">parser.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af33c008582e1fc88a589e94b04148a50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1jit_1_1ptx__parser.html#af33c008582e1fc88a589e94b04148a50">ptx_parser</a> (const std::string &amp;ptx_, const std::string &amp;function_name_, const std::string &amp;output_arg_type_, const std::set&lt; int &gt; &amp;pointer_arg_list_)</td></tr>
-<tr class="memdesc:af33c008582e1fc88a589e94b04148a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">C'tor of the <code><a class="el" href="classcudf_1_1jit_1_1ptx__parser.html">ptx_parser</a></code> class.  <a href="classcudf_1_1jit_1_1ptx__parser.html#af33c008582e1fc88a589e94b04148a50">More...</a><br /></td></tr>
+<tr class="memdesc:af33c008582e1fc88a589e94b04148a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">C'tor of the <code><a class="el" href="classcudf_1_1jit_1_1ptx__parser.html" title="Parse and transform a piece of PTX code that contains the implementation of a __device__ function int...">ptx_parser</a></code> class.  <a href="classcudf_1_1jit_1_1ptx__parser.html#af33c008582e1fc88a589e94b04148a50">More...</a><br /></td></tr>
 <tr class="separator:af33c008582e1fc88a589e94b04148a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a484051a79a2b285b147893cfd651e5b9"><td class="memItemLeft" align="right" valign="top"><a id="a484051a79a2b285b147893cfd651e5b9"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>parse</b> ()</td></tr>
 <tr class="separator:a484051a79a2b285b147893cfd651e5b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Parse and transform a piece of PTX code that contains the implementation of a <code>__device__</code> function into a CUDA <code>__device__</code> <code>__inline__</code> function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">&lt;tt&gt;src&lt;/tt&gt;</td><td>The input PTX code. </td></tr>
+    <tr><td class="paramname">&lt;tt&gt;function_name&lt;/tt&gt;</td><td>The User defined function that the output CUDA function will have. </td></tr>
+    <tr><td class="paramname">&lt;tt&gt;output_arg_type&lt;/tt&gt;</td><td>The output type of the PTX function, e.g. "int", "int64_t" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The output CUDA <code>__device__</code> <code>__inline__</code> function </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af33c008582e1fc88a589e94b04148a50"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af33c008582e1fc88a589e94b04148a50">&#9670;&nbsp;</a></span>ptx_parser()</h2>
 
@@ -122,7 +138,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>parse</b> ()</
       </table>
 </div><div class="memdoc">
 
-<p>C'tor of the <code><a class="el" href="classcudf_1_1jit_1_1ptx__parser.html">ptx_parser</a></code> class. </p>
+<p>C'tor of the <code><a class="el" href="classcudf_1_1jit_1_1ptx__parser.html" title="Parse and transform a piece of PTX code that contains the implementation of a __device__ function int...">ptx_parser</a></code> class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ptx_</td><td>The input PTX code that contains the function whose CUDA is to be generated. </td></tr>

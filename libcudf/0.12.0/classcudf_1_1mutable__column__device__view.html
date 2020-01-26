@@ -67,6 +67,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classcudf_1_1mutable__column__device__view-members.html">List of all members</a>  </div>
@@ -97,6 +98,15 @@ Collaboration diagram for cudf::mutable_column_device_view:</div>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a51d7e8489feafb9b6404f5d8450f45a6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1mutable__column__device__view.html#a51d7e8489feafb9b6404f5d8450f45a6">count_it</a> = thrust::counting_iterator&lt; size_type &gt;</td></tr>
+<tr class="separator:a51d7e8489feafb9b6404f5d8450f45a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada1a909c373e79630140ff31e8b1f09e"><td class="memTemplParams" colspan="2"><a id="ada1a909c373e79630140ff31e8b1f09e"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ada1a909c373e79630140ff31e8b1f09e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>iterator</b> = thrust::transform_iterator&lt; <a class="el" href="structcudf_1_1detail_1_1mutable__value__accessor.html">detail::mutable_value_accessor</a>&lt; T &gt;, <a class="el" href="classcudf_1_1mutable__column__device__view.html#a51d7e8489feafb9b6404f5d8450f45a6">count_it</a> &gt;</td></tr>
+<tr class="separator:ada1a909c373e79630140ff31e8b1f09e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a95cfdb3d5f4f2ff64a850689e5513058"><td class="memItemLeft" align="right" valign="top"><a id="a95cfdb3d5f4f2ff64a850689e5513058"></a>
@@ -129,6 +139,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a57505207f50ab896be53a9c7586c1900"><td class="memItemLeft" align="right" valign="top">__host__ __device__ bitmask_type *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1mutable__column__device__view.html#a57505207f50ab896be53a9c7586c1900">null_mask</a> () const noexcept</td></tr>
 <tr class="memdesc:a57505207f50ab896be53a9c7586c1900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns raw pointer to the underlying bitmask allocation.  <a href="classcudf_1_1mutable__column__device__view.html#a57505207f50ab896be53a9c7586c1900">More...</a><br /></td></tr>
 <tr class="separator:a57505207f50ab896be53a9c7586c1900"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63584495de8ebdd8557621d52396c76b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a63584495de8ebdd8557621d52396c76b"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="namespacecudf.html#aaa937abead085ea9420b15c6473f08a7">is_fixed_width</a>&lt; T &gt;), iterator&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcudf_1_1mutable__column__device__view.html#a63584495de8ebdd8557621d52396c76b">begin</a> ()</td></tr>
+<tr class="memdesc:a63584495de8ebdd8557621d52396c76b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return first element (accounting for offset) after underlying data is casted to the specified type.  <a href="classcudf_1_1mutable__column__device__view.html#a63584495de8ebdd8557621d52396c76b">More...</a><br /></td></tr>
+<tr class="separator:a63584495de8ebdd8557621d52396c76b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f1e01b6b7cf8b4d52807a1542c1440f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a8f1e01b6b7cf8b4d52807a1542c1440f"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="namespacecudf.html#aaa937abead085ea9420b15c6473f08a7">is_fixed_width</a>&lt; T &gt;), iterator&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcudf_1_1mutable__column__device__view.html#a8f1e01b6b7cf8b4d52807a1542c1440f">end</a> ()</td></tr>
+<tr class="memdesc:a8f1e01b6b7cf8b4d52807a1542c1440f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return one past the last element after underlying data is casted to the specified type.  <a href="classcudf_1_1mutable__column__device__view.html#a8f1e01b6b7cf8b4d52807a1542c1440f">More...</a><br /></td></tr>
+<tr class="separator:a8f1e01b6b7cf8b4d52807a1542c1440f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06b9c961052066a811225f7f48640e5e"><td class="memItemLeft" align="right" valign="top">__device__ <a class="el" href="classcudf_1_1mutable__column__device__view.html">mutable_column_device_view</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1mutable__column__device__view.html#a06b9c961052066a811225f7f48640e5e">child</a> (size_type child_index) const noexcept</td></tr>
 <tr class="memdesc:a06b9c961052066a811225f7f48640e5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified child.  <a href="classcudf_1_1mutable__column__device__view.html#a06b9c961052066a811225f7f48640e5e">More...</a><br /></td></tr>
 <tr class="separator:a06b9c961052066a811225f7f48640e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -236,9 +254,27 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A mutable, non-owning view of device data as a column of elements. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md203"></a>
+<h2><a class="anchor" id="autotoc_md202"></a>
 that is trivially copyable and usable in CUDA device code.</h2>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a51d7e8489feafb9b6404f5d8450f45a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51d7e8489feafb9b6404f5d8450f45a6">&#9670;&nbsp;</a></span>count_it</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classcudf_1_1mutable__column__device__view.html#a51d7e8489feafb9b6404f5d8450f45a6">cudf::mutable_column_device_view::count_it</a> =  thrust::counting_iterator&lt;size_type&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>------------------------------------------------------------------------&mdash;* </p>
+<h2><a class="anchor" id="autotoc_md238"></a>
+@brief Iterator for navigating this column</h2>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a51edace56545b6c243b647ad70890974"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51edace56545b6c243b647ad70890974">&#9670;&nbsp;</a></span>mutable_column_device_view()</h2>
 
@@ -279,12 +315,49 @@ that is trivially copyable and usable in CUDA device code.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md230"></a>
+<h2><a class="anchor" id="autotoc_md232"></a>
 @param d_ptr Device memory pointer on which to base any child pointers.</h2>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a63584495de8ebdd8557621d52396c76b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63584495de8ebdd8557621d52396c76b">&#9670;&nbsp;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if_t&lt;<a class="el" href="namespacecudf.html#aaa937abead085ea9420b15c6473f08a7">is_fixed_width</a>&lt;T&gt;), iterator&lt;T&gt; &gt; cudf::mutable_column_device_view::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return first element (accounting for offset) after underlying data is casted to the specified type. </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The desired type </td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="anchor" id="autotoc_md239"></a>
+@return T* Pointer to the first element after casting</h2>
+
+</div>
+</div>
 <a id="a06b9c961052066a811225f7f48640e5e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a06b9c961052066a811225f7f48640e5e">&#9670;&nbsp;</a></span>child()</h2>
 
@@ -316,7 +389,7 @@ that is trivially copyable and usable in CUDA device code.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md236"></a>
+<h2><a class="anchor" id="autotoc_md241"></a>
 @return column_view The requested child &lt;tt&gt;column_view&lt;/tt&gt;</h2>
 
 </div>
@@ -368,7 +441,7 @@ that is trivially copyable and usable in CUDA device code.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <code>unique_ptr</code> to a <code><a class="el" href="classcudf_1_1mutable__column__device__view.html" title="A mutable, non-owning view of device data as a column of elements.">mutable_column_device_view</a></code> that makes the </dd></dl>
-<h2><a class="anchor" id="autotoc_md231"></a>
+<h2><a class="anchor" id="autotoc_md233"></a>
 data from &lt;tt&gt;source_view&lt;/tt&gt; available in device memory.</h2>
 
 </div>
@@ -407,7 +480,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md233"></a>
+<h2><a class="anchor" id="autotoc_md235"></a>
 @return T* Typed pointer to underlying data, including the offset</h2>
 
 </div>
@@ -446,8 +519,45 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md234"></a>
+<h2><a class="anchor" id="autotoc_md236"></a>
 @param element_index Position of the desired element</h2>
+
+</div>
+</div>
+<a id="a8f1e01b6b7cf8b4d52807a1542c1440f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f1e01b6b7cf8b4d52807a1542c1440f">&#9670;&nbsp;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if_t&lt;<a class="el" href="namespacecudf.html#aaa937abead085ea9420b15c6473f08a7">is_fixed_width</a>&lt;T&gt;), iterator&lt;T&gt; &gt; cudf::mutable_column_device_view::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return one past the last element after underlying data is casted to the specified type. </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The desired type </td></tr>
+  </table>
+  </dd>
+</dl>
+<h2><a class="anchor" id="autotoc_md240"></a>
+@return T const* Pointer to one past the last element after casting</h2>
 
 </div>
 </div>
@@ -477,7 +587,7 @@ template&lt;typename T &gt; </div>
 
 <p>Return the size in bytes of the amount of memory needed to hold a device view of the specified column and it's children. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md240"></a>
+<h2><a class="anchor" id="autotoc_md245"></a>
 @param source_view The &lt;tt&gt;column_view&lt;/tt&gt; to use for this calculation.</h2>
 
 </div>
@@ -517,7 +627,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md232"></a>
+<h2><a class="anchor" id="autotoc_md234"></a>
 @return T* Typed pointer to underlying data</h2>
 
 </div>
@@ -547,7 +657,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
 
 <p>Returns raw pointer to the underlying bitmask allocation. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>This function does <em>not</em> account for the <code><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#aa8f046548c2db522f00cfe801b59a120" title="Returns the index of the first element relative to the base memory.">offset()</a></code>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md235"></a>
+<h2><a class="anchor" id="autotoc_md237"></a>
 @note If &lt;tt&gt;null_count() == 0&lt;/tt&gt;, this may return &lt;tt&gt;nullptr&lt;/tt&gt;.</h2>
 
 </div>
@@ -594,7 +704,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md239"></a>
+<h2><a class="anchor" id="autotoc_md244"></a>
 @param new_element The new bitmask element</h2>
 
 </div>
@@ -627,7 +737,7 @@ It should be rare to need to access the <code>head&lt;T&gt;()</code> allocation 
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>This operation requires a global atomic operation. Therefore, it is not reccomended to use this function in performance critical regions. When possible, it is more efficient to compute and update an entire word at once using <code>set_mask_word</code>.</dd>
 <dd>
 It is undefined behavior to call this function if <code><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#a7044712e12d75fc976e93babe2747558" title="Indicates whether the column can contain null elements, i.e., if it has an allocated bitmask.">nullable()</a> == false</code>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md238"></a>
+<h2><a class="anchor" id="autotoc_md243"></a>
 @param element_index The index of the element to update</h2>
 
 </div>
@@ -660,7 +770,7 @@ It is undefined behavior to call this function if <code><a class="el" href="clas
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>This operation requires a global atomic operation. Therefore, it is not reccomended to use this function in performance critical regions. When possible, it is more efficient to compute and update an entire word at once using <code>set_mask_word</code>.</dd>
 <dd>
 It is undefined behavior to call this function if <code><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#a7044712e12d75fc976e93babe2747558" title="Indicates whether the column can contain null elements, i.e., if it has an allocated bitmask.">nullable()</a> == false</code>.</dd></dl>
-<h2><a class="anchor" id="autotoc_md237"></a>
+<h2><a class="anchor" id="autotoc_md242"></a>
 @param element_index The index of the element to update</h2>
 
 </div>

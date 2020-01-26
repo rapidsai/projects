@@ -87,7 +87,7 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;cudf/strings/strings_column_view.hpp&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="strings__column__view_8hpp.html">cudf/strings/strings_column_view.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;cudf/column/column.hpp&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> </div>
@@ -103,7 +103,7 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    name=2     </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;std::unique_ptr&lt;cudf::column&gt; sort( strings_column_view strings,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;std::unique_ptr&lt;cudf::column&gt; <a class="code" href="namespacecudf_1_1experimental.html#aa524c9b8616c57e3079161fa33f405c7">sort</a>( strings_column_view strings,</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                    sort_type stype,</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                    <a class="code" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">cudf::order</a> <a class="code" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">order</a>=<a class="code" href="namespacecudf.html#a750f02016b046079f7062d334890b4fca83ec681a20197326c163ea3b39ef7c32">cudf::order::ASCENDING</a>,</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                    <a class="code" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">cudf::null_order</a> <a class="code" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">null_order</a>=<a class="code" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31a3525317285c6126ce3b62a8df8c00b07">cudf::null_order::BEFORE</a>,</div>
@@ -116,10 +116,12 @@ $(function() {
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;} <span class="comment">// namespace strings</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astrings__column__view_8hpp_html"><div class="ttname"><a href="strings__column__view_8hpp.html">strings_column_view.hpp</a></div><div class="ttdoc">Class definition for cudf::strings_column_view.</div></div>
 <div class="ttc" id="anamespacecudf_html_a058e6d6e8a21583ce0e85ee73e5abb31a3525317285c6126ce3b62a8df8c00b07"><div class="ttname"><a href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31a3525317285c6126ce3b62a8df8c00b07">cudf::null_order::BEFORE</a></div><div class="ttdoc">NULL values ordered before all other values.</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_aa524c9b8616c57e3079161fa33f405c7"><div class="ttname"><a href="namespacecudf_1_1experimental.html#aa524c9b8616c57e3079161fa33f405c7">cudf::experimental::sort</a></div><div class="ttdeci">std::unique_ptr&lt; table &gt; sort(table_view input, std::vector&lt; order &gt; const &amp;column_order, std::vector&lt; null_order &gt; const &amp;null_precedence, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Performs a lexicographic sort of the rows of a table.</div><div class="ttdef"><b>Definition:</b> sort.cu:115</div></div>
 <div class="ttc" id="anamespacecudf_html_a750f02016b046079f7062d334890b4fca83ec681a20197326c163ea3b39ef7c32"><div class="ttname"><a href="namespacecudf.html#a750f02016b046079f7062d334890b4fca83ec681a20197326c163ea3b39ef7c32">cudf::order::ASCENDING</a></div><div class="ttdoc">Elements ordered from small to large.</div></div>
 <div class="ttc" id="anamespacecudf_html_a750f02016b046079f7062d334890b4fc"><div class="ttname"><a href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">cudf::order</a></div><div class="ttdeci">order</div><div class="ttdef"><b>Definition:</b> types.hpp:96</div></div>
-<div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:23</div></div>
+<div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">cuDF interfaces</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:23</div></div>
 <div class="ttc" id="anamespacecudf_html_a058e6d6e8a21583ce0e85ee73e5abb31"><div class="ttname"><a href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">cudf::null_order</a></div><div class="ttdeci">null_order</div><div class="ttdef"><b>Definition:</b> types.hpp:104</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

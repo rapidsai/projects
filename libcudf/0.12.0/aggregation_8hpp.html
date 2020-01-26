@@ -68,6 +68,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">aggregation.hpp File Reference</div>  </div>
@@ -108,11 +109,18 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacecudf"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html">cudf</a></td></tr>
-<tr class="memdesc:namespacecudf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse and Transform a piece of PTX code that contains the implementation of a <code>__device__</code> function into a CUDA <code>__device__</code> <code>__inline__</code> function. <br /></td></tr>
+<tr class="memdesc:namespacecudf"><td class="mdescLeft">&#160;</td><td class="mdescRight">cuDF interfaces <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacecudf_1_1experimental"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html">cudf::experimental</a></td></tr>
 <tr class="memdesc:namespacecudf_1_1experimental"><td class="mdescLeft">&#160;</td><td class="mdescRight">In-development features. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:af3c5acc541194664ced90465dfd164f3"><td class="memItemLeft" align="right" valign="top"><a id="af3c5acc541194664ced90465dfd164f3"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>udf_type</b> : bool { <b>CUDA</b>, 
+<b>PTX</b>
+ }</td></tr>
+<tr class="separator:af3c5acc541194664ced90465dfd164f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -136,6 +144,12 @@ std::unique_ptr&lt; aggregation &gt;&#160;</td><td class="memItemRight" valign="
 std::unique_ptr&lt; aggregation &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a65ba9d5acd317b74a27bd53e4eb300e3">cudf::experimental::make_mean_aggregation</a> ()</td></tr>
 <tr class="memdesc:a65ba9d5acd317b74a27bd53e4eb300e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a MEAN aggregation. <br /></td></tr>
 <tr class="separator:a65ba9d5acd317b74a27bd53e4eb300e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6378a7fb9a679f0eff3ac828d23d7aa4"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; aggregation &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a6378a7fb9a679f0eff3ac828d23d7aa4">cudf::experimental::make_variance_aggregation</a> (size_type ddof)</td></tr>
+<tr class="memdesc:a6378a7fb9a679f0eff3ac828d23d7aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a VARIANCE aggregation.  <a href="namespacecudf_1_1experimental.html#a6378a7fb9a679f0eff3ac828d23d7aa4">More...</a><br /></td></tr>
+<tr class="separator:a6378a7fb9a679f0eff3ac828d23d7aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0f85485889732efb9510c2d2811bd08"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; aggregation &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#aa0f85485889732efb9510c2d2811bd08">cudf::experimental::make_std_aggregation</a> (size_type ddof)</td></tr>
+<tr class="memdesc:aa0f85485889732efb9510c2d2811bd08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a STD aggregation.  <a href="namespacecudf_1_1experimental.html#aa0f85485889732efb9510c2d2811bd08">More...</a><br /></td></tr>
+<tr class="separator:aa0f85485889732efb9510c2d2811bd08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91939f7355190ba94e08ceb3fd802041"><td class="memItemLeft" align="right" valign="top"><a id="a91939f7355190ba94e08ceb3fd802041"></a>
 std::unique_ptr&lt; aggregation &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a91939f7355190ba94e08ceb3fd802041">cudf::experimental::make_median_aggregation</a> ()</td></tr>
 <tr class="memdesc:a91939f7355190ba94e08ceb3fd802041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a MEDIAN aggregation. <br /></td></tr>
@@ -143,6 +157,15 @@ std::unique_ptr&lt; aggregation &gt;&#160;</td><td class="memItemRight" valign="
 <tr class="memitem:afdf5751f91dd4da5c76b0b54fc2dc9ee"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; aggregation &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#afdf5751f91dd4da5c76b0b54fc2dc9ee">cudf::experimental::make_quantile_aggregation</a> (std::vector&lt; double &gt; const &amp;q, interpolation i)</td></tr>
 <tr class="memdesc:afdf5751f91dd4da5c76b0b54fc2dc9ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a QUANTILE aggregation.  <a href="namespacecudf_1_1experimental.html#afdf5751f91dd4da5c76b0b54fc2dc9ee">More...</a><br /></td></tr>
 <tr class="separator:afdf5751f91dd4da5c76b0b54fc2dc9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7994a4f7c22fb477a6f51ba5d2ffd0c1"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; aggregation &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a7994a4f7c22fb477a6f51ba5d2ffd0c1">cudf::experimental::make_argmax_aggregation</a> ()</td></tr>
+<tr class="memdesc:a7994a4f7c22fb477a6f51ba5d2ffd0c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a ARGMAX aggregation.  <a href="namespacecudf_1_1experimental.html#a7994a4f7c22fb477a6f51ba5d2ffd0c1">More...</a><br /></td></tr>
+<tr class="separator:a7994a4f7c22fb477a6f51ba5d2ffd0c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af87231ab8430ae7b296c3a0110096b26"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; aggregation &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#af87231ab8430ae7b296c3a0110096b26">cudf::experimental::make_argmin_aggregation</a> ()</td></tr>
+<tr class="memdesc:af87231ab8430ae7b296c3a0110096b26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a ARGMIN aggregation.  <a href="namespacecudf_1_1experimental.html#af87231ab8430ae7b296c3a0110096b26">More...</a><br /></td></tr>
+<tr class="separator:af87231ab8430ae7b296c3a0110096b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03b177a3721692f887f0ec3386bc6ace"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; aggregation &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a03b177a3721692f887f0ec3386bc6ace">cudf::experimental::make_udf_aggregation</a> (udf_type type, std::string const &amp;user_defined_aggregator, data_type output_type)</td></tr>
+<tr class="memdesc:a03b177a3721692f887f0ec3386bc6ace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a UDF aggregation.  <a href="namespacecudf_1_1experimental.html#a03b177a3721692f887f0ec3386bc6ace">More...</a><br /></td></tr>
+<tr class="separator:a03b177a3721692f887f0ec3386bc6ace"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Representation for specifying desired aggregations from aggregation-based APIs, e.g., groupby, reductions, rolling, etc. </p>

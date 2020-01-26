@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_4010bc87a0115613477f89ebf589f29d.html">cudf</a></li><li class="navelem"><a class="el" href="dir_eeea53a8fae276279952df3b2a0336fd.html">legacy</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_4010bc87a0115613477f89ebf589f29d.html">cudf</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2019, NVIDIA CORPORATION.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2020, NVIDIA CORPORATION.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * you may not use this file except in compliance with the License.</span></div>
@@ -88,18 +88,47 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;cudf/cudf.h&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<a class="code" href="structgdf__column__.html">gdf_column</a> <a class="code" href="namespacecudf.html#a992265bb26358a252b18da882b7f6df5">stack</a>(<span class="keyword">const</span> <a class="code" href="structcudf_1_1table.html">cudf::table</a> &amp;input);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}; <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;cudf/column/column.hpp&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="table__view_8hpp.html">cudf/table/table_view.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="types_8hpp.html">cudf/types.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>experimental {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;std::unique_ptr&lt;column&gt;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<a class="code" href="namespacecudf_1_1experimental.html#a4408bbab28c58c51404f2495fbff725d">interleave_columns</a>(table_view <span class="keyword">const</span>&amp; input,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                   rmm::mr::device_memory_resource *mr =</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                     rmm::mr::get_default_resource());</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> * @brief Repeats the rows from `input` table `count` times to form a new table.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> * </span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> * `output.num_columns() == input.num_columns()`</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"> * `output.num_rows() == input.num_rows() * count`</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> * input  = [[8, 4, 7], [5, 2, 3]]</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"> * count  = 2</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"> * return = [[8, 4, 7, 8, 4, 7], [5, 2, 3, 5, 2, 3]]</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"> * @param[in] input Table containing rows to be repeated.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"> * @param[in] count Number of times to tile &quot;rows&quot;. Must be non-negative.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"> * @return The table containing the tiled &quot;rows&quot;.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;std::unique_ptr&lt;table&gt;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;tile(table_view <span class="keyword">const</span>&amp; input,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;     size_type count,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;     rmm::mr::device_memory_resource *mr =</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;       rmm::mr::get_default_resource());</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;} <span class="comment">// namespace experimental</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;} <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructgdf__column___html"><div class="ttname"><a href="structgdf__column__.html">gdf_column_</a></div><div class="ttdoc">The C representation of a column in CUDF. This is the main unit of operation.</div><div class="ttdef"><b>Definition:</b> types.h:138</div></div>
-<div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">Parse and Transform a piece of PTX code that contains the implementation of a __device__ function int...</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:23</div></div>
-<div class="ttc" id="astructcudf_1_1table_html"><div class="ttname"><a href="structcudf_1_1table.html">cudf::table</a></div><div class="ttdoc">A wrapper for a set of gdf_columns of equal number of rows.</div><div class="ttdef"><b>Definition:</b> legacy/table.hpp:36</div></div>
-<div class="ttc" id="anamespacecudf_html_a992265bb26358a252b18da882b7f6df5"><div class="ttname"><a href="namespacecudf.html#a992265bb26358a252b18da882b7f6df5">cudf::stack</a></div><div class="ttdeci">gdf_column stack(const cudf::table &amp;values)</div><div class="ttdoc">Stack rows of a Table into a single column.</div><div class="ttdef"><b>Definition:</b> stack.cu:105</div></div>
+<div class="ttc" id="atable__view_8hpp_html"><div class="ttname"><a href="table__view_8hpp.html">table_view.hpp</a></div><div class="ttdoc">A (mutable_)table_view is a set of (mutable_)column_views of equal size.</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_a4408bbab28c58c51404f2495fbff725d"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a4408bbab28c58c51404f2495fbff725d">cudf::experimental::interleave_columns</a></div><div class="ttdeci">std::unique_ptr&lt; column &gt; interleave_columns(table_view const &amp;input, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Interleave columns of a table into a single column.</div><div class="ttdef"><b>Definition:</b> interleave_columns.cu:98</div></div>
+<div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div><div class="ttdoc">Type declarations for libcudf.</div></div>
+<div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">cuDF interfaces</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:23</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['interpolation_2368',['interpolation',['../namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8',1,'cudf::interpolation()'],['../namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151',1,'cudf::experimental::interpolation()']]],
-  ['io_5ftype_2369',['io_type',['../namespacecudf_1_1experimental_1_1io.html#a3f77dec4b25aa464af5e0c7fef427b5f',1,'cudf::experimental::io']]]
+  ['distance_5ftype_2590',['distance_type',['../classNVText.html#a44215a8d5d167d45e5e6ccf7f25927b3',1,'NVText']]],
+  ['duplicate_5fkeep_5foption_2591',['duplicate_keep_option',['../namespacecudf.html#a69091647ea1f9c9d4cdcf7c8876bea3a',1,'cudf::duplicate_keep_option()'],['../namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cd',1,'cudf::experimental::duplicate_keep_option()']]]
 ];

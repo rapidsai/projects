@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.12.0b+379.gcb089966a documentation</title>
+  <title>API Reference &mdash; cudf 0.12.0b+2007.g03d22b30c documentation</title>
   
 
   
@@ -231,7 +231,7 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
 <span class="gp">&gt;&gt;&gt; </span>  <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">),</span>
-<span class="gp">&gt;&gt;&gt; </span>  <span class="s1">&#39;datetimes&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">t0</span><span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="n">x</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span>  <span class="s1">&#39;datetimes&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">t0</span><span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="n">x</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
 <span class="go">    id                datetimes</span>
@@ -320,47 +320,53 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.at" title="cudf.core.dataframe.DataFrame.at"><code class="xref py py-obj docutils literal notranslate"><span class="pre">at</span></code></a>(self)</p></td>
 <td><p>Alias for <code class="docutils literal notranslate"><span class="pre">DataFrame.loc</span></code>; provided for compatibility with Pandas.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.copy" title="cudf.core.dataframe.DataFrame.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>(self[, deep])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.clean_renderable_dataframe" title="cudf.core.dataframe.DataFrame.clean_renderable_dataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clean_renderable_dataframe</span></code></a>(self, output)</p></td>
+<td><p>the below is permissible: null in a datetime to_pandas() becomes NaT, which is then replaced with null in this processing step.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.copy" title="cudf.core.dataframe.DataFrame.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>(self[, deep])</p></td>
 <td><p>Returns a copy of this dataframe</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.cov" title="cudf.core.dataframe.DataFrame.cov"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cov</span></code></a>(self, \*\*kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.cov" title="cudf.core.dataframe.DataFrame.cov"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cov</span></code></a>(self, \*\*kwargs)</p></td>
 <td><p>Compute the covariance matrix of a DataFrame.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.describe" title="cudf.core.dataframe.DataFrame.describe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code></a>(self[, percentiles, include, exclude])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.describe" title="cudf.core.dataframe.DataFrame.describe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code></a>(self[, percentiles, include, exclude])</p></td>
 <td><p>Compute summary statistics of a DataFrame’s columns.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.drop" title="cudf.core.dataframe.DataFrame.drop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop</span></code></a>(self[, labels, axis, columns, errors, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.drop" title="cudf.core.dataframe.DataFrame.drop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop</span></code></a>(self[, labels, axis, columns, errors, …])</p></td>
 <td><p>Drop column(s)</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.drop_column" title="cudf.core.dataframe.DataFrame.drop_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop_column</span></code></a>(self, name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.drop_column" title="cudf.core.dataframe.DataFrame.drop_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop_column</span></code></a>(self, name)</p></td>
 <td><p>Drop a column by <em>name</em></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.drop_duplicates" title="cudf.core.dataframe.DataFrame.drop_duplicates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop_duplicates</span></code></a>(self[, subset, keep, inplace])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.drop_duplicates" title="cudf.core.dataframe.DataFrame.drop_duplicates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop_duplicates</span></code></a>(self[, subset, keep, inplace])</p></td>
 <td><p>Return DataFrame with duplicate rows removed, optionally only considering certain subset of columns.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.dropna" title="cudf.core.dataframe.DataFrame.dropna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dropna</span></code></a>(self[, axis, how, subset, thresh])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.dropna" title="cudf.core.dataframe.DataFrame.dropna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dropna</span></code></a>(self[, axis, how, subset, thresh])</p></td>
 <td><p>Drops rows (or columns) containing nulls from a Column.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.fillna" title="cudf.core.dataframe.DataFrame.fillna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fillna</span></code></a>(self, value[, method, axis, inplace, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.fillna" title="cudf.core.dataframe.DataFrame.fillna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fillna</span></code></a>(self, value[, method, axis, inplace, …])</p></td>
 <td><p>Fill null values with <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.from_arrow" title="cudf.core.dataframe.DataFrame.from_arrow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_arrow</span></code></a>(table)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.from_arrow" title="cudf.core.dataframe.DataFrame.from_arrow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_arrow</span></code></a>(table)</p></td>
 <td><p>Convert from a PyArrow Table.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.from_gpu_matrix" title="cudf.core.dataframe.DataFrame.from_gpu_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_gpu_matrix</span></code></a>(data[, index, columns, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.from_gpu_matrix" title="cudf.core.dataframe.DataFrame.from_gpu_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_gpu_matrix</span></code></a>(data[, index, columns, …])</p></td>
 <td><p>Convert from a numba gpu ndarray.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.from_pandas" title="cudf.core.dataframe.DataFrame.from_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_pandas</span></code></a>(dataframe[, nan_as_null])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.from_pandas" title="cudf.core.dataframe.DataFrame.from_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_pandas</span></code></a>(dataframe[, nan_as_null])</p></td>
 <td><p>Convert from a Pandas DataFrame.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.from_records" title="cudf.core.dataframe.DataFrame.from_records"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_records</span></code></a>(data[, index, columns, nan_as_null])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.from_records" title="cudf.core.dataframe.DataFrame.from_records"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_records</span></code></a>(data[, index, columns, nan_as_null])</p></td>
 <td><p>Convert from a numpy recarray or structured array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.get_renderable_dataframe" title="cudf.core.dataframe.DataFrame.get_renderable_dataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_renderable_dataframe</span></code></a>(self)</p></td>
+<td><p>takes rows and columns from pandas settings or estimation from size.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.groupby" title="cudf.core.dataframe.DataFrame.groupby"><code class="xref py py-obj docutils literal notranslate"><span class="pre">groupby</span></code></a>(self[, by, sort, as_index, method, …])</p></td>
 <td><p>Groupby</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.hash_columns" title="cudf.core.dataframe.DataFrame.hash_columns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hash_columns</span></code></a>(self[, columns])</p></td>
-<td><p>Hash the given <em>columns</em> and return a new Series</p></td>
+<td><p>Hash the given <em>columns</em> and return a new device array</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.head" title="cudf.core.dataframe.DataFrame.head"><code class="xref py py-obj docutils literal notranslate"><span class="pre">head</span></code></a>(self[, n])</p></td>
 <td><p>Returns the first n rows as a new DataFrame</p></td>
@@ -368,7 +374,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.iat" title="cudf.core.dataframe.DataFrame.iat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iat</span></code></a>(self)</p></td>
 <td><p>Alias for <code class="docutils literal notranslate"><span class="pre">DataFrame.iloc</span></code>; provided for compatibility with Pandas.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.insert" title="cudf.core.dataframe.DataFrame.insert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">insert</span></code></a>(self, loc, column, value[, forceindex])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.insert" title="cudf.core.dataframe.DataFrame.insert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">insert</span></code></a>(self, loc, name, value)</p></td>
 <td><p>Add a column to DataFrame at the index specified by loc.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.isna" title="cudf.core.dataframe.DataFrame.isna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isna</span></code></a>(self)</p></td>
@@ -507,35 +513,23 @@
 </table>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 74%" />
-<col style="width: 26%" />
+<col style="width: 62%" />
+<col style="width: 38%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>acos</strong></p></td>
+<tr class="row-odd"><td><p><strong>add</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>add</strong></p></td>
+<tr class="row-even"><td><p><strong>all</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>all</strong></p></td>
+<tr class="row-odd"><td><p><strong>any</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>any</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>argsort</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>asin</strong></p></td>
+<tr class="row-even"><td><p><strong>argsort</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>astype</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>atan</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>cos</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>count</strong></p></td>
@@ -559,97 +553,79 @@
 <tr class="row-even"><td><p><strong>equals</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>exp</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>floordiv</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>get_renderable_dataframe</strong></p></td>
+<tr class="row-odd"><td><p><strong>floordiv</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>kurtosis</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>log</strong></p></td>
+<tr class="row-odd"><td><p><strong>mask</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>mask</strong></p></td>
+<tr class="row-even"><td><p><strong>max</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>max</strong></p></td>
+<tr class="row-odd"><td><p><strong>memory_usage</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>memory_usage</strong></p></td>
+<tr class="row-even"><td><p><strong>min</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>min</strong></p></td>
+<tr class="row-odd"><td><p><strong>mod</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>mod</strong></p></td>
+<tr class="row-even"><td><p><strong>mul</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>mul</strong></p></td>
+<tr class="row-odd"><td><p><strong>pow</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>pow</strong></p></td>
+<tr class="row-even"><td><p><strong>product</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>product</strong></p></td>
+<tr class="row-odd"><td><p><strong>radd</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>radd</strong></p></td>
+<tr class="row-even"><td><p><strong>repeat</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>repeat</strong></p></td>
+<tr class="row-odd"><td><p><strong>reset_index</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>reset_index</strong></p></td>
+<tr class="row-even"><td><p><strong>rfloordiv</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>rfloordiv</strong></p></td>
+<tr class="row-odd"><td><p><strong>rmod</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>rmod</strong></p></td>
+<tr class="row-even"><td><p><strong>rmul</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>rmul</strong></p></td>
+<tr class="row-odd"><td><p><strong>rpow</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>rpow</strong></p></td>
+<tr class="row-even"><td><p><strong>rsub</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>rsub</strong></p></td>
+<tr class="row-odd"><td><p><strong>rtruediv</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>rtruediv</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>serialize</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>sin</strong></p></td>
+<tr class="row-even"><td><p><strong>serialize</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>skew</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>sqrt</strong></p></td>
+<tr class="row-even"><td><p><strong>std</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>std</strong></p></td>
+<tr class="row-odd"><td><p><strong>sub</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>sub</strong></p></td>
+<tr class="row-even"><td><p><strong>sum</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>sum</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>take</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>tan</strong></p></td>
+<tr class="row-odd"><td><p><strong>take</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>truediv</strong></p></td>
@@ -887,6 +863,17 @@ If None is specified, all columns are used.</p>
 <dt id="cudf.core.dataframe.DataFrame.at">
 <code class="sig-name descname">at</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.dataframe.DataFrame.at" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alias for <code class="docutils literal notranslate"><span class="pre">DataFrame.loc</span></code>; provided for compatibility with Pandas.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cudf.core.dataframe.DataFrame.clean_renderable_dataframe">
+<code class="sig-name descname">clean_renderable_dataframe</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">output</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.dataframe.DataFrame.clean_renderable_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>the below is permissible: null in a datetime to_pandas() becomes
+NaT, which is then replaced with null in this processing step.
+It is not possible to have a mix of nulls and NaTs in datetime
+columns because we do not support NaT - pyarrow as_column
+preprocessing converts NaT input values from numpy or pandas into
+null.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1243,6 +1230,15 @@ If None, the default index is used.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="cudf.core.dataframe.DataFrame.get_renderable_dataframe">
+<code class="sig-name descname">get_renderable_dataframe</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.dataframe.DataFrame.get_renderable_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>takes rows and columns from pandas settings or estimation from size.
+pulls quadrents based off of some known parameters then style for
+multiindex as well producing an efficient representative string
+for printing with the dataframe.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="cudf.core.dataframe.DataFrame.groupby">
 <code class="sig-name descname">groupby</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">by=None</em>, <em class="sig-param">sort=True</em>, <em class="sig-param">as_index=True</em>, <em class="sig-param">method='hash'</em>, <em class="sig-param">level=None</em>, <em class="sig-param">group_keys=True</em>, <em class="sig-param">dropna=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.dataframe.DataFrame.groupby" title="Permalink to this definition">¶</a></dt>
 <dd><p>Groupby</p>
@@ -1280,7 +1276,7 @@ rows for all categories even if they are no corresponding values.)</p>
 <dl class="method">
 <dt id="cudf.core.dataframe.DataFrame.hash_columns">
 <code class="sig-name descname">hash_columns</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">columns=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.dataframe.DataFrame.hash_columns" title="Permalink to this definition">¶</a></dt>
-<dd><p>Hash the given <em>columns</em> and return a new Series</p>
+<dd><p>Hash the given <em>columns</em> and return a new device array</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -1392,14 +1388,14 @@ all columns in the frame are used.</p>
 
 <dl class="method">
 <dt id="cudf.core.dataframe.DataFrame.insert">
-<code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">loc</em>, <em class="sig-param">column</em>, <em class="sig-param">value</em>, <em class="sig-param">forceindex=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.dataframe.DataFrame.insert" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">loc</em>, <em class="sig-param">name</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.dataframe.DataFrame.insert" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a column to DataFrame at the index specified by loc.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>loc</strong><span class="classifier">int</span></dt><dd><p>location to insert by index, cannot be greater then num columns + 1</p>
 </dd>
-<dt><strong>column</strong><span class="classifier">number or string</span></dt><dd><p>name or label of column to be inserted</p>
+<dt><strong>name</strong><span class="classifier">number or string</span></dt><dd><p>name or label of column to be inserted</p>
 </dd>
 <dt><strong>value</strong><span class="classifier">Series or array-like</span></dt><dd></dd>
 </dl>
@@ -2915,8 +2911,7 @@ default: ‘value’</p>
 <dt><a class="reference internal" href="#cudf.core.series.Series.dtype" title="cudf.core.series.Series.dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype</span></code></a></dt><dd><p>dtype of the Series</p>
 </dd>
 <dt><strong>empty</strong></dt><dd></dd>
-<dt><a class="reference internal" href="#cudf.core.series.Series.has_null_mask" title="cudf.core.series.Series.has_null_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_null_mask</span></code></a></dt><dd><p>A boolean indicating whether a null-mask is needed</p>
-</dd>
+<dt><strong>has_nulls</strong></dt><dd></dd>
 <dt><a class="reference internal" href="#cudf.core.series.Series.iloc" title="cudf.core.series.Series.iloc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iloc</span></code></a></dt><dd><p>Select values by position.</p>
 </dd>
 <dt><a class="reference internal" href="#cudf.core.series.Series.index" title="cudf.core.series.Series.index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code></a></dt><dd><p>The index object</p>
@@ -2932,6 +2927,8 @@ default: ‘value’</p>
 <dt><a class="reference internal" href="#cudf.core.series.Series.ndim" title="cudf.core.series.Series.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a></dt><dd><p>Dimension of the data.</p>
 </dd>
 <dt><a class="reference internal" href="#cudf.core.series.Series.null_count" title="cudf.core.series.Series.null_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">null_count</span></code></a></dt><dd><p>Number of null values</p>
+</dd>
+<dt><a class="reference internal" href="#cudf.core.series.Series.nullable" title="cudf.core.series.Series.nullable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nullable</span></code></a></dt><dd><p>A boolean indicating whether a null-mask is needed</p>
 </dd>
 <dt><a class="reference internal" href="#cudf.core.series.Series.nullmask" title="cudf.core.series.Series.nullmask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nullmask</span></code></a></dt><dd><p>The gpu buffer for the null-mask</p>
 </dd>
@@ -2955,7 +2952,7 @@ default: ‘value’</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.abs" title="cudf.core.series.Series.abs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">abs</span></code></a>(self)</p></td>
 <td><p>Absolute value of each element of the series.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.add" title="cudf.core.series.Series.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.add" title="cudf.core.series.Series.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Addition of series and other, element-wise (binary operator add).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.append" title="cudf.core.series.Series.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(self, other[, ignore_index])</p></td>
@@ -3012,7 +3009,7 @@ default: ‘value’</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.dropna" title="cudf.core.series.Series.dropna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dropna</span></code></a>(self)</p></td>
 <td><p>Return a Series with null values removed.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.eq" title="cudf.core.series.Series.eq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eq</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.eq" title="cudf.core.series.Series.eq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eq</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Equal to of series and other, element-wise (binary operator eq).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.factorize" title="cudf.core.series.Series.factorize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">factorize</span></code></a>(self[, na_sentinel])</p></td>
@@ -3030,7 +3027,7 @@ default: ‘value’</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.floor" title="cudf.core.series.Series.floor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floor</span></code></a>(self)</p></td>
 <td><p>Rounds each value downward to the largest integral value not greater than the original.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.floordiv" title="cudf.core.series.Series.floordiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floordiv</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.floordiv" title="cudf.core.series.Series.floordiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floordiv</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Integer division of series and other, element-wise (binary operator floordiv).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.from_categorical" title="cudf.core.series.Series.from_categorical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_categorical</span></code></a>(categorical[, codes])</p></td>
@@ -3039,10 +3036,10 @@ default: ‘value’</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.from_masked_array" title="cudf.core.series.Series.from_masked_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_masked_array</span></code></a>(data, mask[, null_count])</p></td>
 <td><p>Create a Series with null-mask.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.ge" title="cudf.core.series.Series.ge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ge</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.ge" title="cudf.core.series.Series.ge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ge</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Greater than or equal to of series and other, element-wise (binary operator ge).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.gt" title="cudf.core.series.Series.gt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gt</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.gt" title="cudf.core.series.Series.gt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gt</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Greater than of series and other, element-wise (binary operator gt).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.hash_encode" title="cudf.core.series.Series.hash_encode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hash_encode</span></code></a>(self, stop[, use_name])</p></td>
@@ -3063,10 +3060,10 @@ default: ‘value’</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.label_encoding" title="cudf.core.series.Series.label_encoding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_encoding</span></code></a>(self, cats[, dtype, na_sentinel])</p></td>
 <td><p>Perform label encoding</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.le" title="cudf.core.series.Series.le"><code class="xref py py-obj docutils literal notranslate"><span class="pre">le</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.le" title="cudf.core.series.Series.le"><code class="xref py py-obj docutils literal notranslate"><span class="pre">le</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Less than or equal to of series and other, element-wise (binary operator le).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.lt" title="cudf.core.series.Series.lt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lt</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.lt" title="cudf.core.series.Series.lt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lt</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Less than of series and other, element-wise (binary operator lt).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.max" title="cudf.core.series.Series.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>(self[, axis, skipna, dtype])</p></td>
@@ -3081,16 +3078,16 @@ default: ‘value’</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.min" title="cudf.core.series.Series.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>(self[, axis, skipna, dtype])</p></td>
 <td><p>Compute the min of the series</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.mod" title="cudf.core.series.Series.mod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mod</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.mod" title="cudf.core.series.Series.mod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mod</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Modulo of series and other, element-wise (binary operator mod).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.mul" title="cudf.core.series.Series.mul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mul</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.mul" title="cudf.core.series.Series.mul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mul</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Multiplication of series and other, element-wise (binary operator mul).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.nans_to_nulls" title="cudf.core.series.Series.nans_to_nulls"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nans_to_nulls</span></code></a>(self)</p></td>
 <td><p>Convert nans (if any) to nulls</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.ne" title="cudf.core.series.Series.ne"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ne</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.ne" title="cudf.core.series.Series.ne"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ne</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Not equal to of series and other, element-wise (binary operator ne).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.nlargest" title="cudf.core.series.Series.nlargest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nlargest</span></code></a>(self[, n, keep])</p></td>
@@ -3111,7 +3108,7 @@ default: ‘value’</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.one_hot_encoding" title="cudf.core.series.Series.one_hot_encoding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">one_hot_encoding</span></code></a>(self, cats[, dtype])</p></td>
 <td><p>Perform one-hot-encoding</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.pow" title="cudf.core.series.Series.pow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pow</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.pow" title="cudf.core.series.Series.pow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pow</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Exponential power of series and other, element-wise (binary operator pow).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.prod" title="cudf.core.series.Series.prod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prod</span></code></a>(self[, axis, skipna, dtype])</p></td>
@@ -3123,7 +3120,7 @@ default: ‘value’</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.quantile" title="cudf.core.series.Series.quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantile</span></code></a>(self[, q, interpolation, exact, …])</p></td>
 <td><p>Return values at the given quantile.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.radd" title="cudf.core.series.Series.radd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radd</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.radd" title="cudf.core.series.Series.radd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radd</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Addition of series and other, element-wise (binary operator radd).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.reindex" title="cudf.core.series.Series.reindex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reindex</span></code></a>(self[, index, copy])</p></td>
@@ -3141,13 +3138,13 @@ default: ‘value’</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.reverse" title="cudf.core.series.Series.reverse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reverse</span></code></a>(self)</p></td>
 <td><p>Reverse the Series</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.rfloordiv" title="cudf.core.series.Series.rfloordiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfloordiv</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.rfloordiv" title="cudf.core.series.Series.rfloordiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfloordiv</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Integer division of series and other, element-wise (binary operator rfloordiv).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.rmod" title="cudf.core.series.Series.rmod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rmod</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.rmod" title="cudf.core.series.Series.rmod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rmod</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Modulo of series and other, element-wise (binary operator rmod).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.rmul" title="cudf.core.series.Series.rmul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rmul</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.rmul" title="cudf.core.series.Series.rmul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rmul</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Multiplication of series and other, element-wise (binary operator rmul).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.rolling" title="cudf.core.series.Series.rolling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rolling</span></code></a>(self, window[, min_periods, center, …])</p></td>
@@ -3156,13 +3153,13 @@ default: ‘value’</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.round" title="cudf.core.series.Series.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>(self[, decimals])</p></td>
 <td><p>Round a Series to a configurable number of decimal places.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.rpow" title="cudf.core.series.Series.rpow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rpow</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.rpow" title="cudf.core.series.Series.rpow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rpow</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Exponential power of series and other, element-wise (binary operator rpow).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.rsub" title="cudf.core.series.Series.rsub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsub</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.rsub" title="cudf.core.series.Series.rsub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsub</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Subtraction of series and other, element-wise (binary operator rsub).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.rtruediv" title="cudf.core.series.Series.rtruediv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rtruediv</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.rtruediv" title="cudf.core.series.Series.rtruediv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rtruediv</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Floating division of series and other, element-wise (binary operator rtruediv).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.scale" title="cudf.core.series.Series.scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale</span></code></a>(self)</p></td>
@@ -3192,7 +3189,7 @@ default: ‘value’</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.std" title="cudf.core.series.Series.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>(self[, ddof, axis, skipna])</p></td>
 <td><p>Compute the standard deviation of the series</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.sub" title="cudf.core.series.Series.sub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sub</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.sub" title="cudf.core.series.Series.sub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sub</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Subtraction of series and other, element-wise (binary operator sub).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.sum" title="cudf.core.series.Series.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>(self[, axis, skipna, dtype])</p></td>
@@ -3228,7 +3225,7 @@ default: ‘value’</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.tolist" title="cudf.core.series.Series.tolist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tolist</span></code></a>(self)</p></td>
 <td><p>Return a list type from series data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.truediv" title="cudf.core.series.Series.truediv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truediv</span></code></a>(self, other[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.truediv" title="cudf.core.series.Series.truediv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truediv</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Floating division of series and other, element-wise (binary operator truediv).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.unique" title="cudf.core.series.Series.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a>(self[, method, sort])</p></td>
@@ -3254,28 +3251,16 @@ default: ‘value’</p>
 <col style="width: 36%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>acos</strong></p></td>
+<tr class="row-odd"><td><p><strong>all</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>all</strong></p></td>
+<tr class="row-even"><td><p><strong>any</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>any</strong></p></td>
+<tr class="row-odd"><td><p><strong>as_index</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>as_index</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>asin</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>atan</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>copy</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>cos</strong></p></td>
+<tr class="row-even"><td><p><strong>copy</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>deserialize</strong></p></td>
@@ -3284,25 +3269,19 @@ default: ‘value’</p>
 <tr class="row-even"><td><p><strong>equals</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>exp</strong></p></td>
+<tr class="row-odd"><td><p><strong>from_arrow</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>from_arrow</strong></p></td>
+<tr class="row-even"><td><p><strong>from_pandas</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>from_pandas</strong></p></td>
+<tr class="row-odd"><td><p><strong>groupby</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>groupby</strong></p></td>
+<tr class="row-even"><td><p><strong>head</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>head</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>isin</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>log</strong></p></td>
+<tr class="row-odd"><td><p><strong>isin</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>logical_and</strong></p></td>
@@ -3323,25 +3302,16 @@ default: ‘value’</p>
 <tr class="row-odd"><td><p><strong>serialize</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>sin</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>sqrt</strong></p></td>
-<td></td>
-</tr>
 <tr class="row-even"><td><p><strong>sum_of_squares</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>tan</strong></p></td>
+<tr class="row-odd"><td><p><strong>to_arrow</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>to_arrow</strong></p></td>
+<tr class="row-even"><td><p><strong>to_pandas</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>to_pandas</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>unique_k</strong></p></td>
+<tr class="row-odd"><td><p><strong>unique_k</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -3355,7 +3325,7 @@ default: ‘value’</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.add">
-<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.add" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Addition of series and other, element-wise
 (binary operator add).</p>
 <dl class="field-list simple">
@@ -3649,7 +3619,7 @@ no null values.</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.eq">
-<code class="sig-name descname">eq</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.eq" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">eq</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.eq" title="Permalink to this definition">¶</a></dt>
 <dd><p>Equal to of series and other, element-wise
 (binary operator eq).</p>
 <dl class="field-list simple">
@@ -3732,7 +3702,7 @@ than the original.</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.floordiv">
-<code class="sig-name descname">floordiv</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.floordiv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">floordiv</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.floordiv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer division of series and other, element-wise
 (binary operator floordiv).</p>
 <dl class="field-list simple">
@@ -3784,7 +3754,7 @@ If None, it is calculated automatically.</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.ge">
-<code class="sig-name descname">ge</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.ge" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ge</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.ge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Greater than or equal to of series and other, element-wise
 (binary operator ge).</p>
 <dl class="field-list simple">
@@ -3801,7 +3771,7 @@ corresponding Series locations is null the result will be null</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.gt">
-<code class="sig-name descname">gt</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.gt" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">gt</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.gt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Greater than of series and other, element-wise
 (binary operator gt).</p>
 <dl class="field-list simple">
@@ -3814,12 +3784,6 @@ corresponding Series locations is null the result will be null</p>
 </dl>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="cudf.core.series.Series.has_null_mask">
-<em class="property">property </em><code class="sig-name descname">has_null_mask</code><a class="headerlink" href="#cudf.core.series.Series.has_null_mask" title="Permalink to this definition">¶</a></dt>
-<dd><p>A boolean indicating whether a null-mask is needed</p>
 </dd></dl>
 
 <dl class="method">
@@ -3906,7 +3870,7 @@ is used.</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.le">
-<code class="sig-name descname">le</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.le" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">le</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.le" title="Permalink to this definition">¶</a></dt>
 <dd><p>Less than or equal to of series and other, element-wise
 (binary operator le).</p>
 <dl class="field-list simple">
@@ -3930,7 +3894,7 @@ corresponding Series locations is null the result will be null</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.lt">
-<code class="sig-name descname">lt</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.lt" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">lt</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.lt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Less than of series and other, element-wise
 (binary operator lt).</p>
 <dl class="field-list simple">
@@ -3971,7 +3935,7 @@ corresponding Series locations is null the result will be null</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.mod">
-<code class="sig-name descname">mod</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.mod" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">mod</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.mod" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modulo of series and other, element-wise
 (binary operator mod).</p>
 <dl class="field-list simple">
@@ -3988,7 +3952,7 @@ corresponding Series locations is null the result will be null</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.mul">
-<code class="sig-name descname">mul</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.mul" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">mul</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.mul" title="Permalink to this definition">¶</a></dt>
 <dd><p>Multiplication of series and other, element-wise
 (binary operator mul).</p>
 <dl class="field-list simple">
@@ -4023,7 +3987,7 @@ corresponding Series locations is null the result will be null</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.ne">
-<code class="sig-name descname">ne</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.ne" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ne</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.ne" title="Permalink to this definition">¶</a></dt>
 <dd><p>Not equal to of series and other, element-wise
 (binary operator ne).</p>
 <dl class="field-list simple">
@@ -4069,6 +4033,12 @@ corresponding Series locations is null the result will be null</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="cudf.core.series.Series.nullable">
+<em class="property">property </em><code class="sig-name descname">nullable</code><a class="headerlink" href="#cudf.core.series.Series.nullable" title="Permalink to this definition">¶</a></dt>
+<dd><p>A boolean indicating whether a null-mask is needed</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="cudf.core.series.Series.nullmask">
 <em class="property">property </em><code class="sig-name descname">nullmask</code><a class="headerlink" href="#cudf.core.series.Series.nullmask" title="Permalink to this definition">¶</a></dt>
 <dd><p>The gpu buffer for the null-mask</p>
@@ -4105,7 +4075,7 @@ and exact version to be moved to libgdf</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.pow">
-<code class="sig-name descname">pow</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.pow" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pow</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.pow" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exponential power of series and other, element-wise
 (binary operator pow).</p>
 <dl class="field-list simple">
@@ -4162,7 +4132,7 @@ when the desired quantile lies between two data points i and j:</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.radd">
-<code class="sig-name descname">radd</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.radd" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">radd</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.radd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Addition of series and other, element-wise
 (binary operator radd).</p>
 <dl class="field-list simple">
@@ -4281,7 +4251,7 @@ corresponding Series locations is null the result will be null</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.rfloordiv">
-<code class="sig-name descname">rfloordiv</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.rfloordiv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rfloordiv</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.rfloordiv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integer division of series and other, element-wise
 (binary operator rfloordiv).</p>
 <dl class="field-list simple">
@@ -4298,7 +4268,7 @@ corresponding Series locations is null the result will be null</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.rmod">
-<code class="sig-name descname">rmod</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.rmod" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rmod</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.rmod" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modulo of series and other, element-wise
 (binary operator rmod).</p>
 <dl class="field-list simple">
@@ -4315,7 +4285,7 @@ corresponding Series locations is null the result will be null</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.rmul">
-<code class="sig-name descname">rmul</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.rmul" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rmul</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.rmul" title="Permalink to this definition">¶</a></dt>
 <dd><p>Multiplication of series and other, element-wise
 (binary operator rmul).</p>
 <dl class="field-list simple">
@@ -4486,7 +4456,7 @@ only valid for datetime index.</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.rpow">
-<code class="sig-name descname">rpow</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.rpow" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rpow</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.rpow" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exponential power of series and other, element-wise
 (binary operator rpow).</p>
 <dl class="field-list simple">
@@ -4503,7 +4473,7 @@ corresponding Series locations is null the result will be null</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.rsub">
-<code class="sig-name descname">rsub</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.rsub" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rsub</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.rsub" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subtraction of series and other, element-wise
 (binary operator rsub).</p>
 <dl class="field-list simple">
@@ -4520,7 +4490,7 @@ corresponding Series locations is null the result will be null</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.rtruediv">
-<code class="sig-name descname">rtruediv</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.rtruediv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rtruediv</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.rtruediv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Floating division of series and other, element-wise
 (binary operator rtruediv).</p>
 <dl class="field-list simple">
@@ -4671,7 +4641,7 @@ no null values.</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.sub">
-<code class="sig-name descname">sub</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.sub" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">sub</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.sub" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subtraction of series and other, element-wise
 (binary operator sub).</p>
 <dl class="field-list simple">
@@ -4984,7 +4954,7 @@ output.</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.truediv">
-<code class="sig-name descname">truediv</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.truediv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">truediv</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.truediv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Floating division of series and other, element-wise
 (binary operator truediv).</p>
 <dl class="field-list simple">
@@ -5341,9 +5311,8 @@ the function.</p>
 <span class="c1"># sliding window</span>
 <span class="k">def</span> <span class="nf">rolling_avg</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">avg</span><span class="p">):</span>
     <span class="n">win_size</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="k">for</span> <span class="n">row</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">cuda</span><span class="o">.</span><span class="n">threadIdx</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
-                                  <span class="nb">len</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> <span class="n">cuda</span><span class="o">.</span><span class="n">blockDim</span><span class="o">.</span><span class="n">x</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">win_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cuda</span><span class="o">.</span><span class="n">threadIdx</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> <span class="n">cuda</span><span class="o">.</span><span class="n">blockDim</span><span class="o">.</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">win_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
             <span class="c1"># If there is not enough data to fill the window,</span>
             <span class="c1"># take the average to be NaN</span>
             <span class="n">avg</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>

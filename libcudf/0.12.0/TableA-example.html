@@ -66,7 +66,8 @@ $(function() {
 <div class="title">TableA</div>  </div>
 </div><!--header-->
 <div class="contents">
-<p>Performs an inner join on the specified columns of two tables (left, right) a: {0, 1, 2} TableB b: {1, 2, 3}, a: {1, 2, 5} left_on: {0} right_on: {1} columns_in_common: { {0, 1} } Result: { a: {1, 2}, b: {1, 2} }</p>
+<p>Performs a left semi join on the specified columns of two tables (left, right)A left semi join only returns data from the left table, and only returns rows that exist in the right table.</p>
+<p>a: {0, 1, 2} TableB b: {1, 2, 3}, a: {1, 2, 5} left_on: {0} right_on: {1} return_columns: { 0 } Result: { a: {1, 2} }</p>
 <div class="fragment"></div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

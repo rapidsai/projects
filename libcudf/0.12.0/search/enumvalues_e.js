@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['retain_2464',['RETAIN',['../namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6aae077198d21c34fd782bf2616a040c56',1,'cudf::RETAIN()'],['../namespacecudf_1_1experimental.html#ad483c874f6010437111325063b87daefa47e9136fa770199f6a8a9727b6173eb4',1,'cudf::experimental::RETAIN()']]],
-  ['right_2465',['right',['../classNVStrings.html#ae632539abce4f345d9c6995cc407281ea410c51e93c57cfd4df319a7b925a2dec',1,'NVStrings']]]
+  ['quantile_2709',['QUANTILE',['../classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189da51aeb98a6b2e5cc4aebc0c9e0a8f2eb4',1,'cudf::experimental::aggregation']]],
+  ['quote_5fall_2710',['QUOTE_ALL',['../structcudf_1_1csv__read__arg.html#ac38936d9c26a6ba6e5d488f36afa0a4eaf90080bae75ba35601c87900887ab75d',1,'cudf::csv_read_arg']]],
+  ['quote_5fminimal_2711',['QUOTE_MINIMAL',['../structcudf_1_1csv__read__arg.html#ac38936d9c26a6ba6e5d488f36afa0a4eaaee7131988c0281123a37aef8f2f6b49',1,'cudf::csv_read_arg']]],
+  ['quote_5fnone_2712',['QUOTE_NONE',['../structcudf_1_1csv__read__arg.html#ac38936d9c26a6ba6e5d488f36afa0a4ea9b2ff4c8ffb04d079986e1f854051fce',1,'cudf::csv_read_arg']]],
+  ['quote_5fnonnumeric_2713',['QUOTE_NONNUMERIC',['../structcudf_1_1csv__read__arg.html#ac38936d9c26a6ba6e5d488f36afa0a4eaa8f7f2fbd082c4312e8a4d0dbae0bfd1',1,'cudf::csv_read_arg']]]
 ];

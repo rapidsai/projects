@@ -3530,6 +3530,37 @@ Default is ‘_’.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="nvtext.ngrams_tokenize">
+<code class="sig-prename descclassname">nvtext.</code><code class="sig-name descname">ngrams_tokenize</code><span class="sig-paren">(</span><em class="sig-param">strs</em>, <em class="sig-param">delimiter=' '</em>, <em class="sig-param">N=2</em>, <em class="sig-param">sep='_'</em><span class="sig-paren">)</span><a class="headerlink" href="#nvtext.ngrams_tokenize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the n-grams using tokens from each string.
+This will tokenize each string and then generate ngrams for each string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>strs</strong><span class="classifier">nvstrings</span></dt><dd><p>The tokens for this operation.</p>
+</dd>
+<dt><strong>delimiter</strong><span class="classifier">str</span></dt><dd><p>The character used to locate the split points of each string.
+Default is space.</p>
+</dd>
+<dt><strong>N</strong><span class="classifier">int</span></dt><dd><p>The degree of the n-gram (number of consecutive tokens).
+Default of 2 for bigrams.</p>
+</dd>
+<dt><strong>sep</strong><span class="classifier">str</span></dt><dd><p>The separator to use between tokens within an n-gram.
+Default is ‘_’.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">nvstrings</span><span class="o">,</span> <span class="nn">nvtext</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dstrings</span> <span class="o">=</span> <span class="n">nvstrings</span><span class="o">.</span><span class="n">to_device</span><span class="p">([</span><span class="s1">&#39;this is the&#39;</span><span class="p">,</span> <span class="s1">&#39;best book&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nvtext</span><span class="o">.</span><span class="n">ngrams_tokenize</span><span class="p">(</span><span class="n">dstrings</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">))</span>
+<span class="go">[&#39;this_is&#39;, &#39;is_the&#39;, &#39;best_book&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
 <dt id="nvtext.normalize_spaces">
 <code class="sig-prename descclassname">nvtext.</code><code class="sig-name descname">normalize_spaces</code><span class="sig-paren">(</span><em class="sig-param">strs</em><span class="sig-paren">)</span><a class="headerlink" href="#nvtext.normalize_spaces" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove extra whitespace between tokens and trim whitespace
@@ -3673,7 +3704,7 @@ of int32 values.</p>
 
 <dl class="function">
 <dt id="nvtext.token_count">
-<code class="sig-prename descclassname">nvtext.</code><code class="sig-name descname">token_count</code><span class="sig-paren">(</span><em class="sig-param">strs</em>, <em class="sig-param">delimiter=' '</em>, <em class="sig-param">devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvtext.token_count" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">nvtext.</code><code class="sig-name descname">token_count</code><span class="sig-paren">(</span><em class="sig-param">strs</em>, <em class="sig-param">delimiter=None</em>, <em class="sig-param">devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvtext.token_count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Each string is split into tokens using the provided delimiter.
 The returned integer array is the number of tokens in each string.</p>
 <dl class="field-list simple">
@@ -3681,8 +3712,9 @@ The returned integer array is the number of tokens in each string.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>strs</strong><span class="classifier">nvstrings</span></dt><dd><p>The strings for this operation</p>
 </dd>
-<dt><strong>delimiter</strong><span class="classifier">str</span></dt><dd><p>The character used to locate the split points of each string.
-Default is space.</p>
+<dt><strong>delimiter</strong><span class="classifier">str or nvstrings or list of strs</span></dt><dd><p>The characters or strings used to locate the
+split points of each string.
+Default is whitespace.</p>
 </dd>
 <dt><strong>devptr</strong><span class="classifier">GPU memory pointer</span></dt><dd><p>Must be able to hold at least strs.size() of int32 values.</p>
 </dd>
@@ -3730,7 +3762,7 @@ Default is whitespace.</p>
 
 <dl class="function">
 <dt id="nvtext.tokens_counts">
-<code class="sig-prename descclassname">nvtext.</code><code class="sig-name descname">tokens_counts</code><span class="sig-paren">(</span><em class="sig-param">strs</em>, <em class="sig-param">tgts</em>, <em class="sig-param">delimiter=' '</em>, <em class="sig-param">devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvtext.tokens_counts" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">nvtext.</code><code class="sig-name descname">tokens_counts</code><span class="sig-paren">(</span><em class="sig-param">strs</em>, <em class="sig-param">tgts</em>, <em class="sig-param">delimiter=None</em>, <em class="sig-param">devptr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#nvtext.tokens_counts" title="Permalink to this definition">¶</a></dt>
 <dd><p>The tgts strings are searched for within each strs.
 The returned int32 array is number of occurrences of each tgts in strs.</p>
 <dl class="field-list simple">
@@ -3741,7 +3773,7 @@ The returned int32 array is number of occurrences of each tgts in strs.</p>
 <dt><strong>tgts</strong><span class="classifier">nvstrings</span></dt><dd><p>The strings to count for inside each strs.</p>
 </dd>
 <dt><strong>delimiter</strong><span class="classifier">str</span></dt><dd><p>The character used to locate the split points of each string.
-Default is space.</p>
+Default is whitespace.</p>
 </dd>
 <dt><strong>devptr</strong><span class="classifier">GPU memory pointer</span></dt><dd><p>Must be able to hold at least strs.size()*tgts.size()
 of int32 values.</p>
@@ -3762,7 +3794,7 @@ of int32 values.</p>
 
 <dl class="function">
 <dt id="nvtext.unique_tokens">
-<code class="sig-prename descclassname">nvtext.</code><code class="sig-name descname">unique_tokens</code><span class="sig-paren">(</span><em class="sig-param">strs</em>, <em class="sig-param">delimiter=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#nvtext.unique_tokens" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">nvtext.</code><code class="sig-name descname">unique_tokens</code><span class="sig-paren">(</span><em class="sig-param">strs</em>, <em class="sig-param">delimiter=None</em><span class="sig-paren">)</span><a class="headerlink" href="#nvtext.unique_tokens" title="Permalink to this definition">¶</a></dt>
 <dd><p>Each string is split into tokens using the provided delimiter.
 The nvstrings instance returned contains unique list of tokens.</p>
 <dl class="field-list simple">
@@ -3771,7 +3803,7 @@ The nvstrings instance returned contains unique list of tokens.</p>
 <dt><strong>strs</strong><span class="classifier">nvstrings</span></dt><dd><p>The strings for this operation</p>
 </dd>
 <dt><strong>delimiter</strong><span class="classifier">str</span></dt><dd><p>The character used to locate the split points of each string.
-Default is space.</p>
+Default is whitespace.</p>
 </dd>
 </dl>
 </dd>

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['quote_5fall_2460',['QUOTE_ALL',['../structcudf_1_1csv__read__arg.html#ac38936d9c26a6ba6e5d488f36afa0a4eaf90080bae75ba35601c87900887ab75d',1,'cudf::csv_read_arg']]],
-  ['quote_5fminimal_2461',['QUOTE_MINIMAL',['../structcudf_1_1csv__read__arg.html#ac38936d9c26a6ba6e5d488f36afa0a4eaaee7131988c0281123a37aef8f2f6b49',1,'cudf::csv_read_arg']]],
-  ['quote_5fnone_2462',['QUOTE_NONE',['../structcudf_1_1csv__read__arg.html#ac38936d9c26a6ba6e5d488f36afa0a4ea9b2ff4c8ffb04d079986e1f854051fce',1,'cudf::csv_read_arg']]],
-  ['quote_5fnonnumeric_2463',['QUOTE_NONNUMERIC',['../structcudf_1_1csv__read__arg.html#ac38936d9c26a6ba6e5d488f36afa0a4eaa8f7f2fbd082c4312e8a4d0dbae0bfd1',1,'cudf::csv_read_arg']]]
+  ['pow_2705',['POW',['../namespacecudf_1_1experimental.html#af98fab32c66e913a0096c1a3789c5701a17faf4e999b8cee4c36915c1f54ccffe',1,'cudf::experimental']]],
+  ['product_2706',['PRODUCT',['../namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cfa2544e5b1e7659a7ba6f06444cc03d066',1,'cudf::experimental::PRODUCT()'],['../namespacecudf_1_1experimental.html#ad7f314cd95af9fb330bfdfb735e42fb8a2544e5b1e7659a7ba6f06444cc03d066',1,'cudf::experimental::PRODUCT()']]],
+  ['ptx_2707',['PTX',['../classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189daad2990a77e3673a91a831b5b42fa0b4d',1,'cudf::experimental::aggregation']]],
+  ['pymod_2708',['PYMOD',['../namespacecudf_1_1experimental.html#af98fab32c66e913a0096c1a3789c5701a36aaf571a1008bd43f47509344cd13ad',1,'cudf::experimental']]]
 ];

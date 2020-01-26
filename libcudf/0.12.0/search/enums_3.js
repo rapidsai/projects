@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['kind_2370',['Kind',['../classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189d',1,'cudf::experimental::aggregation']]]
+  ['interpolation_2592',['interpolation',['../namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8',1,'cudf::interpolation()'],['../namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151',1,'cudf::experimental::interpolation()']]],
+  ['io_5ftype_2593',['io_type',['../namespacecudf_1_1experimental_1_1io.html#a3f77dec4b25aa464af5e0c7fef427b5f',1,'cudf::experimental::io']]]
 ];

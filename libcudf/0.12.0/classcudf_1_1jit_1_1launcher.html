@@ -81,9 +81,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a54a2732b513cb768eed5d75669d3f1a0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1jit_1_1launcher.html#a54a2732b513cb768eed5d75669d3f1a0">launcher</a> (const std::string &amp;<a class="el" href="namespacecudf.html#a4e682abfb2a17865a3d4d94b24f9e5a3">hash</a>, const std::string &amp;cuda_source, const std::vector&lt; std::string &gt; &amp;header_names, const std::vector&lt; std::string &gt; &amp;compiler_flags, jitify_v2::file_callback_type file_callback, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
-<tr class="memdesc:a54a2732b513cb768eed5d75669d3f1a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">C'tor of the launcher class.  <a href="classcudf_1_1jit_1_1launcher.html#a54a2732b513cb768eed5d75669d3f1a0">More...</a><br /></td></tr>
-<tr class="separator:a54a2732b513cb768eed5d75669d3f1a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab91b9409c386363ab5e0a8eb2c8e2af0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1jit_1_1launcher.html#ab91b9409c386363ab5e0a8eb2c8e2af0">launcher</a> (const std::string &amp;<a class="el" href="namespacecudf.html#a4e682abfb2a17865a3d4d94b24f9e5a3">hash</a>, const std::string &amp;cuda_source, const std::vector&lt; std::string &gt; &amp;header_names, const std::vector&lt; std::string &gt; &amp;compiler_flags, jitify::experimental::file_callback_type file_callback, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
+<tr class="memdesc:ab91b9409c386363ab5e0a8eb2c8e2af0"><td class="mdescLeft">&#160;</td><td class="mdescRight">C'tor of the launcher class.  <a href="classcudf_1_1jit_1_1launcher.html#ab91b9409c386363ab5e0a8eb2c8e2af0">More...</a><br /></td></tr>
+<tr class="separator:ab91b9409c386363ab5e0a8eb2c8e2af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a617faa0d831e804e656ce4ed9ab42d0c"><td class="memItemLeft" align="right" valign="top"><a id="a617faa0d831e804e656ce4ed9ab42d0c"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>launcher</b> (<a class="el" href="classcudf_1_1jit_1_1launcher.html">launcher</a> &amp;&amp;)</td></tr>
 <tr class="separator:a617faa0d831e804e656ce4ed9ab42d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -99,16 +99,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a04a65099e13c3fbb65f55ce91f395f46"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcudf_1_1jit_1_1launcher.html">launcher</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1jit_1_1launcher.html#a04a65099e13c3fbb65f55ce91f395f46">set_kernel_inst</a> (const std::string &amp;kernel_name, const std::vector&lt; std::string &gt; &amp;arguments)</td></tr>
 <tr class="memdesc:a04a65099e13c3fbb65f55ce91f395f46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the kernel to launch using this launcher.  <a href="classcudf_1_1jit_1_1launcher.html#a04a65099e13c3fbb65f55ce91f395f46">More...</a><br /></td></tr>
 <tr class="separator:a04a65099e13c3fbb65f55ce91f395f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae126ad28c7fbec2a283d50130d38af90"><td class="memTemplParams" colspan="2">template&lt;typename ... Args&gt; </td></tr>
-<tr class="memitem:ae126ad28c7fbec2a283d50130d38af90"><td class="memTemplItemLeft" align="right" valign="top">gdf_error&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcudf_1_1jit_1_1launcher.html#ae126ad28c7fbec2a283d50130d38af90">launch</a> (Args ... args)</td></tr>
-<tr class="memdesc:ae126ad28c7fbec2a283d50130d38af90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle the Jitify API to launch using information contained in the members of <code>this</code>  <a href="classcudf_1_1jit_1_1launcher.html#ae126ad28c7fbec2a283d50130d38af90">More...</a><br /></td></tr>
-<tr class="separator:ae126ad28c7fbec2a283d50130d38af90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec3e1d28f4a208f8ed48a68175444de7"><td class="memTemplParams" colspan="2">template&lt;typename ... Args&gt; </td></tr>
+<tr class="memitem:aec3e1d28f4a208f8ed48a68175444de7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcudf_1_1jit_1_1launcher.html#aec3e1d28f4a208f8ed48a68175444de7">launch</a> (Args ... args)</td></tr>
+<tr class="memdesc:aec3e1d28f4a208f8ed48a68175444de7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle the Jitify API to launch using information contained in the members of <code>this</code>  <a href="classcudf_1_1jit_1_1launcher.html#aec3e1d28f4a208f8ed48a68175444de7">More...</a><br /></td></tr>
+<tr class="separator:aec3e1d28f4a208f8ed48a68175444de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class used to handle compilation and execution of JIT kernels. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a54a2732b513cb768eed5d75669d3f1a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54a2732b513cb768eed5d75669d3f1a0">&#9670;&nbsp;</a></span>launcher()</h2>
+<a id="ab91b9409c386363ab5e0a8eb2c8e2af0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab91b9409c386363ab5e0a8eb2c8e2af0">&#9670;&nbsp;</a></span>launcher()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,7 +140,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">jitify_v2::file_callback_type&#160;</td>
+          <td class="paramtype">jitify::experimental::file_callback_type&#160;</td>
           <td class="paramname"><em>file_callback</em>, </td>
         </tr>
         <tr>
@@ -174,8 +174,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae126ad28c7fbec2a283d50130d38af90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae126ad28c7fbec2a283d50130d38af90">&#9670;&nbsp;</a></span>launch()</h2>
+<a id="aec3e1d28f4a208f8ed48a68175444de7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec3e1d28f4a208f8ed48a68175444de7">&#9670;&nbsp;</a></span>launch()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -186,7 +186,7 @@ template&lt;typename ... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">gdf_error cudf::jit::launcher::launch </td>
+          <td class="memname">void cudf::jit::launcher::launch </td>
           <td>(</td>
           <td class="paramtype">Args ...&#160;</td>
           <td class="paramname"><em>args</em></td><td>)</td>
