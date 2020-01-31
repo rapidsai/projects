@@ -239,8 +239,8 @@ div.nboutput.container div.prompt pre {
 div.nbinput.container div.prompt,
 div.nboutput.container div.prompt {
     min-width: 5ex;
-    padding-top: 0.4em;
-    padding-right: 0.4em;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
     text-align: right;
     flex: 0;
 }
@@ -264,7 +264,6 @@ div.nboutput.container div.prompt pre {
 /* input/output area */
 div.nbinput.container div.input_area,
 div.nboutput.container div.output_area {
-    padding: 0.4em;
     -webkit-flex: 1;
     flex: 1;
     overflow: auto;
@@ -337,6 +336,27 @@ div.nboutput.container div.output_area.stderr {
 
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
 
 /* Some additional styling taken form the Jupyter notebook CSS */
 div.rendered_html table {
@@ -460,7 +480,7 @@ env: NCCL_P2P_DISABLE=1
 <td style="vertical-align: top; border: 0px solid white">
 <h3 style="text-align: left;">Client</h3>
 <ul style="text-align: left; list-style: none; margin: 0; padding: 0;">
-  <li><b>Scheduler: </b>tcp://172.17.0.142:42758</li>
+  <li><b>Scheduler: </b>tcp://172.17.0.142:42751</li>
   <li><b>Dashboard: </b><a href='http://172.17.0.142:8787/status' target='_blank'>http://172.17.0.142:8787/status</a>
 </ul>
 </td>
@@ -561,7 +581,7 @@ env: NCCL_P2P_DISABLE=1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[09:18:52] WARNING: /rapids/xgboost/include/xgboost/generic_parameters.h:36:
+[09:19:00] WARNING: /rapids/xgboost/include/xgboost/generic_parameters.h:36:
 n_gpus:
         Deprecated. Single process multi-GPU training is no longer supported.
         Please switch to distributed training with one process per GPU.
@@ -594,7 +614,7 @@ n_gpus:
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-rmse value: 2.2905704285957
+rmse value: 2.2922034603072072
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
