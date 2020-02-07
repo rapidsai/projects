@@ -88,8 +88,8 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;rmm/mr/default_memory_resource.hpp&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;rmm/mr/device_memory_resource.hpp&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;rmm/mr/device/default_memory_resource.hpp&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;rmm/mr/device/device_memory_resource.hpp&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;cuda_runtime_api.h&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
@@ -261,9 +261,7 @@ $(function() {
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;  mr::device_memory_resource* _mr{</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;      mr::get_default_resource()};  </div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;};</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;<span class="keywordtype">void</span> copy_to_host(<span class="keyword">const</span> device_buffer&amp; db, <span class="keywordtype">void</span>* hb, cudaStream_t stream = 0);</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;}  <span class="comment">// namespace rmm</span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;}  <span class="comment">// namespace rmm</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassrmm_1_1mr_1_1device__memory__resource_html"><div class="ttname"><a href="classrmm_1_1mr_1_1device__memory__resource.html">rmm::mr::device_memory_resource</a></div><div class="ttdoc">Base class for all libcudf device memory allocation.</div><div class="ttdef"><b>Definition:</b> device_memory_resource.hpp:60</div></div>
 <!-- start footer part -->
