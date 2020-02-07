@@ -130,7 +130,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#neighbors">Neighbors</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#nearest-neighbors">Nearest Neighbors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id10">Nearest Neighbors Classification</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id12">Nearest Neighbors Classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Nearest Neighbors Regression</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#time-series">Time Series</a><ul>
@@ -2755,9 +2755,10 @@ required to configure this estimator as a dictionary.</p>
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
-<dt><strong>predict_model</strong><span class="classifier">String (default = ‘GPU’)</span></dt><dd><p>‘GPU’ to predict using the GPU, ‘CPU’ otherwise. The GPU can only
+<dt><strong>predict_model</strong><span class="classifier">String (default = ‘GPU’)</span></dt><dd><p>‘GPU’ to predict using the GPU, ‘CPU’ otherwise. The ‘GPU’ can only
 be used if the model was trained on float32 data and <cite>X</cite> is float32
-or convert_dtype is set to True.</p>
+or convert_dtype is set to True. Also the ‘GPU’ should only be
+used for binary classification problems.</p>
 </dd>
 <dt><strong>output_class: boolean (default = True)</strong></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
@@ -6035,7 +6036,7 @@ convert the inputs to np.float32.</p>
 
 </div>
 <div class="section" id="id12">
-<h3>Nearest Neighbors Classification<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<h3>Nearest Neighbors Regression<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt>
 <em class="property">class </em><code class="sig-prename descclassname">cuml.neighbors.</code><code class="sig-name descname">KNeighborsRegressor</code></dt>
