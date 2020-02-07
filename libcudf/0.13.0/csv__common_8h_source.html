@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -118,30 +118,12 @@ $(function() {
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}  <span class="comment">// namespace column_parse</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structcudf_1_1io_1_1csv_1_1ParseOptions.html">   59</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcudf_1_1io_1_1csv_1_1ParseOptions.html">ParseOptions</a> {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">char</span> delimiter;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">char</span> terminator;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">char</span> quotechar;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">char</span> decimal;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">char</span> thousands;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">char</span> comment;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">bool</span> keepquotes;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">bool</span> doublequote;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">bool</span> dayfirst;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">bool</span> skipblanklines;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="structSerialTrieNode.html">SerialTrieNode</a>* trueValuesTrie;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="structSerialTrieNode.html">SerialTrieNode</a>* falseValuesTrie;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <a class="code" href="structSerialTrieNode.html">SerialTrieNode</a>* naValuesTrie;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">bool</span> multi_delimiter;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}  <span class="comment">// namespace csv</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}  <span class="comment">// namespace io</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}  <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}  <span class="comment">// namespace csv</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}  <span class="comment">// namespace io</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}  <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespacecudf_1_1io_1_1csv_1_1column__parse_html_a19fbcb16ae3b789ee4c842c828f44b2bab15cbc2b6ccf0aef96ffdbbd1255c402"><div class="ttname"><a href="namespacecudf_1_1io_1_1csv_1_1column__parse.html#a19fbcb16ae3b789ee4c842c828f44b2bab15cbc2b6ccf0aef96ffdbbd1255c402">cudf::io::csv::column_parse::as_hexadecimal</a></div><div class="ttdoc">decode with base-16</div><div class="ttdef"><b>Definition:</b> csv_common.h:34</div></div>
 <div class="ttc" id="anamespacecudf_1_1io_1_1csv_1_1column__parse_html_a19fbcb16ae3b789ee4c842c828f44b2ba961c6729d59432754c067f44069fb892"><div class="ttname"><a href="namespacecudf_1_1io_1_1csv_1_1column__parse.html#a19fbcb16ae3b789ee4c842c828f44b2ba961c6729d59432754c067f44069fb892">cudf::io::csv::column_parse::enabled</a></div><div class="ttdoc">data is read and parsed as usual</div><div class="ttdef"><b>Definition:</b> csv_common.h:31</div></div>
-<div class="ttc" id="astructcudf_1_1io_1_1csv_1_1ParseOptions_html"><div class="ttname"><a href="structcudf_1_1io_1_1csv_1_1ParseOptions.html">cudf::io::csv::ParseOptions</a></div><div class="ttdoc">Structure for holding various options used when parsing and converting CSV data to cuDF data type val...</div><div class="ttdef"><b>Definition:</b> csv_common.h:59</div></div>
 <div class="ttc" id="anamespacecudf_1_1io_1_1csv_1_1column__parse_html_a19fbcb16ae3b789ee4c842c828f44b2ba7c44639dfc9618a40c003ec104068fe9"><div class="ttname"><a href="namespacecudf_1_1io_1_1csv_1_1column__parse.html#a19fbcb16ae3b789ee4c842c828f44b2ba7c44639dfc9618a40c003ec104068fe9">cudf::io::csv::column_parse::inferred</a></div><div class="ttdoc">infer the dtype</div><div class="ttdef"><b>Definition:</b> csv_common.h:32</div></div>
 <div class="ttc" id="astructSerialTrieNode_html"><div class="ttname"><a href="structSerialTrieNode.html">SerialTrieNode</a></div><div class="ttdef"><b>Definition:</b> trie.cuh:34</div></div>
 <div class="ttc" id="astructcudf_1_1io_1_1csv_1_1column__parse_1_1stats_html"><div class="ttname"><a href="structcudf_1_1io_1_1csv_1_1column__parse_1_1stats.html">cudf::io::csv::column_parse::stats</a></div><div class="ttdoc">Per-column histogram struct holding detected ocurrences of each dtype.</div><div class="ttdef"><b>Definition:</b> csv_common.h:42</div></div>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -87,9 +87,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adcb45490797038c3390aff9d514b22b2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader_1_1impl.html#adcb45490797038c3390aff9d514b22b2">get_pandas_index</a> () const</td></tr>
 <tr class="memdesc:adcb45490797038c3390aff9d514b22b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the PANDAS-specific index column derived from the metadata.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader_1_1impl.html#adcb45490797038c3390aff9d514b22b2">More...</a><br /></td></tr>
 <tr class="separator:adcb45490797038c3390aff9d514b22b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc8e88b9680512086f712a4e4a79ba20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader_1_1impl.html#afc8e88b9680512086f712a4e4a79ba20">read</a> (int skip_rows, int num_rows, int row_group, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
-<tr class="memdesc:afc8e88b9680512086f712a4e4a79ba20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read an entire set or a subset of data and returns a set of columns.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader_1_1impl.html#afc8e88b9680512086f712a4e4a79ba20">More...</a><br /></td></tr>
-<tr class="separator:afc8e88b9680512086f712a4e4a79ba20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8667d128b20ea89d4efba172ba5521a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader_1_1impl.html#a8667d128b20ea89d4efba172ba5521a8">read</a> (int skip_rows, int num_rows, int row_group, int max_rowgroup_count, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
+<tr class="memdesc:a8667d128b20ea89d4efba172ba5521a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read an entire set or a subset of data and returns a set of columns.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1reader_1_1impl.html#a8667d128b20ea89d4efba172ba5521a8">More...</a><br /></td></tr>
+<tr class="separator:a8667d128b20ea89d4efba172ba5521a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation for Parquet reader. </p>
@@ -175,8 +175,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afc8e88b9680512086f712a4e4a79ba20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc8e88b9680512086f712a4e4a79ba20">&#9670;&nbsp;</a></span>read()</h2>
+<a id="a8667d128b20ea89d4efba172ba5521a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8667d128b20ea89d4efba172ba5521a8">&#9670;&nbsp;</a></span>read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -202,6 +202,12 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max_rowgroup_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
           <td class="paramname"><em>stream</em>&#160;</td>
         </tr>
@@ -219,6 +225,7 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">skip_rows</td><td>Number of rows to skip from the start </td></tr>
     <tr><td class="paramname">num_rows</td><td>Number of rows to read </td></tr>
     <tr><td class="paramname">row_group</td><td>Row group index to select </td></tr>
+    <tr><td class="paramname">max_rowgroup_count</td><td>Max number of consecutive row groups if greater than 0 </td></tr>
     <tr><td class="paramname">stream</td><td>Stream to use for memory allocation and kernels</td></tr>
   </table>
   </dd>

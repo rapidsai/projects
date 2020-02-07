@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['scan_5fop_2623',['scan_op',['../namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cf',1,'cudf::experimental']]],
-  ['sorttype_2624',['sorttype',['../classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831',1,'NVStrings']]],
-  ['statistics_5ffreq_2625',['statistics_freq',['../namespacecudf_1_1experimental_1_1io.html#a3b49efcc68437e81c995a1b5851fc7fb',1,'cudf::experimental::io']]]
+  ['timestamp_5funits_2693',['timestamp_units',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049',1,'NVStrings']]],
+  ['type_5fid_2694',['type_id',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59b',1,'cudf']]]
 ];

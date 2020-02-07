@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -77,11 +77,11 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aebde3a8aa1f3ad29b427118e7a7bd26b"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if_t&lt; std::is_integral&lt; T &gt;::value &gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:aebde3a8aa1f3ad29b427118e7a7bd26b"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ __forceinline__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1csv_1_1gpu_1_1ConvertFunctor.html#aebde3a8aa1f3ad29b427118e7a7bd26b">operator()</a> (const char *csvData, void *gdfColumnData, long rowIndex, long start, long end, const <a class="el" href="structcudf_1_1io_1_1csv_1_1ParseOptions.html">ParseOptions</a> &amp;opts, column_parse::flags flags)</td></tr>
+<tr class="memitem:aebde3a8aa1f3ad29b427118e7a7bd26b"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ __forceinline__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1csv_1_1gpu_1_1ConvertFunctor.html#aebde3a8aa1f3ad29b427118e7a7bd26b">operator()</a> (const char *csvData, void *gdfColumnData, long rowIndex, long start, long end, const <a class="el" href="structParseOptions.html">ParseOptions</a> &amp;opts, column_parse::flags flags)</td></tr>
 <tr class="memdesc:aebde3a8aa1f3ad29b427118e7a7bd26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template specialization for operator() for types whose values can be convertible to a 0 or 1 to represent false/true. The converting is done by checking against the default and user-specified true/false values list.  <a href="structcudf_1_1io_1_1csv_1_1gpu_1_1ConvertFunctor.html#aebde3a8aa1f3ad29b427118e7a7bd26b">More...</a><br /></td></tr>
 <tr class="separator:aebde3a8aa1f3ad29b427118e7a7bd26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebde3a8aa1f3ad29b427118e7a7bd26b"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if_t&lt;!std::is_integral&lt; T &gt;::value &gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:aebde3a8aa1f3ad29b427118e7a7bd26b"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ __forceinline__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1csv_1_1gpu_1_1ConvertFunctor.html#aebde3a8aa1f3ad29b427118e7a7bd26b">operator()</a> (const char *csvData, void *gdfColumnData, long rowIndex, long start, long end, const <a class="el" href="structcudf_1_1io_1_1csv_1_1ParseOptions.html">ParseOptions</a> &amp;opts, column_parse::flags flags)</td></tr>
+<tr class="memitem:aebde3a8aa1f3ad29b427118e7a7bd26b"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ __forceinline__ void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1csv_1_1gpu_1_1ConvertFunctor.html#aebde3a8aa1f3ad29b427118e7a7bd26b">operator()</a> (const char *csvData, void *gdfColumnData, long rowIndex, long start, long end, const <a class="el" href="structParseOptions.html">ParseOptions</a> &amp;opts, column_parse::flags flags)</td></tr>
 <tr class="memdesc:aebde3a8aa1f3ad29b427118e7a7bd26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default template operator() dispatch specialization all data types.  <a href="structcudf_1_1io_1_1csv_1_1gpu_1_1ConvertFunctor.html#aebde3a8aa1f3ad29b427118e7a7bd26b">More...</a><br /></td></tr>
 <tr class="separator:aebde3a8aa1f3ad29b427118e7a7bd26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -134,7 +134,7 @@ template&lt;typename T , typename std::enable_if_t&lt; std::is_integral&lt; T &g
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structcudf_1_1io_1_1csv_1_1ParseOptions.html">ParseOptions</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structParseOptions.html">ParseOptions</a> &amp;&#160;</td>
           <td class="paramname"><em>opts</em>, </td>
         </tr>
         <tr>
@@ -207,7 +207,7 @@ template&lt;typename T , typename std::enable_if_t&lt;!std::is_integral&lt; T &g
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structcudf_1_1io_1_1csv_1_1ParseOptions.html">ParseOptions</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structParseOptions.html">ParseOptions</a> &amp;&#160;</td>
           <td class="paramname"><em>opts</em>, </td>
         </tr>
         <tr>

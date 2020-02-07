@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -126,6 +126,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1type__to__scalar__type__impl.html">type_to_scalar_type_impl</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1type__to__scalar__type__impl_3_01cudf_1_1dictionary32_01_4.html">type_to_scalar_type_impl&lt; cudf::dictionary32 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1type__to__scalar__type__impl_3_01cudf_1_1string__view_01_4.html">type_to_scalar_type_impl&lt; cudf::string_view &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1type__to__scalar__type__impl_3_01std_1_1string_01_4.html">type_to_scalar_type_impl&lt; std::string &gt;</a></td></tr>
@@ -197,23 +199,6 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:af44baaeea3ec9df2ee3029e515c713cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">These enums indicate the supported operations of prefix scan that can be performed on a column.  <a href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cf">More...</a><br /></td></tr>
 <tr class="separator:af44baaeea3ec9df2ee3029e515c713cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7f314cd95af9fb330bfdfb735e42fb8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ad7f314cd95af9fb330bfdfb735e42fb8">reduction_op</a> { <br />
-&#160;&#160;<a class="el" href="namespacecudf_1_1experimental.html#ad7f314cd95af9fb330bfdfb735e42fb8a6970bdc2201030b9c03fbdcf3973858a">reduction_op::SUM</a> = 0, 
-<a class="el" href="namespacecudf_1_1experimental.html#ad7f314cd95af9fb330bfdfb735e42fb8ace31e2a082d17e038fcc6e3006166653">reduction_op::MIN</a>, 
-<a class="el" href="namespacecudf_1_1experimental.html#ad7f314cd95af9fb330bfdfb735e42fb8a26a4b44a837bf97b972628509912b4a5">reduction_op::MAX</a>, 
-<a class="el" href="namespacecudf_1_1experimental.html#ad7f314cd95af9fb330bfdfb735e42fb8a2544e5b1e7659a7ba6f06444cc03d066">reduction_op::PRODUCT</a>, 
-<br />
-&#160;&#160;<a class="el" href="namespacecudf_1_1experimental.html#ad7f314cd95af9fb330bfdfb735e42fb8a82481d5e97d96d9cc385f34a4eb1555b">reduction_op::SUMOFSQUARES</a>, 
-<a class="el" href="namespacecudf_1_1experimental.html#ad7f314cd95af9fb330bfdfb735e42fb8a4ea6d1161ea24d7599365f574aff6610">reduction_op::MEAN</a>, 
-<a class="el" href="namespacecudf_1_1experimental.html#ad7f314cd95af9fb330bfdfb735e42fb8ad6f4440b8633f973d33c78928bdac2e1">reduction_op::VAR</a>, 
-<a class="el" href="namespacecudf_1_1experimental.html#ad7f314cd95af9fb330bfdfb735e42fb8ac6ce23be5d350ce18a665427d2d950f7">reduction_op::STD</a>, 
-<br />
-&#160;&#160;<a class="el" href="namespacecudf_1_1experimental.html#ad7f314cd95af9fb330bfdfb735e42fb8a8e1bde3c3d303163521522cf1d62f21f">reduction_op::ANY</a>, 
-<a class="el" href="namespacecudf_1_1experimental.html#ad7f314cd95af9fb330bfdfb735e42fb8a5fb1f955b45e38e31789286a1790398d">reduction_op::ALL</a>
-<br />
- }</td></tr>
-<tr class="memdesc:ad7f314cd95af9fb330bfdfb735e42fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">These enums indicate the supported reduction operations that can be performed on a column.  <a href="namespacecudf_1_1experimental.html#ad7f314cd95af9fb330bfdfb735e42fb8">More...</a><br /></td></tr>
-<tr class="separator:ad7f314cd95af9fb330bfdfb735e42fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43b073c676d07d514a051888b2b753cd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cd">duplicate_keep_option</a> { <a class="el" href="namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cda5968b12bf2e72e702a998c7fa6c83b1e">duplicate_keep_option::KEEP_FIRST</a> = 0, 
 <a class="el" href="namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cda4583fc151efe5098dd96eeec8cf74699">duplicate_keep_option::KEEP_LAST</a>, 
 <a class="el" href="namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cda40c4abe57c2fda3e580eee916b9e0558">duplicate_keep_option::KEEP_NONE</a>
@@ -275,6 +260,10 @@ Functions</h2></td></tr>
 std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a765b473355d4b4668b73cd7583d7d2d0">make_sum_aggregation</a> ()</td></tr>
 <tr class="memdesc:a765b473355d4b4668b73cd7583d7d2d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a SUM aggregation. <br /></td></tr>
 <tr class="separator:a765b473355d4b4668b73cd7583d7d2d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91b2842b9a3d497995590881da25054a"><td class="memItemLeft" align="right" valign="top"><a id="a91b2842b9a3d497995590881da25054a"></a>
+std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a91b2842b9a3d497995590881da25054a">make_product_aggregation</a> ()</td></tr>
+<tr class="memdesc:a91b2842b9a3d497995590881da25054a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a PRODUCT aggregation. <br /></td></tr>
+<tr class="separator:a91b2842b9a3d497995590881da25054a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5e27dcd8a7e8b115a5b20d83cfa30e2"><td class="memItemLeft" align="right" valign="top"><a id="ac5e27dcd8a7e8b115a5b20d83cfa30e2"></a>
 std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ac5e27dcd8a7e8b115a5b20d83cfa30e2">make_min_aggregation</a> ()</td></tr>
 <tr class="memdesc:ac5e27dcd8a7e8b115a5b20d83cfa30e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a MIN aggregation. <br /></td></tr>
@@ -287,6 +276,18 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation
 std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#abc1e3cd40fdf74ae3fde3ae60b63b95c">make_count_aggregation</a> ()</td></tr>
 <tr class="memdesc:abc1e3cd40fdf74ae3fde3ae60b63b95c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a COUNT aggregation. <br /></td></tr>
 <tr class="separator:abc1e3cd40fdf74ae3fde3ae60b63b95c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89044ba69340e576d1d046eda741b573"><td class="memItemLeft" align="right" valign="top"><a id="a89044ba69340e576d1d046eda741b573"></a>
+std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a89044ba69340e576d1d046eda741b573">make_any_aggregation</a> ()</td></tr>
+<tr class="memdesc:a89044ba69340e576d1d046eda741b573"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a ANY aggregation. <br /></td></tr>
+<tr class="separator:a89044ba69340e576d1d046eda741b573"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae76339497ab231cc856e40d3b8de1a8f"><td class="memItemLeft" align="right" valign="top"><a id="ae76339497ab231cc856e40d3b8de1a8f"></a>
+std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ae76339497ab231cc856e40d3b8de1a8f">make_all_aggregation</a> ()</td></tr>
+<tr class="memdesc:ae76339497ab231cc856e40d3b8de1a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a ALL aggregation. <br /></td></tr>
+<tr class="separator:ae76339497ab231cc856e40d3b8de1a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c6252f7b5aa4b9ae9ee7b34086ad242"><td class="memItemLeft" align="right" valign="top"><a id="a1c6252f7b5aa4b9ae9ee7b34086ad242"></a>
+std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a1c6252f7b5aa4b9ae9ee7b34086ad242">make_sum_of_squares_aggregation</a> ()</td></tr>
+<tr class="memdesc:a1c6252f7b5aa4b9ae9ee7b34086ad242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a SUM_OF_SQUARES aggregation. <br /></td></tr>
+<tr class="separator:a1c6252f7b5aa4b9ae9ee7b34086ad242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65ba9d5acd317b74a27bd53e4eb300e3"><td class="memItemLeft" align="right" valign="top"><a id="a65ba9d5acd317b74a27bd53e4eb300e3"></a>
 std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a65ba9d5acd317b74a27bd53e4eb300e3">make_mean_aggregation</a> ()</td></tr>
 <tr class="memdesc:a65ba9d5acd317b74a27bd53e4eb300e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a MEAN aggregation. <br /></td></tr>
@@ -343,9 +344,9 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt
 <tr class="memitem:ad11643d0378285cf1d7b17826fbb35bb"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ad11643d0378285cf1d7b17826fbb35bb">copy_if_else</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;lhs, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;rhs, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;boolean_mask, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:ad11643d0378285cf1d7b17826fbb35bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new column, where each element is selected from either <code>lhs</code> or <code>rhs</code> based on the value of the corresponding element in <code>boolean_mask</code>.  <a href="namespacecudf_1_1experimental.html#ad11643d0378285cf1d7b17826fbb35bb">More...</a><br /></td></tr>
 <tr class="separator:ad11643d0378285cf1d7b17826fbb35bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a659eb118490384c27a3cf9802a56197e"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a659eb118490384c27a3cf9802a56197e">copy_if_else</a> (<a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;lhs, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;rhs, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;boolean_mask, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
-<tr class="memdesc:a659eb118490384c27a3cf9802a56197e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new column, where each element is selected from either <code>lhs</code> or <code>rhs</code> based on the value of the corresponding element in <code>boolean_mask</code>.  <a href="namespacecudf_1_1experimental.html#a659eb118490384c27a3cf9802a56197e">More...</a><br /></td></tr>
-<tr class="separator:a659eb118490384c27a3cf9802a56197e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae40904e65851d9184266a54694143290"><td class="memItemLeft" align="right" valign="top"><a id="ae40904e65851d9184266a54694143290"></a>
+std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>copy_if_else</b> (<a class="el" href="classcudf_1_1scalar.html">scalar</a> const &amp;lhs, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;rhs, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;boolean_mask, rmm::mr::device_memory_resource *mr)</td></tr>
+<tr class="separator:ae40904e65851d9184266a54694143290"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a317d50ca96c4e8842947e991c19eccf9"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a317d50ca96c4e8842947e991c19eccf9">copy_if_else</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;lhs, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;rhs, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;boolean_mask, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a317d50ca96c4e8842947e991c19eccf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new column, where each element is selected from either <code>lhs</code> or <code>rhs</code> based on the value of the corresponding element in <code>boolean_mask</code>.  <a href="namespacecudf_1_1experimental.html#a317d50ca96c4e8842947e991c19eccf9">More...</a><br /></td></tr>
 <tr class="separator:a317d50ca96c4e8842947e991c19eccf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -370,6 +371,15 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt
 <tr class="memitem:a1ab89c9919455c060e0ab7b435d772a1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a1ab89c9919455c060e0ab7b435d772a1">scatter_to_tables</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;input, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;partition_map, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a1ab89c9919455c060e0ab7b435d772a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scatters the rows of a table to <code>n</code> tables according to a partition map.  <a href="namespacecudf_1_1experimental.html#a1ab89c9919455c060e0ab7b435d772a1">More...</a><br /></td></tr>
 <tr class="separator:a1ab89c9919455c060e0ab7b435d772a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a087fa19f9ee06f083f4f020385d1d5e5"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a087fa19f9ee06f083f4f020385d1d5e5">boolean_mask_scatter</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;input, <a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;target, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;boolean_mask, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a087fa19f9ee06f083f4f020385d1d5e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scatters rows from the input table to rows of the output corresponding to true values in a boolean mask.  <a href="namespacecudf_1_1experimental.html#a087fa19f9ee06f083f4f020385d1d5e5">More...</a><br /></td></tr>
+<tr class="separator:a087fa19f9ee06f083f4f020385d1d5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f2e902ca8cc6a2dae6687b13a49182e"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a5f2e902ca8cc6a2dae6687b13a49182e">boolean_mask_scatter</a> (std::vector&lt; std::reference_wrapper&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt;&gt; const  &amp;input, <a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;target, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;boolean_mask, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a5f2e902ca8cc6a2dae6687b13a49182e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scatters scalar values to rows of the output corresponding to true values in a boolean mask.  <a href="namespacecudf_1_1experimental.html#a5f2e902ca8cc6a2dae6687b13a49182e">More...</a><br /></td></tr>
+<tr class="separator:a5f2e902ca8cc6a2dae6687b13a49182e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac399f5985f72a1e0e79da08b209e2411"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ac399f5985f72a1e0e79da08b209e2411">shift</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;input, size_type offset, std::vector&lt; std::reference_wrapper&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt;&gt; const  &amp;fill_values, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource(), <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
+<tr class="memdesc:ac399f5985f72a1e0e79da08b209e2411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new table by shifting all values in all columns by an offset.  <a href="namespacecudf_1_1experimental.html#ac399f5985f72a1e0e79da08b209e2411">More...</a><br /></td></tr>
+<tr class="separator:ac399f5985f72a1e0e79da08b209e2411"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bdcbe43fbe08248f14d1db5411b1336"><td class="memItemLeft" align="right" valign="top"><a id="a5bdcbe43fbe08248f14d1db5411b1336"></a>
 std::vector&lt; <a class="el" href="classcudf_1_1column__view.html">cudf::column_view</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>slice</b> (<a class="el" href="classcudf_1_1column__view.html">cudf::column_view</a> const &amp;input, std::vector&lt; size_type &gt; const &amp;indices)</td></tr>
 <tr class="separator:a5bdcbe43fbe08248f14d1db5411b1336"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -412,15 +422,15 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html"
 <tr class="memitem:a99d54d902dca3ba2fda445aa97c3fd76"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">cudf::experimental::table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a99d54d902dca3ba2fda445aa97c3fd76">merge</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;left_table, <a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;right_table, std::vector&lt; cudf::size_type &gt; const  &amp;key_cols, std::vector&lt; <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">cudf::order</a> &gt; const  &amp;column_order, std::vector&lt; <a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">cudf::null_order</a> &gt; const  &amp;null_precedence={}, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a99d54d902dca3ba2fda445aa97c3fd76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge sorted tables.  <a href="namespacecudf_1_1experimental.html#a99d54d902dca3ba2fda445aa97c3fd76">More...</a><br /></td></tr>
 <tr class="separator:a99d54d902dca3ba2fda445aa97c3fd76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae06984655da544208dcc2c58d44b91f9"><td class="memItemLeft" align="right" valign="top"><a id="ae06984655da544208dcc2c58d44b91f9"></a>
-std::vector&lt; std::unique_ptr&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>quantiles</b> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;input, double percent, <a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151">interpolation</a> interp, std::vector&lt; <a class="el" href="structcudf_1_1order__info.html">order_info</a> &gt; column_order)</td></tr>
-<tr class="separator:ae06984655da544208dcc2c58d44b91f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f25817755c09f6285bd9ea355cd9aa3"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a3f25817755c09f6285bd9ea355cd9aa3">reduce</a> (const <a class="el" href="classcudf_1_1column__view.html">column_view</a> &amp;col, <a class="el" href="namespacecudf_1_1experimental.html#ad7f314cd95af9fb330bfdfb735e42fb8">reduction_op</a> op, <a class="el" href="classcudf_1_1data__type.html">data_type</a> output_dtype, cudf::size_type ddof=1, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
-<tr class="memdesc:a3f25817755c09f6285bd9ea355cd9aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the reduction of the values in all rows of a column. This function does not detect overflows in reductions. Using a higher precision <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> may prevent overflow. Only <code>min</code> and <code>max</code> ops are supported for reduction of non-arithmetic types (timestamp, string...). The null values are skipped for the operation. If the column is empty, the member <code><a class="el" href="namespacecudf_1_1experimental.html#aeb3f89042ed2eb6a4a38a86919f526bc" title="Creates a column of BOOL8 elements where for every element in input true indicates the value is valid...">is_valid()</a></code> of the output scalar will contain <code>false</code>.  <a href="namespacecudf_1_1experimental.html#a3f25817755c09f6285bd9ea355cd9aa3">More...</a><br /></td></tr>
-<tr class="separator:a3f25817755c09f6285bd9ea355cd9aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab402cbc5ae2de3e024abf2231d185e3e"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ab402cbc5ae2de3e024abf2231d185e3e">scan</a> (const <a class="el" href="classcudf_1_1column__view.html">column_view</a> &amp;input, <a class="el" href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cf">scan_op</a> op, bool inclusive, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
-<tr class="memdesc:ab402cbc5ae2de3e024abf2231d185e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the scan of a column. The null values are skipped for the operation, and if an input element at <code>i</code> is null, then the output element at <code>i</code> will also be null.  <a href="namespacecudf_1_1experimental.html#ab402cbc5ae2de3e024abf2231d185e3e">More...</a><br /></td></tr>
-<tr class="separator:ab402cbc5ae2de3e024abf2231d185e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a716fcf384c7ebbe3a9f083b995374b2f"><td class="memItemLeft" align="right" valign="top"><a id="a716fcf384c7ebbe3a9f083b995374b2f"></a>
+std::unique_ptr&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>quantile</b> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;input, double q, <a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151">interpolation</a> interp, <a class="el" href="structcudf_1_1order__info.html">order_info</a> column_order)</td></tr>
+<tr class="separator:a716fcf384c7ebbe3a9f083b995374b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a965295f5f5e0fa38d0c74a2c8b4ec3d9"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a965295f5f5e0fa38d0c74a2c8b4ec3d9">reduce</a> (const <a class="el" href="classcudf_1_1column__view.html">column_view</a> &amp;col, std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; const &amp;agg, <a class="el" href="classcudf_1_1data__type.html">data_type</a> output_dtype, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a965295f5f5e0fa38d0c74a2c8b4ec3d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the reduction of the values in all rows of a column. This function does not detect overflows in reductions. Using a higher precision <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> may prevent overflow. Only <code>min</code> and <code>max</code> ops are supported for reduction of non-arithmetic types (timestamp, string...). The null values are skipped for the operation. If the column is empty, the member <code><a class="el" href="namespacecudf_1_1experimental.html#aeb3f89042ed2eb6a4a38a86919f526bc" title="Creates a column of BOOL8 elements where for every element in input true indicates the value is valid...">is_valid()</a></code> of the output scalar will contain <code>false</code>.  <a href="namespacecudf_1_1experimental.html#a965295f5f5e0fa38d0c74a2c8b4ec3d9">More...</a><br /></td></tr>
+<tr class="separator:a965295f5f5e0fa38d0c74a2c8b4ec3d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae00d49210ce934c64bbbdd8fecfefd01"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ae00d49210ce934c64bbbdd8fecfefd01">scan</a> (const <a class="el" href="classcudf_1_1column__view.html">column_view</a> &amp;input, <a class="el" href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cf">scan_op</a> op, bool inclusive, bool skipna=true, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:ae00d49210ce934c64bbbdd8fecfefd01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the scan of a column. The null values are skipped for the operation, and if an input element at <code>i</code> is null, then the output element at <code>i</code> will also be null.  <a href="namespacecudf_1_1experimental.html#ae00d49210ce934c64bbbdd8fecfefd01">More...</a><br /></td></tr>
+<tr class="separator:ae00d49210ce934c64bbbdd8fecfefd01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab59b75670715814a0280eafbf434129a"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ab59b75670715814a0280eafbf434129a">clamp</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;lo, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;lo_replace, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;hi, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;hi_replace, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:ab59b75670715814a0280eafbf434129a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces values less than <code>lo</code> in <code>input</code> with <code>lo_replace</code>, and values greater than <code>hi</code> with <code>hi_replace</code>.  <a href="namespacecudf_1_1experimental.html#ab59b75670715814a0280eafbf434129a">More...</a><br /></td></tr>
 <tr class="separator:ab59b75670715814a0280eafbf434129a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -583,6 +593,9 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html"
 <tr class="memitem:a37c2d574e277c0af5a61e2f2dbf9244b"><td class="memItemLeft" align="right" valign="top"><a id="a37c2d574e277c0af5a61e2f2dbf9244b"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>CUDF_TYPE_MAPPING</b> (<a class="el" href="namespacecudf.html#a8090bb1d4eb05e199337b8e98fcdddbf">cudf::timestamp_ns</a>, type_id::TIMESTAMP_NANOSECONDS)</td></tr>
 <tr class="separator:a37c2d574e277c0af5a61e2f2dbf9244b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c22341568e1b3c68b5fd09913898b1c"><td class="memItemLeft" align="right" valign="top"><a id="a7c22341568e1b3c68b5fd09913898b1c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>CUDF_TYPE_MAPPING</b> (<a class="el" href="structcudf_1_1dictionary__wrapper.html">dictionary32</a>, type_id::DICTIONARY32)</td></tr>
+<tr class="separator:a7c22341568e1b3c68b5fd09913898b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06b272ff7f81fde5d649dd75fd72144c"><td class="memTemplParams" colspan="2">template&lt;template&lt; cudf::type_id &gt; typename IdTypeMap = id_to_type_impl, typename Functor , typename... Ts&gt; </td></tr>
 <tr class="memitem:a06b272ff7f81fde5d649dd75fd72144c"><td class="memTemplItemLeft" align="right" valign="top">constexpr decltype(auto) CUDA_HOST_DEVICE_CALLABLE&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a06b272ff7f81fde5d649dd75fd72144c">type_dispatcher</a> (<a class="el" href="classcudf_1_1data__type.html">cudf::data_type</a> dtype, Functor f, Ts &amp;&amp;... args)</td></tr>
 <tr class="memdesc:a06b272ff7f81fde5d649dd75fd72144c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invokes an <code>operator()</code> template with the type instantiation based on the specified <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">cudf::data_type</a></code>'s <code>id()</code>.  <a href="namespacecudf_1_1experimental.html#a06b272ff7f81fde5d649dd75fd72144c">More...</a><br /></td></tr>
@@ -607,7 +620,7 @@ template&lt;cudf::type_id Id&gt; </div>
 
 <p>Maps a <code><a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></code> to it's corresponding concrete C++ type. </p>
 <p>------------------------------------------------------------------------&mdash;* Example: </p><div class="fragment"><div class="line">static_assert(std::is_same&lt;int32_t, id_to_type&lt;INT32&gt;);</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md561"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md566"></a>
 @tparam t The &lt;tt&gt;cudf::type_id&lt;/tt&gt; to map</h2>
 
 </div>
@@ -809,52 +822,6 @@ template&lt;typename T &gt; </div>
 </table>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a3">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
 </dl>
-
-</div>
-</div>
-<a id="ad7f314cd95af9fb330bfdfb735e42fb8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7f314cd95af9fb330bfdfb735e42fb8">&#9670;&nbsp;</a></span>reduction_op</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="namespacecudf_1_1experimental.html#ad7f314cd95af9fb330bfdfb735e42fb8">cudf::experimental::reduction_op</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>These enums indicate the supported reduction operations that can be performed on a column. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad7f314cd95af9fb330bfdfb735e42fb8a6970bdc2201030b9c03fbdcf3973858a"></a>SUM&#160;</td><td class="fielddoc"><p>Computes the sum of all values in the column. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad7f314cd95af9fb330bfdfb735e42fb8ace31e2a082d17e038fcc6e3006166653"></a>MIN&#160;</td><td class="fielddoc"><p>Computes the minimum of all values in the column. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad7f314cd95af9fb330bfdfb735e42fb8a26a4b44a837bf97b972628509912b4a5"></a>MAX&#160;</td><td class="fielddoc"><p>Computes the maximum of all values in the column. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad7f314cd95af9fb330bfdfb735e42fb8a2544e5b1e7659a7ba6f06444cc03d066"></a>PRODUCT&#160;</td><td class="fielddoc"><p>Computes the multiplicative product of all values in the column. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad7f314cd95af9fb330bfdfb735e42fb8a82481d5e97d96d9cc385f34a4eb1555b"></a>SUMOFSQUARES&#160;</td><td class="fielddoc"><p>Computes the sum of squares of the values in the column. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad7f314cd95af9fb330bfdfb735e42fb8a4ea6d1161ea24d7599365f574aff6610"></a>MEAN&#160;</td><td class="fielddoc"><p>Computes the arithmetic mean of the values in the column. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad7f314cd95af9fb330bfdfb735e42fb8ad6f4440b8633f973d33c78928bdac2e1"></a>VAR&#160;</td><td class="fielddoc"><p>Computes the variance of the values in the column. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad7f314cd95af9fb330bfdfb735e42fb8ac6ce23be5d350ce18a665427d2d950f7"></a>STD&#160;</td><td class="fielddoc"><p>Computes the standard deviation of the values in the column. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad7f314cd95af9fb330bfdfb735e42fb8a8e1bde3c3d303163521522cf1d62f21f"></a>ANY&#160;</td><td class="fielddoc"><p>Computes to true if any of the values are non-zero/true. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad7f314cd95af9fb330bfdfb735e42fb8a5fb1f955b45e38e31789286a1790398d"></a>ALL&#160;</td><td class="fielddoc"><p>Computes to true if all of the values are non-zero/true. </p>
-</td></tr>
-</table>
 
 </div>
 </div>
@@ -1354,6 +1321,138 @@ containing copy of all rows of <code>input</code> passing the filter defined by 
 
 </div>
 </div>
+<a id="a5f2e902ca8cc6a2dae6687b13a49182e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f2e902ca8cc6a2dae6687b13a49182e">&#9670;&nbsp;</a></span>boolean_mask_scatter() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt; cudf::experimental::boolean_mask_scatter </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::reference_wrapper&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt;&gt; const &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>boolean_mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scatters scalar values to rows of the output corresponding to true values in a boolean mask. </p>
+<p>The <code>i</code>th scalar in <code>input</code> will be written to all columns of the output table at the location of the <code>i</code>th true value in <code>boolean_mask</code>. All other rows in the output will equal the same row in <code>target</code>.</p>
+<p>Example: input: {11} boolean_mask: {true, false, false, false, true, true, false, true, true, false} target: {{ 2, 2, 3, 4, 4, 7, 7, 7, 8, 10}}</p>
+<p>output: {{ 11, 2, 3, 4, 11, 11, 7, 11, 11, 10}}</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if input.size() != target.num_columns() </td></tr>
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if any <code>i</code>th input_scalar type != <code>i</code>th target_column type </td></tr>
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if boolean_mask.type() != bool </td></tr>
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if boolean_mask.size() != target.size()</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>scalars to scatter </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">target</td><td><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a> to modify with scattered values from <code>input</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">boolean_mask</td><td><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a> which acts as boolean mask. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mr</td><td>Optional, The resource to use for all returned allocations</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns a table by scattering <code>input</code> into <code>target</code> as per <code>boolean_mask</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a087fa19f9ee06f083f4f020385d1d5e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a087fa19f9ee06f083f4f020385d1d5e5">&#9670;&nbsp;</a></span>boolean_mask_scatter() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt; cudf::experimental::boolean_mask_scatter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>boolean_mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scatters rows from the input table to rows of the output corresponding to true values in a boolean mask. </p>
+<p>The <code>i</code>th row of <code>input</code> will be written to the output table at the location of the <code>i</code>th true value in <code>boolean_mask</code>. All other rows in the output will equal the same row in <code>target</code>.</p>
+<p><code>boolean_mask</code> should have number of <code>true</code>s &lt;= number of rows in <code>input</code>. If boolean mask is <code>true</code>, corresponding value in target is updated with value from corresponding <code>input</code> column, else it is left untouched.</p>
+<p>Example: input: {{1, 5, 6, 8, 9}} boolean_mask: {true, false, false, false, true, true, false, true, true, false} target: {{ 2, 2, 3, 4, 4, 7, 7, 7, 8, 10}}</p>
+<p>output: {{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}}</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if input.num_columns() != target.num_columns() </td></tr>
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if any <code>i</code>th input_column type != <code>i</code>th target_column type </td></tr>
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if boolean_mask.type() != bool </td></tr>
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if boolean_mask.size() != target.num_rows() </td></tr>
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if number of <code>true</code> in <code>boolean_mask</code> &gt; input.num_rows()</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a> (set of dense columns) to scatter </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">target</td><td><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a> to modify with scattered values from <code>input</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">boolean_mask</td><td><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a> which acts as boolean mask. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mr</td><td>Optional, The resource to use for all returned allocations</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns a table by scattering <code>input</code> into <code>target</code> as per <code>boolean_mask</code>. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a14">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
 <a id="acf23e8ea75238ff81d762d0d1e336a4c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acf23e8ea75238ff81d762d0d1e336a4c">&#9670;&nbsp;</a></span>bools_to_mask()</h2>
 
@@ -1671,7 +1770,7 @@ containing copy of all rows of <code>input</code> passing the filter defined by 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Unique pointer to a single table having all the rows from the </dd></dl>
-<h2><a class="anchor" id="autotoc_md479"></a>
+<h2><a class="anchor" id="autotoc_md485"></a>
 elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order.</h2>
 
 </div>
@@ -1710,8 +1809,8 @@ elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order
 
 <p>Performs a deep-copy split of a <code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code> into a set of <code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code>s into a single contiguous block of memory. </p>
 <p>The memory for the output views is allocated in a single contiguous <code>rmm::device_buffer</code> returned in the <code><a class="el" href="structcudf_1_1experimental_1_1contiguous__split__result.html" title="The result(s) of a contiguous_split">contiguous_split_result</a></code>. There is no top-level owning table.</p>
-<p>The returned views of <code>input</code> are constructed from a vector of indices, that indicate where each split should occur. The <code>i</code>th returned <code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code> is sliced as <code>[0, splits[i])</code> if <code>i</code>=0, else <code>[splits[i], input.size())</code> if <code>i</code> is the last view and <code>splits[i] != input.size()</code>, or <code>[splits[i-1], splits[i]]</code> otherwise.</p>
-<p>For all <code>i</code> it is expected <code>splits[i] &lt;= splits[i+1] &lt;= input.size()</code></p>
+<p>The returned views of <code>input</code> are constructed from a vector of indices, that indicate where each split should occur. The <code>i</code>th returned <code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code> is sliced as <code>[0, splits[i])</code> if <code>i</code>=0, else <code>[splits[i], input.size())</code> if <code>i</code> is the last view and <code>[splits[i-1], splits[i]]</code> otherwise.</p>
+<p>For all <code>i</code> it is expected <code>splits[i] &lt;= splits[i+1] &lt;= input.size()</code> For a <code>splits</code> size N, there will always be N+1 splits in the output</p>
 <dl class="section note"><dt>Note</dt><dd>It is the caller's responsibility to ensure that the returned views do not outlive the viewed device memory contained in the <code>all_data</code> field of the returned <a class="el" href="structcudf_1_1experimental_1_1contiguous__split__result.html" title="The result(s) of a contiguous_split">contiguous_split_result</a>. <br  />
 </dd></dl>
 <p>Example: input: [{10, 12, 14, 16, 18, 20, 22, 24, 26, 28}, {50, 52, 54, 56, 58, 60, 62, 64, 66, 68}] splits: {2, 5, 9} output: [{{10, 12}, {14, 16, 18}, {20, 22, 24, 26}, {28}}, {{50, 52}, {54, 56, 58}, {60, 62, 64, 66}, {68}}]</p>
@@ -1739,7 +1838,7 @@ elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order
 </div>
 </div>
 <a id="ad11643d0378285cf1d7b17826fbb35bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad11643d0378285cf1d7b17826fbb35bb">&#9670;&nbsp;</a></span>copy_if_else() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad11643d0378285cf1d7b17826fbb35bb">&#9670;&nbsp;</a></span>copy_if_else() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1804,7 +1903,7 @@ elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order
 </div>
 </div>
 <a id="a317d50ca96c4e8842947e991c19eccf9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a317d50ca96c4e8842947e991c19eccf9">&#9670;&nbsp;</a></span>copy_if_else() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a317d50ca96c4e8842947e991c19eccf9">&#9670;&nbsp;</a></span>copy_if_else() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1865,70 +1964,8 @@ elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order
 
 </div>
 </div>
-<a id="a659eb118490384c27a3cf9802a56197e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a659eb118490384c27a3cf9802a56197e">&#9670;&nbsp;</a></span>copy_if_else() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; cudf::experimental::copy_if_else </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classcudf_1_1scalar.html">scalar</a> const &amp;&#160;</td>
-          <td class="paramname"><em>lhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;&#160;</td>
-          <td class="paramname"><em>boolean_mask</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
-          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns a new column, where each element is selected from either <code>lhs</code> or <code>rhs</code> based on the value of the corresponding element in <code>boolean_mask</code>. </p>
-<p>Selects each element i in the output column from either <code>rhs</code> or <code>lhs</code> using the following rule: output[i] = (boolean_mask.valid(i) and boolean_mask[i]) ? lhs : rhs[i]</p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if lhs and rhs are not of the same type </td></tr>
-    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if boolean mask is not of type <a class="el" href="structcudf_1_1experimental_1_1bool8.html">bool8</a> </td></tr>
-    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if boolean mask is not of the same length as rhs <br  />
- </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">left-hand</td><td>scalar </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">right-hand</td><td><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a> </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">column</td><td>of <code>BOOL8</code> representing "left (true) / right (false)" boolean for each element and null element represents false. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mr</td><td>resource for allocating device memory</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>new column with the selected elements </dd></dl>
-
-</div>
-</div>
 <a id="a603125f72d0498da871083aa1495db7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a603125f72d0498da871083aa1495db7c">&#9670;&nbsp;</a></span>copy_if_else() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a603125f72d0498da871083aa1495db7c">&#9670;&nbsp;</a></span>copy_if_else() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2161,7 +2198,7 @@ elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order
 
 <p>Defines all of the mappings between C++ types and their corresponding. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md563"></a>
+<h2><a class="anchor" id="autotoc_md568"></a>
 &lt;tt&gt;cudf::type_id&lt;/tt&gt; values.</h2>
 
 </div>
@@ -2303,7 +2340,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md464"></a>
+<h2><a class="anchor" id="autotoc_md470"></a>
 @return bool &lt;tt&gt;true&lt;/tt&gt; if &lt;tt&gt;lhs&lt;/tt&gt; == &lt;tt&gt;rhs&lt;/tt&gt; else &lt;tt&gt;false&lt;/tt&gt;.</h2>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -2312,7 +2349,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md465"></a>
+<h2><a class="anchor" id="autotoc_md471"></a>
 @return bool &lt;tt&gt;true&lt;/tt&gt; if &lt;tt&gt;lhs&lt;/tt&gt; == &lt;tt&gt;rhs&lt;/tt&gt; else &lt;tt&gt;false&lt;/tt&gt;.</h2>
 
 </div>
@@ -2380,7 +2417,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md340"></a>
+<h2><a class="anchor" id="autotoc_md342"></a>
 @return std::unique_ptr&lt;column&gt; The result output column</h2>
 
 </div>
@@ -2444,7 +2481,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md339"></a>
+<h2><a class="anchor" id="autotoc_md341"></a>
 @return void</h2>
 
 </div>
@@ -2777,7 +2814,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md458"></a>
+<h2><a class="anchor" id="autotoc_md464"></a>
 @returns bool                true if sorted as expected, false if not.</h2>
 
 </div>
@@ -3171,8 +3208,8 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
 
 </div>
 </div>
-<a id="a3f25817755c09f6285bd9ea355cd9aa3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f25817755c09f6285bd9ea355cd9aa3">&#9670;&nbsp;</a></span>reduce()</h2>
+<a id="a965295f5f5e0fa38d0c74a2c8b4ec3d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a965295f5f5e0fa38d0c74a2c8b4ec3d9">&#9670;&nbsp;</a></span>reduce()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3186,20 +3223,14 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacecudf_1_1experimental.html#ad7f314cd95af9fb330bfdfb735e42fb8">reduction_op</a>&#160;</td>
-          <td class="paramname"><em>op</em>, </td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>agg</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classcudf_1_1data__type.html">data_type</a>&#160;</td>
           <td class="paramname"><em>output_dtype</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cudf::size_type&#160;</td>
-          <td class="paramname"><em>ddof</em> = <code>1</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -3226,14 +3257,13 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">col</td><td>Input column view </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">op</td><td>The operator applied by the reduction </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">agg</td><td>unique_ptr of the aggregation operator applied by the reduction </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">output_dtype</td><td>The computation and output precision. @params[in] mr The resource to use for all allocations </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ddof</td><td>Delta Degrees of Freedom: the divisor used in calculation of <code>std</code> and <code>var</code> is <code>N - ddof</code>, where <code>N</code> is the population size.` </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classcudf_1_1scalar.html" title="An owning class to represent a singular value.">cudf::scalar</a> the result value If the reduction fails, the member is_valid of the output scalar </dd></dl>
-<h2><a class="anchor" id="autotoc_md452"></a>
+<h2><a class="anchor" id="autotoc_md458"></a>
 will contain &lt;tt&gt;false&lt;/tt&gt;.</h2>
 
 </div>
@@ -3276,7 +3306,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>weak_ordering Indicates the relationship between the elements in </dd></dl>
-<h2><a class="anchor" id="autotoc_md462"></a>
+<h2><a class="anchor" id="autotoc_md468"></a>
 the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -3286,7 +3316,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>weak_ordering Indicates the relationship between the elements in </dd></dl>
-<h2><a class="anchor" id="autotoc_md463"></a>
+<h2><a class="anchor" id="autotoc_md469"></a>
 the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 
 </div>
@@ -3352,7 +3382,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md341"></a>
+<h2><a class="anchor" id="autotoc_md343"></a>
 @return std::unique_ptr&lt;table&gt; The result table containing the repetitions</h2>
 
 </div>
@@ -3409,7 +3439,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md342"></a>
+<h2><a class="anchor" id="autotoc_md344"></a>
 @return std::unique_ptr&lt;table&gt; The result table containing the repetitions</h2>
 
 </div>
@@ -3741,8 +3771,8 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 
 </div>
 </div>
-<a id="ab402cbc5ae2de3e024abf2231d185e3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab402cbc5ae2de3e024abf2231d185e3e">&#9670;&nbsp;</a></span>scan()</h2>
+<a id="ae00d49210ce934c64bbbdd8fecfefd01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae00d49210ce934c64bbbdd8fecfefd01">&#9670;&nbsp;</a></span>scan()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3764,6 +3794,12 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
           <td></td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>inclusive</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>skipna</em> = <code>true</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -3794,7 +3830,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md453"></a>
+<h2><a class="anchor" id="autotoc_md459"></a>
 @returns unique pointer to new output column</h2>
 
 </div>
@@ -3998,6 +4034,82 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 
 </div>
 </div>
+<a id="ac399f5985f72a1e0e79da08b209e2411"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac399f5985f72a1e0e79da08b209e2411">&#9670;&nbsp;</a></span>shift()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt; cudf::experimental::shift </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::reference_wrapper&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt;&gt; const &amp;&#160;</td>
+          <td class="paramname"><em>fill_values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new table by shifting all values in all columns by an offset. </p>
+<p>Elements will be determined by <code>output[col][idx] = input[col][idx - offset]</code>. Some elements in the output may be indeterminable from the input. For those elements, the value will be determined by <code>fill_values</code>.</p>
+<h2><a class="anchor" id="autotoc_md288"></a>
+Examples</h2>
+<p>input = { [0, 1, 2, 3, 4], [5, 4, 3, 2, 1] } offset = 3 fill_values = { @, 7 } </p>
+<h2><a class="anchor" id="autotoc_md289"></a>
+return     = { [@, @, @, 0, 1], [7, 7, 7, 5, 4] }</h2>
+<p>input = { [0, 1, 2, 3, 4], [5, 4, 3, 2, 1] } offset = -2 fill_values = { 2, @ } return = { [2, 3, 4, 2, 2], [3, 2, 1, @, @] }</p>
+<dl class="section note"><dt>Note</dt><dd>if a column is nullable, it's output column will be nullable. </dd>
+<dd>
+if a fill value is null, it's output column will be nullable.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>Table containing columns to be shifted. </td></tr>
+    <tr><td class="paramname">offset</td><td>The offset by which to shift the input. </td></tr>
+    <tr><td class="paramname">fill_values</td><td>Fill value for indeterminable outputs.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if <code>input</code> dtype is not fixed-with. </td></tr>
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if <code>fill_values</code> size differs from input num columns. </td></tr>
+    <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if <code>fill_values</code> dtype does not match <code>input</code> dtype. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a13">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
 <a id="aa524c9b8616c57e3079161fa33f405c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa524c9b8616c57e3079161fa33f405c7">&#9670;&nbsp;</a></span>sort()</h2>
 
@@ -4164,7 +4276,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;column&gt; A non-nullable column of INT32 elements </dd></dl>
-<h2><a class="anchor" id="autotoc_md457"></a>
+<h2><a class="anchor" id="autotoc_md463"></a>
 containing the permuted row indices of &lt;tt&gt;input&lt;/tt&gt; if it were sorted</h2>
 
 </div>
@@ -4196,8 +4308,8 @@ containing the permuted row indices of &lt;tt&gt;input&lt;/tt&gt; if it were sor
 </div><div class="memdoc">
 
 <p>Splits a <code><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></code> into a set of <code><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></code>s according to a set of indices derived from expected splits. </p>
-<p>The returned view's of <code>input</code> are constructed from vector of splits, which indicates where the split should occur. The <code>i</code>th returned <code><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></code> is sliced as <code>[0, splits[i])</code> if <code>i</code>=0, else <code>[splits[i], input.size())</code> if <code>i</code> is the last view and <code>splits[i] != input.size()</code>, or <code>[splits[i-1], splits[i]]</code> otherwise.</p>
-<p>For all <code>i</code> it is expected <code>splits[i] &lt;= splits[i+1] &lt;= input.size()</code></p>
+<p>The returned view's of <code>input</code> are constructed from vector of splits, which indicates where the split should occur. The <code>i</code>th returned <code><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></code> is sliced as <code>[0, splits[i])</code> if <code>i</code>=0, else <code>[splits[i], input.size())</code> if <code>i</code> is the last view and <code>[splits[i-1], splits[i]]</code> otherwise.</p>
+<p>For all <code>i</code> it is expected <code>splits[i] &lt;= splits[i+1] &lt;= input.size()</code> For a <code>splits</code> size N, there will always be N+1 splits in the output</p>
 <dl class="section note"><dt>Note</dt><dd>It is the caller's responsibility to ensure that the returned views do not outlive the viewed device memory.</dd></dl>
 <p>Example: input: {10, 12, 14, 16, 18, 20, 22, 24, 26, 28} splits: {2, 5, 9} output: {{10, 12}, {14, 16, 18}, {20, 22, 24, 26}, {28}}</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
@@ -4248,8 +4360,8 @@ containing the permuted row indices of &lt;tt&gt;input&lt;/tt&gt; if it were sor
 </div><div class="memdoc">
 
 <p>Splits a <code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code> into a set of <code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code>s according to a set of indices derived from expected splits. </p>
-<p>The returned views of <code>input</code> are constructed from vector of splits, which indicates where the split should occur. The <code>i</code>th returned <code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code> is sliced as <code>[0, splits[i])</code> if <code>i</code>=0, else <code>[splits[i], input.size())</code> if <code>i</code> is the last view and <code>splits[i] != input.size()</code>, or <code>[splits[i-1], splits[i]]</code> otherwise.</p>
-<p>For all <code>i</code> it is expected <code>splits[i] &lt;= splits[i+1] &lt;= input.size()</code></p>
+<p>The returned views of <code>input</code> are constructed from vector of splits, which indicates where the split should occur. The <code>i</code>th returned <code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code> is sliced as <code>[0, splits[i])</code> if <code>i</code>=0, else <code>[splits[i], input.size())</code> if <code>i</code> is the last view and <code>[splits[i-1], splits[i]]</code> otherwise.</p>
+<p>For all <code>i</code> it is expected <code>splits[i] &lt;= splits[i+1] &lt;= input.size()</code> For a <code>splits</code> size N, there will always be N+1 splits in the output</p>
 <dl class="section note"><dt>Note</dt><dd>It is the caller's responsibility to ensure that the returned views do not outlive the viewed device memory.</dd></dl>
 <p>Example: input: [{10, 12, 14, 16, 18, 20, 22, 24, 26, 28}, {50, 52, 54, 56, 58, 60, 62, 64, 66, 68}] splits: {2, 5, 9} output: [{{10, 12}, {14, 16, 18}, {20, 22, 24, 26}, {28}}, {{50, 52}, {54, 56, 58}, {60, 62, 64, 66}, {68}}]</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
@@ -4425,7 +4537,7 @@ template &lt; typename ColumnType,
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md564"></a>
+<h2><a class="anchor" id="autotoc_md569"></a>
 @return Whatever is returned by the callable's &lt;tt&gt;operator()&lt;/tt&gt;</h2>
 
 </div>
@@ -4459,7 +4571,7 @@ template&lt;typename T &gt; </div>
 <p>------------------------------------------------------------------------&mdash;* When explicitly passed a template argument of a given type, returns the appropriate <code>type_id</code> enum for the specified C++ type.</p>
 <p>For example:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">return</span> cudf::type_to_id&lt;int32_t&gt;();        <span class="comment">// Returns INT32</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md560"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md565"></a>
 @tparam T The type to map to a &lt;tt&gt;cudf::type_id&lt;/tt&gt;</h2>
 
 </div>
@@ -4628,7 +4740,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="anamespacecudf_1_1experimental_html_a1b56089ab0490194a96cdfd249a72181"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a1b56089ab0490194a96cdfd249a72181">cudf::experimental::concatenate</a></div><div class="ttdeci">std::unique_ptr&lt; table &gt; concatenate(std::vector&lt; table_view &gt; const &amp;tables_to_concat, rmm::mr::device_memory_resource *mr, cudaStream_t stream)</div><div class="ttdoc">Columns of tables_to_concat are concatenated vertically to return a single table_view.</div><div class="ttdef"><b>Definition:</b> table.cpp:92</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_a1b56089ab0490194a96cdfd249a72181"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a1b56089ab0490194a96cdfd249a72181">cudf::experimental::concatenate</a></div><div class="ttdeci">std::unique_ptr&lt; table &gt; concatenate(std::vector&lt; table_view &gt; const &amp;tables_to_concat, rmm::mr::device_memory_resource *mr, cudaStream_t stream)</div><div class="ttdoc">Columns of tables_to_concat are concatenated vertically to return a single table_view.</div><div class="ttdef"><b>Definition:</b> table.cpp:91</div></div>
 <div class="ttc" id="aclasscudf_1_1data__type_html"><div class="ttname"><a href="classcudf_1_1data__type.html">cudf::data_type</a></div><div class="ttdoc">Indicator for the logical data type of an element in a column.</div><div class="ttdef"><b>Definition:</b> types.hpp:171</div></div>
 <div class="ttc" id="anamespacecudf_html_acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae"><div class="ttname"><a href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae">cudf::INT32</a></div><div class="ttdoc">4 byte signed integer</div><div class="ttdef"><b>Definition:</b> types.hpp:149</div></div>
 <!-- start footer part -->

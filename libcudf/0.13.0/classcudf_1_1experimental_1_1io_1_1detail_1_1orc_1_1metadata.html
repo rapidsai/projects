@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -94,9 +94,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a57ed4eef4e8ba3d19a94e80644337124"><td class="memItemLeft" align="right" valign="top"><a id="a57ed4eef4e8ba3d19a94e80644337124"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>metadata</b> (<a class="el" href="classcudf_1_1io_1_1datasource.html">datasource</a> *const src)</td></tr>
 <tr class="separator:a57ed4eef4e8ba3d19a94e80644337124"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4543fe492cfa087d7128b97e42e6c16c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1metadata.html#a4543fe492cfa087d7128b97e42e6c16c">select_stripes</a> (int stripe, int &amp;row_start, int &amp;row_count)</td></tr>
-<tr class="memdesc:a4543fe492cfa087d7128b97e42e6c16c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters and reads the info of only a selection of stripes.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1metadata.html#a4543fe492cfa087d7128b97e42e6c16c">More...</a><br /></td></tr>
-<tr class="separator:a4543fe492cfa087d7128b97e42e6c16c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af81b889d64d8baeecfc5964f9db9b8a9"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1metadata.html#af81b889d64d8baeecfc5964f9db9b8a9">select_stripes</a> (int stripe, int max_stripe_count, int &amp;row_start, int &amp;row_count)</td></tr>
+<tr class="memdesc:af81b889d64d8baeecfc5964f9db9b8a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters and reads the info of only a selection of stripes.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1metadata.html#af81b889d64d8baeecfc5964f9db9b8a9">More...</a><br /></td></tr>
+<tr class="separator:af81b889d64d8baeecfc5964f9db9b8a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7e688fab2baf417b0becffb6a253341"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1metadata.html#aa7e688fab2baf417b0becffb6a253341">select_columns</a> (std::vector&lt; std::string &gt; use_names, bool &amp;has_timestamp_column)</td></tr>
 <tr class="memdesc:aa7e688fab2baf417b0becffb6a253341"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters and reduces down to a selection of columns.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1metadata.html#aa7e688fab2baf417b0becffb6a253341">More...</a><br /></td></tr>
 <tr class="separator:aa7e688fab2baf417b0becffb6a253341"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,8 +177,8 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1io_1_1orc_1_1OrcDecompresso
 
 </div>
 </div>
-<a id="a4543fe492cfa087d7128b97e42e6c16c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4543fe492cfa087d7128b97e42e6c16c">&#9670;&nbsp;</a></span>select_stripes()</h2>
+<a id="af81b889d64d8baeecfc5964f9db9b8a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af81b889d64d8baeecfc5964f9db9b8a9">&#9670;&nbsp;</a></span>select_stripes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -191,6 +191,12 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1io_1_1orc_1_1OrcDecompresso
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>stripe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max_stripe_count</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

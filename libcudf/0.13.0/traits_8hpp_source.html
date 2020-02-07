@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -197,44 +197,45 @@ $(function() {
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="namespacecudf.html#a14e1cea4200d1d92d7f38d596333d28a">  221</a></span>&#160;constexpr <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespacecudf.html#a14e1cea4200d1d92d7f38d596333d28a">is_compound</a>() {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="keywordflow">return</span> std::is_same&lt;T, cudf::string_view&gt;::value;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;}</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
-<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="structcudf_1_1is__compound__impl.html">  225</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcudf_1_1is__compound__impl.html">is_compound_impl</a> {</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="keywordtype">bool</span> operator()() {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">return</span> is_compound&lt;T&gt;();</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  }</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;};</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno"><a class="line" href="namespacecudf.html#ad7f296c6fe2b6ae35ac59e41cbf1487d">  244</a></span>&#160;constexpr <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespacecudf.html#a14e1cea4200d1d92d7f38d596333d28a">is_compound</a>(<a class="code" href="classcudf_1_1data__type.html">data_type</a> type) {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacecudf_1_1experimental.html#a06b272ff7f81fde5d649dd75fd72144c">cudf::experimental::type_dispatcher</a>(type, <a class="code" href="structcudf_1_1is__compound__impl.html">is_compound_impl</a>{});</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;}</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00259"></a><span class="lineno"><a class="line" href="namespacecudf.html#ad15f075ce6421723e214c0d153fe695f">  259</a></span>&#160;constexpr <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespacecudf.html#ad15f075ce6421723e214c0d153fe695f">is_simple</a>() {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  <span class="keywordflow">return</span> not is_compound&lt;T&gt;();</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;}</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="structcudf_1_1is__simple__impl.html">  263</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcudf_1_1is__simple__impl.html">is_simple_impl</a> {</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="keywordtype">bool</span> operator()() {</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">return</span> is_simple&lt;T&gt;();</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  }</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;};</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
-<div class="line"><a name="l00280"></a><span class="lineno"><a class="line" href="namespacecudf.html#ae6e62b8bc2981be767ae3f6843877956">  280</a></span>&#160;constexpr <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespacecudf.html#ad15f075ce6421723e214c0d153fe695f">is_simple</a>(<a class="code" href="classcudf_1_1data__type.html">data_type</a> type) {</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <span class="keywordflow">return</span> not <a class="code" href="namespacecudf.html#a14e1cea4200d1d92d7f38d596333d28a">is_compound</a>(type);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;}  <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="keywordflow">return</span> std::is_same&lt;T, cudf::string_view&gt;::value or </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;         std::is_same&lt;T, cudf::dictionary32&gt;::value;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno"><a class="line" href="structcudf_1_1is__compound__impl.html">  226</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcudf_1_1is__compound__impl.html">is_compound_impl</a> {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="keywordtype">bool</span> operator()() {</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordflow">return</span> is_compound&lt;T&gt;();</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  }</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;};</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno"><a class="line" href="namespacecudf.html#ad7f296c6fe2b6ae35ac59e41cbf1487d">  245</a></span>&#160;constexpr <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespacecudf.html#a14e1cea4200d1d92d7f38d596333d28a">is_compound</a>(<a class="code" href="classcudf_1_1data__type.html">data_type</a> type) {</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="namespacecudf_1_1experimental.html#a06b272ff7f81fde5d649dd75fd72144c">cudf::experimental::type_dispatcher</a>(type, <a class="code" href="structcudf_1_1is__compound__impl.html">is_compound_impl</a>{});</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;}</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00260"></a><span class="lineno"><a class="line" href="namespacecudf.html#ad15f075ce6421723e214c0d153fe695f">  260</a></span>&#160;constexpr <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespacecudf.html#ad15f075ce6421723e214c0d153fe695f">is_simple</a>() {</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keywordflow">return</span> not is_compound&lt;T&gt;();</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno"><a class="line" href="structcudf_1_1is__simple__impl.html">  264</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcudf_1_1is__simple__impl.html">is_simple_impl</a> {</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <span class="keywordtype">bool</span> operator()() {</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">return</span> is_simple&lt;T&gt;();</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  }</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;};</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno"><a class="line" href="namespacecudf.html#ae6e62b8bc2981be767ae3f6843877956">  281</a></span>&#160;constexpr <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespacecudf.html#ad15f075ce6421723e214c0d153fe695f">is_simple</a>(<a class="code" href="classcudf_1_1data__type.html">data_type</a> type) {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <span class="keywordflow">return</span> not <a class="code" href="namespacecudf.html#a14e1cea4200d1d92d7f38d596333d28a">is_compound</a>(type);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;}</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}  <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacecudf_1_1experimental_html_a06b272ff7f81fde5d649dd75fd72144c"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a06b272ff7f81fde5d649dd75fd72144c">cudf::experimental::type_dispatcher</a></div><div class="ttdeci">constexpr decltype(auto) CUDA_HOST_DEVICE_CALLABLE type_dispatcher(cudf::data_type dtype, Functor f, Ts &amp;&amp;... args)</div><div class="ttdoc">Invokes an operator() template with the type instantiation based on the specified cudf::data_type's i...</div><div class="ttdef"><b>Definition:</b> type_dispatcher.hpp:275</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_a06b272ff7f81fde5d649dd75fd72144c"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a06b272ff7f81fde5d649dd75fd72144c">cudf::experimental::type_dispatcher</a></div><div class="ttdeci">constexpr decltype(auto) CUDA_HOST_DEVICE_CALLABLE type_dispatcher(cudf::data_type dtype, Functor f, Ts &amp;&amp;... args)</div><div class="ttdoc">Invokes an operator() template with the type instantiation based on the specified cudf::data_type's i...</div><div class="ttdef"><b>Definition:</b> type_dispatcher.hpp:282</div></div>
 <div class="ttc" id="anamespacecudf_html_aaa937abead085ea9420b15c6473f08a7"><div class="ttname"><a href="namespacecudf.html#aaa937abead085ea9420b15c6473f08a7">cudf::is_fixed_width</a></div><div class="ttdeci">constexpr bool is_fixed_width()</div><div class="ttdoc">Indicates whether elements of type T are fixed-width.</div><div class="ttdef"><b>Definition:</b> traits.hpp:182</div></div>
 <div class="ttc" id="anamespacecudf_html_a14e1cea4200d1d92d7f38d596333d28a"><div class="ttname"><a href="namespacecudf.html#a14e1cea4200d1d92d7f38d596333d28a">cudf::is_compound</a></div><div class="ttdeci">constexpr bool is_compound()</div><div class="ttdoc">Indicates whether the type T is a compound type.</div><div class="ttdef"><b>Definition:</b> traits.hpp:221</div></div>
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div><div class="ttdoc">Type declarations for libcudf.</div></div>
-<div class="ttc" id="astructcudf_1_1is__simple__impl_html"><div class="ttname"><a href="structcudf_1_1is__simple__impl.html">cudf::is_simple_impl</a></div><div class="ttdef"><b>Definition:</b> traits.hpp:263</div></div>
-<div class="ttc" id="anamespacecudf_html_ad15f075ce6421723e214c0d153fe695f"><div class="ttname"><a href="namespacecudf.html#ad15f075ce6421723e214c0d153fe695f">cudf::is_simple</a></div><div class="ttdeci">constexpr bool is_simple()</div><div class="ttdoc">Indicates whether the type T is a simple type.</div><div class="ttdef"><b>Definition:</b> traits.hpp:259</div></div>
+<div class="ttc" id="astructcudf_1_1is__simple__impl_html"><div class="ttname"><a href="structcudf_1_1is__simple__impl.html">cudf::is_simple_impl</a></div><div class="ttdef"><b>Definition:</b> traits.hpp:264</div></div>
+<div class="ttc" id="anamespacecudf_html_ad15f075ce6421723e214c0d153fe695f"><div class="ttname"><a href="namespacecudf.html#ad15f075ce6421723e214c0d153fe695f">cudf::is_simple</a></div><div class="ttdeci">constexpr bool is_simple()</div><div class="ttdoc">Indicates whether the type T is a simple type.</div><div class="ttdef"><b>Definition:</b> traits.hpp:260</div></div>
 <div class="ttc" id="astructcudf_1_1is__numeric__impl_html"><div class="ttname"><a href="structcudf_1_1is__numeric__impl.html">cudf::is_numeric_impl</a></div><div class="ttdef"><b>Definition:</b> traits.hpp:83</div></div>
 <div class="ttc" id="astructcudf_1_1is__boolean__impl_html"><div class="ttname"><a href="structcudf_1_1is__boolean__impl.html">cudf::is_boolean_impl</a></div><div class="ttdef"><b>Definition:</b> traits.hpp:120</div></div>
 <div class="ttc" id="astructcudf_1_1is__relationally__comparable__impl_html"><div class="ttname"><a href="structcudf_1_1is__relationally__comparable__impl.html">cudf::is_relationally_comparable_impl</a></div><div class="ttdef"><b>Definition:</b> traits.hpp:32</div></div>
@@ -246,7 +247,7 @@ $(function() {
 <div class="ttc" id="anamespacecudf_html_a90ebb90931abfed637396889b7829173"><div class="ttname"><a href="namespacecudf.html#a90ebb90931abfed637396889b7829173">cudf::is_timestamp</a></div><div class="ttdeci">constexpr bool is_timestamp()</div><div class="ttdoc">Indicates whether the type T is a timestamp type.</div><div class="ttdef"><b>Definition:</b> traits.hpp:148</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">cuDF interfaces</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:23</div></div>
 <div class="ttc" id="astring__view_8cuh_html"><div class="ttname"><a href="string__view_8cuh.html">string_view.cuh</a></div><div class="ttdoc">Class definition for cudf::string_view.</div></div>
-<div class="ttc" id="astructcudf_1_1is__compound__impl_html"><div class="ttname"><a href="structcudf_1_1is__compound__impl.html">cudf::is_compound_impl</a></div><div class="ttdef"><b>Definition:</b> traits.hpp:225</div></div>
+<div class="ttc" id="astructcudf_1_1is__compound__impl_html"><div class="ttname"><a href="structcudf_1_1is__compound__impl.html">cudf::is_compound_impl</a></div><div class="ttdef"><b>Definition:</b> traits.hpp:226</div></div>
 <div class="ttc" id="atimestamps_8hpp_html"><div class="ttname"><a href="timestamps_8hpp.html">timestamps.hpp</a></div><div class="ttdoc">Concrete type definitions for int32_t and int64_t timestamps in.</div></div>
 <div class="ttc" id="atype__dispatcher_8hpp_html"><div class="ttname"><a href="type__dispatcher_8hpp.html">type_dispatcher.hpp</a></div><div class="ttdoc">Defines the mapping between cudf::type_id runtime type information.</div></div>
 <div class="ttc" id="anamespacecudf_html_aef9b08b206b1340c5ac3893d17943309"><div class="ttname"><a href="namespacecudf.html#aef9b08b206b1340c5ac3893d17943309">cudf::is_relationally_comparable</a></div><div class="ttdeci">constexpr bool is_relationally_comparable()</div><div class="ttdoc">Indicates whether objects of types L and R can be relationally compared.</div><div class="ttdef"><b>Definition:</b> traits.hpp:67</div></div>

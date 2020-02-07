@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -119,9 +119,9 @@ std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bott
 <tr class="memitem:a7b9dad8317e4b59af2d10f06b2781871"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1metadata.html#a7b9dad8317e4b59af2d10f06b2781871">get_pandas_index_name</a> ()</td></tr>
 <tr class="memdesc:a7b9dad8317e4b59af2d10f06b2781871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts the column name used for the row indexes in a dataframe.  <a href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1metadata.html#a7b9dad8317e4b59af2d10f06b2781871">More...</a><br /></td></tr>
 <tr class="separator:a7b9dad8317e4b59af2d10f06b2781871"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f03843daf70f5e2bbd3149a32c8567e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1metadata.html#a7f03843daf70f5e2bbd3149a32c8567e">select_row_groups</a> (int row_group, int &amp;row_start, int &amp;row_count)</td></tr>
-<tr class="memdesc:a7f03843daf70f5e2bbd3149a32c8567e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters and reduces down to a selection of row groups.  <a href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1metadata.html#a7f03843daf70f5e2bbd3149a32c8567e">More...</a><br /></td></tr>
-<tr class="separator:a7f03843daf70f5e2bbd3149a32c8567e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e1300e368d7758f879da61aa5819d6a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1metadata.html#a3e1300e368d7758f879da61aa5819d6a">select_row_groups</a> (int row_group, int max_rowgroup_count, int &amp;row_start, int &amp;row_count)</td></tr>
+<tr class="memdesc:a3e1300e368d7758f879da61aa5819d6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters and reduces down to a selection of row groups.  <a href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1metadata.html#a3e1300e368d7758f879da61aa5819d6a">More...</a><br /></td></tr>
+<tr class="separator:a3e1300e368d7758f879da61aa5819d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbf24f90ce69f8d2116a57ca12298466"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1metadata.html#adbf24f90ce69f8d2116a57ca12298466">select_columns</a> (std::vector&lt; std::string &gt; use_names, bool include_index, const std::string &amp;pandas_index)</td></tr>
 <tr class="memdesc:adbf24f90ce69f8d2116a57ca12298466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters and reduces down to a selection of columns.  <a href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1metadata.html#adbf24f90ce69f8d2116a57ca12298466">More...</a><br /></td></tr>
 <tr class="separator:adbf24f90ce69f8d2116a57ca12298466"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -236,8 +236,8 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>column_order_list
 
 </div>
 </div>
-<a id="a7f03843daf70f5e2bbd3149a32c8567e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f03843daf70f5e2bbd3149a32c8567e">&#9670;&nbsp;</a></span>select_row_groups()</h2>
+<a id="a3e1300e368d7758f879da61aa5819d6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e1300e368d7758f879da61aa5819d6a">&#9670;&nbsp;</a></span>select_row_groups()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,6 +250,12 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>column_order_list
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>row_group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max_rowgroup_count</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -280,6 +286,7 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>column_order_list
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">row_group</td><td>Index of the row group to select </td></tr>
+    <tr><td class="paramname">max_rowgroup_count</td><td>Max number of consecutive row groups if &gt; 0 </td></tr>
     <tr><td class="paramname">row_start</td><td>Starting row of the selection </td></tr>
     <tr><td class="paramname">row_count</td><td>Total number of rows selected</td></tr>
   </table>

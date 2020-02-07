@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -90,30 +90,27 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;cudf/filling.hpp&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="types_8hpp.html">cudf/types.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;rmm/mr/device_memory_resource.hpp&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;cuda_runtime.h&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>experimental {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>detail {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecudf_1_1experimental.html#abdcc600a269f9142df29f43dd61d6521">fill</a>(mutable_column_view&amp; destination, size_type begin, size_type end,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;          scalar <span class="keyword">const</span>&amp; value, cudaStream_t stream = 0);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;std::unique_ptr&lt;column&gt; <a class="code" href="namespacecudf_1_1experimental.html#abdcc600a269f9142df29f43dd61d6521">fill</a>(</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    column_view <span class="keyword">const</span>&amp; input, size_type begin, size_type end,</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    scalar <span class="keyword">const</span>&amp; value,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource(),</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    cudaStream_t stream = 0);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                            </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}  <span class="comment">// namespace detail</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}  <span class="comment">// namespace experimental</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}  <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>experimental {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>detail {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecudf_1_1experimental.html#abdcc600a269f9142df29f43dd61d6521">fill</a>(mutable_column_view&amp; destination, size_type begin, size_type end,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;          scalar <span class="keyword">const</span>&amp; value, cudaStream_t stream = 0);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;std::unique_ptr&lt;column&gt; <a class="code" href="namespacecudf_1_1experimental.html#abdcc600a269f9142df29f43dd61d6521">fill</a>(</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    column_view <span class="keyword">const</span>&amp; input, size_type begin, size_type end,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    scalar <span class="keyword">const</span>&amp; value,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource(),</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    cudaStream_t stream = 0);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                            </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}  <span class="comment">// namespace detail</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}  <span class="comment">// namespace experimental</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}  <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacecudf_1_1experimental_html_abdcc600a269f9142df29f43dd61d6521"><div class="ttname"><a href="namespacecudf_1_1experimental.html#abdcc600a269f9142df29f43dd61d6521">cudf::experimental::fill</a></div><div class="ttdeci">void fill(mutable_column_view &amp;destination, size_type begin, size_type end, scalar const &amp;value)</div><div class="ttdoc">Fills a range of elements in-place in a column with a scalar value.</div><div class="ttdef"><b>Definition:</b> filling/fill.cu:164</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_abdcc600a269f9142df29f43dd61d6521"><div class="ttname"><a href="namespacecudf_1_1experimental.html#abdcc600a269f9142df29f43dd61d6521">cudf::experimental::fill</a></div><div class="ttdeci">void fill(mutable_column_view &amp;destination, size_type begin, size_type end, scalar const &amp;value)</div><div class="ttdoc">Fills a range of elements in-place in a column with a scalar value.</div><div class="ttdef"><b>Definition:</b> filling/fill.cu:173</div></div>
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div><div class="ttdoc">Type declarations for libcudf.</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">cuDF interfaces</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:23</div></div>
 <!-- start footer part -->

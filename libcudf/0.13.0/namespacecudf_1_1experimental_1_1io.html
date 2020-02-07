@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -87,11 +87,17 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1ParseOptions.html">ParseOptions</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for holding various options used when parsing and converting CSV/json data to cuDF data type values.  <a href="structcudf_1_1experimental_1_1io_1_1ParseOptions.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1read__avro__args.html">read_avro_args</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Settings to use for <code><a class="el" href="namespacecudf_1_1experimental_1_1io.html#af9e358a1a57d0bf9e96455069c8f09fc" title="Reads an Avro dataset into a set of columns.">read_avro()</a></code>  <a href="structcudf_1_1experimental_1_1io_1_1read__avro__args.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1read__csv__args.html">read_csv_args</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Settings to use for <code><a class="el" href="namespacecudf_1_1experimental_1_1io.html#a60d5c27246d37d9cd217eec94e935f3d" title="Reads a CSV dataset into a set of columns.">read_csv()</a></code>  <a href="structcudf_1_1experimental_1_1io_1_1read__csv__args.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1read__json__args.html">read_json_args</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input arguments to the <code>read_json</code> interface.  <a href="structcudf_1_1experimental_1_1io_1_1read__json__args.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1read__orc__args.html">read_orc_args</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Settings to use for <code><a class="el" href="namespacecudf_1_1experimental_1_1io.html#acb23ae0f657700ae24d33235bea9fbdf" title="Reads an ORC dataset into a set of columns.">read_orc()</a></code>  <a href="structcudf_1_1experimental_1_1io_1_1read__orc__args.html#details">More...</a><br /></td></tr>
@@ -159,6 +165,9 @@ Functions</h2></td></tr>
 <tr class="memitem:af9e358a1a57d0bf9e96455069c8f09fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io.html#af9e358a1a57d0bf9e96455069c8f09fc">read_avro</a> (<a class="el" href="structcudf_1_1experimental_1_1io_1_1read__avro__args.html">read_avro_args</a> const  &amp;args, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:af9e358a1a57d0bf9e96455069c8f09fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads an Avro dataset into a set of columns.  <a href="namespacecudf_1_1experimental_1_1io.html#af9e358a1a57d0bf9e96455069c8f09fc">More...</a><br /></td></tr>
 <tr class="separator:af9e358a1a57d0bf9e96455069c8f09fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8af08c0897053ae800200d3bbdc1e5d5"><td class="memItemLeft" align="right" valign="top"><a id="a8af08c0897053ae800200d3bbdc1e5d5"></a>
+<a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><b>read_json</b> (<a class="el" href="structcudf_1_1experimental_1_1io_1_1read__json__args.html">read_json_args</a> const &amp;args, rmm::mr::device_memory_resource *mr)</td></tr>
+<tr class="separator:a8af08c0897053ae800200d3bbdc1e5d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60d5c27246d37d9cd217eec94e935f3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io.html#a60d5c27246d37d9cd217eec94e935f3d">read_csv</a> (<a class="el" href="structcudf_1_1experimental_1_1io_1_1read__csv__args.html">read_csv_args</a> const  &amp;args, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a60d5c27246d37d9cd217eec94e935f3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a CSV dataset into a set of columns.  <a href="namespacecudf_1_1experimental_1_1io.html#a60d5c27246d37d9cd217eec94e935f3d">More...</a><br /></td></tr>
 <tr class="separator:a60d5c27246d37d9cd217eec94e935f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,6 +183,22 @@ Functions</h2></td></tr>
 <tr class="memitem:a85ee25fc2cd472e2cb922897119363a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io.html#a85ee25fc2cd472e2cb922897119363a3">write_parquet</a> (<a class="el" href="structcudf_1_1experimental_1_1io_1_1write__parquet__args.html">write_parquet_args</a> const  &amp;args, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a85ee25fc2cd472e2cb922897119363a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a set of columns to parquet format.  <a href="namespacecudf_1_1experimental_1_1io.html#a85ee25fc2cd472e2cb922897119363a3">More...</a><br /></td></tr>
 <tr class="separator:a85ee25fc2cd472e2cb922897119363a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7419a6ed66ceb068fe69bdd1cc1bdc90"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a7419a6ed66ceb068fe69bdd1cc1bdc90"><td class="memTemplItemLeft" align="right" valign="top">cudf::size_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io.html#a7419a6ed66ceb068fe69bdd1cc1bdc90">find_all_from_set</a> (const char *h_data, size_t h_size, const std::vector&lt; char &gt; &amp;keys, uint64_t result_offset, T *positions)</td></tr>
+<tr class="separator:a7419a6ed66ceb068fe69bdd1cc1bdc90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f6d3c394add782539ec5459dee2ed4b"><td class="memItemLeft" align="right" valign="top"><a id="a8f6d3c394add782539ec5459dee2ed4b"></a>
+template cudf::size_type&#160;</td><td class="memItemRight" valign="bottom"><b>find_all_from_set&lt; uint64_t &gt;</b> (const char *h_data, size_t h_size, const std::vector&lt; char &gt; &amp;keys, uint64_t result_offset, uint64_t *positions)</td></tr>
+<tr class="separator:a8f6d3c394add782539ec5459dee2ed4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a478c18311778bac993ef8d2cad226799"><td class="memItemLeft" align="right" valign="top"><a id="a478c18311778bac993ef8d2cad226799"></a>
+template cudf::size_type&#160;</td><td class="memItemRight" valign="bottom"><b>find_all_from_set&lt; pos_key_pair &gt;</b> (const char *h_data, size_t h_size, const std::vector&lt; char &gt; &amp;keys, uint64_t result_offset, pos_key_pair *positions)</td></tr>
+<tr class="separator:a478c18311778bac993ef8d2cad226799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a912a038110b14cdf4a72132510f24ff0"><td class="memItemLeft" align="right" valign="top">cudf::size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io.html#a912a038110b14cdf4a72132510f24ff0">count_all_from_set</a> (const char *h_data, size_t h_size, const std::vector&lt; char &gt; &amp;keys)</td></tr>
+<tr class="separator:a912a038110b14cdf4a72132510f24ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af768c90a581510c5a13c2921b0026647"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io.html#af768c90a581510c5a13c2921b0026647">infer_compression_type</a> (const <a class="el" href="namespacecudf_1_1experimental_1_1io.html#a748faef899f436d65047ac2241261457">compression_type</a> &amp;compression_arg, const std::string &amp;filename, const std::vector&lt; std::pair&lt; std::string, std::string &gt;&gt; &amp;ext_to_comp_map)</td></tr>
+<tr class="memdesc:af768c90a581510c5a13c2921b0026647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Infer file compression type based on user supplied arguments.  <a href="namespacecudf_1_1experimental_1_1io.html#af768c90a581510c5a13c2921b0026647">More...</a><br /></td></tr>
+<tr class="separator:af768c90a581510c5a13c2921b0026647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf5e5dfb1fa1495a14eb25429a2ca49f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcudf_1_1data__type.html">data_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io.html#acf5e5dfb1fa1495a14eb25429a2ca49f">convert_string_to_dtype</a> (const std::string &amp;dtype)</td></tr>
+<tr class="separator:acf5e5dfb1fa1495a14eb25429a2ca49f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>IO interfaces. </p>
@@ -311,6 +336,190 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="acf5e5dfb1fa1495a14eb25429a2ca49f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf5e5dfb1fa1495a14eb25429a2ca49f">&#9670;&nbsp;</a></span>convert_string_to_dtype()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcudf_1_1data__type.html">data_type</a> cudf::experimental::io::convert_string_to_dtype </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>dtype</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Convert a string to a cuDF <a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dtype</td><td>The string to be converted</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a> The converted data type </dd></dl>
+
+</div>
+</div>
+<a id="a912a038110b14cdf4a72132510f24ff0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a912a038110b14cdf4a72132510f24ff0">&#9670;&nbsp;</a></span>count_all_from_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cudf::size_type cudf::experimental::io::count_all_from_set </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>h_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>h_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; char &gt; &amp;&#160;</td>
+          <td class="paramname"><em>keys</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Searches the input character array for each of characters in a set and sums up the number of occurrences.</p>
+<p>Does not load the entire buffer into the GPU memory at any time, so it can be used with buffers of any size.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">h_data</td><td>Pointer to the data in host memory </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h_size</td><td>Size of the input data, in bytes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">keys</td><td>Vector containing the keys to count in the buffer</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>cudf::size_type total number of occurrences </dd></dl>
+
+</div>
+</div>
+<a id="a7419a6ed66ceb068fe69bdd1cc1bdc90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7419a6ed66ceb068fe69bdd1cc1bdc90">&#9670;&nbsp;</a></span>find_all_from_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">cudf::size_type cudf::experimental::io::find_all_from_set </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>h_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>h_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; char &gt; &amp;&#160;</td>
+          <td class="paramname"><em>keys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>result_offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T *&#160;</td>
+          <td class="paramname"><em>positions</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p></p>
+<p>Searches the input character array for each of characters in a set. Sums up the number of occurrences. If the 'positions' parameter is not void*, positions of all occurrences are stored in the output device array.</p>
+<p>Does not load the entire file into the GPU memory at any time, so it can be used to parse large files. Output array needs to be preallocated.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">h_data</td><td>Pointer to the input character array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h_size</td><td>Number of bytes in the input array </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">keys</td><td>Vector containing the keys to count in the buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">result_offset</td><td>Offset to add to the output positions </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">positions</td><td>Array containing the output positions</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>cudf::size_type total number of occurrences </dd></dl>
+
+</div>
+</div>
+<a id="af768c90a581510c5a13c2921b0026647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af768c90a581510c5a13c2921b0026647">&#9670;&nbsp;</a></span>infer_compression_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string cudf::experimental::io::infer_compression_type </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacecudf_1_1experimental_1_1io.html#a748faef899f436d65047ac2241261457">compression_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>compression_arg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; std::string, std::string &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>ext_to_comp_map</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Infer file compression type based on user supplied arguments. </p>
+<p>If the user specifies a valid compression_type for compression arg, compression type will be computed based on that. Otherwise the filename and ext_to_comp_map will be used.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">compression_arg</td><td>User specified compression type (if any) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>Filename to base compression type (by extension) on </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ext_to_comp_map</td><td>User supplied mapping of file extension to compression type</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>string representing compression type ("gzip, "bz2", etc) </dd></dl>
+
+</div>
+</div>
 <a id="af9e358a1a57d0bf9e96455069c8f09fc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9e358a1a57d0bf9e96455069c8f09fc">&#9670;&nbsp;</a></span>read_avro()</h2>
 
@@ -576,7 +785,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <div class="ttc" id="astructcudf_1_1sink__info_html"><div class="ttname"><a href="structcudf_1_1sink__info.html">cudf::sink_info</a></div><div class="ttdef"><b>Definition:</b> io_types.hpp:54</div></div>
 <div class="ttc" id="astructcudf_1_1source__info_html"><div class="ttname"><a href="structcudf_1_1source__info.html">cudf::source_info</a></div><div class="ttdef"><b>Definition:</b> io_types.hpp:36</div></div>
-<div class="ttc" id="astructcudf_1_1experimental_1_1io_1_1write__parquet__args_html"><div class="ttname"><a href="structcudf_1_1experimental_1_1io_1_1write__parquet__args.html">cudf::experimental::io::write_parquet_args</a></div><div class="ttdoc">Settings to use for write_parquet()</div><div class="ttdef"><b>Definition:</b> functions.hpp:335</div></div>
+<div class="ttc" id="astructcudf_1_1experimental_1_1io_1_1write__parquet__args_html"><div class="ttname"><a href="structcudf_1_1experimental_1_1io_1_1write__parquet__args.html">cudf::experimental::io::write_parquet_args</a></div><div class="ttdoc">Settings to use for write_parquet()</div><div class="ttdef"><b>Definition:</b> functions.hpp:385</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

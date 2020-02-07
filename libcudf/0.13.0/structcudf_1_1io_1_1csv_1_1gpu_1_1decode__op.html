@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -80,22 +80,22 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab92afb687efa516062868bb11f315096"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if_t&lt; std::is_integral&lt; T &gt;::value and !std::is_same&lt; T, cudf::experimental::bool8 &gt;::value &gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:ab92afb687efa516062868bb11f315096"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ __forceinline__ bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1csv_1_1gpu_1_1decode__op.html#ab92afb687efa516062868bb11f315096">operator()</a> (const char *data, void *out_buffer, size_t row, long start, long end, <a class="el" href="structcudf_1_1io_1_1csv_1_1ParseOptions.html">ParseOptions</a> const &amp;opts, column_parse::flags flags)</td></tr>
+<tr class="memitem:ab92afb687efa516062868bb11f315096"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ __forceinline__ bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1csv_1_1gpu_1_1decode__op.html#ab92afb687efa516062868bb11f315096">operator()</a> (const char *data, void *out_buffer, size_t row, long start, long end, <a class="el" href="structParseOptions.html">ParseOptions</a> const &amp;opts, column_parse::flags flags)</td></tr>
 <tr class="memdesc:ab92afb687efa516062868bb11f315096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatch for numeric types whose values can be convertible to 0 or 1 to represent boolean false/true, based upon checking against a true/false values list.  <a href="structcudf_1_1io_1_1csv_1_1gpu_1_1decode__op.html#ab92afb687efa516062868bb11f315096">More...</a><br /></td></tr>
 <tr class="separator:ab92afb687efa516062868bb11f315096"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab92afb687efa516062868bb11f315096"><td class="memTemplParams" colspan="2"><a id="ab92afb687efa516062868bb11f315096"></a>
 template&lt;typename T , typename std::enable_if_t&lt; std::is_same&lt; T, cudf::experimental::bool8 &gt;::value &gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:ab92afb687efa516062868bb11f315096"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ __forceinline__ bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1csv_1_1gpu_1_1decode__op.html#ab92afb687efa516062868bb11f315096">operator()</a> (const char *data, void *out_buffer, size_t row, long start, long end, <a class="el" href="structcudf_1_1io_1_1csv_1_1ParseOptions.html">ParseOptions</a> const &amp;opts, column_parse::flags flags)</td></tr>
+<tr class="memitem:ab92afb687efa516062868bb11f315096"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ __forceinline__ bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1csv_1_1gpu_1_1decode__op.html#ab92afb687efa516062868bb11f315096">operator()</a> (const char *data, void *out_buffer, size_t row, long start, long end, <a class="el" href="structParseOptions.html">ParseOptions</a> const &amp;opts, column_parse::flags flags)</td></tr>
 <tr class="memdesc:ab92afb687efa516062868bb11f315096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatch for boolean type types. <br /></td></tr>
 <tr class="separator:ab92afb687efa516062868bb11f315096"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab92afb687efa516062868bb11f315096"><td class="memTemplParams" colspan="2"><a id="ab92afb687efa516062868bb11f315096"></a>
 template&lt;typename T , typename std::enable_if_t&lt; std::is_floating_point&lt; T &gt;::value &gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:ab92afb687efa516062868bb11f315096"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ __forceinline__ bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1csv_1_1gpu_1_1decode__op.html#ab92afb687efa516062868bb11f315096">operator()</a> (const char *data, void *out_buffer, size_t row, long start, long end, <a class="el" href="structcudf_1_1io_1_1csv_1_1ParseOptions.html">ParseOptions</a> const &amp;opts, column_parse::flags flags)</td></tr>
+<tr class="memitem:ab92afb687efa516062868bb11f315096"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ __forceinline__ bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1csv_1_1gpu_1_1decode__op.html#ab92afb687efa516062868bb11f315096">operator()</a> (const char *data, void *out_buffer, size_t row, long start, long end, <a class="el" href="structParseOptions.html">ParseOptions</a> const &amp;opts, column_parse::flags flags)</td></tr>
 <tr class="memdesc:ab92afb687efa516062868bb11f315096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatch for floating points, which are set to NaN if the input is not valid. In such case, the validity mask is set to zero too. <br /></td></tr>
 <tr class="separator:ab92afb687efa516062868bb11f315096"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab92afb687efa516062868bb11f315096"><td class="memTemplParams" colspan="2"><a id="ab92afb687efa516062868bb11f315096"></a>
 template&lt;typename T , typename std::enable_if_t&lt;!std::is_integral&lt; T &gt;::value and !std::is_floating_point&lt; T &gt;::value &gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:ab92afb687efa516062868bb11f315096"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ __forceinline__ bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1csv_1_1gpu_1_1decode__op.html#ab92afb687efa516062868bb11f315096">operator()</a> (const char *data, void *out_buffer, size_t row, long start, long end, <a class="el" href="structcudf_1_1io_1_1csv_1_1ParseOptions.html">ParseOptions</a> const &amp;opts, column_parse::flags flags)</td></tr>
+<tr class="memitem:ab92afb687efa516062868bb11f315096"><td class="memTemplItemLeft" align="right" valign="top">__host__ __device__ __forceinline__ bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1io_1_1csv_1_1gpu_1_1decode__op.html#ab92afb687efa516062868bb11f315096">operator()</a> (const char *data, void *out_buffer, size_t row, long start, long end, <a class="el" href="structParseOptions.html">ParseOptions</a> const &amp;opts, column_parse::flags flags)</td></tr>
 <tr class="memdesc:ab92afb687efa516062868bb11f315096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatch for all other types. <br /></td></tr>
 <tr class="separator:ab92afb687efa516062868bb11f315096"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -146,7 +146,7 @@ template&lt;typename T , typename std::enable_if_t&lt; std::is_integral&lt; T &g
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structcudf_1_1io_1_1csv_1_1ParseOptions.html">ParseOptions</a> const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structParseOptions.html">ParseOptions</a> const &amp;&#160;</td>
           <td class="paramname"><em>opts</em>, </td>
         </tr>
         <tr>

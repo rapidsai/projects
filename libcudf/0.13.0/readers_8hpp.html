@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -106,15 +106,17 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="readers_8hpp__dep__incl.png" border="0" usemap="#readers_8hppdep" alt=""/></div>
 <map name="readers_8hppdep" id="readers_8hppdep">
-<area shape="rect" title="cuDF&#45;IO reader classes API" alt="" coords="319,5,451,32"/>
+<area shape="rect" title="cuDF&#45;IO reader classes API" alt="" coords="479,5,611,32"/>
 <area shape="rect" href="avro_2reader__impl_8hpp.html" title="cuDF&#45;IO Avro reader class implementation header" alt="" coords="5,80,177,107"/>
 <area shape="rect" href="csv_2reader__impl_8hpp.html" title="cuDF&#45;IO CSV reader class implementation header" alt="" coords="201,80,373,107"/>
-<area shape="rect" href="orc_2reader__impl_8hpp.html" title="cuDF&#45;IO ORC reader class implementation header" alt="" coords="397,80,569,107"/>
-<area shape="rect" href="parquet_2reader__impl_8hpp.html" title="cuDF&#45;IO Parquet reader class implementation header" alt="" coords="593,80,765,107"/>
+<area shape="rect" href="json_2reader__impl_8hpp.html" title="cuDF&#45;IO JSON reader class implementation header" alt="" coords="397,80,569,107"/>
+<area shape="rect" href="json_2reader__impl_8cu.html" title="cuDF&#45;IO JSON reader class implementation" alt="" coords="433,155,595,181"/>
+<area shape="rect" href="orc_2reader__impl_8hpp.html" title="cuDF&#45;IO ORC reader class implementation header" alt="" coords="645,80,817,107"/>
+<area shape="rect" href="parquet_2reader__impl_8hpp.html" title="cuDF&#45;IO Parquet reader class implementation header" alt="" coords="841,80,1013,107"/>
 <area shape="rect" href="avro_2reader__impl_8cu.html" title="cuDF&#45;IO Avro reader class implementation" alt="" coords="10,155,173,181"/>
 <area shape="rect" href="csv_2reader__impl_8cu.html" title="cuDF&#45;IO CSV reader class implementation" alt="" coords="206,155,369,181"/>
-<area shape="rect" href="orc_2reader__impl_8cu.html" title="cuDF&#45;IO ORC reader class implementation" alt="" coords="402,155,565,181"/>
-<area shape="rect" href="parquet_2reader__impl_8cu.html" title="cuDF&#45;IO Parquet reader class implementation" alt="" coords="598,155,761,181"/>
+<area shape="rect" href="orc_2reader__impl_8cu.html" title="cuDF&#45;IO ORC reader class implementation" alt="" coords="650,155,813,181"/>
+<area shape="rect" href="parquet_2reader__impl_8cu.html" title="cuDF&#45;IO Parquet reader class implementation" alt="" coords="846,155,1009,181"/>
 </map>
 </div>
 </div>
@@ -127,6 +129,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1avro_1_1reader.html">cudf::experimental::io::detail::avro::reader</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to read Avro dataset data into columns.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1avro_1_1reader.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1json_1_1reader__options.html">cudf::experimental::io::detail::json::reader_options</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Options for the JSON reader.  <a href="structcudf_1_1experimental_1_1io_1_1detail_1_1json_1_1reader__options.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1json_1_1reader.html">cudf::experimental::io::detail::json::reader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to read JSON dataset data into columns.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1json_1_1reader.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1csv_1_1reader__options.html">cudf::experimental::io::detail::csv::reader_options</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Options for the CSV reader.  <a href="structcudf_1_1experimental_1_1io_1_1detail_1_1csv_1_1reader__options.html#details">More...</a><br /></td></tr>
@@ -163,6 +171,9 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacecudf_1_1experimental_1_1io_1_1detail_1_1avro"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io_1_1detail_1_1avro.html">cudf::experimental::io::detail::avro</a></td></tr>
 <tr class="memdesc:namespacecudf_1_1experimental_1_1io_1_1detail_1_1avro"><td class="mdescLeft">&#160;</td><td class="mdescRight">Avro format. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacecudf_1_1experimental_1_1io_1_1detail_1_1json"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io_1_1detail_1_1json.html">cudf::experimental::io::detail::json</a></td></tr>
+<tr class="memdesc:namespacecudf_1_1experimental_1_1io_1_1detail_1_1json"><td class="mdescLeft">&#160;</td><td class="mdescRight">JSON format. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacecudf_1_1experimental_1_1io_1_1detail_1_1csv"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io_1_1detail_1_1csv.html">cudf::experimental::io::detail::csv</a></td></tr>
 <tr class="memdesc:namespacecudf_1_1experimental_1_1io_1_1detail_1_1csv"><td class="mdescLeft">&#160;</td><td class="mdescRight">CSV format. <br /></td></tr>

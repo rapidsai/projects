@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -96,9 +96,14 @@ Inheritance diagram for cudf::experimental::aggregation:</div>
 Public Types</h2></td></tr>
 <tr class="memitem:a86a800d62c1b8a500f7920fd1ca0189d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189d">Kind</a> { <br />
 &#160;&#160;<a class="el" href="classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189daececbb0822d77874aba65175c9c3153d">SUM</a>, 
+<a class="el" href="classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189da24c551e3f0715d9b0d041f3cf803ab7e">PRODUCT</a>, 
 <a class="el" href="classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189da22bf0b70cfbefc99c9b9c37eb73b0a74">MIN</a>, 
 <a class="el" href="classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189da3cb56562c9015ae101d314c0f336b972">MAX</a>, 
-<a class="el" href="classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189da2a5bb9bde5b1d760c1d460d2a3200c48">COUNT</a>, 
+<br />
+&#160;&#160;<a class="el" href="classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189da2a5bb9bde5b1d760c1d460d2a3200c48">COUNT</a>, 
+<a class="el" href="classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189da4bdb6b0cc68e612518bd8ce87d313fdd">ANY</a>, 
+<a class="el" href="classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189da9003f0a443f6b14a11bec60bbebab5ec">ALL</a>, 
+<a class="el" href="classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189daa9704008532bfa078d76115b59d6e6cb">SUM_OF_SQUARES</a>, 
 <br />
 &#160;&#160;<a class="el" href="classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189da1a8d79945255937584ba210c1548812d">MEAN</a>, 
 <a class="el" href="classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189dafed46c79413f3b539c4b2599081377e6">VARIANCE</a>, 
@@ -153,11 +158,19 @@ Public Attributes</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a86a800d62c1b8a500f7920fd1ca0189daececbb0822d77874aba65175c9c3153d"></a>SUM&#160;</td><td class="fielddoc"><p>sum reduction </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a86a800d62c1b8a500f7920fd1ca0189da24c551e3f0715d9b0d041f3cf803ab7e"></a>PRODUCT&#160;</td><td class="fielddoc"><p>product reduction </p>
+</td></tr>
 <tr><td class="fieldname"><a id="a86a800d62c1b8a500f7920fd1ca0189da22bf0b70cfbefc99c9b9c37eb73b0a74"></a>MIN&#160;</td><td class="fielddoc"><p>min reduction </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a86a800d62c1b8a500f7920fd1ca0189da3cb56562c9015ae101d314c0f336b972"></a>MAX&#160;</td><td class="fielddoc"><p>max reduction </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a86a800d62c1b8a500f7920fd1ca0189da2a5bb9bde5b1d760c1d460d2a3200c48"></a>COUNT&#160;</td><td class="fielddoc"><p>count number of elements </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a86a800d62c1b8a500f7920fd1ca0189da4bdb6b0cc68e612518bd8ce87d313fdd"></a>ANY&#160;</td><td class="fielddoc"><p>any reduction </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a86a800d62c1b8a500f7920fd1ca0189da9003f0a443f6b14a11bec60bbebab5ec"></a>ALL&#160;</td><td class="fielddoc"><p>all reduction </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a86a800d62c1b8a500f7920fd1ca0189daa9704008532bfa078d76115b59d6e6cb"></a>SUM_OF_SQUARES&#160;</td><td class="fielddoc"><p>sum of squares reduction </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a86a800d62c1b8a500f7920fd1ca0189da1a8d79945255937584ba210c1548812d"></a>MEAN&#160;</td><td class="fielddoc"><p>arithmetic mean reduction </p>
 </td></tr>

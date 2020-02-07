@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -89,36 +89,37 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="types_8hpp.html">cudf/types.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span>io {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span>csv {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span>gpu {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;cudaError_t DetectColumnTypes(<span class="keyword">const</span> <span class="keywordtype">char</span> *data, <span class="keyword">const</span> uint64_t *row_starts,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                              <span class="keywordtype">size_t</span> num_rows, <span class="keywordtype">size_t</span> num_columns,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                              <span class="keyword">const</span> <a class="code" href="structParseOptions.html">ParseOptions</a> &amp;options,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                              column_parse::flags *flags,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                              column_parse::stats *stats,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                              cudaStream_t stream = (cudaStream_t)0);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;cudaError_t DecodeRowColumnData(<span class="keyword">const</span> <span class="keywordtype">char</span> *data, <span class="keyword">const</span> uint64_t *row_starts,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                <span class="keywordtype">size_t</span> num_rows, <span class="keywordtype">size_t</span> num_columns,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                <span class="keyword">const</span> <a class="code" href="structParseOptions.html">ParseOptions</a> &amp;options,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                <span class="keyword">const</span> column_parse::flags *flags,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                <a class="code" href="classcudf_1_1data__type.html">cudf::data_type</a> *dtypes, <span class="keywordtype">void</span> **columns,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                cudf::bitmask_type **valids,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                cudaStream_t stream = (cudaStream_t)0);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}  <span class="comment">// namespace gpu</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}  <span class="comment">// namespace csv</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}  <span class="comment">// namespace io</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}  <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;io/utilities/parsing_utils.cuh&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span>io {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span>csv {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>gpu {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;cudaError_t DetectColumnTypes(<span class="keyword">const</span> <span class="keywordtype">char</span> *data, <span class="keyword">const</span> uint64_t *row_starts,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                              <span class="keywordtype">size_t</span> num_rows, <span class="keywordtype">size_t</span> num_columns,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                              <span class="keyword">const</span> <a class="code" href="structcudf_1_1experimental_1_1io_1_1ParseOptions.html">cudf::experimental::io::ParseOptions</a> &amp;options,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                              column_parse::flags *flags,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                              column_parse::stats *stats,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                              cudaStream_t stream = (cudaStream_t)0);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;cudaError_t DecodeRowColumnData(<span class="keyword">const</span> <span class="keywordtype">char</span> *data, <span class="keyword">const</span> uint64_t *row_starts,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                <span class="keywordtype">size_t</span> num_rows, <span class="keywordtype">size_t</span> num_columns,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                <span class="keyword">const</span> <a class="code" href="structcudf_1_1experimental_1_1io_1_1ParseOptions.html">cudf::experimental::io::ParseOptions</a> &amp;options,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                <span class="keyword">const</span> column_parse::flags *flags,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                <a class="code" href="classcudf_1_1data__type.html">cudf::data_type</a> *dtypes, <span class="keywordtype">void</span> **columns,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                cudf::bitmask_type **valids,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                cudaStream_t stream = (cudaStream_t)0);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}  <span class="comment">// namespace gpu</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}  <span class="comment">// namespace csv</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}  <span class="comment">// namespace io</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}  <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div><div class="ttdoc">Type declarations for libcudf.</div></div>
-<div class="ttc" id="astructParseOptions_html"><div class="ttname"><a href="structParseOptions.html">ParseOptions</a></div><div class="ttdoc">Structure for holding various options used when parsing and.</div><div class="ttdef"><b>Definition:</b> type_conversion.cuh:154</div></div>
 <div class="ttc" id="aclasscudf_1_1data__type_html"><div class="ttname"><a href="classcudf_1_1data__type.html">cudf::data_type</a></div><div class="ttdoc">Indicator for the logical data type of an element in a column.</div><div class="ttdef"><b>Definition:</b> types.hpp:171</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">cuDF interfaces</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:23</div></div>
+<div class="ttc" id="astructcudf_1_1experimental_1_1io_1_1ParseOptions_html"><div class="ttname"><a href="structcudf_1_1experimental_1_1io_1_1ParseOptions.html">cudf::experimental::io::ParseOptions</a></div><div class="ttdoc">Structure for holding various options used when parsing and converting CSV/json data to cuDF data typ...</div><div class="ttdef"><b>Definition:</b> parsing_utils.cuh:30</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -104,9 +104,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac51cbaac0762110536fa67334a050bd9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader.html#ac51cbaac0762110536fa67334a050bd9">read_all</a> (<a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
 <tr class="memdesc:ac51cbaac0762110536fa67334a050bd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the entire dataset.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader.html#ac51cbaac0762110536fa67334a050bd9">More...</a><br /></td></tr>
 <tr class="separator:ac51cbaac0762110536fa67334a050bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee160c1593726384b604254465656234"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader.html#aee160c1593726384b604254465656234">read_stripe</a> (size_type stripe, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
-<tr class="memdesc:aee160c1593726384b604254465656234"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads and returns a specific stripe.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader.html#aee160c1593726384b604254465656234">More...</a><br /></td></tr>
-<tr class="separator:aee160c1593726384b604254465656234"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a570c085ffefabc7b9fc3904a9a27c285"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader.html#a570c085ffefabc7b9fc3904a9a27c285">read_stripe</a> (size_type stripe, size_type stripe_count=1, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
+<tr class="memdesc:a570c085ffefabc7b9fc3904a9a27c285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads and returns a specific stripe.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader.html#a570c085ffefabc7b9fc3904a9a27c285">More...</a><br /></td></tr>
+<tr class="separator:a570c085ffefabc7b9fc3904a9a27c285"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57f708b4874aee98f8db53ba6da8d1e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader.html#a57f708b4874aee98f8db53ba6da8d1e7">read_rows</a> (size_type skip_rows, size_type num_rows, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
 <tr class="memdesc:a57f708b4874aee98f8db53ba6da8d1e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads and returns a range of rows.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader.html#a57f708b4874aee98f8db53ba6da8d1e7">More...</a><br /></td></tr>
 <tr class="separator:a57f708b4874aee98f8db53ba6da8d1e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -350,8 +350,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aee160c1593726384b604254465656234"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee160c1593726384b604254465656234">&#9670;&nbsp;</a></span>read_stripe()</h2>
+<a id="a570c085ffefabc7b9fc3904a9a27c285"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a570c085ffefabc7b9fc3904a9a27c285">&#9670;&nbsp;</a></span>read_stripe()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -361,6 +361,12 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">size_type&#160;</td>
           <td class="paramname"><em>stripe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>stripe_count</em> = <code>1</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -380,6 +386,7 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">stripe</td><td>Index of the stripe </td></tr>
+    <tr><td class="paramname">stripe_count</td><td>Number of stripes to read </td></tr>
     <tr><td class="paramname">stream</td><td>Optional stream to use for device memory alloc and kernels</td></tr>
   </table>
   </dd>

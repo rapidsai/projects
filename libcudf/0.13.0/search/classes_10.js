@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['quantile_5faggregation_1698',['quantile_aggregation',['../structcudf_1_1experimental_1_1detail_1_1quantile__aggregation.html',1,'cudf::experimental::detail']]],
-  ['quantile_5fargs_1699',['quantile_args',['../structcudf_1_1groupby_1_1sort_1_1quantile__args.html',1,'cudf::groupby::sort']]],
-  ['quantile_5findex_1700',['quantile_index',['../structcudf_1_1detail_1_1quantile__index.html',1,'cudf::detail::quantile_index'],['../structcudf_1_1experimental_1_1detail_1_1quantile__index.html',1,'cudf::experimental::detail::quantile_index']]]
+  ['quantile_5faggregation_1741',['quantile_aggregation',['../structcudf_1_1experimental_1_1detail_1_1quantile__aggregation.html',1,'cudf::experimental::detail']]],
+  ['quantile_5fargs_1742',['quantile_args',['../structcudf_1_1groupby_1_1sort_1_1quantile__args.html',1,'cudf::groupby::sort']]],
+  ['quantile_5findex_1743',['quantile_index',['../structcudf_1_1detail_1_1quantile__index.html',1,'cudf::detail::quantile_index'],['../structcudf_1_1experimental_1_1detail_1_1quantile__index.html',1,'cudf::experimental::detail::quantile_index']]]
 ];

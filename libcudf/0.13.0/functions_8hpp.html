@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -112,6 +112,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1read__avro__args.html">cudf::experimental::io::read_avro_args</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Settings to use for <code><a class="el" href="namespacecudf_1_1experimental_1_1io.html#af9e358a1a57d0bf9e96455069c8f09fc" title="Reads an Avro dataset into a set of columns.">read_avro()</a></code>  <a href="structcudf_1_1experimental_1_1io_1_1read__avro__args.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1read__json__args.html">cudf::experimental::io::read_json_args</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input arguments to the <code>read_json</code> interface.  <a href="structcudf_1_1experimental_1_1io_1_1read__json__args.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1read__csv__args.html">cudf::experimental::io::read_csv_args</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Settings to use for <code><a class="el" href="namespacecudf_1_1experimental_1_1io.html#a60d5c27246d37d9cd217eec94e935f3d" title="Reads a CSV dataset into a set of columns.">read_csv()</a></code>  <a href="structcudf_1_1experimental_1_1io_1_1read__csv__args.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,6 +148,9 @@ Functions</h2></td></tr>
 <tr class="memitem:af9e358a1a57d0bf9e96455069c8f09fc"><td class="memItemLeft" align="right" valign="top">table_with_metadata&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io.html#af9e358a1a57d0bf9e96455069c8f09fc">cudf::experimental::io::read_avro</a> (read_avro_args const  &amp;args, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:af9e358a1a57d0bf9e96455069c8f09fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads an Avro dataset into a set of columns.  <a href="namespacecudf_1_1experimental_1_1io.html#af9e358a1a57d0bf9e96455069c8f09fc">More...</a><br /></td></tr>
 <tr class="separator:af9e358a1a57d0bf9e96455069c8f09fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8af08c0897053ae800200d3bbdc1e5d5"><td class="memItemLeft" align="right" valign="top"><a id="a8af08c0897053ae800200d3bbdc1e5d5"></a>
+table_with_metadata&#160;</td><td class="memItemRight" valign="bottom"><b>cudf::experimental::io::read_json</b> (read_json_args const &amp;args, rmm::mr::device_memory_resource *mr)</td></tr>
+<tr class="separator:a8af08c0897053ae800200d3bbdc1e5d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60d5c27246d37d9cd217eec94e935f3d"><td class="memItemLeft" align="right" valign="top">table_with_metadata&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io.html#a60d5c27246d37d9cd217eec94e935f3d">cudf::experimental::io::read_csv</a> (read_csv_args const  &amp;args, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a60d5c27246d37d9cd217eec94e935f3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a CSV dataset into a set of columns.  <a href="namespacecudf_1_1experimental_1_1io.html#a60d5c27246d37d9cd217eec94e935f3d">More...</a><br /></td></tr>
 <tr class="separator:a60d5c27246d37d9cd217eec94e935f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>

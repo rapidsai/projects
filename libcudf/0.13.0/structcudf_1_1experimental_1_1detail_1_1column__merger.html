@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -86,14 +86,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a48a13ad4f1bba12d94cf23d70c34bcbc"><td class="memItemLeft" align="right" valign="top"><a id="a48a13ad4f1bba12d94cf23d70c34bcbc"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>column_merger</b> (index_vector const &amp;row_order, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource(), <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=nullptr)</td></tr>
 <tr class="separator:a48a13ad4f1bba12d94cf23d70c34bcbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56808cb1bece6d7a87df2edd0a3aff9c"><td class="memTemplParams" colspan="2"><a id="a56808cb1bece6d7a87df2edd0a3aff9c"></a>
+<tr class="memitem:a891f11469d5b305519a3206e91a3a8a1"><td class="memTemplParams" colspan="2"><a id="a891f11469d5b305519a3206e91a3a8a1"></a>
 template&lt;typename Element &gt; </td></tr>
-<tr class="memitem:a56808cb1bece6d7a87df2edd0a3aff9c"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="namespacecudf.html#aaa937abead085ea9420b15c6473f08a7">cudf::is_fixed_width</a>&lt; Element &gt;), std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">cudf::column</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="classcudf_1_1column__view.html">cudf::column_view</a> const &amp;lcol, <a class="el" href="classcudf_1_1column__view.html">cudf::column_view</a> const &amp;rcol) const</td></tr>
-<tr class="separator:a56808cb1bece6d7a87df2edd0a3aff9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1840af31492c4901d3d04a10bd3d7fec"><td class="memTemplParams" colspan="2"><a id="a1840af31492c4901d3d04a10bd3d7fec"></a>
-template&lt;typename Element &gt; </td></tr>
-<tr class="memitem:a1840af31492c4901d3d04a10bd3d7fec"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; not <a class="el" href="namespacecudf.html#aaa937abead085ea9420b15c6473f08a7">cudf::is_fixed_width</a>&lt; Element &gt;), std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">cudf::column</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="classcudf_1_1column__view.html">cudf::column_view</a> const &amp;lcol, <a class="el" href="classcudf_1_1column__view.html">cudf::column_view</a> const &amp;rcol) const</td></tr>
-<tr class="separator:a1840af31492c4901d3d04a10bd3d7fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a891f11469d5b305519a3206e91a3a8a1"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;lcol, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;rcol) const</td></tr>
+<tr class="separator:a891f11469d5b305519a3206e91a3a8a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c11936051f2308c9253928a57f2c04b"><td class="memTemplParams" colspan="2"><a id="a3c11936051f2308c9253928a57f2c04b"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:a3c11936051f2308c9253928a57f2c04b"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;lcol, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;rcol) const</td></tr>
+<tr class="separator:a3c11936051f2308c9253928a57f2c04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>merge.cu</li>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -84,9 +84,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a47ae7bec50d8d81fe924ec0af078238f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader_1_1impl.html#a47ae7bec50d8d81fe924ec0af078238f">impl</a> (std::unique_ptr&lt; <a class="el" href="classcudf_1_1io_1_1datasource.html">datasource</a> &gt; source, <a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader__options.html">reader_options</a> const &amp;options, rmm::mr::device_memory_resource *mr)</td></tr>
 <tr class="memdesc:a47ae7bec50d8d81fe924ec0af078238f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from a dataset source with reader options.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader_1_1impl.html#a47ae7bec50d8d81fe924ec0af078238f">More...</a><br /></td></tr>
 <tr class="separator:a47ae7bec50d8d81fe924ec0af078238f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4edd58113d9f212c8ed3ef1340d80d2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader_1_1impl.html#a4edd58113d9f212c8ed3ef1340d80d2b">read</a> (int skip_rows, int num_rows, int stripe, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
-<tr class="memdesc:a4edd58113d9f212c8ed3ef1340d80d2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read an entire set or a subset of data and returns a set of columns.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader_1_1impl.html#a4edd58113d9f212c8ed3ef1340d80d2b">More...</a><br /></td></tr>
-<tr class="separator:a4edd58113d9f212c8ed3ef1340d80d2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf228ba936875ee40433f8fe2fef55ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcudf_1_1experimental_1_1io_1_1table__with__metadata.html">table_with_metadata</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader_1_1impl.html#aaf228ba936875ee40433f8fe2fef55ea">read</a> (int skip_rows, int num_rows, int stripe, int max_stripe_count, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
+<tr class="memdesc:aaf228ba936875ee40433f8fe2fef55ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read an entire set or a subset of data and returns a set of columns.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1reader_1_1impl.html#aaf228ba936875ee40433f8fe2fef55ea">More...</a><br /></td></tr>
+<tr class="separator:aaf228ba936875ee40433f8fe2fef55ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation for ORC reader. </p>
@@ -144,8 +144,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4edd58113d9f212c8ed3ef1340d80d2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4edd58113d9f212c8ed3ef1340d80d2b">&#9670;&nbsp;</a></span>read()</h2>
+<a id="aaf228ba936875ee40433f8fe2fef55ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf228ba936875ee40433f8fe2fef55ea">&#9670;&nbsp;</a></span>read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,6 +171,12 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max_stripe_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
           <td class="paramname"><em>stream</em>&#160;</td>
         </tr>
@@ -188,6 +194,7 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">skip_rows</td><td>Number of rows to skip from the start </td></tr>
     <tr><td class="paramname">num_rows</td><td>Number of rows to read </td></tr>
     <tr><td class="paramname">stripe</td><td>Stripe index to select </td></tr>
+    <tr><td class="paramname">max_stripe_count</td><td>Max number of consecutive stripes if greater than 0 </td></tr>
     <tr><td class="paramname">stream</td><td>Stream to use for memory allocation and kernels</td></tr>
   </table>
   </dd>

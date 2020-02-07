@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libcudf
-   &#160;<span id="projectnumber">0.12</span>
+   &#160;<span id="projectnumber">0.13</span>
    </div>
   </td>
  </tr>
@@ -106,12 +106,34 @@ $(function() {
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                             size_type maxsplit=-1,</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                             rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;} <span class="comment">// namespace strings</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;} <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="structcudf_1_1strings_1_1contiguous__split__record__result.html">   94</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcudf_1_1strings_1_1contiguous__split__record__result.html">contiguous_split_record_result</a> {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  std::vector&lt;column_view&gt; column_views;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  std::unique_ptr&lt;rmm::device_buffer&gt; all_data;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<a class="code" href="structcudf_1_1strings_1_1contiguous__split__record__result.html">contiguous_split_record_result</a> contiguous_split_record(</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="classcudf_1_1strings__column__view.html">strings_column_view</a> <span class="keyword">const</span>&amp; strings,</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="classcudf_1_1string__scalar.html">string_scalar</a> <span class="keyword">const</span>&amp; delimiter = <a class="code" href="classcudf_1_1string__scalar.html">string_scalar</a>(<span class="stringliteral">&quot;&quot;</span>),</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    size_type maxsplit=-1,</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource()</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<a class="code" href="structcudf_1_1strings_1_1contiguous__split__record__result.html">contiguous_split_record_result</a> contiguous_rsplit_record(</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="classcudf_1_1strings__column__view.html">strings_column_view</a> <span class="keyword">const</span>&amp; strings,</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="classcudf_1_1string__scalar.html">string_scalar</a> <span class="keyword">const</span>&amp; delimiter = <a class="code" href="classcudf_1_1string__scalar.html">string_scalar</a>(<span class="stringliteral">&quot;&quot;</span>),</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    size_type maxsplit=-1,</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource()</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;} <span class="comment">// namespace strings</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;} <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astrings__column__view_8hpp_html"><div class="ttname"><a href="strings__column__view_8hpp.html">strings_column_view.hpp</a></div><div class="ttdoc">Class definition for cudf::strings_column_view.</div></div>
+<div class="ttc" id="astructcudf_1_1strings_1_1contiguous__split__record__result_html"><div class="ttname"><a href="structcudf_1_1strings_1_1contiguous__split__record__result.html">cudf::strings::contiguous_split_record_result</a></div><div class="ttdoc">The result(s) of a contiguous_(r)split_record</div><div class="ttdef"><b>Definition:</b> split.hpp:94</div></div>
 <div class="ttc" id="anamespacecudf_html_a7d6b5215c4e4be3ee20f107451d81411"><div class="ttname"><a href="namespacecudf.html#a7d6b5215c4e4be3ee20f107451d81411">cudf::split</a></div><div class="ttdeci">std::vector&lt; gdf_column * &gt; split(gdf_column const &amp;input_column, cudf::size_type const *splits, cudf::size_type num_splits)</div><div class="ttdoc">Splits a column (including null values) into a set of columns according to a set of indices.</div><div class="ttdef"><b>Definition:</b> copying/legacy/split.cu:41</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">cuDF interfaces</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:23</div></div>
+<div class="ttc" id="aclasscudf_1_1strings__column__view_html"><div class="ttname"><a href="classcudf_1_1strings__column__view.html">cudf::strings_column_view</a></div><div class="ttdoc">Given a column-view of strings type, an instance of this class provides a wrapper on this compound co...</div><div class="ttdef"><b>Definition:</b> strings_column_view.hpp:35</div></div>
+<div class="ttc" id="aclasscudf_1_1string__scalar_html"><div class="ttname"><a href="classcudf_1_1string__scalar.html">cudf::string_scalar</a></div><div class="ttdoc">An owning class to represent a string in device memory.</div><div class="ttdef"><b>Definition:</b> scalar.hpp:234</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
