@@ -357,6 +357,10 @@ Enumerations</h2></td></tr>
 <a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31a3525317285c6126ce3b62a8df8c00b07">null_order::BEFORE</a>
  }</td></tr>
 <tr class="separator:a058e6d6e8a21583ce0e85ee73e5abb31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab283c517931abd4152ffa62fec62425d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ab283c517931abd4152ffa62fec62425d">sorted</a> : bool { <b>NO</b>, 
+<b>YES</b>
+ }</td></tr>
+<tr class="separator:ab283c517931abd4152ffa62fec62425d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa481249b705132999f4d082aacd21dbf"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbf">mask_state</a> { <a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbfa74ad69efae4a12aec59682147aac9344">UNALLOCATED</a>, 
 <a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbfa37d7c1f4781c3276729ed1678c0c0844">UNINITIALIZED</a>, 
 <a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbfadb86173d779f7b173db120643cc1c402">ALL_VALID</a>, 
@@ -1136,7 +1140,7 @@ typedef".</p>
 
 <p>Type alias representing an int32_t duration of days since the unix. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md573"></a>
+<h2><a class="anchor" id="autotoc_md574"></a>
 epoch.</h2>
 
 </div>
@@ -1155,7 +1159,7 @@ epoch.</h2>
 
 <p>Type alias representing an int64_t duration of milliseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md575"></a>
+<h2><a class="anchor" id="autotoc_md576"></a>
 the unix epoch.</h2>
 
 </div>
@@ -1174,7 +1178,7 @@ the unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of nanoseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md577"></a>
+<h2><a class="anchor" id="autotoc_md578"></a>
 the unix epoch.</h2>
 
 </div>
@@ -1193,7 +1197,7 @@ the unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of seconds since the. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md574"></a>
+<h2><a class="anchor" id="autotoc_md575"></a>
 unix epoch.</h2>
 
 </div>
@@ -1212,7 +1216,7 @@ unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of microseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md576"></a>
+<h2><a class="anchor" id="autotoc_md577"></a>
 the unix epoch.</h2>
 
 </div>
@@ -1307,7 +1311,7 @@ the unix epoch.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md522"></a>
+<h2><a class="anchor" id="autotoc_md523"></a>
 @brief Controls the allocation/initialization of a null mask.</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa481249b705132999f4d082aacd21dbfa74ad69efae4a12aec59682147aac9344"></a>UNALLOCATED&#160;</td><td class="fielddoc"><p>Null mask not allocated, (all elements are valid) </p>
@@ -1384,6 +1388,31 @@ the unix epoch.</h2>
 
 </div>
 </div>
+<a id="ab283c517931abd4152ffa62fec62425d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab283c517931abd4152ffa62fec62425d">&#9670;&nbsp;</a></span>sorted</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacecudf.html#ab283c517931abd4152ffa62fec62425d">cudf::sorted</a> : bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>------------------------------------------------------------------------&mdash;* </p>
+<h2><a class="anchor" id="autotoc_md521"></a>
+@brief Indicates whether a collection of values is known to be sorted.</h2>
+
+</div>
+</div>
 <a id="acd4cd7157c4379954b5772936f89c59b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acd4cd7157c4379954b5772936f89c59b">&#9670;&nbsp;</a></span>type_id</h2>
 
@@ -1396,7 +1425,7 @@ the unix epoch.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md523"></a>
+<h2><a class="anchor" id="autotoc_md524"></a>
 @brief Identifies a column's logical element type</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acd4cd7157c4379954b5772936f89c59bab2c14e467fcbf9a215ccc679f35bb027"></a>EMPTY&#160;</td><td class="fielddoc"><p>Always null with no underlying data. </p>
@@ -2131,7 +2160,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true The specified bit is <code>1</code> </dd></dl>
-<h2><a class="anchor" id="autotoc_md532"></a>
+<h2><a class="anchor" id="autotoc_md533"></a>
 @return false  The specified bit is &lt;tt&gt;0&lt;/tt&gt;</h2>
 
 </div>
@@ -2302,7 +2331,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md531"></a>
+<h2><a class="anchor" id="autotoc_md532"></a>
 @param bit_index The index of the bit to clear</h2>
 
 </div>
@@ -3529,7 +3558,7 @@ template&lt;typename T &gt; </div>
 <p>------------------------------------------------------------------------&mdash;* When explicitly passed a template argument of a given type, returns the appropriate <code>gdf_dtype</code> for the specified C++ type.</p>
 <p>For example: </p><div class="fragment"><div class="line"><span class="keywordflow">return</span> gdf_dtype_of&lt;int32_t&gt;();        <span class="comment">// Returns GDF_INT32</span></div>
 <div class="line"><span class="keywordflow">return</span> gdf_dtype_of&lt;cudf::category&gt;(); <span class="comment">// Returns GDF_CATEGORY</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md541"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md542"></a>
 @tparam T The type to map to a &lt;tt&gt;gdf_dtype&lt;/tt&gt;</h2>
 
 </div>
@@ -3688,12 +3717,12 @@ template&lt;typename T , typename BinaryOp &gt; </div>
 <div class="line">out_keys = {[ a,      b,     c     ],}</div>
 <div class="line">out_vals = {[x1, x2, y1, y2, z1, z2],}</div>
 <div class="line">where</div>
-<div class="line">x1 = value at quantile q1 in group [v1,v5]</div>
-<div class="line">x2 = value at quantile q2 in group [v1,v5]</div>
-<div class="line">y1 = value at quantile q1 in group [v3]</div>
-<div class="line">y2 = value at quantile q2 in group [v3]</div>
-<div class="line">z1 = value at quantile q1 in group [v2,v4]</div>
-<div class="line">z2 = value at quantile q2 in group [v2,v4]</div>
+<div class="line">x1 = value at <a class="code" href="namespacecudf_1_1experimental.html#a186c50e8682852e00756b6172feb9ea2">quantile</a> q1 in group [v1,v5]</div>
+<div class="line">x2 = value at <a class="code" href="namespacecudf_1_1experimental.html#a186c50e8682852e00756b6172feb9ea2">quantile</a> q2 in group [v1,v5]</div>
+<div class="line">y1 = value at <a class="code" href="namespacecudf_1_1experimental.html#a186c50e8682852e00756b6172feb9ea2">quantile</a> q1 in group [v3]</div>
+<div class="line">y2 = value at <a class="code" href="namespacecudf_1_1experimental.html#a186c50e8682852e00756b6172feb9ea2">quantile</a> q2 in group [v3]</div>
+<div class="line">z1 = value at <a class="code" href="namespacecudf_1_1experimental.html#a186c50e8682852e00756b6172feb9ea2">quantile</a> q1 in group [v2,v4]</div>
+<div class="line">z2 = value at <a class="code" href="namespacecudf_1_1experimental.html#a186c50e8682852e00756b6172feb9ea2">quantile</a> q2 in group [v2,v4]</div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">keys</td><td>Keys to group by </td></tr>
@@ -4072,7 +4101,7 @@ template&lt;typename T , typename BinaryOp &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md529"></a>
+<h2><a class="anchor" id="autotoc_md530"></a>
 @brief Returns the position within a word of the specified bit.</h2>
 
 </div>
@@ -4111,7 +4140,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is Boolean </dd></dl>
-<h2><a class="anchor" id="autotoc_md555"></a>
+<h2><a class="anchor" id="autotoc_md556"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not Boolean</h2>
 
 </div>
@@ -4149,7 +4178,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a Boolean </dd></dl>
-<h2><a class="anchor" id="autotoc_md556"></a>
+<h2><a class="anchor" id="autotoc_md557"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not a Boolean</h2>
 
 </div>
@@ -4226,7 +4255,7 @@ false <code>T</code> corresponds to a "simple" type </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a compound type </dd></dl>
-<h2><a class="anchor" id="autotoc_md561"></a>
+<h2><a class="anchor" id="autotoc_md562"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is a simple type</h2>
 
 </div>
@@ -4265,7 +4294,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a fixed-width element type </dd></dl>
-<h2><a class="anchor" id="autotoc_md559"></a>
+<h2><a class="anchor" id="autotoc_md560"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a variable-width element type</h2>
 
 </div>
@@ -4303,7 +4332,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is fixed-width </dd></dl>
-<h2><a class="anchor" id="autotoc_md560"></a>
+<h2><a class="anchor" id="autotoc_md561"></a>
 @return false  &lt;tt&gt;type&lt;/tt&gt; is variable-width</h2>
 
 </div>
@@ -4395,7 +4424,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> is numeric </dd></dl>
-<h2><a class="anchor" id="autotoc_md553"></a>
+<h2><a class="anchor" id="autotoc_md554"></a>
 @return false  &lt;tt&gt;T&lt;/tt&gt; is not numeric</h2>
 
 </div>
@@ -4433,7 +4462,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is numeric </dd></dl>
-<h2><a class="anchor" id="autotoc_md554"></a>
+<h2><a class="anchor" id="autotoc_md555"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not numeric</h2>
 
 </div>
@@ -4473,7 +4502,7 @@ template&lt;typename L , typename R &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true Objects of types <code>L</code> and <code>R</code> can be relationally be compared </dd></dl>
-<h2><a class="anchor" id="autotoc_md552"></a>
+<h2><a class="anchor" id="autotoc_md553"></a>
 @return false Objects of types &lt;tt&gt;L&lt;/tt&gt; and &lt;tt&gt;R&lt;/tt&gt; cannot be compared</h2>
 
 </div>
@@ -4512,7 +4541,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a simple type </dd></dl>
-<h2><a class="anchor" id="autotoc_md562"></a>
+<h2><a class="anchor" id="autotoc_md563"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a compound type</h2>
 
 </div>
@@ -4550,7 +4579,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a simple type </dd></dl>
-<h2><a class="anchor" id="autotoc_md563"></a>
+<h2><a class="anchor" id="autotoc_md564"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is a compound type</h2>
 
 </div>
@@ -4633,7 +4662,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> is a timestamp </dd></dl>
-<h2><a class="anchor" id="autotoc_md557"></a>
+<h2><a class="anchor" id="autotoc_md558"></a>
 @return false  &lt;tt&gt;T&lt;/tt&gt; is not a timestamp</h2>
 
 </div>
@@ -4671,7 +4700,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a timestamp </dd></dl>
-<h2><a class="anchor" id="autotoc_md558"></a>
+<h2><a class="anchor" id="autotoc_md559"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not a timestamp</h2>
 
 </div>
@@ -6382,7 +6411,7 @@ template&lt;typename B &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>lhs</code> is equal to <code>rhs</code> </dd></dl>
-<h2><a class="anchor" id="autotoc_md525"></a>
+<h2><a class="anchor" id="autotoc_md526"></a>
 @return false &lt;tt&gt;lhs&lt;/tt&gt; is not equal to &lt;tt&gt;rhs&lt;/tt&gt;</h2>
 
 </div>
@@ -7149,7 +7178,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md530"></a>
+<h2><a class="anchor" id="autotoc_md531"></a>
 @param bit_index Index of the bit to set</h2>
 
 </div>
@@ -7186,7 +7215,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md533"></a>
+<h2><a class="anchor" id="autotoc_md534"></a>
 @return A bitmask word with &lt;tt&gt;n&lt;/tt&gt; least significant bits set</h2>
 
 </div>
@@ -7223,7 +7252,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md534"></a>
+<h2><a class="anchor" id="autotoc_md535"></a>
 @return A bitmask word with &lt;tt&gt;n&lt;/tt&gt; most significant bits set</h2>
 
 </div>
@@ -7971,7 +8000,7 @@ template&lt;typename bit_container , typename predicate , typename size_type &gt
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md528"></a>
+<h2><a class="anchor" id="autotoc_md529"></a>
 @brief Returns the index of the word containing the specified bit.</h2>
 
 </div>
@@ -7997,6 +8026,7 @@ template&lt;typename bit_container , typename predicate , typename size_type &gt
 <div class="ttc" id="anamespacecudf_html_aab7d308aae78cd6323814732ec4a2278"><div class="ttname"><a href="namespacecudf.html#aab7d308aae78cd6323814732ec4a2278">cudf::group_std</a></div><div class="ttdeci">std::pair&lt; cudf::table, cudf::table &gt; group_std(cudf::table const &amp;keys, cudf::table const &amp;values, cudf::size_type ddof)</div><div class="ttdoc">Computes a group wise standard deviation.</div><div class="ttdef"><b>Definition:</b> reductions/legacy/group_std.cu:188</div></div>
 <div class="ttc" id="anamespacecudf_html_a6c828f318cb2c14c8ac0567f5084d1e7"><div class="ttname"><a href="namespacecudf.html#a6c828f318cb2c14c8ac0567f5084d1e7">cudf::group_quantiles</a></div><div class="ttdeci">std::pair&lt; cudf::table, cudf::table &gt; group_quantiles(cudf::table const &amp;keys, cudf::table const &amp;values, std::vector&lt; double &gt; const &amp;quantiles, cudf::interpolation interpolation, bool include_nulls)</div><div class="ttdoc">Find values at given quantiles within groups.</div><div class="ttdef"><b>Definition:</b> quantiles/legacy/group_quantiles.cu:120</div></div>
 <div class="ttc" id="anamespacecudf_html_abfef82d2b9451cd05e5232244bf57e00"><div class="ttname"><a href="namespacecudf.html#abfef82d2b9451cd05e5232244bf57e00">cudf::make_dictionary_column</a></div><div class="ttdeci">std::unique_ptr&lt; column &gt; make_dictionary_column(column_view const &amp;keys_column, column_view const &amp;indices_column, rmm::mr::device_memory_resource *mr, cudaStream_t stream)</div><div class="ttdoc">Construct a dictionary column by copying the provided keys and indices.</div><div class="ttdef"><b>Definition:</b> dictionary_factories.cu:25</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_a186c50e8682852e00756b6172feb9ea2"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a186c50e8682852e00756b6172feb9ea2">cudf::experimental::quantile</a></div><div class="ttdeci">std::unique_ptr&lt; scalar &gt; quantile(column_view const &amp;input, double q, interpolation interp, order_info column_order)</div><div class="ttdoc">Computes a value for a quantile by interpolating between the values on either side of the desired qua...</div><div class="ttdef"><b>Definition:</b> quantile.cu:102</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

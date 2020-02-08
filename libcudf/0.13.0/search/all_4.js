@@ -27,7 +27,7 @@ var searchData=
   ['deviceabs_305',['DeviceAbs',['../structcudf_1_1experimental_1_1detail_1_1DeviceAbs.html',1,'cudf::experimental::detail::DeviceAbs'],['../structcudf_1_1detail_1_1DeviceAbs.html',1,'cudf::detail::DeviceAbs']]],
   ['deviceadd_306',['DeviceAdd',['../structcudf_1_1binops_1_1compiled_1_1DeviceAdd.html',1,'cudf::binops::compiled']]],
   ['deviceand_307',['DeviceAnd',['../structcudf_1_1DeviceAnd.html',1,'cudf']]],
-  ['devicearccos_308',['DeviceArcCos',['../structcudf_1_1detail_1_1DeviceArcCos.html',1,'cudf::detail::DeviceArcCos'],['../structcudf_1_1experimental_1_1detail_1_1DeviceArcCos.html',1,'cudf::experimental::detail::DeviceArcCos']]],
+  ['devicearccos_308',['DeviceArcCos',['../structcudf_1_1experimental_1_1detail_1_1DeviceArcCos.html',1,'cudf::experimental::detail::DeviceArcCos'],['../structcudf_1_1detail_1_1DeviceArcCos.html',1,'cudf::detail::DeviceArcCos']]],
   ['devicearccosh_309',['DeviceArcCosH',['../structcudf_1_1experimental_1_1detail_1_1DeviceArcCosH.html',1,'cudf::experimental::detail']]],
   ['devicearcsin_310',['DeviceArcSin',['../structcudf_1_1detail_1_1DeviceArcSin.html',1,'cudf::detail::DeviceArcSin'],['../structcudf_1_1experimental_1_1detail_1_1DeviceArcSin.html',1,'cudf::experimental::detail::DeviceArcSin']]],
   ['devicearcsinh_311',['DeviceArcSinH',['../structcudf_1_1experimental_1_1detail_1_1DeviceArcSinH.html',1,'cudf::experimental::detail']]],

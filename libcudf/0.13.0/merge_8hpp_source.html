@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2018-2019, NVIDIA CORPORATION.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2018-2020, NVIDIA CORPORATION.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * you may not use this file except in compliance with the License.</span></div>
@@ -95,19 +95,18 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span>experimental {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;std::unique_ptr&lt;cudf::experimental::table&gt; <a class="code" href="namespacecudf_1_1experimental.html#a99d54d902dca3ba2fda445aa97c3fd76">merge</a>(table_view <span class="keyword">const</span>&amp; left_table,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                                 table_view <span class="keyword">const</span>&amp; right_table,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                                 std::vector&lt;cudf::size_type&gt; <span class="keyword">const</span>&amp; key_cols,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                                 std::vector&lt;cudf::order&gt; <span class="keyword">const</span>&amp; column_order,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                                 std::vector&lt;cudf::null_order&gt; <span class="keyword">const</span>&amp; null_precedence = {},</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                                 rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}  <span class="comment">// namespace experimental</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}  <span class="comment">// namespace cudf</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;std::unique_ptr&lt;cudf::experimental::table&gt; <a class="code" href="namespacecudf_1_1experimental.html#af0b384ed402e8a2ebefa4561ab007226">merge</a>(std::vector&lt;table_view&gt; <span class="keyword">const</span>&amp; tables_to_merge,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                                 std::vector&lt;cudf::size_type&gt; <span class="keyword">const</span>&amp; key_cols,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                                 std::vector&lt;cudf::order&gt; <span class="keyword">const</span>&amp; column_order,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                                 std::vector&lt;cudf::null_order&gt; <span class="keyword">const</span>&amp; null_precedence = {},</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                                 rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}  <span class="comment">// namespace experimental</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}  <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespacecudf_1_1experimental_html_af0b384ed402e8a2ebefa4561ab007226"><div class="ttname"><a href="namespacecudf_1_1experimental.html#af0b384ed402e8a2ebefa4561ab007226">cudf::experimental::merge</a></div><div class="ttdeci">std::unique_ptr&lt; cudf::experimental::table &gt; merge(std::vector&lt; table_view &gt; const &amp;tables_to_merge, std::vector&lt; cudf::size_type &gt; const &amp;key_cols, std::vector&lt; cudf::order &gt; const &amp;column_order, std::vector&lt; cudf::null_order &gt; const &amp;null_precedence, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Merge a set of sorted tables.</div><div class="ttdef"><b>Definition:</b> merge.cu:494</div></div>
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div><div class="ttdoc">Type declarations for libcudf.</div></div>
-<div class="ttc" id="anamespacecudf_1_1experimental_html_a99d54d902dca3ba2fda445aa97c3fd76"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a99d54d902dca3ba2fda445aa97c3fd76">cudf::experimental::merge</a></div><div class="ttdeci">std::unique_ptr&lt; cudf::experimental::table &gt; merge(table_view const &amp;left_table, table_view const &amp;right_table, std::vector&lt; cudf::size_type &gt; const &amp;key_cols, std::vector&lt; cudf::order &gt; const &amp;column_order, std::vector&lt; cudf::null_order &gt; const &amp;null_precedence, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Merge sorted tables.</div><div class="ttdef"><b>Definition:</b> merge.cu:417</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">cuDF interfaces</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:23</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

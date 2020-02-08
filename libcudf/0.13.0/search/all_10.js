@@ -19,7 +19,7 @@ var searchData=
   ['parquet_5fread_5farg_915',['parquet_read_arg',['../structcudf_1_1parquet__read__arg.html',1,'cudf']]],
   ['parquetmetadata_916',['ParquetMetadata',['../structcudf_1_1io_1_1parquet_1_1ParquetMetadata.html',1,'cudf::io::parquet']]],
   ['parse_917',['parse',['../classcudf_1_1io_1_1avro_1_1schema__parser.html#af270f496fc1a40af3052ca0caff68fc0',1,'cudf::io::avro::schema_parser::parse()'],['../classcudf_1_1io_1_1avro_1_1container.html#adacb6096165f32e4cc501ead3aaac66b',1,'cudf::io::avro::container::parse()']]],
-  ['parseoptions_918',['ParseOptions',['../structParseOptions.html',1,'ParseOptions'],['../structcudf_1_1experimental_1_1io_1_1ParseOptions.html',1,'cudf::experimental::io::ParseOptions']]],
+  ['parseoptions_918',['ParseOptions',['../structcudf_1_1experimental_1_1io_1_1ParseOptions.html',1,'cudf::experimental::io::ParseOptions'],['../structParseOptions.html',1,'ParseOptions']]],
   ['partition_919',['partition',['../classNVStrings.html#a1f18538ef786a0599246e0ea4324d4b5',1,'NVStrings']]],
   ['physical_5ftype_920',['physical_type',['../structcudf_1_1io_1_1parquet_1_1gpu_1_1EncColumnDesc.html#a2b47e2c1690c3a55e957cd27ab44b42f',1,'cudf::io::parquet::gpu::EncColumnDesc']]],
   ['porter_5fstemmer_5fmeasure_921',['porter_stemmer_measure',['../classNVText.html#a9be1270d1d500fecc275a719266eefaf',1,'NVText']]],

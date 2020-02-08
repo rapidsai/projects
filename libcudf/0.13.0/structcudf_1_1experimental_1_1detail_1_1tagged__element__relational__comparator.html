@@ -91,7 +91,7 @@ __device__ <a class="el" href="namespacecudf_1_1experimental.html#a57a49aef82083
 struct cudf::experimental::detail::tagged_element_relational_comparator&lt; has_nulls &gt;</h3>
 
 <p><a class="el" href="structcudf_1_1experimental_1_1detail_1_1tagged__element__relational__comparator.html" title="tagged_element_relational_comparator uses element_relational_comparator to provide &quot;tagged-index&quot; com...">tagged_element_relational_comparator</a> uses <a class="el" href="classcudf_1_1experimental_1_1element__relational__comparator.html" title="Performs a relational comparison between two elements in two columns.">element_relational_comparator</a> to provide "tagged-index" comparation logic. </p>
-<p>Special treatment is necessary in several thrust algorithms (e.g., <a class="el" href="namespacecudf_1_1experimental.html#a99d54d902dca3ba2fda445aa97c3fd76" title="Merge sorted tables.">merge()</a>) where the index affinity to the side is not guaranteed; i.e., the algorithms rely on binary functors (predicates) where the operands may transparently switch sides.</p>
+<p>Special treatment is necessary in several thrust algorithms (e.g., <a class="el" href="namespacecudf_1_1experimental.html#af0b384ed402e8a2ebefa4561ab007226" title="Merge a set of sorted tables.">merge()</a>) where the index affinity to the side is not guaranteed; i.e., the algorithms rely on binary functors (predicates) where the operands may transparently switch sides.</p>
 <p>For example, thrust::merge(left_container, right_container, predicate(lhs, rhs){...}); can create 4 different use-cases, inside predicate(...):</p>
 <ol type="1">
 <li>lhs refers to the left container; rhs to the right container;</li>

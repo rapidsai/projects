@@ -49,7 +49,7 @@ var searchData=
   ['median_764',['MEDIAN',['../classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189da26802c87703b787cfd43d6e645d7fd94',1,'cudf::experimental::aggregation']]],
   ['memory_5fmapped_5fsource_765',['memory_mapped_source',['../classcudf_1_1io_1_1memory__mapped__source.html',1,'cudf::io']]],
   ['memsize_766',['memsize',['../classNVStrings.html#a30dbfbbb531a5354c398d3701d521332',1,'NVStrings']]],
-  ['merge_767',['merge',['../namespacecudf.html#aa5f137cce1b677a6d0f0de87d64627ec',1,'cudf::merge()'],['../namespacecudf_1_1experimental.html#a99d54d902dca3ba2fda445aa97c3fd76',1,'cudf::experimental::merge()']]],
+  ['merge_767',['merge',['../namespacecudf.html#aa5f137cce1b677a6d0f0de87d64627ec',1,'cudf::merge()'],['../namespacecudf_1_1experimental.html#af0b384ed402e8a2ebefa4561ab007226',1,'cudf::experimental::merge()']]],
   ['merge_5fand_5fremap_768',['merge_and_remap',['../classNVCategory.html#a145cdc2e32b07fc2259a410e8427ea1f',1,'NVCategory']]],
   ['merge_5fcategory_769',['merge_category',['../classNVCategory.html#aad53580c3d10ff58c744c21a87e2c557',1,'NVCategory']]],
   ['merge_5fstate_5fs_770',['merge_state_s',['../structcudf_1_1io_1_1merge__state__s.html',1,'cudf::io']]],

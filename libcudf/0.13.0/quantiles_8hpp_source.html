@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2019, NVIDIA CORPORATION.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2019-2020, NVIDIA CORPORATION.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * you may not use this file except in compliance with the License.</span></div>
@@ -95,33 +95,34 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span>experimental {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">/* @brief Computes a value for a quantile by interpolating between the values on</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *        either side of the desired quantile.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * @param[in] input        Column used to compute quantile values.</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * @param[in] q            Desired quantile in range [0, 1].</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * @param[in] interp       Strategy used to interpolate between the two values</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> *                         on either side of the desired quantile.</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * @param[in] column_order Indicates the sortedness of the column.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * @returns Value of the desired quantile, or null if the column has no valid</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> *          elements.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;std::unique_ptr&lt;scalar&gt;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;quantile(column_view <span class="keyword">const</span>&amp; input,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;         <span class="keywordtype">double</span> q,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;         <a class="code" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151">interpolation</a> interp = <a class="code" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151aaac544aacc3615aada24897a215f5046">interpolation::LINEAR</a>,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;         order_info column_order = {});</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;} <span class="comment">// namespace experimental</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;} <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;std::unique_ptr&lt;scalar&gt;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<a class="code" href="namespacecudf_1_1experimental.html#a186c50e8682852e00756b6172feb9ea2">quantile</a>(column_view <span class="keyword">const</span>&amp; input,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;         <span class="keywordtype">double</span> q,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;         <a class="code" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151">interpolation</a> interp = <a class="code" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151aaac544aacc3615aada24897a215f5046">interpolation::LINEAR</a>,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;         order_info column_order = {});</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;std::unique_ptr&lt;table&gt;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<a class="code" href="namespacecudf_1_1experimental.html#ab7407ea137cc20a1343331efd180775b">quantiles</a>(table_view <span class="keyword">const</span>&amp; input,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;          std::vector&lt;double&gt; <span class="keyword">const</span>&amp; q,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;          <a class="code" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151">interpolation</a> interp = <a class="code" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151aad135772d7cf93dd0ccf9d2474b34e6a">interpolation::NEAREST</a>,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;          <a class="code" href="namespacecudf.html#ab283c517931abd4152ffa62fec62425d">cudf::sorted</a> is_input_sorted = sorted::NO,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;          std::vector&lt;order&gt; <span class="keyword">const</span>&amp; column_order = {},</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;          std::vector&lt;null_order&gt; <span class="keyword">const</span>&amp; null_precedence = {},</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;          rmm::mr::device_memory_resource* mr =</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            rmm::mr::get_default_resource());</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;} <span class="comment">// namespace experimental</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;} <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="atable__view_8hpp_html"><div class="ttname"><a href="table__view_8hpp.html">table_view.hpp</a></div><div class="ttdoc">A (mutable_)table_view is a set of (mutable_)column_views of equal size.</div></div>
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div><div class="ttdoc">Type declarations for libcudf.</div></div>
-<div class="ttc" id="anamespacecudf_1_1experimental_html_a5f4f0e0f1bfa906673bf5c2a2b13b151"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151">cudf::experimental::interpolation</a></div><div class="ttdeci">interpolation</div><div class="ttdoc">Interpolation method to use when the desired quantile lies between two data points i and j.</div><div class="ttdef"><b>Definition:</b> types.hpp:134</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_a5f4f0e0f1bfa906673bf5c2a2b13b151"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151">cudf::experimental::interpolation</a></div><div class="ttdeci">interpolation</div><div class="ttdoc">Interpolation method to use when the desired quantile lies between two data points i and j.</div><div class="ttdef"><b>Definition:</b> types.hpp:142</div></div>
 <div class="ttc" id="anamespacecudf_1_1experimental_html_a5f4f0e0f1bfa906673bf5c2a2b13b151aaac544aacc3615aada24897a215f5046"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151aaac544aacc3615aada24897a215f5046">cudf::experimental::interpolation::LINEAR</a></div><div class="ttdoc">Linear interpolation between i and j.</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_ab7407ea137cc20a1343331efd180775b"><div class="ttname"><a href="namespacecudf_1_1experimental.html#ab7407ea137cc20a1343331efd180775b">cudf::experimental::quantiles</a></div><div class="ttdeci">std::unique_ptr&lt; table &gt; quantiles(table_view const &amp;input, std::vector&lt; double &gt; const &amp;q, interpolation interp, cudf::sorted is_input_sorted, std::vector&lt; order &gt; const &amp;column_order, std::vector&lt; null_order &gt; const &amp;null_precedence, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Returns the rows of the input corresponding to the requested quantiles.</div><div class="ttdef"><b>Definition:</b> quantiles.cu:67</div></div>
+<div class="ttc" id="anamespacecudf_html_ab283c517931abd4152ffa62fec62425d"><div class="ttname"><a href="namespacecudf.html#ab283c517931abd4152ffa62fec62425d">cudf::sorted</a></div><div class="ttdeci">sorted</div><div class="ttdef"><b>Definition:</b> types.hpp:112</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">cuDF interfaces</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:23</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_a5f4f0e0f1bfa906673bf5c2a2b13b151aad135772d7cf93dd0ccf9d2474b34e6a"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151aad135772d7cf93dd0ccf9d2474b34e6a">cudf::experimental::interpolation::NEAREST</a></div><div class="ttdoc">i or j, whichever is nearest</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_a186c50e8682852e00756b6172feb9ea2"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a186c50e8682852e00756b6172feb9ea2">cudf::experimental::quantile</a></div><div class="ttdeci">std::unique_ptr&lt; scalar &gt; quantile(column_view const &amp;input, double q, interpolation interp, order_info column_order)</div><div class="ttdoc">Computes a value for a quantile by interpolating between the values on either side of the desired qua...</div><div class="ttdef"><b>Definition:</b> quantile.cu:102</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
