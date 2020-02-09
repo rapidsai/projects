@@ -95,38 +95,36 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span>experimental {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cf">   30</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cf">scan_op</a> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cfa6970bdc2201030b9c03fbdcf3973858a">SUM</a> = 0,  </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cface31e2a082d17e038fcc6e3006166653">MIN</a>,      </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cfa26a4b44a837bf97b972628509912b4a5">MAX</a>,      </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cfa2544e5b1e7659a7ba6f06444cc03d066">PRODUCT</a>,  </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;std::unique_ptr&lt;scalar&gt; <a class="code" href="namespacecudf_1_1experimental.html#a965295f5f5e0fa38d0c74a2c8b4ec3d9">reduce</a>(</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">const</span> <a class="code" href="classcudf_1_1column__view.html">column_view</a>&amp; col, </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::unique_ptr&lt;aggregation&gt; <span class="keyword">const</span> &amp;agg,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classcudf_1_1data__type.html">data_type</a> output_dtype,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;std::unique_ptr&lt;column&gt; <a class="code" href="namespacecudf_1_1experimental.html#ae00d49210ce934c64bbbdd8fecfefd01">scan</a>(</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">const</span> <a class="code" href="classcudf_1_1column__view.html">column_view</a>&amp; input, <a class="code" href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cf">scan_op</a> op, <span class="keywordtype">bool</span> inclusive, <span class="keywordtype">bool</span> skipna=<span class="keyword">true</span>,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}  <span class="comment">// namespace experimental</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}  <span class="comment">// namespace cudf</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// @brief Enum to describe scan operation type</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">enum class</span> scan_type : bool {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   INCLUSIVE, </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   EXCLUSIVE</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// @brief Enum to describe include nulls or exclude nulls in an aggregation</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">enum class</span> include_nulls : bool {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;   YES, </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;   NO</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;std::unique_ptr&lt;scalar&gt; <a class="code" href="namespacecudf_1_1experimental.html#a965295f5f5e0fa38d0c74a2c8b4ec3d9">reduce</a>(</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">const</span> column_view&amp; col, </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    std::unique_ptr&lt;aggregation&gt; <span class="keyword">const</span> &amp;agg,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    data_type output_dtype,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;std::unique_ptr&lt;column&gt;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<a class="code" href="namespacecudf_1_1experimental.html#a3fb513cb9b4c26c11309b8b7c957724a">scan</a>(<span class="keyword">const</span> column_view &amp;input, std::unique_ptr&lt;aggregation&gt; <span class="keyword">const</span> &amp;agg,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;     scan_type inclusive, include_nulls include_nulls_flag = include_nulls::NO,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;     rmm::mr::device_memory_resource *mr = rmm::mr::get_default_resource());</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}  <span class="comment">// namespace experimental</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}  <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacecudf_1_1experimental_html_af44baaeea3ec9df2ee3029e515c713cfa26a4b44a837bf97b972628509912b4a5"><div class="ttname"><a href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cfa26a4b44a837bf97b972628509912b4a5">cudf::experimental::scan_op::MAX</a></div><div class="ttdoc">Computes the prefix scan of maximum operation of all values for the column.</div></div>
-<div class="ttc" id="aclasscudf_1_1column__view_html"><div class="ttname"><a href="classcudf_1_1column__view.html">cudf::column_view</a></div><div class="ttdoc">A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...</div><div class="ttdef"><b>Definition:</b> column_view.hpp:272</div></div>
 <div class="ttc" id="anamespacecudf_1_1experimental_html_a965295f5f5e0fa38d0c74a2c8b4ec3d9"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a965295f5f5e0fa38d0c74a2c8b4ec3d9">cudf::experimental::reduce</a></div><div class="ttdeci">std::unique_ptr&lt; scalar &gt; reduce(column_view const &amp;col, std::unique_ptr&lt; aggregation &gt; const &amp;agg, data_type output_dtype, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Computes the reduction of the values in all rows of a column. This function does not detect overflows...</div><div class="ttdef"><b>Definition:</b> reductions.cpp:99</div></div>
-<div class="ttc" id="anamespacecudf_1_1experimental_html_af44baaeea3ec9df2ee3029e515c713cf"><div class="ttname"><a href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cf">cudf::experimental::scan_op</a></div><div class="ttdeci">scan_op</div><div class="ttdoc">These enums indicate the supported operations of prefix scan that can be performed on a column.</div><div class="ttdef"><b>Definition:</b> reduction.hpp:30</div></div>
-<div class="ttc" id="aclasscudf_1_1data__type_html"><div class="ttname"><a href="classcudf_1_1data__type.html">cudf::data_type</a></div><div class="ttdoc">Indicator for the logical data type of an element in a column.</div><div class="ttdef"><b>Definition:</b> types.hpp:179</div></div>
-<div class="ttc" id="anamespacecudf_1_1experimental_html_af44baaeea3ec9df2ee3029e515c713cface31e2a082d17e038fcc6e3006166653"><div class="ttname"><a href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cface31e2a082d17e038fcc6e3006166653">cudf::experimental::scan_op::MIN</a></div><div class="ttdoc">Computes the prefix scan of maximum operation of all values for the column.</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_a3fb513cb9b4c26c11309b8b7c957724a"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a3fb513cb9b4c26c11309b8b7c957724a">cudf::experimental::scan</a></div><div class="ttdeci">std::unique_ptr&lt; column &gt; scan(const column_view &amp;input, std::unique_ptr&lt; aggregation &gt; const &amp;agg, scan_type inclusive, include_nulls include_nulls_flag, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Computes the scan of a column. The null values are skipped for the operation, and if an input element...</div><div class="ttdef"><b>Definition:</b> scan.cu:253</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">cuDF interfaces</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:23</div></div>
-<div class="ttc" id="anamespacecudf_1_1experimental_html_af44baaeea3ec9df2ee3029e515c713cfa6970bdc2201030b9c03fbdcf3973858a"><div class="ttname"><a href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cfa6970bdc2201030b9c03fbdcf3973858a">cudf::experimental::scan_op::SUM</a></div><div class="ttdoc">Computes the prefix scan of sum operation of all values for the column.</div></div>
-<div class="ttc" id="anamespacecudf_1_1experimental_html_ae00d49210ce934c64bbbdd8fecfefd01"><div class="ttname"><a href="namespacecudf_1_1experimental.html#ae00d49210ce934c64bbbdd8fecfefd01">cudf::experimental::scan</a></div><div class="ttdeci">std::unique_ptr&lt; column &gt; scan(const column_view &amp;input, scan_op op, bool inclusive, bool skipna, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Computes the scan of a column. The null values are skipped for the operation, and if an input element...</div><div class="ttdef"><b>Definition:</b> scan.cu:245</div></div>
 <div class="ttc" id="aaggregation_8hpp_html"><div class="ttname"><a href="aggregation_8hpp.html">aggregation.hpp</a></div><div class="ttdoc">Representation for specifying desired aggregations from aggregation-based APIs, e....</div></div>
-<div class="ttc" id="anamespacecudf_1_1experimental_html_af44baaeea3ec9df2ee3029e515c713cfa2544e5b1e7659a7ba6f06444cc03d066"><div class="ttname"><a href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cfa2544e5b1e7659a7ba6f06444cc03d066">cudf::experimental::scan_op::PRODUCT</a></div><div class="ttdoc">Computes the prefix scan of multiplicative product operation of all values for the column.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

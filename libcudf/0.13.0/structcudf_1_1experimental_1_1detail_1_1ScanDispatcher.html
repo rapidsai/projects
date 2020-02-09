@@ -79,14 +79,14 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa6d803bc6f1075b38135d325497758ef"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if_t&lt; is_supported&lt; T &gt;(), T &gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:aa6d803bc6f1075b38135d325497758ef"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1detail_1_1ScanDispatcher.html#aa6d803bc6f1075b38135d325497758ef">operator()</a> (const <a class="el" href="classcudf_1_1column__view.html">column_view</a> &amp;input, bool inclusive, bool skipna, rmm::mr::device_memory_resource *mr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
-<tr class="memdesc:aa6d803bc6f1075b38135d325497758ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">creates new column from input column by applying scan operation  <a href="structcudf_1_1experimental_1_1detail_1_1ScanDispatcher.html#aa6d803bc6f1075b38135d325497758ef">More...</a><br /></td></tr>
-<tr class="separator:aa6d803bc6f1075b38135d325497758ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6d803bc6f1075b38135d325497758ef"><td class="memTemplParams" colspan="2"><a id="aa6d803bc6f1075b38135d325497758ef"></a>
+<tr class="memitem:ad72af27e85e570f7ee51eb812b9f7105"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if_t&lt; is_supported&lt; T &gt;(), T &gt; *  = nullptr&gt; </td></tr>
+<tr class="memitem:ad72af27e85e570f7ee51eb812b9f7105"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1detail_1_1ScanDispatcher.html#ad72af27e85e570f7ee51eb812b9f7105">operator()</a> (const <a class="el" href="classcudf_1_1column__view.html">column_view</a> &amp;input, scan_type inclusive, include_nulls include_nulls_flag, rmm::mr::device_memory_resource *mr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
+<tr class="memdesc:ad72af27e85e570f7ee51eb812b9f7105"><td class="mdescLeft">&#160;</td><td class="mdescRight">creates new column from input column by applying scan operation  <a href="structcudf_1_1experimental_1_1detail_1_1ScanDispatcher.html#ad72af27e85e570f7ee51eb812b9f7105">More...</a><br /></td></tr>
+<tr class="separator:ad72af27e85e570f7ee51eb812b9f7105"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad72af27e85e570f7ee51eb812b9f7105"><td class="memTemplParams" colspan="2"><a id="ad72af27e85e570f7ee51eb812b9f7105"></a>
 template&lt;typename T , typename std::enable_if_t&lt;!is_supported&lt; T &gt;(), T &gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:aa6d803bc6f1075b38135d325497758ef"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (const <a class="el" href="classcudf_1_1column__view.html">column_view</a> &amp;input, bool inclusive, bool skipna, rmm::mr::device_memory_resource *mr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
-<tr class="separator:aa6d803bc6f1075b38135d325497758ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad72af27e85e570f7ee51eb812b9f7105"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (const <a class="el" href="classcudf_1_1column__view.html">column_view</a> &amp;input, scan_type inclusive, include_nulls include_nulls_flag, rmm::mr::device_memory_resource *mr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
+<tr class="separator:ad72af27e85e570f7ee51eb812b9f7105"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename Op&gt;<br />
@@ -100,8 +100,8 @@ struct cudf::experimental::detail::ScanDispatcher&lt; Op &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa6d803bc6f1075b38135d325497758ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6d803bc6f1075b38135d325497758ef">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="ad72af27e85e570f7ee51eb812b9f7105"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad72af27e85e570f7ee51eb812b9f7105">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -122,14 +122,14 @@ template&lt;typename T , typename std::enable_if_t&lt; is_supported&lt; T &gt;()
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype">scan_type&#160;</td>
           <td class="paramname"><em>inclusive</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>skipna</em>, </td>
+          <td class="paramtype">include_nulls&#160;</td>
+          <td class="paramname"><em>include_nulls_flag</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

@@ -192,13 +192,14 @@ Enumerations</h2></td></tr>
 <a class="el" href="namespacecudf_1_1experimental.html#ad483c874f6010437111325063b87daefaf3fc827ade4b968e50406496907ef962">mask_allocation_policy::ALWAYS</a>
  }</td></tr>
 <tr class="separator:ad483c874f6010437111325063b87daef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af44baaeea3ec9df2ee3029e515c713cf"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cf">scan_op</a> { <a class="el" href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cfa6970bdc2201030b9c03fbdcf3973858a">scan_op::SUM</a> = 0, 
-<a class="el" href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cface31e2a082d17e038fcc6e3006166653">scan_op::MIN</a>, 
-<a class="el" href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cfa26a4b44a837bf97b972628509912b4a5">scan_op::MAX</a>, 
-<a class="el" href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cfa2544e5b1e7659a7ba6f06444cc03d066">scan_op::PRODUCT</a>
+<tr class="memitem:aed7458ccb29f72157d06d69d7c3fe51c"><td class="memItemLeft" align="right" valign="top"><a id="aed7458ccb29f72157d06d69d7c3fe51c"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>scan_type</b> : bool { <b>INCLUSIVE</b>, 
+<b>EXCLUSIVE</b>
  }</td></tr>
-<tr class="memdesc:af44baaeea3ec9df2ee3029e515c713cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">These enums indicate the supported operations of prefix scan that can be performed on a column.  <a href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cf">More...</a><br /></td></tr>
-<tr class="separator:af44baaeea3ec9df2ee3029e515c713cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:aed7458ccb29f72157d06d69d7c3fe51c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f0da8822c046cd38226456dcd4849e2"><td class="memItemLeft" align="right" valign="top"><a id="a1f0da8822c046cd38226456dcd4849e2"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>include_nulls</b> : bool { <b>YES</b>, 
+<b>NO</b>
+ }</td></tr>
+<tr class="separator:a1f0da8822c046cd38226456dcd4849e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43b073c676d07d514a051888b2b753cd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cd">duplicate_keep_option</a> { <a class="el" href="namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cda5968b12bf2e72e702a998c7fa6c83b1e">duplicate_keep_option::KEEP_FIRST</a> = 0, 
 <a class="el" href="namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cda4583fc151efe5098dd96eeec8cf74699">duplicate_keep_option::KEEP_LAST</a>, 
 <a class="el" href="namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cda40c4abe57c2fda3e580eee916b9e0558">duplicate_keep_option::KEEP_NONE</a>
@@ -431,9 +432,9 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html"
 <tr class="memitem:a965295f5f5e0fa38d0c74a2c8b4ec3d9"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a965295f5f5e0fa38d0c74a2c8b4ec3d9">reduce</a> (const <a class="el" href="classcudf_1_1column__view.html">column_view</a> &amp;col, std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; const &amp;agg, <a class="el" href="classcudf_1_1data__type.html">data_type</a> output_dtype, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a965295f5f5e0fa38d0c74a2c8b4ec3d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the reduction of the values in all rows of a column. This function does not detect overflows in reductions. Using a higher precision <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> may prevent overflow. Only <code>min</code> and <code>max</code> ops are supported for reduction of non-arithmetic types (timestamp, string...). The null values are skipped for the operation. If the column is empty, the member <code><a class="el" href="namespacecudf_1_1experimental.html#aeb3f89042ed2eb6a4a38a86919f526bc" title="Creates a column of BOOL8 elements where for every element in input true indicates the value is valid...">is_valid()</a></code> of the output scalar will contain <code>false</code>.  <a href="namespacecudf_1_1experimental.html#a965295f5f5e0fa38d0c74a2c8b4ec3d9">More...</a><br /></td></tr>
 <tr class="separator:a965295f5f5e0fa38d0c74a2c8b4ec3d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae00d49210ce934c64bbbdd8fecfefd01"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ae00d49210ce934c64bbbdd8fecfefd01">scan</a> (const <a class="el" href="classcudf_1_1column__view.html">column_view</a> &amp;input, <a class="el" href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cf">scan_op</a> op, bool inclusive, bool skipna=true, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
-<tr class="memdesc:ae00d49210ce934c64bbbdd8fecfefd01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the scan of a column. The null values are skipped for the operation, and if an input element at <code>i</code> is null, then the output element at <code>i</code> will also be null.  <a href="namespacecudf_1_1experimental.html#ae00d49210ce934c64bbbdd8fecfefd01">More...</a><br /></td></tr>
-<tr class="separator:ae00d49210ce934c64bbbdd8fecfefd01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fb513cb9b4c26c11309b8b7c957724a"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a3fb513cb9b4c26c11309b8b7c957724a">scan</a> (const <a class="el" href="classcudf_1_1column__view.html">column_view</a> &amp;input, std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; const &amp;agg, scan_type inclusive, include_nulls include_nulls_flag=include_nulls::NO, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a3fb513cb9b4c26c11309b8b7c957724a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the scan of a column. The null values are skipped for the operation, and if an input element at <code>i</code> is null, then the output element at <code>i</code> will also be null.  <a href="namespacecudf_1_1experimental.html#a3fb513cb9b4c26c11309b8b7c957724a">More...</a><br /></td></tr>
+<tr class="separator:a3fb513cb9b4c26c11309b8b7c957724a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab59b75670715814a0280eafbf434129a"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ab59b75670715814a0280eafbf434129a">clamp</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;lo, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;lo_replace, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;hi, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;hi_replace, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:ab59b75670715814a0280eafbf434129a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces values less than <code>lo</code> in <code>input</code> with <code>lo_replace</code>, and values greater than <code>hi</code> with <code>hi_replace</code>.  <a href="namespacecudf_1_1experimental.html#ab59b75670715814a0280eafbf434129a">More...</a><br /></td></tr>
 <tr class="separator:ab59b75670715814a0280eafbf434129a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -825,40 +826,6 @@ template&lt;typename T &gt; </div>
 </table>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a3">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
 </dl>
-
-</div>
-</div>
-<a id="af44baaeea3ec9df2ee3029e515c713cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af44baaeea3ec9df2ee3029e515c713cf">&#9670;&nbsp;</a></span>scan_op</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cf">cudf::experimental::scan_op</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>These enums indicate the supported operations of prefix scan that can be performed on a column. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af44baaeea3ec9df2ee3029e515c713cfa6970bdc2201030b9c03fbdcf3973858a"></a>SUM&#160;</td><td class="fielddoc"><p>Computes the prefix scan of sum operation of all values for the column. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af44baaeea3ec9df2ee3029e515c713cface31e2a082d17e038fcc6e3006166653"></a>MIN&#160;</td><td class="fielddoc"><p>Computes the prefix scan of maximum operation of all values for the column. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af44baaeea3ec9df2ee3029e515c713cfa26a4b44a837bf97b972628509912b4a5"></a>MAX&#160;</td><td class="fielddoc"><p>Computes the prefix scan of maximum operation of all values for the column. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af44baaeea3ec9df2ee3029e515c713cfa2544e5b1e7659a7ba6f06444cc03d066"></a>PRODUCT&#160;</td><td class="fielddoc"><p>Computes the prefix scan of multiplicative product operation of all values for the column. </p>
-</td></tr>
-</table>
 
 </div>
 </div>
@@ -3912,8 +3879,8 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 
 </div>
 </div>
-<a id="ae00d49210ce934c64bbbdd8fecfefd01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae00d49210ce934c64bbbdd8fecfefd01">&#9670;&nbsp;</a></span>scan()</h2>
+<a id="a3fb513cb9b4c26c11309b8b7c957724a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fb513cb9b4c26c11309b8b7c957724a">&#9670;&nbsp;</a></span>scan()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3927,20 +3894,20 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacecudf_1_1experimental.html#af44baaeea3ec9df2ee3029e515c713cf">scan_op</a>&#160;</td>
-          <td class="paramname"><em>op</em>, </td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>agg</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
+          <td class="paramtype">scan_type&#160;</td>
           <td class="paramname"><em>inclusive</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>skipna</em> = <code>true</code>, </td>
+          <td class="paramtype">include_nulls&#160;</td>
+          <td class="paramname"><em>include_nulls_flag</em> = <code>include_nulls::NO</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -3966,8 +3933,9 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>The input column view for the scan </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">op</td><td>The operation of the scan </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">inclusive</td><td>The flag for applying an inclusive scan if true, an exclusive scan if false. @params[in] mr The resource to use for all allocations </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">agg</td><td>unique_ptr to aggregation operator applied by the scan </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inclusive</td><td>The flag for applying an inclusive scan if scan_type::INCLUSIVE, an exclusive scan if scan_type::EXCLUSIVE. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">include_nulls_flag</td><td>Exclude null values when computing the result if include_nulls::NO. Include nulls if include_nulls::YES. Any operation with a null results in a null. @params[in] mr The resource to use for all allocations </td></tr>
   </table>
   </dd>
 </dl>
