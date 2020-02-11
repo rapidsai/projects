@@ -2550,6 +2550,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
 <p>Gathers the specified rows (including null values) of a set of columns. </p>
 <p>Gathers the rows of the source columns according to <code>gather_map</code> such that row "i" in the resulting table's columns will contain row "gather_map[i]" from the source columns. The number of rows in the result table will be equal to the number of elements in <code>gather_map</code>.</p>
 <p>A negative value <code>i</code> in the <code>gather_map</code> is interpreted as <code>i+n</code>, where <code>n</code> is the number of rows in the <code>source_table</code>.</p>
+<p>For dictionary columns, the keys column component is copied and not trimmed if the gather results in abandoned key elements.</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">&lt;tt&gt;cudf::logic_error&lt;/tt&gt;</td><td>if <code>check_bounds == true</code> and an index exists in <code>gather_map</code> outside the range <code>[-n, n)</code>, where <code>n</code> is the number of rows in the source table. If <code>check_bounds == false</code>, the behavior is undefined.</td></tr>
