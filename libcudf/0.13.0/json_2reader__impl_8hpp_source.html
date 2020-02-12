@@ -125,7 +125,7 @@ $(function() {
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">// Used when the input data is compressed, to ensure the allocated uncompressed data is freed</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  std::vector&lt;char&gt; uncomp_data_owner_;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  rmm::device_buffer data_;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="classthrust_1_1device__vector.html">thrust::device_vector&lt;uint64_t&gt;</a> rec_starts_;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  rmm::device_vector&lt;uint64_t&gt; rec_starts_;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">size_t</span> byte_range_offset_ = 0;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">size_t</span> byte_range_size_ = 0;</div>
@@ -137,9 +137,9 @@ $(function() {
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">// parsing options</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">bool</span> allow_newlines_in_strings_ = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <a class="code" href="structcudf_1_1experimental_1_1io_1_1ParseOptions.html">ParseOptions</a> opts_{<span class="charliteral">&#39;,&#39;</span>, <span class="charliteral">&#39;\n&#39;</span>, <span class="charliteral">&#39;\&quot;&#39;</span>, <span class="charliteral">&#39;.&#39;</span>};</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <a class="code" href="classthrust_1_1device__vector.html">thrust::device_vector&lt;SerialTrieNode&gt;</a> d_true_trie_;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="classthrust_1_1device__vector.html">thrust::device_vector&lt;SerialTrieNode&gt;</a> d_false_trie_;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="classthrust_1_1device__vector.html">thrust::device_vector&lt;SerialTrieNode&gt;</a> d_na_trie_;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  rmm::device_vector&lt;SerialTrieNode&gt; d_true_trie_;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  rmm::device_vector&lt;SerialTrieNode&gt; d_false_trie_;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  rmm::device_vector&lt;SerialTrieNode&gt; d_na_trie_;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">void</span> ingest_raw_input(<span class="keywordtype">size_t</span> range_offset, <span class="keywordtype">size_t</span> range_size);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
@@ -169,7 +169,6 @@ $(function() {
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;} <span class="comment">// namespace experimental</span></div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;} <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassthrust_1_1device__vector_html"><div class="ttname"><a href="classthrust_1_1device__vector.html">thrust::device_vector&lt; uint64_t &gt;</a></div></div>
 <div class="ttc" id="aclasscudf_1_1experimental_1_1io_1_1detail_1_1json_1_1reader_1_1impl_html"><div class="ttname"><a href="classcudf_1_1experimental_1_1io_1_1detail_1_1json_1_1reader_1_1impl.html">cudf::experimental::io::detail::json::reader::impl</a></div><div class="ttdoc">Class used to parse Json input and convert it into gdf columns.</div><div class="ttdef"><b>Definition:</b> json/reader_impl.hpp:48</div></div>
 <div class="ttc" id="acolumn__buffer_8hpp_html"><div class="ttname"><a href="column__buffer_8hpp.html">column_buffer.hpp</a></div><div class="ttdoc">cuDF-IO Column-backing buffer utilities</div></div>
 <div class="ttc" id="astructcudf_1_1experimental_1_1io_1_1detail_1_1json_1_1reader__options_html"><div class="ttname"><a href="structcudf_1_1experimental_1_1io_1_1detail_1_1json_1_1reader__options.html">cudf::experimental::io::detail::json::reader_options</a></div><div class="ttdoc">Options for the JSON reader.</div><div class="ttdef"><b>Definition:</b> readers.hpp:150</div></div>

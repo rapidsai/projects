@@ -154,6 +154,10 @@ Enumerations</h2></td></tr>
 <b>PTX</b>
  }</td></tr>
 <tr class="separator:af3c5acc541194664ced90465dfd164f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f0da8822c046cd38226456dcd4849e2"><td class="memItemLeft" align="right" valign="top"><a id="a1f0da8822c046cd38226456dcd4849e2"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>include_nulls</b> : bool { <b>YES</b>, 
+<b>NO</b>
+ }</td></tr>
+<tr class="separator:a1f0da8822c046cd38226456dcd4849e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af98fab32c66e913a0096c1a3789c5701"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#af98fab32c66e913a0096c1a3789c5701">binary_operator</a> { <br />
 &#160;&#160;<a class="el" href="namespacecudf_1_1experimental.html#af98fab32c66e913a0096c1a3789c5701a9eeb52badb613229884838847294b90d">binary_operator::ADD</a>, 
 <a class="el" href="namespacecudf_1_1experimental.html#af98fab32c66e913a0096c1a3789c5701a241dd841abade20fcb27b8a9f494e1eb">binary_operator::SUB</a>, 
@@ -196,10 +200,6 @@ Enumerations</h2></td></tr>
 <b>EXCLUSIVE</b>
  }</td></tr>
 <tr class="separator:aed7458ccb29f72157d06d69d7c3fe51c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f0da8822c046cd38226456dcd4849e2"><td class="memItemLeft" align="right" valign="top"><a id="a1f0da8822c046cd38226456dcd4849e2"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>include_nulls</b> : bool { <b>YES</b>, 
-<b>NO</b>
- }</td></tr>
-<tr class="separator:a1f0da8822c046cd38226456dcd4849e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43b073c676d07d514a051888b2b753cd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cd">duplicate_keep_option</a> { <a class="el" href="namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cda5968b12bf2e72e702a998c7fa6c83b1e">duplicate_keep_option::KEEP_FIRST</a> = 0, 
 <a class="el" href="namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cda4583fc151efe5098dd96eeec8cf74699">duplicate_keep_option::KEEP_LAST</a>, 
 <a class="el" href="namespacecudf_1_1experimental.html#a43b073c676d07d514a051888b2b753cda40c4abe57c2fda3e580eee916b9e0558">duplicate_keep_option::KEEP_NONE</a>
@@ -312,6 +312,9 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation
 <tr class="memitem:af87231ab8430ae7b296c3a0110096b26"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#af87231ab8430ae7b296c3a0110096b26">make_argmin_aggregation</a> ()</td></tr>
 <tr class="memdesc:af87231ab8430ae7b296c3a0110096b26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a ARGMIN aggregation.  <a href="namespacecudf_1_1experimental.html#af87231ab8430ae7b296c3a0110096b26">More...</a><br /></td></tr>
 <tr class="separator:af87231ab8430ae7b296c3a0110096b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa356bff501c540949736fc5ea967359b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#aa356bff501c540949736fc5ea967359b">make_nunique_aggregation</a> (include_nulls _include_nulls)</td></tr>
+<tr class="memdesc:aa356bff501c540949736fc5ea967359b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a NUNIQUE aggregation.  <a href="namespacecudf_1_1experimental.html#aa356bff501c540949736fc5ea967359b">More...</a><br /></td></tr>
+<tr class="separator:aa356bff501c540949736fc5ea967359b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03b177a3721692f887f0ec3386bc6ace"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a03b177a3721692f887f0ec3386bc6ace">make_udf_aggregation</a> (udf_type type, std::string const &amp;user_defined_aggregator, <a class="el" href="classcudf_1_1data__type.html">data_type</a> output_type)</td></tr>
 <tr class="memdesc:a03b177a3721692f887f0ec3386bc6ace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a UDF aggregation.  <a href="namespacecudf_1_1experimental.html#a03b177a3721692f887f0ec3386bc6ace">More...</a><br /></td></tr>
 <tr class="separator:a03b177a3721692f887f0ec3386bc6ace"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2932,6 +2935,28 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
 <p>Factory to create a ARGMIN aggregation. </p>
 <p>Factory to create an <code>argmin</code> aggregation.</p>
 <p><code>argmin</code> returns the index of the minimum element. </p>
+
+</div>
+</div>
+<a id="aa356bff501c540949736fc5ea967359b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa356bff501c540949736fc5ea967359b">&#9670;&nbsp;</a></span>make_nunique_aggregation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; cudf::experimental::make_nunique_aggregation </td>
+          <td>(</td>
+          <td class="paramtype">include_nulls&#160;</td>
+          <td class="paramname"><em>_include_nulls</em> = <code>include_nulls::NO</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Factory to create a NUNIQUE aggregation. </p>
+<p>Factory to create a <code>nunique</code> aggregation.</p>
+<p><code>nunique</code> returns the number of unique elements. </p>
 
 </div>
 </div>

@@ -98,10 +98,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="aggregation_8hpp__dep__incl.png" border="0" usemap="#aggregation_8hppdep" alt=""/></div>
 <map name="aggregation_8hppdep" id="aggregation_8hppdep">
-<area shape="rect" title="Representation for specifying desired aggregations from aggregation&#45;based APIs, e...." alt="" coords="68,5,240,32"/>
-<area shape="rect" href="groupby_8hpp_source.html" title=" " alt="" coords="5,80,137,107"/>
-<area shape="rect" href="reduction_8hpp_source.html" title=" " alt="" coords="162,80,314,107"/>
-<area shape="rect" href="detail_2groupby_8hpp_source.html" title=" " alt="" coords="5,155,137,181"/>
+<area shape="rect" title="Representation for specifying desired aggregations from aggregation&#45;based APIs, e...." alt="" coords="232,5,404,32"/>
+<area shape="rect" href="groupby_2sort_2group__reductions_8hpp_source.html" title=" " alt="" coords="5,80,228,107"/>
+<area shape="rect" href="groupby_8hpp_source.html" title=" " alt="" coords="252,80,384,107"/>
+<area shape="rect" href="reduction_8hpp_source.html" title=" " alt="" coords="409,80,561,107"/>
+<area shape="rect" href="detail_2groupby_8hpp_source.html" title=" " alt="" coords="252,155,384,181"/>
 </map>
 </div>
 </div>
@@ -122,6 +123,10 @@ Enumerations</h2></td></tr>
 <b>PTX</b>
  }</td></tr>
 <tr class="separator:af3c5acc541194664ced90465dfd164f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f0da8822c046cd38226456dcd4849e2"><td class="memItemLeft" align="right" valign="top"><a id="a1f0da8822c046cd38226456dcd4849e2"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>include_nulls</b> : bool { <b>YES</b>, 
+<b>NO</b>
+ }</td></tr>
+<tr class="separator:a1f0da8822c046cd38226456dcd4849e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -180,6 +185,9 @@ std::unique_ptr&lt; aggregation &gt;&#160;</td><td class="memItemRight" valign="
 <tr class="memitem:af87231ab8430ae7b296c3a0110096b26"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; aggregation &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#af87231ab8430ae7b296c3a0110096b26">cudf::experimental::make_argmin_aggregation</a> ()</td></tr>
 <tr class="memdesc:af87231ab8430ae7b296c3a0110096b26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a ARGMIN aggregation.  <a href="namespacecudf_1_1experimental.html#af87231ab8430ae7b296c3a0110096b26">More...</a><br /></td></tr>
 <tr class="separator:af87231ab8430ae7b296c3a0110096b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa356bff501c540949736fc5ea967359b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; aggregation &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#aa356bff501c540949736fc5ea967359b">cudf::experimental::make_nunique_aggregation</a> (include_nulls _include_nulls)</td></tr>
+<tr class="memdesc:aa356bff501c540949736fc5ea967359b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a NUNIQUE aggregation.  <a href="namespacecudf_1_1experimental.html#aa356bff501c540949736fc5ea967359b">More...</a><br /></td></tr>
+<tr class="separator:aa356bff501c540949736fc5ea967359b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03b177a3721692f887f0ec3386bc6ace"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; aggregation &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a03b177a3721692f887f0ec3386bc6ace">cudf::experimental::make_udf_aggregation</a> (udf_type type, std::string const &amp;user_defined_aggregator, data_type output_type)</td></tr>
 <tr class="memdesc:a03b177a3721692f887f0ec3386bc6ace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a UDF aggregation.  <a href="namespacecudf_1_1experimental.html#a03b177a3721692f887f0ec3386bc6ace">More...</a><br /></td></tr>
 <tr class="separator:a03b177a3721692f887f0ec3386bc6ace"><td class="memSeparator" colspan="2">&#160;</td></tr>

@@ -101,25 +101,19 @@ $(function() {
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   EXCLUSIVE</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// @brief Enum to describe include nulls or exclude nulls in an aggregation</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">enum class</span> include_nulls : bool {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;   YES, </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;   NO</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;std::unique_ptr&lt;scalar&gt; <a class="code" href="namespacecudf_1_1experimental.html#a965295f5f5e0fa38d0c74a2c8b4ec3d9">reduce</a>(</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">const</span> column_view&amp; col, </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    std::unique_ptr&lt;aggregation&gt; <span class="keyword">const</span> &amp;agg,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    data_type output_dtype,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;std::unique_ptr&lt;column&gt;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<a class="code" href="namespacecudf_1_1experimental.html#a3fb513cb9b4c26c11309b8b7c957724a">scan</a>(<span class="keyword">const</span> column_view &amp;input, std::unique_ptr&lt;aggregation&gt; <span class="keyword">const</span> &amp;agg,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;     scan_type inclusive, include_nulls include_nulls_flag = include_nulls::NO,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;     rmm::mr::device_memory_resource *mr = rmm::mr::get_default_resource());</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}  <span class="comment">// namespace experimental</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}  <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;std::unique_ptr&lt;scalar&gt; <a class="code" href="namespacecudf_1_1experimental.html#a965295f5f5e0fa38d0c74a2c8b4ec3d9">reduce</a>(</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">const</span> column_view&amp; col, </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::unique_ptr&lt;aggregation&gt; <span class="keyword">const</span> &amp;agg,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    data_type output_dtype,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;std::unique_ptr&lt;column&gt;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<a class="code" href="namespacecudf_1_1experimental.html#a3fb513cb9b4c26c11309b8b7c957724a">scan</a>(<span class="keyword">const</span> column_view &amp;input, std::unique_ptr&lt;aggregation&gt; <span class="keyword">const</span> &amp;agg,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;     scan_type inclusive, include_nulls include_nulls_flag = include_nulls::NO,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;     rmm::mr::device_memory_resource *mr = rmm::mr::get_default_resource());</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}  <span class="comment">// namespace experimental</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}  <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespacecudf_1_1experimental_html_a965295f5f5e0fa38d0c74a2c8b4ec3d9"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a965295f5f5e0fa38d0c74a2c8b4ec3d9">cudf::experimental::reduce</a></div><div class="ttdeci">std::unique_ptr&lt; scalar &gt; reduce(column_view const &amp;col, std::unique_ptr&lt; aggregation &gt; const &amp;agg, data_type output_dtype, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Computes the reduction of the values in all rows of a column. This function does not detect overflows...</div><div class="ttdef"><b>Definition:</b> reductions.cpp:99</div></div>
 <div class="ttc" id="anamespacecudf_1_1experimental_html_a3fb513cb9b4c26c11309b8b7c957724a"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a3fb513cb9b4c26c11309b8b7c957724a">cudf::experimental::scan</a></div><div class="ttdeci">std::unique_ptr&lt; column &gt; scan(const column_view &amp;input, std::unique_ptr&lt; aggregation &gt; const &amp;agg, scan_type inclusive, include_nulls include_nulls_flag, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Computes the scan of a column. The null values are skipped for the operation, and if an input element...</div><div class="ttdef"><b>Definition:</b> scan.cu:253</div></div>
