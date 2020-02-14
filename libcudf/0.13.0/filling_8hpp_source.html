@@ -95,10 +95,10 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span>experimental {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecudf_1_1experimental.html#abdcc600a269f9142df29f43dd61d6521">fill</a>(mutable_column_view&amp; destination, size_type begin, size_type end,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;          scalar <span class="keyword">const</span>&amp; value);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecudf_1_1experimental.html#a1cfe8b5bb6c25f192ebba74fae00f958">fill_in_place</a>(mutable_column_view&amp; destination, size_type begin,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                   size_type end, scalar <span class="keyword">const</span>&amp; value);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;std::unique_ptr&lt;column&gt; <a class="code" href="namespacecudf_1_1experimental.html#abdcc600a269f9142df29f43dd61d6521">fill</a>(</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;std::unique_ptr&lt;column&gt; <a class="code" href="namespacecudf_1_1experimental.html#ae713ac30fdf8c5f5b37f9f4612180f8b">fill</a>(</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    column_view <span class="keyword">const</span>&amp; input, size_type begin, size_type end,</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    scalar <span class="keyword">const</span>&amp; value,</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
@@ -115,10 +115,11 @@ $(function() {
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}  <span class="comment">// namespace experimental</span></div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}  <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacecudf_1_1experimental_html_abdcc600a269f9142df29f43dd61d6521"><div class="ttname"><a href="namespacecudf_1_1experimental.html#abdcc600a269f9142df29f43dd61d6521">cudf::experimental::fill</a></div><div class="ttdeci">void fill(mutable_column_view &amp;destination, size_type begin, size_type end, scalar const &amp;value)</div><div class="ttdoc">Fills a range of elements in-place in a column with a scalar value.</div><div class="ttdef"><b>Definition:</b> filling/fill.cu:173</div></div>
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div><div class="ttdoc">Type declarations for libcudf.</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_a1cfe8b5bb6c25f192ebba74fae00f958"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a1cfe8b5bb6c25f192ebba74fae00f958">cudf::experimental::fill_in_place</a></div><div class="ttdeci">void fill_in_place(mutable_column_view &amp;destination, size_type begin, size_type end, scalar const &amp;value)</div><div class="ttdoc">Fills a range of elements in-place in a column with a scalar value.</div><div class="ttdef"><b>Definition:</b> filling/fill.cu:173</div></div>
 <div class="ttc" id="anamespacecudf_1_1experimental_html_a821183b38dc84793cf9ccc43abd3c86a"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a821183b38dc84793cf9ccc43abd3c86a">cudf::experimental::repeat</a></div><div class="ttdeci">std::unique_ptr&lt; table &gt; repeat(table_view const &amp;input_table, column_view const &amp;count, bool check_count, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Repeat rows of a Table.</div><div class="ttdef"><b>Definition:</b> repeat.cu:178</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">cuDF interfaces</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:23</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_ae713ac30fdf8c5f5b37f9f4612180f8b"><div class="ttname"><a href="namespacecudf_1_1experimental.html#ae713ac30fdf8c5f5b37f9f4612180f8b">cudf::experimental::fill</a></div><div class="ttdeci">std::unique_ptr&lt; column &gt; fill(column_view const &amp;input, size_type begin, size_type end, scalar const &amp;value, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Fills a range of elements in a column out-of-place with a scalar value.</div><div class="ttdef"><b>Definition:</b> filling/fill.cu:180</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

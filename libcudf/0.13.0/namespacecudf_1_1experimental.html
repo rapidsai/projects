@@ -396,9 +396,9 @@ std::vector&lt; <a class="el" href="classcudf_1_1table__view.html">cudf::table_v
 <tr class="memitem:a8f4bd1cfd9b40f54975494511a78a15e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classcudf_1_1table__view.html">cudf::table_view</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a8f4bd1cfd9b40f54975494511a78a15e">split</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;input, std::vector&lt; size_type &gt; const  &amp;splits)</td></tr>
 <tr class="memdesc:a8f4bd1cfd9b40f54975494511a78a15e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a <code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code> into a set of <code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code>s according to a set of indices derived from expected splits.  <a href="namespacecudf_1_1experimental.html#a8f4bd1cfd9b40f54975494511a78a15e">More...</a><br /></td></tr>
 <tr class="separator:a8f4bd1cfd9b40f54975494511a78a15e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdcc600a269f9142df29f43dd61d6521"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#abdcc600a269f9142df29f43dd61d6521">fill</a> (<a class="el" href="classcudf_1_1mutable__column__view.html">mutable_column_view</a> &amp;destination, size_type begin, size_type end, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;value)</td></tr>
-<tr class="memdesc:abdcc600a269f9142df29f43dd61d6521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills a range of elements in-place in a column with a scalar value.  <a href="namespacecudf_1_1experimental.html#abdcc600a269f9142df29f43dd61d6521">More...</a><br /></td></tr>
-<tr class="separator:abdcc600a269f9142df29f43dd61d6521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cfe8b5bb6c25f192ebba74fae00f958"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a1cfe8b5bb6c25f192ebba74fae00f958">fill_in_place</a> (<a class="el" href="classcudf_1_1mutable__column__view.html">mutable_column_view</a> &amp;destination, size_type begin, size_type end, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;value)</td></tr>
+<tr class="memdesc:a1cfe8b5bb6c25f192ebba74fae00f958"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills a range of elements in-place in a column with a scalar value.  <a href="namespacecudf_1_1experimental.html#a1cfe8b5bb6c25f192ebba74fae00f958">More...</a><br /></td></tr>
+<tr class="separator:a1cfe8b5bb6c25f192ebba74fae00f958"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae713ac30fdf8c5f5b37f9f4612180f8b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ae713ac30fdf8c5f5b37f9f4612180f8b">fill</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, size_type begin, size_type end, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;value, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:ae713ac30fdf8c5f5b37f9f4612180f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills a range of elements in a column out-of-place with a scalar value.  <a href="namespacecudf_1_1experimental.html#ae713ac30fdf8c5f5b37f9f4612180f8b">More...</a><br /></td></tr>
 <tr class="separator:ae713ac30fdf8c5f5b37f9f4612180f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -459,12 +459,12 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html"
 <tr class="memitem:a9e327e6aab2d670f7060ecf8f4dac9b3"><td class="memItemLeft" align="right" valign="top"><a id="a9e327e6aab2d670f7060ecf8f4dac9b3"></a>
 std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>tile</b> (const <a class="el" href="classcudf_1_1table__view.html">table_view</a> &amp;in, size_type count, rmm::mr::device_memory_resource *mr)</td></tr>
 <tr class="separator:a9e327e6aab2d670f7060ecf8f4dac9b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad634be1518c6ecc479ac1fe0dbda3a2a"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ad634be1518c6ecc479ac1fe0dbda3a2a">rolling_window</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, size_type preceding_window, size_type following_window, size_type min_periods, std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; const  &amp;aggr, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
-<tr class="memdesc:ad634be1518c6ecc479ac1fe0dbda3a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a fixed-size rolling window function to the values in a column.  <a href="namespacecudf_1_1experimental.html#ad634be1518c6ecc479ac1fe0dbda3a2a">More...</a><br /></td></tr>
-<tr class="separator:ad634be1518c6ecc479ac1fe0dbda3a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae049fae22f3b0dc38c49cff63b00206c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ae049fae22f3b0dc38c49cff63b00206c">rolling_window</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;preceding_window, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;following_window, size_type min_periods, std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; const  &amp;aggr, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
-<tr class="memdesc:ae049fae22f3b0dc38c49cff63b00206c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a variable-size rolling window function to the values in a column.  <a href="namespacecudf_1_1experimental.html#ae049fae22f3b0dc38c49cff63b00206c">More...</a><br /></td></tr>
-<tr class="separator:ae049fae22f3b0dc38c49cff63b00206c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc8f0f40f8bcb9cf66513346546d2c4d"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#acc8f0f40f8bcb9cf66513346546d2c4d">rolling_window</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, size_type preceding_window, size_type following_window, size_type min_periods, std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; const  &amp;agg, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:acc8f0f40f8bcb9cf66513346546d2c4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a fixed-size rolling window function to the values in a column.  <a href="namespacecudf_1_1experimental.html#acc8f0f40f8bcb9cf66513346546d2c4d">More...</a><br /></td></tr>
+<tr class="separator:acc8f0f40f8bcb9cf66513346546d2c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbbec78138e9216eba2c69c99a5e9e8d"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#adbbec78138e9216eba2c69c99a5e9e8d">rolling_window</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;preceding_window, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;following_window, size_type min_periods, std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; const  &amp;agg, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:adbbec78138e9216eba2c69c99a5e9e8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a variable-size rolling window function to the values in a column.  <a href="namespacecudf_1_1experimental.html#adbbec78138e9216eba2c69c99a5e9e8d">More...</a><br /></td></tr>
+<tr class="separator:adbbec78138e9216eba2c69c99a5e9e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12bca240b20effd38193266111604657"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">cudf::experimental::table</a> &gt;, std::vector&lt; cudf::size_type &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a12bca240b20effd38193266111604657">round_robin_partition</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;input, cudf::size_type num_partitions, cudf::size_type start_partition=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a12bca240b20effd38193266111604657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Round-robin partition.  <a href="namespacecudf_1_1experimental.html#a12bca240b20effd38193266111604657">More...</a><br /></td></tr>
 <tr class="separator:a12bca240b20effd38193266111604657"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2328,7 +2328,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
 </div>
 </div>
 <a id="ae713ac30fdf8c5f5b37f9f4612180f8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae713ac30fdf8c5f5b37f9f4612180f8b">&#9670;&nbsp;</a></span>fill() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae713ac30fdf8c5f5b37f9f4612180f8b">&#9670;&nbsp;</a></span>fill()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2395,14 +2395,14 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
 
 </div>
 </div>
-<a id="abdcc600a269f9142df29f43dd61d6521"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdcc600a269f9142df29f43dd61d6521">&#9670;&nbsp;</a></span>fill() <span class="overload">[2/2]</span></h2>
+<a id="a1cfe8b5bb6c25f192ebba74fae00f958"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cfe8b5bb6c25f192ebba74fae00f958">&#9670;&nbsp;</a></span>fill_in_place()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void cudf::experimental::fill </td>
+          <td class="memname">void cudf::experimental::fill_in_place </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classcudf_1_1mutable__column__view.html">mutable_column_view</a> &amp;&#160;</td>
           <td class="paramname"><em>destination</em>, </td>
@@ -3670,8 +3670,8 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 
 </div>
 </div>
-<a id="ae049fae22f3b0dc38c49cff63b00206c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae049fae22f3b0dc38c49cff63b00206c">&#9670;&nbsp;</a></span>rolling_window() <span class="overload">[1/2]</span></h2>
+<a id="adbbec78138e9216eba2c69c99a5e9e8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbbec78138e9216eba2c69c99a5e9e8d">&#9670;&nbsp;</a></span>rolling_window() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3704,7 +3704,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>aggr</em>, </td>
+          <td class="paramname"><em>agg</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -3739,7 +3739,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
     <tr><td class="paramdir">[in]</td><td class="paramname">preceding_window</td><td>A non-nullable column of INT32 window sizes in the forward direction. <code>preceding_window[i]</code> specifies preceding window size for element <code>i</code>. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">following_window</td><td>A non-nullable column of INT32 window sizes in the backward direction. <code>following_window[i]</code> specifies following window size for element <code>i</code>. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">min_periods</td><td>Minimum number of observations in window required to have a value, otherwise element <code>i</code> is null. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">op</td><td>The rolling window aggregation type (sum, max, min, etc.)</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">agg</td><td>The rolling window aggregation type (sum, max, min, etc.)</td></tr>
   </table>
   </dd>
 </dl>
@@ -3747,8 +3747,8 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 
 </div>
 </div>
-<a id="ad634be1518c6ecc479ac1fe0dbda3a2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad634be1518c6ecc479ac1fe0dbda3a2a">&#9670;&nbsp;</a></span>rolling_window() <span class="overload">[2/2]</span></h2>
+<a id="acc8f0f40f8bcb9cf66513346546d2c4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc8f0f40f8bcb9cf66513346546d2c4d">&#9670;&nbsp;</a></span>rolling_window() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3781,7 +3781,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>aggr</em>, </td>
+          <td class="paramname"><em>agg</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -3809,7 +3809,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
     <tr><td class="paramdir">[in]</td><td class="paramname">preceding_window</td><td>The static rolling window size in the backward direction. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">following_window</td><td>The static rolling window size in the forward direction. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">min_periods</td><td>Minimum number of observations in window required to have a value, otherwise element <code>i</code> is null. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">op</td><td>The rolling window aggregation type (SUM, MAX, MIN, etc.)</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">agg</td><td>The rolling window aggregation type (SUM, MAX, MIN, etc.)</td></tr>
   </table>
   </dd>
 </dl>

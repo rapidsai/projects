@@ -95,19 +95,19 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span>experimental {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;std::unique_ptr&lt;column&gt; <a class="code" href="namespacecudf_1_1experimental.html#ad634be1518c6ecc479ac1fe0dbda3a2a">rolling_window</a>(column_view <span class="keyword">const</span>&amp; input,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;std::unique_ptr&lt;column&gt; <a class="code" href="namespacecudf_1_1experimental.html#acc8f0f40f8bcb9cf66513346546d2c4d">rolling_window</a>(column_view <span class="keyword">const</span>&amp; input,</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                       size_type preceding_window,</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                       size_type following_window,</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                       size_type min_periods,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                       std::unique_ptr&lt;aggregation&gt; <span class="keyword">const</span>&amp; aggr,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                       std::unique_ptr&lt;aggregation&gt; <span class="keyword">const</span>&amp; agg,</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                       rmm::mr::device_memory_resource* mr =</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                        rmm::mr::get_default_resource());</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;std::unique_ptr&lt;column&gt; <a class="code" href="namespacecudf_1_1experimental.html#ad634be1518c6ecc479ac1fe0dbda3a2a">rolling_window</a>(column_view <span class="keyword">const</span>&amp; input,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;std::unique_ptr&lt;column&gt; <a class="code" href="namespacecudf_1_1experimental.html#acc8f0f40f8bcb9cf66513346546d2c4d">rolling_window</a>(column_view <span class="keyword">const</span>&amp; input,</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                       column_view <span class="keyword">const</span>&amp; preceding_window,</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                       column_view <span class="keyword">const</span>&amp; following_window,</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                       size_type min_periods,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                       std::unique_ptr&lt;aggregation&gt; <span class="keyword">const</span>&amp; aggr,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                       std::unique_ptr&lt;aggregation&gt; <span class="keyword">const</span>&amp; agg,</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                       rmm::mr::device_memory_resource* mr =</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                        rmm::mr::get_default_resource());</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
@@ -115,7 +115,7 @@ $(function() {
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;} <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div><div class="ttdoc">Type declarations for libcudf.</div></div>
-<div class="ttc" id="anamespacecudf_1_1experimental_html_ad634be1518c6ecc479ac1fe0dbda3a2a"><div class="ttname"><a href="namespacecudf_1_1experimental.html#ad634be1518c6ecc479ac1fe0dbda3a2a">cudf::experimental::rolling_window</a></div><div class="ttdeci">std::unique_ptr&lt; column &gt; rolling_window(column_view const &amp;input, size_type preceding_window, size_type following_window, size_type min_periods, std::unique_ptr&lt; aggregation &gt; const &amp;agg, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Applies a fixed-size rolling window function to the values in a column.</div><div class="ttdef"><b>Definition:</b> rolling.cu:389</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_acc8f0f40f8bcb9cf66513346546d2c4d"><div class="ttname"><a href="namespacecudf_1_1experimental.html#acc8f0f40f8bcb9cf66513346546d2c4d">cudf::experimental::rolling_window</a></div><div class="ttdeci">std::unique_ptr&lt; column &gt; rolling_window(column_view const &amp;input, size_type preceding_window, size_type following_window, size_type min_periods, std::unique_ptr&lt; aggregation &gt; const &amp;agg, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Applies a fixed-size rolling window function to the values in a column.</div><div class="ttdef"><b>Definition:</b> rolling.cu:563</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">cuDF interfaces</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:23</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
