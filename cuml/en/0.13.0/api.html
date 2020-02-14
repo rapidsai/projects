@@ -1011,7 +1011,8 @@ SVD is slower, but guaranteed to be stable.</p>
 <dt><strong>fit_intercept</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>If True, LinearRegression tries to correct for the global mean of y.
 If False, the model expects that you have centered the data.</p>
 </dd>
-<dt><strong>normalize</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>If True, the predictors in X will be normalized by dividing by it’s
+<dt><strong>normalize</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>This parameter is ignored when <cite>fit_intercept</cite> is set to False.
+If True, the predictors in X will be normalized by dividing by it’s
 L2 norm.
 If False, no scaling will be done.</p>
 </dd>
@@ -3219,6 +3220,9 @@ cost of a slight performance overhead.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ForestInference.predict" title="cuml.ForestInference.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, preds])</p></td>
 <td><p>Predicts the labels for X with the loaded forest model.</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ForestInference.predict_proba" title="cuml.ForestInference.predict_proba"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict_proba</span></code></a>(self, X[, preds])</p></td>
+<td><p>Predicts the class probabilities for X with the loaded forest model.</p></td>
+</tr>
 </tbody>
 </table>
 <dl class="attribute">
@@ -3335,6 +3339,34 @@ For optimal performance, pass a device array with C-style layout</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>GPU array of length n_samples with inference results</dt><dd></dd>
+<dt>(or ‘preds’ filled with inference results if preds was specified)</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ForestInference.predict_proba">
+<code class="sig-name descname">predict_proba</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">preds=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ForestInference.predict_proba" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the class probabilities for X with the loaded forest model.
+The result is the raw floating point output
+from the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy
+For optimal performance, pass a device array with C-style layout</p>
+</dd>
+<dt><strong>preds: gpuarray or cudf.Series, shape = (n_samples,2)</strong></dt><dd><p>binary probability output
+Optional ‘out’ location to store inference results</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>GPU array of shape (n_samples,2) with inference results</dt><dd></dd>
 <dt>(or ‘preds’ filled with inference results if preds was specified)</dt><dd></dd>
 </dl>
 </dd>
