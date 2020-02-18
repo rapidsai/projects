@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['order_2708',['order',['../namespacecudf.html#a750f02016b046079f7062d334890b4fc',1,'cudf']]]
+  ['order_2744',['order',['../namespacecudf.html#a750f02016b046079f7062d334890b4fc',1,'cudf']]]
 ];

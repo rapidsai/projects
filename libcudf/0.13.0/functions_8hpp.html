@@ -130,6 +130,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1write__parquet__args.html">cudf::experimental::io::write_parquet_args</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Settings to use for <code><a class="el" href="namespacecudf_1_1experimental_1_1io.html#a85ee25fc2cd472e2cb922897119363a3" title="Writes a set of columns to parquet format.">write_parquet()</a></code>  <a href="structcudf_1_1experimental_1_1io_1_1write__parquet__args.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1io_1_1write__parquet__chunked__args.html">cudf::experimental::io::write_parquet_chunked_args</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Settings to use for <code><a class="el" href="namespacecudf_1_1experimental_1_1io.html#a2bc421f83189e53fa51819a729ff22c4">write_parquet_chunked()</a></code>  <a href="structcudf_1_1experimental_1_1io_1_1write__parquet__chunked__args.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -141,6 +144,12 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacecudf_1_1experimental_1_1io"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io.html">cudf::experimental::io</a></td></tr>
 <tr class="memdesc:namespacecudf_1_1experimental_1_1io"><td class="mdescLeft">&#160;</td><td class="mdescRight">IO interfaces. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacecudf_1_1experimental_1_1io_1_1detail"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io_1_1detail.html">cudf::experimental::io::detail</a></td></tr>
+<tr class="memdesc:namespacecudf_1_1experimental_1_1io_1_1detail"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward declaration of anonymous chunked-writer state struct. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacecudf_1_1experimental_1_1io_1_1detail_1_1parquet"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io_1_1detail_1_1parquet.html">cudf::experimental::io::detail::parquet</a></td></tr>
+<tr class="memdesc:namespacecudf_1_1experimental_1_1io_1_1detail_1_1parquet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parquet format. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -166,6 +175,15 @@ table_with_metadata&#160;</td><td class="memItemRight" valign="bottom"><b>cudf::
 <tr class="memitem:a85ee25fc2cd472e2cb922897119363a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io.html#a85ee25fc2cd472e2cb922897119363a3">cudf::experimental::io::write_parquet</a> (write_parquet_args const  &amp;args, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a85ee25fc2cd472e2cb922897119363a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a set of columns to parquet format.  <a href="namespacecudf_1_1experimental_1_1io.html#a85ee25fc2cd472e2cb922897119363a3">More...</a><br /></td></tr>
 <tr class="separator:a85ee25fc2cd472e2cb922897119363a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa39535273aed37ff9f08d971da638fb"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; pq_chunked_state &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io.html#aaa39535273aed37ff9f08d971da638fb">cudf::experimental::io::write_parquet_chunked_begin</a> (write_parquet_chunked_args const &amp;args, rmm::mr::device_memory_resource *mr)</td></tr>
+<tr class="separator:aaa39535273aed37ff9f08d971da638fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b38790cbfff32088ad0bdcad87c3845"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io.html#a4b38790cbfff32088ad0bdcad87c3845">cudf::experimental::io::write_parquet_chunked</a> (table_view const &amp;table, std::shared_ptr&lt; detail::parquet::pq_chunked_state &gt; state)</td></tr>
+<tr class="memdesc:a4b38790cbfff32088ad0bdcad87c3845"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a single table as a subtable of a larger logical parquet file/table.  <a href="namespacecudf_1_1experimental_1_1io.html#a4b38790cbfff32088ad0bdcad87c3845">More...</a><br /></td></tr>
+<tr class="separator:a4b38790cbfff32088ad0bdcad87c3845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a081944d61664b701c41c6a28518c85ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io.html#a081944d61664b701c41c6a28518c85ca">cudf::experimental::io::write_parquet_chunked_end</a> (std::shared_ptr&lt; detail::parquet::pq_chunked_state &gt; &amp;state)</td></tr>
+<tr class="memdesc:a081944d61664b701c41c6a28518c85ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish writing a chunked/stream parquet file. <br  />
+  <a href="namespacecudf_1_1experimental_1_1io.html#a081944d61664b701c41c6a28518c85ca">More...</a><br /></td></tr>
+<tr class="separator:a081944d61664b701c41c6a28518c85ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>cuDF-IO freeform API </p>

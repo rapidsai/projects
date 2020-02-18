@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['sorted_2711',['sorted',['../namespacecudf.html#ab283c517931abd4152ffa62fec62425d',1,'cudf']]],
-  ['sorttype_2712',['sorttype',['../classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831',1,'NVStrings']]],
-  ['statistics_5ffreq_2713',['statistics_freq',['../namespacecudf_1_1experimental_1_1io.html#a3b49efcc68437e81c995a1b5851fc7fb',1,'cudf::experimental::io']]]
+  ['sorted_2747',['sorted',['../namespacecudf.html#ab283c517931abd4152ffa62fec62425d',1,'cudf']]],
+  ['sorttype_2748',['sorttype',['../classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831',1,'NVStrings']]],
+  ['statistics_5ffreq_2749',['statistics_freq',['../namespacecudf_1_1experimental_1_1io.html#a3b49efcc68437e81c995a1b5851fc7fb',1,'cudf::experimental::io']]]
 ];
