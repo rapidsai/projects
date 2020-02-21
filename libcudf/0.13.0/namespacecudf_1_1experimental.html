@@ -357,9 +357,9 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt
 <tr class="memitem:a603125f72d0498da871083aa1495db7c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a603125f72d0498da871083aa1495db7c">copy_if_else</a> (<a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;lhs, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;rhs, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;boolean_mask, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a603125f72d0498da871083aa1495db7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new column, where each element is selected from either <code>lhs</code> or <code>rhs</code> based on the value of the corresponding element in <code>boolean_mask</code>.  <a href="namespacecudf_1_1experimental.html#a603125f72d0498da871083aa1495db7c">More...</a><br /></td></tr>
 <tr class="separator:a603125f72d0498da871083aa1495db7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac649c525d788647c5d6bf3b6b4cedb87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ac649c525d788647c5d6bf3b6b4cedb87">copy_range</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;source, <a class="el" href="classcudf_1_1mutable__column__view.html">mutable_column_view</a> &amp;target, size_type source_begin, size_type source_end, size_type target_begin)</td></tr>
-<tr class="memdesc:ac649c525d788647c5d6bf3b6b4cedb87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a range of elements in-place from one column to another.  <a href="namespacecudf_1_1experimental.html#ac649c525d788647c5d6bf3b6b4cedb87">More...</a><br /></td></tr>
-<tr class="separator:ac649c525d788647c5d6bf3b6b4cedb87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a416ac44016beb7dda827069b24c873c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a416ac44016beb7dda827069b24c873c5">copy_range_in_place</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;source, <a class="el" href="classcudf_1_1mutable__column__view.html">mutable_column_view</a> &amp;target, size_type source_begin, size_type source_end, size_type target_begin)</td></tr>
+<tr class="memdesc:a416ac44016beb7dda827069b24c873c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a range of elements in-place from one column to another.  <a href="namespacecudf_1_1experimental.html#a416ac44016beb7dda827069b24c873c5">More...</a><br /></td></tr>
+<tr class="separator:a416ac44016beb7dda827069b24c873c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77b5739505c21058c97d6f29c996c16f"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a77b5739505c21058c97d6f29c996c16f">copy_range</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;source, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;target, size_type source_begin, size_type source_end, size_type target_begin, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a77b5739505c21058c97d6f29c996c16f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a range of elements out-of-place from one column to another.  <a href="namespacecudf_1_1experimental.html#a77b5739505c21058c97d6f29c996c16f">More...</a><br /></td></tr>
 <tr class="separator:a77b5739505c21058c97d6f29c996c16f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1421,7 +1421,7 @@ containing copy of all rows of <code>input</code> passing the filter defined by 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns a table by scattering <code>input</code> into <code>target</code> as per <code>boolean_mask</code>. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a14">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a15">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
 </dl>
 
 </div>
@@ -1805,7 +1805,7 @@ elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The set of requested views of <code>input</code> indicated by the <code>splits</code> and the viewed memory buffer. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a11">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a12">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
 </dl>
 
 </div>
@@ -1870,7 +1870,7 @@ elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>new column with the selected elements </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a12">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a13">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
 </dl>
 
 </div>
@@ -1997,7 +1997,7 @@ elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order
 </div>
 </div>
 <a id="a77b5739505c21058c97d6f29c996c16f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77b5739505c21058c97d6f29c996c16f">&#9670;&nbsp;</a></span>copy_range() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a77b5739505c21058c97d6f29c996c16f">&#9670;&nbsp;</a></span>copy_range()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2068,17 +2068,19 @@ elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;column&gt; The result target column </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a9">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+</dl>
 
 </div>
 </div>
-<a id="ac649c525d788647c5d6bf3b6b4cedb87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac649c525d788647c5d6bf3b6b4cedb87">&#9670;&nbsp;</a></span>copy_range() <span class="overload">[2/2]</span></h2>
+<a id="a416ac44016beb7dda827069b24c873c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a416ac44016beb7dda827069b24c873c5">&#9670;&nbsp;</a></span>copy_range_in_place()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void cudf::experimental::copy_range </td>
+          <td class="memname">void cudf::experimental::copy_range_in_place </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;&#160;</td>
           <td class="paramname"><em>source</em>, </td>
@@ -3722,7 +3724,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 
 <p>Applies a variable-size rolling window function to the values in a column. </p>
 <p>This function aggregates values in a window around each element i of the input column, and invalidates the bit mask for element i if there are not enough observations. The window size is dynamic (varying for each element). This matches Pandas' API for DataFrame.rolling with a few notable differences:</p><ul>
-<li>instead of the center flag it uses a two-part window to allow for more flexible windows. The total window size = <code>preceding_window + following_window + 1</code>. Element <code>i</code> uses elements <code>[i-preceding_window, i+following_window]</code> to do the window computation.</li>
+<li>instead of the center flag it uses a two-part window to allow for more flexible windows. The total window size = <code>preceding_window + following_window</code>. Element <code>i</code> uses elements <code>[i-preceding_window+1, i+following_window]</code> to do the window computation.</li>
 <li>instead of storing NA/NaN for output rows that do not meet the minimum number of observations this function updates the valid bitmask of the column to indicate which elements are valid.</li>
 <li>support for dynamic rolling windows, i.e. window size can be specified for each element using an additional array.</li>
 </ul>
@@ -3799,7 +3801,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 
 <p>Applies a fixed-size rolling window function to the values in a column. </p>
 <p>This function aggregates values in a window around each element i of the input column, and invalidates the bit mask for element i if there are not enough observations. The window size is static (the same for each element). This matches Pandas' API for DataFrame.rolling with a few notable differences:</p><ul>
-<li>instead of the center flag it uses a two-part window to allow for more flexible windows. The total window size = <code>preceding_window + following_window + 1</code>. Element <code>i</code> uses elements <code>[i-preceding_window, i+following_window]</code> to do the window computation.</li>
+<li>instead of the center flag it uses a two-part window to allow for more flexible windows. The total window size = <code>preceding_window + following_window</code>. Element <code>i</code> uses elements <code>[i-preceding_window+1, i+following_window]</code> to do the window computation.</li>
 <li>instead of storing NA/NaN for output rows that do not meet the minimum number of observations this function updates the valid bitmask of the column to indicate which elements are valid.</li>
 </ul>
 <p>The returned column for <code>op == COUNT</code> always has <code>INT32</code> type. All other operators return a column of the same type as the input. Therefore it is suggested to convert integer column types (especially low-precision integers) to <code>FLOAT32</code> or <code>FLOAT64</code> before doing a rolling <code>MEAN</code>.</p>
@@ -4240,7 +4242,7 @@ if a fill value is null, it's output column will be nullable.</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a13">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a14">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
 </dl>
 
 </div>
@@ -4463,7 +4465,7 @@ containing the permuted row indices of &lt;tt&gt;input&lt;/tt&gt; if it were sor
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The set of requested views of <code>input</code> indicated by the <code>splits</code>. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a9">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a10">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
 </dl>
 
 </div>

@@ -361,12 +361,12 @@ Enumerations</h2></td></tr>
 <b>YES</b>
  }</td></tr>
 <tr class="separator:ab283c517931abd4152ffa62fec62425d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa481249b705132999f4d082aacd21dbf"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbf">mask_state</a> { <a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbfa74ad69efae4a12aec59682147aac9344">UNALLOCATED</a>, 
-<a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbfa37d7c1f4781c3276729ed1678c0c0844">UNINITIALIZED</a>, 
-<a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbfadb86173d779f7b173db120643cc1c402">ALL_VALID</a>, 
-<a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbfa042cac70175410616150fafb92f76351">ALL_NULL</a>
+<tr class="memitem:a4daf20c000ab374d76f4d56f0ddb7b26"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26">mask_state</a> : int32_t { <a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26a628732521c22dcf8a24bf1a0326bde80">mask_state::UNALLOCATED</a>, 
+<a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26add652546039b18970b8dcf2cff824268">mask_state::UNINITIALIZED</a>, 
+<a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26a00a0fd1f61b5bd5c53628de693967e08">mask_state::ALL_VALID</a>, 
+<a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26ab8a690c8c67b400079b43eb5a2146753">mask_state::ALL_NULL</a>
  }</td></tr>
-<tr class="separator:aa481249b705132999f4d082aacd21dbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a4daf20c000ab374d76f4d56f0ddb7b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd4cd7157c4379954b5772936f89c59b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">type_id</a> { <br />
 &#160;&#160;<a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59bab2c14e467fcbf9a215ccc679f35bb027">EMPTY</a> = 0, 
 <a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba71f4b0467efae61c1e3ac5910178940f">INT8</a>, 
@@ -412,7 +412,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a084ff0262deda4407ff67857cf1660c0"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; bit_container *, size_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a084ff0262deda4407ff67857cf1660c0">valid_if</a> (const bit_container *source_mask, const predicate &amp;p, size_type num_bits, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
 <tr class="memdesc:a084ff0262deda4407ff67857cf1660c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a bitmask where every bit is marked with valid if and only if predicate(bit) and source_mask(bit) are both true.  <a href="namespacecudf.html#a084ff0262deda4407ff67857cf1660c0">More...</a><br /></td></tr>
 <tr class="separator:a084ff0262deda4407ff67857cf1660c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48561f1e899da3a79132c108463840de"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a48561f1e899da3a79132c108463840de">state_null_count</a> (<a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbf">mask_state</a> state, size_type size)</td></tr>
+<tr class="memitem:a48561f1e899da3a79132c108463840de"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a48561f1e899da3a79132c108463840de">state_null_count</a> (<a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26">mask_state</a> state, size_type size)</td></tr>
 <tr class="memdesc:a48561f1e899da3a79132c108463840de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the null count for a null mask of the specified <code>state</code> representing <code>size</code> elements.  <a href="namespacecudf.html#a48561f1e899da3a79132c108463840de">More...</a><br /></td></tr>
 <tr class="separator:a48561f1e899da3a79132c108463840de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c26b8cbca80321602bc3f39ab6cce8d"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a3c26b8cbca80321602bc3f39ab6cce8d">bitmask_allocation_size_bytes</a> (size_type number_of_bits, std::size_t padding_boundary=64)</td></tr>
@@ -421,7 +421,7 @@ Functions</h2></td></tr>
 <tr class="memitem:ad62014db2c1d82cbd2f3e067d27088ab"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ad62014db2c1d82cbd2f3e067d27088ab">num_bitmask_words</a> (size_type number_of_bits)</td></tr>
 <tr class="memdesc:ad62014db2c1d82cbd2f3e067d27088ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of <code>bitmask_type</code> words required to represent the specified number of bits.  <a href="namespacecudf.html#ad62014db2c1d82cbd2f3e067d27088ab">More...</a><br /></td></tr>
 <tr class="separator:ad62014db2c1d82cbd2f3e067d27088ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5834edc8cde53fb6b23f2e95847c8066"><td class="memItemLeft" align="right" valign="top">rmm::device_buffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a5834edc8cde53fb6b23f2e95847c8066">create_null_mask</a> (size_type size, <a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbf">mask_state</a> state, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memitem:a5834edc8cde53fb6b23f2e95847c8066"><td class="memItemLeft" align="right" valign="top">rmm::device_buffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a5834edc8cde53fb6b23f2e95847c8066">create_null_mask</a> (size_type size, <a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26">mask_state</a> state, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a5834edc8cde53fb6b23f2e95847c8066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <code>device_buffer</code> for use as a null value indicator bitmask of a <code>column</code>.  <a href="namespacecudf.html#a5834edc8cde53fb6b23f2e95847c8066">More...</a><br /></td></tr>
 <tr class="separator:a5834edc8cde53fb6b23f2e95847c8066"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeab0f6e444e9a3b15a32d64cc4e87ed1"><td class="memItemLeft" align="right" valign="top"><a id="aeab0f6e444e9a3b15a32d64cc4e87ed1"></a>
@@ -463,15 +463,15 @@ std::vector&lt; size_type &gt;&#160;</td><td class="memItemRight" valign="bottom
 <tr class="memitem:aa80de7d88a408ab660541a4a3b214ead"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aa80de7d88a408ab660541a4a3b214ead">make_empty_column</a> (<a class="el" href="classcudf_1_1data__type.html">data_type</a> type)</td></tr>
 <tr class="memdesc:aa80de7d88a408ab660541a4a3b214ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty column of the specified <code>type</code>.  <a href="namespacecudf.html#aa80de7d88a408ab660541a4a3b214ead">More...</a><br /></td></tr>
 <tr class="separator:aa80de7d88a408ab660541a4a3b214ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae67659a0dfb8fb06d47d196b59544e9f"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#ae67659a0dfb8fb06d47d196b59544e9f">make_numeric_column</a> (<a class="el" href="classcudf_1_1data__type.html">data_type</a> type, size_type size, <a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbf">mask_state</a> state=<a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbfa74ad69efae4a12aec59682147aac9344">UNALLOCATED</a>, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
-<tr class="memdesc:ae67659a0dfb8fb06d47d196b59544e9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct column with sufficient uninitialized storage to hold <code>size</code> elements of the specified numeric <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> with an optional null mask.  <a href="namespacecudf.html#ae67659a0dfb8fb06d47d196b59544e9f">More...</a><br /></td></tr>
-<tr class="separator:ae67659a0dfb8fb06d47d196b59544e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebc58612aa9425021086af0e7be540be"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aebc58612aa9425021086af0e7be540be">make_timestamp_column</a> (<a class="el" href="classcudf_1_1data__type.html">data_type</a> type, size_type size, <a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbf">mask_state</a> state=<a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbfa74ad69efae4a12aec59682147aac9344">UNALLOCATED</a>, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
-<tr class="memdesc:aebc58612aa9425021086af0e7be540be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct column with sufficient uninitialized storage to hold <code>size</code> elements of the specified timestamp <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> with an optional null mask.  <a href="namespacecudf.html#aebc58612aa9425021086af0e7be540be">More...</a><br /></td></tr>
-<tr class="separator:aebc58612aa9425021086af0e7be540be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5606fb76c3a0dc7fddd3de54745f8f18"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a5606fb76c3a0dc7fddd3de54745f8f18">make_fixed_width_column</a> (<a class="el" href="classcudf_1_1data__type.html">data_type</a> type, size_type size, <a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbf">mask_state</a> state=<a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbfa74ad69efae4a12aec59682147aac9344">UNALLOCATED</a>, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
-<tr class="memdesc:a5606fb76c3a0dc7fddd3de54745f8f18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct column with sufficient uninitialized storage to hold <code>size</code> elements of the specified fixed width <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> with an optional null mask.  <a href="namespacecudf.html#a5606fb76c3a0dc7fddd3de54745f8f18">More...</a><br /></td></tr>
-<tr class="separator:a5606fb76c3a0dc7fddd3de54745f8f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4edea20e8068b55f8a6ab356640d81c6"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a4edea20e8068b55f8a6ab356640d81c6">make_numeric_column</a> (<a class="el" href="classcudf_1_1data__type.html">data_type</a> type, size_type size, <a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26">mask_state</a> state=<a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26a628732521c22dcf8a24bf1a0326bde80">mask_state::UNALLOCATED</a>, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a4edea20e8068b55f8a6ab356640d81c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct column with sufficient uninitialized storage to hold <code>size</code> elements of the specified numeric <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> with an optional null mask.  <a href="namespacecudf.html#a4edea20e8068b55f8a6ab356640d81c6">More...</a><br /></td></tr>
+<tr class="separator:a4edea20e8068b55f8a6ab356640d81c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bc3ff2c671ac84f02ebd94b7ec1cd25"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a1bc3ff2c671ac84f02ebd94b7ec1cd25">make_timestamp_column</a> (<a class="el" href="classcudf_1_1data__type.html">data_type</a> type, size_type size, <a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26">mask_state</a> state=<a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26a628732521c22dcf8a24bf1a0326bde80">mask_state::UNALLOCATED</a>, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a1bc3ff2c671ac84f02ebd94b7ec1cd25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct column with sufficient uninitialized storage to hold <code>size</code> elements of the specified timestamp <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> with an optional null mask.  <a href="namespacecudf.html#a1bc3ff2c671ac84f02ebd94b7ec1cd25">More...</a><br /></td></tr>
+<tr class="separator:a1bc3ff2c671ac84f02ebd94b7ec1cd25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02bda62ddd9305def0501b1e9bb8ca6b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a02bda62ddd9305def0501b1e9bb8ca6b">make_fixed_width_column</a> (<a class="el" href="classcudf_1_1data__type.html">data_type</a> type, size_type size, <a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26">mask_state</a> state=<a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26a628732521c22dcf8a24bf1a0326bde80">mask_state::UNALLOCATED</a>, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a02bda62ddd9305def0501b1e9bb8ca6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct column with sufficient uninitialized storage to hold <code>size</code> elements of the specified fixed width <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> with an optional null mask.  <a href="namespacecudf.html#a02bda62ddd9305def0501b1e9bb8ca6b">More...</a><br /></td></tr>
+<tr class="separator:a02bda62ddd9305def0501b1e9bb8ca6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef675a9c75a848ab796ae9b2b51c4238"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aef675a9c75a848ab796ae9b2b51c4238">count_descendants</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> parent)</td></tr>
 <tr class="memdesc:aef675a9c75a848ab796ae9b2b51c4238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the number of descendants of the specified parent.  <a href="namespacecudf.html#aef675a9c75a848ab796ae9b2b51c4238">More...</a><br /></td></tr>
 <tr class="separator:aef675a9c75a848ab796ae9b2b51c4238"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1299,28 +1299,36 @@ the unix epoch.</h2>
 
 </div>
 </div>
-<a id="aa481249b705132999f4d082aacd21dbf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa481249b705132999f4d082aacd21dbf">&#9670;&nbsp;</a></span>mask_state</h2>
+<a id="a4daf20c000ab374d76f4d56f0ddb7b26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4daf20c000ab374d76f4d56f0ddb7b26">&#9670;&nbsp;</a></span>mask_state</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbf">cudf::mask_state</a></td>
+          <td class="memname">enum <a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26">cudf::mask_state</a> : int32_t</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
 <h2><a class="anchor" id="autotoc_md523"></a>
 @brief Controls the allocation/initialization of a null mask.</h2>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa481249b705132999f4d082aacd21dbfa74ad69efae4a12aec59682147aac9344"></a>UNALLOCATED&#160;</td><td class="fielddoc"><p>Null mask not allocated, (all elements are valid) </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4daf20c000ab374d76f4d56f0ddb7b26a628732521c22dcf8a24bf1a0326bde80"></a>UNALLOCATED&#160;</td><td class="fielddoc"><p>Null mask not allocated, (all elements are valid) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aa481249b705132999f4d082aacd21dbfa37d7c1f4781c3276729ed1678c0c0844"></a>UNINITIALIZED&#160;</td><td class="fielddoc"><p>Null mask allocated, but not initialized. </p>
+<tr><td class="fieldname"><a id="a4daf20c000ab374d76f4d56f0ddb7b26add652546039b18970b8dcf2cff824268"></a>UNINITIALIZED&#160;</td><td class="fielddoc"><p>Null mask allocated, but not initialized. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aa481249b705132999f4d082aacd21dbfadb86173d779f7b173db120643cc1c402"></a>ALL_VALID&#160;</td><td class="fielddoc"><p>Null mask allocated, initialized to all elements valid. </p>
+<tr><td class="fieldname"><a id="a4daf20c000ab374d76f4d56f0ddb7b26a00a0fd1f61b5bd5c53628de693967e08"></a>ALL_VALID&#160;</td><td class="fielddoc"><p>Null mask allocated, initialized to all elements valid. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aa481249b705132999f4d082aacd21dbfa042cac70175410616150fafb92f76351"></a>ALL_NULL&#160;</td><td class="fielddoc"><p>Null mask allocated, initialized to all elements NULL. </p>
+<tr><td class="fieldname"><a id="a4daf20c000ab374d76f4d56f0ddb7b26ab8a690c8c67b400079b43eb5a2146753"></a>ALL_NULL&#160;</td><td class="fielddoc"><p>Null mask allocated, initialized to all elements NULL. </p>
 </td></tr>
 </table>
 
@@ -3014,7 +3022,7 @@ template&lt;JoinType join_type, typename index_type &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbf">mask_state</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26">mask_state</a>&#160;</td>
           <td class="paramname"><em>state</em>, </td>
         </tr>
         <tr>
@@ -5186,8 +5194,8 @@ template&lt;typename B &gt; </div>
 
 </div>
 </div>
-<a id="a5606fb76c3a0dc7fddd3de54745f8f18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5606fb76c3a0dc7fddd3de54745f8f18">&#9670;&nbsp;</a></span>make_fixed_width_column() <span class="overload">[2/2]</span></h2>
+<a id="a02bda62ddd9305def0501b1e9bb8ca6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02bda62ddd9305def0501b1e9bb8ca6b">&#9670;&nbsp;</a></span>make_fixed_width_column() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5207,8 +5215,8 @@ template&lt;typename B &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbf">mask_state</a>&#160;</td>
-          <td class="paramname"><em>state</em> = <code><a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbfa74ad69efae4a12aec59682147aac9344">UNALLOCATED</a></code>, </td>
+          <td class="paramtype"><a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26">mask_state</a>&#160;</td>
+          <td class="paramname"><em>state</em> = <code><a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26a628732521c22dcf8a24bf1a0326bde80">mask_state::UNALLOCATED</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -5392,8 +5400,8 @@ template&lt;typename B &gt; </div>
 
 </div>
 </div>
-<a id="ae67659a0dfb8fb06d47d196b59544e9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae67659a0dfb8fb06d47d196b59544e9f">&#9670;&nbsp;</a></span>make_numeric_column() <span class="overload">[2/2]</span></h2>
+<a id="a4edea20e8068b55f8a6ab356640d81c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4edea20e8068b55f8a6ab356640d81c6">&#9670;&nbsp;</a></span>make_numeric_column() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5413,8 +5421,8 @@ template&lt;typename B &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbf">mask_state</a>&#160;</td>
-          <td class="paramname"><em>state</em> = <code><a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbfa74ad69efae4a12aec59682147aac9344">UNALLOCATED</a></code>, </td>
+          <td class="paramtype"><a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26">mask_state</a>&#160;</td>
+          <td class="paramname"><em>state</em> = <code><a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26a628732521c22dcf8a24bf1a0326bde80">mask_state::UNALLOCATED</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -6025,8 +6033,8 @@ template&lt;typename B &gt; </div>
 
 </div>
 </div>
-<a id="aebc58612aa9425021086af0e7be540be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebc58612aa9425021086af0e7be540be">&#9670;&nbsp;</a></span>make_timestamp_column() <span class="overload">[2/2]</span></h2>
+<a id="a1bc3ff2c671ac84f02ebd94b7ec1cd25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bc3ff2c671ac84f02ebd94b7ec1cd25">&#9670;&nbsp;</a></span>make_timestamp_column() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6046,8 +6054,8 @@ template&lt;typename B &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbf">mask_state</a>&#160;</td>
-          <td class="paramname"><em>state</em> = <code><a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbfa74ad69efae4a12aec59682147aac9344">UNALLOCATED</a></code>, </td>
+          <td class="paramtype"><a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26">mask_state</a>&#160;</td>
+          <td class="paramname"><em>state</em> = <code><a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26a628732521c22dcf8a24bf1a0326bde80">mask_state::UNALLOCATED</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -7485,7 +7493,7 @@ will be submitted</h2>
         <tr>
           <td class="memname">size_type cudf::state_null_count </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespacecudf.html#aa481249b705132999f4d082aacd21dbf">mask_state</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26">mask_state</a>&#160;</td>
           <td class="paramname"><em>state</em>, </td>
         </tr>
         <tr>

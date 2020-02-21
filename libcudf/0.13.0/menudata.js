@@ -88,8 +88,7 @@ var menudata={children:[
 {text:"n",url:"namespacemembers_eval.html#index_n"},
 {text:"r",url:"namespacemembers_eval.html#index_r"},
 {text:"s",url:"namespacemembers_eval.html#index_s"},
-{text:"t",url:"namespacemembers_eval.html#index_t"},
-{text:"u",url:"namespacemembers_eval.html#index_u"}]}]}]},
+{text:"t",url:"namespacemembers_eval.html#index_t"}]}]}]},
 {text:"Classes",url:"annotated.html",children:[
 {text:"Class List",url:"annotated.html"},
 {text:"Class Index",url:"classes.html"},
