@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['logger_21',['Logger',['../classrmm_1_1Logger.html',1,'rmm']]],
-  ['logit_22',['LogIt',['../classrmm_1_1LogIt.html',1,'rmm']]]
+  ['host_5fmemory_5fresource_21',['host_memory_resource',['../classrmm_1_1mr_1_1host__memory__resource.html',1,'rmm::mr']]]
 ];

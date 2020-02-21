@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['data_7',['data',['../classrmm_1_1device__scalar.html#a4b2fecd08e48eb85d3b2d8c7c76167af',1,'rmm::device_scalar::data() noexcept'],['../classrmm_1_1device__scalar.html#a0c3c3967ca4b2677e10962c736359bd7',1,'rmm::device_scalar::data() const noexcept']]],
-  ['deallocate_8',['deallocate',['../classrmm_1_1mr_1_1device__memory__resource.html#a14026cf9353e3dec7e7c25785fd42991',1,'rmm::mr::device_memory_resource::deallocate()'],['../classrmm_1_1mr_1_1thrust__allocator.html#ae5510aa288a2e1875b66c330feecf2ad',1,'rmm::mr::thrust_allocator::deallocate()']]],
-  ['device_9',['device',['../structcnmemDevice__t__.html#aa59ebf63b05c0634891dd2aaea5ed57d',1,'cnmemDevice_t_']]],
-  ['device_5fmemory_5fresource_10',['device_memory_resource',['../classrmm_1_1mr_1_1device__memory__resource.html',1,'rmm::mr']]],
-  ['device_5fscalar_11',['device_scalar',['../classrmm_1_1device__scalar.html',1,'rmm::device_scalar&lt; T &gt;'],['../classrmm_1_1device__scalar.html#a0e47c622697622ea0c34f6ab814ad94b',1,'rmm::device_scalar::device_scalar()']]],
-  ['devices_12',['devices',['../structrmmOptions__t.html#a2a5bd421d9ba233496f305e11159b9be',1,'rmmOptions_t']]]
+  ['clear_2',['clear',['../classrmm_1_1Logger.html#ac48023cdcc34033c2704bfbeeeb3b00c',1,'rmm::Logger']]],
+  ['cnmem_5ferror_3',['cnmem_error',['../structrmm_1_1cnmem__error.html',1,'rmm']]],
+  ['cnmem_5fmanaged_5fmemory_5fresource_4',['cnmem_managed_memory_resource',['../classrmm_1_1mr_1_1cnmem__managed__memory__resource.html',1,'rmm::mr::cnmem_managed_memory_resource'],['../classrmm_1_1mr_1_1cnmem__managed__memory__resource.html#a13b4e4a34588ebc1bf5c7ce39d775768',1,'rmm::mr::cnmem_managed_memory_resource::cnmem_managed_memory_resource()']]],
+  ['cnmem_5fmemory_5fresource_5',['cnmem_memory_resource',['../classrmm_1_1mr_1_1cnmem__memory__resource.html',1,'rmm::mr::cnmem_memory_resource'],['../classrmm_1_1mr_1_1cnmem__memory__resource.html#a7165e2f7298ffb12684cb94c2f8deb25',1,'rmm::mr::cnmem_memory_resource::cnmem_memory_resource()']]],
+  ['cnmemdevice_5ft_5f_6',['cnmemDevice_t_',['../structcnmemDevice__t__.html',1,'']]],
+  ['cuda_7',['CUDA',['../classrmm_1_1mr_1_1cnmem__memory__resource.html#a53423dac6d804f073c50ee7cbe2f1b08aa33b7755e5f9b504d2d038eaca4ff28d',1,'rmm::mr::cnmem_memory_resource']]],
+  ['cuda_5ferror_8',['cuda_error',['../structrmm_1_1cuda__error.html',1,'rmm']]],
+  ['cuda_5fmemory_5fresource_9',['cuda_memory_resource',['../classrmm_1_1mr_1_1cuda__memory__resource.html',1,'rmm::mr']]]
 ];

@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['initialize_18',['initialize',['../classrmm_1_1Manager.html#a68c4150cc2b88c11c8fc9410949eda77',1,'rmm::Manager']]],
-  ['is_5fequal_19',['is_equal',['../classrmm_1_1mr_1_1device__memory__resource.html#aeaed913bfdd02266062b7880d5bb350f',1,'rmm::mr::device_memory_resource']]],
-  ['isinitialized_20',['isInitialized',['../classrmm_1_1Manager.html#a67adeefbaf3b19255cf5ac9afdcdd784',1,'rmm::Manager']]]
+  ['get_5fmem_5finfo_17',['get_mem_info',['../classrmm_1_1mr_1_1device__memory__resource.html#adf47e14914c13581b64e2a78b39a08e8',1,'rmm::mr::device_memory_resource']]],
+  ['getinstance_18',['getInstance',['../classrmm_1_1Manager.html#a95e634c290a405f4385d3cb16b2eb1a0',1,'rmm::Manager']]],
+  ['getlogger_19',['getLogger',['../classrmm_1_1Manager.html#a099efcc2af5607c502b0115cf776fc6d',1,'rmm::Manager']]],
+  ['getoptions_20',['getOptions',['../classrmm_1_1Manager.html#a6049aa7513e6c73a1867daa3c6d2dddb',1,'rmm::Manager']]]
 ];

@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['usecudadefaultallocator_43',['useCudaDefaultAllocator',['../classrmm_1_1Manager.html#a1ef002e0d3ed5c837af4f8be457ba879',1,'rmm::Manager']]],
-  ['usemanagedmemory_44',['useManagedMemory',['../classrmm_1_1Manager.html#a5f075d8e18716627752097fe242d502c',1,'rmm::Manager']]],
-  ['usepoolallocator_45',['usePoolAllocator',['../classrmm_1_1Manager.html#aacbe5f6b10ac955358f7e39a779e2d7a',1,'rmm::Manager']]]
+  ['rebind_35',['rebind',['../structrmm_1_1mr_1_1thrust__allocator_1_1rebind.html',1,'rmm::mr::thrust_allocator']]],
+  ['record_36',['record',['../classrmm_1_1Logger.html#a08c5924e48110f8f641a3e9491d1ed87',1,'rmm::Logger']]],
+  ['registerstream_37',['registerStream',['../classrmm_1_1Manager.html#aab9ae171cf3ae4a6002f365cc30729a7',1,'rmm::Manager']]],
+  ['resource_38',['resource',['../classrmm_1_1mr_1_1thrust__allocator.html#aa36bf648f33309f8fadda7e449224970',1,'rmm::mr::thrust_allocator']]],
+  ['rmm_5fallocator_39',['rmm_allocator',['../classrmm__allocator.html',1,'']]],
+  ['rmmoptions_5ft_40',['rmmOptions_t',['../structrmmOptions__t.html',1,'']]]
 ];

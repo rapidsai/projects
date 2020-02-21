@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['numstreams_27',['numStreams',['../structcnmemDevice__t__.html#a8808c3f31ad0f3b35d0421cd8ed87c9f',1,'cnmemDevice_t_']]]
+  ['logger_25',['Logger',['../classrmm_1_1Logger.html',1,'rmm']]],
+  ['logic_5ferror_26',['logic_error',['../structrmm_1_1logic__error.html',1,'rmm']]],
+  ['logit_27',['LogIt',['../classrmm_1_1LogIt.html',1,'rmm']]]
 ];

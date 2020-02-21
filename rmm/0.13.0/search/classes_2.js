@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['logger_53',['Logger',['../classrmm_1_1Logger.html',1,'rmm']]],
-  ['logit_54',['LogIt',['../classrmm_1_1LogIt.html',1,'rmm']]]
+  ['device_5fmemory_5fresource_62',['device_memory_resource',['../classrmm_1_1mr_1_1device__memory__resource.html',1,'rmm::mr']]],
+  ['device_5fscalar_63',['device_scalar',['../classrmm_1_1device__scalar.html',1,'rmm']]]
 ];

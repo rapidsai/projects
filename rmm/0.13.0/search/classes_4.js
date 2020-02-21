@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['rebind_57',['rebind',['../structrmm_1_1mr_1_1thrust__allocator_1_1rebind.html',1,'rmm::mr::thrust_allocator']]],
-  ['rmm_5fallocator_58',['rmm_allocator',['../classrmm__allocator.html',1,'']]],
-  ['rmmoptions_5ft_59',['rmmOptions_t',['../structrmmOptions__t.html',1,'']]]
+  ['logger_65',['Logger',['../classrmm_1_1Logger.html',1,'rmm']]],
+  ['logic_5ferror_66',['logic_error',['../structrmm_1_1logic__error.html',1,'rmm']]],
+  ['logit_67',['LogIt',['../classrmm_1_1LogIt.html',1,'rmm']]]
 ];
