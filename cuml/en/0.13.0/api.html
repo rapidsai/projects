@@ -1661,6 +1661,8 @@ rather than looping over features sequentially by default.
 This (setting to ‘random’) often leads to significantly faster
 convergence especially when tol is higher than 1e-4.</p>
 </dd>
+<dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -1857,6 +1859,8 @@ continues until it is smaller than tol.</p>
 rather than looping over features sequentially by default.
 This (setting to ‘random’) often leads to significantly faster
 convergence especially when tol is higher than 1e-4.</p>
+</dd>
+<dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
 </dd>
 </dl>
 </dd>
@@ -2747,7 +2751,7 @@ required to configure this estimator as a dictionary.</p>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestClassifier.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">predict_model=u'GPU'</em>, <em class="sig-param">output_class=True</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'BATCH_TREE_REORG'</em>, <em class="sig-param">num_classes=2</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">predict_model=u'GPU'</em>, <em class="sig-param">output_class=True</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">num_classes=2</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">fil_sparse_format=u'auto'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the labels for X.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2767,15 +2771,18 @@ If true, return a 1 or 0 depending on whether the raw
 prediction exceeds the threshold. If False, just return
 the raw prediction.</p>
 </dd>
-<dt><strong>algo</strong><span class="classifier">string (default = ‘BATCH_TREE_REORG’)</span></dt><dd><p>This is optional and required only while performing the
+<dt><strong>algo</strong><span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
-‘NAIVE’ - simple inference using shared memory
-‘TREE_REORG’ - similar to naive but trees rearranged to be more</p>
+‘naive’ - simple inference using shared memory
+‘tree_reorg’ - similar to naive but trees rearranged to be more</p>
 <blockquote>
 <div><p>coalescing-friendly</p>
 </div></blockquote>
 <dl class="simple">
-<dt>‘BATCH_TREE_REORG’ - similar to TREE_REORG but predicting</dt><dd><p>multiple rows per thread block</p>
+<dt>‘batch_tree_reorg’ - similar to tree_reorg but predicting</dt><dd><p>multiple rows per thread block</p>
+</dd>
+<dt><cite>auto</cite> - choose the algorithm automatically. Currently</dt><dd><p>‘batch_tree_reorg’ is used for dense storage
+and ‘naive’ for sparse storage</p>
 </dd>
 </dl>
 </dd>
@@ -2788,6 +2795,21 @@ It is applied if output_class == True, else it is ignored</p>
 <dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
 the input to the data type which was used to train the model. This
 will increase memory used for the method.</p>
+</dd>
+<dt><strong>fil_sparse_format</strong><span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
+created in the Forest Inference Library. It is not required
+while using predict_model=’CPU’.
+‘auto’ - choose the storage type automatically</p>
+<blockquote>
+<div><blockquote>
+<div><p>(currently True is chosen by auto)</p>
+</div></blockquote>
+<p>False - create a dense forest
+True - create a sparse forest, requires algo=’naive’</p>
+<blockquote>
+<div><p>or algo=’auto’</p>
+</div></blockquote>
+</div></blockquote>
 </dd>
 </dl>
 </dd>
@@ -2815,24 +2837,31 @@ train and test the Random Forest model</p>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestClassifier.score">
-<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'BATCH_TREE_REORG'</em>, <em class="sig-param">num_classes=2</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.score" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">num_classes=2</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">fil_sparse_format=u'auto'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the accuracy metric score of the model for X.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
 <dt><strong>y</strong><span class="classifier">NumPy</span></dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
 </dd>
-<dt><strong>algo</strong><span class="classifier">string name of the algo from (from algo_t enum)</span></dt><dd><p>This is optional and required only while performing the
+<dt><strong>algo</strong><span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
-‘NAIVE’ - simple inference using shared memory
-‘TREE_REORG’ - similar to naive but trees rearranged to be more
-coalescing-friendly
-‘BATCH_TREE_REORG’ - similar to TREE_REORG but predicting
-multiple rows per thread block</p>
+‘naive’ - simple inference using shared memory
+‘tree_reorg’ - similar to naive but trees rearranged to be more</p>
+<blockquote>
+<div><p>coalescing-friendly</p>
+</div></blockquote>
+<dl class="simple">
+<dt>‘batch_tree_reorg’ - similar to tree_reorg but predicting</dt><dd><p>multiple rows per thread block</p>
+</dd>
+<dt><cite>auto</cite> - choose the algorithm automatically. Currently</dt><dd><p>‘batch_tree_reorg’ is used for dense storage
+and ‘naive’ for sparse storage</p>
+</dd>
+</dl>
 </dd>
 <dt><strong>threshold</strong><span class="classifier">float</span></dt><dd><p>threshold is used to for classification
 This is optional and required only while performing the
@@ -2841,6 +2870,21 @@ predict operation on the GPU.</p>
 <dt><strong>num_classes</strong><span class="classifier">integer</span></dt><dd><p>number of different classes present in the dataset</p>
 </dd>
 <dt><strong>convert_dtype</strong><span class="classifier">boolean, default=True</span></dt><dd><p>whether to convert input data to correct dtype automatically</p>
+</dd>
+<dt><strong>fil_sparse_format</strong><span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
+created in the Forest Inference Library. It is not required
+while using predict_model=’CPU’.
+‘auto’ - choose the storage type automatically</p>
+<blockquote>
+<div><blockquote>
+<div><p>(currently True is chosen by auto)</p>
+</div></blockquote>
+<p>False - create a dense forest
+True - create a sparse forest, requires algo=’naive’</p>
+<blockquote>
+<div><p>or algo=’auto’</p>
+</div></blockquote>
+</div></blockquote>
 </dd>
 </dl>
 </dd>
@@ -3003,7 +3047,7 @@ currently fully guarantee the exact same results.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.print_summary" title="cuml.ensemble.RandomForestRegressor.print_summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_summary</span></code></a>(self)</p></td>
 <td><p>prints the summary of the forest used to train and test the model</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.score" title="cuml.ensemble.RandomForestRegressor.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, algo, convert_dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.score" title="cuml.ensemble.RandomForestRegressor.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, algo, convert_dtype, …])</p></td>
 <td><p>Calculates the accuracy metric score of the model for X.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.set_params" title="cuml.ensemble.RandomForestRegressor.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
@@ -3044,7 +3088,7 @@ deep : boolean (default = True)</p>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestRegressor.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">predict_model=u'GPU'</em>, <em class="sig-param">algo=u'BATCH_TREE_REORG'</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">predict_model=u'GPU'</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">fil_sparse_format=u'auto'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the labels for X.
 Parameters
 ———-
@@ -3054,26 +3098,52 @@ X : array-like (device or host) shape = (n_samples, n_features)</p>
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </div></blockquote>
-<dl class="simple">
+<dl>
 <dt>predict_model<span class="classifier">String (default = ‘GPU’)</span></dt><dd><p>‘GPU’ to predict using the GPU, ‘CPU’ otherwise. The GPU can only
 be used if the model was trained on float32 data and <cite>X</cite> is float32
 or convert_dtype is set to True.</p>
 </dd>
-<dt>algo<span class="classifier">string (default = ‘BATCH_TREE_REORG’)</span></dt><dd><p>This is optional and required only while performing the
+<dt>algo<span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
-‘NAIVE’ - simple inference using shared memory
-‘TREE_REORG’ - similar to naive but trees rearranged to be more
-coalescing-friendly
-‘BATCH_TREE_REORG’ - similar to TREE_REORG but predicting
-multiple rows per thread block</p>
+‘naive’ - simple inference using shared memory
+‘tree_reorg’ - similar to naive but trees rearranged to be more</p>
+<blockquote>
+<div><p>coalescing-friendly</p>
+</div></blockquote>
+<dl class="simple">
+<dt>‘batch_tree_reorg’ - similar to tree_reorg but predicting</dt><dd><p>multiple rows per thread block</p>
+</dd>
+<dt><cite>auto</cite> - choose the algorithm automatically. Currently</dt><dd><p>‘batch_tree_reorg’ is used for dense storage
+and ‘naive’ for sparse storage</p>
+</dd>
+</dl>
 </dd>
 <dt>convert_dtype<span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
 the input to the data type which was used to train the model. This
 will increase memory used for the method.</p>
 </dd>
+<dt>fil_sparse_format<span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
+created in the Forest Inference Library. It is not required
+while using predict_model=’CPU’.
+‘auto’ - choose the storage type automatically</p>
+<blockquote>
+<div><blockquote>
+<div><p>(currently True is chosen by auto)</p>
+</div></blockquote>
+<p>False - create a dense forest
+True - create a sparse forest, requires algo=’naive’</p>
+<blockquote>
+<div><p>or algo=’auto’</p>
+</div></blockquote>
+</div></blockquote>
+</dd>
 </dl>
-<dl class="simple">
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
 <dt>y: NumPy</dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3093,7 +3163,7 @@ train and test the Random Forest model</p>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestRegressor.score">
-<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">algo=u'BATCH_TREE_REORG'</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.score" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">fil_sparse_format=u'auto'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the accuracy metric score of the model for X.
 Parameters
 ———-
@@ -3103,23 +3173,49 @@ X : array-like (device or host) shape = (n_samples, n_features)</p>
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </div></blockquote>
-<dl class="simple">
+<dl>
 <dt>y: NumPy</dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
 </dd>
-<dt>algo<span class="classifier">string name of the algo from (from algo_t enum)</span></dt><dd><p>This is optional and required only while performing the
+<dt>algo<span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
-‘NAIVE’ - simple inference using shared memory
-‘TREE_REORG’ - similar to naive but trees rearranged to be more
+‘naive’ - simple inference using shared memory
+‘tree_reorg’ - similar to naive but trees rearranged to be more
 coalescing-friendly
-‘BATCH_TREE_REORG’ - similar to TREE_REORG but predicting
-multiple rows per thread block</p>
+‘batch_tree_reorg’ - similar to tree_reorg but predicting
+multiple rows per thread block
+<cite>auto</cite> - choose the algorithm automatically. Currently</p>
+<blockquote>
+<div><p>‘batch_tree_reorg’ is used for dense storage
+and ‘naive’ for sparse storage</p>
+</div></blockquote>
 </dd>
 <dt>convert_dtype<span class="classifier">boolean, default=True</span></dt><dd><p>whether to convert input data to correct dtype automatically</p>
 </dd>
+<dt>fil_sparse_format<span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
+created in the Forest Inference Library. It is not required
+while using predict_model=’CPU’.
+‘auto’ - choose the storage type automatically</p>
+<blockquote>
+<div><blockquote>
+<div><p>(currently True is chosen by auto)</p>
+</div></blockquote>
+<p>False - create a dense forest
+True - create a sparse forest, requires algo=’naive’</p>
+<blockquote>
+<div><p>or algo=’auto’</p>
+</div></blockquote>
+</div></blockquote>
+</dd>
 </dl>
-<p>mean_square_error : float or
-median_abs_error : float or
-mean_abs_error : float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>mean_square_error</strong><span class="classifier">float or</span></dt><dd></dd>
+<dt><strong>median_abs_error</strong><span class="classifier">float or</span></dt><dd></dd>
+<dt><strong>mean_abs_error</strong><span class="classifier">float</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
@@ -5664,8 +5760,6 @@ preservation. Default is 3 * 30 (perplexity)</p>
 </dd>
 <dt><strong>post_momentum</strong><span class="classifier">float (default 0.8)</span></dt><dd><p>During the late phases, less forcefully apply gradients.</p>
 </dd>
-<dt><strong>should_downcast</strong><span class="classifier">bool (default True)</span></dt><dd><p>Whether to reduce to dataset to float32 or not.</p>
-</dd>
 <dt><strong>handle</strong><span class="classifier">(cuML Handle, default None)</span></dt><dd><p>You can pass in a past handle that was initialized, or we will create
 one for you anew!</p>
 </dd>
@@ -5684,6 +5778,14 @@ Using t-SNE. Journal of Machine Learning Research 9:2579-2605, 2008.</p></li>
 Stefan Steinerberger, Yuval Kluger Efficient Algorithms for
 t-distributed Stochastic Neighborhood Embedding</p></li>
 </ul>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><a class="reference internal" href="#cuml.TSNE.Y" title="cuml.TSNE.Y"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Y</span></code></a></dt><dd><p>TSNE.Y(self)</p>
+</dd>
+</dl>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -5691,17 +5793,22 @@ t-distributed Stochastic Neighborhood Embedding</p></li>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.TSNE.fit" title="cuml.TSNE.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.TSNE.fit" title="cuml.TSNE.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Fit X into an embedded space.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.TSNE.fit_transform" title="cuml.TSNE.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.TSNE.fit_transform" title="cuml.TSNE.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Fit X into an embedded space and return that transformed output.</p></td>
 </tr>
 </tbody>
 </table>
+<dl class="method">
+<dt id="cuml.TSNE.Y">
+<em class="property">property </em><code class="sig-name descname">Y</code><a class="headerlink" href="#cuml.TSNE.Y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="cuml.TSNE.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TSNE.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TSNE.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit X into an embedded space.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -5710,9 +5817,8 @@ t-distributed Stochastic Neighborhood Embedding</p></li>
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
-<dt><strong>y</strong><span class="classifier">array-like (device or host) shape = (n_samples, 1)</span></dt><dd><p>y contains a label per row.
-Acceptable formats: cuDF Series, NumPy ndarray, Numba device
-ndarray, cuda array interface compliant array like CuPy</p>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit method will automatically
+convert the inputs to np.float32.</p>
 </dd>
 </dl>
 </dd>
@@ -5721,7 +5827,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.TSNE.fit_transform">
-<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TSNE.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TSNE.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit X into an embedded space and return that transformed output.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -5729,6 +5835,9 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>X contains a sample per row.
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the fit_transform method will automatically
+convert the inputs to np.float32.</p>
 </dd>
 </dl>
 </dd>
@@ -6560,107 +6669,97 @@ one call, otherwise self.H will be used.</p>
 <div class="section" id="arima">
 <h3>ARIMA<a class="headerlink" href="#arima" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
-<dt id="cuml.tsa.ARIMAModel">
-<em class="property">class </em><code class="sig-prename descclassname">cuml.tsa.</code><code class="sig-name descname">ARIMAModel</code><a class="headerlink" href="#cuml.tsa.ARIMAModel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Implements an ARIMA model for in- and out-of-sample
-time-series prediction.</p>
-<p>The ARIMA model consists of three model parameter classes:
-“AutoRegressive”, “Integrated”, and “Moving Average” to fit to a given
-time-series input. The library provides both in-sample prediction, and out
-of sample forecasting.</p>
-<p>The Batched ARIMA model fits the following to each given time-series input:
-if d=1:</p>
-<blockquote>
-<div><dl class="simple">
-<dt>delta tilde{y}_{t} = mu + sum_{i=1}^{p} phi_i delta y_{t-i}</dt><dd><ul class="simple">
-<li><dl class="simple">
-<dt>sum_{i=1}^{q} theta_i (y_{t-i} -</dt><dd><p>tilde{y}_{t-i})</p>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-</dl>
-</div></blockquote>
-<p>Note all fitted parameters, mu, phi_i, theta_i and
-the model order (p, d, q).</p>
-<dl class="simple">
-<dt><strong>Limitations</strong>: The library assumes collections (i.e., batches) of</dt><dd><p>time-series data of the same length with no missing values.</p>
-</dd>
-</dl>
+<dt id="cuml.tsa.ARIMA">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.tsa.</code><code class="sig-name descname">ARIMA</code><a class="headerlink" href="#cuml.tsa.ARIMA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements a batched ARIMA model for in- and out-of-sample
+time-series prediction, with support for seasonality (SARIMA)</p>
+<p>ARIMA stands for Auto-Regressive Integrated Moving Average.
+See <a class="reference external" href="https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average">https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average</a></p>
+<p>This class can fit an ARIMA(p,d,q) or ARIMA(p,d,q)(P,D,Q)_s model to a
+batch of time series of the same length with no missing values.
+The implementation is designed to give the best performance when using
+large batches of time series.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">dataframe or array-like (device or host)</span></dt><dd><p>The time series data, assumed to have each time series in columns.
+Acceptable formats: cuDF DataFrame, cuDF Series, NumPy ndarray,
+Numba device ndarray, cuda array interface compliant array like CuPy.</p>
+</dd>
 <dt><strong>order</strong><span class="classifier">Tuple[int, int, int]</span></dt><dd><p>The ARIMA order (p, d, q) of the model</p>
 </dd>
-<dt><strong>mu</strong><span class="classifier">List (host) or array-like</span></dt><dd><p>(if d&gt;0) Array of trend parameters, one for each series</p>
+<dt><strong>seasonal_order: Tuple[int, int, int, int]</strong></dt><dd><p>The seasonal ARIMA order (P, D, Q, s) of the model</p>
 </dd>
-<dt><strong>ar_params</strong><span class="classifier">List[array-like] (host) or array-like</span></dt><dd><p>List of AR parameters, grouped (<cite>p</cite>) per series.
-If passed as a single array, the shape must be (p, num_batches)</p>
+<dt><strong>fit_intercept</strong><span class="classifier">bool or int</span></dt><dd><p>Whether to include a constant trend mu in the model
+Leave to None for automatic selection based on the model order</p>
 </dd>
-<dt><strong>ma_params</strong><span class="classifier">List[array-like] (host) or array-like</span></dt><dd><p>List of MA parameters, grouped (<cite>q</cite>) per series.
-If passed as a single array, the shape must be (q, num_batches)</p>
-</dd>
-<dt><strong>y</strong><span class="classifier">array-like (device or host)</span></dt><dd><p>The time series series data. If given as <cite>ndarray</cite>, assumed to have
-each time series in columns.
-Acceptable formats: cuDF DataFrame, cuDF
-Series, NumPy ndarray, Numba device ndarray, cuda array interface
-compliant array like CuPy.</p>
+<dt><strong>handle: cuml.Handle</strong></dt><dd><p>If it is None, a new one is created just for this instance</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">References</p>
-<p>The library is heavily influenced by the Python library <cite>statsmodels</cite>,
-particularly the <cite>statsmodels.tsa.arima_model.ARIMA</cite> model and
-corresponding code:
-www.statsmodels.org/stable/generated/statsmodels.tsa.arima_model.ARIMA</p>
+<p>This class is heavily influenced by the Python library <cite>statsmodels</cite>,
+particularly <cite>statsmodels.tsa.statespace.sarimax.SARIMAX</cite>.
+See <a class="reference external" href="https://www.statsmodels.org/stable/statespace.html">https://www.statsmodels.org/stable/statespace.html</a></p>
 <p>Additionally the following book is a useful reference:
 “Time Series Analysis by State Space Methods”,
-J. Durbin, S.J. Koopman, 2nd Edition.</p>
+J. Durbin, S.J. Koopman, 2nd Edition (2012).</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">cuml.tsa.arima</span> <span class="kn">import</span> <span class="n">fit</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">cuml.tsa</span> <span class="kn">import</span> <span class="n">arima</span>
 
-<span class="c1"># create sample data</span>
-<span class="n">num_samples</span> <span class="o">=</span> <span class="mi">200</span>
-<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">num_samples</span><span class="p">)</span>
+<span class="c1"># Create seasonal data with a trend, a seasonal pattern and noise</span>
+<span class="n">n_obs</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
-<span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">num_samples</span><span class="p">)</span>
-<span class="n">noise2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">num_samples</span><span class="p">)</span>
-<span class="n">ys1</span> <span class="o">=</span> <span class="n">noise</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">xs</span> <span class="o">+</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xs</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
-<span class="n">ys2</span> <span class="o">=</span> <span class="n">noise2</span> <span class="o">+</span> <span class="mf">0.25</span><span class="o">*</span><span class="n">xs</span> <span class="o">+</span> <span class="mf">0.15</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">0.8</span><span class="o">*</span><span class="n">xs</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
-<span class="n">ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_samples</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="n">ys</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">ys1</span>
-<span class="n">ys</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">ys2</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_obs</span><span class="p">)</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.07</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">],</span>
+                    <span class="p">[</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">]])</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">n_obs</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="mf">0.5</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25</span><span class="o">*</span><span class="n">x</span><span class="p">))</span> <span class="o">+</span> <span class="n">noise</span>
+     <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys1</span><span class="p">,</span> <span class="n">xs</span><span class="p">,</span> <span class="n">ys2</span><span class="p">)</span>
+<span class="c1"># Fit a seasonal ARIMA model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">arima</span><span class="o">.</span><span class="n">ARIMA</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 
-<span class="c1"># get parameter estimates</span>
-<span class="n">mu0</span><span class="p">,</span> <span class="n">ar0</span><span class="p">,</span> <span class="n">ma0</span> <span class="o">=</span> <span class="n">arima</span><span class="o">.</span><span class="n">estimate_x0</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">ys</span><span class="p">)</span>
-
-<span class="c1"># fine-tune parameter estimates</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">arima</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">ys</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">mu0</span><span class="p">,</span> <span class="n">ar0</span><span class="p">,</span> <span class="n">ma0</span><span class="p">)</span>
-
-<span class="c1"># predict and forecast using fitted model</span>
-<span class="n">d_yp</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_in_sample</span><span class="p">()</span>
-<span class="n">yp</span> <span class="o">=</span> <span class="n">cuml</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">input_to_host_array</span><span class="p">(</span><span class="n">d_yp</span><span class="p">)</span>
-<span class="n">d_yfc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-<span class="n">yfc</span> <span class="o">=</span> <span class="n">cuml</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">input_to_host_array</span><span class="p">(</span><span class="n">d_yfc</span><span class="p">)</span>
-<span class="n">dx</span> <span class="o">=</span> <span class="n">xs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">xs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">xfc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="mi">50</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">yp</span><span class="p">,</span> <span class="n">xfc</span><span class="p">,</span> <span class="n">yfc</span><span class="p">)</span>
+<span class="c1"># Forecast</span>
+<span class="n">fc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">copy_to_host</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fc</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span> <span class="mf">0.55204599</span> <span class="o">-</span><span class="mf">0.25681163</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.57430705</span> <span class="o">-</span><span class="mf">0.2262438</span> <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.48120315</span> <span class="o">-</span><span class="mf">0.20583011</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.535594</span>   <span class="o">-</span><span class="mf">0.24060046</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.57207541</span> <span class="o">-</span><span class="mf">0.26695497</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.59433647</span> <span class="o">-</span><span class="mf">0.23638713</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.50123257</span> <span class="o">-</span><span class="mf">0.21597344</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.55562342</span> <span class="o">-</span><span class="mf">0.25074379</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.59210483</span> <span class="o">-</span><span class="mf">0.27709831</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.61436589</span> <span class="o">-</span><span class="mf">0.24653047</span><span class="p">]]</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><a class="reference internal" href="#cuml.tsa.ARIMAModel.aic" title="cuml.tsa.ARIMAModel.aic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aic</span></code></a></dt><dd><p>ARIMAModel.aic(self)</p>
+<dt><strong>order</strong><span class="classifier">Tuple[int, int, int]</span></dt><dd><p>The ARIMA order (p, d, q) of the model</p>
 </dd>
-<dt><a class="reference internal" href="#cuml.tsa.ARIMAModel.aicc" title="cuml.tsa.ARIMAModel.aicc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aicc</span></code></a></dt><dd><p>ARIMAModel.aicc(self)</p>
+<dt><strong>seasonal_order: Tuple[int, int, int, int]</strong></dt><dd><p>The seasonal ARIMA order (P, D, Q, s) of the model</p>
 </dd>
-<dt><a class="reference internal" href="#cuml.tsa.ARIMAModel.bic" title="cuml.tsa.ARIMAModel.bic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bic</span></code></a></dt><dd><p>ARIMAModel.bic(self)</p>
+<dt><strong>intercept</strong><span class="classifier">bool or int</span></dt><dd><p>Whether the model includes a constant trend mu</p>
+</dd>
+<dt><strong>d_y: device array</strong></dt><dd><p>Time series data on device</p>
+</dd>
+<dt><strong>num_samples: int</strong></dt><dd><p>Number of observations</p>
+</dd>
+<dt><strong>batch_size: int</strong></dt><dd><p>Number of time series in the batch</p>
+</dd>
+<dt><strong>dtype: numpy.dtype</strong></dt><dd><p>Floating-point type of the data and parameters</p>
+</dd>
+<dt><strong>niter: numpy.ndarray</strong></dt><dd><p>After fitting, contains the number of iterations before convergence
+for each time series.</p>
 </dd>
 </dl>
 </dd>
@@ -6672,43 +6771,148 @@ J. Durbin, S.J. Koopman, 2nd Edition.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.tsa.ARIMAModel.forecast" title="cuml.tsa.ARIMAModel.forecast"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forecast</span></code></a>(self, nsteps)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.tsa.ARIMA.fit" title="cuml.tsa.ARIMA.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, start_params, object], …[, maxiter])</p></td>
+<td><p>Fit the ARIMA model to each time series.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.tsa.ARIMA.forecast" title="cuml.tsa.ARIMA.forecast"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forecast</span></code></a>(self, nsteps)</p></td>
 <td><p>Forecast the given model <cite>nsteps</cite> into the future.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.tsa.ARIMAModel.predict_in_sample" title="cuml.tsa.ARIMAModel.predict_in_sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict_in_sample</span></code></a>(self)</p></td>
-<td><p>Return in-sample prediction on batched series given batched model</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.tsa.ARIMA.get_params" title="cuml.tsa.ARIMA.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self)</p></td>
+<td><p>Get the parameters of the model</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.tsa.ARIMA.pack" title="cuml.tsa.ARIMA.pack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pack</span></code></a>(self)</p></td>
+<td><p>Pack parameters of the model into a linearized vector <cite>x</cite></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.tsa.ARIMA.predict" title="cuml.tsa.ARIMA.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self[, start, end])</p></td>
+<td><p>Compute in-sample and/or out-of-sample prediction for each series</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.tsa.ARIMA.set_params" title="cuml.tsa.ARIMA.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, params, object])</p></td>
+<td><p>Set the parameters of the model</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.tsa.ARIMA.unpack" title="cuml.tsa.ARIMA.unpack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unpack</span></code></a>(self, x, numpy.ndarray])</p></td>
+<td><p>Unpack linearized parameter vector <cite>x</cite> into the separate parameter arrays of the model</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
-<dt id="cuml.tsa.ARIMAModel.aic">
-<em class="property">property </em><code class="sig-name descname">aic</code><a class="headerlink" href="#cuml.tsa.ARIMAModel.aic" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="cuml.tsa.ARIMA.aic">
+<em class="property">property </em><code class="sig-name descname">aic</code><a class="headerlink" href="#cuml.tsa.ARIMA.aic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Akaike Information Criterion</p>
+</dd></dl>
 
 <dl class="method">
-<dt id="cuml.tsa.ARIMAModel.aicc">
-<em class="property">property </em><code class="sig-name descname">aicc</code><a class="headerlink" href="#cuml.tsa.ARIMAModel.aicc" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="cuml.tsa.ARIMA.aicc">
+<em class="property">property </em><code class="sig-name descname">aicc</code><a class="headerlink" href="#cuml.tsa.ARIMA.aicc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Corrected Akaike Information Criterion</p>
+</dd></dl>
 
 <dl class="method">
-<dt id="cuml.tsa.ARIMAModel.bic">
-<em class="property">property </em><code class="sig-name descname">bic</code><a class="headerlink" href="#cuml.tsa.ARIMAModel.bic" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="cuml.tsa.ARIMA.bic">
+<em class="property">property </em><code class="sig-name descname">bic</code><a class="headerlink" href="#cuml.tsa.ARIMA.bic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bayesian Information Criterion</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.tsa.ARIMA.complexity">
+<em class="property">property </em><code class="sig-name descname">complexity</code><a class="headerlink" href="#cuml.tsa.ARIMA.complexity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Model complexity (number of parameters)</p>
+</dd></dl>
 
 <dl class="attribute">
-<dt id="cuml.tsa.ARIMAModel.forecast">
-<code class="sig-name descname">forecast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">nsteps: 'int'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.tsa.ARIMAModel.forecast" title="Permalink to this definition">¶</a></dt>
-<dd><p>Forecast the given model <cite>nsteps</cite> into the future.</p>
+<dt id="cuml.tsa.ARIMA.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self, start_params: Union[Mapping[str, object], NoneType] = None, opt_disp: 'int' = -1, h: 'float' = 1e-09, maxiter=1000</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.tsa.ARIMA.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the ARIMA model to each time series.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>start_params</strong><span class="classifier">Mapping[str, object] (optional)</span></dt><dd><p>A mapping (e.g dictionary) of parameter names and associated arrays
+The key names are in {“mu”, “ar”, “ma”, “sar”, “sma”, “sigma2”}
+The shape of the arrays are (batch_size,) for mu parameters and
+(n, batch_size) for any other type, where n is the corresponding
+number of parameters of this type.
+Pass None for automatic estimation (recommended)</p>
+</dd>
+<dt><strong>opt_disp</strong><span class="classifier">int</span></dt><dd><dl class="simple">
+<dt>Fit diagnostic level (for L-BFGS solver):</dt><dd><ul class="simple">
+<li><p><cite>-1</cite> for no output (default)</p></li>
+<li><p><cite>0&lt;n&lt;100</cite> for output every <cite>n</cite> steps</p></li>
+<li><p><cite>n&gt;100</cite> for more detailed output</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt><strong>h</strong><span class="classifier">float</span></dt><dd><p>Finite-differencing step size. The gradient is computed
+using second-order differencing:</p>
+<blockquote>
+<div><blockquote>
+<div><p>f(x+h) - f(x - h)</p>
+</div></blockquote>
 <dl class="simple">
-<dt>nsteps<span class="classifier">int</span></dt><dd><p>The number of steps to forecast beyond end of <cite>fit()</cite> signal</p>
+<dt>g = —————– + O(h^2)</dt><dd><p>2 * h</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd>
+<dt><strong>maxiter</strong><span class="classifier">int</span></dt><dd><p>Maximum number of iterations of L-BFGS-B</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="cuml.tsa.ARIMAModel.predict_in_sample">
-<code class="sig-name descname">predict_in_sample</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.tsa.ARIMAModel.predict_in_sample" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return in-sample prediction on batched series given batched model</p>
+<dt id="cuml.tsa.ARIMA.forecast">
+<code class="sig-name descname">forecast</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">nsteps: 'int'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.tsa.ARIMA.forecast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Forecast the given model <cite>nsteps</cite> into the future.</p>
+<dl class="simple">
+<dt>nsteps<span class="classifier">int</span></dt><dd><p>The number of steps to forecast beyond end of the given series</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.tsa.ARIMA.get_params">
+<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span> &#x2192; Dict[str, numpy.ndarray]<a class="headerlink" href="#cuml.tsa.ARIMA.get_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the parameters of the model</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.tsa.ARIMA.llf">
+<em class="property">property </em><code class="sig-name descname">llf</code><a class="headerlink" href="#cuml.tsa.ARIMA.llf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log-likelihood of a fit model. Shape: (batch_size,)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.tsa.ARIMA.pack">
+<code class="sig-name descname">pack</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray<a class="headerlink" href="#cuml.tsa.ARIMA.pack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pack parameters of the model into a linearized vector <cite>x</cite></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.tsa.ARIMA.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">start=0</em>, <em class="sig-param">end=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.tsa.ARIMA.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute in-sample and/or out-of-sample prediction for each series</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.tsa.ARIMA.set_params">
+<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self, params: Mapping[str, object]</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.tsa.ARIMA.set_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the parameters of the model</p>
+<dl class="simple">
+<dt>params: Mapping[str, np.ndarray]</dt><dd><p>A mapping (e.g dictionary) of parameter names and associated arrays
+The key names are in {“mu”, “ar”, “ma”, “sar”, “sma”, “sigma2”}
+The shape of the arrays are (batch_size,) for mu parameters and
+(n, batch_size) for any other type, where n is the corresponding
+number of parameters of this type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.tsa.ARIMA.unpack">
+<code class="sig-name descname">unpack</code><span class="sig-paren">(</span><em class="sig-param">self, x: Union[list, numpy.ndarray]</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.tsa.ARIMA.unpack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unpack linearized parameter vector <cite>x</cite> into the separate
+parameter arrays of the model</p>
 </dd></dl>
 
 </dd></dl>
