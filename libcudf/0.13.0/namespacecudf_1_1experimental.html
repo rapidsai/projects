@@ -273,10 +273,9 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation
 std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a9fc2befe60625f484eb0e7493e91776c">make_max_aggregation</a> ()</td></tr>
 <tr class="memdesc:a9fc2befe60625f484eb0e7493e91776c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a MAX aggregation. <br /></td></tr>
 <tr class="separator:a9fc2befe60625f484eb0e7493e91776c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc1e3cd40fdf74ae3fde3ae60b63b95c"><td class="memItemLeft" align="right" valign="top"><a id="abc1e3cd40fdf74ae3fde3ae60b63b95c"></a>
-std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#abc1e3cd40fdf74ae3fde3ae60b63b95c">make_count_aggregation</a> ()</td></tr>
-<tr class="memdesc:abc1e3cd40fdf74ae3fde3ae60b63b95c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a COUNT aggregation. <br /></td></tr>
-<tr class="separator:abc1e3cd40fdf74ae3fde3ae60b63b95c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5c8a54cfeb7581ff1428565b3cd38ad"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ad5c8a54cfeb7581ff1428565b3cd38ad">make_count_aggregation</a> (include_nulls _include_nulls)</td></tr>
+<tr class="memdesc:ad5c8a54cfeb7581ff1428565b3cd38ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a COUNT aggregation.  <a href="namespacecudf_1_1experimental.html#ad5c8a54cfeb7581ff1428565b3cd38ad">More...</a><br /></td></tr>
+<tr class="separator:ad5c8a54cfeb7581ff1428565b3cd38ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89044ba69340e576d1d046eda741b573"><td class="memItemLeft" align="right" valign="top"><a id="a89044ba69340e576d1d046eda741b573"></a>
 std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a89044ba69340e576d1d046eda741b573">make_any_aggregation</a> ()</td></tr>
 <tr class="memdesc:a89044ba69340e576d1d046eda741b573"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a ANY aggregation. <br /></td></tr>
@@ -2940,6 +2939,32 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
 
 </div>
 </div>
+<a id="ad5c8a54cfeb7581ff1428565b3cd38ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5c8a54cfeb7581ff1428565b3cd38ad">&#9670;&nbsp;</a></span>make_count_aggregation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; cudf::experimental::make_count_aggregation </td>
+          <td>(</td>
+          <td class="paramtype">include_nulls&#160;</td>
+          <td class="paramname"><em>_include_nulls</em> = <code>include_nulls::NO</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Factory to create a COUNT aggregation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_include_nulls</td><td>Indicates if null values will be counted. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa356bff501c540949736fc5ea967359b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa356bff501c540949736fc5ea967359b">&#9670;&nbsp;</a></span>make_nunique_aggregation()</h2>
 
@@ -2958,7 +2983,12 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
 
 <p>Factory to create a NUNIQUE aggregation. </p>
 <p>Factory to create a <code>nunique</code> aggregation.</p>
-<p><code>nunique</code> returns the number of unique elements. </p>
+<p><code>nunique</code> returns the number of unique elements. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_include_nulls</td><td>Indicates if null values will be counted. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -3728,7 +3758,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 <li>instead of storing NA/NaN for output rows that do not meet the minimum number of observations this function updates the valid bitmask of the column to indicate which elements are valid.</li>
 <li>support for dynamic rolling windows, i.e. window size can be specified for each element using an additional array.</li>
 </ul>
-<p>The returned column for <code>op == COUNT</code> always has INT32 type. All other operators return a column of the same type as the input. Therefore it is suggested to convert integer column types (especially low-precision integers) to <code>FLOAT32</code> or <code>FLOAT64</code> before doing a rolling <code>MEAN</code>.</p>
+<p>The returned column for count aggregation always has INT32 type. All other operators return a column of the same type as the input. Therefore it is suggested to convert integer column types (especially low-precision integers) to <code>FLOAT32</code> or <code>FLOAT64</code> before doing a rolling <code>MEAN</code>.</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="structcudf_1_1logic__error.html" title="Exception thrown when logical precondition is violated.">cudf::logic_error</a></td><td>if window column type is not INT32</td></tr>
@@ -3804,7 +3834,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 <li>instead of the center flag it uses a two-part window to allow for more flexible windows. The total window size = <code>preceding_window + following_window</code>. Element <code>i</code> uses elements <code>[i-preceding_window+1, i+following_window]</code> to do the window computation.</li>
 <li>instead of storing NA/NaN for output rows that do not meet the minimum number of observations this function updates the valid bitmask of the column to indicate which elements are valid.</li>
 </ul>
-<p>The returned column for <code>op == COUNT</code> always has <code>INT32</code> type. All other operators return a column of the same type as the input. Therefore it is suggested to convert integer column types (especially low-precision integers) to <code>FLOAT32</code> or <code>FLOAT64</code> before doing a rolling <code>MEAN</code>.</p>
+<p>The returned column for count aggregation always has <code>INT32</code> type. All other operators return a column of the same type as the input. Therefore it is suggested to convert integer column types (especially low-precision integers) to <code>FLOAT32</code> or <code>FLOAT64</code> before doing a rolling <code>MEAN</code>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">input_col</td><td>The input column </td></tr>
