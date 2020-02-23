@@ -626,7 +626,7 @@ template&lt;cudf::type_id Id&gt; </div>
 
 <p>Maps a <code><a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></code> to it's corresponding concrete C++ type. </p>
 <p>------------------------------------------------------------------------&mdash;* Example: </p><div class="fragment"><div class="line">static_assert(std::is_same&lt;int32_t, id_to_type&lt;INT32&gt;);</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md567"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md568"></a>
 @tparam t The &lt;tt&gt;cudf::type_id&lt;/tt&gt; to map</h2>
 
 </div>
@@ -1742,7 +1742,7 @@ containing copy of all rows of <code>input</code> passing the filter defined by 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Unique pointer to a single table having all the rows from the </dd></dl>
-<h2><a class="anchor" id="autotoc_md485"></a>
+<h2><a class="anchor" id="autotoc_md486"></a>
 elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order.</h2>
 
 </div>
@@ -2172,7 +2172,7 @@ elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order
 
 <p>Defines all of the mappings between C++ types and their corresponding. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md569"></a>
+<h2><a class="anchor" id="autotoc_md570"></a>
 &lt;tt&gt;cudf::type_id&lt;/tt&gt; values.</h2>
 
 </div>
@@ -2314,7 +2314,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md470"></a>
+<h2><a class="anchor" id="autotoc_md471"></a>
 @return bool &lt;tt&gt;true&lt;/tt&gt; if &lt;tt&gt;lhs&lt;/tt&gt; == &lt;tt&gt;rhs&lt;/tt&gt; else &lt;tt&gt;false&lt;/tt&gt;.</h2>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -2323,7 +2323,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md471"></a>
+<h2><a class="anchor" id="autotoc_md472"></a>
 @return bool &lt;tt&gt;true&lt;/tt&gt; if &lt;tt&gt;lhs&lt;/tt&gt; == &lt;tt&gt;rhs&lt;/tt&gt; else &lt;tt&gt;false&lt;/tt&gt;.</h2>
 
 </div>
@@ -2789,7 +2789,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md464"></a>
+<h2><a class="anchor" id="autotoc_md465"></a>
 @returns bool                true if sorted as expected, false if not.</h2>
 
 </div>
@@ -3472,7 +3472,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>weak_ordering Indicates the relationship between the elements in </dd></dl>
-<h2><a class="anchor" id="autotoc_md468"></a>
+<h2><a class="anchor" id="autotoc_md469"></a>
 the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -3482,7 +3482,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>weak_ordering Indicates the relationship between the elements in </dd></dl>
-<h2><a class="anchor" id="autotoc_md469"></a>
+<h2><a class="anchor" id="autotoc_md470"></a>
 the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 
 </div>
@@ -4443,7 +4443,7 @@ if a fill value is null, it's output column will be nullable.</dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;column&gt; A non-nullable column of INT32 elements </dd></dl>
-<h2><a class="anchor" id="autotoc_md463"></a>
+<h2><a class="anchor" id="autotoc_md464"></a>
 containing the permuted row indices of &lt;tt&gt;input&lt;/tt&gt; if it were sorted</h2>
 
 </div>
@@ -4704,7 +4704,7 @@ template &lt; typename ColumnType,
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md570"></a>
+<h2><a class="anchor" id="autotoc_md571"></a>
 @return Whatever is returned by the callable's &lt;tt&gt;operator()&lt;/tt&gt;</h2>
 
 </div>
@@ -4738,7 +4738,7 @@ template&lt;typename T &gt; </div>
 <p>------------------------------------------------------------------------&mdash;* When explicitly passed a template argument of a given type, returns the appropriate <code>type_id</code> enum for the specified C++ type.</p>
 <p>For example:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">return</span> cudf::type_to_id&lt;int32_t&gt;();        <span class="comment">// Returns INT32</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md566"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md567"></a>
 @tparam T The type to map to a &lt;tt&gt;cudf::type_id&lt;/tt&gt;</h2>
 
 </div>

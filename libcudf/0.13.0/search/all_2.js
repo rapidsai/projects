@@ -21,7 +21,7 @@ var searchData=
   ['bitwise_5fpartitioner_87',['bitwise_partitioner',['../structbitwise__partitioner.html',1,'']]],
   ['bitwise_5fxor_88',['BITWISE_XOR',['../namespacecudf_1_1experimental.html#af98fab32c66e913a0096c1a3789c5701a6d7cca7c0f0f278c56131a25e77c4a5c',1,'cudf::experimental']]],
   ['bitwiseop_89',['BitwiseOp',['../structcudf_1_1binops_1_1compiled_1_1BitwiseOp.html',1,'cudf::binops::compiled']]],
-  ['bitwiseopdispatcher_90',['BitwiseOpDispatcher',['../structcudf_1_1experimental_1_1detail_1_1BitwiseOpDispatcher.html',1,'cudf::experimental::detail::BitwiseOpDispatcher&lt; F &gt;'],['../structcudf_1_1detail_1_1BitwiseOpDispatcher.html',1,'cudf::detail::BitwiseOpDispatcher&lt; F &gt;']]],
+  ['bitwiseopdispatcher_90',['BitwiseOpDispatcher',['../structcudf_1_1detail_1_1BitwiseOpDispatcher.html',1,'cudf::detail::BitwiseOpDispatcher&lt; F &gt;'],['../structcudf_1_1experimental_1_1detail_1_1BitwiseOpDispatcher.html',1,'cudf::experimental::detail::BitwiseOpDispatcher&lt; F &gt;']]],
   ['block_5fdesc_5fs_91',['block_desc_s',['../structcudf_1_1io_1_1avro_1_1block__desc__s.html',1,'cudf::io::avro']]],
   ['block_5fsize_92',['block_size',['../structBlockSumArray.html#a1d278705f6112181ad427b162832b4e5',1,'BlockSumArray']]],
   ['blocksumarray_93',['BlockSumArray',['../structBlockSumArray.html',1,'']]],
