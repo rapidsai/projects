@@ -707,7 +707,7 @@ will increase memory used for the method.</p>
 
 <span class="target" id="module-cuml.metrics.trustworthiness"></span><dl class="function">
 <dt id="cuml.metrics.trustworthiness.trustworthiness">
-<code class="sig-prename descclassname">cuml.metrics.trustworthiness.</code><code class="sig-name descname">trustworthiness</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">X_embedded</em>, <em class="sig-param">handle=None</em>, <em class="sig-param">n_neighbors=5</em>, <em class="sig-param">metric=u'euclidean'</em>, <em class="sig-param">should_downcast=True</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.metrics.trustworthiness.trustworthiness" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cuml.metrics.trustworthiness.</code><code class="sig-name descname">trustworthiness</code><span class="sig-paren">(</span><em class="sig-param">X</em>, <em class="sig-param">X_embedded</em>, <em class="sig-param">handle=None</em>, <em class="sig-param">n_neighbors=5</em>, <em class="sig-param">metric=u'euclidean'</em>, <em class="sig-param">should_downcast=True</em>, <em class="sig-param">convert_dtype=False</em>, <em class="sig-param">batch_size=512</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.metrics.trustworthiness.trustworthiness" title="Permalink to this definition">¶</a></dt>
 <dd><p>Expresses to what extent the local structure is retained in embedding.
 The score is defined in the range [0, 1].</p>
 <dl class="field-list">
@@ -1335,7 +1335,7 @@ is True</p>
 </tr>
 </tbody>
 </table>
-<dl class="attribute">
+<dl class="method">
 <dt id="cuml.LogisticRegression.fit">
 <code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LogisticRegression.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model with X and y.</p>
