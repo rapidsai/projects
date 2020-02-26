@@ -87,6 +87,10 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">cuML API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-behavior-configuration">Module Behavior Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#output-type">Output Type</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#preprocessing-metrics-and-utilities">Preprocessing, Metrics, and Utilities</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#model-selection-and-data-splitting">Model Selection and Data Splitting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#label-encoding">Label Encoding</a></li>
@@ -215,6 +219,12 @@
             
   <div class="section" id="cuml-api-reference">
 <h1>cuML API Reference<a class="headerlink" href="#cuml-api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-behavior-configuration">
+<h2>Module Behavior Configuration<a class="headerlink" href="#module-behavior-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="output-type">
+<h3>Output Type<a class="headerlink" href="#output-type" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 <div class="section" id="preprocessing-metrics-and-utilities">
 <h2>Preprocessing, Metrics, and Utilities<a class="headerlink" href="#preprocessing-metrics-and-utilities" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="model-selection-and-data-splitting">
@@ -1204,7 +1214,7 @@ an event.</p>
 NumPy arrays or in device (as Numba or <cite>__cuda_array_interface__</cite>
 compliant), in addition to cuDF objects.
 It provides both single-class (using sigmoid loss) and multiple-class
-(using softmax loss) variants, depending on the input variables.</p>
+(using softmax loss) variants, depending on the input variables</p>
 <p>Only one solver option is currently available: Quasi-Newton (QN)
 algorithms. Even though it is presented as a single option, this solver
 resolves to two different algorithms underneath:</p>
@@ -1321,20 +1331,53 @@ is True</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LogisticRegression.fit" title="cuml.LogisticRegression.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LogisticRegression.decision_function" title="cuml.LogisticRegression.decision_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decision_function</span></code></a>(self, X[, convert_dtype])</p></td>
+<td><p>Gives confidence score for X</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.LogisticRegression.fit" title="cuml.LogisticRegression.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Fit the model with X and y.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.LogisticRegression.get_param_names" title="cuml.LogisticRegression.get_param_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_param_names</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LogisticRegression.get_param_names" title="cuml.LogisticRegression.get_param_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_param_names</span></code></a>(self)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LogisticRegression.predict" title="cuml.LogisticRegression.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.LogisticRegression.predict" title="cuml.LogisticRegression.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Predicts the y for X.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.LogisticRegression.score" title="cuml.LogisticRegression.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, convert_dtype])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LogisticRegression.predict_log_proba" title="cuml.LogisticRegression.predict_log_proba"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict_log_proba</span></code></a>(self, X[, convert_dtype])</p></td>
+<td><p>Predicts the log class probabilities for each class in X</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.LogisticRegression.predict_proba" title="cuml.LogisticRegression.predict_proba"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict_proba</span></code></a>(self, X[, convert_dtype])</p></td>
+<td><p>Predicts the class probabilities for each class in X</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LogisticRegression.score" title="cuml.LogisticRegression.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Calculates the accuracy metric score of the model for X.</p></td>
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="cuml.LogisticRegression.decision_function">
+<code class="sig-name descname">decision_function</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LogisticRegression.decision_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gives confidence score for X</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
+the input to the data type which was used to train the model. This
+will increase memory used for the method.</p>
+</dd>
+<dt><strong>Returns</strong></dt><dd></dd>
+<dt><strong>———-</strong></dt><dd></dd>
+<dt><strong>y: array-like (device)</strong></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_classes)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="cuml.LogisticRegression.fit">
 <code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LogisticRegression.fit" title="Permalink to this definition">¶</a></dt>
@@ -1384,6 +1427,54 @@ will increase memory used for the method.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.LogisticRegression.predict_log_proba">
+<code class="sig-name descname">predict_log_proba</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LogisticRegression.predict_log_proba" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the log class probabilities for each class in X</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
+the input to the data type which was used to train the model. This
+will increase memory used for the method.</p>
+</dd>
+<dt><strong>Returns</strong></dt><dd></dd>
+<dt><strong>———-</strong></dt><dd></dd>
+<dt><strong>y: array-like (device)</strong></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_classes)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.LogisticRegression.predict_proba">
+<code class="sig-name descname">predict_proba</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LogisticRegression.predict_proba" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts the class probabilities for each class in X</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
+the input to the data type which was used to train the model. This
+will increase memory used for the method.</p>
+</dd>
+<dt><strong>Returns</strong></dt><dd></dd>
+<dt><strong>———-</strong></dt><dd></dd>
+<dt><strong>y: array-like (device)</strong></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_classes)</p>
 </dd>
 </dl>
 </dd>
@@ -3757,7 +3848,7 @@ Note: shape is (n_classes, n_features + 1) if fit_intercept = True.</p>
 </tr>
 </tbody>
 </table>
-<dl class="attribute">
+<dl class="method">
 <dt id="cuml.QN.fit">
 <code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.QN.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model with X and y.</p>
@@ -4673,6 +4764,13 @@ Note: this option does not set the maximum total memory used in the
 DBSCAN computation and so this value will not be able to be set to
 the total memory available on the device.</p>
 </dd>
+<dt><strong>output_type</strong><span class="classifier">(optional) {‘input’, ‘cudf’, ‘cupy’, ‘numpy’} default = None</span></dt><dd><p>Use it to control output type of the results and attributes.
+If None it’ll inherit the output type set at the
+module level, cuml.output_type. If that has not been changed, by
+default the estimator will mirror the type of the data used for each
+fit or predict call.
+If set, the estimator will override the global option for its behavior.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -4718,8 +4816,9 @@ For additional docs, see <a class="reference external" href="http://scikit-learn
 <dl class="field-list simple">
 <dt class="field-odd">Attributes</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>labels_</strong><span class="classifier">array</span></dt><dd><p>Which cluster each datapoint belongs to. Noisy samples are labeled as
--1.</p>
+<dt><strong>labels_</strong><span class="classifier">array-like or cuDF series</span></dt><dd><p>Which cluster each datapoint belongs to. Noisy samples are labeled as
+-1. Format depends on cuml global output type and estimator
+output_type.</p>
 </dd>
 </dl>
 </dd>
