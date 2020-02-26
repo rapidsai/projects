@@ -92,7 +92,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#graph">Graph</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-cugraph.structure.renumber">Renumbering</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-cugraph.structure.symmetrize">Symmetrize</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#conversion-from-other-formats">Conversion from Other Formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cugraph.structure.convert_matrix">Conversion from Other Formats</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#centrality">Centrality</a><ul>
@@ -851,8 +851,40 @@ edges.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="conversion-from-other-formats">
-<h3>Conversion from Other Formats<a class="headerlink" href="#conversion-from-other-formats" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="module-cugraph.structure.convert_matrix">
+<span id="conversion-from-other-formats"></span><h3>Conversion from Other Formats<a class="headerlink" href="#module-cugraph.structure.convert_matrix" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="cugraph.structure.convert_matrix.from_cudf_edgelist">
+<code class="sig-prename descclassname">cugraph.structure.convert_matrix.</code><code class="sig-name descname">from_cudf_edgelist</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">source='source'</em>, <em class="sig-param">destination='destination'</em>, <em class="sig-param">edge_attr=None</em>, <em class="sig-param">create_using=&lt;class 'cugraph.structure.graph.Graph'&gt;</em>, <em class="sig-param">renumber=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cugraph.structure.convert_matrix.from_cudf_edgelist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new graph created from the edge list representaion. This function
+is added for NetworkX compatibility (this function is a RAPIDS version of
+NetworkX’s from_pandas_edge_list()).
+Parameters
+———-
+df : cudf.DataFrame</p>
+<blockquote>
+<div><p>This cudf.DataFrame contains columns storing edge source vertices,
+destination (or target following NetworkX’s terminology) vertices, and
+(optional) weights.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>source<span class="classifier">string or integer</span></dt><dd><p>This is used to index the source column.</p>
+</dd>
+<dt>target<span class="classifier">string or integer</span></dt><dd><p>This is used to index the destination (or target following NetworkX’s
+terminology) column.</p>
+</dd>
+<dt>weight<span class="classifier">string or integer, optional</span></dt><dd><p>This pointer can be <code class="docutils literal notranslate"><span class="pre">None</span></code>. If not, this is used to index the weight
+column.</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">M</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/karate.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>                  <span class="n">dtype</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int32&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">,</span> <span class="s1">&#39;float32&#39;</span><span class="p">],</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">G</span> <span class="o">=</span> <span class="n">cugraph</span><span class="o">.</span><span class="n">from_cudf_edgelist</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </div>
 </div>
 <div class="section" id="centrality">
