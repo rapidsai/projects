@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libcudf: update_keys.hpp Source File</title>
+<title>libcudf: ngrams_tokenize.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,12 +62,12 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_4010bc87a0115613477f89ebf589f29d.html">cudf</a></li><li class="navelem"><a class="el" href="dir_761ac314ceec8ce90a57583e8c682bbe.html">dictionary</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_4eb7b02f20a775209d8df69830c1ce91.html">nvtext</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">update_keys.hpp</div>  </div>
+<div class="title">ngrams_tokenize.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
@@ -88,32 +88,24 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;cudf/column/column.hpp&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;cudf/dictionary/dictionary_column_view.hpp&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span>dictionary</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;std::unique_ptr&lt;column&gt; add_keys( dictionary_column_view <span class="keyword">const</span>&amp; dictionary_column,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                  column_view <span class="keyword">const</span>&amp; new_keys,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                  rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;std::unique_ptr&lt;column&gt; remove_keys( dictionary_column_view <span class="keyword">const</span>&amp; dictionary_column,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                     column_view <span class="keyword">const</span>&amp; keys_to_remove,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                     rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;std::unique_ptr&lt;column&gt; remove_unused_keys( dictionary_column_view <span class="keyword">const</span>&amp; dictionary_column,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                            rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;std::unique_ptr&lt;column&gt; set_keys( dictionary_column_view <span class="keyword">const</span>&amp; dictionary_column,</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                  column_view <span class="keyword">const</span>&amp; keys,</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                  rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;} <span class="comment">// namespace dictionary</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;} <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;cudf/scalar/scalar.hpp&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="strings__column__view_8hpp.html">cudf/strings/strings_column_view.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span>nvtext</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;std::unique_ptr&lt;cudf::column&gt; ngrams_tokenize( <a class="code" href="classcudf_1_1strings__column__view.html">cudf::strings_column_view</a> <span class="keyword">const</span>&amp; strings,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                               cudf::size_type ngrams = 2,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                               <a class="code" href="classcudf_1_1string__scalar.html">cudf::string_scalar</a> <span class="keyword">const</span>&amp; delimiter = <a class="code" href="classcudf_1_1string__scalar.html">cudf::string_scalar</a>{<span class="stringliteral">&quot;&quot;</span>},</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                               <a class="code" href="classcudf_1_1string__scalar.html">cudf::string_scalar</a> <span class="keyword">const</span>&amp; separator = <a class="code" href="classcudf_1_1string__scalar.html">cudf::string_scalar</a>{<span class="stringliteral">&quot;_&quot;</span>},</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                               rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource());</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;} <span class="comment">// namespace nvtext</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">cuDF interfaces</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:23</div></div>
+<div class="ttc" id="astrings__column__view_8hpp_html"><div class="ttname"><a href="strings__column__view_8hpp.html">strings_column_view.hpp</a></div><div class="ttdoc">Class definition for cudf::strings_column_view.</div></div>
+<div class="ttc" id="aclasscudf_1_1strings__column__view_html"><div class="ttname"><a href="classcudf_1_1strings__column__view.html">cudf::strings_column_view</a></div><div class="ttdoc">Given a column-view of strings type, an instance of this class provides a wrapper on this compound co...</div><div class="ttdef"><b>Definition:</b> strings_column_view.hpp:35</div></div>
+<div class="ttc" id="aclasscudf_1_1string__scalar_html"><div class="ttname"><a href="classcudf_1_1string__scalar.html">cudf::string_scalar</a></div><div class="ttdoc">An owning class to represent a string in device memory.</div><div class="ttdef"><b>Definition:</b> scalar.hpp:234</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
