@@ -1,7 +1,7 @@
 var searchData=
 [
   ['name_2865',['name',['../classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831a2f5d336f9e795adab8ed537aa190ff23',1,'NVStrings']]],
-  ['nearest_2866',['NEAREST',['../namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8a04fd403d483f6415e0b006bc67bd8fac',1,'cudf::NEAREST()'],['../namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151aad135772d7cf93dd0ccf9d2474b34e6a',1,'cudf::experimental::NEAREST()']]],
+  ['nearest_2866',['NEAREST',['../namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8a04fd403d483f6415e0b006bc67bd8fac',1,'cudf::NEAREST()'],['../namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8baad135772d7cf93dd0ccf9d2474b34e6a',1,'cudf::experimental::NEAREST()']]],
   ['never_2867',['NEVER',['../namespacecudf.html#a267e03474dcfd85242d2fdc6e5846ec6a615857bddd061281abf998989fb2ba8f',1,'cudf::NEVER()'],['../namespacecudf_1_1experimental.html#ad483c874f6010437111325063b87daefa443475558f0168dff92ecde26b98ae5a',1,'cudf::experimental::NEVER()']]],
   ['none_2868',['none',['../classNVStrings.html#a48a22848cee202e59b5a1ba22c8c3831a0b5479f46e32a0b52419271376591269',1,'NVStrings::none()'],['../classNVText.html#af974314b036ba255dd5f71b108d1ffdeabeae3c6c6f53e34ef4987d73b1d04daa',1,'NVText::none()'],['../namespacecudf_1_1experimental_1_1io.html#a748faef899f436d65047ac2241261457ab50339a10e1de285ac99d4c3990b8693',1,'cudf::experimental::io::NONE()'],['../namespacecudf_1_1experimental_1_1io.html#ac67f859abc53aa9cac54d0a769da6fa1ab50339a10e1de285ac99d4c3990b8693',1,'cudf::experimental::io::NONE()']]],
   ['nonnumeric_2869',['NONNUMERIC',['../namespacecudf_1_1experimental_1_1io.html#ac67f859abc53aa9cac54d0a769da6fa1addc40c8362772af6ffc64aec536831ac',1,'cudf::experimental::io']]],

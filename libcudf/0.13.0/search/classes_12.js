@@ -22,12 +22,12 @@ var searchData=
   ['simple_5fop_3c_20sum_20_3e_1835',['simple_op&lt; sum &gt;',['../structcudf_1_1experimental_1_1reduction_1_1op_1_1simple__op.html',1,'cudf::experimental::reduction::op']]],
   ['simple_5fop_3c_20sum_5fof_5fsquares_20_3e_1836',['simple_op&lt; sum_of_squares &gt;',['../structcudf_1_1experimental_1_1reduction_1_1op_1_1simple__op.html',1,'cudf::experimental::reduction::op']]],
   ['simple_5fop_3c_20variance_20_3e_1837',['simple_op&lt; variance &gt;',['../structcudf_1_1experimental_1_1reduction_1_1op_1_1simple__op.html',1,'cudf::experimental::reduction::op']]],
-  ['sink_5finfo_1838',['sink_info',['../structcudf_1_1experimental_1_1io_1_1sink__info.html',1,'cudf::experimental::io::sink_info'],['../structcudf_1_1sink__info.html',1,'cudf::sink_info']]],
+  ['sink_5finfo_1838',['sink_info',['../structcudf_1_1sink__info.html',1,'cudf::sink_info'],['../structcudf_1_1experimental_1_1io_1_1sink__info.html',1,'cudf::experimental::io::sink_info']]],
   ['size_5fof_5fhelper_1839',['size_of_helper',['../structcudf_1_1detail_1_1size__of__helper.html',1,'cudf::detail']]],
   ['snap_5fstate_5fs_1840',['snap_state_s',['../structcudf_1_1io_1_1snap__state__s.html',1,'cudf::io']]],
   ['sort_5fgroupby_5fhelper_1841',['sort_groupby_helper',['../structcudf_1_1experimental_1_1groupby_1_1detail_1_1sort_1_1sort__groupby__helper.html',1,'cudf::experimental::groupby::detail::sort']]],
   ['source_5finfo_1842',['source_info',['../structcudf_1_1source__info.html',1,'cudf::source_info'],['../structcudf_1_1experimental_1_1io_1_1source__info.html',1,'cudf::experimental::io::source_info']]],
-  ['standard_5fdeviation_1843',['standard_deviation',['../structcudf_1_1experimental_1_1reduction_1_1op_1_1standard__deviation.html',1,'cudf::experimental::reduction::op::standard_deviation'],['../structcudf_1_1reduction_1_1op_1_1standard__deviation.html',1,'cudf::reduction::op::standard_deviation']]],
+  ['standard_5fdeviation_1843',['standard_deviation',['../structcudf_1_1reduction_1_1op_1_1standard__deviation.html',1,'cudf::reduction::op::standard_deviation'],['../structcudf_1_1experimental_1_1reduction_1_1op_1_1standard__deviation.html',1,'cudf::experimental::reduction::op::standard_deviation']]],
   ['statistics_5fchunk_1844',['statistics_chunk',['../structcudf_1_1io_1_1statistics__chunk.html',1,'cudf::io']]],
   ['statistics_5fgroup_1845',['statistics_group',['../structcudf_1_1io_1_1statistics__group.html',1,'cudf::io']]],
   ['statistics_5fmerge_5fgroup_1846',['statistics_merge_group',['../structcudf_1_1io_1_1statistics__merge__group.html',1,'cudf::io']]],
@@ -56,6 +56,6 @@ var searchData=
   ['stripeinformation_1869',['StripeInformation',['../structcudf_1_1io_1_1orc_1_1StripeInformation.html',1,'cudf::io::orc']]],
   ['stripestatistics_1870',['StripeStatistics',['../structcudf_1_1io_1_1orc_1_1StripeStatistics.html',1,'cudf::io::orc']]],
   ['stripestream_1871',['StripeStream',['../structcudf_1_1io_1_1orc_1_1gpu_1_1StripeStream.html',1,'cudf::io::orc::gpu']]],
-  ['sum_1872',['sum',['../structcudf_1_1reduction_1_1op_1_1sum.html',1,'cudf::reduction::op::sum'],['../structcudf_1_1experimental_1_1reduction_1_1op_1_1sum.html',1,'cudf::experimental::reduction::op::sum']]],
-  ['sum_5fof_5fsquares_1873',['sum_of_squares',['../structcudf_1_1reduction_1_1op_1_1sum__of__squares.html',1,'cudf::reduction::op::sum_of_squares'],['../structcudf_1_1experimental_1_1reduction_1_1op_1_1sum__of__squares.html',1,'cudf::experimental::reduction::op::sum_of_squares']]]
+  ['sum_1872',['sum',['../structcudf_1_1experimental_1_1reduction_1_1op_1_1sum.html',1,'cudf::experimental::reduction::op::sum'],['../structcudf_1_1reduction_1_1op_1_1sum.html',1,'cudf::reduction::op::sum']]],
+  ['sum_5fof_5fsquares_1873',['sum_of_squares',['../structcudf_1_1experimental_1_1reduction_1_1op_1_1sum__of__squares.html',1,'cudf::experimental::reduction::op::sum_of_squares'],['../structcudf_1_1reduction_1_1op_1_1sum__of__squares.html',1,'cudf::reduction::op::sum_of_squares']]]
 ];

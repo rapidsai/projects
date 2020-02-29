@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['table_1874',['table',['../structcudf_1_1table.html',1,'cudf::table'],['../classcudf_1_1experimental_1_1table.html',1,'cudf::experimental::table']]],
+  ['table_1874',['table',['../classcudf_1_1experimental_1_1table.html',1,'cudf::experimental::table'],['../structcudf_1_1table.html',1,'cudf::table']]],
   ['table_5fdevice_5fview_1875',['table_device_view',['../classcudf_1_1table__device__view.html',1,'cudf']]],
   ['table_5fdevice_5fview_5fbase_1876',['table_device_view_base',['../classcudf_1_1detail_1_1table__device__view__base.html',1,'cudf::detail']]],
   ['table_5fdevice_5fview_5fbase_3c_20column_5fdevice_5fview_2c_20table_5fview_20_3e_1877',['table_device_view_base&lt; column_device_view, table_view &gt;',['../classcudf_1_1detail_1_1table__device__view__base.html',1,'cudf::detail']]],
@@ -47,7 +47,7 @@ var searchData=
   ['timestamp_5fscalar_5fdevice_5fview_1918',['timestamp_scalar_device_view',['../classcudf_1_1timestamp__scalar__device__view.html',1,'cudf']]],
   ['transformer_5fmeanvar_1919',['transformer_meanvar',['../structcudf_1_1transformer__meanvar.html',1,'cudf']]],
   ['transformer_5fsquared_1920',['transformer_squared',['../structcudf_1_1transformer__squared.html',1,'cudf']]],
-  ['transformer_5fvar_5fstd_1921',['transformer_var_std',['../structcudf_1_1experimental_1_1reduction_1_1transformer__var__std.html',1,'cudf::experimental::reduction::transformer_var_std&lt; ResultType &gt;'],['../structcudf_1_1reduction_1_1transformer__var__std.html',1,'cudf::reduction::transformer_var_std&lt; ResultType &gt;']]],
+  ['transformer_5fvar_5fstd_1921',['transformer_var_std',['../structcudf_1_1reduction_1_1transformer__var__std.html',1,'cudf::reduction::transformer_var_std&lt; ResultType &gt;'],['../structcudf_1_1experimental_1_1reduction_1_1transformer__var__std.html',1,'cudf::experimental::reduction::transformer_var_std&lt; ResultType &gt;']]],
   ['type_5fname_1922',['type_name',['../structcudf_1_1jit_1_1type__name.html',1,'cudf::jit']]],
   ['type_5fto_5fname_1923',['type_to_name',['../structcudf_1_1experimental_1_1type__to__name.html',1,'cudf::experimental']]],
   ['type_5fto_5fscalar_5ftype_5fimpl_1924',['type_to_scalar_type_impl',['../structcudf_1_1experimental_1_1type__to__scalar__type__impl.html',1,'cudf::experimental']]],

@@ -1,52 +1,52 @@
 <map id="dictionary.hpp" name="dictionary.hpp">
-<area shape="rect" id="node1" title="Concrete type definition for dictionary columns." alt="" coords="3629,5,3791,32"/>
-<area shape="rect" id="node2" href="$type__dispatcher_8hpp.html" title="Defines the mapping between cudf::type_id runtime type information." alt="" coords="3604,80,3816,107"/>
-<area shape="rect" id="node3" href="$scalar_8hpp_source.html" title=" " alt="" coords="2185,229,2307,256"/>
-<area shape="rect" id="node32" href="$traits_8hpp_source.html" title=" " alt="" coords="4295,155,4418,181"/>
-<area shape="rect" id="node4" href="$binaryop_8hpp_source.html" title=" " alt="" coords="575,304,717,331"/>
-<area shape="rect" id="node8" href="$copying_8hpp_source.html" title=" " alt="" coords="3556,304,3688,331"/>
-<area shape="rect" id="node10" href="$include_2cudf_2detail_2iterator_8cuh.html" title="provides column input iterator with nulls replaced with a specified value" alt="" coords="741,304,884,331"/>
-<area shape="rect" id="node11" href="$reduction__functions_8hpp_source.html" title=" " alt="" coords="908,304,1160,331"/>
-<area shape="rect" id="node12" href="$detail_2search_8hpp_source.html" title=" " alt="" coords="1185,304,1307,331"/>
-<area shape="rect" id="node13" href="$include_2cudf_2detail_2utilities_2device__operators_8cuh.html" title="definition of the device operators" alt="" coords="3813,304,4036,331"/>
-<area shape="rect" id="node16" href="$quantiles_8hpp_source.html" title=" " alt="" coords="1331,304,1483,331"/>
-<area shape="rect" id="node17" href="$reduction_8hpp_source.html" title=" " alt="" coords="1507,304,1659,331"/>
-<area shape="rect" id="node18" href="$scalar__factories_8hpp_source.html" title=" " alt="" coords="1684,304,1907,331"/>
-<area shape="rect" id="node19" href="$search_8hpp_source.html" title=" " alt="" coords="1931,304,2054,331"/>
-<area shape="rect" id="node20" href="$combine_8hpp_source.html" title=" " alt="" coords="2079,304,2211,331"/>
-<area shape="rect" id="node21" href="$convert__booleans_8hpp_source.html" title=" " alt="" coords="2235,304,2457,331"/>
-<area shape="rect" id="node22" href="$find_8hpp_source.html" title=" " alt="" coords="2481,304,2584,331"/>
-<area shape="rect" id="node23" href="$padding_8hpp_source.html" title=" " alt="" coords="2608,304,2740,331"/>
-<area shape="rect" id="node24" href="$strings_2replace_8hpp_source.html" title=" " alt="" coords="2764,304,2896,331"/>
-<area shape="rect" id="node25" href="$replace__re_8hpp_source.html" title=" " alt="" coords="2921,304,3083,331"/>
-<area shape="rect" id="node26" href="$partition_8hpp_source.html" title=" " alt="" coords="3107,304,3259,331"/>
-<area shape="rect" id="node27" href="$split_8hpp_source.html" title=" " alt="" coords="3283,304,3395,331"/>
-<area shape="rect" id="node28" href="$strip_8hpp_source.html" title=" " alt="" coords="3419,304,3531,331"/>
-<area shape="rect" id="node29" href="$detail_2tokenize_8hpp_source.html" title=" " alt="" coords="5,304,148,331"/>
-<area shape="rect" id="node30" href="$ngrams__tokenize_8hpp_source.html" title=" " alt="" coords="172,304,384,331"/>
-<area shape="rect" id="node31" href="$tokenize_8hpp_source.html" title=" " alt="" coords="408,304,551,331"/>
-<area shape="rect" id="node5" href="$compiled_2binary__ops_8hpp_source.html" title=" " alt="" coords="407,379,570,405"/>
-<area shape="rect" id="node6" href="$util_8hpp_source.html" title=" " alt="" coords="595,379,697,405"/>
-<area shape="rect" id="node7" href="$detail_2binaryop_8hpp_source.html" title=" " alt="" coords="721,379,864,405"/>
-<area shape="rect" id="node9" href="$copy_8hpp_source.html" title=" " alt="" coords="3623,379,3725,405"/>
-<area shape="rect" id="node14" href="$rolling__detail_8hpp_source.html" title=" " alt="" coords="3823,379,4026,405"/>
-<area shape="rect" id="node15" href="$include_2cudf_2detail_2utilities_2device__atomics_8cuh.html" title="overloads for CUDA atomic operations" alt="" coords="4097,379,4299,405"/>
-<area shape="rect" id="node33" href="$avro_2reader__impl_8cu.html" title="cuDF&#45;IO Avro reader class implementation" alt="" coords="4615,453,4778,480"/>
-<area shape="rect" id="node34" href="$orc_2reader__impl_8cu.html" title="cuDF&#45;IO ORC reader class implementation" alt="" coords="4965,453,5127,480"/>
-<area shape="rect" id="node35" href="$parquet_2reader__impl_8cu.html" title="cuDF&#45;IO Parquet reader class implementation" alt="" coords="5774,453,5937,480"/>
-<area shape="rect" id="node36" href="$column__buffer_8hpp.html" title="cuDF&#45;IO Column&#45;backing buffer utilities" alt="" coords="5113,304,5305,331"/>
-<area shape="rect" id="node44" href="$src_2utilities_2legacy_2device__atomics_8cuh.html" title="overloads for CUDA atomic operations" alt="" coords="4419,304,4622,331"/>
-<area shape="rect" id="node45" href="$src_2utilities_2legacy_2device__operators_8cuh.html" title="definition of the device operators" alt="" coords="4469,229,4692,256"/>
-<area shape="rect" id="node47" href="$column__factories_8hpp_source.html" title=" " alt="" coords="4923,229,5145,256"/>
-<area shape="rect" id="node49" href="$detail_2aggregation_2aggregation_8hpp_source.html" title=" " alt="" coords="4116,229,4288,256"/>
-<area shape="rect" id="node37" href="$avro_2reader__impl_8hpp.html" title="cuDF&#45;IO Avro reader class implementation header" alt="" coords="4924,379,5096,405"/>
-<area shape="rect" id="node38" href="$csv_2reader__impl_8hpp.html" title="cuDF&#45;IO CSV reader class implementation header" alt="" coords="5512,379,5684,405"/>
-<area shape="rect" id="node40" href="$json_2reader__impl_8hpp.html" title="cuDF&#45;IO JSON reader class implementation header" alt="" coords="5316,379,5488,405"/>
-<area shape="rect" id="node42" href="$orc_2reader__impl_8hpp.html" title="cuDF&#45;IO ORC reader class implementation header" alt="" coords="5120,379,5292,405"/>
-<area shape="rect" id="node43" href="$parquet_2reader__impl_8hpp.html" title="cuDF&#45;IO Parquet reader class implementation header" alt="" coords="5708,379,5880,405"/>
-<area shape="rect" id="node39" href="$csv_2reader__impl_8cu.html" title="cuDF&#45;IO CSV reader class implementation" alt="" coords="5517,453,5679,480"/>
-<area shape="rect" id="node41" href="$json_2reader__impl_8cu.html" title="cuDF&#45;IO JSON reader class implementation" alt="" coords="5321,453,5483,480"/>
-<area shape="rect" id="node46" href="$legacy_2rolling__detail_8hpp_source.html" title=" " alt="" coords="4646,304,4849,331"/>
-<area shape="rect" id="node48" href="$detail_2unary_8hpp_source.html" title=" " alt="" coords="4977,304,5089,331"/>
-<area shape="rect" id="node50" href="$result__cache_8hpp_source.html" title=" " alt="" coords="4111,304,4293,331"/>
+<area shape="rect" id="node1" title="Concrete type definition for dictionary columns." alt="" coords="3411,5,3573,32"/>
+<area shape="rect" id="node2" href="$type__dispatcher_8hpp.html" title="Defines the mapping between cudf::type_id runtime type information." alt="" coords="3386,80,3598,107"/>
+<area shape="rect" id="node3" href="$scalar_8hpp_source.html" title=" " alt="" coords="2304,229,2427,256"/>
+<area shape="rect" id="node33" href="$traits_8hpp_source.html" title=" " alt="" coords="4532,155,4655,181"/>
+<area shape="rect" id="node4" href="$binaryop_8hpp_source.html" title=" " alt="" coords="1537,304,1679,331"/>
+<area shape="rect" id="node8" href="$copying_8hpp_source.html" title=" " alt="" coords="3793,304,3925,331"/>
+<area shape="rect" id="node10" href="$include_2cudf_2detail_2iterator_8cuh.html" title="provides column input iterator with nulls replaced with a specified value" alt="" coords="946,304,1089,331"/>
+<area shape="rect" id="node11" href="$reduction__functions_8hpp_source.html" title=" " alt="" coords="1113,304,1365,331"/>
+<area shape="rect" id="node12" href="$detail_2search_8hpp_source.html" title=" " alt="" coords="1389,304,1512,331"/>
+<area shape="rect" id="node13" href="$include_2cudf_2detail_2utilities_2device__operators_8cuh.html" title="definition of the device operators" alt="" coords="4050,304,4273,331"/>
+<area shape="rect" id="node16" href="$quantiles_8hpp_source.html" title=" " alt="" coords="1704,304,1856,331"/>
+<area shape="rect" id="node17" href="$reduction_8hpp_source.html" title=" " alt="" coords="1880,304,2032,331"/>
+<area shape="rect" id="node18" href="$scalar__factories_8hpp_source.html" title=" " alt="" coords="2057,304,2279,331"/>
+<area shape="rect" id="node19" href="$search_8hpp_source.html" title=" " alt="" coords="2304,304,2427,331"/>
+<area shape="rect" id="node20" href="$combine_8hpp_source.html" title=" " alt="" coords="2451,304,2583,331"/>
+<area shape="rect" id="node21" href="$convert__booleans_8hpp_source.html" title=" " alt="" coords="2607,304,2830,331"/>
+<area shape="rect" id="node22" href="$find_8hpp_source.html" title=" " alt="" coords="2854,304,2957,331"/>
+<area shape="rect" id="node23" href="$padding_8hpp_source.html" title=" " alt="" coords="2981,304,3113,331"/>
+<area shape="rect" id="node24" href="$strings_2replace_8hpp_source.html" title=" " alt="" coords="3137,304,3269,331"/>
+<area shape="rect" id="node25" href="$replace__re_8hpp_source.html" title=" " alt="" coords="3293,304,3456,331"/>
+<area shape="rect" id="node26" href="$partition_8hpp_source.html" title=" " alt="" coords="3480,304,3632,331"/>
+<area shape="rect" id="node27" href="$split_8hpp_source.html" title=" " alt="" coords="3656,304,3768,331"/>
+<area shape="rect" id="node28" href="$strip_8hpp_source.html" title=" " alt="" coords="5,304,117,331"/>
+<area shape="rect" id="node29" href="$detail_2tokenize_8hpp_source.html" title=" " alt="" coords="141,304,283,331"/>
+<area shape="rect" id="node30" href="$generate__ngrams_8hpp_source.html" title=" " alt="" coords="307,304,519,331"/>
+<area shape="rect" id="node31" href="$ngrams__tokenize_8hpp_source.html" title=" " alt="" coords="543,304,755,331"/>
+<area shape="rect" id="node32" href="$tokenize_8hpp_source.html" title=" " alt="" coords="779,304,922,331"/>
+<area shape="rect" id="node5" href="$compiled_2binary__ops_8hpp_source.html" title=" " alt="" coords="1369,379,1532,405"/>
+<area shape="rect" id="node6" href="$util_8hpp_source.html" title=" " alt="" coords="1557,379,1659,405"/>
+<area shape="rect" id="node7" href="$detail_2binaryop_8hpp_source.html" title=" " alt="" coords="1683,379,1826,405"/>
+<area shape="rect" id="node9" href="$copy_8hpp_source.html" title=" " alt="" coords="3819,379,3922,405"/>
+<area shape="rect" id="node14" href="$rolling__detail_8hpp_source.html" title=" " alt="" coords="4208,379,4411,405"/>
+<area shape="rect" id="node15" href="$include_2cudf_2detail_2utilities_2device__atomics_8cuh.html" title="overloads for CUDA atomic operations" alt="" coords="3969,379,4172,405"/>
+<area shape="rect" id="node34" href="$avro_2reader__impl_8cu.html" title="cuDF&#45;IO Avro reader class implementation" alt="" coords="5079,453,5241,480"/>
+<area shape="rect" id="node35" href="$orc_2reader__impl_8cu.html" title="cuDF&#45;IO ORC reader class implementation" alt="" coords="6011,453,6173,480"/>
+<area shape="rect" id="node36" href="$parquet_2reader__impl_8cu.html" title="cuDF&#45;IO Parquet reader class implementation" alt="" coords="5412,453,5575,480"/>
+<area shape="rect" id="node37" href="$column__buffer_8hpp.html" title="cuDF&#45;IO Column&#45;backing buffer utilities" alt="" coords="5349,304,5541,331"/>
+<area shape="rect" id="node44" href="$src_2utilities_2legacy_2device__atomics_8cuh.html" title="overloads for CUDA atomic operations" alt="" coords="4605,304,4808,331"/>
+<area shape="rect" id="node45" href="$src_2utilities_2legacy_2device__operators_8cuh.html" title="definition of the device operators" alt="" coords="4655,229,4878,256"/>
+<area shape="rect" id="node47" href="$column__factories_8hpp_source.html" title=" " alt="" coords="5159,229,5382,256"/>
+<area shape="rect" id="node49" href="$detail_2aggregation_2aggregation_8hpp_source.html" title=" " alt="" coords="4353,229,4525,256"/>
+<area shape="rect" id="node38" href="$avro_2reader__impl_8hpp.html" title="cuDF&#45;IO Avro reader class implementation header" alt="" coords="5161,379,5333,405"/>
+<area shape="rect" id="node39" href="$csv_2reader__impl_8hpp.html" title="cuDF&#45;IO CSV reader class implementation header" alt="" coords="5749,379,5921,405"/>
+<area shape="rect" id="node41" href="$json_2reader__impl_8hpp.html" title="cuDF&#45;IO JSON reader class implementation header" alt="" coords="5357,379,5529,405"/>
+<area shape="rect" id="node42" href="$orc_2reader__impl_8hpp.html" title="cuDF&#45;IO ORC reader class implementation header" alt="" coords="5945,379,6117,405"/>
+<area shape="rect" id="node43" href="$parquet_2reader__impl_8hpp.html" title="cuDF&#45;IO Parquet reader class implementation header" alt="" coords="5553,379,5725,405"/>
+<area shape="rect" id="node40" href="$csv_2reader__impl_8cu.html" title="cuDF&#45;IO CSV reader class implementation" alt="" coords="5753,453,5916,480"/>
+<area shape="rect" id="node46" href="$legacy_2rolling__detail_8hpp_source.html" title=" " alt="" coords="4832,304,5035,331"/>
+<area shape="rect" id="node48" href="$detail_2unary_8hpp_source.html" title=" " alt="" coords="5213,304,5325,331"/>
+<area shape="rect" id="node50" href="$result__cache_8hpp_source.html" title=" " alt="" coords="4347,304,4530,331"/>
 </map>

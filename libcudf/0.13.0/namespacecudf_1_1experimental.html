@@ -212,17 +212,17 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a57a49aef820830d7830862408645b8c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Result type of the <code>element_relational_comparator</code> function object.  <a href="namespacecudf_1_1experimental.html#a57a49aef820830d7830862408645b8c7">More...</a><br /></td></tr>
 <tr class="separator:a57a49aef820830d7830862408645b8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f4f0e0f1bfa906673bf5c2a2b13b151"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151">interpolation</a> { <br />
-&#160;&#160;<a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151aaac544aacc3615aada24897a215f5046">interpolation::LINEAR</a>, 
-<a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151aa7c48ba367e019d004bfb0239b85f2b3">interpolation::LOWER</a>, 
-<a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151a5bc0a7ce2c77ccd49169277e9289e5d1">interpolation::HIGHER</a>, 
-<a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151aafa8fd4b90a3f8123b4bd30446518a7e">interpolation::MIDPOINT</a>, 
+<tr class="memitem:a7f32c8210bb99fa8f28b23fd359e2e8b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8b">interpolation</a> : int32_t { <br />
+&#160;&#160;<a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8baaac544aacc3615aada24897a215f5046">interpolation::LINEAR</a>, 
+<a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8baa7c48ba367e019d004bfb0239b85f2b3">interpolation::LOWER</a>, 
+<a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8ba5bc0a7ce2c77ccd49169277e9289e5d1">interpolation::HIGHER</a>, 
+<a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8baafa8fd4b90a3f8123b4bd30446518a7e">interpolation::MIDPOINT</a>, 
 <br />
-&#160;&#160;<a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151aad135772d7cf93dd0ccf9d2474b34e6a">interpolation::NEAREST</a>
+&#160;&#160;<a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8baad135772d7cf93dd0ccf9d2474b34e6a">interpolation::NEAREST</a>
 <br />
  }</td></tr>
-<tr class="memdesc:a5f4f0e0f1bfa906673bf5c2a2b13b151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolation method to use when the desired quantile lies between two data points i and j.  <a href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151">More...</a><br /></td></tr>
-<tr class="separator:a5f4f0e0f1bfa906673bf5c2a2b13b151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:a7f32c8210bb99fa8f28b23fd359e2e8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolation method to use when the desired quantile lies between two data points i and j.  <a href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8b">More...</a><br /></td></tr>
+<tr class="separator:a7f32c8210bb99fa8f28b23fd359e2e8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7cecb2a8c2faaf3ef84cd9046881237"><td class="memItemLeft" align="right" valign="top"><a id="af7cecb2a8c2faaf3ef84cd9046881237"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>unary_op</b> { <br />
 &#160;&#160;<b>SIN</b>, 
 <b>COS</b>, 
@@ -302,7 +302,7 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation
 std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a91939f7355190ba94e08ceb3fd802041">make_median_aggregation</a> ()</td></tr>
 <tr class="memdesc:a91939f7355190ba94e08ceb3fd802041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a MEDIAN aggregation. <br /></td></tr>
 <tr class="separator:a91939f7355190ba94e08ceb3fd802041"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdf5751f91dd4da5c76b0b54fc2dc9ee"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#afdf5751f91dd4da5c76b0b54fc2dc9ee">make_quantile_aggregation</a> (std::vector&lt; double &gt; const &amp;q, <a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151">interpolation</a> i)</td></tr>
+<tr class="memitem:afdf5751f91dd4da5c76b0b54fc2dc9ee"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#afdf5751f91dd4da5c76b0b54fc2dc9ee">make_quantile_aggregation</a> (std::vector&lt; double &gt; const &amp;q, <a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8b">interpolation</a> i)</td></tr>
 <tr class="memdesc:afdf5751f91dd4da5c76b0b54fc2dc9ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a QUANTILE aggregation.  <a href="namespacecudf_1_1experimental.html#afdf5751f91dd4da5c76b0b54fc2dc9ee">More...</a><br /></td></tr>
 <tr class="separator:afdf5751f91dd4da5c76b0b54fc2dc9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7994a4f7c22fb477a6f51ba5d2ffd0c1"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a7994a4f7c22fb477a6f51ba5d2ffd0c1">make_argmax_aggregation</a> ()</td></tr>
@@ -425,10 +425,10 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html"
 <tr class="memitem:af0b384ed402e8a2ebefa4561ab007226"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">cudf::experimental::table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#af0b384ed402e8a2ebefa4561ab007226">merge</a> (std::vector&lt; <a class="el" href="classcudf_1_1table__view.html">table_view</a> &gt; const  &amp;tables_to_merge, std::vector&lt; cudf::size_type &gt; const  &amp;key_cols, std::vector&lt; <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">cudf::order</a> &gt; const  &amp;column_order, std::vector&lt; <a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">cudf::null_order</a> &gt; const  &amp;null_precedence={}, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:af0b384ed402e8a2ebefa4561ab007226"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge a set of sorted tables.  <a href="namespacecudf_1_1experimental.html#af0b384ed402e8a2ebefa4561ab007226">More...</a><br /></td></tr>
 <tr class="separator:af0b384ed402e8a2ebefa4561ab007226"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a186c50e8682852e00756b6172feb9ea2"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a186c50e8682852e00756b6172feb9ea2">quantile</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, double q, <a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151">interpolation</a> interp=<a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151aaac544aacc3615aada24897a215f5046">interpolation::LINEAR</a>, <a class="el" href="structcudf_1_1order__info.html">order_info</a> column_order={})</td></tr>
+<tr class="memitem:a186c50e8682852e00756b6172feb9ea2"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a186c50e8682852e00756b6172feb9ea2">quantile</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, double q, <a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8b">interpolation</a> interp=<a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8baaac544aacc3615aada24897a215f5046">interpolation::LINEAR</a>, <a class="el" href="structcudf_1_1order__info.html">order_info</a> column_order={})</td></tr>
 <tr class="memdesc:a186c50e8682852e00756b6172feb9ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a value for a quantile by interpolating between the values on either side of the desired quantile.  <a href="namespacecudf_1_1experimental.html#a186c50e8682852e00756b6172feb9ea2">More...</a><br /></td></tr>
 <tr class="separator:a186c50e8682852e00756b6172feb9ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7407ea137cc20a1343331efd180775b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ab7407ea137cc20a1343331efd180775b">quantiles</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;input, std::vector&lt; double &gt; const  &amp;q, <a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151">interpolation</a> interp=<a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151aad135772d7cf93dd0ccf9d2474b34e6a">interpolation::NEAREST</a>, <a class="el" href="namespacecudf.html#ab283c517931abd4152ffa62fec62425d">cudf::sorted</a> is_input_sorted=sorted::NO, std::vector&lt; <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">order</a> &gt; const  &amp;column_order={}, std::vector&lt; <a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">null_order</a> &gt; const  &amp;null_precedence={}, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memitem:ab7407ea137cc20a1343331efd180775b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ab7407ea137cc20a1343331efd180775b">quantiles</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;input, std::vector&lt; double &gt; const  &amp;q, <a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8b">interpolation</a> interp=<a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8baad135772d7cf93dd0ccf9d2474b34e6a">interpolation::NEAREST</a>, <a class="el" href="namespacecudf.html#ab283c517931abd4152ffa62fec62425d">cudf::sorted</a> is_input_sorted=sorted::NO, std::vector&lt; <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">order</a> &gt; const  &amp;column_order={}, std::vector&lt; <a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">null_order</a> &gt; const  &amp;null_precedence={}, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:ab7407ea137cc20a1343331efd180775b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the rows of the input corresponding to the requested quantiles.  <a href="namespacecudf_1_1experimental.html#ab7407ea137cc20a1343331efd180775b">More...</a><br /></td></tr>
 <tr class="separator:ab7407ea137cc20a1343331efd180775b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a965295f5f5e0fa38d0c74a2c8b4ec3d9"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a965295f5f5e0fa38d0c74a2c8b4ec3d9">reduce</a> (const <a class="el" href="classcudf_1_1column__view.html">column_view</a> &amp;col, std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; const &amp;agg, <a class="el" href="classcudf_1_1data__type.html">data_type</a> output_dtype, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
@@ -760,8 +760,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a5f4f0e0f1bfa906673bf5c2a2b13b151"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f4f0e0f1bfa906673bf5c2a2b13b151">&#9670;&nbsp;</a></span>interpolation</h2>
+<a id="a7f32c8210bb99fa8f28b23fd359e2e8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f32c8210bb99fa8f28b23fd359e2e8b">&#9670;&nbsp;</a></span>interpolation</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -770,7 +770,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151">cudf::experimental::interpolation</a></td>
+          <td class="memname">enum <a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8b">cudf::experimental::interpolation</a> : int32_t</td>
         </tr>
       </table>
   </td>
@@ -782,15 +782,15 @@ template&lt;typename T &gt; </div>
 
 <p>Interpolation method to use when the desired quantile lies between two data points i and j. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5f4f0e0f1bfa906673bf5c2a2b13b151aaac544aacc3615aada24897a215f5046"></a>LINEAR&#160;</td><td class="fielddoc"><p>Linear interpolation between i and j. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7f32c8210bb99fa8f28b23fd359e2e8baaac544aacc3615aada24897a215f5046"></a>LINEAR&#160;</td><td class="fielddoc"><p>Linear interpolation between i and j. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a5f4f0e0f1bfa906673bf5c2a2b13b151aa7c48ba367e019d004bfb0239b85f2b3"></a>LOWER&#160;</td><td class="fielddoc"><p>Lower data point (i) </p>
+<tr><td class="fieldname"><a id="a7f32c8210bb99fa8f28b23fd359e2e8baa7c48ba367e019d004bfb0239b85f2b3"></a>LOWER&#160;</td><td class="fielddoc"><p>Lower data point (i) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a5f4f0e0f1bfa906673bf5c2a2b13b151a5bc0a7ce2c77ccd49169277e9289e5d1"></a>HIGHER&#160;</td><td class="fielddoc"><p>Higher data point (j) </p>
+<tr><td class="fieldname"><a id="a7f32c8210bb99fa8f28b23fd359e2e8ba5bc0a7ce2c77ccd49169277e9289e5d1"></a>HIGHER&#160;</td><td class="fielddoc"><p>Higher data point (j) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a5f4f0e0f1bfa906673bf5c2a2b13b151aafa8fd4b90a3f8123b4bd30446518a7e"></a>MIDPOINT&#160;</td><td class="fielddoc"><p>(i + j)/2 </p>
+<tr><td class="fieldname"><a id="a7f32c8210bb99fa8f28b23fd359e2e8baafa8fd4b90a3f8123b4bd30446518a7e"></a>MIDPOINT&#160;</td><td class="fielddoc"><p>(i + j)/2 </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a5f4f0e0f1bfa906673bf5c2a2b13b151aad135772d7cf93dd0ccf9d2474b34e6a"></a>NEAREST&#160;</td><td class="fielddoc"><p>i or j, whichever is nearest </p>
+<tr><td class="fieldname"><a id="a7f32c8210bb99fa8f28b23fd359e2e8baad135772d7cf93dd0ccf9d2474b34e6a"></a>NEAREST&#160;</td><td class="fielddoc"><p>i or j, whichever is nearest </p>
 </td></tr>
 </table>
 
@@ -3007,8 +3007,8 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151">interpolation</a>&#160;</td>
-          <td class="paramname"><em>i</em> = <code><a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151aaac544aacc3615aada24897a215f5046">interpolation::LINEAR</a></code>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8b">interpolation</a>&#160;</td>
+          <td class="paramname"><em>i</em> = <code><a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8baaac544aacc3615aada24897a215f5046">interpolation::LINEAR</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -3261,8 +3261,8 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151">interpolation</a>&#160;</td>
-          <td class="paramname"><em>interp</em> = <code><a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151aaac544aacc3615aada24897a215f5046">interpolation::LINEAR</a></code>, </td>
+          <td class="paramtype"><a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8b">interpolation</a>&#160;</td>
+          <td class="paramname"><em>interp</em> = <code><a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8baaac544aacc3615aada24897a215f5046">interpolation::LINEAR</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -3313,8 +3313,8 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151">interpolation</a>&#160;</td>
-          <td class="paramname"><em>interp</em> = <code><a class="el" href="namespacecudf_1_1experimental.html#a5f4f0e0f1bfa906673bf5c2a2b13b151aad135772d7cf93dd0ccf9d2474b34e6a">interpolation::NEAREST</a></code>, </td>
+          <td class="paramtype"><a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8b">interpolation</a>&#160;</td>
+          <td class="paramname"><em>interp</em> = <code><a class="el" href="namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8baad135772d7cf93dd0ccf9d2474b34e6a">interpolation::NEAREST</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -4908,8 +4908,8 @@ template&lt;typename T &gt; </div>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="anamespacecudf_1_1experimental_html_a1b56089ab0490194a96cdfd249a72181"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a1b56089ab0490194a96cdfd249a72181">cudf::experimental::concatenate</a></div><div class="ttdeci">std::unique_ptr&lt; table &gt; concatenate(std::vector&lt; table_view &gt; const &amp;tables_to_concat, rmm::mr::device_memory_resource *mr, cudaStream_t stream)</div><div class="ttdoc">Columns of tables_to_concat are concatenated vertically to return a single table_view.</div><div class="ttdef"><b>Definition:</b> table.cpp:91</div></div>
-<div class="ttc" id="aclasscudf_1_1data__type_html"><div class="ttname"><a href="classcudf_1_1data__type.html">cudf::data_type</a></div><div class="ttdoc">Indicator for the logical data type of an element in a column.</div><div class="ttdef"><b>Definition:</b> types.hpp:179</div></div>
-<div class="ttc" id="anamespacecudf_html_acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae"><div class="ttname"><a href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae">cudf::INT32</a></div><div class="ttdoc">4 byte signed integer</div><div class="ttdef"><b>Definition:</b> types.hpp:157</div></div>
+<div class="ttc" id="aclasscudf_1_1data__type_html"><div class="ttname"><a href="classcudf_1_1data__type.html">cudf::data_type</a></div><div class="ttdoc">Indicator for the logical data type of an element in a column.</div><div class="ttdef"><b>Definition:</b> types.hpp:182</div></div>
+<div class="ttc" id="anamespacecudf_html_acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae"><div class="ttname"><a href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae">cudf::INT32</a></div><div class="ttdoc">4 byte signed integer</div><div class="ttdef"><b>Definition:</b> types.hpp:160</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
