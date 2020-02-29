@@ -657,6 +657,50 @@ dask dataframe output. Default will be array in the future.</p>
 <h3>Metrics<a class="headerlink" href="#metrics" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><span class="target" id="module-cuml.metrics.regression"></span><dl class="function">
+<dt id="cuml.metrics.regression.mean_squared_error">
+<code class="sig-prename descclassname">cuml.metrics.regression.</code><code class="sig-name descname">mean_squared_error</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.metrics.regression.mean_squared_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean squared error regression loss</p>
+<p>Be careful when using this metric with float32 inputs as the result can be
+slightly incorrect because of floating point precision if the input is
+large enough. We recommend to use float64 instead.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>y_true</strong><span class="classifier">array-like (device or host) shape = (n_samples,)</span></dt><dd><p>or (n_samples, n_outputs)
+Ground truth (correct) target values.</p>
+</dd>
+<dt><strong>y_pred</strong><span class="classifier">array-like (device or host) shape = (n_samples,)</span></dt><dd><p>or (n_samples, n_outputs)
+Estimated target values.</p>
+</dd>
+<dt><strong>sample_weight</strong><span class="classifier">array-like (device or host) shape = (n_samples,), optional</span></dt><dd><p>Sample weights.</p>
+</dd>
+<dt><strong>multioutput</strong><span class="classifier">string in [‘raw_values’, ‘uniform_average’]</span></dt><dd><p>or array-like of shape (n_outputs)
+Defines aggregating of multiple output values.
+Array-like value defines weights used to average errors.
+‘raw_values’ :</p>
+<blockquote>
+<div><p>Returns a full set of errors in case of multioutput input.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>‘uniform_average’ :</dt><dd><p>Errors of all outputs are averaged with uniform weight.</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>squared</strong><span class="classifier">boolean value, optional (default = True)</span></dt><dd><p>If True returns MSE value, if False returns RMSE value.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>loss</strong><span class="classifier">float or ndarray of floats</span></dt><dd><p>A non-negative floating point value (the best value is 0.0), or an
+array of floating point values, one for each individual target.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
 <dt id="cuml.metrics.regression.r2_score">
 <code class="sig-prename descclassname">cuml.metrics.regression.</code><code class="sig-name descname">r2_score</code><span class="sig-paren">(</span><em class="sig-param">y</em>, <em class="sig-param">y_hat</em>, <em class="sig-param">convert_dtype=False</em>, <em class="sig-param">handle=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.metrics.regression.r2_score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates r2 score between y and y_hat</p>
@@ -1112,14 +1156,11 @@ is a regression task (predicting a continuous variable).</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LinearRegression.fit" title="cuml.LinearRegression.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Fit the model with X and y.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.LinearRegression.get_params" title="cuml.LinearRegression.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
-<td><p>Scikit-learn style function that returns the estimator parameters.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.LinearRegression.get_param_names" title="cuml.LinearRegression.get_param_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_param_names</span></code></a>(self)</p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.LinearRegression.predict" title="cuml.LinearRegression.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Predicts <cite>y</cite> values for <cite>X</cite>.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.LinearRegression.set_params" title="cuml.LinearRegression.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
-<td><p>Sklearn style set parameter state to dictionary of params.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1148,17 +1189,9 @@ will increase memory used for the method.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="cuml.LinearRegression.get_params">
-<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LinearRegression.get_params" title="Permalink to this definition">¶</a></dt>
-<dd><p>Scikit-learn style function that returns the estimator parameters.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>deep</strong><span class="classifier">boolean (default = True)</span></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
+<dt id="cuml.LinearRegression.get_param_names">
+<code class="sig-name descname">get_param_names</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LinearRegression.get_param_names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.LinearRegression.predict">
@@ -1181,19 +1214,6 @@ will increase memory used for the method.</p>
 <dd class="field-even"><dl class="simple">
 <dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
 </dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="cuml.LinearRegression.set_params">
-<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.LinearRegression.set_params" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sklearn style set parameter state to dictionary of params.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>params</strong><span class="classifier">dict of new params</span></dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -2724,7 +2744,7 @@ If features are drawn with or without replacement</p>
 <dt><strong>rows_sample</strong><span class="classifier">float (default = 1.0)</span></dt><dd><p>Ratio of dataset rows used while fitting each tree.</p>
 </dd>
 <dt><strong>max_depth</strong><span class="classifier">int (default = 16)</span></dt><dd><p>Maximum tree depth. Unlimited (i.e, until leaves are pure),
-if -1. Unlimited depth is not supported with split_algo=1.
+if -1. Unlimited depth is not supported.
 <em>Note that this default differs from scikit-learn’s
 random forest, which defaults to unlimited depth.</em></p>
 </dd>
@@ -3056,7 +3076,7 @@ If features are drawn with or without replacement</p>
 <dt><strong>rows_sample</strong><span class="classifier">float (default = 1.0)</span></dt><dd><p>Ratio of dataset rows used while fitting each tree.</p>
 </dd>
 <dt><strong>max_depth</strong><span class="classifier">int (default = 16)</span></dt><dd><p>Maximum tree depth. Unlimited (i.e, until leaves are pure),
-if -1. Unlimited depth is not supported with split_algo=1.
+if -1. Unlimited depth is not supported.
 <em>Note that this default differs from scikit-learn’s
 random forest, which defaults to unlimited depth.</em></p>
 </dd>
@@ -3069,7 +3089,7 @@ if -1.</p>
 per node split.
 If int then max_features/n_features.
 If float then max_features is used as a fraction.
-If ‘auto’ then max_features=1/sqrt(n_features).
+If ‘auto’ then max_features=1.0 .
 If ‘sqrt’ then max_features=1/sqrt(n_features).
 If ‘log2’ then max_features=log2(n_features)/n_features.</p>
 </dd>
