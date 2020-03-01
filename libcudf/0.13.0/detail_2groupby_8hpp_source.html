@@ -103,7 +103,7 @@ $(function() {
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// Hash-based groupby</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;std::pair&lt;std::unique_ptr&lt;table&gt;, std::vector&lt;aggregation_result&gt;&gt; groupby(</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    table_view <span class="keyword">const</span>&amp; keys, std::vector&lt;aggregation_request&gt; <span class="keyword">const</span>&amp; requests,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">bool</span> ignore_null_keys,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="namespacecudf.html#ae51c2406f86ad22ed958184037fef8d0">include_nulls</a> include_null_keys,</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    cudaStream_t stream, rmm::mr::device_memory_resource* mr);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}  <span class="comment">// namespace hash</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
@@ -112,6 +112,7 @@ $(function() {
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}  <span class="comment">// namespace experimental</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}  <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespacecudf_html_ae51c2406f86ad22ed958184037fef8d0"><div class="ttname"><a href="namespacecudf.html#ae51c2406f86ad22ed958184037fef8d0">cudf::include_nulls</a></div><div class="ttdeci">include_nulls</div><div class="ttdoc">Enum to specify whether to include nulls or exclude nulls.</div><div class="ttdef"><b>Definition:</b> types.hpp:104</div></div>
 <div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div><div class="ttdoc">Type declarations for libcudf.</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">cuDF interfaces</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:23</div></div>
 <div class="ttc" id="anamespacecudf_html_a4e682abfb2a17865a3d4d94b24f9e5a3"><div class="ttname"><a href="namespacecudf.html#a4e682abfb2a17865a3d4d94b24f9e5a3">cudf::hash</a></div><div class="ttdeci">std::unique_ptr&lt; column &gt; hash(table_view const &amp;input, std::vector&lt; uint32_t &gt; const &amp;initial_hash, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Computes the hash value of each row in the input set of columns.</div><div class="ttdef"><b>Definition:</b> hashing.cu:685</div></div>

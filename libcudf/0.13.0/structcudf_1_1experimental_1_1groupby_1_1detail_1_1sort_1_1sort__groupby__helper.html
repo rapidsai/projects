@@ -100,9 +100,9 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>bitmask_vector_ptr</
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7fa58d19e4647ad911c849f731a0fecf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1groupby_1_1detail_1_1sort_1_1sort__groupby__helper.html#a7fa58d19e4647ad911c849f731a0fecf">sort_groupby_helper</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;keys, bool ignore_null_keys=true, bool keys_pre_sorted=false)</td></tr>
-<tr class="memdesc:a7fa58d19e4647ad911c849f731a0fecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new helper object.  <a href="structcudf_1_1experimental_1_1groupby_1_1detail_1_1sort_1_1sort__groupby__helper.html#a7fa58d19e4647ad911c849f731a0fecf">More...</a><br /></td></tr>
-<tr class="separator:a7fa58d19e4647ad911c849f731a0fecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7a3108e52ae37478a9c420f3a79a8ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1groupby_1_1detail_1_1sort_1_1sort__groupby__helper.html#ae7a3108e52ae37478a9c420f3a79a8ad">sort_groupby_helper</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;keys, <a class="el" href="namespacecudf.html#ae51c2406f86ad22ed958184037fef8d0">include_nulls</a> include_null_keys=include_nulls::NO, <a class="el" href="namespacecudf.html#ab283c517931abd4152ffa62fec62425d">sorted</a> keys_pre_sorted=sorted::NO)</td></tr>
+<tr class="memdesc:ae7a3108e52ae37478a9c420f3a79a8ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new helper object.  <a href="structcudf_1_1experimental_1_1groupby_1_1detail_1_1sort_1_1sort__groupby__helper.html#ae7a3108e52ae37478a9c420f3a79a8ad">More...</a><br /></td></tr>
+<tr class="separator:ae7a3108e52ae37478a9c420f3a79a8ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadb70865876f76e6aab6f9e21e65a5f1"><td class="memItemLeft" align="right" valign="top"><a id="aadb70865876f76e6aab6f9e21e65a5f1"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>sort_groupby_helper</b> (<a class="el" href="structcudf_1_1experimental_1_1groupby_1_1detail_1_1sort_1_1sort__groupby__helper.html">sort_groupby_helper</a> const &amp;)=delete</td></tr>
 <tr class="separator:aadb70865876f76e6aab6f9e21e65a5f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,6 +124,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a189e03abe0f6ef5407b6890def655520"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1groupby_1_1detail_1_1sort_1_1sort__groupby__helper.html#a189e03abe0f6ef5407b6890def655520">unique_keys</a> (rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource(), <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
 <tr class="memdesc:a189e03abe0f6ef5407b6890def655520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a table of sorted unique keys.  <a href="structcudf_1_1experimental_1_1groupby_1_1detail_1_1sort_1_1sort__groupby__helper.html#a189e03abe0f6ef5407b6890def655520">More...</a><br /></td></tr>
 <tr class="separator:a189e03abe0f6ef5407b6890def655520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad27984491f218f4ad5ad86a802e2ca7a"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1groupby_1_1detail_1_1sort_1_1sort__groupby__helper.html#ad27984491f218f4ad5ad86a802e2ca7a">sorted_keys</a> (rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource(), <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
+<tr class="memdesc:ad27984491f218f4ad5ad86a802e2ca7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a table of sorted keys.  <a href="structcudf_1_1experimental_1_1groupby_1_1detail_1_1sort_1_1sort__groupby__helper.html#ad27984491f218f4ad5ad86a802e2ca7a">More...</a><br /></td></tr>
+<tr class="separator:ad27984491f218f4ad5ad86a802e2ca7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a453906499df583f747d19105550c552c"><td class="memItemLeft" align="right" valign="top"><a id="a453906499df583f747d19105550c552c"></a>
 size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1experimental_1_1groupby_1_1detail_1_1sort_1_1sort__groupby__helper.html#a453906499df583f747d19105550c552c">num_groups</a> ()</td></tr>
 <tr class="memdesc:a453906499df583f747d19105550c552c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of groups in <code>keys</code> <br /></td></tr>
@@ -149,8 +152,8 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <li>Group valid sizes: The number of valid values in each group in a sorted value column </li>
 </ol>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a7fa58d19e4647ad911c849f731a0fecf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fa58d19e4647ad911c849f731a0fecf">&#9670;&nbsp;</a></span>sort_groupby_helper()</h2>
+<a id="ae7a3108e52ae37478a9c420f3a79a8ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7a3108e52ae37478a9c420f3a79a8ad">&#9670;&nbsp;</a></span>sort_groupby_helper()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -167,14 +170,14 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>ignore_null_keys</em> = <code>true</code>, </td>
+          <td class="paramtype"><a class="el" href="namespacecudf.html#ae51c2406f86ad22ed958184037fef8d0">include_nulls</a>&#160;</td>
+          <td class="paramname"><em>include_null_keys</em> = <code>include_nulls::NO</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>keys_pre_sorted</em> = <code>false</code>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacecudf.html#ab283c517931abd4152ffa62fec62425d">sorted</a>&#160;</td>
+          <td class="paramname"><em>keys_pre_sorted</em> = <code>sorted::NO</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -190,11 +193,11 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 </div><div class="memdoc">
 
 <p>Construct a new helper object. </p>
-<p>If <code>ignore_null_keys == true</code>, then any row in <code>keys</code> containing a null value will effectively be discarded. I.e., any values corresponding to discarded rows in <code>keys</code> will not contribute to any aggregation.</p>
+<p>If <code>include_null_keys == NO</code>, then any row in <code>keys</code> containing a null value will effectively be discarded. I.e., any values corresponding to discarded rows in <code>keys</code> will not contribute to any aggregation.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">keys</td><td>table to group by </td></tr>
-    <tr><td class="paramname">ignore_null_keys</td><td>Ignore rows in keys with nulls </td></tr>
+    <tr><td class="paramname">include_null_keys</td><td>Include rows in keys with nulls </td></tr>
     <tr><td class="paramname">keys_pre_sorted</td><td>Indicate if the keys are already sorted. Enables optimizations to help skip re-sorting keys. </td></tr>
   </table>
   </dd>
@@ -316,6 +319,7 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 
 <p>Get the sorted order of <code>keys</code>. </p>
 <p>Gathering <code>keys</code> by sort order indices will produce the sorted key table.</p>
+<p>When ignore_null_keys = true, the result will not include indices for null keys.</p>
 <p>Computes and stores the key sorted order on first invocation, and returns the stored order on subsequent calls.</p>
 <dl class="section return"><dt>Returns</dt><dd>the sort order indices for <code>keys</code>. </dd></dl>
 
@@ -338,7 +342,38 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 </div><div class="memdoc">
 
 <p>Return the effective number of keys. </p>
-<p>When ignore_null_keys = false, returned value is same as <code>keys.num_rows()</code> When ignore_null_keys = true, returned value is the number of rows in <code>keys</code> in which no element is null </p>
+<p>When include_null_keys = YES, returned value is same as <code>keys.num_rows()</code> When include_null_keys = NO, returned value is the number of rows in <code>keys</code> in which no element is null </p>
+
+</div>
+</div>
+<a id="ad27984491f218f4ad5ad86a802e2ca7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad27984491f218f4ad5ad86a802e2ca7a">&#9670;&nbsp;</a></span>sorted_keys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt; cudf::experimental::groupby::detail::sort::sort_groupby_helper::sorted_keys </td>
+          <td>(</td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a table of sorted keys. </p>
+<dl class="section return"><dt>Returns</dt><dd>a new table containing the sorted keys. </dd></dl>
 
 </div>
 </div>

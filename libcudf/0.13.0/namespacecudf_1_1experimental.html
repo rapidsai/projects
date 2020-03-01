@@ -154,10 +154,6 @@ Enumerations</h2></td></tr>
 <b>PTX</b>
  }</td></tr>
 <tr class="separator:af3c5acc541194664ced90465dfd164f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f0da8822c046cd38226456dcd4849e2"><td class="memItemLeft" align="right" valign="top"><a id="a1f0da8822c046cd38226456dcd4849e2"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>include_nulls</b> : bool { <b>YES</b>, 
-<b>NO</b>
- }</td></tr>
-<tr class="separator:a1f0da8822c046cd38226456dcd4849e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af98fab32c66e913a0096c1a3789c5701"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#af98fab32c66e913a0096c1a3789c5701">binary_operator</a> { <br />
 &#160;&#160;<a class="el" href="namespacecudf_1_1experimental.html#af98fab32c66e913a0096c1a3789c5701a9eeb52badb613229884838847294b90d">binary_operator::ADD</a>, 
 <a class="el" href="namespacecudf_1_1experimental.html#af98fab32c66e913a0096c1a3789c5701a241dd841abade20fcb27b8a9f494e1eb">binary_operator::SUB</a>, 
@@ -273,7 +269,7 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation
 std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a9fc2befe60625f484eb0e7493e91776c">make_max_aggregation</a> ()</td></tr>
 <tr class="memdesc:a9fc2befe60625f484eb0e7493e91776c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a MAX aggregation. <br /></td></tr>
 <tr class="separator:a9fc2befe60625f484eb0e7493e91776c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5c8a54cfeb7581ff1428565b3cd38ad"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ad5c8a54cfeb7581ff1428565b3cd38ad">make_count_aggregation</a> (include_nulls _include_nulls)</td></tr>
+<tr class="memitem:ad5c8a54cfeb7581ff1428565b3cd38ad"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ad5c8a54cfeb7581ff1428565b3cd38ad">make_count_aggregation</a> (<a class="el" href="namespacecudf.html#ae51c2406f86ad22ed958184037fef8d0">include_nulls</a> _include_nulls)</td></tr>
 <tr class="memdesc:ad5c8a54cfeb7581ff1428565b3cd38ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a COUNT aggregation.  <a href="namespacecudf_1_1experimental.html#ad5c8a54cfeb7581ff1428565b3cd38ad">More...</a><br /></td></tr>
 <tr class="separator:ad5c8a54cfeb7581ff1428565b3cd38ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89044ba69340e576d1d046eda741b573"><td class="memItemLeft" align="right" valign="top"><a id="a89044ba69340e576d1d046eda741b573"></a>
@@ -311,9 +307,12 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation
 <tr class="memitem:af87231ab8430ae7b296c3a0110096b26"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#af87231ab8430ae7b296c3a0110096b26">make_argmin_aggregation</a> ()</td></tr>
 <tr class="memdesc:af87231ab8430ae7b296c3a0110096b26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a ARGMIN aggregation.  <a href="namespacecudf_1_1experimental.html#af87231ab8430ae7b296c3a0110096b26">More...</a><br /></td></tr>
 <tr class="separator:af87231ab8430ae7b296c3a0110096b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa356bff501c540949736fc5ea967359b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#aa356bff501c540949736fc5ea967359b">make_nunique_aggregation</a> (include_nulls _include_nulls)</td></tr>
+<tr class="memitem:aa356bff501c540949736fc5ea967359b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#aa356bff501c540949736fc5ea967359b">make_nunique_aggregation</a> (<a class="el" href="namespacecudf.html#ae51c2406f86ad22ed958184037fef8d0">include_nulls</a> _include_nulls)</td></tr>
 <tr class="memdesc:aa356bff501c540949736fc5ea967359b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a NUNIQUE aggregation.  <a href="namespacecudf_1_1experimental.html#aa356bff501c540949736fc5ea967359b">More...</a><br /></td></tr>
 <tr class="separator:aa356bff501c540949736fc5ea967359b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae65c330b12467409c61894c54b2fb789"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ae65c330b12467409c61894c54b2fb789">make_nth_element_aggregation</a> (size_type n, <a class="el" href="namespacecudf.html#ae51c2406f86ad22ed958184037fef8d0">include_nulls</a> _include_nulls)</td></tr>
+<tr class="memdesc:ae65c330b12467409c61894c54b2fb789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a NTH_ELEMENT aggregation.  <a href="namespacecudf_1_1experimental.html#ae65c330b12467409c61894c54b2fb789">More...</a><br /></td></tr>
+<tr class="separator:ae65c330b12467409c61894c54b2fb789"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03b177a3721692f887f0ec3386bc6ace"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a03b177a3721692f887f0ec3386bc6ace">make_udf_aggregation</a> (udf_type type, std::string const &amp;user_defined_aggregator, <a class="el" href="classcudf_1_1data__type.html">data_type</a> output_type)</td></tr>
 <tr class="memdesc:a03b177a3721692f887f0ec3386bc6ace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to create a UDF aggregation.  <a href="namespacecudf_1_1experimental.html#a03b177a3721692f887f0ec3386bc6ace">More...</a><br /></td></tr>
 <tr class="separator:a03b177a3721692f887f0ec3386bc6ace"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -434,7 +433,7 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html"
 <tr class="memitem:a965295f5f5e0fa38d0c74a2c8b4ec3d9"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1scalar.html">scalar</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a965295f5f5e0fa38d0c74a2c8b4ec3d9">reduce</a> (const <a class="el" href="classcudf_1_1column__view.html">column_view</a> &amp;col, std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; const &amp;agg, <a class="el" href="classcudf_1_1data__type.html">data_type</a> output_dtype, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a965295f5f5e0fa38d0c74a2c8b4ec3d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the reduction of the values in all rows of a column. This function does not detect overflows in reductions. Using a higher precision <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> may prevent overflow. Only <code>min</code> and <code>max</code> ops are supported for reduction of non-arithmetic types (timestamp, string...). The null values are skipped for the operation. If the column is empty, the member <code><a class="el" href="namespacecudf_1_1experimental.html#aeb3f89042ed2eb6a4a38a86919f526bc" title="Creates a column of BOOL8 elements where for every element in input true indicates the value is valid...">is_valid()</a></code> of the output scalar will contain <code>false</code>.  <a href="namespacecudf_1_1experimental.html#a965295f5f5e0fa38d0c74a2c8b4ec3d9">More...</a><br /></td></tr>
 <tr class="separator:a965295f5f5e0fa38d0c74a2c8b4ec3d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fb513cb9b4c26c11309b8b7c957724a"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a3fb513cb9b4c26c11309b8b7c957724a">scan</a> (const <a class="el" href="classcudf_1_1column__view.html">column_view</a> &amp;input, std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; const &amp;agg, scan_type inclusive, include_nulls include_nulls_flag=include_nulls::NO, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memitem:a3fb513cb9b4c26c11309b8b7c957724a"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a3fb513cb9b4c26c11309b8b7c957724a">scan</a> (const <a class="el" href="classcudf_1_1column__view.html">column_view</a> &amp;input, std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; const &amp;agg, scan_type inclusive, <a class="el" href="namespacecudf.html#ae51c2406f86ad22ed958184037fef8d0">include_nulls</a> include_nulls_flag=include_nulls::NO, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a3fb513cb9b4c26c11309b8b7c957724a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the scan of a column. The null values are skipped for the operation, and if an input element at <code>i</code> is null, then the output element at <code>i</code> will also be null.  <a href="namespacecudf_1_1experimental.html#a3fb513cb9b4c26c11309b8b7c957724a">More...</a><br /></td></tr>
 <tr class="separator:a3fb513cb9b4c26c11309b8b7c957724a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab59b75670715814a0280eafbf434129a"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ab59b75670715814a0280eafbf434129a">clamp</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;lo, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;lo_replace, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;hi, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;hi_replace, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
@@ -2948,7 +2947,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
         <tr>
           <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; cudf::experimental::make_count_aggregation </td>
           <td>(</td>
-          <td class="paramtype">include_nulls&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacecudf.html#ae51c2406f86ad22ed958184037fef8d0">include_nulls</a>&#160;</td>
           <td class="paramname"><em>_include_nulls</em> = <code>include_nulls::NO</code></td><td>)</td>
           <td></td>
         </tr>
@@ -2965,6 +2964,46 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
 
 </div>
 </div>
+<a id="ae65c330b12467409c61894c54b2fb789"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae65c330b12467409c61894c54b2fb789">&#9670;&nbsp;</a></span>make_nth_element_aggregation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; cudf::experimental::make_nth_element_aggregation </td>
+          <td>(</td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacecudf.html#ae51c2406f86ad22ed958184037fef8d0">include_nulls</a>&#160;</td>
+          <td class="paramname"><em>_include_nulls</em> = <code>include_nulls::YES</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Factory to create a NTH_ELEMENT aggregation. </p>
+<p>Factory to create a <code>nth_element</code> aggregation.</p>
+<p><code>nth_element</code> returns the n'th element of the group/series.</p>
+<p>If <code>n</code> is not within the range <code>[-group_size, group_size)</code>, the result of the respective group will be null. Negative indices <code>[-group_size, -1]</code> corresponds to <code>[0, group_size-1]</code> indices respectively where <code>group_size</code> is the size of each group.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>index of nth element in each group. </td></tr>
+    <tr><td class="paramname">_include_nulls</td><td>include nulls during indexing. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa356bff501c540949736fc5ea967359b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa356bff501c540949736fc5ea967359b">&#9670;&nbsp;</a></span>make_nunique_aggregation()</h2>
 
@@ -2974,7 +3013,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
         <tr>
           <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation.html">aggregation</a> &gt; cudf::experimental::make_nunique_aggregation </td>
           <td>(</td>
-          <td class="paramtype">include_nulls&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacecudf.html#ae51c2406f86ad22ed958184037fef8d0">include_nulls</a>&#160;</td>
           <td class="paramname"><em>_include_nulls</em> = <code>include_nulls::NO</code></td><td>)</td>
           <td></td>
         </tr>
@@ -3964,7 +4003,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">include_nulls&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacecudf.html#ae51c2406f86ad22ed958184037fef8d0">include_nulls</a>&#160;</td>
           <td class="paramname"><em>include_nulls_flag</em> = <code>include_nulls::NO</code>, </td>
         </tr>
         <tr>
@@ -4908,8 +4947,8 @@ template&lt;typename T &gt; </div>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="anamespacecudf_1_1experimental_html_a1b56089ab0490194a96cdfd249a72181"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a1b56089ab0490194a96cdfd249a72181">cudf::experimental::concatenate</a></div><div class="ttdeci">std::unique_ptr&lt; table &gt; concatenate(std::vector&lt; table_view &gt; const &amp;tables_to_concat, rmm::mr::device_memory_resource *mr, cudaStream_t stream)</div><div class="ttdoc">Columns of tables_to_concat are concatenated vertically to return a single table_view.</div><div class="ttdef"><b>Definition:</b> table.cpp:91</div></div>
-<div class="ttc" id="aclasscudf_1_1data__type_html"><div class="ttname"><a href="classcudf_1_1data__type.html">cudf::data_type</a></div><div class="ttdoc">Indicator for the logical data type of an element in a column.</div><div class="ttdef"><b>Definition:</b> types.hpp:182</div></div>
-<div class="ttc" id="anamespacecudf_html_acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae"><div class="ttname"><a href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae">cudf::INT32</a></div><div class="ttdoc">4 byte signed integer</div><div class="ttdef"><b>Definition:</b> types.hpp:160</div></div>
+<div class="ttc" id="aclasscudf_1_1data__type_html"><div class="ttname"><a href="classcudf_1_1data__type.html">cudf::data_type</a></div><div class="ttdoc">Indicator for the logical data type of an element in a column.</div><div class="ttdef"><b>Definition:</b> types.hpp:190</div></div>
+<div class="ttc" id="anamespacecudf_html_acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae"><div class="ttname"><a href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae">cudf::INT32</a></div><div class="ttdoc">4 byte signed integer</div><div class="ttdef"><b>Definition:</b> types.hpp:168</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
