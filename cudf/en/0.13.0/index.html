@@ -43,43 +43,49 @@
       <div class="version">
        0.13
       </div>
-      <div class="library-selector-container" style="margin-bottom: .809em">
+      <div id="library-selector-container">
        <select id="library-selector">
-        <option value="clx">
+        <option value="/clx/en/stable/api.html">
          clx
         </option>
-        <option selected value="cudf">
+        <option selected value="/cudf/en/stable/api.html">
          cudf
         </option>
-        <option value="cugraph">
+        <option value="/cugraph/en/stable/api.html">
          cugraph
         </option>
-        <option value="cuml">
+        <option value="/cuml/en/stable/api.html">
          cuml
         </option>
-        <option value="libcudf">
+        <option value="/cuspatial/en/nightly/api.html">
+         cuspatial
+        </option>
+        <option value="/cuxfilter/en/nightly">
+         cuxfilter
+        </option>
+        <option value="/libcudf/stable/namespacecudf.html">
          libcudf
         </option>
-        <option value="libnvstrings">
+        <option value="/libnvstrings/stable/annotated.html">
          libnvstrings
         </option>
-        <option value="nvstrings">
+        <option value="/nvstrings/en/stable/api.html">
          nvstrings
         </option>
-        <option value="rmm">
+        <option value="/rmm/stable/annotated.html">
          rmm
         </option>
        </select>
       </div>
-      <div class="version-selector-container">
+      <div id="version-selector-container">
        <select id="version-selector">
-        <option selected value="nightly">
+        <option selected value="/cudf/en/nightly/api.html">
          nightly (0.13)
         </option>
-        <option value="stable">
+        <option value="/cudf/en/stable/api.html">
          stable (0.12)
         </option>
-        <option value="legacy">
+        <option value="/cudf/en/legacy/api.html">
          legacy (0.11)
         </option>
        </select>
@@ -508,6 +514,21 @@
    jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
+  </script>
+  <script defer id="selector-js">
+   var selectors = ["#library-selector", "#version-selector"];
+
+for (var i = 0; i < selectors.length; i++) {
+  var selector = selectors[i];
+
+  document.querySelector(selector).addEventListener("change", function(e) {
+    var selectedLibraryPath = e.target.value;
+    var isOnRapidsAi = document.location.host.indexOf("rapids.ai") !== -1;
+    var nextPagePrefix = isOnRapidsAi ? "/api" : "";
+
+    location = nextPagePrefix + selectedLibraryPath;
+  });
+}
   </script>
  </body>
 </html>
