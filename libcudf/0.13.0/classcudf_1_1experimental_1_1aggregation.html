@@ -85,11 +85,12 @@ Inheritance diagram for cudf::experimental::aggregation:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcudf_1_1experimental_1_1aggregation__inherit__graph.png" border="0" usemap="#cudf_1_1experimental_1_1aggregation_inherit__map" alt="Inheritance graph"/></div>
 <map name="cudf_1_1experimental_1_1aggregation_inherit__map" id="cudf_1_1experimental_1_1aggregation_inherit__map">
-<area shape="rect" title="Base class for specifying the desired aggregation in an aggregation_request." alt="" coords="5,104,208,145"/>
-<area shape="rect" href="structcudf_1_1experimental_1_1detail_1_1nunique__aggregation.html" title="Derived class for specifying a nunique aggregation." alt="" coords="261,5,573,47"/>
-<area shape="rect" href="structcudf_1_1experimental_1_1detail_1_1quantile__aggregation.html" title="Derived class for specifying a quantile aggregation." alt="" coords="256,71,579,112"/>
-<area shape="rect" href="structcudf_1_1experimental_1_1detail_1_1std__var__aggregation.html" title="Derived class for specifying a standard deviation/variance aggregation." alt="" coords="261,136,573,177"/>
-<area shape="rect" href="structcudf_1_1experimental_1_1detail_1_1udf__aggregation.html" title="Derived class for specifying a custom aggregation specified in udf." alt="" coords="281,201,553,243"/>
+<area shape="rect" title="Base class for specifying the desired aggregation in an aggregation_request." alt="" coords="5,151,208,193"/>
+<area shape="rect" href="structcudf_1_1experimental_1_1detail_1_1nth__element__aggregation.html" title="Derived class for specifying a nth element aggregation." alt="" coords="301,5,533,61"/>
+<area shape="rect" href="structcudf_1_1experimental_1_1detail_1_1nunique__aggregation.html" title="Derived class for specifying a nunique aggregation." alt="" coords="261,86,573,127"/>
+<area shape="rect" href="structcudf_1_1experimental_1_1detail_1_1quantile__aggregation.html" title="Derived class for specifying a quantile aggregation." alt="" coords="256,151,579,193"/>
+<area shape="rect" href="structcudf_1_1experimental_1_1detail_1_1std__var__aggregation.html" title="Derived class for specifying a standard deviation/variance aggregation." alt="" coords="261,217,573,258"/>
+<area shape="rect" href="structcudf_1_1experimental_1_1detail_1_1udf__aggregation.html" title="Derived class for specifying a custom aggregation specified in udf." alt="" coords="281,282,553,323"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -117,6 +118,7 @@ Public Types</h2></td></tr>
 <a class="el" href="classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189da187383372c763e01019b27ee326ba51c">ARGMIN</a>, 
 <br />
 &#160;&#160;<a class="el" href="classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189da30e4bbcd5f0815b201f17acb039af8d0">NUNIQUE</a>, 
+<a class="el" href="classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189da2b4776304565af720d30cc7b664edfb3">NTH_ELEMENT</a>, 
 <a class="el" href="classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189daad2990a77e3673a91a831b5b42fa0b4d">PTX</a>, 
 <a class="el" href="classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189da82cd17e37ab7e95eeed85197c72f24ea">CUDA</a>
 <br />
@@ -191,6 +193,8 @@ Public Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="a86a800d62c1b8a500f7920fd1ca0189da187383372c763e01019b27ee326ba51c"></a>ARGMIN&#160;</td><td class="fielddoc"><p>Index of min element. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a86a800d62c1b8a500f7920fd1ca0189da30e4bbcd5f0815b201f17acb039af8d0"></a>NUNIQUE&#160;</td><td class="fielddoc"><p>count number of unique elements </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a86a800d62c1b8a500f7920fd1ca0189da2b4776304565af720d30cc7b664edfb3"></a>NTH_ELEMENT&#160;</td><td class="fielddoc"><p>get the nth element </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a86a800d62c1b8a500f7920fd1ca0189daad2990a77e3673a91a831b5b42fa0b4d"></a>PTX&#160;</td><td class="fielddoc"><p>PTX UDF based reduction. </p>
 </td></tr>

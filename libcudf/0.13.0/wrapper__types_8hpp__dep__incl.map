@@ -5,7 +5,7 @@
 <area shape="rect" id="node5" href="$include_2cudf_2detail_2utilities_2device__atomics_8cuh.html" title="overloads for CUDA atomic operations" alt="" coords="431,80,633,107"/>
 <area shape="rect" id="node6" href="$legacy_2type__dispatcher_8hpp_source.html" title=" " alt="" coords="665,80,877,107"/>
 <area shape="rect" id="node4" href="$legacy_2rolling__detail_8hpp_source.html" title=" " alt="" coords="232,155,435,181"/>
-<area shape="rect" id="node7" href="$utils_8hpp_source.html" title=" " alt="" coords="628,229,740,256"/>
+<area shape="rect" id="node7" href="$legacy_2utils_8hpp_source.html" title=" " alt="" coords="628,229,740,256"/>
 <area shape="rect" id="node8" href="$src_2groupby_2sort_2legacy_2sort__helper_8hpp_source.html" title=" " alt="" coords="510,155,682,181"/>
 <area shape="rect" id="node9" href="$src_2iterator_2legacy_2iterator_8cuh.html" title="provide column input iterator with/without nulls" alt="" coords="706,155,849,181"/>
 <area shape="rect" id="node10" href="$jit_2legacy_2type_8h_source.html" title=" " alt="" coords="873,155,956,181"/>
