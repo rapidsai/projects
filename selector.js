@@ -2,30 +2,11 @@ var libSelector = document.querySelector("#library-selector");
 var versionSelector = document.querySelector("#version-selector");
 
 libSelector.addEventListener("change", function(e) {
-  var hasEnArray = [
-    "clx",
-    "cudf",
-    "cugraph",
-    "cuml",
-    "cuspatial",
-    "cuxfilter",
-    "nvstrings"
-  ];
-  var selectedLibrary = e.target.value;
-  var nextPagePath = "";
+  var selectedLibraryPath = e.target.value;
+  var isOnRapidsAi = document.location.host.indexOf("rapids.ai") !== -1;
+  var nextPagePrefix = isOnRapidsAi ? "/api" : "";
 
-  if (document.location.host.indexOf("rapids.ai") !== -1) {
-    nextPagePath += "/api";
-  }
-
-  nextPagePath += "/" + selectedLibrary;
-  if (hasEnArray.indexOf(selectedLibrary) !== -1) {
-    nextPagePath += "/en";
-  }
-
-  nextPagePath += "/stable/";
-
-  location = nextPagePath;
+  location = nextPagePrefix + selectedLibraryPath;
 });
 
 versionSelector.addEventListener("change", function(e) {

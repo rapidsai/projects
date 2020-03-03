@@ -1,39 +1,26 @@
 from bs4 import BeautifulSoup
 import re
-import argparse
+import sys
+import json
 
-parser = argparse.ArgumentParser(
-    description="Updates a given documentation HTML file to include version/lib selectors and remap Home button."
-)
-parser.add_argument("filepath")
-args = parser.parse_args()
+filepath = sys.argv[1]
 
-filepath = args.filepath
 docs_home = "https://docs.rapids.ai/api"
 stable_version = 12
-versions = {
+versions_dict = {
     "nightly": stable_version + 1,
     "stable": stable_version,
     "legacy": stable_version - 1,
 }
-libs = [
-    "clx",
-    "cudf",
-    "cugraph",
-    "cuml",
-    "cuspatial",
-    "cuxfilter",
-    "libcudf",
-    "libnvstrings",
-    "nvstrings",
-    "rmm",
-]
+with open("lib_map.json") as fp:
+    lib_path_dict = json.load(fp)
+
 library_container_id = "library-selector-container"
 version_container_id = "version-selector-container"
 script_tag_id = "selector-js"
 
 
-def get_doc_version():
+def get_version_from_fp():
     """
     Determines if the current html document is for legacy, stable, or nightly versions
     based on the file path
@@ -41,11 +28,22 @@ def get_doc_version():
     match = re.search(r"0.\d{1,3}.0", filepath)
     version_number = int(match[0].split(".")[1])
     version_name = "legacy"
-    if version_number == versions["nightly"]:
+    if version_number == versions_dict["nightly"]:
         version_name = "nightly"
-    if version_number == versions["stable"]:
+    if version_number == versions_dict["stable"]:
         version_name = "stable"
     return {"name": version_name, "number": version_number}
+
+
+def get_lib_from_fp():
+    """
+    Determines the current RAPIDS library based on the file path
+    """
+
+    for lib in lib_path_dict.keys():
+        if re.search(f"(^{lib}/|/{lib}/)", filepath):
+            return lib
+    raise Exception("Couldn't find valid library name in filepath.")
 
 
 def update_home_btn(soup):
@@ -63,15 +61,19 @@ def create_version_selector(soup):
     """
     version_div = soup.new_tag("div", id=version_container_id)
     version_selector = soup.new_tag("select", id="version-selector")
-    doc_version = get_doc_version()
-
-    for version_name, version_number in versions.items():
-        if (
-            doc_version["name"] is "legacy"
-            and version_name is "legacy"
-            and version_number is not doc_version["number"]
-        ):
+    doc_version = get_version_from_fp()
+    doc_lib = get_lib_from_fp()
+    doc_is_extra_legacy = (  # extra legacy means the doc version is older then current legacy
+        doc_version["name"] == "legacy"
+        and versions_dict["legacy"] != doc_version["number"]
+    )
+    for version_name, _ in [
+        (_, value) for _, value in lib_path_dict[doc_lib].items() if value is not None
+    ]:
+        if doc_is_extra_legacy and version_name == "legacy":
             version_number = doc_version["number"]
+        else:
+            version_number = versions_dict[version_name]
         option_el = soup.new_tag("option")
         option_el["value"] = version_name
         option_el.string = f"{version_name} (0.{str(version_number)})"
@@ -90,12 +92,21 @@ def create_library_selector(soup):
     """
     library_div = soup.new_tag("div", id=library_container_id)
     library_selector = soup.new_tag("select", id="library-selector")
+    doc_lib = get_lib_from_fp()
 
-    for lib in libs:
+    for lib, lib_versions in lib_path_dict.items():
+        if lib_versions["stable"]:
+            option_value = lib_versions["stable"]
+        elif lib_versions["nightly"]:
+            option_value = lib_versions["nightly"]
+        elif lib_versions["legacy"]:
+            option_value = lib_versions["legacy"]
+        else:
+            continue
         option_el = soup.new_tag("option")
-        option_el["value"] = lib
+        option_el["value"] = option_value
         option_el.string = lib
-        if re.search(f"(^{lib}/|/{lib}/)", filepath):
+        if lib == doc_lib:
             print(f"default lib: {lib}")
             option_el["selected"] = None
         library_selector.append(option_el)
@@ -110,9 +121,9 @@ def create_script_tag(soup):
     """
     with open("selector.js") as fp:
         js = fp.read()
-        script_tag = soup.new_tag("script", defer=None, id=script_tag_id)
-        script_tag.string = js
-        return script_tag
+    script_tag = soup.new_tag("script", defer=None, id=script_tag_id)
+    script_tag.string = js
+    return script_tag
 
 
 def delete_element(soup, selector):
