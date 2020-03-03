@@ -1,15 +1,13 @@
-var libSelector = document.querySelector("#library-selector");
-var versionSelector = document.querySelector("#version-selector");
+var selectors = ["#library-selector", "#version-selector"];
 
-libSelector.addEventListener("change", function(e) {
-  var selectedLibraryPath = e.target.value;
-  var isOnRapidsAi = document.location.host.indexOf("rapids.ai") !== -1;
-  var nextPagePrefix = isOnRapidsAi ? "/api" : "";
+for (var i = 0; i < selectors.length; i++) {
+  var selector = selectors[i];
 
-  location = nextPagePrefix + selectedLibraryPath;
-});
+  document.querySelector(selector).addEventListener("change", function(e) {
+    var selectedLibraryPath = e.target.value;
+    var isOnRapidsAi = document.location.host.indexOf("rapids.ai") !== -1;
+    var nextPagePrefix = isOnRapidsAi ? "/api" : "";
 
-versionSelector.addEventListener("change", function(e) {
-  var selectedVersion = e.target.value;
-  location = "../" + selectedVersion;
-});
+    location = nextPagePrefix + selectedLibraryPath;
+  });
+}

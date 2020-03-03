@@ -67,15 +67,15 @@ def create_version_selector(soup):
         doc_version["name"] == "legacy"
         and versions_dict["legacy"] != doc_version["number"]
     )
-    for version_name, _ in [
-        (_, value) for _, value in lib_path_dict[doc_lib].items() if value is not None
+    for version_name, version_path in [
+        (_, path) for _, path in lib_path_dict[doc_lib].items() if path is not None
     ]:
         if doc_is_extra_legacy and version_name == "legacy":
             version_number = doc_version["number"]
         else:
             version_number = versions_dict[version_name]
         option_el = soup.new_tag("option")
-        option_el["value"] = version_name
+        option_el["value"] = version_path
         option_el.string = f"{version_name} (0.{str(version_number)})"
         if version_name == doc_version["name"]:
             print(f"default version: {version_name}")
@@ -145,7 +145,7 @@ def main():
     print(f"--- {filepath} ---")
     with open(filepath) as fp:
         soup = BeautifulSoup(fp, "html.parser")
-    version_div = soup.select(".wy-side-nav-search div.version")[0]
+    search_div = soup.select(".wy-side-nav-search [role='search']")[0]
 
     # Delete any existing added elements
     for element in [version_container_id, library_container_id, script_tag_id]:
@@ -160,8 +160,8 @@ def main():
     script_tag = create_script_tag(soup)
 
     # Insert new elements
-    version_div.insert_after(version_selector)
-    version_div.insert_after(library_selector)
+    search_div.insert_before(library_selector)
+    search_div.insert_before(version_selector)
     soup.body.append(script_tag)
 
     with open(filepath, "w") as fp:
