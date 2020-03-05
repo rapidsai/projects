@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.13.0a+3019.g5127c7b9c documentation</title>
+  <title>API Reference &mdash; cudf 0.13.0a+3110.g01dd5717a documentation</title>
   
 
   
@@ -5816,7 +5816,7 @@ Columns are partitioned in the order they are given</p>
 
 <span class="target" id="module-cudf.io.orc"></span><dl class="function">
 <dt id="cudf.io.orc.read_orc">
-<code class="sig-prename descclassname">cudf.io.orc.</code><code class="sig-name descname">read_orc</code><span class="sig-paren">(</span><em class="sig-param">filepath_or_buffer</em>, <em class="sig-param">engine='cudf'</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">stripe=None</em>, <em class="sig-param">skip_rows=None</em>, <em class="sig-param">num_rows=None</em>, <em class="sig-param">use_index=True</em>, <em class="sig-param">decimals_as_float=True</em>, <em class="sig-param">force_decimal_scale=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.orc.read_orc" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cudf.io.orc.</code><code class="sig-name descname">read_orc</code><span class="sig-paren">(</span><em class="sig-param">filepath_or_buffer</em>, <em class="sig-param">engine='cudf'</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">stripe=None</em>, <em class="sig-param">stripe_count=None</em>, <em class="sig-param">skip_rows=None</em>, <em class="sig-param">num_rows=None</em>, <em class="sig-param">use_index=True</em>, <em class="sig-param">decimals_as_float=True</em>, <em class="sig-param">force_decimal_scale=None</em>, <em class="sig-param">timestamp_type=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.orc.read_orc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an ORC dataset into a DataFrame</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -5913,7 +5913,7 @@ available sources
 
 <dl class="function">
 <dt id="cudf.io.orc.to_orc">
-<code class="sig-prename descclassname">cudf.io.orc.</code><code class="sig-name descname">to_orc</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">fname</em>, <em class="sig-param">compression=None</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.orc.to_orc" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cudf.io.orc.</code><code class="sig-name descname">to_orc</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">fname</em>, <em class="sig-param">compression=None</em>, <em class="sig-param">enable_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.orc.to_orc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a DataFrame to the ORC format.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
