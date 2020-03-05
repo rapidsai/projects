@@ -1,7 +1,12 @@
 #!/bin/bash
 
+SPHINX_SEARCH_TERM='class="wy-side-nav-search"'
+DOXYGEN_SEARCH_TERM='id="titlearea"'
 
-for FILE in $(grep "wy-side-nav-search" -rl \
+# IFS is changed due to cuxfilter docs having spaces in their filenames
+OIFS="$IFS"
+IFS=$'\n'
+for FILE in $(grep "${SPHINX_SEARCH_TERM}\|${DOXYGEN_SEARCH_TERM}" -rl \
   --include=\*.html \
   --exclude-dir=stable \
   --exclude-dir=nightly \
@@ -9,5 +14,6 @@ for FILE in $(grep "wy-side-nav-search" -rl \
   --exclude-dir=legacy \
   . ); do
   python update_sidebar.py ${FILE}
-  echo ""
+  echo "" # line break for readability
 done
+IFS="$OIFS"

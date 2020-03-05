@@ -117,7 +117,7 @@ def create_library_selector(soup):
 
 def create_script_tag(soup):
     """
-    Creates a script tag with the contents of selector.js inside
+    Creates and returns a script tag with the contents of selector.js inside
     """
     with open("selector.js") as fp:
         js = fp.read()
@@ -136,23 +136,45 @@ def delete_element(soup, selector):
         pass
 
 
+def is_sphinx_or_doxygen(soup):
+    """
+    Identifies whether a given document is a Sphinx or Doxygen document
+    by parsing the HTML. Returns a string identifier and reference element
+    that is used for inserting the library/version selectors to the doc.
+    """
+    if soup.select(".wy-side-nav-search"):
+        return "sphinx", soup.select(".wy-side-nav-search [role='search']")[0]
+
+    if soup.select("#titlearea"):
+        return "doxygen", soup.select("#titlearea")[0]
+
+    raise Exception(f"Couldn't identify {filepath} as either Doxygen or Sphinx")
+
+
 def main():
     """
-    Given the path to a documentation HTML file, this functin will
+    Given the path to a documentation HTML file, this function will
     parse the file and add library/version selectors to the sidebar
     and re-map the Home button to point to https://docs.rapids.ai/api
     """
     print(f"--- {filepath} ---")
     with open(filepath) as fp:
         soup = BeautifulSoup(fp, "html.parser")
-    search_div = soup.select(".wy-side-nav-search [role='search']")[0]
 
-    # Delete any existing added elements
-    for element in [version_container_id, library_container_id, script_tag_id]:
-        delete_element(soup, f"#{element}")
+    doc_type, reference_el = is_sphinx_or_doxygen(soup)
+
+    # Delete any existing added/unnecessary elements
+    for element in [
+        f"#{version_container_id}",
+        f"#{library_container_id}",
+        f"#{script_tag_id}",
+        "#titlearea > table",
+    ]:
+        delete_element(soup, element)
 
     # Update Home button
-    update_home_btn(soup)
+    if doc_type == "sphinx":
+        update_home_btn(soup)
 
     # Create new elements
     version_selector = create_version_selector(soup)
@@ -160,8 +182,13 @@ def main():
     script_tag = create_script_tag(soup)
 
     # Insert new elements
-    search_div.insert_before(library_selector)
-    search_div.insert_before(version_selector)
+    if doc_type == "doxygen":
+        reference_el.append(library_selector)
+        reference_el.append(version_selector)
+    elif doc_type == "sphinx":
+        reference_el.insert_before(library_selector)
+        reference_el.insert_before(version_selector)
+
     soup.body.append(script_tag)
 
     with open(filepath, "w") as fp:
