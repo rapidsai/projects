@@ -5546,6 +5546,18 @@ feature is made optional in the GPU version due to the
 significant overhead in copying memory to the host for
 computing the hash. (default = False)</p>
 </dd>
+<dt><strong>random_state</strong><span class="classifier">int, RandomState instance or None, optional (default=None)</span></dt><dd><p>random_state is the seed used by the random number generator during
+embedding initialization and during sampling used by the optimizer.
+Note: Unfortunately, achieving a high amount of parallelism during
+the optimization stage often comes at the expense of determinism,
+since many floating-point additions are being made in parallel
+without a deterministic ordering. This causes slightly different
+results across training sessions, even when the same seed is used
+for random number generation. Setting a random_state will enable
+consistency of trained embeddings, allowing for reproducible results
+to 3 digits of precision, but will do so at the expense of potentially
+slower training and increased memory usage.</p>
+</dd>
 <dt><strong>callback: An instance of GraphBasedDimRedCallback class to intercept</strong></dt><dd><p>the internal state of embeddings while they are being trained.
 Example of callback usage:</p>
 <blockquote>
