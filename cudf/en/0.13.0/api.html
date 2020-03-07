@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.13.0a+3190.gac8aabfee documentation</title>
+  <title>API Reference &mdash; cudf 0.13.0a+3234.geac284d91 documentation</title>
   
 
   
@@ -3242,7 +3242,7 @@ be used in the output dataframe.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.truediv" title="cudf.core.series.Series.truediv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truediv</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Floating division of series and other, element-wise (binary operator truediv).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.unique" title="cudf.core.series.Series.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a>(self[, method, sort])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.unique" title="cudf.core.series.Series.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a>(self)</p></td>
 <td><p>Returns unique values of this Series.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.value_counts" title="cudf.core.series.Series.value_counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_counts</span></code></a>(self[, sort])</p></td>
@@ -4942,9 +4942,8 @@ corresponding Series locations is null the result will be null</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.unique">
-<code class="sig-name descname">unique</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">method='sort'</em>, <em class="sig-param">sort=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.unique" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns unique values of this Series.
-default=’sort’ will be changed to ‘hash’ when implemented.</p>
+<code class="sig-name descname">unique</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns unique values of this Series.</p>
 </dd></dl>
 
 <dl class="method">

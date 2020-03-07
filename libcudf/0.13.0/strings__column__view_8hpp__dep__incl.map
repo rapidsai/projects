@@ -1,5 +1,5 @@
 <map id="strings_column_view.hpp" name="strings_column_view.hpp">
-<area shape="rect" id="node1" title="Class definition for cudf::strings_column_view." alt="" coords="3295,5,3547,32"/>
+<area shape="rect" id="node1" title="Class definition for cudf::strings_column_view." alt="" coords="3366,5,3618,32"/>
 <area shape="rect" id="node2" href="$orc_2writer__impl_8cu.html" title="cuDF&#45;IO ORC writer class implementation" alt="" coords="5,80,168,107"/>
 <area shape="rect" id="node3" href="$parquet_2writer__impl_8cu.html" title="cuDF&#45;IO parquet writer class implementation" alt="" coords="192,80,355,107"/>
 <area shape="rect" id="node4" href="$src_2strings_2utilities_8hpp_source.html" title=" " alt="" coords="379,80,531,107"/>
@@ -31,9 +31,10 @@
 <area shape="rect" id="node30" href="$strip_8hpp_source.html" title=" " alt="" coords="5051,80,5163,107"/>
 <area shape="rect" id="node31" href="$substring_8hpp_source.html" title=" " alt="" coords="5187,80,5339,107"/>
 <area shape="rect" id="node32" href="$translate_8hpp_source.html" title=" " alt="" coords="5363,80,5515,107"/>
-<area shape="rect" id="node33" href="$detail_2tokenize_8hpp_source.html" title=" " alt="" coords="5539,80,5682,107"/>
-<area shape="rect" id="node34" href="$generate__ngrams_8hpp_source.html" title=" " alt="" coords="5706,80,5918,107"/>
-<area shape="rect" id="node35" href="$ngrams__tokenize_8hpp_source.html" title=" " alt="" coords="5942,80,6154,107"/>
-<area shape="rect" id="node36" href="$normalize_8hpp_source.html" title=" " alt="" coords="6179,80,6331,107"/>
-<area shape="rect" id="node37" href="$tokenize_8hpp_source.html" title=" " alt="" coords="6355,80,6498,107"/>
+<area shape="rect" id="node33" href="$wrap_8hpp_source.html" title=" " alt="" coords="5539,80,5642,107"/>
+<area shape="rect" id="node34" href="$detail_2tokenize_8hpp_source.html" title=" " alt="" coords="5666,80,5809,107"/>
+<area shape="rect" id="node35" href="$generate__ngrams_8hpp_source.html" title=" " alt="" coords="5833,80,6045,107"/>
+<area shape="rect" id="node36" href="$ngrams__tokenize_8hpp_source.html" title=" " alt="" coords="6069,80,6281,107"/>
+<area shape="rect" id="node37" href="$normalize_8hpp_source.html" title=" " alt="" coords="6305,80,6457,107"/>
+<area shape="rect" id="node38" href="$tokenize_8hpp_source.html" title=" " alt="" coords="6482,80,6625,107"/>
 </map>
