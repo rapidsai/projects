@@ -15,14 +15,14 @@ versions_dict = {
 with open("lib_map.json") as fp:
     lib_path_dict = json.load(fp)
 
-library_container_id = "library-selector-container"
-version_container_id = "version-selector-container"
-script_tag_id = "selector-js"
+script_tag_id = "rapids-selector-js"
+style_tag_id = "rapids-selector-css"
+fa_tag_id = "rapids-fa-tag"
 
 
 def get_version_from_fp():
     """
-    Determines if the current html document is for legacy, stable, or nightly versions
+    Determines if the current HTML document is for legacy, stable, or nightly versions
     based on the file path
     """
     match = re.search(r"0.\d{1,3}.0", filepath)
@@ -46,21 +46,47 @@ def get_lib_from_fp():
     raise Exception("Couldn't find valid library name in filepath.")
 
 
-def update_home_btn(soup):
+def update_sphinx_home_btn(soup):
     """
-    Updates the Home button text and href at the top of the sidebar.
+    Updates the Home button text and href at the top of the Sphinx sidebar.
     """
     home_btn = soup.select(".wy-side-nav-search .icon.icon-home")[0]
     home_btn["href"] = docs_home
     home_btn.string = "Home"
 
 
-def create_version_selector(soup):
+def create_doxygen_home_btn(soup):
     """
-    Creates and returns a div containing the "legacy", "stable", "nightly" selector
+    Creates a Home button for the Doxygen top bar
     """
-    version_div = soup.new_tag("div", id=version_container_id)
-    version_selector = soup.new_tag("select", id="version-selector")
+
+    container = soup.new_tag("div", attrs={"class": "rapids-home-container"})
+    home_btn_icon = soup.new_tag("i", attrs={"class": ["fa", "fa-home"]})
+    home_btn = soup.new_tag("a")
+    home_btn["href"] = docs_home
+    home_btn.string = "Home"
+    container.append(home_btn_icon)
+    container.append(home_btn)
+    return container
+
+
+def add_font_awesome(soup):
+    """
+    Adds a font-awesome to the head of the HTML
+    """
+    fa_tag = soup.new_tag(
+        "link",
+        attrs={
+            "href": "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
+            "rel": "stylesheet",
+            "id": fa_tag_id,
+        },
+    )
+    soup.head.append(fa_tag)
+
+
+def create_version_options():
+    options = []
     doc_version = get_version_from_fp()
     doc_lib = get_lib_from_fp()
     doc_is_extra_legacy = (  # extra legacy means the doc version is older then current legacy
@@ -74,45 +100,66 @@ def create_version_selector(soup):
             version_number = doc_version["number"]
         else:
             version_number = versions_dict[version_name]
-        option_el = soup.new_tag("option")
-        option_el["value"] = version_path
-        option_el.string = f"{version_name} (0.{str(version_number)})"
+        is_selected = False
+        option_href = version_path
+        version_text = f"{version_name} (0.{str(version_number)})"
         if version_name == doc_version["name"]:
             print(f"default version: {version_name}")
-            option_el["selected"] = None
-        version_selector.append(option_el)
+            is_selected = True
+        options.append(
+            {"selected": is_selected, "href": option_href, "text": version_text}
+        )
 
-    version_div.append(version_selector)
-    return version_div
+    return options
 
 
-def create_library_selector(soup):
-    """
-    Creates and returns a div containing the library selector
-    """
-    library_div = soup.new_tag("div", id=library_container_id)
-    library_selector = soup.new_tag("select", id="library-selector")
+def create_library_options():
     doc_lib = get_lib_from_fp()
+    options = []
 
     for lib, lib_versions in lib_path_dict.items():
         if lib_versions["stable"]:
-            option_value = lib_versions["stable"]
+            option_href = lib_versions["stable"]
         elif lib_versions["nightly"]:
-            option_value = lib_versions["nightly"]
+            option_href = lib_versions["nightly"]
         elif lib_versions["legacy"]:
-            option_value = lib_versions["legacy"]
+            option_href = lib_versions["legacy"]
         else:
             continue
-        option_el = soup.new_tag("option")
-        option_el["value"] = option_value
-        option_el.string = lib
+        is_selected = False
         if lib == doc_lib:
             print(f"default lib: {lib}")
-            option_el["selected"] = None
-        library_selector.append(option_el)
+            is_selected = True
+        options.append({"selected": is_selected, "href": option_href, "text": lib})
 
-    library_div.append(library_selector)
-    return library_div
+    return options
+
+
+def create_selector(soup, options):
+    """
+    Creates a dropdown selector
+    """
+    container = soup.new_tag("div", attrs={"class": "rapids-selector__container"})
+    selected = soup.new_tag("div", attrs={"class": "rapids-selector__selected"})
+    selected.string = next(option["text"] for option in options if option["selected"])
+    container.append(selected)
+    drop_down_menu = soup.new_tag(
+        "div",
+        attrs={"class": ["rapids-selector__menu", "rapids-selector__menu--hidden"]},
+    )
+
+    for option in options:
+        option_classes = ["rapids-selector__menu-item"]
+        if option["selected"]:
+            option_classes.append("rapids-selector__menu-item--selected")
+        option_el = soup.new_tag(
+            "a", href=option["href"], attrs={"class": option_classes}
+        )
+        option_el.string = option["text"]
+        drop_down_menu.append(option_el)
+
+    container.append(drop_down_menu)
+    return container
 
 
 def create_script_tag(soup):
@@ -126,6 +173,17 @@ def create_script_tag(soup):
     return script_tag
 
 
+def create_style_tag(soup):
+    """
+    Creates and returns a style tag with the contents of selector.css inside
+    """
+    with open("selector.css") as fp:
+        css = fp.read()
+    script_tag = soup.new_tag("style", id=style_tag_id)
+    script_tag.string = css
+    return script_tag
+
+
 def delete_element(soup, selector):
     """
     Deletes element from soup object if it already exists
@@ -134,6 +192,19 @@ def delete_element(soup, selector):
         soup.select(f"{selector}")[0].extract()
     except:
         pass
+
+
+def delete_existing_elements(soup):
+    for element in [
+        "#rapids-sphinx-container",
+        "#rapids-doxygen-container",
+        ".wy-side-nav-search .version",
+        f"#{script_tag_id}",
+        f"#{style_tag_id}",
+        f"#{fa_tag_id}",
+        "#titlearea > table",
+    ]:
+        delete_element(soup, element)
 
 
 def is_sphinx_or_doxygen(soup):
@@ -164,32 +235,36 @@ def main():
     doc_type, reference_el = is_sphinx_or_doxygen(soup)
 
     # Delete any existing added/unnecessary elements
-    for element in [
-        f"#{version_container_id}",
-        f"#{library_container_id}",
-        f"#{script_tag_id}",
-        "#titlearea > table",
-    ]:
-        delete_element(soup, element)
+    delete_existing_elements(soup)
 
-    # Update Home button
+    # Doxygen/Sphinx specific setup
     if doc_type == "sphinx":
-        update_home_btn(soup)
+        update_sphinx_home_btn(soup)
+    elif doc_type == "doxygen":
+        home_btn_container = create_doxygen_home_btn(soup)
+        add_font_awesome(soup)
 
     # Create new elements
-    version_selector = create_version_selector(soup)
-    library_selector = create_library_selector(soup)
+    library_selector = create_selector(soup, create_library_options())
+    version_selector = create_selector(soup, create_version_options())
+    container = soup.new_tag("div", id=f"rapids-{doc_type}-container")
     script_tag = create_script_tag(soup)
+    style_tab = create_style_tag(soup)
+
+    # Append elements to container
+    if doc_type == "doxygen":
+        container.append(home_btn_container)
+    container.append(library_selector)
+    container.append(version_selector)
 
     # Insert new elements
     if doc_type == "doxygen":
-        reference_el.append(library_selector)
-        reference_el.append(version_selector)
+        reference_el.append(container)
     elif doc_type == "sphinx":
-        reference_el.insert_before(library_selector)
-        reference_el.insert_before(version_selector)
+        reference_el.insert_before(container)
 
     soup.body.append(script_tag)
+    soup.head.append(style_tab)
 
     with open(filepath, "w") as fp:
         fp.write(soup.prettify())
