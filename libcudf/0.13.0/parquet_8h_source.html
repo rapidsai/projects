@@ -294,13 +294,11 @@ $(function() {
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    std::vector&lt;uint8_t&gt; *m_buf;</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;};</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;} <span class="comment">// namespace parquet</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;} <span class="comment">// namespace io</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;} <span class="comment">// namespace cudf</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="preprocessor">#endif // __IO_PARQUET_H__</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;} <span class="comment">// namespace parquet</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;} <span class="comment">// namespace io</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;} <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor">#endif // __IO_PARQUET_H__</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructcudf_1_1io_1_1parquet_1_1file__header__s_html"><div class="ttname"><a href="structcudf_1_1io_1_1parquet_1_1file__header__s.html">cudf::io::parquet::file_header_s</a></div><div class="ttdoc">Struct that describes the Parquet file data header.</div><div class="ttdef"><b>Definition:</b> parquet.h:37</div></div>
 <div class="ttc" id="astructcudf_1_1io_1_1parquet_1_1FileMetaData_html"><div class="ttname"><a href="structcudf_1_1io_1_1parquet_1_1FileMetaData.html">cudf::io::parquet::FileMetaData</a></div><div class="ttdoc">Thrift-derived struct describing file-level metadata.</div><div class="ttdef"><b>Definition:</b> parquet.h:136</div></div>
@@ -308,7 +306,7 @@ $(function() {
 <div class="ttc" id="aclasscudf_1_1io_1_1parquet_1_1CompactProtocolWriter_html"><div class="ttname"><a href="classcudf_1_1io_1_1parquet_1_1CompactProtocolWriter.html">cudf::io::parquet::CompactProtocolWriter</a></div><div class="ttdoc">Class for parsing Parquet's Thrift Compact Protocol encoded metadata.</div><div class="ttdef"><b>Definition:</b> parquet.h:275</div></div>
 <div class="ttc" id="astructcudf_1_1io_1_1parquet_1_1ColumnChunk_html"><div class="ttname"><a href="structcudf_1_1io_1_1parquet_1_1ColumnChunk.html">cudf::io::parquet::ColumnChunk</a></div><div class="ttdoc">Thrift-derived struct describing a chunk of data for a particular column.</div><div class="ttdef"><b>Definition:</b> parquet.h:96</div></div>
 <div class="ttc" id="astructcudf_1_1io_1_1parquet_1_1ColumnMetaData_html"><div class="ttname"><a href="structcudf_1_1io_1_1parquet_1_1ColumnMetaData.html">cudf::io::parquet::ColumnMetaData</a></div><div class="ttdoc">Thrift-derived struct describing a column of data.</div><div class="ttdef"><b>Definition:</b> parquet.h:74</div></div>
-<div class="ttc" id="anamespacecudf_1_1experimental_1_1io_1_1detail_1_1parquet_html"><div class="ttname"><a href="namespacecudf_1_1experimental_1_1io_1_1detail_1_1parquet.html">cudf::experimental::io::detail::parquet</a></div><div class="ttdoc">Parquet format.</div><div class="ttdef"><b>Definition:</b> parquet/reader_impl.cu:40</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_1_1io_1_1detail_1_1parquet_html"><div class="ttname"><a href="namespacecudf_1_1experimental_1_1io_1_1detail_1_1parquet.html">cudf::experimental::io::detail::parquet</a></div><div class="ttdoc">Parquet format.</div><div class="ttdef"><b>Definition:</b> chunked_state.hpp:30</div></div>
 <div class="ttc" id="astructcudf_1_1io_1_1parquet_1_1DictionaryPageHeader_html"><div class="ttname"><a href="structcudf_1_1io_1_1parquet_1_1DictionaryPageHeader.html">cudf::io::parquet::DictionaryPageHeader</a></div><div class="ttdoc">Thrift-derived struct describing the header for a dictionary page.</div><div class="ttdef"><b>Definition:</b> parquet.h:159</div></div>
 <div class="ttc" id="astructcudf_1_1io_1_1parquet_1_1RowGroup_html"><div class="ttname"><a href="structcudf_1_1io_1_1parquet_1_1RowGroup.html">cudf::io::parquet::RowGroup</a></div><div class="ttdoc">Thrift-derived struct describing a group of row data.</div><div class="ttdef"><b>Definition:</b> parquet.h:115</div></div>
 <div class="ttc" id="astructcudf_1_1io_1_1parquet_1_1SchemaElement_html"><div class="ttname"><a href="structcudf_1_1io_1_1parquet_1_1SchemaElement.html">cudf::io::parquet::SchemaElement</a></div><div class="ttdoc">Struct for describing an element/field in the Parquet format schema.</div><div class="ttdef"><b>Definition:</b> parquet.h:55</div></div>
