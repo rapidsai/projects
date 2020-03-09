@@ -46,26 +46,16 @@ def get_lib_from_fp():
     raise Exception("Couldn't find valid library name in filepath.")
 
 
-def update_sphinx_home_btn(soup):
+def create_home_container(soup):
     """
-    Updates the Home button text and href at the top of the Sphinx sidebar.
+    Creates and returns a div with a Home button and icon in it
     """
-    home_btn = soup.select(".wy-side-nav-search .icon.icon-home")[0]
-    home_btn["href"] = docs_home
-    home_btn.string = "Home"
-
-
-def create_doxygen_home_btn(soup):
-    """
-    Creates a Home button for the Doxygen top bar
-    """
-
     container = soup.new_tag("div", attrs={"class": "rapids-home-container"})
-    home_btn_icon = soup.new_tag("i", attrs={"class": ["fa", "fa-home"]})
-    home_btn = soup.new_tag("a")
+    # home_btn_icon = soup.new_tag("i", attrs={"class": ["fa", "fa-home"]})
+    home_btn = soup.new_tag("a", attrs={"class": "rapids-home-container__home-btn"})
     home_btn["href"] = docs_home
     home_btn.string = "Home"
-    container.append(home_btn_icon)
+    # container.append(home_btn_icon)
     container.append(home_btn)
     return container
 
@@ -195,14 +185,21 @@ def delete_element(soup, selector):
 
 
 def delete_existing_elements(soup):
+    doxygen_title_area = "#titlearea > table"
+    sphinx_home_btn = ".wy-side-nav-search .icon.icon-home"
+    sphinx_doc_version = ".wy-side-nav-search .version"
+    existing_sphinx_container = "#rapids-sphinx-container"
+    existing_doxygen_container = "#rapids-doxygen-container"
+
     for element in [
-        "#rapids-sphinx-container",
-        "#rapids-doxygen-container",
-        ".wy-side-nav-search .version",
+        existing_sphinx_container,
+        existing_doxygen_container,
+        sphinx_doc_version,
+        sphinx_home_btn,
+        doxygen_title_area,
         f"#{script_tag_id}",
         f"#{style_tag_id}",
         f"#{fa_tag_id}",
-        "#titlearea > table",
     ]:
         delete_element(soup, element)
 
@@ -213,11 +210,14 @@ def is_sphinx_or_doxygen(soup):
     by parsing the HTML. Returns a string identifier and reference element
     that is used for inserting the library/version selectors to the doc.
     """
-    if soup.select(".wy-side-nav-search"):
-        return "sphinx", soup.select(".wy-side-nav-search [role='search']")[0]
+    sphinx_identifier = ".wy-side-nav-search"
+    doxygen_identifier = "#titlearea"
 
-    if soup.select("#titlearea"):
-        return "doxygen", soup.select("#titlearea")[0]
+    if soup.select(sphinx_identifier):
+        return "sphinx", soup.select(sphinx_identifier)[0]
+
+    if soup.select(doxygen_identifier):
+        return "doxygen", soup.select(doxygen_identifier)[0]
 
     raise Exception(f"Couldn't identify {filepath} as either Doxygen or Sphinx")
 
@@ -237,14 +237,12 @@ def main():
     # Delete any existing added/unnecessary elements
     delete_existing_elements(soup)
 
-    # Doxygen/Sphinx specific setup
-    if doc_type == "sphinx":
-        update_sphinx_home_btn(soup)
-    elif doc_type == "doxygen":
-        home_btn_container = create_doxygen_home_btn(soup)
+    # Add Font Awesome to Doxygen for icons
+    if doc_type == "doxygen":
         add_font_awesome(soup)
 
     # Create new elements
+    home_btn_container = create_home_container(soup)
     library_selector = create_selector(soup, create_library_options())
     version_selector = create_selector(soup, create_version_options())
     container = soup.new_tag("div", id=f"rapids-{doc_type}-container")
@@ -252,16 +250,16 @@ def main():
     style_tab = create_style_tag(soup)
 
     # Append elements to container
-    if doc_type == "doxygen":
-        container.append(home_btn_container)
+    container.append(home_btn_container)
     container.append(library_selector)
     container.append(version_selector)
 
     # Insert new elements
-    if doc_type == "doxygen":
-        reference_el.append(container)
-    elif doc_type == "sphinx":
-        reference_el.insert_before(container)
+    reference_el.insert(0, container)
+    # if doc_type == "doxygen":
+    #     reference_el.append(container)
+    # elif doc_type == "sphinx":
+    #     reference_el.insert_before(container)
 
     soup.body.append(script_tag)
     soup.head.append(style_tab)

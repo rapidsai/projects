@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 SPHINX_SEARCH_TERM='class="wy-side-nav-search"'
 DOXYGEN_SEARCH_TERM='id="titlearea"'
