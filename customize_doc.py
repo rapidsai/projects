@@ -135,14 +135,14 @@ def create_selector(soup, options):
     """
     Creates a dropdown selector
     """
-    container = soup.new_tag("div", attrs={"class": "rapids-selector__container"})
+    container = soup.new_tag(
+        "div",
+        attrs={"class": ["rapids-selector__container", "rapids-selector--hidden"]},
+    )
     selected = soup.new_tag("div", attrs={"class": "rapids-selector__selected"})
     selected.string = next(option["text"] for option in options if option["selected"])
     container.append(selected)
-    drop_down_menu = soup.new_tag(
-        "div",
-        attrs={"class": ["rapids-selector__menu", "rapids-selector__menu--hidden"]},
-    )
+    drop_down_menu = soup.new_tag("div", attrs={"class": ["rapids-selector__menu"]})
 
     for option in options:
         option_classes = ["rapids-selector__menu-item"]

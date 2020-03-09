@@ -1,8 +1,7 @@
-var hiddenClassName = "rapids-selector__menu--hidden";
+var hiddenClassName = "rapids-selector--hidden";
 var selectorContainers = document.querySelectorAll(
   ".rapids-selector__container"
 );
-var menuSelectorClass = ".rapids-selector__menu";
 
 /**
  * Closes all open menus. If a click handler event argument is given,
@@ -14,9 +13,7 @@ function closeOpenedMenusExcept(e) {
   for (var i = 0; i < selectorContainers.length; i++) {
     var selectorContainer = selectorContainers[i];
     if (e && e.target.parentNode === selectorContainer) continue;
-    selectorContainer
-      .querySelector(menuSelectorClass)
-      .classList.add(hiddenClassName);
+    selectorContainer.classList.add(hiddenClassName);
   }
 }
 
@@ -26,8 +23,7 @@ function closeOpenedMenusExcept(e) {
  */
 function toggleMenu(e) {
   var container = e.target.parentNode;
-  var menuToOpen = container.querySelector(menuSelectorClass);
-  menuToOpen.classList.toggle(hiddenClassName);
+  container.classList.toggle(hiddenClassName);
 }
 
 /**
@@ -82,6 +78,13 @@ function selectedOptionIsClicked(e) {
     e,
     document.querySelectorAll(".rapids-selector__menu-item--selected")
   );
+}
+
+// Calculate height for dropdown animations
+for (var i = 0; i < selectorContainers.length; i++) {
+  var selector = selectorContainers[i];
+  var menu = selector.querySelector(".rapids-selector__menu");
+  menu.style.height = menu.scrollHeight + "px";
 }
 
 // Selectors click handler
