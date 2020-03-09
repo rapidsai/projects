@@ -14,7 +14,7 @@ for FILE in $(grep "${SPHINX_SEARCH_TERM}\|${DOXYGEN_SEARCH_TERM}" -rl \
   --exclude-dir=latest \
   --exclude-dir=legacy \
   . ); do
-  python update_sidebar.py ${FILE}
+  python customize_doc.py ${FILE}
   echo "" # line break for readability
 done
 IFS="$OIFS"

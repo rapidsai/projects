@@ -154,9 +154,9 @@ def create_selector(soup, options):
 
 def create_script_tag(soup):
     """
-    Creates and returns a script tag with the contents of selector.js inside
+    Creates and returns a script tag with the contents of rapids.js inside
     """
-    with open("selector.js") as fp:
+    with open("rapids.js") as fp:
         js = fp.read()
     script_tag = soup.new_tag("script", defer=None, id=script_tag_id)
     script_tag.string = js
@@ -165,9 +165,9 @@ def create_script_tag(soup):
 
 def create_style_tag(soup):
     """
-    Creates and returns a style tag with the contents of selector.css inside
+    Creates and returns a style tag with the contents of rapids.css inside
     """
-    with open("selector.css") as fp:
+    with open("rapids.css") as fp:
         css = fp.read()
     script_tag = soup.new_tag("style", id=style_tag_id)
     script_tag.string = css
