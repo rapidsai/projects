@@ -76,6 +76,9 @@ def add_font_awesome(soup):
 
 
 def create_version_options():
+    """
+    Creates options for legacy/stable/nightly selector
+    """
     options = []
     doc_version = get_version_from_fp()
     doc_lib = get_lib_from_fp()
@@ -104,6 +107,9 @@ def create_version_options():
 
 
 def create_library_options():
+    """
+    Creates options for library selector
+    """
     doc_lib = get_lib_from_fp()
     options = []
 
@@ -185,6 +191,9 @@ def delete_element(soup, selector):
 
 
 def delete_existing_elements(soup):
+    """
+    Deletes any existing page elements to prevent duplicates on the page
+    """
     doxygen_title_area = "#titlearea > table"
     sphinx_home_btn = ".wy-side-nav-search .icon.icon-home"
     sphinx_doc_version = ".wy-side-nav-search .version"
@@ -225,8 +234,7 @@ def is_sphinx_or_doxygen(soup):
 def main():
     """
     Given the path to a documentation HTML file, this function will
-    parse the file and add library/version selectors to the sidebar
-    and re-map the Home button to point to https://docs.rapids.ai/api
+    parse the file and add library/version selectors and a Home button
     """
     print(f"--- {filepath} ---")
     with open(filepath) as fp:
@@ -256,11 +264,6 @@ def main():
 
     # Insert new elements
     reference_el.insert(0, container)
-    # if doc_type == "doxygen":
-    #     reference_el.append(container)
-    # elif doc_type == "sphinx":
-    #     reference_el.insert_before(container)
-
     soup.body.append(script_tag)
     soup.head.append(style_tab)
 
