@@ -98,6 +98,7 @@
 
 .rapids-selector--hidden .rapids-selector__menu {
   height: 0 !important;
+  visibility: hidden;
 }
 
 .rapids-selector__menu-item {
