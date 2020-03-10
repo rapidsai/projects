@@ -51,11 +51,9 @@ def create_home_container(soup):
     Creates and returns a div with a Home button and icon in it
     """
     container = soup.new_tag("div", attrs={"class": "rapids-home-container"})
-    # home_btn_icon = soup.new_tag("i", attrs={"class": ["fa", "fa-home"]})
     home_btn = soup.new_tag("a", attrs={"class": "rapids-home-container__home-btn"})
     home_btn["href"] = docs_home
     home_btn.string = "Home"
-    # container.append(home_btn_icon)
     container.append(home_btn)
     return container
 
