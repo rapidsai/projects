@@ -92,7 +92,7 @@ update_symlinks.sh ${CURRENT_RAPIDS_VERSION} # ensures symlink accuracy
 
 lib_map.sh # generates a JSON file needed by customize_docs.py
 
-for FILE in $(some_grep_command_to_find_doc__html_files); do
+for FILE in $(some_grep_command_to_find_doc_html_files); do
   python customize_docs.py ${FILE} ${CURRENT_RAPIDS_VERSION}
 done
 
