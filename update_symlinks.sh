@@ -2,6 +2,9 @@
 #######################################
 # Updates all symlink folders based on a given stable version number
 #
+# Usage:
+# update_symlinks.sh 12
+#
 # Positional Arguments:
 #   1) STABLE_VERSION: current RAPIDS stable version (i.e. 12, 13, 14, etc.)
 #######################################
