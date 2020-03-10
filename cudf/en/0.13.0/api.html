@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.13.0a+2885.gf97a2f10e documentation</title>
+  <title>API Reference &mdash; cudf 0.13.0a+3265.ge5a6648b4 documentation</title>
   
 
   
@@ -458,46 +458,43 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.take" title="cudf.core.dataframe.DataFrame.take"><code class="xref py py-obj docutils literal notranslate"><span class="pre">take</span></code></a>(self, positions)</p></td>
 <td><p>Return a new DataFrame containing the rows specified by <em>positions</em></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.tile" title="cudf.core.dataframe.DataFrame.tile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tile</span></code></a>(self, reps)</p></td>
-<td><p>Construct a DataFrame by repeating this DataFrame the number of times given by reps</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_arrow" title="cudf.core.dataframe.DataFrame.to_arrow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_arrow</span></code></a>(self[, preserve_index])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_arrow" title="cudf.core.dataframe.DataFrame.to_arrow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_arrow</span></code></a>(self[, preserve_index])</p></td>
 <td><p>Convert to a PyArrow Table.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_csv" title="cudf.core.dataframe.DataFrame.to_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_csv</span></code></a>(self[, path, sep, na_rep, columns, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_csv" title="cudf.core.dataframe.DataFrame.to_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_csv</span></code></a>(self[, path, sep, na_rep, columns, …])</p></td>
 <td><p>Write a dataframe to csv file format.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_dlpack" title="cudf.core.dataframe.DataFrame.to_dlpack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dlpack</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_dlpack" title="cudf.core.dataframe.DataFrame.to_dlpack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dlpack</span></code></a>(self)</p></td>
 <td><p>Converts a cuDF object into a DLPack tensor.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_feather" title="cudf.core.dataframe.DataFrame.to_feather"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_feather</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_feather" title="cudf.core.dataframe.DataFrame.to_feather"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_feather</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
 <td><p>Write a DataFrame to the feather format.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_gpu_matrix" title="cudf.core.dataframe.DataFrame.to_gpu_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_gpu_matrix</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_gpu_matrix" title="cudf.core.dataframe.DataFrame.to_gpu_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_gpu_matrix</span></code></a>(self)</p></td>
 <td><p>Convert to a numba gpu ndarray</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_hdf" title="cudf.core.dataframe.DataFrame.to_hdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdf</span></code></a>(self, path_or_buf, key, \*args, …)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_hdf" title="cudf.core.dataframe.DataFrame.to_hdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdf</span></code></a>(self, path_or_buf, key, \*args, …)</p></td>
 <td><p>Write the contained data to an HDF5 file using HDFStore.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_json" title="cudf.core.dataframe.DataFrame.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>(self[, path_or_buf])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_json" title="cudf.core.dataframe.DataFrame.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>(self[, path_or_buf])</p></td>
 <td><p>Convert the cuDF object to a JSON string.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_orc" title="cudf.core.dataframe.DataFrame.to_orc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_orc</span></code></a>(self, fname[, compression])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_orc" title="cudf.core.dataframe.DataFrame.to_orc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_orc</span></code></a>(self, fname[, compression])</p></td>
 <td><p>Write a DataFrame to the ORC format.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_pandas" title="cudf.core.dataframe.DataFrame.to_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pandas</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_pandas" title="cudf.core.dataframe.DataFrame.to_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pandas</span></code></a>(self)</p></td>
 <td><p>Convert to a Pandas DataFrame.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_parquet" title="cudf.core.dataframe.DataFrame.to_parquet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_parquet</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_parquet" title="cudf.core.dataframe.DataFrame.to_parquet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_parquet</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
 <td><p>Write a DataFrame to the parquet format.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_records" title="cudf.core.dataframe.DataFrame.to_records"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_records</span></code></a>(self[, index])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_records" title="cudf.core.dataframe.DataFrame.to_records"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_records</span></code></a>(self[, index])</p></td>
 <td><p>Convert to a numpy recarray</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_string" title="cudf.core.dataframe.DataFrame.to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_string</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_string" title="cudf.core.dataframe.DataFrame.to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_string</span></code></a>(self)</p></td>
 <td><p>Convert to string</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.transpose" title="cudf.core.dataframe.DataFrame.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.transpose" title="cudf.core.dataframe.DataFrame.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>(self)</p></td>
 <td><p>Transpose index and columns.</p></td>
 </tr>
 </tbody>
@@ -2361,26 +2358,6 @@ and represents a boolean mask.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="cudf.core.dataframe.DataFrame.tile">
-<code class="sig-name descname">tile</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">reps</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.dataframe.DataFrame.tile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Construct a DataFrame by repeating this DataFrame the number of
-times given by reps</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>reps</strong><span class="classifier">non-negative integer</span></dt><dd><p>The number of repetitions of this DataFrame along axis 0</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>The tiled output cudf.DataFrame</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
 <dt id="cudf.core.dataframe.DataFrame.to_arrow">
 <code class="sig-name descname">to_arrow</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">preserve_index=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.dataframe.DataFrame.to_arrow" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert to a PyArrow Table.</p>
@@ -3265,7 +3242,7 @@ be used in the output dataframe.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.truediv" title="cudf.core.series.Series.truediv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truediv</span></code></a>(self, other[, fill_value, axis])</p></td>
 <td><p>Floating division of series and other, element-wise (binary operator truediv).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.unique" title="cudf.core.series.Series.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a>(self[, method, sort])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.series.Series.unique" title="cudf.core.series.Series.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a>(self)</p></td>
 <td><p>Returns unique values of this Series.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.series.Series.value_counts" title="cudf.core.series.Series.value_counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_counts</span></code></a>(self[, sort])</p></td>
@@ -4965,9 +4942,8 @@ corresponding Series locations is null the result will be null</p>
 
 <dl class="method">
 <dt id="cudf.core.series.Series.unique">
-<code class="sig-name descname">unique</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">method='sort'</em>, <em class="sig-param">sort=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.unique" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns unique values of this Series.
-default=’sort’ will be changed to ‘hash’ when implemented.</p>
+<code class="sig-name descname">unique</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.series.Series.unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns unique values of this Series.</p>
 </dd></dl>
 
 <dl class="method">
@@ -5839,7 +5815,7 @@ Columns are partitioned in the order they are given</p>
 
 <span class="target" id="module-cudf.io.orc"></span><dl class="function">
 <dt id="cudf.io.orc.read_orc">
-<code class="sig-prename descclassname">cudf.io.orc.</code><code class="sig-name descname">read_orc</code><span class="sig-paren">(</span><em class="sig-param">filepath_or_buffer</em>, <em class="sig-param">engine='cudf'</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">stripe=None</em>, <em class="sig-param">skip_rows=None</em>, <em class="sig-param">num_rows=None</em>, <em class="sig-param">use_index=True</em>, <em class="sig-param">decimals_as_float=True</em>, <em class="sig-param">force_decimal_scale=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.orc.read_orc" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cudf.io.orc.</code><code class="sig-name descname">read_orc</code><span class="sig-paren">(</span><em class="sig-param">filepath_or_buffer</em>, <em class="sig-param">engine='cudf'</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">stripe=None</em>, <em class="sig-param">stripe_count=None</em>, <em class="sig-param">skip_rows=None</em>, <em class="sig-param">num_rows=None</em>, <em class="sig-param">use_index=True</em>, <em class="sig-param">decimals_as_float=True</em>, <em class="sig-param">force_decimal_scale=None</em>, <em class="sig-param">timestamp_type=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.orc.read_orc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an ORC dataset into a DataFrame</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -5936,7 +5912,7 @@ available sources
 
 <dl class="function">
 <dt id="cudf.io.orc.to_orc">
-<code class="sig-prename descclassname">cudf.io.orc.</code><code class="sig-name descname">to_orc</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">fname</em>, <em class="sig-param">compression=None</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.orc.to_orc" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cudf.io.orc.</code><code class="sig-name descname">to_orc</code><span class="sig-paren">(</span><em class="sig-param">df</em>, <em class="sig-param">fname</em>, <em class="sig-param">compression=None</em>, <em class="sig-param">enable_statistics=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.orc.to_orc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a DataFrame to the ORC format.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

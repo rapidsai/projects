@@ -139,16 +139,15 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#time-series">Time Series</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#holtwinters">HoltWinters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#kalman-filter">Kalman Filter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#arima">ARIMA</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#multi-node-multi-gpu-algorithms">Multi-Node, Multi-GPU Algorithms</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id20">K-Means Clustering</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id21">Nearest Neighbors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id22">Principal Component Analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id25">Random Forest</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id26">Truncated SVD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">K-Means Clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">Nearest Neighbors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Principal Component Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">Random Forest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">Truncated SVD</a></li>
 </ul>
 </li>
 </ul>
@@ -657,12 +656,101 @@ dask dataframe output. Default will be array in the future.</p>
 <h3>Metrics<a class="headerlink" href="#metrics" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><span class="target" id="module-cuml.metrics.regression"></span><dl class="function">
+<dt id="cuml.metrics.regression.mean_absolute_error">
+<code class="sig-prename descclassname">cuml.metrics.regression.</code><code class="sig-name descname">mean_absolute_error</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.metrics.regression.mean_absolute_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean absolute error regression loss</p>
+<p>Be careful when using this metric with float32 inputs as the result can be
+slightly incorrect because of floating point precision if the input is
+large enough. float64 will have lower numerical error.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>y_true</strong><span class="classifier">array-like (device or host) shape = (n_samples,)</span></dt><dd><p>or (n_samples, n_outputs)
+Ground truth (correct) target values.</p>
+</dd>
+<dt><strong>y_pred</strong><span class="classifier">array-like (device or host) shape = (n_samples,)</span></dt><dd><p>or (n_samples, n_outputs)
+Estimated target values.</p>
+</dd>
+<dt><strong>sample_weight</strong><span class="classifier">array-like (device or host) shape = (n_samples,), optional</span></dt><dd><p>Sample weights.</p>
+</dd>
+<dt><strong>multioutput</strong><span class="classifier">string in [‘raw_values’, ‘uniform_average’]</span></dt><dd><p>or array-like of shape (n_outputs)
+Defines aggregating of multiple output values.
+Array-like value defines weights used to average errors.
+‘raw_values’ :</p>
+<blockquote>
+<div><p>Returns a full set of errors in case of multioutput input.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>‘uniform_average’ :</dt><dd><p>Errors of all outputs are averaged with uniform weight.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>loss</strong><span class="classifier">float or ndarray of floats</span></dt><dd><p>If multioutput is ‘raw_values’, then mean absolute error is returned
+for each output separately. If multioutput is ‘uniform_average’ or an
+ndarray of weights, then the weighted average of all output errors is
+returned.</p>
+<p>MAE output is non-negative floating point. The best value is 0.0.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
 <dt id="cuml.metrics.regression.mean_squared_error">
 <code class="sig-prename descclassname">cuml.metrics.regression.</code><code class="sig-name descname">mean_squared_error</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.metrics.regression.mean_squared_error" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mean squared error regression loss</p>
 <p>Be careful when using this metric with float32 inputs as the result can be
 slightly incorrect because of floating point precision if the input is
-large enough. We recommend to use float64 instead.</p>
+large enough. float64 will have lower numerical error.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>y_true</strong><span class="classifier">array-like (device or host) shape = (n_samples,)</span></dt><dd><p>or (n_samples, n_outputs)
+Ground truth (correct) target values.</p>
+</dd>
+<dt><strong>y_pred</strong><span class="classifier">array-like (device or host) shape = (n_samples,)</span></dt><dd><p>or (n_samples, n_outputs)
+Estimated target values.</p>
+</dd>
+<dt><strong>sample_weight</strong><span class="classifier">array-like (device or host) shape = (n_samples,), optional</span></dt><dd><p>Sample weights.</p>
+</dd>
+<dt><strong>multioutput</strong><span class="classifier">string in [‘raw_values’, ‘uniform_average’]</span></dt><dd><p>or array-like of shape (n_outputs)
+Defines aggregating of multiple output values.
+Array-like value defines weights used to average errors.
+‘raw_values’ :</p>
+<blockquote>
+<div><p>Returns a full set of errors in case of multioutput input.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>‘uniform_average’ :</dt><dd><p>Errors of all outputs are averaged with uniform weight.</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>squared</strong><span class="classifier">boolean value, optional (default = True)</span></dt><dd><p>If True returns MSE value, if False returns RMSE value.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>loss</strong><span class="classifier">float or ndarray of floats</span></dt><dd><p>A non-negative floating point value (the best value is 0.0), or an
+array of floating point values, one for each individual target.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cuml.metrics.regression.mean_squared_log_error">
+<code class="sig-prename descclassname">cuml.metrics.regression.</code><code class="sig-name descname">mean_squared_log_error</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.metrics.regression.mean_squared_log_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean squared log error regression loss</p>
+<p>Be careful when using this metric with float32 inputs as the result can be
+slightly incorrect because of floating point precision if the input is
+large enough. float64 will have lower numerical error.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
@@ -1339,7 +1427,7 @@ using different solvers in Scikit-learn.</p>
 Note: this includes the intercept as the last column if fit_intercept
 is True</p>
 </dd>
-<dt><strong>intercept_: device array (n_classes, 1)</strong></dt><dd><p>The independent term. If <a href="#id27"><span class="problematic" id="id28">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_: device array (n_classes, 1)</strong></dt><dd><p>The independent term. If <a href="#id23"><span class="problematic" id="id24">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -1626,7 +1714,7 @@ premium prediction, stock market analysis and much more.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id29"><span class="problematic" id="id30">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id25"><span class="problematic" id="id26">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -1641,14 +1729,11 @@ premium prediction, stock market analysis and much more.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.Ridge.fit" title="cuml.Ridge.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Fit the model with X and y.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.Ridge.get_params" title="cuml.Ridge.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
-<td><p>Scikit-learn style function that returns the estimator parameters.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.Ridge.get_param_names" title="cuml.Ridge.get_param_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_param_names</span></code></a>(self)</p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.Ridge.predict" title="cuml.Ridge.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, convert_dtype])</p></td>
 <td><p>Predicts the y for X.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.Ridge.set_params" title="cuml.Ridge.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
-<td><p>Sklearn style set parameter state to dictionary of params.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1677,17 +1762,9 @@ will increase memory used for the method.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="cuml.Ridge.get_params">
-<code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Ridge.get_params" title="Permalink to this definition">¶</a></dt>
-<dd><p>Scikit-learn style function that returns the estimator parameters.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>deep</strong><span class="classifier">boolean (default = True)</span></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
+<dt id="cuml.Ridge.get_param_names">
+<code class="sig-name descname">get_param_names</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Ridge.get_param_names" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.Ridge.predict">
@@ -1710,19 +1787,6 @@ will increase memory used for the method.</p>
 <dd class="field-even"><dl class="simple">
 <dt>y: cuDF DataFrame</dt><dd><p>Dense vector (floats or doubles) of shape (n_samples, 1)</p>
 </dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="cuml.Ridge.set_params">
-<code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.Ridge.set_params" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sklearn style set parameter state to dictionary of params.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>params</strong><span class="classifier">dict of new params</span></dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -1824,7 +1888,7 @@ convergence especially when tol is higher than 1e-4.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id31"><span class="problematic" id="id32">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id27"><span class="problematic" id="id28">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 <dt><strong>For additional docs, see `scikitlearn’s Lasso</strong></dt><dd></dd>
 <dt><strong>&lt;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html&gt;`_.</strong></dt><dd></dd>
@@ -2023,7 +2087,7 @@ convergence especially when tol is higher than 1e-4.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id33"><span class="problematic" id="id34">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id29"><span class="problematic" id="id30">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 <dt><strong>For additional docs, see `scikitlearn’s ElasticNet</strong></dt><dd></dd>
 <dt><strong>&lt;https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html&gt;`_.</strong></dt><dd></dd>
@@ -3842,7 +3906,7 @@ O(lbfgs_memory * D) memory.</p>
 <dt><strong>coef_</strong><span class="classifier">array, shape (n_classes, n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.
 Note: shape is (n_classes, n_features + 1) if fit_intercept = True.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array (n_classes, 1)</span></dt><dd><p>The independent term. If <a href="#id35"><span class="problematic" id="id36">fit_intercept_</span></a> is False, will be 0.</p>
+<dt><strong>intercept_</strong><span class="classifier">array (n_classes, 1)</span></dt><dd><p>The independent term. If <a href="#id31"><span class="problematic" id="id32">fit_intercept_</span></a> is False, will be 0.</p>
 </dd>
 </dl>
 </dd>
@@ -5525,7 +5589,7 @@ in the optimization process. Increasing this value will result
 in greater repulsive force being applied, greater optimization
 cost, but slightly more accuracy.</p>
 </dd>
-<dt><strong>transform_queue_size: float (optional, default 4.0)</strong></dt><dd><p>For transform operations (embedding new points using a trained <a href="#id37"><span class="problematic" id="id38">model_</span></a>
+<dt><strong>transform_queue_size: float (optional, default 4.0)</strong></dt><dd><p>For transform operations (embedding new points using a trained <a href="#id33"><span class="problematic" id="id34">model_</span></a>
 this will control how aggressively to search for nearest neighbors.
 Larger values will result in slower performance but more accurate
 nearest neighbor evaluation.</p>
@@ -5546,6 +5610,18 @@ UMAP reference implementation does this by default. This
 feature is made optional in the GPU version due to the
 significant overhead in copying memory to the host for
 computing the hash. (default = False)</p>
+</dd>
+<dt><strong>random_state</strong><span class="classifier">int, RandomState instance or None, optional (default=None)</span></dt><dd><p>random_state is the seed used by the random number generator during
+embedding initialization and during sampling used by the optimizer.
+Note: Unfortunately, achieving a high amount of parallelism during
+the optimization stage often comes at the expense of determinism,
+since many floating-point additions are being made in parallel
+without a deterministic ordering. This causes slightly different
+results across training sessions, even when the same seed is used
+for random number generation. Setting a random_state will enable
+consistency of trained embeddings, allowing for reproducible results
+to 3 digits of precision, but will do so at the expense of potentially
+slower training and increased memory usage.</p>
 </dd>
 <dt><strong>callback: An instance of GraphBasedDimRedCallback class to intercept</strong></dt><dd><p>the internal state of embeddings while they are being trained.
 Example of callback usage:</p>
@@ -6642,149 +6718,6 @@ DataFrame of all forecasted points if index=None.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="kalman-filter">
-<h3>Kalman Filter<a class="headerlink" href="#kalman-filter" title="Permalink to this headline">¶</a></h3>
-<dl class="class">
-<dt id="cuml.KalmanFilter">
-<em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">KalmanFilter</code><a class="headerlink" href="#cuml.KalmanFilter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Implements a Kalman filter. You are responsible for setting the
-various state variables to reasonable values; defaults  will
-not give you a functional filter.
-After construction the filter will have default matrices created for you,
-but you must specify the values for each.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>dim_x</strong><span class="classifier">int</span></dt><dd><p>Number of state variables for the Kalman filter.
-This is used to set the default size of P, Q, and u</p>
-</dd>
-<dt><strong>dim_z</strong><span class="classifier">int</span></dt><dd><p>Number of measurement inputs.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cuml</span> <span class="kn">import</span> <span class="n">KalmanFilter</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">KalmanFilter</span><span class="p">(</span><span class="n">dim_x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dim_z</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">2.</span><span class="p">],</span>    <span class="c1"># position</span>
-                <span class="p">[</span><span class="mf">0.</span><span class="p">]])</span>   <span class="c1"># velocity</span>
-<span class="n">f</span><span class="o">.</span><span class="n">F</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">1.</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">]])</span>
-<span class="n">f</span><span class="o">.</span><span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">]])</span>
-<span class="n">f</span><span class="o">.</span><span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1000.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span> <span class="p">[</span>   <span class="mf">0.</span><span class="p">,</span> <span class="mf">1000.</span><span class="p">]</span> <span class="p">])</span>
-<span class="n">f</span><span class="o">.</span><span class="n">R</span> <span class="o">=</span> <span class="mi">5</span>
-</pre></div>
-</div>
-<p>Now just perform the standard predict/update loop:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">some_condition_is_true</span><span class="p">:</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">numba</span><span class="o">.</span><span class="n">rmm</span><span class="o">.</span><span class="n">to_device</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span><span class="p">])</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">predict</span><span class="p">()</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>x</strong><span class="classifier">numba device array, numpy array or cuDF series (dim_x, 1),</span></dt><dd><p>Current state estimate. Any call to update() or predict() updates
-this variable.</p>
-</dd>
-<dt><strong>P</strong><span class="classifier">numba device array, numpy array or cuDF dataframe(dim_x, dim_x)</span></dt><dd><p>Current state covariance matrix. Any call to update() or predict()
-updates this variable.</p>
-</dd>
-<dt><strong>x_prior</strong><span class="classifier">numba device array, numpy array or cuDF series(dim_x, 1)</span></dt><dd><p>Prior (predicted) state estimate. The <a href="#id16"><span class="problematic" id="id17">*</span></a>_prior and <a href="#id18"><span class="problematic" id="id19">*</span></a>_post attributes
-are for convenience; they store the  prior and posterior of the
-current epoch. Read Only.</p>
-</dd>
-<dt><strong>P_prior</strong><span class="classifier">numba device array, numpy array or cuDF dataframe(dim_x, dim_x)</span></dt><dd><p>Prior (predicted) state covariance matrix. Read Only.</p>
-</dd>
-<dt><strong>x_post</strong><span class="classifier">numba device array, numpy array or cuDF series(dim_x, 1)</span></dt><dd><p>Posterior (updated) state estimate. Read Only.</p>
-</dd>
-<dt><strong>P_post</strong><span class="classifier">numba device array, numpy array or cuDF dataframe(dim_x, dim_x)</span></dt><dd><p>Posterior (updated) state covariance matrix. Read Only.</p>
-</dd>
-<dt><strong>z</strong><span class="classifier">numba device array or cuDF series (dim_x, 1)</span></dt><dd><p>Last measurement used in update(). Read only.</p>
-</dd>
-<dt><strong>R</strong><span class="classifier">numba device array(dim_z, dim_z)</span></dt><dd><p>Measurement noise matrix</p>
-</dd>
-<dt><strong>Q</strong><span class="classifier">numba device array(dim_x, dim_x)</span></dt><dd><p>Process noise matrix</p>
-</dd>
-<dt><strong>F</strong><span class="classifier">numba device array()</span></dt><dd><p>State Transition matrix</p>
-</dd>
-<dt><strong>H</strong><span class="classifier">numba device array(dim_z, dim_x)</span></dt><dd><p>Measurement function</p>
-</dd>
-<dt><strong>y</strong><span class="classifier">numba device array</span></dt><dd><p>Residual of the update step. Read only.</p>
-</dd>
-<dt><strong>K</strong><span class="classifier">numba device array(dim_x, dim_z)</span></dt><dd><p>Kalman gain of the update step. Read only.</p>
-</dd>
-<dt><strong>precision: ‘single’ or ‘double’</strong></dt><dd><p>Whether the Kalman Filter uses single or double precision</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.KalmanFilter.predict" title="cuml.KalmanFilter.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self[, B, F, Q])</p></td>
-<td><p>Predict next state (prior) using the Kalman filter state propagation equations.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.KalmanFilter.update" title="cuml.KalmanFilter.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>(self, z[, R, H])</p></td>
-<td><p>Add a new measurement (z) to the Kalman filter.</p></td>
-</tr>
-</tbody>
-</table>
-<dl class="attribute">
-<dt id="cuml.KalmanFilter.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">B=None</em>, <em class="sig-param">F=None</em>, <em class="sig-param">Q=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KalmanFilter.predict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Predict next state (prior) using the Kalman filter state propagation
-equations.
-Parameters
-———-
-u : np.array</p>
-<blockquote>
-<div><p>Optional control vector. If not <cite>None</cite>, it is multiplied by B
-to create the control input into the system.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>B<span class="classifier">np.array(dim_x, dim_z), or None</span></dt><dd><p>Optional control transition matrix; a value of None
-will cause the filter to use <cite>self.B</cite>.</p>
-</dd>
-<dt>F<span class="classifier">np.array(dim_x, dim_x), or None</span></dt><dd><p>Optional state transition matrix; a value of None
-will cause the filter to use <cite>self.F</cite>.</p>
-</dd>
-<dt>Q<span class="classifier">np.array(dim_x, dim_x), scalar, or None</span></dt><dd><p>Optional process noise matrix; a value of None will cause the
-filter to use <cite>self.Q</cite>.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="cuml.KalmanFilter.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">z</em>, <em class="sig-param">R=None</em>, <em class="sig-param">H=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.KalmanFilter.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add a new measurement (z) to the Kalman filter.
-If z is None, nothing is computed. However, x_post and P_post are
-updated with the prior (x_prior, P_prior), and self.z is set to None.
-Parameters
-———-
-z : (dim_z, 1): array_like</p>
-<blockquote>
-<div><p>measurement for this update. z can be a scalar if dim_z is 1,
-otherwise it must be convertible to a column vector.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>R<span class="classifier">np.array, scalar, or None</span></dt><dd><p>Optionally provide R to override the measurement noise for this
-one call, otherwise  self.R will be used.</p>
-</dd>
-<dt>H<span class="classifier">np.array, or None</span></dt><dd><p>Optionally provide H to override the measurement function for this
-one call, otherwise self.H will be used.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</div>
 <div class="section" id="arima">
 <h3>ARIMA<a class="headerlink" href="#arima" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
@@ -7040,8 +6973,8 @@ parameter arrays of the model</p>
 </div>
 <div class="section" id="multi-node-multi-gpu-algorithms">
 <h2>Multi-Node, Multi-GPU Algorithms<a class="headerlink" href="#multi-node-multi-gpu-algorithms" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id20">
-<h3>K-Means Clustering<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id16">
+<h3>K-Means Clustering<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.dask.cluster.KMeans">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.dask.cluster.</code><code class="sig-name descname">KMeans</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans" title="Permalink to this definition">¶</a></dt>
@@ -7052,6 +6985,54 @@ the centroids between workers in each iteration.</p>
 single-GPU version.</p>
 <p>For more information on this implementation, refer to the
 documentation for single-GPU K-Means.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
+</dd>
+<dt><strong>n_clusters</strong><span class="classifier">int (default = 8)</span></dt><dd><p>The number of centroids or clusters you want.</p>
+</dd>
+<dt><strong>max_iter</strong><span class="classifier">int (default = 300)</span></dt><dd><p>The more iterations of EM, the more accurate, but slower.</p>
+</dd>
+<dt><strong>tol</strong><span class="classifier">float (default = 1e-4)</span></dt><dd><p>Stopping criterion when centroid means do not change much.</p>
+</dd>
+<dt><strong>verbose</strong><span class="classifier">boolean (default = 0)</span></dt><dd><p>If True, prints diagnositc information.</p>
+</dd>
+<dt><strong>random_state</strong><span class="classifier">int (default = 1)</span></dt><dd><p>If you want results to be the same when you restart Python,
+select a state.</p>
+</dd>
+<dt><strong>init</strong><span class="classifier">{‘scalable-kmeans++’, ‘k-means||’ , ‘random’ or an ndarray}</span></dt><dd><blockquote>
+<div><p>(default = ‘scalable-k-means++’)</p>
+</div></blockquote>
+<p>‘scalable-k-means++’ or ‘k-means||’: Uses fast and stable scalable
+kmeans++ intialization.
+‘random’: Choose ‘n_cluster’ observations (rows) at random
+from data for the initial centroids. If an ndarray is passed,
+it should be of shape (n_clusters, n_features) and gives the
+initial centers.</p>
+</dd>
+<dt><strong>oversampling_factor</strong><span class="classifier">int (default = 2) The amount of points to sample</span></dt><dd><p>in scalable k-means++ initialization for potential centroids.
+Increasing this value can lead to better initial centroids at the
+cost of memory. The total number of centroids sampled in scalable
+k-means++ is oversampling_factor * n_clusters * 8.</p>
+</dd>
+<dt><strong>max_samples_per_batch</strong><span class="classifier">int (default = 32768) The number of data</span></dt><dd><p>samples to use for batches of the pairwise distance computation.
+This computation is done throughout both fit predict. The default
+should suit most cases. The total number of elements in the
+batched pairwise distance computation is max_samples_per_batch
+* n_clusters. It might become necessary to lower this number when
+n_clusters becomes prohibitively large.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>cluster_centers_</strong><span class="classifier">cuDF DataFrame or CuPy ndarray</span></dt><dd><p>The coordinates of the final clusters. This represents of “mean” of
+each data cluster.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -7062,20 +7043,20 @@ documentation for single-GPU K-Means.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.fit" title="cuml.dask.cluster.KMeans.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X)</p></td>
 <td><p>Fit a multi-node multi-GPU KMeans model</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.fit_predict" title="cuml.dask.cluster.KMeans.fit_predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_predict</span></code></a>(self, X)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.fit_predict" title="cuml.dask.cluster.KMeans.fit_predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_predict</span></code></a>(self, X[, delayed])</p></td>
 <td><p>Compute cluster centers and predict cluster index for each sample.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.fit_transform" title="cuml.dask.cluster.KMeans.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.fit_transform" title="cuml.dask.cluster.KMeans.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X[, delayed])</p></td>
 <td><p>Calls fit followed by transform using a distributed KMeans model</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.predict" title="cuml.dask.cluster.KMeans.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
-<td><p>Predict the labels using a distributed KMeans model.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.predict" title="cuml.dask.cluster.KMeans.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, delayed])</p></td>
+<td><p>Predict labels for the input</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.raise_exception_from_futures" title="cuml.dask.cluster.KMeans.raise_exception_from_futures"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raise_exception_from_futures</span></code></a>(self, futures)</p></td>
-<td><p>Raises a RuntimeError if any of the futures indicates an exception</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.score" title="cuml.dask.cluster.KMeans.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X)</p></td>
+<td><p>Computes the inertia score for the trained KMeans centroids.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.transform" title="cuml.dask.cluster.KMeans.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X)</p></td>
-<td><p>Predicts the labels using a distributed KMeans model</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.cluster.KMeans.transform" title="cuml.dask.cluster.KMeans.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X[, delayed])</p></td>
+<td><p>Transforms the input into the learned centroid space</p></td>
 </tr>
 </tbody>
 </table>
@@ -7088,9 +7069,6 @@ documentation for single-GPU K-Means.</p>
 <tr class="row-odd"><td><p><strong>get_param_names</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>score</strong></p></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 <dl class="method">
@@ -7100,12 +7078,8 @@ documentation for single-GPU K-Means.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">dask_cudf.Dataframe</span></dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>self: KMeans model</dt><dd></dd>
+<dt><strong>X</strong><span class="classifier">Dask cuDF DataFrame or CuPy backed Dask Array</span></dt><dd></dd>
+<dt><strong>Training data to cluster.</strong></dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -7113,18 +7087,18 @@ documentation for single-GPU K-Means.</p>
 
 <dl class="method">
 <dt id="cuml.dask.cluster.KMeans.fit_predict">
-<code class="sig-name descname">fit_predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.fit_predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">delayed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.fit_predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute cluster centers and predict cluster index for each sample.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">dask_cudf.Dataframe</span></dt><dd><p>Dataframe to predict</p>
+<dt><strong>X</strong><span class="classifier">Dask cuDF DataFrame or CuPy backed Dask Array</span></dt><dd><p>Data to predict</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>result: dask_cudf.Dataframe</dt><dd><p>Dataframe containing predictions</p>
+<dt>result: Dask cuDF DataFrame or CuPy backed Dask Array</dt><dd><p>Distributed object containing predictions</p>
 </dd>
 </dl>
 </dd>
@@ -7133,18 +7107,20 @@ documentation for single-GPU K-Means.</p>
 
 <dl class="method">
 <dt id="cuml.dask.cluster.KMeans.fit_transform">
-<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">delayed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calls fit followed by transform using a distributed KMeans model</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">dask_cudf.Dataframe</span></dt><dd><p>Dataframe to predict</p>
+<dt><strong>X</strong><span class="classifier">Dask cuDF DataFrame or CuPy backed Dask Array</span></dt><dd><p>Data to predict</p>
+</dd>
+<dt><strong>delayed</strong><span class="classifier">bool (default = True)</span></dt><dd><p>Whether to execute as a delayed task or eager.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>result: dask_cudf.Dataframe</dt><dd><p>Dataframe containing predictions</p>
+<dt>result: Dask cuDF DataFrame or CuPy backed Dask Array</dt><dd><p>Distributed object containing the transformed data</p>
 </dd>
 </dl>
 </dd>
@@ -7153,18 +7129,21 @@ documentation for single-GPU K-Means.</p>
 
 <dl class="method">
 <dt id="cuml.dask.cluster.KMeans.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.predict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Predict the labels using a distributed KMeans model.</p>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">delayed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict labels for the input</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">dask_cudf.Dataframe</span></dt><dd><p>Dataframe to predict</p>
+<dt><strong>X</strong><span class="classifier">Dask cuDF DataFrame or CuPy backed Dask Array</span></dt><dd><p>Data to predict</p>
+</dd>
+<dt><strong>delayed</strong><span class="classifier">bool (default = True)</span></dt><dd><p>Whether to do a lazy prediction (and return Delayed objects) or an
+eagerly executed one.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>result: dask_cudf.Dataframe</dt><dd><p>Dataframe containing label predictions</p>
+<dt>result: Dask cuDF DataFrame or CuPy backed Dask Array</dt><dd><p>Distributed object containing predictions</p>
 </dd>
 </dl>
 </dd>
@@ -7172,26 +7151,40 @@ documentation for single-GPU K-Means.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="cuml.dask.cluster.KMeans.raise_exception_from_futures">
-<code class="sig-name descname">raise_exception_from_futures</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">futures</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.raise_exception_from_futures" title="Permalink to this definition">¶</a></dt>
-<dd><p>Raises a RuntimeError if any of the futures indicates
-an exception</p>
+<dt id="cuml.dask.cluster.KMeans.score">
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the inertia score for the trained KMeans centroids.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">dask_cudf.Dataframe</span></dt><dd><p>Dataframe to compute score</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Inertial score</dt><dd></dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cuml.dask.cluster.KMeans.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Predicts the labels using a distributed KMeans model</p>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">delayed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforms the input into the learned centroid space</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">dask_cudf.Dataframe</span></dt><dd><p>Dataframe to predict</p>
+<dt><strong>X</strong><span class="classifier">Dask cuDF DataFrame or CuPy backed Dask Array</span></dt><dd><p>Data to predict</p>
+</dd>
+<dt><strong>delayed</strong><span class="classifier">bool (default = True)</span></dt><dd><p>Whether to execute as a delayed task or eager.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>result: dask_cudf.Dataframe</dt><dd><p>Dataframe containing predictions</p>
+<dt>result: Dask cuDF DataFrame or CuPy backed Dask Array</dt><dd><p>Distributed object containing the transformed data</p>
 </dd>
 </dl>
 </dd>
@@ -7201,8 +7194,8 @@ an exception</p>
 </dd></dl>
 
 </div>
-<div class="section" id="id21">
-<h3>Nearest Neighbors<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id17">
+<h3>Nearest Neighbors<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.dask.neighbors.NearestNeighbors">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.dask.neighbors.</code><code class="sig-name descname">NearestNeighbors</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">streams_per_handle=0</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.neighbors.NearestNeighbors" title="Permalink to this definition">¶</a></dt>
@@ -7294,8 +7287,8 @@ indices.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="id22">
-<h3>Principal Component Analysis<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id18">
+<h3>Principal Component Analysis<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.dask.decomposition.PCA">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.dask.decomposition.</code><code class="sig-name descname">PCA</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA" title="Permalink to this definition">¶</a></dt>
@@ -7522,8 +7515,8 @@ from a training set.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="id25">
-<h3>Random Forest<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id21">
+<h3>Random Forest<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.dask.ensemble.RandomForestClassifier">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.dask.ensemble.</code><code class="sig-name descname">RandomForestClassifier</code><span class="sig-paren">(</span><em class="sig-param">n_estimators=10</em>, <em class="sig-param">max_depth=-1</em>, <em class="sig-param">max_features='auto'</em>, <em class="sig-param">n_bins=8</em>, <em class="sig-param">split_algo=1</em>, <em class="sig-param">split_criterion=0</em>, <em class="sig-param">min_rows_per_node=2</em>, <em class="sig-param">bootstrap=True</em>, <em class="sig-param">bootstrap_features=False</em>, <em class="sig-param">type_model='classifier'</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">rows_sample=1.0</em>, <em class="sig-param">max_leaves=-1</em>, <em class="sig-param">n_streams=4</em>, <em class="sig-param">quantile_per_tree=False</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">criterion=None</em>, <em class="sig-param">min_samples_leaf=None</em>, <em class="sig-param">min_weight_fraction_leaf=None</em>, <em class="sig-param">max_leaf_nodes=None</em>, <em class="sig-param">min_impurity_decrease=None</em>, <em class="sig-param">min_impurity_split=None</em>, <em class="sig-param">oob_score=None</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">warm_start=None</em>, <em class="sig-param">class_weight=None</em>, <em class="sig-param">workers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestClassifier" title="Permalink to this definition">¶</a></dt>
@@ -7932,8 +7925,8 @@ the sklearn set_params.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="id26">
-<h3>Truncated SVD<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id22">
+<h3>Truncated SVD<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.dask.decomposition.TruncatedSVD">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.dask.decomposition.</code><code class="sig-name descname">TruncatedSVD</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.TruncatedSVD" title="Permalink to this definition">¶</a></dt>
