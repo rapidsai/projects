@@ -31,7 +31,7 @@ update_symlinks.sh 13
 
 One of the ways we customize the documentation files is by adding dropdown selectors to each doc page that allows visitors to select and navigate between RAPIDS libraries and their versions. In order to know what page a user will be directed to upon selection, a map of available libraries and versions needs to be generated. [lib_map.sh](lib_map.sh) generates this map.
 
-`lib_map.sh` creates a creates a JSON file that is used by `customize_docs.py` to populate the available options for the _libray_ and _version_ selectors.
+`lib_map.sh` creates a JSON file that is used by `customize_docs.py` to populate the available options for the _libray_ and _version_ selectors.
 
 An excerpt of the generated JSON file is shown below:
 
@@ -92,7 +92,7 @@ update_symlinks.sh ${CURRENT_RAPIDS_VERSION} # ensures symlink accuracy
 
 lib_map.sh # generates a JSON file needed by customize_docs.py
 
-for FILE in $(some_grep_command_to_find_doc_files); do
+for FILE in $(some_grep_command_to_find_doc__html_files); do
   python customize_docs.py ${FILE} ${CURRENT_RAPIDS_VERSION}
 done
 
