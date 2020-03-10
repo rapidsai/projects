@@ -3,6 +3,7 @@ set -e
 
 SPHINX_SEARCH_TERM='class="wy-side-nav-search"'
 DOXYGEN_SEARCH_TERM='id="titlearea"'
+CURRENT_STABLE_VERSION="12"
 
 # IFS is changed due to cuxfilter docs having spaces in their filenames
 OIFS="$IFS"
@@ -14,7 +15,7 @@ for FILE in $(grep "${SPHINX_SEARCH_TERM}\|${DOXYGEN_SEARCH_TERM}" -rl \
   --exclude-dir=latest \
   --exclude-dir=legacy \
   . ); do
-  python customize_doc.py ${FILE}
+  python customize_doc.py ${FILE} ${CURRENT_STABLE_VERSION}
   echo "" # line break for readability
 done
 IFS="$OIFS"

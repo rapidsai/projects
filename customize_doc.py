@@ -4,9 +4,9 @@ import sys
 import json
 
 filepath = sys.argv[1]
+stable_version = int(sys.argv[2])
 
 docs_home = "https://docs.rapids.ai/api"
-stable_version = 12
 versions_dict = {
     "nightly": stable_version + 1,
     "stable": stable_version,
