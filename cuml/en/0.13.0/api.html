@@ -2866,6 +2866,12 @@ Only relevant for GLOBAL_QUANTILE split_algo.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.convert_to_fil_model" title="cuml.ensemble.RandomForestClassifier.convert_to_fil_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_to_fil_model</span></code></a>(self[, output_class, …])</p></td>
+<td><p>Create a Forest Inference (FIL) model from the trained cuML Random Forest model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.convert_to_treelite_model" title="cuml.ensemble.RandomForestClassifier.convert_to_treelite_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_to_treelite_model</span></code></a>(self)</p></td>
+<td><p>Converts the cuML RF model to a Treelite model</p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.fit" title="cuml.ensemble.RandomForestClassifier.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
 <td><p>Perform Random Forest Classification on the input data</p></td>
 </tr>
@@ -2889,6 +2895,77 @@ Only relevant for GLOBAL_QUANTILE split_algo.</p>
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestClassifier.convert_to_fil_model">
+<code class="sig-name descname">convert_to_fil_model</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">output_class=True</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">fil_sparse_format=u'auto'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.convert_to_fil_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Forest Inference (FIL) model from the trained cuML
+Random Forest model.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>output_class: boolean (default = True)</strong></dt><dd><p>This is optional and required only while performing the
+predict operation on the GPU.
+If true, return a 1 or 0 depending on whether the raw
+prediction exceeds the threshold. If False, just return
+the raw prediction.</p>
+</dd>
+<dt><strong>algo</strong><span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
+predict operation on the GPU.
+‘naive’ - simple inference using shared memory
+‘tree_reorg’ - similar to naive but trees rearranged to be more</p>
+<blockquote>
+<div><p>coalescing-friendly</p>
+</div></blockquote>
+<dl class="simple">
+<dt>‘batch_tree_reorg’ - similar to tree_reorg but predicting</dt><dd><p>multiple rows per thread block</p>
+</dd>
+<dt><cite>auto</cite> - choose the algorithm automatically. Currently</dt><dd><p>‘batch_tree_reorg’ is used for dense storage
+and ‘naive’ for sparse storage</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>threshold</strong><span class="classifier">float (default = 0.5)</span></dt><dd><p>Threshold used for classification. Optional and required only
+while performing the predict operation on the GPU.
+It is applied if output_class == True, else it is ignored</p>
+</dd>
+<dt><strong>fil_sparse_format</strong><span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
+created in the Forest Inference Library. It is not required
+while using predict_model=’CPU’.
+‘auto’ - choose the storage type automatically</p>
+<blockquote>
+<div><blockquote>
+<div><p>(currently True is chosen by auto)</p>
+</div></blockquote>
+<p>False - create a dense forest
+True - create a sparse forest, requires algo=’naive’</p>
+<blockquote>
+<div><p>or algo=’auto’</p>
+</div></blockquote>
+</div></blockquote>
+</dd>
+<dt><strong>Returns</strong></dt><dd></dd>
+<dt><strong>———-</strong></dt><dd></dd>
+<dt><strong>fil_model :</strong></dt><dd><p>A Forest Inference model which can be used to perform
+inferencing on the random forest model.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestClassifier.convert_to_treelite_model">
+<code class="sig-name descname">convert_to_treelite_model</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.convert_to_treelite_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the cuML RF model to a Treelite model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tl_to_fil_model</strong><span class="classifier">Treelite version of this model</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestClassifier.fit">
 <code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.fit" title="Permalink to this definition">¶</a></dt>
@@ -3207,6 +3284,12 @@ currently fully guarantee the exact same results.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.convert_to_fil_model" title="cuml.ensemble.RandomForestRegressor.convert_to_fil_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_to_fil_model</span></code></a>(self[, output_class, …])</p></td>
+<td><p>Create a Forest Inference (FIL) model from the trained cuML Random Forest model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.convert_to_treelite_model" title="cuml.ensemble.RandomForestRegressor.convert_to_treelite_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_to_treelite_model</span></code></a>(self)</p></td>
+<td><p>Converts the cuML RF model to a Treelite model</p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.fit" title="cuml.ensemble.RandomForestRegressor.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
 <td><p>Perform Random Forest Regression on the input data</p></td>
 </tr>
@@ -3230,6 +3313,73 @@ currently fully guarantee the exact same results.</p>
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestRegressor.convert_to_fil_model">
+<code class="sig-name descname">convert_to_fil_model</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">output_class=False</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">fil_sparse_format=u'auto'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.convert_to_fil_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Forest Inference (FIL) model from the trained cuML
+Random Forest model.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>output_class: boolean (default = True)</strong></dt><dd><p>This is optional and required only while performing the
+predict operation on the GPU.
+If true, return a 1 or 0 depending on whether the raw
+prediction exceeds the threshold. If False, just return
+the raw prediction.</p>
+</dd>
+<dt><strong>algo</strong><span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
+predict operation on the GPU.
+‘naive’ - simple inference using shared memory
+‘tree_reorg’ - similar to naive but trees rearranged to be more</p>
+<blockquote>
+<div><p>coalescing-friendly</p>
+</div></blockquote>
+<dl class="simple">
+<dt>‘batch_tree_reorg’ - similar to tree_reorg but predicting</dt><dd><p>multiple rows per thread block</p>
+</dd>
+<dt><cite>auto</cite> - choose the algorithm automatically. Currently</dt><dd><p>‘batch_tree_reorg’ is used for dense storage
+and ‘naive’ for sparse storage</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>fil_sparse_format</strong><span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
+created in the Forest Inference Library. It is not required
+while using predict_model=’CPU’.
+‘auto’ - choose the storage type automatically</p>
+<blockquote>
+<div><blockquote>
+<div><p>(currently True is chosen by auto)</p>
+</div></blockquote>
+<p>False - create a dense forest
+True - create a sparse forest, requires algo=’naive’</p>
+<blockquote>
+<div><p>or algo=’auto’</p>
+</div></blockquote>
+</div></blockquote>
+</dd>
+<dt><strong>Returns</strong></dt><dd></dd>
+<dt><strong>———-</strong></dt><dd></dd>
+<dt><strong>fil_model :</strong></dt><dd><p>A Forest Inference model which can be used to perform
+inferencing on the random forest model.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestRegressor.convert_to_treelite_model">
+<code class="sig-name descname">convert_to_treelite_model</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.convert_to_treelite_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the cuML RF model to a Treelite model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tl_to_fil_model</strong><span class="classifier">Treelite version of this model</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestRegressor.fit">
 <code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.fit" title="Permalink to this definition">¶</a></dt>
@@ -5059,13 +5209,13 @@ For additional docs, see <a class="reference external" href="http://scikit-learn
 <span class="n">pca_float</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;components: </span><span class="si">{pca_float.components_}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance: </span><span class="si">{pca_float.explained_variance_}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">exp_var</span> <span class="o">=</span> <span class="n">pca_float</span><span class="o">.</span><span class="n">explained_variance_ratio_</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance: </span><span class="si">{pca_float._explained_variance_}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">exp_var</span> <span class="o">=</span> <span class="n">pca_float</span><span class="o">.</span><span class="n">_explained_variance_ratio_</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance ratio: </span><span class="si">{exp_var}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;singular values: </span><span class="si">{pca_float.singular_values_}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;mean: </span><span class="si">{pca_float.mean_}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;noise variance: </span><span class="si">{pca_float.noise_variance_}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;singular values: </span><span class="si">{pca_float._singular_values_}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;mean: </span><span class="si">{pca_float._mean_}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;noise variance: </span><span class="si">{pca_float._noise_variance_}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="n">trans_gdf_float</span> <span class="o">=</span> <span class="n">pca_float</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Inverse: </span><span class="si">{trans_gdf_float}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -5341,10 +5491,10 @@ For additional documentation, see <a class="reference external" href="http://sci
 <span class="n">tsvd_float</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;components: </span><span class="si">{tsvd_float.components_}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance: </span><span class="si">{tsvd_float.explained_variance_}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">exp_var</span> <span class="o">=</span> <span class="n">tsvd_float</span><span class="o">.</span><span class="n">explained_variance_ratio_</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance: </span><span class="si">{tsvd_float._explained_variance_}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">exp_var</span> <span class="o">=</span> <span class="n">tsvd_float</span><span class="o">.</span><span class="n">_explained_variance_ratio_</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance ratio: </span><span class="si">{exp_var}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;singular values: </span><span class="si">{tsvd_float.singular_values_}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;singular values: </span><span class="si">{tsvd_float._singular_values_}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="n">trans_gdf_float</span> <span class="o">=</span> <span class="n">tsvd_float</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Transformed matrix: </span><span class="si">{trans_gdf_float}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -5440,21 +5590,17 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dl class="attribute">
 <dt id="cuml.TruncatedSVD.fit_transform">
 <code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.fit_transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fit LSI model to X and perform dimensionality reduction on X.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+<dd><p>Fit LSI model to X and perform dimensionality reduction on X.
+Parameters
+———-
+X : array-like (device or host) shape = (n_samples, n_features)</p>
+<blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>X_new</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_components)</span></dt><dd><p>Reduced version of X as a dense cuDF DataFrame</p>
-</dd>
-</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>X_new<span class="classifier">cuDF DataFrame, shape (n_samples, n_components)</span></dt><dd><p>Reduced version of X as a dense cuDF DataFrame</p>
 </dd>
 </dl>
 </dd></dl>
@@ -5467,26 +5613,24 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dl class="attribute">
 <dt id="cuml.TruncatedSVD.inverse_transform">
 <code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.inverse_transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Transform X back to its original space.</p>
-<p>Returns a cuDF DataFrame X_original whose transform would be X.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+<dd><p>Transform X back to its original space.
+Returns a cuDF DataFrame X_original whose transform would be X.
+Parameters
+———-
+X : array-like (device or host) shape = (n_samples, n_features)</p>
+<blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
-</dd>
-<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the inverse_transform method will automatically
+</div></blockquote>
+<dl class="simple">
+<dt>convert_dtype<span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the inverse_transform method will automatically
 convert the input to the data type which was used to train the
 model. This will increase memory used for the method.</p>
 </dd>
 </dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>X_original</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_features)</span></dt><dd><p>Note that this is always a dense cuDF DataFrame.</p>
-</dd>
-</dl>
+<dl class="simple">
+<dt>X_original<span class="classifier">cuDF DataFrame, shape (n_samples, n_features)</span></dt><dd><p>Note that this is always a dense cuDF DataFrame.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -5494,25 +5638,23 @@ model. This will increase memory used for the method.</p>
 <dl class="attribute">
 <dt id="cuml.TruncatedSVD.transform">
 <code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Perform dimensionality reduction on X.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+<dd><p>Perform dimensionality reduction on X.
+Parameters
+———-
+X : array-like (device or host) shape = (n_samples, n_features)</p>
+<blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
-</dd>
-<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the transform method will automatically
+</div></blockquote>
+<dl class="simple">
+<dt>convert_dtype<span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the transform method will automatically
 convert the input to the data type which was used to train the
 model.</p>
 </dd>
 </dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>X_new</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_components)</span></dt><dd><p>Reduced version of X. This will always be a dense DataFrame.</p>
-</dd>
-</dl>
+<dl class="simple">
+<dt>X_new<span class="classifier">cuDF DataFrame, shape (n_samples, n_components)</span></dt><dd><p>Reduced version of X. This will always be a dense DataFrame.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -7423,10 +7565,10 @@ estimated covariance of X.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.decomposition.PCA.fit_transform" title="cuml.dask.decomposition.PCA.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X)</p></td>
 <td><p>Fit the model with X and apply the dimensionality reduction on X.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.decomposition.PCA.inverse_transform" title="cuml.dask.decomposition.PCA.inverse_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_transform</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.decomposition.PCA.inverse_transform" title="cuml.dask.decomposition.PCA.inverse_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_transform</span></code></a>(self, X[, delayed])</p></td>
 <td><p>Transform data back to its original space.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.decomposition.PCA.transform" title="cuml.dask.decomposition.PCA.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.decomposition.PCA.transform" title="cuml.dask.decomposition.PCA.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X[, delayed])</p></td>
 <td><p>Apply dimensionality reduction to X.</p></td>
 </tr>
 </tbody>
@@ -7475,7 +7617,7 @@ estimated covariance of X.</p>
 
 <dl class="method">
 <dt id="cuml.dask.decomposition.PCA.inverse_transform">
-<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA.inverse_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">delayed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA.inverse_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform data back to its original space.</p>
 <p>In other words, return an input X_original whose transform would be X.</p>
 <dl class="field-list simple">
@@ -7494,7 +7636,7 @@ estimated covariance of X.</p>
 
 <dl class="method">
 <dt id="cuml.dask.decomposition.PCA.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">delayed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply dimensionality reduction to X.</p>
 <p>X is projected on the first principal components previously extracted
 from a training set.</p>
@@ -8027,10 +8169,10 @@ then the other solvers including randomized SVD.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.decomposition.TruncatedSVD.fit_transform" title="cuml.dask.decomposition.TruncatedSVD.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X)</p></td>
 <td><p>Fit the model with X and apply the dimensionality reduction on X.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.decomposition.TruncatedSVD.inverse_transform" title="cuml.dask.decomposition.TruncatedSVD.inverse_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_transform</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.decomposition.TruncatedSVD.inverse_transform" title="cuml.dask.decomposition.TruncatedSVD.inverse_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_transform</span></code></a>(self, X[, delayed])</p></td>
 <td><p>Transform data back to its original space.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.decomposition.TruncatedSVD.transform" title="cuml.dask.decomposition.TruncatedSVD.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.decomposition.TruncatedSVD.transform" title="cuml.dask.decomposition.TruncatedSVD.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X[, delayed])</p></td>
 <td><p>Apply dimensionality reduction to X.</p></td>
 </tr>
 </tbody>
@@ -8079,7 +8221,7 @@ then the other solvers including randomized SVD.</p>
 
 <dl class="method">
 <dt id="cuml.dask.decomposition.TruncatedSVD.inverse_transform">
-<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.TruncatedSVD.inverse_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">delayed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.TruncatedSVD.inverse_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform data back to its original space.</p>
 <p>In other words, return an input X_original whose transform would be X.</p>
 <dl class="field-list simple">
@@ -8098,7 +8240,7 @@ then the other solvers including randomized SVD.</p>
 
 <dl class="method">
 <dt id="cuml.dask.decomposition.TruncatedSVD.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.TruncatedSVD.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">delayed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.TruncatedSVD.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply dimensionality reduction to X.</p>
 <p>X is projected on the first principal components previously extracted
 from a training set.</p>
