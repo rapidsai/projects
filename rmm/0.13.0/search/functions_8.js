@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['thrust_5fallocator_98',['thrust_allocator',['../classrmm_1_1mr_1_1thrust__allocator.html#a88aa26ce7e5c961d527cb600cfe5d54c',1,'rmm::mr::thrust_allocator::thrust_allocator(device_memory_resource *mr, cudaStream_t stream)'],['../classrmm_1_1mr_1_1thrust__allocator.html#a4a534791b81bda2d8f9ef268115cd045',1,'rmm::mr::thrust_allocator::thrust_allocator(thrust_allocator&lt; U &gt; const &amp;other)']]],
-  ['to_5fcsv_99',['to_csv',['../classrmm_1_1Logger.html#aab75215155ba51968c11bafc1d106a9e',1,'rmm::Logger']]]
+  ['set_5fvalue_102',['set_value',['../classrmm_1_1device__scalar.html#ae4b8e5b4bc61d59c55ea3a2a2577abf9',1,'rmm::device_scalar']]],
+  ['setpointer_103',['setPointer',['../classrmm_1_1LogIt.html#a6bee1f58cdd54d2f4651863c8999d4ca',1,'rmm::LogIt']]],
+  ['stream_104',['stream',['../classrmm_1_1mr_1_1thrust__allocator.html#abf19e367462013c948c074cc9b7eed4b',1,'rmm::mr::thrust_allocator']]],
+  ['supports_5fget_5fmem_5finfo_105',['supports_get_mem_info',['../classrmm_1_1mr_1_1thread__safe__resource__adaptor.html#a5370b467ace4c1d2a8c710a9484f80a6',1,'rmm::mr::thread_safe_resource_adaptor']]],
+  ['supports_5fstreams_106',['supports_streams',['../classrmm_1_1mr_1_1cnmem__memory__resource.html#a5be2df0ff53ce6cb9c494845f5664ee9',1,'rmm::mr::cnmem_memory_resource::supports_streams()'],['../classrmm_1_1mr_1_1cuda__memory__resource.html#af3319eeb30d26e14eb8195e6e159d746',1,'rmm::mr::cuda_memory_resource::supports_streams()'],['../classrmm_1_1mr_1_1device__memory__resource.html#a04598a0abd19625d081a69599360b215',1,'rmm::mr::device_memory_resource::supports_streams()'],['../classrmm_1_1mr_1_1logging__resource__adaptor.html#ae8b0851574e6a8932ad42e90f3b349ff',1,'rmm::mr::logging_resource_adaptor::supports_streams()'],['../classrmm_1_1mr_1_1managed__memory__resource.html#ad01bf649a47380eef0bff9fb37d94a23',1,'rmm::mr::managed_memory_resource::supports_streams()'],['../classrmm_1_1mr_1_1thread__safe__resource__adaptor.html#a1b5fb9d43b53b01c3538f40e7d3b536c',1,'rmm::mr::thread_safe_resource_adaptor::supports_streams()']]]
 ];

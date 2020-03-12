@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['logger_25',['Logger',['../classrmm_1_1Logger.html',1,'rmm']]],
-  ['logic_5ferror_26',['logic_error',['../structrmm_1_1logic__error.html',1,'rmm']]],
-  ['logit_27',['LogIt',['../classrmm_1_1LogIt.html',1,'rmm']]]
+  ['logger_26',['Logger',['../classrmm_1_1Logger.html',1,'rmm']]],
+  ['logging_5fresource_5fadaptor_27',['logging_resource_adaptor',['../classrmm_1_1mr_1_1logging__resource__adaptor.html',1,'rmm::mr::logging_resource_adaptor&lt; Upstream &gt;'],['../classrmm_1_1mr_1_1logging__resource__adaptor.html#a01f27e53d9dac48a218ec22e3cfad410',1,'rmm::mr::logging_resource_adaptor::logging_resource_adaptor()']]],
+  ['logic_5ferror_28',['logic_error',['../structrmm_1_1logic__error.html',1,'rmm']]],
+  ['logit_29',['LogIt',['../classrmm_1_1LogIt.html',1,'rmm']]]
 ];
