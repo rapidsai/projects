@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2019, NVIDIA CORPORATION.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2019-2020, NVIDIA CORPORATION.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * you may not use this file except in compliance with the License.</span></div>
@@ -97,13 +97,13 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">enum class</span> pad_side {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    left,   </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    right,  </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    both    </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    LEFT,   </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    RIGHT,  </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    BOTH    </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;std::unique_ptr&lt;column&gt; pad( strings_column_view <span class="keyword">const</span>&amp; strings,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                             size_type width, pad_side side = pad_side::right,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                             size_type width, pad_side side = cudf::strings::pad_side::RIGHT,</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                             std::string <span class="keyword">const</span>&amp; fill_char = <span class="stringliteral">&quot; &quot;</span>,</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                             rmm::mr::device_memory_resource* mr = rmm::mr::get_default_resource() );</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>

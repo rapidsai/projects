@@ -104,6 +104,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:accbdaf4c53e45a4f62bde1ad0fbfed71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#accbdaf4c53e45a4f62bde1ad0fbfed71">write_all</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;<a class="el" href="classcudf_1_1experimental_1_1table.html">table</a>, const <a class="el" href="structcudf_1_1experimental_1_1io_1_1table__metadata.html">table_metadata</a> *<a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1metadata.html">metadata</a>=nullptr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
 <tr class="memdesc:accbdaf4c53e45a4f62bde1ad0fbfed71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the entire dataset.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#accbdaf4c53e45a4f62bde1ad0fbfed71">More...</a><br /></td></tr>
 <tr class="separator:accbdaf4c53e45a4f62bde1ad0fbfed71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa06220095b752272abebee3711dddc45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#aa06220095b752272abebee3711dddc45">write_chunked_begin</a> (struct <a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1orc__chunked__state.html">orc_chunked_state</a> &amp;state)</td></tr>
+<tr class="memdesc:aa06220095b752272abebee3711dddc45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the chunked/streamed write process.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#aa06220095b752272abebee3711dddc45">More...</a><br /></td></tr>
+<tr class="separator:aa06220095b752272abebee3711dddc45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b662e0ff475b172e96f8e34d84a9864"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#a7b662e0ff475b172e96f8e34d84a9864">write_chunked</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;<a class="el" href="classcudf_1_1experimental_1_1table.html">table</a>, struct <a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1orc__chunked__state.html">orc_chunked_state</a> &amp;state)</td></tr>
+<tr class="memdesc:a7b662e0ff475b172e96f8e34d84a9864"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a single subtable as part of a larger ORC file/table write.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#a7b662e0ff475b172e96f8e34d84a9864">More...</a><br /></td></tr>
+<tr class="separator:a7b662e0ff475b172e96f8e34d84a9864"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c9862bddf687df5e051c9480e871dee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#a0c9862bddf687df5e051c9480e871dee">write_chunked_end</a> (struct <a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1orc__chunked__state.html">orc_chunked_state</a> &amp;state)</td></tr>
+<tr class="memdesc:a0c9862bddf687df5e051c9480e871dee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finishes the chunked/streamed write process.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#a0c9862bddf687df5e051c9480e871dee">More...</a><br /></td></tr>
+<tr class="separator:a0c9862bddf687df5e051c9480e871dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to write ORC dataset data into columns. </p>
@@ -296,6 +305,95 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">table</td><td>Set of columns to output </td></tr>
     <tr><td class="paramname">metadata</td><td>Table metadata and column names </td></tr>
     <tr><td class="paramname">stream</td><td>Optional stream to use for device memory alloc and kernels </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7b662e0ff475b172e96f8e34d84a9864"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b662e0ff475b172e96f8e34d84a9864">&#9670;&nbsp;</a></span>write_chunked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cudf::experimental::io::detail::orc::writer::write_chunked </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;&#160;</td>
+          <td class="paramname"><em>table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1orc__chunked__state.html">orc_chunked_state</a> &amp;&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes a single subtable as part of a larger ORC file/table write. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">table</td><td>The table information to be written </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">state</td><td>State information that crosses _begin() / <a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#a7b662e0ff475b172e96f8e34d84a9864" title="Writes a single subtable as part of a larger ORC file/table write.">write_chunked()</a> / _end() boundaries. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa06220095b752272abebee3711dddc45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa06220095b752272abebee3711dddc45">&#9670;&nbsp;</a></span>write_chunked_begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cudf::experimental::io::detail::orc::writer::write_chunked_begin </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1orc__chunked__state.html">orc_chunked_state</a> &amp;&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Begins the chunked/streamed write process. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">state</td><td>State information that crosses _begin() / <a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#a7b662e0ff475b172e96f8e34d84a9864" title="Writes a single subtable as part of a larger ORC file/table write.">write_chunked()</a> / _end() boundaries. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0c9862bddf687df5e051c9480e871dee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c9862bddf687df5e051c9480e871dee">&#9670;&nbsp;</a></span>write_chunked_end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cudf::experimental::io::detail::orc::writer::write_chunked_end </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1orc__chunked__state.html">orc_chunked_state</a> &amp;&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finishes the chunked/streamed write process. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">state</td><td>State information that crosses _begin() / <a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1writer.html#a7b662e0ff475b172e96f8e34d84a9864" title="Writes a single subtable as part of a larger ORC file/table write.">write_chunked()</a> / _end() boundaries. </td></tr>
   </table>
   </dd>
 </dl>

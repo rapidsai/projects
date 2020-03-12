@@ -11,7 +11,7 @@
 <area shape="rect" id="node21" href="$integer__utils_8hpp_source.html" title=" " alt="" coords="1783,169,2015,211"/>
 <area shape="rect" id="node23" href="$writers_8hpp_source.html" title=" " alt="" coords="2800,87,3012,114"/>
 <area shape="rect" id="node32" href="$table_2table_8hpp_source.html" title=" " alt="" coords="2145,87,2368,114"/>
-<area shape="rect" id="node36" href="$chunked__state_8hpp.html" title="definition for chunked state structure used by Parquet writer" alt="" coords="871,87,1063,114"/>
+<area shape="rect" id="node36" href="$parquet_2chunked__state_8hpp.html" title="definition for chunked state structure used by Parquet writer" alt="" coords="871,87,1063,114"/>
 <area shape="rect" id="node3" href="$parquet__common_8h_source.html" title=" " alt="" coords="567,266,749,293"/>
 <area shape="rect" id="node4" title=" " alt="" coords="440,266,543,293"/>
 <area shape="rect" id="node5" title=" " alt="" coords="773,266,876,293"/>

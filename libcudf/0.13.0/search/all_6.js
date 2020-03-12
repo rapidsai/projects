@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['false_5fvalues_428',['false_values',['../structcudf_1_1experimental_1_1io_1_1read__csv__args.html#a2e7b345cb0448fc33626af621e53e204',1,'cudf::experimental::io::read_csv_args::false_values()'],['../structcudf_1_1experimental_1_1io_1_1detail_1_1csv_1_1reader__options.html#aa3fd4455ff7a9a9c302fb3d2aa2a1952',1,'cudf::experimental::io::detail::csv::reader_options::false_values()'],['../structcudf_1_1io_1_1csv_1_1reader__options.html#a5d8f06ae4358a11971c896715670012f',1,'cudf::io::csv::reader_options::false_values()'],['../structcudf_1_1csv__read__arg.html#a3fe90c681e13d50c46d5c310ac7bbfad',1,'cudf::csv_read_arg::false_values()']]],
-  ['fast_5fmodulo_5fpartitioner_429',['fast_modulo_partitioner',['../structfast__modulo__partitioner.html',1,'']]],
+  ['false_5fvalues_427',['false_values',['../structcudf_1_1experimental_1_1io_1_1read__csv__args.html#a2e7b345cb0448fc33626af621e53e204',1,'cudf::experimental::io::read_csv_args::false_values()'],['../structcudf_1_1experimental_1_1io_1_1detail_1_1csv_1_1reader__options.html#aa3fd4455ff7a9a9c302fb3d2aa2a1952',1,'cudf::experimental::io::detail::csv::reader_options::false_values()'],['../structcudf_1_1io_1_1csv_1_1reader__options.html#a5d8f06ae4358a11971c896715670012f',1,'cudf::io::csv::reader_options::false_values()'],['../structcudf_1_1csv__read__arg.html#a3fe90c681e13d50c46d5c310ac7bbfad',1,'cudf::csv_read_arg::false_values()']]],
+  ['fast_5fmodulo_5fpartitioner_428',['fast_modulo_partitioner',['../structfast__modulo__partitioner.html',1,'']]],
+  ['ff_429',['ff',['../structcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1orc__chunked__state.html#a32659f695459bdd7a248091fc3d2ec23',1,'cudf::experimental::io::detail::orc::orc_chunked_state']]],
   ['file_5fender_5fs_430',['file_ender_s',['../structcudf_1_1io_1_1parquet_1_1file__ender__s.html',1,'cudf::io::parquet']]],
   ['file_5fheader_5fs_431',['file_header_s',['../structcudf_1_1io_1_1parquet_1_1file__header__s.html',1,'cudf::io::parquet']]],
   ['file_5fmetadata_432',['file_metadata',['../structcudf_1_1io_1_1avro_1_1file__metadata.html',1,'cudf::io::avro']]],

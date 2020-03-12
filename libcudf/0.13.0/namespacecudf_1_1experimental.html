@@ -410,6 +410,12 @@ std::vector&lt; <a class="el" href="classcudf_1_1table__view.html">cudf::table_v
 <tr class="memitem:a536b3d7781bb64ae0d9b8a64a0328be7"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a536b3d7781bb64ae0d9b8a64a0328be7">repeat</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;input_table, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;count, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a536b3d7781bb64ae0d9b8a64a0328be7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Repeat rows of a Table.  <a href="namespacecudf_1_1experimental.html#a536b3d7781bb64ae0d9b8a64a0328be7">More...</a><br /></td></tr>
 <tr class="separator:a536b3d7781bb64ae0d9b8a64a0328be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfd45e203d198abb226647c1f2f766f9"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#abfd45e203d198abb226647c1f2f766f9">sequence</a> (size_type size, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;init, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;step, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:abfd45e203d198abb226647c1f2f766f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills a column with a sequence of value specified by an initial value and a step.  <a href="namespacecudf_1_1experimental.html#abfd45e203d198abb226647c1f2f766f9">More...</a><br /></td></tr>
+<tr class="separator:abfd45e203d198abb226647c1f2f766f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad957ca473d44e4db66babed2beddcc25"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#ad957ca473d44e4db66babed2beddcc25">sequence</a> (size_type size, <a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;init, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:ad957ca473d44e4db66babed2beddcc25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills a column with a sequence of value specified by an initial value and a step of 1.  <a href="namespacecudf_1_1experimental.html#ad957ca473d44e4db66babed2beddcc25">More...</a><br /></td></tr>
+<tr class="separator:ad957ca473d44e4db66babed2beddcc25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1aad7d94e652c0cb345eb5cee0853eb"><td class="memItemLeft" align="right" valign="top"><a id="ae1aad7d94e652c0cb345eb5cee0853eb"></a>
 std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">experimental::table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>inner_join</b> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;left, <a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;right, std::vector&lt; size_type &gt; const &amp;left_on, std::vector&lt; size_type &gt; const &amp;right_on, std::vector&lt; std::pair&lt; size_type, size_type &gt;&gt; const &amp;columns_in_common, rmm::mr::device_memory_resource *mr)</td></tr>
 <tr class="separator:ae1aad7d94e652c0cb345eb5cee0853eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -497,6 +503,9 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt
 <tr class="memitem:a6f329aec79c6699e308ff9916e5a2f50"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a6f329aec79c6699e308ff9916e5a2f50">sort_by_key</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;values, <a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;keys, std::vector&lt; <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">order</a> &gt; const  &amp;column_order={}, std::vector&lt; <a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">null_order</a> &gt; const  &amp;null_precedence={}, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a6f329aec79c6699e308ff9916e5a2f50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a key-value sort.  <a href="namespacecudf_1_1experimental.html#a6f329aec79c6699e308ff9916e5a2f50">More...</a><br /></td></tr>
 <tr class="separator:a6f329aec79c6699e308ff9916e5a2f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acef67d48d10b68dcf0d33971bddbcf20"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#acef67d48d10b68dcf0d33971bddbcf20">stable_sorted_order</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> input, std::vector&lt; <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">order</a> &gt; const  &amp;column_order={}, std::vector&lt; <a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">null_order</a> &gt; const  &amp;null_precedence={}, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:acef67d48d10b68dcf0d33971bddbcf20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the row indices that would produce <code>input</code> in a stable lexicographical sorted order.  <a href="namespacecudf_1_1experimental.html#acef67d48d10b68dcf0d33971bddbcf20">More...</a><br /></td></tr>
+<tr class="separator:acef67d48d10b68dcf0d33971bddbcf20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefad034a999eb89006a326e42d1d6060"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">experimental::table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#aefad034a999eb89006a326e42d1d6060">apply_boolean_mask</a> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const  &amp;input, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;boolean_mask, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:aefad034a999eb89006a326e42d1d6060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters <code>input</code> using <code>boolean_mask</code> of boolean values as a mask.  <a href="namespacecudf_1_1experimental.html#aefad034a999eb89006a326e42d1d6060">More...</a><br /></td></tr>
 <tr class="separator:aefad034a999eb89006a326e42d1d6060"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -4250,6 +4259,127 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 
 </div>
 </div>
+<a id="ad957ca473d44e4db66babed2beddcc25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad957ca473d44e4db66babed2beddcc25">&#9670;&nbsp;</a></span>sequence() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; cudf::experimental::sequence </td>
+          <td>(</td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1scalar.html">scalar</a> const &amp;&#160;</td>
+          <td class="paramname"><em>init</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fills a column with a sequence of value specified by an initial value and a step of 1. </p>
+<p>Creates a new column and fills with <code>size</code> values starting at <code>init</code> and incrementing by 1, generating the sequence [ init, init+1, init+2, ... init + (size - 1)]</p>
+<div class="fragment"><div class="line">size = 3</div>
+<div class="line">init = 0 </div>
+<div class="line"><span class="keywordflow">return</span> = [0, 1, 2]</div>
+</div><!-- fragment --> <dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">&lt;tt&gt;cudf::logic_error&lt;/tt&gt;</td><td>if <code>init</code> is not numeric. </td></tr>
+    <tr><td class="paramname">&lt;tt&gt;cudf::logic_error&lt;/tt&gt;</td><td>if <code>size</code> is &lt; 0.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>Size of the output column </td></tr>
+    <tr><td class="paramname">init</td><td>First value in the sequence </td></tr>
+    <tr><td class="paramname">mr</td><td>Memory resource to allocate the result output column </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;column&gt; The result table containing the sequence </dd></dl>
+
+</div>
+</div>
+<a id="abfd45e203d198abb226647c1f2f766f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfd45e203d198abb226647c1f2f766f9">&#9670;&nbsp;</a></span>sequence() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; cudf::experimental::sequence </td>
+          <td>(</td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1scalar.html">scalar</a> const &amp;&#160;</td>
+          <td class="paramname"><em>init</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1scalar.html">scalar</a> const &amp;&#160;</td>
+          <td class="paramname"><em>step</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fills a column with a sequence of value specified by an initial value and a step. </p>
+<p>Creates a new column and fills with <code>size</code> values starting at <code>init</code> and incrementing by <code>step</code>, generating the sequence [ init, init+step, init+2*step, ... init + (size - 1)*step]</p>
+<div class="fragment"><div class="line">size = 3</div>
+<div class="line">init = 0</div>
+<div class="line">step = 2 </div>
+<div class="line"><span class="keywordflow">return</span> = [0, 2, 4]</div>
+</div><!-- fragment --> <dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">&lt;tt&gt;cudf::logic_error&lt;/tt&gt;</td><td>if <code>init</code> and <code>@step</code>  are not the same type. </td></tr>
+    <tr><td class="paramname">&lt;tt&gt;cudf::logic_error&lt;/tt&gt;</td><td>if scalar types are not numeric. </td></tr>
+    <tr><td class="paramname">&lt;tt&gt;cudf::logic_error&lt;/tt&gt;</td><td>if <code>size</code> is &lt; 0.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>Size of the output column </td></tr>
+    <tr><td class="paramname">init</td><td>First value in the sequence </td></tr>
+    <tr><td class="paramname">step</td><td>Increment value </td></tr>
+    <tr><td class="paramname">mr</td><td>Memory resource to allocate the result output column </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;column&gt; The result table containing the sequence </dd></dl>
+
+</div>
+</div>
 <a id="abb1f4cf759334ec606aab2056e5dbfb7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb1f4cf759334ec606aab2056e5dbfb7">&#9670;&nbsp;</a></span>shift()</h2>
 
@@ -4490,7 +4620,7 @@ if the fill value is null, the output will be nullable.</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;column&gt; A non-nullable column of INT32 elements </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;column&gt; A non-nullable column of <code>size_type</code> elements </dd></dl>
 <h2><a class="anchor" id="autotoc_md464"></a>
 containing the permuted row indices of &lt;tt&gt;input&lt;/tt&gt; if it were sorted</h2>
 
@@ -4595,6 +4725,59 @@ containing the permuted row indices of &lt;tt&gt;input&lt;/tt&gt; if it were sor
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The set of requested views of <code>input</code> indicated by the <code>splits</code>. </dd></dl>
+
+</div>
+</div>
+<a id="acef67d48d10b68dcf0d33971bddbcf20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acef67d48d10b68dcf0d33971bddbcf20">&#9670;&nbsp;</a></span>stable_sorted_order()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; cudf::experimental::stable_sorted_order </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1table__view.html">table_view</a>&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">order</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>column_order</em> = <code>{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31">null_order</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>null_precedence</em> = <code>{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the row indices that would produce <code>input</code> in a stable lexicographical sorted order. </p>
+<p>------------------------------------------------------------------------&mdash;* </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>The table to sort </td></tr>
+    <tr><td class="paramname">column_order</td><td>The desired sort order for each column. Size must be equal to <code>input.num_columns()</code> or empty. If empty, all columns will be sorted in ascending order. </td></tr>
+    <tr><td class="paramname">null_precedence</td><td>The desired order of null compared to other elements for each column. Size must be equal to <code>input.num_columns()</code> or empty. If empty, all columns will be sorted in <code><a class="el" href="namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31a3525317285c6126ce3b62a8df8c00b07" title="NULL values ordered before all other values.">null_order::BEFORE</a></code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;column&gt; A non-nullable column of <code>size_type</code> elements </dd></dl>
+<h2><a class="anchor" id="autotoc_md464"></a>
+containing the permuted row indices of &lt;tt&gt;input&lt;/tt&gt; if it were sorted</h2>
 
 </div>
 </div>
