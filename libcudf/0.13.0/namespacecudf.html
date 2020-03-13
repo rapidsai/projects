@@ -92,12 +92,10 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column__device__view.html">column_device_view</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An immutable, non-owning view of device data as a column of elements.  <a href="classcudf_1_1column__device__view.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1column__from__scalar__dispatch.html">column_from_scalar_dispatch</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column__view.html">column_view</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A non-owning, immutable view of device data as a column of elements, some of which may be null as indicated by a bitmask.  <a href="classcudf_1_1column__view.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1create__column__from__view.html">create_column_from_view</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1create__column__from__view__vector.html">create_column_from_view_vector</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1csv__read__arg.html">csv_read_arg</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input arguments to the <code>read_csv</code> interface.  <a href="structcudf_1_1csv__read__arg.html#details">More...</a><br /></td></tr>
@@ -148,6 +146,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1json__read__arg.html">json_read_arg</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input arguments to the <code>read_json</code> interface.  <a href="structcudf_1_1json__read__arg.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1libcudf__domain.html">libcudf_domain</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag type for libcudf's NVTX domain.  <a href="structcudf_1_1libcudf__domain.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcudf_1_1logic__error.html">logic_error</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when logical precondition is violated.  <a href="structcudf_1_1logic__error.html#details">More...</a><br /></td></tr>
@@ -238,6 +239,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:aff73bd537f5aa6cb5eaea205ddad27d1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aff73bd537f5aa6cb5eaea205ddad27d1">thread_range</a> = ::<a class="el" href="classnvtx3_1_1domain__thread__range.html">nvtx3::domain_thread_range</a>&lt; <a class="el" href="structcudf_1_1libcudf__domain.html">libcudf_domain</a> &gt;</td></tr>
+<tr class="memdesc:aff73bd537f5aa6cb5eaea205ddad27d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for an NVTX range in the libcudf domain.  <a href="namespacecudf.html#aff73bd537f5aa6cb5eaea205ddad27d1">More...</a><br /></td></tr>
+<tr class="separator:aff73bd537f5aa6cb5eaea205ddad27d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b75348b715cc23b1a6f8b5cf03589cc"><td class="memItemLeft" align="right" valign="top"><a id="a0b75348b715cc23b1a6f8b5cf03589cc"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>char_utf8</b> = uint32_t</td></tr>
 <tr class="separator:a0b75348b715cc23b1a6f8b5cf03589cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -477,6 +481,9 @@ std::vector&lt; size_type &gt;&#160;</td><td class="memItemRight" valign="bottom
 <tr class="memitem:a02bda62ddd9305def0501b1e9bb8ca6b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a02bda62ddd9305def0501b1e9bb8ca6b">make_fixed_width_column</a> (<a class="el" href="classcudf_1_1data__type.html">data_type</a> type, size_type size, <a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26">mask_state</a> state=<a class="el" href="namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26a628732521c22dcf8a24bf1a0326bde80">mask_state::UNALLOCATED</a>, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a02bda62ddd9305def0501b1e9bb8ca6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct column with sufficient uninitialized storage to hold <code>size</code> elements of the specified fixed width <code><a class="el" href="classcudf_1_1data__type.html" title="Indicator for the logical data type of an element in a column.">data_type</a></code> with an optional null mask.  <a href="namespacecudf.html#a02bda62ddd9305def0501b1e9bb8ca6b">More...</a><br /></td></tr>
 <tr class="separator:a02bda62ddd9305def0501b1e9bb8ca6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27860497ff97c9545f190a852788d44b"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a27860497ff97c9545f190a852788d44b">make_column_from_scalar</a> (<a class="el" href="classcudf_1_1scalar.html">scalar</a> const  &amp;s, size_type size, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource(), <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
+<tr class="memdesc:a27860497ff97c9545f190a852788d44b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a column with size elements that are all equal to the given scalar.  <a href="namespacecudf.html#a27860497ff97c9545f190a852788d44b">More...</a><br /></td></tr>
+<tr class="separator:a27860497ff97c9545f190a852788d44b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef675a9c75a848ab796ae9b2b51c4238"><td class="memItemLeft" align="right" valign="top">size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#aef675a9c75a848ab796ae9b2b51c4238">count_descendants</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> parent)</td></tr>
 <tr class="memdesc:aef675a9c75a848ab796ae9b2b51c4238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the number of descendants of the specified parent.  <a href="namespacecudf.html#aef675a9c75a848ab796ae9b2b51c4238">More...</a><br /></td></tr>
 <tr class="separator:aef675a9c75a848ab796ae9b2b51c4238"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1131,6 +1138,22 @@ typedef".</p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whatever is returned by the functor's "operator()". </dd></dl>
 </div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="aff73bd537f5aa6cb5eaea205ddad27d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff73bd537f5aa6cb5eaea205ddad27d1">&#9670;&nbsp;</a></span>thread_range</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacecudf.html#aff73bd537f5aa6cb5eaea205ddad27d1">cudf::thread_range</a> = typedef ::<a class="el" href="classnvtx3_1_1domain__thread__range.html">nvtx3::domain_thread_range</a>&lt;<a class="el" href="structcudf_1_1libcudf__domain.html">libcudf_domain</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias for an NVTX range in the libcudf domain. </p>
+
+</div>
+</div>
 <a id="a177c346e93407722169284f15d260687"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a177c346e93407722169284f15d260687">&#9670;&nbsp;</a></span>timestamp_D</h2>
 
@@ -4936,6 +4959,58 @@ template&lt;JoinType join_type, typename index_type &gt; </div>
 
 </div>
 </div>
+<a id="a27860497ff97c9545f190a852788d44b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27860497ff97c9545f190a852788d44b">&#9670;&nbsp;</a></span>make_column_from_scalar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; cudf::make_column_from_scalar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1scalar.html">scalar</a> const &amp;&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_type&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
+          <td class="paramname"><em>stream</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return a column with size elements that are all equal to the given scalar. </p>
+<p>The output column will have the same type as <code>s.type()</code> The output column will contain all null rows if <code>s.invalid()==false</code> The output column will be empty if <code>size==0</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>The scalar to use for values in the column. </td></tr>
+    <tr><td class="paramname">size</td><td>The number of rows for the output column. </td></tr>
+    <tr><td class="paramname">stream</td><td>Optional stream for use with all memory allocation and device kernels </td></tr>
+    <tr><td class="paramname">mr</td><td>Optional resource to use for device memory. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a693de6f22cd656b6d859b83a106a762e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a693de6f22cd656b6d859b83a106a762e">&#9670;&nbsp;</a></span>make_default_constructed_scalar()</h2>
 
@@ -8039,7 +8114,7 @@ template&lt;typename bit_container , typename predicate , typename size_type &gt
 <div class="ttc" id="anamespacecudf_html_aab7d308aae78cd6323814732ec4a2278"><div class="ttname"><a href="namespacecudf.html#aab7d308aae78cd6323814732ec4a2278">cudf::group_std</a></div><div class="ttdeci">std::pair&lt; cudf::table, cudf::table &gt; group_std(cudf::table const &amp;keys, cudf::table const &amp;values, cudf::size_type ddof)</div><div class="ttdoc">Computes a group wise standard deviation.</div><div class="ttdef"><b>Definition:</b> reductions/legacy/group_std.cu:188</div></div>
 <div class="ttc" id="anamespacecudf_html_a6c828f318cb2c14c8ac0567f5084d1e7"><div class="ttname"><a href="namespacecudf.html#a6c828f318cb2c14c8ac0567f5084d1e7">cudf::group_quantiles</a></div><div class="ttdeci">std::pair&lt; cudf::table, cudf::table &gt; group_quantiles(cudf::table const &amp;keys, cudf::table const &amp;values, std::vector&lt; double &gt; const &amp;quantiles, cudf::interpolation interpolation, bool include_nulls)</div><div class="ttdoc">Find values at given quantiles within groups.</div><div class="ttdef"><b>Definition:</b> quantiles/legacy/group_quantiles.cu:120</div></div>
 <div class="ttc" id="anamespacecudf_html_abfef82d2b9451cd05e5232244bf57e00"><div class="ttname"><a href="namespacecudf.html#abfef82d2b9451cd05e5232244bf57e00">cudf::make_dictionary_column</a></div><div class="ttdeci">std::unique_ptr&lt; column &gt; make_dictionary_column(column_view const &amp;keys_column, column_view const &amp;indices_column, rmm::mr::device_memory_resource *mr, cudaStream_t stream)</div><div class="ttdoc">Construct a dictionary column by copying the provided keys and indices.</div><div class="ttdef"><b>Definition:</b> dictionary_factories.cu:25</div></div>
-<div class="ttc" id="anamespacecudf_1_1experimental_html_a186c50e8682852e00756b6172feb9ea2"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a186c50e8682852e00756b6172feb9ea2">cudf::experimental::quantile</a></div><div class="ttdeci">std::unique_ptr&lt; scalar &gt; quantile(column_view const &amp;input, double q, interpolation interp, order_info column_order)</div><div class="ttdoc">Computes a value for a quantile by interpolating between the values on either side of the desired qua...</div><div class="ttdef"><b>Definition:</b> quantile.cu:102</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_a186c50e8682852e00756b6172feb9ea2"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a186c50e8682852e00756b6172feb9ea2">cudf::experimental::quantile</a></div><div class="ttdeci">std::unique_ptr&lt; scalar &gt; quantile(column_view const &amp;input, double q, interpolation interp, order_info column_order)</div><div class="ttdoc">Computes a value for a quantile by interpolating between the values on either side of the desired qua...</div><div class="ttdef"><b>Definition:</b> quantile.cu:104</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -149,10 +149,14 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a748faef899f436d65047ac2241261457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compression algorithms.  <a href="namespacecudf_1_1experimental_1_1io.html#a748faef899f436d65047ac2241261457">More...</a><br /></td></tr>
 <tr class="separator:a748faef899f436d65047ac2241261457"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f77dec4b25aa464af5e0c7fef427b5f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io.html#a3f77dec4b25aa464af5e0c7fef427b5f">io_type</a> { <a class="el" href="namespacecudf_1_1experimental_1_1io.html#a3f77dec4b25aa464af5e0c7fef427b5fa86e4c917b9ee70e67a68639bd9fcead7">io_type::FILEPATH</a>, 
+<tr class="memitem:a3f77dec4b25aa464af5e0c7fef427b5f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental_1_1io.html#a3f77dec4b25aa464af5e0c7fef427b5f">io_type</a> { <br />
+&#160;&#160;<a class="el" href="namespacecudf_1_1experimental_1_1io.html#a3f77dec4b25aa464af5e0c7fef427b5fa86e4c917b9ee70e67a68639bd9fcead7">io_type::FILEPATH</a>, 
 <a class="el" href="namespacecudf_1_1experimental_1_1io.html#a3f77dec4b25aa464af5e0c7fef427b5fa0a4c208cf95063151fc52d4e293b7071">io_type::HOST_BUFFER</a>, 
 <a class="el" href="namespacecudf_1_1experimental_1_1io.html#a3f77dec4b25aa464af5e0c7fef427b5fadfee12be43217b49b865fee0e4f4894c">io_type::ARROW_RANDOM_ACCESS_FILE</a>, 
-<a class="el" href="namespacecudf_1_1experimental_1_1io.html#a3f77dec4b25aa464af5e0c7fef427b5fa6d0c9fc747131795e6e5d0c5119f12cb">io_type::VOID</a>
+<a class="el" href="namespacecudf_1_1experimental_1_1io.html#a3f77dec4b25aa464af5e0c7fef427b5fa6d0c9fc747131795e6e5d0c5119f12cb">io_type::VOID</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacecudf_1_1experimental_1_1io.html#a3f77dec4b25aa464af5e0c7fef427b5fa186d3a18b85a7a92c8ec550bcb2e54f9">io_type::USER_SINK</a>
+<br />
  }</td></tr>
 <tr class="memdesc:a3f77dec4b25aa464af5e0c7fef427b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data source or destination types.  <a href="namespacecudf_1_1experimental_1_1io.html#a3f77dec4b25aa464af5e0c7fef427b5f">More...</a><br /></td></tr>
 <tr class="separator:a3f77dec4b25aa464af5e0c7fef427b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -309,6 +313,8 @@ template cudf::size_type&#160;</td><td class="memItemRight" valign="bottom"><b>f
 <tr><td class="fieldname"><a id="a3f77dec4b25aa464af5e0c7fef427b5fadfee12be43217b49b865fee0e4f4894c"></a>ARROW_RANDOM_ACCESS_FILE&#160;</td><td class="fielddoc"><p>Input/output is an arrow::io::RandomAccessFile. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a3f77dec4b25aa464af5e0c7fef427b5fa6d0c9fc747131795e6e5d0c5119f12cb"></a>VOID&#160;</td><td class="fielddoc"><p>Input/output is nothing. No work is done. Useful for benchmarking. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3f77dec4b25aa464af5e0c7fef427b5fa186d3a18b85a7a92c8ec550bcb2e54f9"></a>USER_SINK&#160;</td><td class="fielddoc"><p>Input/output is handled by a custom user class. </p>
 </td></tr>
 </table>
 

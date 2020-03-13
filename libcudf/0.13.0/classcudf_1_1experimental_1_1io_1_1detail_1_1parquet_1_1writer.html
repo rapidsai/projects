@@ -88,15 +88,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a56b4a514039b56985cc9fad1d61084c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer.html#a56b4a514039b56985cc9fad1d61084c8">writer</a> (std::string const &amp;filepath, <a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer__options.html">writer_options</a> const &amp;options, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
-<tr class="memdesc:a56b4a514039b56985cc9fad1d61084c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for output to a file.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer.html#a56b4a514039b56985cc9fad1d61084c8">More...</a><br /></td></tr>
-<tr class="separator:a56b4a514039b56985cc9fad1d61084c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77109d7d1a2b2e6e1fb644875c2a9d6e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer.html#a77109d7d1a2b2e6e1fb644875c2a9d6e">writer</a> (std::vector&lt; char &gt; *buffer, <a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer__options.html">writer_options</a> const &amp;options, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
-<tr class="memdesc:a77109d7d1a2b2e6e1fb644875c2a9d6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for output to host buffer.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer.html#a77109d7d1a2b2e6e1fb644875c2a9d6e">More...</a><br /></td></tr>
-<tr class="separator:a77109d7d1a2b2e6e1fb644875c2a9d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6752f1613b2943333ad0778510d23a31"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer.html#a6752f1613b2943333ad0778510d23a31">writer</a> (<a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer__options.html">writer_options</a> const &amp;options, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
-<tr class="memdesc:a6752f1613b2943333ad0778510d23a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for output to void (no io performed).  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer.html#a6752f1613b2943333ad0778510d23a31">More...</a><br /></td></tr>
-<tr class="separator:a6752f1613b2943333ad0778510d23a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bfbb92194ec7a789bff1151fa8cba18"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer.html#a6bfbb92194ec7a789bff1151fa8cba18">writer</a> (std::unique_ptr&lt; <a class="el" href="classcudf_1_1io_1_1data__sink.html">cudf::io::data_sink</a> &gt; sink, <a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer__options.html">writer_options</a> const &amp;options, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a6bfbb92194ec7a789bff1151fa8cba18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for output to a file.  <a href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer.html#a6bfbb92194ec7a789bff1151fa8cba18">More...</a><br /></td></tr>
+<tr class="separator:a6bfbb92194ec7a789bff1151fa8cba18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa410a57071e224fc628001bb26d84d61"><td class="memItemLeft" align="right" valign="top"><a id="aa410a57071e224fc628001bb26d84d61"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer.html#aa410a57071e224fc628001bb26d84d61">~writer</a> ()</td></tr>
 <tr class="memdesc:aa410a57071e224fc628001bb26d84d61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor explicitly-declared to avoid inlined in header. <br /></td></tr>
@@ -117,8 +111,8 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to write parquet dataset data into columns. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a56b4a514039b56985cc9fad1d61084c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56b4a514039b56985cc9fad1d61084c8">&#9670;&nbsp;</a></span>writer() <span class="overload">[1/3]</span></h2>
+<a id="a6bfbb92194ec7a789bff1151fa8cba18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bfbb92194ec7a789bff1151fa8cba18">&#9670;&nbsp;</a></span>writer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -129,8 +123,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">cudf::experimental::io::detail::parquet::writer::writer </td>
           <td>(</td>
-          <td class="paramtype">std::string const &amp;&#160;</td>
-          <td class="paramname"><em>filepath</em>, </td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classcudf_1_1io_1_1data__sink.html">cudf::io::data_sink</a> &gt;&#160;</td>
+          <td class="paramname"><em>sink</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -160,104 +154,7 @@ Public Member Functions</h2></td></tr>
 <p>Constructor for output to a file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">filepath</td><td>Path to the output file </td></tr>
-    <tr><td class="paramname">options</td><td>Settings for controlling writing behavior </td></tr>
-    <tr><td class="paramname">mr</td><td>Optional resource to use for device memory allocation </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a77109d7d1a2b2e6e1fb644875c2a9d6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77109d7d1a2b2e6e1fb644875c2a9d6e">&#9670;&nbsp;</a></span>writer() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">cudf::experimental::io::detail::parquet::writer::writer </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; char &gt; *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer__options.html">writer_options</a> const &amp;&#160;</td>
-          <td class="paramname"><em>options</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
-          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Constructor for output to host buffer. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">buffer</td><td>Pointer to the output vector </td></tr>
-    <tr><td class="paramname">options</td><td>Settings for controlling writing behavior </td></tr>
-    <tr><td class="paramname">mr</td><td>Optional resource to use for device memory allocation </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a6752f1613b2943333ad0778510d23a31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6752f1613b2943333ad0778510d23a31">&#9670;&nbsp;</a></span>writer() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">cudf::experimental::io::detail::parquet::writer::writer </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structcudf_1_1experimental_1_1io_1_1detail_1_1parquet_1_1writer__options.html">writer_options</a> const &amp;&#160;</td>
-          <td class="paramname"><em>options</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
-          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Constructor for output to void (no io performed). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
+    <tr><td class="paramname">sink</td><td>The data sink to write the data to </td></tr>
     <tr><td class="paramname">options</td><td>Settings for controlling writing behavior </td></tr>
     <tr><td class="paramname">mr</td><td>Optional resource to use for device memory allocation </td></tr>
   </table>

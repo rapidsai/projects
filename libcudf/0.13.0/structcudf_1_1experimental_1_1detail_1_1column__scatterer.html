@@ -76,14 +76,10 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a458cf69276aac018e9526728afa378a4"><td class="memTemplParams" colspan="2"><a id="a458cf69276aac018e9526728afa378a4"></a>
-template&lt;typename T , std::enable_if_t&lt; is_fixed_width&lt; T &gt;()&gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:a458cf69276aac018e9526728afa378a4"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;source, MapIterator scatter_map_begin, MapIterator scatter_map_end, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;target, rmm::mr::device_memory_resource *mr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
-<tr class="separator:a458cf69276aac018e9526728afa378a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a458cf69276aac018e9526728afa378a4"><td class="memTemplParams" colspan="2"><a id="a458cf69276aac018e9526728afa378a4"></a>
-template&lt;typename T , std::enable_if_t&lt; not is_fixed_width&lt; T &gt;()&gt; *  = nullptr&gt; </td></tr>
-<tr class="memitem:a458cf69276aac018e9526728afa378a4"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;source, MapIterator scatter_map_begin, MapIterator scatter_map_end, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;target, rmm::mr::device_memory_resource *mr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
-<tr class="separator:a458cf69276aac018e9526728afa378a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62ec4730fc786af7bab70fd09eaa07c9"><td class="memTemplParams" colspan="2"><a id="a62ec4730fc786af7bab70fd09eaa07c9"></a>
+template&lt;typename Element &gt; </td></tr>
+<tr class="memitem:a62ec4730fc786af7bab70fd09eaa07c9"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;source, MapIterator scatter_map_begin, MapIterator scatter_map_end, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;target, rmm::mr::device_memory_resource *mr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream) const</td></tr>
+<tr class="separator:a62ec4730fc786af7bab70fd09eaa07c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>detail/scatter.cuh</li>

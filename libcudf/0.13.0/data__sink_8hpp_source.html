@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c184e51c84f2c3f0345bbc8a0d75d3e1.html">io</a></li><li class="navelem"><a class="el" href="dir_1f7d5b856c5aa0cd4ef64361025a1219.html">utilities</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_4010bc87a0115613477f89ebf589f29d.html">cudf</a></li><li class="navelem"><a class="el" href="dir_5750074332715a497d28df9a6c23b201.html">io</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -93,35 +93,49 @@ $(function() {
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>io {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="types_8hpp.html">cudf/types.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;cudf/utilities/error.hpp&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classcudf_1_1io_1_1data__sink.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcudf_1_1io_1_1data__sink.html">data_sink</a> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">static</span> std::unique_ptr&lt;data_sink&gt; <a class="code" href="classcudf_1_1io_1_1data__sink.html#a7dd4c1b7b1bac434e6c9669ab60b1498">create</a>(<span class="keyword">const</span> std::string&amp; filepath);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">static</span> std::unique_ptr&lt;data_sink&gt; <a class="code" href="classcudf_1_1io_1_1data__sink.html#a7dd4c1b7b1bac434e6c9669ab60b1498">create</a>(std::vector&lt;char&gt;* buffer);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">static</span> std::unique_ptr&lt;data_sink&gt; <a class="code" href="classcudf_1_1io_1_1data__sink.html#a7dd4c1b7b1bac434e6c9669ab60b1498">create</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classcudf_1_1io_1_1data__sink.html#a778f6bad53ffc49dc6285dd8a9879f73">   58</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classcudf_1_1io_1_1data__sink.html#a778f6bad53ffc49dc6285dd8a9879f73">~data_sink</a>(){};</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcudf_1_1io_1_1data__sink.html#a283c27243341ec68dce56d6566f983c5">write</a>(<span class="keywordtype">void</span> <span class="keyword">const</span>* data, <span class="keywordtype">size_t</span> size) = 0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecudf.html">cudf</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>io {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classcudf_1_1io_1_1data__sink.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcudf_1_1io_1_1data__sink.html">data_sink</a> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">static</span> std::unique_ptr&lt;data_sink&gt; <a class="code" href="classcudf_1_1io_1_1data__sink.html#a7dd4c1b7b1bac434e6c9669ab60b1498">create</a>(<span class="keyword">const</span> std::string&amp; filepath);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">static</span> std::unique_ptr&lt;data_sink&gt; <a class="code" href="classcudf_1_1io_1_1data__sink.html#a7dd4c1b7b1bac434e6c9669ab60b1498">create</a>(std::vector&lt;char&gt;* buffer);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">static</span> std::unique_ptr&lt;data_sink&gt; <a class="code" href="classcudf_1_1io_1_1data__sink.html#a7dd4c1b7b1bac434e6c9669ab60b1498">create</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">static</span> std::unique_ptr&lt;data_sink&gt; <a class="code" href="classcudf_1_1io_1_1data__sink.html#a7dd4c1b7b1bac434e6c9669ab60b1498">create</a>(<a class="code" href="classcudf_1_1io_1_1data__sink.html">cudf::io::data_sink</a> *<span class="keyword">const</span> user_sink);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcudf_1_1io_1_1data__sink.html#a059e16ef19d5901feed0098bc97babfa">flush</a>() = 0;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> <a class="code" href="classcudf_1_1io_1_1data__sink.html#a8b43b4b466aa55d96366e4fd934dd971">bytes_written</a>() = 0;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classcudf_1_1io_1_1data__sink.html#a778f6bad53ffc49dc6285dd8a9879f73">   73</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classcudf_1_1io_1_1data__sink.html#a778f6bad53ffc49dc6285dd8a9879f73">~data_sink</a>(){};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcudf_1_1io_1_1data__sink.html#ab68621d609bd643680481195dc07422c">host_write</a>(<span class="keywordtype">void</span> <span class="keyword">const</span>* data, <span class="keywordtype">size_t</span> size) = 0;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}  <span class="comment">// namespace io</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}  <span class="comment">// namespace cudf</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classcudf_1_1io_1_1data__sink.html#a3a2904b3b6e1167676f0d88e3324a3b3">  107</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classcudf_1_1io_1_1data__sink.html#a3a2904b3b6e1167676f0d88e3324a3b3">supports_device_write</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classcudf_1_1io_1_1data__sink.html#ac63c10246380e85fd63e555f0373eb30">  117</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcudf_1_1io_1_1data__sink.html#ac63c10246380e85fd63e555f0373eb30">device_write</a>(<span class="keywordtype">void</span> <span class="keyword">const</span>* gpu_data, <span class="keywordtype">size_t</span> size, cudaStream_t stream) { </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    CUDF_FAIL(<span class="stringliteral">&quot;data_sink classes that support device_write must override this function.&quot;</span>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classcudf_1_1io_1_1data__sink.html#a059e16ef19d5901feed0098bc97babfa">flush</a>() = 0;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> <a class="code" href="classcudf_1_1io_1_1data__sink.html#a8b43b4b466aa55d96366e4fd934dd971">bytes_written</a>() = 0;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;};</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}  <span class="comment">// namespace io</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}  <span class="comment">// namespace cudf</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclasscudf_1_1io_1_1data__sink_html_a778f6bad53ffc49dc6285dd8a9879f73"><div class="ttname"><a href="classcudf_1_1io_1_1data__sink.html#a778f6bad53ffc49dc6285dd8a9879f73">cudf::io::data_sink::~data_sink</a></div><div class="ttdeci">virtual ~data_sink()</div><div class="ttdoc">Base class destructor.</div><div class="ttdef"><b>Definition:</b> data_sink.hpp:58</div></div>
-<div class="ttc" id="aclasscudf_1_1io_1_1data__sink_html_a283c27243341ec68dce56d6566f983c5"><div class="ttname"><a href="classcudf_1_1io_1_1data__sink.html#a283c27243341ec68dce56d6566f983c5">cudf::io::data_sink::write</a></div><div class="ttdeci">virtual void write(void const *data, size_t size)=0</div><div class="ttdoc">Append the buffer content to the sink.</div></div>
-<div class="ttc" id="aclasscudf_1_1io_1_1data__sink_html"><div class="ttname"><a href="classcudf_1_1io_1_1data__sink.html">cudf::io::data_sink</a></div><div class="ttdoc">Interface class for storing the output data from the writers.</div><div class="ttdef"><b>Definition:</b> data_sink.hpp:30</div></div>
+<div class="ttc" id="aclasscudf_1_1io_1_1data__sink_html_a3a2904b3b6e1167676f0d88e3324a3b3"><div class="ttname"><a href="classcudf_1_1io_1_1data__sink.html#a3a2904b3b6e1167676f0d88e3324a3b3">cudf::io::data_sink::supports_device_write</a></div><div class="ttdeci">virtual bool supports_device_write() const</div><div class="ttdoc">Whether or not this sink supports writing from gpu memory addresses.</div><div class="ttdef"><b>Definition:</b> data_sink.hpp:107</div></div>
+<div class="ttc" id="aclasscudf_1_1io_1_1data__sink_html_ab68621d609bd643680481195dc07422c"><div class="ttname"><a href="classcudf_1_1io_1_1data__sink.html#ab68621d609bd643680481195dc07422c">cudf::io::data_sink::host_write</a></div><div class="ttdeci">virtual void host_write(void const *data, size_t size)=0</div><div class="ttdoc">Append the buffer content to the sink.</div></div>
+<div class="ttc" id="atypes_8hpp_html"><div class="ttname"><a href="types_8hpp.html">types.hpp</a></div><div class="ttdoc">Type declarations for libcudf.</div></div>
+<div class="ttc" id="aclasscudf_1_1io_1_1data__sink_html_a778f6bad53ffc49dc6285dd8a9879f73"><div class="ttname"><a href="classcudf_1_1io_1_1data__sink.html#a778f6bad53ffc49dc6285dd8a9879f73">cudf::io::data_sink::~data_sink</a></div><div class="ttdeci">virtual ~data_sink()</div><div class="ttdoc">Base class destructor.</div><div class="ttdef"><b>Definition:</b> data_sink.hpp:73</div></div>
+<div class="ttc" id="aclasscudf_1_1io_1_1data__sink_html"><div class="ttname"><a href="classcudf_1_1io_1_1data__sink.html">cudf::io::data_sink</a></div><div class="ttdoc">Interface class for storing the output data from the writers.</div><div class="ttdef"><b>Definition:</b> data_sink.hpp:33</div></div>
 <div class="ttc" id="aclasscudf_1_1io_1_1data__sink_html_a8b43b4b466aa55d96366e4fd934dd971"><div class="ttname"><a href="classcudf_1_1io_1_1data__sink.html#a8b43b4b466aa55d96366e4fd934dd971">cudf::io::data_sink::bytes_written</a></div><div class="ttdeci">virtual size_t bytes_written()=0</div><div class="ttdoc">Returns the total number of bytes written into this sink.</div></div>
 <div class="ttc" id="anamespacecudf_html"><div class="ttname"><a href="namespacecudf.html">cudf</a></div><div class="ttdoc">cuDF interfaces</div><div class="ttdef"><b>Definition:</b> aggregation.cpp:23</div></div>
-<div class="ttc" id="aclasscudf_1_1io_1_1data__sink_html_a7dd4c1b7b1bac434e6c9669ab60b1498"><div class="ttname"><a href="classcudf_1_1io_1_1data__sink.html#a7dd4c1b7b1bac434e6c9669ab60b1498">cudf::io::data_sink::create</a></div><div class="ttdeci">static std::unique_ptr&lt; data_sink &gt; create()</div><div class="ttdoc">Create a void sink (one that does no actual io)</div><div class="ttdef"><b>Definition:</b> data_sink.cpp:121</div></div>
+<div class="ttc" id="aclasscudf_1_1io_1_1data__sink_html_a7dd4c1b7b1bac434e6c9669ab60b1498"><div class="ttname"><a href="classcudf_1_1io_1_1data__sink.html#a7dd4c1b7b1bac434e6c9669ab60b1498">cudf::io::data_sink::create</a></div><div class="ttdeci">static std::unique_ptr&lt; data_sink &gt; create()</div><div class="ttdoc">Create a void sink (one that does no actual io)</div><div class="ttdef"><b>Definition:</b> data_sink.cpp:160</div></div>
+<div class="ttc" id="aclasscudf_1_1io_1_1data__sink_html_ac63c10246380e85fd63e555f0373eb30"><div class="ttname"><a href="classcudf_1_1io_1_1data__sink.html#ac63c10246380e85fd63e555f0373eb30">cudf::io::data_sink::device_write</a></div><div class="ttdeci">virtual void device_write(void const *gpu_data, size_t size, cudaStream_t stream)</div><div class="ttdoc">Append the buffer content to the sink from a gpu address.</div><div class="ttdef"><b>Definition:</b> data_sink.hpp:117</div></div>
 <div class="ttc" id="aclasscudf_1_1io_1_1data__sink_html_a059e16ef19d5901feed0098bc97babfa"><div class="ttname"><a href="classcudf_1_1io_1_1data__sink.html#a059e16ef19d5901feed0098bc97babfa">cudf::io::data_sink::flush</a></div><div class="ttdeci">virtual void flush()=0</div><div class="ttdoc">Flush the data written into the sink.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
