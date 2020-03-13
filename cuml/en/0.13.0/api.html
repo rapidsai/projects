@@ -7119,7 +7119,7 @@ parameter arrays of the model</p>
 <h3>K-Means Clustering<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.dask.cluster.KMeans">
-<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.cluster.</code><code class="sig-name descname">KMeans</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.cluster.</code><code class="sig-name descname">KMeans</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.cluster.KMeans" title="Permalink to this definition">¶</a></dt>
 <dd><p>Multi-Node Multi-GPU implementation of KMeans.</p>
 <p>This version minimizes data transfer by sharing only
 the centroids between workers in each iteration.</p>
@@ -7433,7 +7433,7 @@ indices.</p>
 <h3>Principal Component Analysis<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.dask.decomposition.PCA">
-<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.decomposition.</code><code class="sig-name descname">PCA</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.decomposition.</code><code class="sig-name descname">PCA</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.decomposition.PCA" title="Permalink to this definition">¶</a></dt>
 <dd><p>PCA (Principal Component Analysis) is a fundamental dimensionality
 reduction technique used to combine features in X in linear combinations
 such that each new component captures the most information or variance of
