@@ -2866,13 +2866,19 @@ Only relevant for GLOBAL_QUANTILE split_algo.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.concatenate_model_bytes" title="cuml.ensemble.RandomForestClassifier.concatenate_model_bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate_model_bytes</span></code></a>(self, …)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.concatenate_treelite_handle" title="cuml.ensemble.RandomForestClassifier.concatenate_treelite_handle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate_treelite_handle</span></code></a>(self, …)</p></td>
+<td><p></p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.convert_to_fil_model" title="cuml.ensemble.RandomForestClassifier.convert_to_fil_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_to_fil_model</span></code></a>(self[, output_class, …])</p></td>
 <td><p>Create a Forest Inference (FIL) model from the trained cuML Random Forest model.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.convert_to_treelite_model" title="cuml.ensemble.RandomForestClassifier.convert_to_treelite_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_to_treelite_model</span></code></a>(self)</p></td>
 <td><p>Converts the cuML RF model to a Treelite model</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.fit" title="cuml.ensemble.RandomForestClassifier.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.fit" title="cuml.ensemble.RandomForestClassifier.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Perform Random Forest Classification on the input data</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.get_params" title="cuml.ensemble.RandomForestClassifier.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
@@ -2895,6 +2901,16 @@ Only relevant for GLOBAL_QUANTILE split_algo.</p>
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestClassifier.concatenate_model_bytes">
+<code class="sig-name descname">concatenate_model_bytes</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">concat_model_handle</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.concatenate_model_bytes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestClassifier.concatenate_treelite_handle">
+<code class="sig-name descname">concatenate_treelite_handle</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">treelite_handle</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.concatenate_treelite_handle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestClassifier.convert_to_fil_model">
 <code class="sig-name descname">convert_to_fil_model</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">output_class=True</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">fil_sparse_format=u'auto'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.convert_to_fil_model" title="Permalink to this definition">¶</a></dt>
@@ -2968,7 +2984,7 @@ inferencing on the random forest model.</p>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestClassifier.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform Random Forest Classification on the input data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2981,6 +2997,10 @@ ndarray, cuda array interface compliant array like CuPy</p>
 Acceptable formats: NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy
 These labels should be contiguous integers from 0 to n_classes.</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the fit method will, when necessary, convert
+y to be the same data type as X if they differ. This
+will increase memory used for the method.</p>
 </dd>
 </dl>
 </dd>
@@ -3089,7 +3109,7 @@ train and test the Random Forest model</p>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestClassifier.score">
-<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">num_classes=2</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">fil_sparse_format=u'auto'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.score" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">num_classes=2</em>, <em class="sig-param">predict_model=u'GPU'</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">fil_sparse_format=u'auto'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the accuracy metric score of the model for X.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -3122,6 +3142,11 @@ predict operation on the GPU.</p>
 <dt><strong>num_classes</strong><span class="classifier">integer</span></dt><dd><p>number of different classes present in the dataset</p>
 </dd>
 <dt><strong>convert_dtype</strong><span class="classifier">boolean, default=True</span></dt><dd><p>whether to convert input data to correct dtype automatically</p>
+</dd>
+<dt><strong>predict_model</strong><span class="classifier">String (default = ‘GPU’)</span></dt><dd><p>‘GPU’ to predict using the GPU, ‘CPU’ otherwise. The ‘GPU’ can only
+be used if the model was trained on float32 data and <cite>X</cite> is float32
+or convert_dtype is set to True. Also the ‘GPU’ should only be
+used for binary classification problems.</p>
 </dd>
 <dt><strong>fil_sparse_format</strong><span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
 created in the Forest Inference Library. It is not required
@@ -3217,7 +3242,7 @@ If features are drawn with or without replacement</p>
 <dt><strong>rows_sample</strong><span class="classifier">float (default = 1.0)</span></dt><dd><p>Ratio of dataset rows used while fitting each tree.</p>
 </dd>
 <dt><strong>max_depth</strong><span class="classifier">int (default = 16)</span></dt><dd><p>Maximum tree depth. Unlimited (i.e, until leaves are pure),
-if -1. Unlimited depth is not supported.
+if -1. Unlimited depth is not supported with split_algo=1.
 <em>Note that this default differs from scikit-learn’s
 random forest, which defaults to unlimited depth.</em></p>
 </dd>
@@ -3230,8 +3255,8 @@ if -1.</p>
 per node split.
 If int then max_features/n_features.
 If float then max_features is used as a fraction.
-If ‘auto’ then max_features=1.0 .
-If ‘sqrt’ then max_features=1/sqrt(n_features).
+If ‘auto’ then max_features=1/sqrt(n_features).
+If ‘sqrt’ then max_features=1.0.
 If ‘log2’ then max_features=log2(n_features)/n_features.</p>
 </dd>
 </dl>
@@ -3284,13 +3309,19 @@ currently fully guarantee the exact same results.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.concatenate_model_bytes" title="cuml.ensemble.RandomForestRegressor.concatenate_model_bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate_model_bytes</span></code></a>(self, …)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.concatenate_treelite_handle" title="cuml.ensemble.RandomForestRegressor.concatenate_treelite_handle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate_treelite_handle</span></code></a>(self, …)</p></td>
+<td><p></p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.convert_to_fil_model" title="cuml.ensemble.RandomForestRegressor.convert_to_fil_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_to_fil_model</span></code></a>(self[, output_class, …])</p></td>
 <td><p>Create a Forest Inference (FIL) model from the trained cuML Random Forest model.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.convert_to_treelite_model" title="cuml.ensemble.RandomForestRegressor.convert_to_treelite_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_to_treelite_model</span></code></a>(self)</p></td>
 <td><p>Converts the cuML RF model to a Treelite model</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.fit" title="cuml.ensemble.RandomForestRegressor.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.fit" title="cuml.ensemble.RandomForestRegressor.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Perform Random Forest Regression on the input data</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.get_params" title="cuml.ensemble.RandomForestRegressor.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
@@ -3313,6 +3344,16 @@ currently fully guarantee the exact same results.</p>
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestRegressor.concatenate_model_bytes">
+<code class="sig-name descname">concatenate_model_bytes</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">concat_model_handle</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.concatenate_model_bytes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestRegressor.concatenate_treelite_handle">
+<code class="sig-name descname">concatenate_treelite_handle</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">treelite_handle</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.concatenate_treelite_handle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestRegressor.convert_to_fil_model">
 <code class="sig-name descname">convert_to_fil_model</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">output_class=False</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">fil_sparse_format=u'auto'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.convert_to_fil_model" title="Permalink to this definition">¶</a></dt>
@@ -3382,7 +3423,7 @@ inferencing on the random forest model.</p>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestRegressor.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform Random Forest Regression on the input data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -3463,12 +3504,8 @@ True - create a sparse forest, requires algo=’naive’</p>
 </div></blockquote>
 </dd>
 </dl>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
+<dl class="simple">
 <dt>y: NumPy</dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
-</dd>
-</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -3488,7 +3525,7 @@ train and test the Random Forest model</p>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestRegressor.score">
-<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">fil_sparse_format=u'auto'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.score" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">fil_sparse_format=u'auto'</em>, <em class="sig-param">predict_model=u'GPU'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the accuracy metric score of the model for X.
 Parameters
 ———-
@@ -3516,6 +3553,10 @@ and ‘naive’ for sparse storage</p>
 </dd>
 <dt>convert_dtype<span class="classifier">boolean, default=True</span></dt><dd><p>whether to convert input data to correct dtype automatically</p>
 </dd>
+<dt>predict_model<span class="classifier">String (default = ‘GPU’)</span></dt><dd><p>‘GPU’ to predict using the GPU, ‘CPU’ otherwise. The GPU can only
+be used if the model was trained on float32 data and <cite>X</cite> is float32
+or convert_dtype is set to True.</p>
+</dd>
 <dt>fil_sparse_format<span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
 created in the Forest Inference Library. It is not required
 while using predict_model=’CPU’.
@@ -3532,15 +3573,9 @@ True - create a sparse forest, requires algo=’naive’</p>
 </div></blockquote>
 </dd>
 </dl>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>mean_square_error</strong><span class="classifier">float or</span></dt><dd></dd>
-<dt><strong>median_abs_error</strong><span class="classifier">float or</span></dt><dd></dd>
-<dt><strong>mean_abs_error</strong><span class="classifier">float</span></dt><dd></dd>
-</dl>
-</dd>
-</dl>
+<p>mean_square_error : float or
+median_abs_error : float or
+mean_abs_error : float</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -7661,7 +7696,7 @@ from a training set.</p>
 <h3>Random Forest<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
 <dl class="class">
 <dt id="cuml.dask.ensemble.RandomForestClassifier">
-<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.ensemble.</code><code class="sig-name descname">RandomForestClassifier</code><span class="sig-paren">(</span><em class="sig-param">n_estimators=10</em>, <em class="sig-param">max_depth=-1</em>, <em class="sig-param">max_features='auto'</em>, <em class="sig-param">n_bins=8</em>, <em class="sig-param">split_algo=1</em>, <em class="sig-param">split_criterion=0</em>, <em class="sig-param">min_rows_per_node=2</em>, <em class="sig-param">bootstrap=True</em>, <em class="sig-param">bootstrap_features=False</em>, <em class="sig-param">type_model='classifier'</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">rows_sample=1.0</em>, <em class="sig-param">max_leaves=-1</em>, <em class="sig-param">n_streams=4</em>, <em class="sig-param">quantile_per_tree=False</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">criterion=None</em>, <em class="sig-param">min_samples_leaf=None</em>, <em class="sig-param">min_weight_fraction_leaf=None</em>, <em class="sig-param">max_leaf_nodes=None</em>, <em class="sig-param">min_impurity_decrease=None</em>, <em class="sig-param">min_impurity_split=None</em>, <em class="sig-param">oob_score=None</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">warm_start=None</em>, <em class="sig-param">class_weight=None</em>, <em class="sig-param">workers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestClassifier" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.ensemble.</code><code class="sig-name descname">RandomForestClassifier</code><span class="sig-paren">(</span><em class="sig-param">n_estimators=10</em>, <em class="sig-param">max_depth=-1</em>, <em class="sig-param">max_features='auto'</em>, <em class="sig-param">n_bins=8</em>, <em class="sig-param">split_algo=1</em>, <em class="sig-param">split_criterion=0</em>, <em class="sig-param">min_rows_per_node=2</em>, <em class="sig-param">bootstrap=True</em>, <em class="sig-param">bootstrap_features=False</em>, <em class="sig-param">type_model='classifier'</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">rows_sample=1.0</em>, <em class="sig-param">max_leaves=-1</em>, <em class="sig-param">n_streams=4</em>, <em class="sig-param">quantile_per_tree=False</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">criterion=None</em>, <em class="sig-param">min_samples_leaf=None</em>, <em class="sig-param">min_weight_fraction_leaf=None</em>, <em class="sig-param">max_leaf_nodes=None</em>, <em class="sig-param">min_impurity_decrease=None</em>, <em class="sig-param">min_impurity_split=None</em>, <em class="sig-param">oob_score=None</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">warm_start=None</em>, <em class="sig-param">class_weight=None</em>, <em class="sig-param">workers=None</em>, <em class="sig-param">client=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestClassifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Experimental API implementing a multi-GPU Random Forest classifier
 model which fits multiple decision tree classifiers in an
 ensemble. This uses Dask to partition data over multiple GPUs
@@ -7752,23 +7787,26 @@ If None, all available Dask workers will be used.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestClassifier.fit" title="cuml.dask.ensemble.RandomForestClassifier.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestClassifier.fit" title="cuml.dask.ensemble.RandomForestClassifier.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y[, convert_dtype])</p></td>
 <td><p>Fit the input data with a Random Forest classifier</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestClassifier.get_params" title="cuml.dask.ensemble.RandomForestClassifier.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
 <td><p>Returns the value of all parameters required to configure this estimator as a dictionary.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestClassifier.predict" title="cuml.dask.ensemble.RandomForestClassifier.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestClassifier.predict" title="cuml.dask.ensemble.RandomForestClassifier.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, output_class, algo, …])</p></td>
 <td><p>Predicts the labels for X.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestClassifier.set_params" title="cuml.dask.ensemble.RandomForestClassifier.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, \*\*params)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestClassifier.print_summary" title="cuml.dask.ensemble.RandomForestClassifier.print_summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_summary</span></code></a>(self)</p></td>
+<td><p>Print the summary of the forest used to train and test the model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestClassifier.set_params" title="cuml.dask.ensemble.RandomForestClassifier.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, \*\*params)</p></td>
 <td><p>Sets the value of parameters required to configure this estimator, it functions similar to the sklearn set_params.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="cuml.dask.ensemble.RandomForestClassifier.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestClassifier.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestClassifier.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the input data with a Random Forest classifier</p>
 <p>IMPORTANT: X is expected to be partitioned with at least one partition
 on each Dask worker being used by the forest (self.workers).</p>
@@ -7807,6 +7845,10 @@ Features of training examples.</p>
 Labels of training examples.
 <strong>y must be partitioned the same way as X</strong></p>
 </dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the fit method will, when necessary, convert
+y to be the same data type as X if they differ. This
+will increase memory used for the method.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -7828,23 +7870,81 @@ required to configure this estimator as a dictionary.</p>
 
 <dl class="method">
 <dt id="cuml.dask.ensemble.RandomForestClassifier.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestClassifier.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">output_class=True</em>, <em class="sig-param">algo='auto'</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">predict_model='GPU'</em>, <em class="sig-param">fil_sparse_format='auto'</em>, <em class="sig-param">delayed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestClassifier.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the labels for X.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">np.array</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
-Features of examples to predict.</p>
+<dd class="field-odd"><dl>
+<dt><strong>X</strong><span class="classifier">Dask cuDF dataframe  or CuPy backed Dask Array (n_rows, n_features)</span></dt><dd><p>Distributed dense matrix (floats or doubles) of shape
+(n_samples, n_features).</p>
+</dd>
+<dt><strong>output_class: boolean (default = True)</strong></dt><dd><p>This is optional and required only while performing the
+predict operation on the GPU.
+If true, return a 1 or 0 depending on whether the raw
+prediction exceeds the threshold. If False, just return
+the raw prediction.</p>
+</dd>
+<dt><strong>algo</strong><span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
+predict operation on the GPU.
+‘naive’ - simple inference using shared memory
+‘tree_reorg’ - similar to naive but trees rearranged to be more</p>
+<blockquote>
+<div><p>coalescing-friendly</p>
+</div></blockquote>
+<dl class="simple">
+<dt>‘batch_tree_reorg’ - similar to tree_reorg but predicting</dt><dd><p>multiple rows per thread block</p>
+</dd>
+<dt><cite>algo</cite> - choose the algorithm automatically. Currently</dt><dd><p>‘batch_tree_reorg’ is used for dense storage
+and ‘naive’ for sparse storage</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>threshold</strong><span class="classifier">float (default = 0.5)</span></dt><dd><p>Threshold used for classification. Optional and required only
+while performing the predict operation on the GPU, that is for,
+predict_model=’GPU’.
+It is applied if output_class == True, else it is ignored</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
+the input to the data type which was used to train the model. This
+will increase memory used for the method.</p>
+</dd>
+<dt><strong>predict_model</strong><span class="classifier">String (default = ‘GPU’)</span></dt><dd><p>‘GPU’ to predict using the GPU, ‘CPU’ otherwise. The GPU can only
+be used if the model was trained on float32 data and <cite>X</cite> is float32
+or convert_dtype is set to True.</p>
+</dd>
+<dt><strong>fil_sparse_format</strong><span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
+created in the Forest Inference Library. It is not required
+while using predict_model=’CPU’.
+‘auto’ - choose the storage type automatically</p>
+<blockquote>
+<div><blockquote>
+<div><p>(currently True is chosen by auto)</p>
+</div></blockquote>
+<p>False - create a dense forest
+True - create a sparse forest, requires algo=’naive’</p>
+<blockquote>
+<div><p>or algo=’auto’</p>
+</div></blockquote>
+</div></blockquote>
+</dd>
+<dt><strong>delayed</strong><span class="classifier">bool (default = True)</span></dt><dd><p>Whether to do a lazy prediction (and return Delayed objects) or an
+eagerly executed one.  It is not required  while using
+predict_model=’CPU’.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>y: np.array</dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
-</dd>
+<dt><strong>y</strong><span class="classifier">Dask cuDF dataframe  or CuPy backed Dask Array (n_rows, 1)</span></dt><dd></dd>
 </dl>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.ensemble.RandomForestClassifier.print_summary">
+<code class="sig-name descname">print_summary</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestClassifier.print_summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the summary of the forest used to train and test the model.</p>
 </dd></dl>
 
 <dl class="method">
@@ -7866,7 +7966,7 @@ the sklearn set_params.</p>
 
 <dl class="class">
 <dt id="cuml.dask.ensemble.RandomForestRegressor">
-<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.ensemble.</code><code class="sig-name descname">RandomForestRegressor</code><span class="sig-paren">(</span><em class="sig-param">n_estimators=10</em>, <em class="sig-param">max_depth=-1</em>, <em class="sig-param">max_features='auto'</em>, <em class="sig-param">n_bins=8</em>, <em class="sig-param">split_algo=1</em>, <em class="sig-param">split_criterion=2</em>, <em class="sig-param">bootstrap=True</em>, <em class="sig-param">bootstrap_features=False</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">min_rows_per_node=2</em>, <em class="sig-param">rows_sample=1.0</em>, <em class="sig-param">max_leaves=-1</em>, <em class="sig-param">n_streams=4</em>, <em class="sig-param">accuracy_metric='mse'</em>, <em class="sig-param">min_samples_leaf=None</em>, <em class="sig-param">min_weight_fraction_leaf=None</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">max_leaf_nodes=None</em>, <em class="sig-param">min_impurity_decrease=None</em>, <em class="sig-param">min_impurity_split=None</em>, <em class="sig-param">oob_score=None</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">warm_start=None</em>, <em class="sig-param">class_weight=None</em>, <em class="sig-param">quantile_per_tree=False</em>, <em class="sig-param">criterion=None</em>, <em class="sig-param">workers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestRegressor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.ensemble.</code><code class="sig-name descname">RandomForestRegressor</code><span class="sig-paren">(</span><em class="sig-param">n_estimators=10</em>, <em class="sig-param">max_depth=-1</em>, <em class="sig-param">max_features='auto'</em>, <em class="sig-param">n_bins=8</em>, <em class="sig-param">split_algo=1</em>, <em class="sig-param">split_criterion=2</em>, <em class="sig-param">bootstrap=True</em>, <em class="sig-param">bootstrap_features=False</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">min_rows_per_node=2</em>, <em class="sig-param">rows_sample=1.0</em>, <em class="sig-param">max_leaves=-1</em>, <em class="sig-param">n_streams=4</em>, <em class="sig-param">accuracy_metric='mse'</em>, <em class="sig-param">min_samples_leaf=None</em>, <em class="sig-param">min_weight_fraction_leaf=None</em>, <em class="sig-param">n_jobs=None</em>, <em class="sig-param">max_leaf_nodes=None</em>, <em class="sig-param">min_impurity_decrease=None</em>, <em class="sig-param">min_impurity_split=None</em>, <em class="sig-param">oob_score=None</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">warm_start=None</em>, <em class="sig-param">class_weight=None</em>, <em class="sig-param">quantile_per_tree=False</em>, <em class="sig-param">criterion=None</em>, <em class="sig-param">workers=None</em>, <em class="sig-param">client=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestRegressor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Experimental API implementing a multi-GPU Random Forest classifier
 model which fits multiple decision tree classifiers in an
 ensemble. This uses Dask to partition data over multiple GPUs
@@ -7969,10 +8069,13 @@ If None, all available Dask workers will be used.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestRegressor.get_params" title="cuml.dask.ensemble.RandomForestRegressor.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>(self[, deep])</p></td>
 <td><p>Returns the value of all parameters required to configure this estimator as a dictionary.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestRegressor.predict" title="cuml.dask.ensemble.RandomForestRegressor.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestRegressor.predict" title="cuml.dask.ensemble.RandomForestRegressor.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, predict_model, algo, …])</p></td>
 <td><p>Predicts the regressor outputs for X.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestRegressor.set_params" title="cuml.dask.ensemble.RandomForestRegressor.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, \*\*params)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestRegressor.print_summary" title="cuml.dask.ensemble.RandomForestRegressor.print_summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_summary</span></code></a>(self)</p></td>
+<td><p>Print the summary of the forest used to train and test the model.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.ensemble.RandomForestRegressor.set_params" title="cuml.dask.ensemble.RandomForestRegressor.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, \*\*params)</p></td>
 <td><p>Sets the value of parameters required to configure this estimator, it functions similar to the sklearn set_params.</p></td>
 </tr>
 </tbody>
@@ -8032,21 +8135,69 @@ required to configure this estimator as a dictionary.</p>
 
 <dl class="method">
 <dt id="cuml.dask.ensemble.RandomForestRegressor.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestRegressor.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">predict_model='GPU'</em>, <em class="sig-param">algo='auto'</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">fil_sparse_format='auto'</em>, <em class="sig-param">delayed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestRegressor.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the regressor outputs for X.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">Dense matrix (floats or doubles) of shape (n_samples, n_features).</span></dt><dd></dd>
+<dd class="field-odd"><dl>
+<dt><strong>X</strong><span class="classifier">Dask cuDF dataframe  or CuPy backed Dask Array (n_rows, n_features)</span></dt><dd><p>Distributed dense matrix (floats or doubles) of shape
+(n_samples, n_features).</p>
+</dd>
+<dt><strong>algo</strong><span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
+predict operation on the GPU.
+‘naive’ - simple inference using shared memory
+‘tree_reorg’ - similar to naive but trees rearranged to be more</p>
+<blockquote>
+<div><p>coalescing-friendly</p>
+</div></blockquote>
+<dl class="simple">
+<dt>‘batch_tree_reorg’ - similar to tree_reorg but predicting</dt><dd><p>multiple rows per thread block</p>
+</dd>
+<dt><cite>algo</cite> - choose the algorithm automatically. Currently</dt><dd><p>‘batch_tree_reorg’ is used for dense storage
+and ‘naive’ for sparse storage</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
+the input to the data type which was used to train the model. This
+will increase memory used for the method.</p>
+</dd>
+<dt><strong>predict_model</strong><span class="classifier">String (default = ‘GPU’)</span></dt><dd><p>‘GPU’ to predict using the GPU, ‘CPU’ otherwise. The GPU can only
+be used if the model was trained on float32 data and <cite>X</cite> is float32
+or convert_dtype is set to True.</p>
+</dd>
+<dt><strong>fil_sparse_format</strong><span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
+created in the Forest Inference Library. It is not required
+while using predict_model=’CPU’.
+‘auto’ - choose the storage type automatically</p>
+<blockquote>
+<div><blockquote>
+<div><p>(currently True is chosen by auto)</p>
+</div></blockquote>
+<p>False - create a dense forest
+True - create a sparse forest, requires algo=’naive’</p>
+<blockquote>
+<div><p>or algo=’auto’</p>
+</div></blockquote>
+</div></blockquote>
+</dd>
+<dt><strong>delayed</strong><span class="classifier">bool (default = True)</span></dt><dd><p>Whether to do a lazy prediction (and return Delayed objects) or an
+eagerly executed one.</p>
+</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>y: NumPy</dt><dd><p>Dense vector (float) of shape (n_samples, 1)</p>
-</dd>
+<dt><strong>y</strong><span class="classifier">Dask cuDF dataframe  or CuPy backed Dask Array (n_rows, 1)</span></dt><dd></dd>
 </dl>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.ensemble.RandomForestRegressor.print_summary">
+<code class="sig-name descname">print_summary</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestRegressor.print_summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the summary of the forest used to train and test the model.</p>
 </dd></dl>
 
 <dl class="method">
