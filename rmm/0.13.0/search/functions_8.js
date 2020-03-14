@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['set_5fvalue_102',['set_value',['../classrmm_1_1device__scalar.html#ae4b8e5b4bc61d59c55ea3a2a2577abf9',1,'rmm::device_scalar']]],
-  ['setpointer_103',['setPointer',['../classrmm_1_1LogIt.html#a6bee1f58cdd54d2f4651863c8999d4ca',1,'rmm::LogIt']]],
-  ['stream_104',['stream',['../classrmm_1_1mr_1_1thrust__allocator.html#abf19e367462013c948c074cc9b7eed4b',1,'rmm::mr::thrust_allocator']]],
-  ['supports_5fget_5fmem_5finfo_105',['supports_get_mem_info',['../classrmm_1_1mr_1_1thread__safe__resource__adaptor.html#a5370b467ace4c1d2a8c710a9484f80a6',1,'rmm::mr::thread_safe_resource_adaptor']]],
-  ['supports_5fstreams_106',['supports_streams',['../classrmm_1_1mr_1_1cnmem__memory__resource.html#a5be2df0ff53ce6cb9c494845f5664ee9',1,'rmm::mr::cnmem_memory_resource::supports_streams()'],['../classrmm_1_1mr_1_1cuda__memory__resource.html#af3319eeb30d26e14eb8195e6e159d746',1,'rmm::mr::cuda_memory_resource::supports_streams()'],['../classrmm_1_1mr_1_1device__memory__resource.html#a04598a0abd19625d081a69599360b215',1,'rmm::mr::device_memory_resource::supports_streams()'],['../classrmm_1_1mr_1_1logging__resource__adaptor.html#ae8b0851574e6a8932ad42e90f3b349ff',1,'rmm::mr::logging_resource_adaptor::supports_streams()'],['../classrmm_1_1mr_1_1managed__memory__resource.html#ad01bf649a47380eef0bff9fb37d94a23',1,'rmm::mr::managed_memory_resource::supports_streams()'],['../classrmm_1_1mr_1_1thread__safe__resource__adaptor.html#a1b5fb9d43b53b01c3538f40e7d3b536c',1,'rmm::mr::thread_safe_resource_adaptor::supports_streams()']]]
+  ['initialize_143',['initialize',['../classrmm_1_1Manager.html#a68c4150cc2b88c11c8fc9410949eda77',1,'rmm::Manager']]],
+  ['insert_144',['insert',['../structrmm_1_1mr_1_1detail_1_1free__list.html#ac7aea09e0389a800e0a52296565b03aa',1,'rmm::mr::detail::free_list::insert(block const &amp;b)'],['../structrmm_1_1mr_1_1detail_1_1free__list.html#a2954800a1869800ea614cee233f3c63f',1,'rmm::mr::detail::free_list::insert(InputIt first, InputIt last)'],['../structrmm_1_1mr_1_1detail_1_1free__list.html#a2d59c52689247c562d3d7ec7202b59c5',1,'rmm::mr::detail::free_list::insert(const_iterator pos, block const &amp;b)']]],
+  ['is_5fcontiguous_5fbefore_145',['is_contiguous_before',['../structrmm_1_1mr_1_1detail_1_1block.html#a5f290516a8c26869705f2bf2629c3d91',1,'rmm::mr::detail::block']]],
+  ['is_5fempty_146',['is_empty',['../structrmm_1_1mr_1_1detail_1_1free__list.html#a61d3a07308e7417e08e73759b7ace7e6',1,'rmm::mr::detail::free_list']]],
+  ['is_5fequal_147',['is_equal',['../classrmm_1_1mr_1_1device__memory__resource.html#aeaed913bfdd02266062b7880d5bb350f',1,'rmm::mr::device_memory_resource::is_equal()'],['../classrmm_1_1mr_1_1host__memory__resource.html#a2d5e32a5c97753ea04b0645384a182cc',1,'rmm::mr::host_memory_resource::is_equal()']]],
+  ['isinitialized_148',['isInitialized',['../classrmm_1_1Manager.html#a67adeefbaf3b19255cf5ac9afdcdd784',1,'rmm::Manager']]]
 ];

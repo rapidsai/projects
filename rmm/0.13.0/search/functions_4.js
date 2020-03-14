@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['get_5fmem_5finfo_90',['get_mem_info',['../classrmm_1_1mr_1_1device__memory__resource.html#adf47e14914c13581b64e2a78b39a08e8',1,'rmm::mr::device_memory_resource']]],
-  ['get_5fupstream_91',['get_upstream',['../classrmm_1_1mr_1_1logging__resource__adaptor.html#a384edb8f34f873726d25bd66cf1cc7db',1,'rmm::mr::logging_resource_adaptor::get_upstream()'],['../classrmm_1_1mr_1_1thread__safe__resource__adaptor.html#a4507cfd77cf2b60c9b91cadcdee39376',1,'rmm::mr::thread_safe_resource_adaptor::get_upstream()']]],
-  ['getinstance_92',['getInstance',['../classrmm_1_1Manager.html#a95e634c290a405f4385d3cb16b2eb1a0',1,'rmm::Manager']]],
-  ['getlogger_93',['getLogger',['../classrmm_1_1Manager.html#a099efcc2af5607c502b0115cf776fc6d',1,'rmm::Manager']]],
-  ['getoptions_94',['getOptions',['../classrmm_1_1Manager.html#a6049aa7513e6c73a1867daa3c6d2dddb',1,'rmm::Manager']]]
+  ['end_127',['end',['../structrmm_1_1mr_1_1detail_1_1free__list.html#aea1469eccd959c675971bd8bb2aca3de',1,'rmm::mr::detail::free_list::end() noexcept'],['../structrmm_1_1mr_1_1detail_1_1free__list.html#af72980f0ef7ec61b71e6c2fd17359903',1,'rmm::mr::detail::free_list::end() const noexcept']]],
+  ['erase_128',['erase',['../structrmm_1_1mr_1_1detail_1_1free__list.html#aa53189a011269d202e4505267b46e128',1,'rmm::mr::detail::free_list']]]
 ];

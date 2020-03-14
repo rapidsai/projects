@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['thread_5fsafe_5fresource_5fadaptor_51',['thread_safe_resource_adaptor',['../classrmm_1_1mr_1_1thread__safe__resource__adaptor.html',1,'rmm::mr::thread_safe_resource_adaptor&lt; Upstream &gt;'],['../classrmm_1_1mr_1_1thread__safe__resource__adaptor.html#af8f6d1c09a0300879e90f3b76b26f3da',1,'rmm::mr::thread_safe_resource_adaptor::thread_safe_resource_adaptor()']]],
-  ['thrust_5fallocator_52',['thrust_allocator',['../classrmm_1_1mr_1_1thrust__allocator.html',1,'rmm::mr::thrust_allocator&lt; T &gt;'],['../classrmm_1_1mr_1_1thrust__allocator.html#a88aa26ce7e5c961d527cb600cfe5d54c',1,'rmm::mr::thrust_allocator::thrust_allocator(device_memory_resource *mr, cudaStream_t stream)'],['../classrmm_1_1mr_1_1thrust__allocator.html#a4a534791b81bda2d8f9ef268115cd045',1,'rmm::mr::thrust_allocator::thrust_allocator(thrust_allocator&lt; U &gt; const &amp;other)']]],
-  ['to_5fcsv_53',['to_csv',['../classrmm_1_1Logger.html#aab75215155ba51968c11bafc1d106a9e',1,'rmm::Logger']]]
+  ['rebind_61',['rebind',['../structrmm_1_1mr_1_1thrust__allocator_1_1rebind.html',1,'rmm::mr::thrust_allocator']]],
+  ['record_62',['record',['../classrmm_1_1Logger.html#a08c5924e48110f8f641a3e9491d1ed87',1,'rmm::Logger']]],
+  ['registerstream_63',['registerStream',['../classrmm_1_1Manager.html#aab9ae171cf3ae4a6002f365cc30729a7',1,'rmm::Manager']]],
+  ['resource_64',['resource',['../classrmm_1_1mr_1_1thrust__allocator.html#aa36bf648f33309f8fadda7e449224970',1,'rmm::mr::thrust_allocator']]],
+  ['rmm_5fallocator_65',['rmm_allocator',['../classrmm__allocator.html',1,'']]],
+  ['rmmoptions_5ft_66',['rmmOptions_t',['../structrmmOptions__t.html',1,'']]]
 ];

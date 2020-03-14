@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['get_5fmem_5finfo_17',['get_mem_info',['../classrmm_1_1mr_1_1device__memory__resource.html#adf47e14914c13581b64e2a78b39a08e8',1,'rmm::mr::device_memory_resource']]],
-  ['get_5fupstream_18',['get_upstream',['../classrmm_1_1mr_1_1logging__resource__adaptor.html#a384edb8f34f873726d25bd66cf1cc7db',1,'rmm::mr::logging_resource_adaptor::get_upstream()'],['../classrmm_1_1mr_1_1thread__safe__resource__adaptor.html#a4507cfd77cf2b60c9b91cadcdee39376',1,'rmm::mr::thread_safe_resource_adaptor::get_upstream()']]],
-  ['getinstance_19',['getInstance',['../classrmm_1_1Manager.html#a95e634c290a405f4385d3cb16b2eb1a0',1,'rmm::Manager']]],
-  ['getlogger_20',['getLogger',['../classrmm_1_1Manager.html#a099efcc2af5607c502b0115cf776fc6d',1,'rmm::Manager']]],
-  ['getoptions_21',['getOptions',['../classrmm_1_1Manager.html#a6049aa7513e6c73a1867daa3c6d2dddb',1,'rmm::Manager']]]
+  ['finalize_23',['finalize',['../classrmm_1_1Manager.html#a8270860d9b5672c79749f470f267e740',1,'rmm::Manager']]],
+  ['fixed_5fmultisize_5fmemory_5fresource_24',['fixed_multisize_memory_resource',['../classrmm_1_1mr_1_1fixed__multisize__memory__resource.html',1,'rmm::mr::fixed_multisize_memory_resource&lt; Upstream &gt;'],['../classrmm_1_1mr_1_1fixed__multisize__memory__resource.html#a90bd694c57a454dc770f822d6882b32a',1,'rmm::mr::fixed_multisize_memory_resource::fixed_multisize_memory_resource()']]],
+  ['fixed_5fsize_5fmemory_5fresource_25',['fixed_size_memory_resource',['../classrmm_1_1mr_1_1fixed__size__memory__resource.html',1,'rmm::mr::fixed_size_memory_resource&lt; Upstream &gt;'],['../classrmm_1_1mr_1_1fixed__size__memory__resource.html#ac25e15734526ef7a80bb41bb3c12403b',1,'rmm::mr::fixed_size_memory_resource::fixed_size_memory_resource()']]],
+  ['free_5flist_26',['free_list',['../structrmm_1_1mr_1_1detail_1_1free__list.html',1,'rmm::mr::detail']]]
 ];

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['record_99',['record',['../classrmm_1_1Logger.html#a08c5924e48110f8f641a3e9491d1ed87',1,'rmm::Logger']]],
-  ['registerstream_100',['registerStream',['../classrmm_1_1Manager.html#aab9ae171cf3ae4a6002f365cc30729a7',1,'rmm::Manager']]],
-  ['resource_101',['resource',['../classrmm_1_1mr_1_1thrust__allocator.html#aa36bf648f33309f8fadda7e449224970',1,'rmm::mr::thrust_allocator']]]
+  ['hybrid_5fmemory_5fresource_142',['hybrid_memory_resource',['../classrmm_1_1mr_1_1hybrid__memory__resource.html#adc75c48c329d233044e267da32fd6c05',1,'rmm::mr::hybrid_memory_resource']]]
 ];

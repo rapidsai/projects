@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['usecudadefaultallocator_110',['useCudaDefaultAllocator',['../classrmm_1_1Manager.html#a1ef002e0d3ed5c837af4f8be457ba879',1,'rmm::Manager']]],
-  ['usemanagedmemory_111',['useManagedMemory',['../classrmm_1_1Manager.html#a5f075d8e18716627752097fe242d502c',1,'rmm::Manager']]],
-  ['usepoolallocator_112',['usePoolAllocator',['../classrmm_1_1Manager.html#aacbe5f6b10ac955358f7e39a779e2d7a',1,'rmm::Manager']]]
+  ['operator_3c_150',['operator&lt;',['../structrmm_1_1mr_1_1detail_1_1block.html#a82a81a79e5354b7cc3b741f19dfe1540',1,'rmm::mr::detail::block']]]
 ];

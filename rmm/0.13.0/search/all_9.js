@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['managed_30',['MANAGED',['../classrmm_1_1mr_1_1cnmem__memory__resource.html#a53423dac6d804f073c50ee7cbe2f1b08af59a25f2594f469f0bfccad7f8f13744',1,'rmm::mr::cnmem_memory_resource']]],
-  ['managed_5fmemory_5fresource_31',['managed_memory_resource',['../classrmm_1_1mr_1_1managed__memory__resource.html',1,'rmm::mr']]],
-  ['manager_32',['Manager',['../classrmm_1_1Manager.html',1,'rmm']]],
-  ['memory_5fkind_33',['memory_kind',['../classrmm_1_1mr_1_1cnmem__memory__resource.html#a53423dac6d804f073c50ee7cbe2f1b08',1,'rmm::mr::cnmem_memory_resource']]]
+  ['logger_46',['Logger',['../classrmm_1_1Logger.html',1,'rmm']]],
+  ['logging_5fresource_5fadaptor_47',['logging_resource_adaptor',['../classrmm_1_1mr_1_1logging__resource__adaptor.html',1,'rmm::mr::logging_resource_adaptor&lt; Upstream &gt;'],['../classrmm_1_1mr_1_1logging__resource__adaptor.html#a01f27e53d9dac48a218ec22e3cfad410',1,'rmm::mr::logging_resource_adaptor::logging_resource_adaptor()']]],
+  ['logic_5ferror_48',['logic_error',['../structrmm_1_1logic__error.html',1,'rmm']]],
+  ['logit_49',['LogIt',['../classrmm_1_1LogIt.html',1,'rmm']]]
 ];

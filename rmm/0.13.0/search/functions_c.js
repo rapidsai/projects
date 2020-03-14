@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['_7ecnmem_5fmemory_5fresource_114',['~cnmem_memory_resource',['../classrmm_1_1mr_1_1cnmem__memory__resource.html#a16efc2f533bec735014f4784da956fb1',1,'rmm::mr::cnmem_memory_resource']]]
+  ['record_153',['record',['../classrmm_1_1Logger.html#a08c5924e48110f8f641a3e9491d1ed87',1,'rmm::Logger']]],
+  ['registerstream_154',['registerStream',['../classrmm_1_1Manager.html#aab9ae171cf3ae4a6002f365cc30729a7',1,'rmm::Manager']]],
+  ['resource_155',['resource',['../classrmm_1_1mr_1_1thrust__allocator.html#aa36bf648f33309f8fadda7e449224970',1,'rmm::mr::thrust_allocator']]]
 ];
