@@ -609,7 +609,7 @@ coef is True.</p>
 <blockquote>
 <div><span class="target" id="module-cuml.dask.datasets.blobs"></span><dl class="function">
 <dt id="cuml.dask.datasets.blobs.make_blobs">
-<code class="sig-prename descclassname">cuml.dask.datasets.blobs.</code><code class="sig-name descname">make_blobs</code><span class="sig-paren">(</span><em class="sig-param">nrows</em>, <em class="sig-param">ncols</em>, <em class="sig-param">centers=8</em>, <em class="sig-param">n_parts=None</em>, <em class="sig-param">cluster_std=1.0</em>, <em class="sig-param">center_box=(-10</em>, <em class="sig-param">10)</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">dtype=&lt;class 'numpy.float32'&gt;</em>, <em class="sig-param">output='dataframe'</em>, <em class="sig-param">order='F'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.datasets.blobs.make_blobs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cuml.dask.datasets.blobs.</code><code class="sig-name descname">make_blobs</code><span class="sig-paren">(</span><em class="sig-param">nrows</em>, <em class="sig-param">ncols</em>, <em class="sig-param">centers=8</em>, <em class="sig-param">n_parts=None</em>, <em class="sig-param">cluster_std=1.0</em>, <em class="sig-param">center_box=(-10</em>, <em class="sig-param">10)</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">dtype=&lt;class 'numpy.float32'&gt;</em>, <em class="sig-param">output='dataframe'</em>, <em class="sig-param">order='F'</em>, <em class="sig-param">shuffle=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.datasets.blobs.make_blobs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes labeled dask.Dataframe and dask_cudf.Dataframes containing blobs
 for a randomly generated set of centroids.</p>
 <p>This function calls <cite>make_blobs</cite> from Scikitlearn on each Dask worker
@@ -4738,6 +4738,10 @@ kmeans++ initialization.
 ‘random’: Choose ‘n_cluster’ observations (rows) at random from data
 for the initial centroids. If an ndarray is passed, it should be of
 shape (n_clusters, n_features) and gives the initial centers.</p>
+</dd>
+<dt><strong>n_init: int (default = 1)</strong></dt><dd><p>Number of instances the k-means algorithm will be called with different seeds.
+The final results will be from the instance that produces lowest inertia out
+of n_init instances.</p>
 </dd>
 <dt><strong>oversampling_factor</strong><span class="classifier">float64</span></dt><dd><p>scalable k-means|| oversampling factor</p>
 </dd>
