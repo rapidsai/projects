@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.13.0a+3891.ge71d3b8b0 documentation</title>
+  <title>API Reference &mdash; cudf 0.13.0a+4000.g61dacf9bb documentation</title>
   
 
   
@@ -577,49 +577,46 @@
 <tr class="row-odd"><td><p><strong>radd</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>repeat</strong></p></td>
+<tr class="row-even"><td><p><strong>reset_index</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>reset_index</strong></p></td>
+<tr class="row-odd"><td><p><strong>rfloordiv</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>rfloordiv</strong></p></td>
+<tr class="row-even"><td><p><strong>rmod</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>rmod</strong></p></td>
+<tr class="row-odd"><td><p><strong>rmul</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>rmul</strong></p></td>
+<tr class="row-even"><td><p><strong>rpow</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>rpow</strong></p></td>
+<tr class="row-odd"><td><p><strong>rsub</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>rsub</strong></p></td>
+<tr class="row-even"><td><p><strong>rtruediv</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>rtruediv</strong></p></td>
+<tr class="row-odd"><td><p><strong>serialize</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>serialize</strong></p></td>
+<tr class="row-even"><td><p><strong>skew</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>skew</strong></p></td>
+<tr class="row-odd"><td><p><strong>std</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>std</strong></p></td>
+<tr class="row-even"><td><p><strong>sub</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>sub</strong></p></td>
+<tr class="row-odd"><td><p><strong>sum</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>sum</strong></p></td>
+<tr class="row-even"><td><p><strong>truediv</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>truediv</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>var</strong></p></td>
+<tr class="row-odd"><td><p><strong>var</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -3288,37 +3285,37 @@ be used in the output dataframe.</p>
 <tr class="row-even"><td><p><strong>equals</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>from_arrow</strong></p></td>
+<tr class="row-odd"><td><p><strong>fill</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>from_pandas</strong></p></td>
+<tr class="row-even"><td><p><strong>from_arrow</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>groupby</strong></p></td>
+<tr class="row-odd"><td><p><strong>from_pandas</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>head</strong></p></td>
+<tr class="row-even"><td><p><strong>groupby</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>isin</strong></p></td>
+<tr class="row-odd"><td><p><strong>head</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>logical_and</strong></p></td>
+<tr class="row-even"><td><p><strong>isin</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>logical_not</strong></p></td>
+<tr class="row-odd"><td><p><strong>logical_and</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>logical_or</strong></p></td>
+<tr class="row-even"><td><p><strong>logical_not</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>memory_usage</strong></p></td>
+<tr class="row-odd"><td><p><strong>logical_or</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>merge</strong></p></td>
+<tr class="row-even"><td><p><strong>memory_usage</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>repeat</strong></p></td>
+<tr class="row-odd"><td><p><strong>merge</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>serialize</strong></p></td>
@@ -5705,7 +5702,7 @@ available sources
 
 <span class="target" id="module-cudf.io.parquet"></span><dl class="function">
 <dt id="cudf.io.parquet.read_parquet">
-<code class="sig-prename descclassname">cudf.io.parquet.</code><code class="sig-name descname">read_parquet</code><span class="sig-paren">(</span><em class="sig-param">filepath_or_buffer</em>, <em class="sig-param">engine='cudf'</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">row_group=None</em>, <em class="sig-param">skip_rows=None</em>, <em class="sig-param">num_rows=None</em>, <em class="sig-param">strings_to_categorical=False</em>, <em class="sig-param">use_pandas_metadata=True</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.parquet.read_parquet" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cudf.io.parquet.</code><code class="sig-name descname">read_parquet</code><span class="sig-paren">(</span><em class="sig-param">filepath_or_buffer</em>, <em class="sig-param">engine='cudf'</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">row_group=None</em>, <em class="sig-param">row_group_count=None</em>, <em class="sig-param">skip_rows=None</em>, <em class="sig-param">num_rows=None</em>, <em class="sig-param">strings_to_categorical=False</em>, <em class="sig-param">use_pandas_metadata=True</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.io.parquet.read_parquet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load a Parquet dataset into a DataFrame</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
