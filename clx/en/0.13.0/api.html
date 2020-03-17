@@ -838,33 +838,6 @@ registered hooks while the latter silently ignores them.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="clx.dns.dns_extractor.get_hostname_split_df">
-<code class="sig-prename descclassname">clx.dns.dns_extractor.</code><code class="sig-name descname">get_hostname_split_df</code><span class="sig-paren">(</span><em class="sig-param">hostnames</em><span class="sig-paren">)</span><a class="headerlink" href="#clx.dns.dns_extractor.get_hostname_split_df" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find all words and digits between periods.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>hostnames</strong> (<em>cudf.Series</em>) – Hostnames that are being split.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Hostname splits.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>cudf.DataFrame</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cudf</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">clx.dns</span> <span class="kn">import</span> <span class="n">dns_extractor</span> <span class="k">as</span> <span class="n">dns</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">hostnames</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s2">&quot;www.google.com&quot;</span><span class="p">,</span> <span class="s2">&quot;pandas.pydata.org&quot;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dns</span><span class="o">.</span><span class="n">get_hostname_split_df</span><span class="p">(</span><span class="n">hostnames</span><span class="p">)</span>
-<span class="go">     2       1       0</span>
-<span class="go">0  com  google     www</span>
-<span class="go">1  org  pydata  pandas</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="function">
 <dt id="clx.dns.dns_extractor.parse_url">
 <code class="sig-prename descclassname">clx.dns.dns_extractor.</code><code class="sig-name descname">parse_url</code><span class="sig-paren">(</span><em class="sig-param">url_series</em>, <em class="sig-param">req_cols=None</em><span class="sig-paren">)</span><a class="headerlink" href="#clx.dns.dns_extractor.parse_url" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function extracts subdomain, domain and suffix for a given url.</p>
