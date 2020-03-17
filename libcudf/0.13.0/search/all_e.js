@@ -19,7 +19,7 @@ var searchData=
   ['normalize_5fnans_5fand_5fzeros_853',['normalize_nans_and_zeros',['../namespacecudf.html#a775c771fa16245d5fca471246892fe5a',1,'cudf::normalize_nans_and_zeros(column_view const  &amp;input, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())'],['../namespacecudf.html#ab2e8dd1b37b4175001b89219ab8ac96f',1,'cudf::normalize_nans_and_zeros(mutable_column_view &amp;in_out)']]],
   ['normalize_5fspaces_854',['normalize_spaces',['../classNVText.html#a733006c595e78775bca81a9320c648fa',1,'NVText']]],
   ['not_855',['NOT',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba5e654d9830c09fc254d4f9f19fbdfe6e',1,'cudf']]],
-  ['not_5fequal_856',['NOT_EQUAL',['../namespacecudf_1_1experimental.html#af98fab32c66e913a0096c1a3789c5701a4ea2d378cdec20f59330f113297bc1ce',1,'cudf::experimental']]],
+  ['not_5fequal_856',['NOT_EQUAL',['../namespacecudf_1_1experimental.html#a5ef856eb8739fb07889aa601d3a3f9b4a4ea2d378cdec20f59330f113297bc1ce',1,'cudf::experimental']]],
   ['nrows_857',['nrows',['../structcudf_1_1experimental_1_1io_1_1read__csv__args.html#a095da9d44137ee8edd273d89dcd402cf',1,'cudf::experimental::io::read_csv_args::nrows()'],['../structcudf_1_1csv__read__arg.html#ac71b369a669cfd172a434810fc78a97e',1,'cudf::csv_read_arg::nrows()']]],
   ['ns_858',['ns',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a4d185b3b79bf8f4cf83d5eb349427294',1,'NVStrings']]],
   ['nth_5felement_859',['NTH_ELEMENT',['../classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189da2b4776304565af720d30cc7b664edfb3',1,'cudf::experimental::aggregation']]],

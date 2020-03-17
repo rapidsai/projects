@@ -1,7 +1,7 @@
 var searchData=
 [
   ['abs_12',['ABS',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19bab226be3789467f51f32cf06550a4c46e',1,'cudf']]],
-  ['add_13',['ADD',['../namespacecudf_1_1experimental.html#af98fab32c66e913a0096c1a3789c5701a9eeb52badb613229884838847294b90d',1,'cudf::experimental']]],
+  ['add_13',['ADD',['../namespacecudf_1_1experimental.html#a5ef856eb8739fb07889aa601d3a3f9b4a9eeb52badb613229884838847294b90d',1,'cudf::experimental']]],
   ['add_5fkeys_5fand_5fremap_14',['add_keys_and_remap',['../classNVCategory.html#a0c979f29fc99f64fa1fc6ba9665b8f57',1,'NVCategory']]],
   ['add_5fstrings_15',['add_strings',['../classNVCategory.html#af6895489edf539e3b03307cd61d8049f',1,'NVCategory']]],
   ['after_16',['AFTER',['../namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31ac130fda0cb93540bf1574912e78964fb',1,'cudf']]],

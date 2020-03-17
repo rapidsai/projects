@@ -7,8 +7,8 @@ var searchData=
   ['min_3020',['MIN',['../classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189da22bf0b70cfbefc99c9b9c37eb73b0a74',1,'cudf::experimental::aggregation']]],
   ['minimal_3021',['MINIMAL',['../namespacecudf_1_1experimental_1_1io.html#ac67f859abc53aa9cac54d0a769da6fa1a02f2534ad4997e23ec250e1015eeb929',1,'cudf::experimental::io']]],
   ['minutes_3022',['minutes',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a4262801072819bc89e488b9a111135f9',1,'NVStrings']]],
-  ['mod_3023',['MOD',['../namespacecudf_1_1experimental.html#af98fab32c66e913a0096c1a3789c5701ac5a28f4b35a2884fa3277150ac5d0967',1,'cudf::experimental']]],
+  ['mod_3023',['MOD',['../namespacecudf_1_1experimental.html#a5ef856eb8739fb07889aa601d3a3f9b4ac5a28f4b35a2884fa3277150ac5d0967',1,'cudf::experimental']]],
   ['months_3024',['months',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049aeed9e40cde5808e62979d57dbc381f51',1,'NVStrings']]],
   ['ms_3025',['ms',['../classNVStrings.html#ac845d8278c06a59a3dd9b7c05d81b049a03457e192cd793d83b4553f1a3822e71',1,'NVStrings']]],
-  ['mul_3026',['MUL',['../namespacecudf_1_1experimental.html#af98fab32c66e913a0096c1a3789c5701a2cdf52a55876063ec93b7d18bc741f6c',1,'cudf::experimental']]]
+  ['mul_3026',['MUL',['../namespacecudf_1_1experimental.html#a5ef856eb8739fb07889aa601d3a3f9b4a2cdf52a55876063ec93b7d18bc741f6c',1,'cudf::experimental']]]
 ];

@@ -5,5 +5,5 @@ var searchData=
   ['int32_2999',['INT32',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae',1,'cudf']]],
   ['int64_3000',['INT64',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59bab9c234f82eec5cb83e3ea67aac9c1166',1,'cudf']]],
   ['int8_3001',['INT8',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba71f4b0467efae61c1e3ac5910178940f',1,'cudf']]],
-  ['invalid_5fbinary_3002',['INVALID_BINARY',['../namespacecudf_1_1experimental.html#af98fab32c66e913a0096c1a3789c5701a0b010d84b45dcb367a81c7c029d3f5bb',1,'cudf::experimental']]]
+  ['invalid_5fbinary_3002',['INVALID_BINARY',['../namespacecudf_1_1experimental.html#a5ef856eb8739fb07889aa601d3a3f9b4a0b010d84b45dcb367a81c7c029d3f5bb',1,'cudf::experimental']]]
 ];

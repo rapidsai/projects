@@ -45,7 +45,7 @@ var searchData=
   ['interpolation_659',['interpolation',['../namespacecudf.html#a94d60cf0790fb642cce1c91f1dba63c8',1,'cudf::interpolation()'],['../namespacecudf_1_1experimental.html#a7f32c8210bb99fa8f28b23fd359e2e8b',1,'cudf::experimental::interpolation()']]],
   ['intra_5fword_5findex_660',['intra_word_index',['../namespacecudf.html#a7ce276d67cc17e299f29de43a391af75',1,'cudf']]],
   ['intrle_5fenc_5fstate_5fs_661',['intrle_enc_state_s',['../structcudf_1_1io_1_1orc_1_1gpu_1_1intrle__enc__state__s.html',1,'cudf::io::orc::gpu']]],
-  ['invalid_5fbinary_662',['INVALID_BINARY',['../namespacecudf_1_1experimental.html#af98fab32c66e913a0096c1a3789c5701a0b010d84b45dcb367a81c7c029d3f5bb',1,'cudf::experimental']]],
+  ['invalid_5fbinary_662',['INVALID_BINARY',['../namespacecudf_1_1experimental.html#a5ef856eb8739fb07889aa601d3a3f9b4a0b010d84b45dcb367a81c7c029d3f5bb',1,'cudf::experimental']]],
   ['io_5ftype_663',['io_type',['../namespacecudf_1_1experimental_1_1io.html#a3f77dec4b25aa464af5e0c7fef427b5f',1,'cudf::experimental::io']]],
   ['ip2int_664',['ip2int',['../classNVStrings.html#a881c5e067b5e91129c881c2b85986f93',1,'NVStrings']]],
   ['ipc_5ftransfer_2eh_665',['ipc_transfer.h',['../ipc__transfer_8h.html',1,'']]],

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['abs_2940',['ABS',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19bab226be3789467f51f32cf06550a4c46e',1,'cudf']]],
-  ['add_2941',['ADD',['../namespacecudf_1_1experimental.html#af98fab32c66e913a0096c1a3789c5701a9eeb52badb613229884838847294b90d',1,'cudf::experimental']]],
+  ['add_2941',['ADD',['../namespacecudf_1_1experimental.html#a5ef856eb8739fb07889aa601d3a3f9b4a9eeb52badb613229884838847294b90d',1,'cudf::experimental']]],
   ['after_2942',['AFTER',['../namespacecudf.html#a058e6d6e8a21583ce0e85ee73e5abb31ac130fda0cb93540bf1574912e78964fb',1,'cudf']]],
   ['all_2943',['ALL',['../classcudf_1_1experimental_1_1aggregation.html#a86a800d62c1b8a500f7920fd1ca0189da9003f0a443f6b14a11bec60bbebab5ec',1,'cudf::experimental::aggregation::ALL()'],['../namespacecudf_1_1experimental_1_1io.html#ac67f859abc53aa9cac54d0a769da6fa1a5fb1f955b45e38e31789286a1790398d',1,'cudf::experimental::io::ALL()']]],
   ['all_5fnull_2944',['ALL_NULL',['../namespacecudf.html#a4daf20c000ab374d76f4d56f0ddb7b26ab8a690c8c67b400079b43eb5a2146753',1,'cudf']]],

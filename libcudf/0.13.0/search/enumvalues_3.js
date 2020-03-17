@@ -4,5 +4,5 @@ var searchData=
   ['descending_2976',['DESCENDING',['../namespacecudf.html#a750f02016b046079f7062d334890b4fcacff818f0ae4cef845577e39283886a53',1,'cudf']]],
   ['dictionary32_2977',['DICTIONARY32',['../namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba6c8d7b96f965a120e818925f750fc499',1,'cudf']]],
   ['disabled_2978',['disabled',['../namespacecudf_1_1io_1_1csv_1_1column__parse.html#a19fbcb16ae3b789ee4c842c828f44b2bae0c54112da856c7515c85a415be5ce3b',1,'cudf::io::csv::column_parse']]],
-  ['div_2979',['DIV',['../namespacecudf_1_1experimental.html#af98fab32c66e913a0096c1a3789c5701a29bbf66f7f8529ec47e394fb5a36c646',1,'cudf::experimental']]]
+  ['div_2979',['DIV',['../namespacecudf_1_1experimental.html#a5ef856eb8739fb07889aa601d3a3f9b4a29bbf66f7f8529ec47e394fb5a36c646',1,'cudf::experimental']]]
 ];
