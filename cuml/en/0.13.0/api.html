@@ -87,7 +87,7 @@
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">cuML API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-behavior-configuration">Module Behavior Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#datatype-configuration">Datatype Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#output-type">Output Type</a></li>
 </ul>
 </li>
@@ -148,6 +148,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#id18">Principal Component Analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id21">Random Forest</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id22">Truncated SVD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#linear-models">Linear Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dask-base-classes-and-mixins">Dask Base Classes and Mixins</a></li>
 </ul>
 </li>
 </ul>
@@ -218,10 +220,66 @@
             
   <div class="section" id="cuml-api-reference">
 <h1>cuML API Reference<a class="headerlink" href="#cuml-api-reference" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-behavior-configuration">
-<h2>Module Behavior Configuration<a class="headerlink" href="#module-behavior-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="datatype-configuration">
+<h2>Datatype Configuration<a class="headerlink" href="#datatype-configuration" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="output-type">
 <h3>Output Type<a class="headerlink" href="#output-type" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="method">
+<dt id="cuml.utils.memory_utils.set_global_output_type">
+<code class="sig-prename descclassname">memory_utils.</code><code class="sig-name descname">set_global_output_type</code><span class="sig-paren">(</span><em class="sig-param">output_type</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.utils.memory_utils.set_global_output_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to set cuML’s single GPU estimators global output type.
+It will be used by all estimators unless overriden in their initialization
+with their own output_type parameter. Can also be overriden by the context
+manager method <cite>using_output_type</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>output_type</strong><span class="classifier">{‘input’, ‘cudf’, ‘cupy’, ‘numba’, numpy’} (default = ‘input’)  # noqa</span></dt><dd><p>Desired output type of results and attributes of the estimators.
+‘input’ will mean that the parameters and methods will mirror the
+format of the data sent to the estimators/methods. ‘cudf’ will
+return cuDF Series for single dimensional results and DataFrames
+for the rest. ‘cupy’ will return CuPy ndarrays. ‘numpy’ will return
+NumPy ndarrays.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>‘cupy’ and ‘numba’ options (as well as ‘input’ when using Numba and CuPy
+ndarrays for input) have the least overhead. cuDF add memory consumption
+and processing time needed to build the Series and DataFrames. ‘numpy’ has
+the biggest overhead due to the need to transfer data to CPU memory.</p>
+<p>cuML is transitioning to support this parameter for all its estimators.
+Currently the following single GPU estimators have this new behavior:</p>
+<ul class="simple">
+<li><p>DBSCAN</p></li>
+<li><p>KMeans</p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.utils.memory_utils.using_output_type">
+<code class="sig-prename descclassname">memory_utils.</code><code class="sig-name descname">using_output_type</code><span class="sig-paren">(</span><em class="sig-param">output_type</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.utils.memory_utils.using_output_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Context manager method to set cuML’s global output type inside a <cite>with</cite>
+statement. It gets reset to the prior value it had once the <cite>with</cite> code
+block is executer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>output_type</strong><span class="classifier">{‘input’, ‘cudf’, ‘cupy’, ‘numba’, numpy’} (default = ‘input’)  # noqa</span></dt><dd><p>Desired output type of results and attributes of the estimators.
+‘input’ will mean that the parameters and methods will mirror the
+format of the data sent to the estimators/methods. ‘cudf’ will
+return cuDF Series for single dimensional results and DataFrames
+for the rest. ‘cupy’ will return CuPy ndarrays. ‘numpy’ will return
+NumPy ndarrays.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
 </div>
 </div>
 <div class="section" id="preprocessing-metrics-and-utilities">
@@ -271,15 +329,15 @@ column was dropped from the <a href="#id1"><span class="problematic" id="id2">`<
 <span class="c1"># Generate some sample data</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
                      <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span><span class="p">})</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Original data: </span><span class="si">{df.shape[0]}</span><span class="s1"> elements&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Original data: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> elements&#39;</span><span class="p">)</span>
 
 <span class="c1"># Suppose we want an 80/20 split</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span>
                                                     <span class="n">train_size</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;X_train: </span><span class="si">{X_train.shape[0]}</span><span class="s1"> elements&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;X_test: </span><span class="si">{X_test.shape[0]}</span><span class="s1"> elements&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y_train: </span><span class="si">{y_train.shape[0]}</span><span class="s1"> elements&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y_test: </span><span class="si">{y_test.shape[0]}</span><span class="s1"> elements&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;X_train: </span><span class="si">{</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> elements&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;X_test: </span><span class="si">{</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> elements&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y_train: </span><span class="si">{</span><span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> elements&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y_test: </span><span class="si">{</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> elements&#39;</span><span class="p">)</span>
 
 <span class="c1"># Alternatively, if our labels are stored separately</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
@@ -478,6 +536,316 @@ categories given to <cite>fit</cite></p>
 
 </dd></dl>
 
+<dl class="class">
+<dt id="cuml.preprocessing.LabelBinarizer">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.preprocessing.</code><code class="sig-name descname">LabelBinarizer</code><span class="sig-paren">(</span><em class="sig-param">neg_label=0</em>, <em class="sig-param">pos_label=1</em>, <em class="sig-param">sparse_output=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.preprocessing.LabelBinarizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A multi-class dummy encoder for labels.</p>
+<p class="rubric">Examples</p>
+<p>Create an array with labels and dummy encode them</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cupy</span> <span class="k">as</span> <span class="nn">cp</span>
+<span class="kn">from</span> <span class="nn">cuml.preprocessing</span> <span class="kn">import</span> <span class="n">LabelBinarizer</span>
+
+<span class="n">labels</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                    <span class="n">dtype</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+
+<span class="n">lb</span> <span class="o">=</span> <span class="n">LabelBinarizer</span><span class="p">()</span>
+
+<span class="n">encoded</span> <span class="o">=</span> <span class="n">lb</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span>
+
+<span class="n">decoded</span> <span class="o">=</span> <span class="n">lb</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">decoded</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]]</span>
+
+ <span class="p">[</span> <span class="mi">0</span>  <span class="mi">5</span> <span class="mi">10</span>  <span class="mi">7</span>  <span class="mi">2</span>  <span class="mi">4</span>  <span class="mi">1</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">4</span>  <span class="mi">3</span>  <span class="mi">2</span>  <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.preprocessing.LabelBinarizer.fit" title="cuml.preprocessing.LabelBinarizer.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, y)</p></td>
+<td><p>Fit label binarizer</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.preprocessing.LabelBinarizer.fit_transform" title="cuml.preprocessing.LabelBinarizer.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, y)</p></td>
+<td><p>Fit label binarizer and transform multi-class labels to their dummy-encoded representation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.preprocessing.LabelBinarizer.inverse_transform" title="cuml.preprocessing.LabelBinarizer.inverse_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_transform</span></code></a>(self, y[, threshold])</p></td>
+<td><p>Transform binary labels back to original multi-class labels</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.preprocessing.LabelBinarizer.transform" title="cuml.preprocessing.LabelBinarizer.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, y)</p></td>
+<td><p>Transform multi-class labels to their dummy-encoded representation labels.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="cuml.preprocessing.LabelBinarizer.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.preprocessing.LabelBinarizer.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit label binarizer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">array of shape [n_samples,] or [n_samples, n_classes]</span></dt><dd><p>Target values. The 2-d matrix should only contain 0 and 1,
+represents multilabel classification.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>self</strong><span class="classifier">returns an instance of self.</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.preprocessing.LabelBinarizer.fit_transform">
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.preprocessing.LabelBinarizer.fit_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit label binarizer and transform multi-class labels to their
+dummy-encoded representation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">array of shape [n_samples,] or [n_samples, n_classes]</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>arr</strong><span class="classifier">array with encoded labels</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.preprocessing.LabelBinarizer.inverse_transform">
+<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">y</em>, <em class="sig-param">threshold=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.preprocessing.LabelBinarizer.inverse_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform binary labels back to original multi-class labels</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">array of shape [n_samples, n_classes]</span></dt><dd></dd>
+<dt><strong>threshold</strong><span class="classifier">float this value is currently ignored</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>arr</strong><span class="classifier">array with original labels</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.preprocessing.LabelBinarizer.transform">
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.preprocessing.LabelBinarizer.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform multi-class labels to their dummy-encoded representation
+labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">array of shape [n_samples,] or [n_samples, n_classes]</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>arr</strong><span class="classifier">array with encoded labels</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cuml.dask.preprocessing.LabelBinarizer">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.preprocessing.</code><code class="sig-name descname">LabelBinarizer</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.preprocessing.LabelBinarizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A distributed version of LabelBinarizer for one-hot encoding
+a collection of labels.</p>
+<p class="rubric">Examples</p>
+<p>Create an array with labels and dummy encode them</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cupy</span> <span class="k">as</span> <span class="nn">cp</span>
+<span class="kn">from</span> <span class="nn">cuml.dask.preprocessing</span> <span class="kn">import</span> <span class="n">LabelBinarizer</span>
+
+<span class="kn">from</span> <span class="nn">dask_cuda</span> <span class="kn">import</span> <span class="n">LocalCUDACluster</span>
+<span class="kn">from</span> <span class="nn">dask.distributed</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">import</span> <span class="nn">dask</span>
+
+<span class="n">cluster</span> <span class="o">=</span> <span class="n">LocalCUDACluster</span><span class="p">()</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
+
+<span class="n">labels</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                    <span class="n">dtype</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">dask</span><span class="o">.</span><span class="n">array</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+
+<span class="n">lb</span> <span class="o">=</span> <span class="n">LabelBinarizer</span><span class="p">()</span>
+
+<span class="n">encoded</span> <span class="o">=</span> <span class="n">lb</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">encoded</span><span class="o">.</span><span class="n">compute</span><span class="p">())</span>
+
+<span class="n">decoded</span> <span class="o">=</span> <span class="n">lb</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">decoded</span><span class="o">.</span><span class="n">compute</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]]</span>
+
+ <span class="p">[</span> <span class="mi">0</span>  <span class="mi">5</span> <span class="mi">10</span>  <span class="mi">7</span>  <span class="mi">2</span>  <span class="mi">4</span>  <span class="mi">1</span>  <span class="mi">0</span>  <span class="mi">0</span>  <span class="mi">4</span>  <span class="mi">3</span>  <span class="mi">2</span>  <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.preprocessing.LabelBinarizer.fit" title="cuml.dask.preprocessing.LabelBinarizer.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, y)</p></td>
+<td><p>Fit label binarizer`</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.preprocessing.LabelBinarizer.fit_transform" title="cuml.dask.preprocessing.LabelBinarizer.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, y)</p></td>
+<td><p>Fit the label encoder and return transformed labels</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.preprocessing.LabelBinarizer.inverse_transform" title="cuml.dask.preprocessing.LabelBinarizer.inverse_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inverse_transform</span></code></a>(self, y[, threshold])</p></td>
+<td><p>Invert a set of encoded labels back to original labels</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.preprocessing.LabelBinarizer.transform" title="cuml.dask.preprocessing.LabelBinarizer.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, y)</p></td>
+<td><p>Transform and return encoded labels</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="cuml.dask.preprocessing.LabelBinarizer.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.preprocessing.LabelBinarizer.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit label binarizer`</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">Dask.Array of shape [n_samples,] or [n_samples, n_classes]</span></dt><dd><p>chunked by row.
+Target values. The 2-d matrix should only contain 0 and 1,
+represents multilabel classification.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>self</strong><span class="classifier">returns an instance of self.</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.preprocessing.LabelBinarizer.fit_transform">
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.preprocessing.LabelBinarizer.fit_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the label encoder and return transformed labels</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">Dask.Array of shape [n_samples,] or [n_samples, n_classes]</span></dt><dd><p>target values. The 2-d matrix should only contain 0 and 1,
+represents multilabel classification.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>arr</strong><span class="classifier">Dask.Array backed by CuPy arrays containing encoded labels</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.preprocessing.LabelBinarizer.inverse_transform">
+<code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">y</em>, <em class="sig-param">threshold=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.preprocessing.LabelBinarizer.inverse_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invert a set of encoded labels back to original labels</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">Dask.Array of shape [n_samples, n_classes] containing encoded</span></dt><dd><p>labels</p>
+</dd>
+<dt><strong>threshold</strong><span class="classifier">float This value is currently ignored</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>arr</strong><span class="classifier">Dask.Array backed by CuPy arrays containing original labels</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.preprocessing.LabelBinarizer.transform">
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.preprocessing.LabelBinarizer.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform and return encoded labels</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">Dask.Array of shape [n_samples,] or [n_samples, n_classes]</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>arr</strong><span class="classifier">Dask.Array backed by CuPy arrays containing encoded labels</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.preprocessing.label_binarize">
+<code class="sig-prename descclassname">preprocessing.</code><code class="sig-name descname">label_binarize</code><span class="sig-paren">(</span><em class="sig-param">y</em>, <em class="sig-param">classes</em>, <em class="sig-param">neg_label=0</em>, <em class="sig-param">pos_label=1</em>, <em class="sig-param">sparse_output=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.preprocessing.label_binarize" title="Permalink to this definition">¶</a></dt>
+<dd><p>A stateless helper function to dummy encode multi-class labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">array-like of size [n_samples,] or [n_samples, n_classes]</span></dt><dd></dd>
+<dt><strong>classes</strong><span class="classifier">the set of unique classes in the input</span></dt><dd></dd>
+<dt><strong>neg_label</strong><span class="classifier">integer the negative value for transformed output</span></dt><dd></dd>
+<dt><strong>pos_label</strong><span class="classifier">integer the positive value for transformed output</span></dt><dd></dd>
+<dt><strong>sparse_output</strong><span class="classifier">bool whether to return sparse array</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </div></blockquote>
 </div>
 <div class="section" id="dataset-generation-single-gpu">
@@ -650,6 +1018,114 @@ dask dataframe output. Default will be array in the future.</p>
 </dl>
 </dd></dl>
 
+<span class="target" id="module-cuml.dask.datasets.regression"></span><dl class="function">
+<dt id="cuml.dask.datasets.regression.make_low_rank_matrix">
+<code class="sig-prename descclassname">cuml.dask.datasets.regression.</code><code class="sig-name descname">make_low_rank_matrix</code><span class="sig-paren">(</span><em class="sig-param">n_samples=100</em>, <em class="sig-param">n_features=100</em>, <em class="sig-param">effective_rank=10</em>, <em class="sig-param">tail_strength=0.5</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">n_parts=1</em>, <em class="sig-param">n_samples_per_part=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.datasets.regression.make_low_rank_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a mostly low rank matrix with bell-shaped singular values</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>n_samples</strong><span class="classifier">int, optional (default=100)</span></dt><dd><p>The number of samples.</p>
+</dd>
+<dt><strong>n_features</strong><span class="classifier">int, optional (default=100)</span></dt><dd><p>The number of features.</p>
+</dd>
+<dt><strong>effective_rank</strong><span class="classifier">int, optional (default=10)</span></dt><dd><p>The approximate number of singular vectors required to explain most of
+the data by linear combinations.</p>
+</dd>
+<dt><strong>tail_strength</strong><span class="classifier">float between 0.0 and 1.0, optional (default=0.5)</span></dt><dd><p>The relative importance of the fat noisy tail of the singular values
+profile.</p>
+</dd>
+<dt><strong>random_state</strong><span class="classifier">int, CuPy RandomState instance, Dask RandomState instance</span></dt><dd><blockquote>
+<div><p>or None (default)</p>
+</div></blockquote>
+<p>Determines random number generation for dataset creation. Pass an int
+for reproducible output across multiple function calls.</p>
+</dd>
+<dt><strong>n_parts</strong><span class="classifier">int, optional (default=1)</span></dt><dd><p>The number of parts of work.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">Dask-CuPy array of shape [n_samples, n_features]</span></dt><dd><p>The matrix.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cuml.dask.datasets.regression.make_regression">
+<code class="sig-prename descclassname">cuml.dask.datasets.regression.</code><code class="sig-name descname">make_regression</code><span class="sig-paren">(</span><em class="sig-param">n_samples=100</em>, <em class="sig-param">n_features=100</em>, <em class="sig-param">n_informative=10</em>, <em class="sig-param">n_targets=1</em>, <em class="sig-param">bias=0.0</em>, <em class="sig-param">effective_rank=None</em>, <em class="sig-param">tail_strength=0.5</em>, <em class="sig-param">noise=0.0</em>, <em class="sig-param">shuffle=False</em>, <em class="sig-param">coef=False</em>, <em class="sig-param">random_state=None</em>, <em class="sig-param">n_parts=1</em>, <em class="sig-param">n_samples_per_part=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.datasets.regression.make_regression" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a random regression problem.
+The input set can either be well conditioned (by default) or have a low
+rank-fat tail singular profile.</p>
+<p>The output is generated by applying a (potentially biased) random linear
+regression model with “n_informative” nonzero regressors to the previously
+generated input and some gaussian centered noise with some adjustable
+scale.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>n_samples</strong><span class="classifier">int, optional (default=100)</span></dt><dd><p>The number of samples.</p>
+</dd>
+<dt><strong>n_features</strong><span class="classifier">int, optional (default=100)</span></dt><dd><p>The number of features.</p>
+</dd>
+<dt><strong>n_informative</strong><span class="classifier">int, optional (default=10)</span></dt><dd><p>The number of informative features, i.e., the number of features used
+to build the linear model used to generate the output.</p>
+</dd>
+<dt><strong>n_targets</strong><span class="classifier">int, optional (default=1)</span></dt><dd><p>The number of regression targets, i.e., the dimension of the y output
+vector associated with a sample. By default, the output is a scalar.</p>
+</dd>
+<dt><strong>bias</strong><span class="classifier">float, optional (default=0.0)</span></dt><dd><p>The bias term in the underlying linear model.</p>
+</dd>
+<dt><strong>effective_rank</strong><span class="classifier">int or None, optional (default=None)</span></dt><dd><dl class="simple">
+<dt>if not None:</dt><dd><p>The approximate number of singular vectors required to explain most
+of the input data by linear combinations. Using this kind of
+singular spectrum in the input allows the generator to reproduce
+the correlations often observed in practice.</p>
+</dd>
+<dt>if None:</dt><dd><p>The input set is well conditioned, centered and gaussian with
+unit variance.</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>tail_strength</strong><span class="classifier">float between 0.0 and 1.0, optional (default=0.5)</span></dt><dd><p>The relative importance of the fat noisy tail of the singular values
+profile if “effective_rank” is not None.</p>
+</dd>
+<dt><strong>noise</strong><span class="classifier">float, optional (default=0.0)</span></dt><dd><p>The standard deviation of the gaussian noise applied to the output.</p>
+</dd>
+<dt><strong>shuffle</strong><span class="classifier">boolean, optional (default=False)</span></dt><dd><p>Shuffle the samples and the features.</p>
+</dd>
+<dt><strong>coef</strong><span class="classifier">boolean, optional (default=False)</span></dt><dd><p>If True, the coefficients of the underlying linear model are returned.</p>
+</dd>
+<dt><strong>random_state</strong><span class="classifier">int, CuPy RandomState instance, Dask RandomState instance</span></dt><dd><blockquote>
+<div><p>or None (default)</p>
+</div></blockquote>
+<p>Determines random number generation for dataset creation. Pass an int
+for reproducible output across multiple function calls.</p>
+</dd>
+<dt><strong>n_parts</strong><span class="classifier">int, optional (default=1)</span></dt><dd><p>The number of parts of work.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>X</strong><span class="classifier">Dask-CuPy array of shape [n_samples, n_features]</span></dt><dd><p>The input samples.</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">Dask-CuPy array of shape [n_samples] or [n_samples, n_targets]</span></dt><dd><p>The output values.</p>
+</dd>
+<dt><strong>coef</strong><span class="classifier">Dask-CuPy array of shape [n_features]</span></dt><dd><blockquote>
+<div><p>or [n_features, n_targets], optional</p>
+</div></blockquote>
+<p>The coefficient of the underlying linear model. It is returned only if
+coef is True.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </div></blockquote>
 </div>
 <div class="section" id="metrics">
@@ -664,7 +1140,7 @@ slightly incorrect because of floating point precision if the input is
 large enough. float64 will have lower numerical error.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>y_true</strong><span class="classifier">array-like (device or host) shape = (n_samples,)</span></dt><dd><p>or (n_samples, n_outputs)
 Ground truth (correct) target values.</p>
 </dd>
@@ -676,14 +1152,10 @@ Estimated target values.</p>
 <dt><strong>multioutput</strong><span class="classifier">string in [‘raw_values’, ‘uniform_average’]</span></dt><dd><p>or array-like of shape (n_outputs)
 Defines aggregating of multiple output values.
 Array-like value defines weights used to average errors.
-‘raw_values’ :</p>
-<blockquote>
-<div><p>Returns a full set of errors in case of multioutput input.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>‘uniform_average’ :</dt><dd><p>Errors of all outputs are averaged with uniform weight.</p>
-</dd>
-</dl>
+‘raw_values’ :
+Returns a full set of errors in case of multioutput input.
+‘uniform_average’ :
+Errors of all outputs are averaged with uniform weight.</p>
 </dd>
 </dl>
 </dd>
@@ -707,9 +1179,9 @@ returned.</p>
 <p>Be careful when using this metric with float32 inputs as the result can be
 slightly incorrect because of floating point precision if the input is
 large enough. float64 will have lower numerical error.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>y_true</strong><span class="classifier">array-like (device or host) shape = (n_samples,)</span></dt><dd><p>or (n_samples, n_outputs)
 Ground truth (correct) target values.</p>
 </dd>
@@ -721,14 +1193,10 @@ Estimated target values.</p>
 <dt><strong>multioutput</strong><span class="classifier">string in [‘raw_values’, ‘uniform_average’]</span></dt><dd><p>or array-like of shape (n_outputs)
 Defines aggregating of multiple output values.
 Array-like value defines weights used to average errors.
-‘raw_values’ :</p>
-<blockquote>
-<div><p>Returns a full set of errors in case of multioutput input.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>‘uniform_average’ :</dt><dd><p>Errors of all outputs are averaged with uniform weight.</p>
-</dd>
-</dl>
+‘raw_values’ :
+Returns a full set of errors in case of multioutput input.
+‘uniform_average’ :
+Errors of all outputs are averaged with uniform weight.</p>
 </dd>
 <dt><strong>squared</strong><span class="classifier">boolean value, optional (default = True)</span></dt><dd><p>If True returns MSE value, if False returns RMSE value.</p>
 </dd>
@@ -751,9 +1219,9 @@ array of floating point values, one for each individual target.</p>
 <p>Be careful when using this metric with float32 inputs as the result can be
 slightly incorrect because of floating point precision if the input is
 large enough. float64 will have lower numerical error.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>y_true</strong><span class="classifier">array-like (device or host) shape = (n_samples,)</span></dt><dd><p>or (n_samples, n_outputs)
 Ground truth (correct) target values.</p>
 </dd>
@@ -765,14 +1233,10 @@ Estimated target values.</p>
 <dt><strong>multioutput</strong><span class="classifier">string in [‘raw_values’, ‘uniform_average’]</span></dt><dd><p>or array-like of shape (n_outputs)
 Defines aggregating of multiple output values.
 Array-like value defines weights used to average errors.
-‘raw_values’ :</p>
-<blockquote>
-<div><p>Returns a full set of errors in case of multioutput input.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>‘uniform_average’ :</dt><dd><p>Errors of all outputs are averaged with uniform weight.</p>
-</dd>
-</dl>
+‘raw_values’ :
+Returns a full set of errors in case of multioutput input.
+‘uniform_average’ :
+Errors of all outputs are averaged with uniform weight.</p>
 </dd>
 <dt><strong>squared</strong><span class="classifier">boolean value, optional (default = True)</span></dt><dd><p>If True returns MSE value, if False returns RMSE value.</p>
 </dd>
@@ -903,6 +1367,38 @@ index and is corrected for chance.</p>
 </dl>
 </dd></dl>
 
+<span class="target" id="module-cuml.metrics.cluster.entropy"></span><dl class="function">
+<dt id="cuml.metrics.cluster.entropy.cython_entropy">
+<code class="sig-prename descclassname">cuml.metrics.cluster.entropy.</code><code class="sig-name descname">cython_entropy</code><span class="sig-paren">(</span><em class="sig-param">clustering</em>, <em class="sig-param">base=None</em>, <em class="sig-param">handle=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.metrics.cluster.entropy.cython_entropy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the entropy of a distribution for given probability values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>clustering</strong><span class="classifier">array-like (device or host) shape = (n_samples,)</span></dt><dd><p>Clustering of labels. Probabilities are computed based on occurrences
+of labels. For instance, to represent a fair coin (2 equally possible
+outcomes), the clustering could be [0,1]. For a biased coin with 2/3
+probability for tail, the clustering could be [0, 0, 1].</p>
+</dd>
+<dt><strong>base: float, optional</strong></dt><dd><p>The logarithmic base to use, defaults to e (natural logarithm).</p>
+</dd>
+<dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>Specifies the cuml.handle that holds internal CUDA state for
+computations in this model. Most importantly, this specifies the CUDA
+stream that will be used for the model’s computations, so users can
+run different models concurrently in different streams by creating
+handles in several streams.
+If it is None, a new one is created.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>S</strong><span class="classifier">float</span></dt><dd><p>The calculated entropy.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </div></blockquote>
 </div>
 <div class="section" id="benchmarking">
@@ -1011,12 +1507,12 @@ baseline.</p>
 <em class="property">class </em><code class="sig-prename descclassname">cuml.benchmark.runners.</code><code class="sig-name descname">BenchmarkTimer</code><span class="sig-paren">(</span><em class="sig-param">reps=1</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.benchmark.runners.BenchmarkTimer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provides a context manager that runs a code block <cite>reps</cite> times
 and records results to the instance variable <cite>timings</cite>. Use like:</p>
-<p>timer = BenchmarkTimer(rep=5)
-for _ in timer.benchmark_runs():</p>
-<blockquote>
-<div><p>… do something …</p>
-</div></blockquote>
-<p>print(np.min(timer.timings))</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">timer</span> <span class="o">=</span> <span class="n">BenchmarkTimer</span><span class="p">(</span><span class="n">rep</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">timer</span><span class="o">.</span><span class="n">benchmark_runs</span><span class="p">():</span>
+    <span class="o">...</span> <span class="n">do</span> <span class="n">something</span> <span class="o">...</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">timer</span><span class="o">.</span><span class="n">timings</span><span class="p">))</span>
+</pre></div>
+</div>
 <p class="rubric">Methods</p>
 <table class="docutils align-default">
 <colgroup>
@@ -1327,10 +1823,8 @@ It provides both single-class (using sigmoid loss) and multiple-class
 algorithms. Even though it is presented as a single option, this solver
 resolves to two different algorithms underneath:</p>
 <ul class="simple">
-<li><p>Orthant-Wise Limited Memory Quasi-Newton (OWL-QN) if there is l1</p></li>
-</ul>
-<p>regularization</p>
-<ul class="simple">
+<li><p>Orthant-Wise Limited Memory Quasi-Newton (OWL-QN) if there is l1
+regularization</p></li>
 <li><p>Limited Memory BFGS (L-BFGS) otherwise.</p></li>
 </ul>
 <p>Note that, just like in Scikit-learn, the bias will not be regularized.</p>
@@ -2204,16 +2698,16 @@ fitted by minimizing a regularized empirical loss with mini-batch SGD.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>loss</strong><span class="classifier">‘hinge’, ‘log’, ‘squared_loss’ (default = ‘squared_loss’)</span></dt><dd><p>‘hinge’ uses linear SVM
-‘log’ uses logistic regression
-‘squared_loss’ uses linear regression</p>
+<dt><strong>loss</strong><span class="classifier">{‘hinge’, ‘log’, ‘squared_loss’} (default = ‘squared_loss’)</span></dt><dd><p>‘hinge’ uses linear SVM</p>
+<p>‘log’ uses logistic regression</p>
+<p>‘squared_loss’ uses linear regression</p>
 </dd>
-<dt><strong>penalty: ‘none’, ‘l1’, ‘l2’, ‘elasticnet’ (default = ‘none’)</strong></dt><dd><p>‘none’ does not perform any regularization
-‘l1’ performs L1 norm (Lasso) which minimizes the sum of the abs value
-of coefficients
-‘l2’ performs L2 norm (Ridge) which minimizes the sum of the square of
-the coefficients
-‘elasticnet’ performs Elastic Net regularization which is a weighted
+<dt><strong>penalty: {‘none’, ‘l1’, ‘l2’, ‘elasticnet’} (default = ‘none’)</strong></dt><dd><p>‘none’ does not perform any regularization</p>
+<p>‘l1’ performs L1 norm (Lasso) which minimizes the sum of the abs value
+of coefficients</p>
+<p>‘l2’ performs L2 norm (Ridge) which minimizes the sum of the square of
+the coefficients</p>
+<p>‘elasticnet’ performs Elastic Net regularization which is a weighted
 average of L1 and L2 norms</p>
 </dd>
 <dt><strong>alpha: float (default = 0.0001)</strong></dt><dd><p>The constant value which decides the degree of regularization</p>
@@ -2233,12 +2727,10 @@ False, does not shuffle the training data after each epoch</p>
 </dd>
 <dt><strong>power_t</strong><span class="classifier">float (default = 0.5)</span></dt><dd><p>The exponent used for calculating the invscaling learning rate</p>
 </dd>
-<dt><strong>learning_rate</strong><span class="classifier">‘optimal’, ‘constant’, ‘invscaling’,</span></dt><dd><blockquote>
-<div><p>‘adaptive’ (default = ‘constant’)</p>
-</div></blockquote>
-<p><cite>optimal</cite> option will be supported in a future version
-<cite>constant</cite> keeps the learning rate constant
-<cite>adaptive</cite> changes the learning rate if the training loss or the
+<dt><strong>learning_rate</strong><span class="classifier">{‘optimal’, ‘constant’, ‘invscaling’, ‘adaptive’}</span></dt><dd><p>(default = ‘constant’)</p>
+<p><cite>optimal</cite> option will be supported in a future version</p>
+<p><cite>constant</cite> keeps the learning rate constant</p>
+<p><cite>adaptive</cite> changes the learning rate if the training loss or the
 validation accuracy does not improve for <cite>n_iter_no_change</cite> epochs.
 The old learning rate is generally divided by 5</p>
 </dd>
@@ -2248,7 +2740,7 @@ The old learning rate is generally divided by 5</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>For additional docs, see <a href="#id3"><span class="problematic" id="id4">`</span></a>scikitlearn’s OLS
+<p>For additional docs, see <a href="#id3"><span class="problematic" id="id4">`</span></a>scikit-learn’s SGDClassifier
 &lt;<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html">https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html</a>&gt;</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -2420,12 +2912,10 @@ False, does not shuffle the training data after each epoch</p>
 </dd>
 <dt><strong>power_t</strong><span class="classifier">float (default = 0.5)</span></dt><dd><p>The exponent used for calculating the invscaling learning rate</p>
 </dd>
-<dt><strong>learning_rate</strong><span class="classifier">‘optimal’, ‘constant’, ‘invscaling’,</span></dt><dd><blockquote>
-<div><p>‘adaptive’ (default = ‘constant’)</p>
-</div></blockquote>
-<p><cite>optimal</cite> option will be supported in a future version
-<cite>constant</cite> keeps the learning rate constant
-<cite>adaptive</cite> changes the learning rate if the training loss or the
+<dt><strong>learning_rate</strong><span class="classifier">{‘optimal’, ‘constant’, ‘invscaling’, ‘adaptive’}</span></dt><dd><p>(default = ‘constant’)</p>
+<p><cite>optimal</cite> option will be supported in a future version</p>
+<p><cite>constant</cite> keeps the learning rate constant</p>
+<p><cite>adaptive</cite> changes the learning rate if the training loss or the
 validation accuracy does not improve for <cite>n_iter_no_change</cite> epochs.
 The old learning rate is generally divided by 5</p>
 </dd>
@@ -2462,17 +2952,14 @@ The old learning rate is generally divided by 5</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cuML predictions : &quot;</span><span class="p">,</span> <span class="n">cu_pred</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Output:
-.. code-block:: python</p>
-<blockquote>
-<div><p>cuML intercept :  0.7150013446807861
-cuML coef :  0    0.27320495</p>
-<blockquote>
-<div><p>1     0.1875956
-dtype: float32</p>
-</div></blockquote>
-<p>cuML predictions :  [2.4725943 2.1993892]</p>
-</div></blockquote>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cuML</span> <span class="n">intercept</span> <span class="p">:</span>  <span class="mf">0.7150013446807861</span>
+<span class="n">cuML</span> <span class="n">coef</span> <span class="p">:</span>  <span class="mi">0</span>    <span class="mf">0.27320495</span>
+            <span class="mi">1</span>     <span class="mf">0.1875956</span>
+            <span class="n">dtype</span><span class="p">:</span> <span class="n">float32</span>
+<span class="n">cuML</span> <span class="n">predictions</span> <span class="p">:</span>  <span class="p">[</span><span class="mf">2.4725943</span> <span class="mf">2.1993892</span><span class="p">]</span>
+</pre></div>
+</div>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -3990,10 +4477,8 @@ function.</p>
 <p>Two algorithms are implemented underneath cuML’s QN class, and which one
 is executed depends on the following rule:</p>
 <ul class="simple">
-<li><p>Orthant-Wise Limited Memory Quasi-Newton (OWL-QN) if there is l1</p></li>
-</ul>
-<p>regularization</p>
-<ul class="simple">
+<li><p>Orthant-Wise Limited Memory Quasi-Newton (OWL-QN) if there is l1
+regularization</p></li>
 <li><p>Limited Memory BFGS (L-BFGS) otherwise.</p></li>
 </ul>
 <p>cuML’s QN class can take array-like objects, either in host as
@@ -4032,14 +4517,12 @@ O(lbfgs_memory * D) memory.</p>
 <p class="rubric">Notes</p>
 <p>This class contains implementations of two popular Quasi-Newton methods:</p>
 <ul class="simple">
-<li><p>Limited-memory Broyden Fletcher Goldfarb Shanno (L-BFGS) [Nocedal,</p></li>
+<li><p>Limited-memory Broyden Fletcher Goldfarb Shanno (L-BFGS) [Nocedal,
+Wright - Numerical Optimization (1999)]</p></li>
+<li><p>Orthant-wise limited-memory quasi-newton (OWL-QN) [Andrew, Gao - ICML
+2007]
+&lt;<a class="reference external" href="https://www.microsoft.com/en-us/research/publication/scalable-training-of-l1-regularized-log-linear-models/">https://www.microsoft.com/en-us/research/publication/scalable-training-of-l1-regularized-log-linear-models/</a>&gt;</p></li>
 </ul>
-<p>Wright - Numerical Optimization (1999)]</p>
-<ul class="simple">
-<li><p>Orthant-wise limited-memory quasi-newton (OWL-QN) [Andrew, Gao - ICML</p></li>
-</ul>
-<p>2007]
-&lt;<a class="reference external" href="https://www.microsoft.com/en-us/research/publication/scalable-training-of-l1-regularized-log-linear-models/">https://www.microsoft.com/en-us/research/publication/scalable-training-of-l1-regularized-log-linear-models/</a>&gt;</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -4187,16 +4670,12 @@ will increase memory used for the method.</p>
 <p>The solver uses the SMO method to fit the classifier. We use the Optimized
 Hierarchical Decomposition [1] variant of the SMO algorithm, similar to [2]</p>
 <p class="rubric">References</p>
-<dl class="simple">
-<dt>[1] J. Vanek et al. A GPU-Architecture Optimized Hierarchical Decomposition</dt><dd><p>Algorithm for Support VectorMachine Training, IEEE Transactions on
+<p>[1] J. Vanek et al. A GPU-Architecture Optimized Hierarchical Decomposition
+Algorithm for Support VectorMachine Training, IEEE Transactions on
 Parallel and Distributed Systems, vol 28, no 12, 3330, (2017)</p>
-</dd>
-</dl>
 <p>[2] Z. Wen et al. ThunderSVM: A Fast SVM Library on GPUs and CPUs, Journal
-*      of Machine Learning Research, 19, 1-5 (2018)</p>
-<blockquote>
-<div><p><a class="reference external" href="https://github.com/Xtra-Computing/thundersvm">https://github.com/Xtra-Computing/thundersvm</a></p>
-</div></blockquote>
+of Machine Learning Research, 19, 1-5 (2018)
+<a class="reference external" href="https://github.com/Xtra-Computing/thundersvm">https://github.com/Xtra-Computing/thundersvm</a></p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -5247,20 +5726,20 @@ For additional docs, see <a class="reference external" href="http://scikit-learn
 <span class="n">pca_float</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">pca_float</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;components: </span><span class="si">{pca_float.components_}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance: </span><span class="si">{pca_float._explained_variance_}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;components: </span><span class="si">{</span><span class="n">pca_float</span><span class="o">.</span><span class="n">components_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance: </span><span class="si">{</span><span class="n">pca_float</span><span class="o">.</span><span class="n">_explained_variance_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">exp_var</span> <span class="o">=</span> <span class="n">pca_float</span><span class="o">.</span><span class="n">_explained_variance_ratio_</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance ratio: </span><span class="si">{exp_var}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance ratio: </span><span class="si">{</span><span class="n">exp_var</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;singular values: </span><span class="si">{pca_float._singular_values_}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;mean: </span><span class="si">{pca_float._mean_}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;noise variance: </span><span class="si">{pca_float._noise_variance_}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;singular values: </span><span class="si">{</span><span class="n">pca_float</span><span class="o">.</span><span class="n">_singular_values_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;mean: </span><span class="si">{</span><span class="n">pca_float</span><span class="o">.</span><span class="n">_mean_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;noise variance: </span><span class="si">{</span><span class="n">pca_float</span><span class="o">.</span><span class="n">_noise_variance_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="n">trans_gdf_float</span> <span class="o">=</span> <span class="n">pca_float</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Inverse: </span><span class="si">{trans_gdf_float}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Inverse: </span><span class="si">{</span><span class="n">trans_gdf_float</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="n">input_gdf_float</span> <span class="o">=</span> <span class="n">pca_float</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">trans_gdf_float</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Input: </span><span class="si">{input_gdf_float}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Input: </span><span class="si">{</span><span class="n">input_gdf_float</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -5529,17 +6008,17 @@ For additional documentation, see <a class="reference external" href="http://sci
                           <span class="n">n_iter</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-9</span><span class="p">)</span>
 <span class="n">tsvd_float</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;components: </span><span class="si">{tsvd_float.components_}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance: </span><span class="si">{tsvd_float._explained_variance_}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;components: </span><span class="si">{</span><span class="n">tsvd_float</span><span class="o">.</span><span class="n">components_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance: </span><span class="si">{</span><span class="n">tsvd_float</span><span class="o">.</span><span class="n">_explained_variance_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">exp_var</span> <span class="o">=</span> <span class="n">tsvd_float</span><span class="o">.</span><span class="n">_explained_variance_ratio_</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance ratio: </span><span class="si">{exp_var}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;singular values: </span><span class="si">{tsvd_float._singular_values_}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;explained variance ratio: </span><span class="si">{</span><span class="n">exp_var</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;singular values: </span><span class="si">{</span><span class="n">tsvd_float</span><span class="o">.</span><span class="n">_singular_values_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="n">trans_gdf_float</span> <span class="o">=</span> <span class="n">tsvd_float</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">gdf_float</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Transformed matrix: </span><span class="si">{trans_gdf_float}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Transformed matrix: </span><span class="si">{</span><span class="n">trans_gdf_float</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="n">input_gdf_float</span> <span class="o">=</span> <span class="n">tsvd_float</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">trans_gdf_float</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Input matrix: </span><span class="si">{input_gdf_float}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Input matrix: </span><span class="si">{</span><span class="n">input_gdf_float</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Output:</p>
@@ -5629,17 +6108,21 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dl class="attribute">
 <dt id="cuml.TruncatedSVD.fit_transform">
 <code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.fit_transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fit LSI model to X and perform dimensionality reduction on X.
-Parameters
-———-
-X : array-like (device or host) shape = (n_samples, n_features)</p>
-<blockquote>
-<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+<dd><p>Fit LSI model to X and perform dimensionality reduction on X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
-</div></blockquote>
-<dl class="simple">
-<dt>X_new<span class="classifier">cuDF DataFrame, shape (n_samples, n_components)</span></dt><dd><p>Reduced version of X as a dense cuDF DataFrame</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>X_new</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_components)</span></dt><dd><p>Reduced version of X as a dense cuDF DataFrame</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -5653,23 +6136,25 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dt id="cuml.TruncatedSVD.inverse_transform">
 <code class="sig-name descname">inverse_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.inverse_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform X back to its original space.
-Returns a cuDF DataFrame X_original whose transform would be X.
-Parameters
-———-
-X : array-like (device or host) shape = (n_samples, n_features)</p>
-<blockquote>
-<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Returns a cuDF DataFrame X_original whose transform would be X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
-</div></blockquote>
-<dl class="simple">
-<dt>convert_dtype<span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the inverse_transform method will automatically
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the inverse_transform method will automatically
 convert the input to the data type which was used to train the
 model. This will increase memory used for the method.</p>
 </dd>
 </dl>
-<dl class="simple">
-<dt>X_original<span class="classifier">cuDF DataFrame, shape (n_samples, n_features)</span></dt><dd><p>Note that this is always a dense cuDF DataFrame.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>X_original</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_features)</span></dt><dd><p>Note that this is always a dense cuDF DataFrame.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -5692,8 +6177,12 @@ convert the input to the data type which was used to train the
 model.</p>
 </dd>
 </dl>
-<dl class="simple">
-<dt>X_new<span class="classifier">cuDF DataFrame, shape (n_samples, n_components)</span></dt><dd><p>Reduced version of X. This will always be a dense DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X_new</strong><span class="classifier">cuDF DataFrame, shape (n_samples, n_components)</span></dt><dd><p>Reduced version of X. This will always be a dense DataFrame.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -5861,20 +6350,20 @@ Reduction
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.UMAP.fit" title="cuml.UMAP.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, y, convert_dtype])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.UMAP.fit" title="cuml.UMAP.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, y, convert_dtype, knn_graph])</p></td>
 <td><p>Fit X into an embedded space.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.UMAP.fit_transform" title="cuml.UMAP.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X[, y, convert_dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.UMAP.fit_transform" title="cuml.UMAP.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X[, y, convert_dtype, …])</p></td>
 <td><p>Fit X into an embedded space and return that transformed output.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.UMAP.transform" title="cuml.UMAP.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X[, convert_dtype])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.UMAP.transform" title="cuml.UMAP.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X[, convert_dtype, knn_graph])</p></td>
 <td><p>Transform X into the existing embedded space and return that transformed output.</p></td>
 </tr>
 </tbody>
 </table>
-<dl class="attribute">
+<dl class="method">
 <dt id="cuml.UMAP.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">knn_graph=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit X into an embedded space.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -5887,6 +6376,24 @@ ndarray, cuda array interface compliant array like CuPy</p>
 Acceptable formats: cuDF Series, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
+<dt><strong>knn_graph</strong><span class="classifier">sparse array-like (device or host)</span></dt><dd><p>shape=(n_samples, n_samples)
+A sparse array containing the k-nearest neighbors of X,
+where the columns are the nearest neighbor indices
+for each row and the values are their distances.
+It’s important that <cite>k&gt;=n_neighbors</cite>,
+so that UMAP can model the neighbors from this graph,
+instead of building its own internally.
+Users using the knn_graph parameter provide UMAP
+with their own run of the KNN algorithm. This allows the user
+to pick a custom distance function (sometimes useful
+on certain datasets) whereas UMAP uses euclidean by default.
+The custom distance function should match the metric used
+to train UMAP embeedings. Storing and reusing a knn_graph
+will also provide a speedup to the UMAP algorithm
+when performing a grid search.
+Acceptable formats: sparse SciPy ndarray, CuPy device ndarray,
+CSR/COO preferred other formats will go through conversion to CSR</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -5894,7 +6401,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.UMAP.fit_transform">
-<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">knn_graph=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit X into an embedded space and return that transformed
 output.</p>
 <p>There is a subtle difference between calling fit_transform(X)
@@ -5910,6 +6417,24 @@ return the embedding after it is trained while calling</p>
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
+<dt><strong>knn_graph</strong><span class="classifier">sparse array-like (device or host)</span></dt><dd><p>shape=(n_samples, n_samples)
+A sparse array containing the k-nearest neighbors of X,
+where the columns are the nearest neighbor indices
+for each row and the values are their distances.
+It’s important that <cite>k&gt;=n_neighbors</cite>,
+so that UMAP can model the neighbors from this graph,
+instead of building its own internally.
+Users using the knn_graph parameter provide UMAP
+with their own run of the KNN algorithm. This allows the user
+to pick a custom distance function (sometimes useful
+on certain datasets) whereas UMAP uses euclidean by default.
+The custom distance function should match the metric used
+to train UMAP embeedings. Storing and reusing a knn_graph
+will also provide a speedup to the UMAP algorithm
+when performing a grid search.
+Acceptable formats: sparse SciPy ndarray, CuPy device ndarray,
+CSR/COO preferred other formats will go through conversion to CSR</p>
+</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -5921,9 +6446,9 @@ ndarray, cuda array interface compliant array like CuPy</p>
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="cuml.UMAP.transform">
-<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">knn_graph=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform X into the existing embedded space and return that
 transformed output.</p>
 <p>Please refer to the reference UMAP implementation for information
@@ -5937,6 +6462,24 @@ transform().</p>
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>New data to be transformed.
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>knn_graph</strong><span class="classifier">sparse array-like (device or host)</span></dt><dd><p>shape=(n_samples, n_samples)
+A sparse array containing the k-nearest neighbors of X,
+where the columns are the nearest neighbor indices
+for each row and the values are their distances.
+It’s important that <cite>k&gt;=n_neighbors</cite>,
+so that UMAP can model the neighbors from this graph,
+instead of building its own internally.
+Users using the knn_graph parameter provide UMAP
+with their own run of the KNN algorithm. This allows the user
+to pick a custom distance function (sometimes useful
+on certain datasets) whereas UMAP uses euclidean by default.
+The custom distance function should match the metric used
+to train UMAP embeedings. Storing and reusing a knn_graph
+will also provide a speedup to the UMAP algorithm
+when performing a grid search.
+Acceptable formats: sparse SciPy ndarray, CuPy device ndarray,
+CSR/COO preferred other formats will go through conversion to CSR</p>
 </dd>
 </dl>
 </dd>
@@ -6055,6 +6598,35 @@ automatic deduction when n_components is set to ‘auto’.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>gaussian_method</strong><span class="classifier">boolean</span></dt><dd><p>To be passed to base class in order to determine
 random matrix generation method</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.random_projection.johnson_lindenstrauss_min_dim">
+<code class="sig-prename descclassname">random_projection.</code><code class="sig-name descname">johnson_lindenstrauss_min_dim</code><span class="sig-paren">(</span><em class="sig-param">n_samples</em>, <em class="sig-param">eps=0.1</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.random_projection.johnson_lindenstrauss_min_dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>In mathematics, the Johnson–Lindenstrauss lemma states that
+high-dimensional data can be embedded into lower dimension while preserving
+the distances.</p>
+<p>With p the random projection :
+(1 - eps) ||u - v||^2 &lt; ||p(u) - p(v)||^2 &lt; (1 + eps) ||u - v||^2</p>
+<p>This function finds the minimum number of components to guarantee that
+the embedding is inside the eps error tolerance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n_samples</strong><span class="classifier">int</span></dt><dd><p>Number of samples.</p>
+</dd>
+<dt><strong>eps</strong><span class="classifier">float in (0,1) (default = 0.1)</span></dt><dd><p>Maximum distortion rate as defined by the Johnson-Lindenstrauss lemma.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>n_components</strong><span class="classifier">int</span></dt><dd><p>The minimal number of components to guarantee with good probability
+an eps-embedding with n_samples.</p>
 </dd>
 </dl>
 </dd>
@@ -6258,7 +6830,7 @@ the neighborhood as the closest <cite>k</cite> neighbors to each query point.</p
 </dl>
 <p class="rubric">Notes</p>
 <p>For an additional example see <a class="reference external" href="https://github.com/rapidsai/notebook/blob/master/python/notebooks/nearest_neighbors_demo.ipynb">the NearestNeighbors notebook</a>.</p>
-<p>For additional docs, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html#sklearn.neighbors.NearestNeighbors">scikitlearn’s NearestNeighbors</a>.</p>
+<p>For additional docs, see <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html#sklearn.neighbors.NearestNeighbors">scikit-learn’s NearestNeighbors</a>.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span>
 <span class="kn">from</span> <span class="nn">cuml.neighbors</span> <span class="kn">import</span> <span class="n">NearestNeighbors</span>
@@ -6283,37 +6855,33 @@ the neighborhood as the closest <cite>k</cite> neighbors to each query point.</p
 </pre></div>
 </div>
 <p>Output:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">indices</span><span class="p">:</span>
+
+     <span class="mi">0</span>   <span class="mi">1</span>   <span class="mi">2</span>
+<span class="mi">0</span>    <span class="mi">0</span>  <span class="mi">14</span>  <span class="mi">21</span>
+<span class="mi">1</span>    <span class="mi">1</span>  <span class="mi">19</span>   <span class="mi">8</span>
+<span class="mi">2</span>    <span class="mi">2</span>   <span class="mi">9</span>  <span class="mi">23</span>
+<span class="mi">3</span>    <span class="mi">3</span>  <span class="mi">14</span>  <span class="mi">21</span>
+<span class="o">...</span>
+
+<span class="mi">22</span>  <span class="mi">22</span>  <span class="mi">18</span>  <span class="mi">11</span>
+<span class="mi">23</span>  <span class="mi">23</span>  <span class="mi">16</span>   <span class="mi">9</span>
+<span class="mi">24</span>  <span class="mi">24</span>  <span class="mi">17</span>  <span class="mi">10</span>
+
+<span class="n">distances</span><span class="p">:</span>
+
+      <span class="mi">0</span>         <span class="mi">1</span>         <span class="mi">2</span>
+<span class="mi">0</span>   <span class="mf">0.0</span>  <span class="mf">4.883116</span>  <span class="mf">5.570006</span>
+<span class="mi">1</span>   <span class="mf">0.0</span>  <span class="mf">3.047896</span>  <span class="mf">4.105496</span>
+<span class="mi">2</span>   <span class="mf">0.0</span>  <span class="mf">3.558557</span>  <span class="mf">3.567704</span>
+<span class="mi">3</span>   <span class="mf">0.0</span>  <span class="mf">3.806127</span>  <span class="mf">3.880100</span>
+<span class="o">...</span>
+
+<span class="mi">22</span>  <span class="mf">0.0</span>  <span class="mf">4.210738</span>  <span class="mf">4.227068</span>
+<span class="mi">23</span>  <span class="mf">0.0</span>  <span class="mf">3.357889</span>  <span class="mf">3.404269</span>
+<span class="mi">24</span>  <span class="mf">0.0</span>  <span class="mf">3.428183</span>  <span class="mf">3.818043</span>
 </pre></div>
 </div>
-<p>indices:</p>
-<blockquote>
-<div><blockquote>
-<div><p>0   1   2</p>
-</div></blockquote>
-<p>0    0  14  21
-1    1  19   8
-2    2   9  23
-3    3  14  21
-…</p>
-<p>22  22  18  11
-23  23  16   9
-24  24  17  10</p>
-</div></blockquote>
-<p>distances:</p>
-<blockquote>
-<div><blockquote>
-<div><p>0         1         2</p>
-</div></blockquote>
-<p>0   0.0  4.883116  5.570006
-1   0.0  3.047896  4.105496
-2   0.0  3.558557  3.567704
-3   0.0  3.806127  3.880100
-…</p>
-<p>22  0.0  4.210738  4.227068
-23  0.0  3.357889  3.404269
-24  0.0  3.428183  3.818043</p>
-</div></blockquote>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -6707,100 +7275,59 @@ convert the inputs to np.float32.</p>
 <dl class="class">
 <dt id="cuml.ExponentialSmoothing">
 <em class="property">class </em><code class="sig-prename descclassname">cuml.</code><code class="sig-name descname">ExponentialSmoothing</code><a class="headerlink" href="#cuml.ExponentialSmoothing" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div><p>Implements a HoltWinters time series analysis model which is used in
+<dd><p>Implements a HoltWinters time series analysis model which is used in
 both forecasting future entries in a time series as well as in providing
 exponential smoothing, where weights are assigned against historical
 data with exponentially decreasing impact. This is done by analyzing
 three components of the data: level, trend, and seasonality.</p>
-<p><strong>Known Limitations</strong>:
-This version of ExponentialSmoothing currently provides only a limited
-number of features when compared to the
-statsmodels.holtwinters.ExponentialSmoothing model. Noticeably, it lacks:</p>
-<blockquote>
-<div><ul class="simple">
-<li><dl class="simple">
-<dt>predict<span class="classifier">no support for in-sample prediction.</span></dt><dd><p><a class="reference external" href="https://github.com/rapidsai/cuml/issues/875">https://github.com/rapidsai/cuml/issues/875</a></p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>hessian<span class="classifier">no support for returning Hessian matrix.</span></dt><dd><p><a class="reference external" href="https://github.com/rapidsai/cuml/issues/880">https://github.com/rapidsai/cuml/issues/880</a></p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>information<span class="classifier">no support for returning Fisher matrix.</span></dt><dd><p><a class="reference external" href="https://github.com/rapidsai/cuml/issues/880">https://github.com/rapidsai/cuml/issues/880</a></p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>loglike<span class="classifier">no support for returning Log-likelihood.</span></dt><dd><p><a class="reference external" href="https://github.com/rapidsai/cuml/issues/880">https://github.com/rapidsai/cuml/issues/880</a></p>
-</dd>
-</dl>
-</li>
-</ul>
-</div></blockquote>
-<p>Additionally, be warned that there may exist floating point instability
-issues in this model. Small values in endog may lead to faulty results.
-See <a class="reference external" href="https://github.com/rapidsai/cuml/issues/888">https://github.com/rapidsai/cuml/issues/888</a> for more information.</p>
-<p><strong>Known Differences</strong>:
-This version of ExponentialSmoothing differs from statsmodels in some
-other minor ways:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Cannot pass trend component or damped trend component</p></li>
-<li><dl class="simple">
-<dt>this version can take additional parameters <cite>eps</cite>,</dt><dd><p><cite>start_periods</cite>, <cite>ts_num</cite>, and <cite>handle</cite></p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Score returns SSE rather than gradient logL</dt><dd><p><a class="reference external" href="https://github.com/rapidsai/cuml/issues/876">https://github.com/rapidsai/cuml/issues/876</a></p>
-</dd>
-</dl>
-</li>
-<li><p>This version provides get_level(), get_trend(), get_season()</p></li>
-</ul>
-</div></blockquote>
-</div></blockquote>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
-<dt><strong>endog</strong><span class="classifier">array-like (device or host)</span></dt><dd><blockquote>
-<div><p>Acceptable formats: cuDF DataFrame, cuDF Series,
+<dd class="field-odd"><dl class="simple">
+<dt><strong>endog</strong><span class="classifier">array-like (device or host)</span></dt><dd><p>Acceptable formats: cuDF DataFrame, cuDF Series,
 NumPy ndarray, Numba device ndarray, cuda array interface
 compliant array like CuPy.
 Note: cuDF.DataFrame types assumes data is in columns,
 while all other datatypes assume data is in rows.
 The endogenous dataset to be operated on.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>seasonal<span class="classifier">‘additive’, ‘add’, ‘multiplicative’, ‘mul’ (default = ‘additive’)  # noqa</span></dt><dd><p>Whether the seasonal trend should be calculated
+</dd>
+<dt><strong>seasonal</strong><span class="classifier">‘additive’, ‘add’, ‘multiplicative’, ‘mul’ (default = ‘additive’)  # noqa</span></dt><dd><p>Whether the seasonal trend should be calculated
 additively or multiplicatively.</p>
 </dd>
-<dt>seasonal_periods<span class="classifier">int (default=2)</span></dt><dd><p>The seasonality of the data (how often it
+<dt><strong>seasonal_periods</strong><span class="classifier">int (default=2)</span></dt><dd><p>The seasonality of the data (how often it
 repeats). For monthly data this should be 12,
 for weekly data, this should be 7.</p>
 </dd>
-<dt>start_periods<span class="classifier">int (default=2)</span></dt><dd><p>Number of seasons to be used for seasonal seed values</p>
+<dt><strong>start_periods</strong><span class="classifier">int (default=2)</span></dt><dd><p>Number of seasons to be used for seasonal seed values</p>
 </dd>
-<dt>ts_num<span class="classifier">int (default=1)</span></dt><dd><p>The number of different time series that were passed
+<dt><strong>ts_num</strong><span class="classifier">int (default=1)</span></dt><dd><p>The number of different time series that were passed
 in the endog param.</p>
 </dd>
-<dt>eps<span class="classifier">np.number &gt; 0 (default=2.24e-3)</span></dt><dd><p>The accuracy to which gradient descent should achieve.
+<dt><strong>eps</strong><span class="classifier">np.number &gt; 0 (default=2.24e-3)</span></dt><dd><p>The accuracy to which gradient descent should achieve.
 Note that changing this value may affect the forecasted results.</p>
 </dd>
-<dt>handle<span class="classifier">cuml.Handle (default=None)</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
+<dt><strong>handle</strong><span class="classifier">cuml.Handle (default=None)</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-</dd>
-</dl>
-<p>“, cu_pred)</p>
-<blockquote>
-<div><p>Output:</p>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cuml</span> <span class="kn">import</span> <span class="n">ExponentialSmoothing</span>
+<span class="kn">import</span> <span class="nn">cudf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span>
+                   <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span>
+                   <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span>
+                   <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span>
+                   <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span>
+                   <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">],</span>
+                   <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="n">cu_hw</span> <span class="o">=</span> <span class="n">ExponentialSmoothing</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">seasonal_periods</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">cu_hw</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">cu_pred</span> <span class="o">=</span> <span class="n">cu_hw</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Forecasted points:&#39;</span><span class="p">,</span> <span class="n">cu_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Forecasted</span> <span class="n">points</span> <span class="p">:</span>
 <span class="mi">0</span>    <span class="mf">4.000143766093652</span>
 <span class="mi">1</span>    <span class="mf">5.000000163513641</span>
@@ -6808,7 +7335,6 @@ Note that changing this value may affect the forecasted results.</p>
 <span class="mi">3</span>    <span class="mf">7.000000000000178</span>
 </pre></div>
 </div>
-</div></blockquote>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -6872,18 +7398,66 @@ DataFrame of all forecasted points if index=None.</p>
 <dt id="cuml.ExponentialSmoothing.get_level">
 <code class="sig-name descname">get_level</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ExponentialSmoothing.get_level" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the level component of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>index</strong><span class="classifier">int (default=None)</span></dt><dd><p>The index of the time series from which the level will be
+returned. if None, then all level components are returned
+in a cudf.Series.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>level</strong><span class="classifier">cudf.Series or cudf.DataFrame</span></dt><dd><p>The level component of the fitted model</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.ExponentialSmoothing.get_season">
 <code class="sig-name descname">get_season</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ExponentialSmoothing.get_season" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the season component of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>index</strong><span class="classifier">int (default=None)</span></dt><dd><p>The index of the time series from which the season will be
+returned. if None, then all season components are returned
+in a cudf.Series.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>season: cudf.Series or cudf.DataFrame</dt><dd><p>The season component of the fitted model</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.ExponentialSmoothing.get_trend">
 <code class="sig-name descname">get_trend</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ExponentialSmoothing.get_trend" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the trend component of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>index</strong><span class="classifier">int (default=None)</span></dt><dd><p>The index of the time series from which the trend will be
+returned. if None, then all trend components are returned
+in a cudf.Series.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>trend</strong><span class="classifier">cudf.Series or cudf.DataFrame</span></dt><dd><p>The trend component of the fitted model.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
@@ -6892,6 +7466,22 @@ DataFrame of all forecasted points if index=None.</p>
 <dd><p>Returns the score of the model.</p>
 <dl class="simple">
 <dt><a href="#id14"><span class="problematic" id="id15">**</span></a>Note: Currently returns the SSE, rather than the gradient of the</dt><dd><p>LogLikelihood. <a class="reference external" href="https://github.com/rapidsai/cuml/issues/876">https://github.com/rapidsai/cuml/issues/876</a></p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>index</strong><span class="classifier">int (default=None)</span></dt><dd><p>The index of the time series from which the SSE will be
+returned. if None, then all SSEs are returned in a cudf
+Series.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>score</strong><span class="classifier">np.float32, np.float64, or cudf.Series</span></dt><dd><p>The SSE of the fitted model.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -8414,6 +9004,257 @@ from a training set.</p>
 </dd></dl>
 
 </dd></dl>
+
+</div>
+<div class="section" id="linear-models">
+<h3>Linear Models<a class="headerlink" href="#linear-models" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.dask.linear_model.LinearRegression">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.linear_model.</code><code class="sig-name descname">LinearRegression</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.linear_model.LinearRegression" title="Permalink to this definition">¶</a></dt>
+<dd><p>LinearRegression is a simple machine learning model where the response y is
+modelled by a linear combination of the predictors in X.</p>
+<p>cuML’s dask Linear Regression (multi-node multi-gpu) expects dask cuDF
+DataFrame and provides an algorithms, Eig, to fit a linear model.
+And provides an eigendecomposition-based algorithm to fit a linear model.
+(SVD, which is more stable than eig, will be added in an upcoming version.)
+Eig algorithm is usually preferred when the X is a tall and skinny matrix.
+As the number of features in X increases, the accuracy of Eig algorithm
+drops.</p>
+<p>This is an experimental implementation of dask Linear Regresion. It
+supports input X that has more than one column. Single column input
+X will be supported after SVD algorithm is added in an upcoming version.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>algorithm</strong><span class="classifier">‘eig’</span></dt><dd><p>Eig uses a eigendecomposition of the covariance matrix, and is much
+faster.
+SVD is slower, but guaranteed to be stable.</p>
+</dd>
+<dt><strong>fit_intercept</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>LinearRegression adds an additional term c to correct for the global
+mean of y, modeling the reponse as “x * beta + c”.
+If False, the model expects that you have centered the data.</p>
+</dd>
+<dt><strong>normalize</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>If True, the predictors in X will be normalized by dividing by its
+L2 norm.
+If False, no scaling will be done.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>coef_</strong><span class="classifier">cuDF series, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
+</dd>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id35"><span class="problematic" id="id36">fit_intercept_</span></a> is False, will be 0.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.linear_model.LinearRegression.fit" title="cuml.dask.linear_model.LinearRegression.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<td><p>Fit the model with X and y.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.linear_model.LinearRegression.predict" title="cuml.dask.linear_model.LinearRegression.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, delayed])</p></td>
+<td><p>Make predictions for X and returns a dask collection.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 34%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>get_param_names</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="cuml.dask.linear_model.LinearRegression.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.linear_model.LinearRegression.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model with X and y.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">Dask cuDF dataframe  or CuPy backed Dask Array (n_rows, n_features)</span></dt><dd><p>Features for regression</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">Dask cuDF dataframe  or CuPy backed Dask Array (n_rows, 1)</span></dt><dd><p>Labels (outcome values)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.linear_model.LinearRegression.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">delayed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.linear_model.LinearRegression.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make predictions for X and returns a dask collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">Dask cuDF dataframe  or CuPy backed Dask Array (n_rows, n_features)</span></dt><dd><p>Distributed dense matrix (floats or doubles) of shape
+(n_samples, n_features).</p>
+</dd>
+<dt><strong>delayed</strong><span class="classifier">bool (default = True)</span></dt><dd><p>Whether to do a lazy prediction (and return Delayed objects) or an
+eagerly executed one.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">Dask cuDF dataframe  or CuPy backed Dask Array (n_rows, 1)</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cuml.dask.linear_model.Ridge">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.linear_model.</code><code class="sig-name descname">Ridge</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.linear_model.Ridge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ridge extends LinearRegression by providing L2 regularization on the
+coefficients when predicting response y with a linear combination of the
+predictors in X. It can reduce the variance of the predictors, and improves
+the conditioning of the problem.</p>
+<p>cuML’s dask Ridge (multi-node multi-gpu) expects dask cuDF
+DataFrame and provides an algorithms, Eig, to fit a linear model.
+And provides an eigendecomposition-based algorithm to fit a linear model.
+(SVD, which is more stable than eig, will be added in an upcoming version)
+Eig algorithm is usually preferred when the X is a tall and skinny matrix.
+As the number of features in X increases, the accuracy of Eig algorithm
+drops.</p>
+<p>This is an experimental implementation of dask Ridge Regresion. It
+supports input X that has more than one column. Single column input
+X will be supported after SVD algorithm is added in an upcoming version.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>alpha</strong><span class="classifier">float or double</span></dt><dd><p>Regularization strength - must be a positive float. Larger values
+specify stronger regularization. Array input will be supported later.</p>
+</dd>
+<dt><strong>solver</strong><span class="classifier">‘eig’</span></dt><dd><p>Eig uses a eigendecomposition of the covariance matrix, and is much
+faster.</p>
+</dd>
+<dt><strong>fit_intercept</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>If True, Ridge adds an additional term c to correct for the global
+mean of y, modeling the reponse as “x * beta + c”.
+If False, the model expects that you have centered the data.</p>
+</dd>
+<dt><strong>normalize</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>If True, the predictors in X will be normalized by dividing by it’s L2
+norm.
+If False, no scaling will be done.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>coef_</strong><span class="classifier">array, shape (n_features)</span></dt><dd><p>The estimated coefficients for the linear regression model.</p>
+</dd>
+<dt><strong>intercept_</strong><span class="classifier">array</span></dt><dd><p>The independent term. If <a href="#id37"><span class="problematic" id="id38">fit_intercept_</span></a> is False, will be 0.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.dask.linear_model.Ridge.fit" title="cuml.dask.linear_model.Ridge.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X, y)</p></td>
+<td><p>Fit the model with X and y.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.dask.linear_model.Ridge.predict" title="cuml.dask.linear_model.Ridge.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, delayed])</p></td>
+<td><p>Make predictions for X and returns a dask collection.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 34%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>get_param_names</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="cuml.dask.linear_model.Ridge.fit">
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.linear_model.Ridge.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model with X and y.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">Dask cuDF dataframe  or CuPy backed Dask Array (n_rows, n_features)</span></dt><dd><p>Features for regression</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">Dask cuDF dataframe  or CuPy backed Dask Array (n_rows, 1)</span></dt><dd><p>Labels (outcome values)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cuml.dask.linear_model.Ridge.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">delayed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.linear_model.Ridge.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make predictions for X and returns a dask collection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">Dask cuDF dataframe  or CuPy backed Dask Array (n_rows, n_features)</span></dt><dd><p>Distributed dense matrix (floats or doubles) of shape
+(n_samples, n_features).</p>
+</dd>
+<dt><strong>delayed</strong><span class="classifier">bool (default = True)</span></dt><dd><p>Whether to do a lazy prediction (and return Delayed objects) or an
+eagerly executed one.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">Dask cuDF dataframe  or CuPy backed Dask Array (n_rows, 1)</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="dask-base-classes-and-mixins">
+<h3>Dask Base Classes and Mixins<a class="headerlink" href="#dask-base-classes-and-mixins" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="cuml.dask.common.base.BaseEstimator">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.common.base.</code><code class="sig-name descname">BaseEstimator</code><span class="sig-paren">(</span><em class="sig-param">client=None</em>, <em class="sig-param">verbose=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.common.base.BaseEstimator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="cuml.dask.common.base.DelayedParallelFunc">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.common.base.</code><code class="sig-name descname">DelayedParallelFunc</code><a class="headerlink" href="#cuml.dask.common.base.DelayedParallelFunc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="cuml.dask.common.base.DelayedPredictionMixin">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.common.base.</code><code class="sig-name descname">DelayedPredictionMixin</code><a class="headerlink" href="#cuml.dask.common.base.DelayedPredictionMixin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="cuml.dask.common.base.DelayedTransformMixin">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.common.base.</code><code class="sig-name descname">DelayedTransformMixin</code><a class="headerlink" href="#cuml.dask.common.base.DelayedTransformMixin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="cuml.dask.common.base.DelayedInverseTransformMixin">
+<em class="property">class </em><code class="sig-prename descclassname">cuml.dask.common.base.</code><code class="sig-name descname">DelayedInverseTransformMixin</code><a class="headerlink" href="#cuml.dask.common.base.DelayedInverseTransformMixin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 </div>
