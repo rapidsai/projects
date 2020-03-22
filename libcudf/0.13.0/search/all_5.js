@@ -27,7 +27,7 @@ var searchData=
   ['example_5fclass_432',['example_class',['../classexample__class.html',1,'']]],
   ['exp_433',['EXP',['../namespacecudf.html#ab15567f1034536ae6f7f14179334a19ba6e272b8c75625066b2c8994cec6c8f73',1,'cudf']]],
   ['expand_5fbuffer_434',['expand_buffer',['../full__join_8cuh.html#a2961bb1b495485a3a33f21a44c2b3d1d',1,'full_join.cuh']]],
-  ['extent_435',['extent',['../classcudf_1_1column__device__view.html#ac2e9342c5f3ae996992fe4c2ac5b667d',1,'cudf::column_device_view::extent()'],['../classcudf_1_1mutable__column__device__view.html#a9dc9bf6e9a1c3e4bd72b401eac8ac089',1,'cudf::mutable_column_device_view::extent()']]],
+  ['extent_435',['extent',['../classcudf_1_1column__device__view.html#ab2b97b61f180c71d7157870a77058070',1,'cudf::column_device_view::extent()'],['../classcudf_1_1mutable__column__device__view.html#a6ea19dda6dde03495d02fd5480f4d57e',1,'cudf::mutable_column_device_view::extent()']]],
   ['extract_436',['extract',['../classcudf_1_1strings_1_1detail_1_1reprog__device.html#ae34e2e4bb10b7d8075a5ef443eb1ffcb',1,'cudf::strings::detail::reprog_device::extract()'],['../classNVStrings.html#a69f1eefde58d4bba9f020e16ed105e8a',1,'NVStrings::extract()']]],
   ['extract_5fcomponent_5foperator_437',['extract_component_operator',['../structcudf_1_1datetime_1_1detail_1_1extract__component__operator.html',1,'cudf::datetime::detail']]],
   ['extract_5frecord_438',['extract_record',['../classNVStrings.html#a38ca4fa55925f7bd107b0c5c9011b034',1,'NVStrings']]]

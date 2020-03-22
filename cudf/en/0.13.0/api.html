@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Reference &mdash; cudf 0.13.0a+4041.gd06cf37ac documentation</title>
+  <title>API Reference &mdash; cudf 0.13.0a+4667.g1b9406816 documentation</title>
   
 
   
@@ -362,142 +362,139 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.get_renderable_dataframe" title="cudf.core.dataframe.DataFrame.get_renderable_dataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_renderable_dataframe</span></code></a>(self)</p></td>
 <td><p>takes rows and columns from pandas settings or estimation from size.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.groupby" title="cudf.core.dataframe.DataFrame.groupby"><code class="xref py py-obj docutils literal notranslate"><span class="pre">groupby</span></code></a>(self[, by, sort, as_index, method, …])</p></td>
-<td><p>Groupby</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.hash_columns" title="cudf.core.dataframe.DataFrame.hash_columns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hash_columns</span></code></a>(self[, columns])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.hash_columns" title="cudf.core.dataframe.DataFrame.hash_columns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hash_columns</span></code></a>(self[, columns])</p></td>
 <td><p>Hash the given <em>columns</em> and return a new device array</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.head" title="cudf.core.dataframe.DataFrame.head"><code class="xref py py-obj docutils literal notranslate"><span class="pre">head</span></code></a>(self[, n])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.head" title="cudf.core.dataframe.DataFrame.head"><code class="xref py py-obj docutils literal notranslate"><span class="pre">head</span></code></a>(self[, n])</p></td>
 <td><p>Returns the first n rows as a new DataFrame</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.iat" title="cudf.core.dataframe.DataFrame.iat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iat</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.iat" title="cudf.core.dataframe.DataFrame.iat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iat</span></code></a>(self)</p></td>
 <td><p>Alias for <code class="docutils literal notranslate"><span class="pre">DataFrame.iloc</span></code>; provided for compatibility with Pandas.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.insert" title="cudf.core.dataframe.DataFrame.insert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">insert</span></code></a>(self, loc, name, value)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.insert" title="cudf.core.dataframe.DataFrame.insert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">insert</span></code></a>(self, loc, name, value)</p></td>
 <td><p>Add a column to DataFrame at the index specified by loc.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.iteritems" title="cudf.core.dataframe.DataFrame.iteritems"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iteritems</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.iteritems" title="cudf.core.dataframe.DataFrame.iteritems"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iteritems</span></code></a>(self)</p></td>
 <td><p>Iterate over column names and series pairs</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.join" title="cudf.core.dataframe.DataFrame.join"><code class="xref py py-obj docutils literal notranslate"><span class="pre">join</span></code></a>(self, other[, on, how, lsuffix, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.join" title="cudf.core.dataframe.DataFrame.join"><code class="xref py py-obj docutils literal notranslate"><span class="pre">join</span></code></a>(self, other[, on, how, lsuffix, …])</p></td>
 <td><p>Join columns with other DataFrame on index or on a key column.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.label_encoding" title="cudf.core.dataframe.DataFrame.label_encoding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_encoding</span></code></a>(self, column, prefix, cats[, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.label_encoding" title="cudf.core.dataframe.DataFrame.label_encoding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_encoding</span></code></a>(self, column, prefix, cats[, …])</p></td>
 <td><p>Encode labels in a column with label encoding.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.mean" title="cudf.core.dataframe.DataFrame.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>(self[, axis, numeric_only])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.mean" title="cudf.core.dataframe.DataFrame.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>(self[, axis, numeric_only])</p></td>
 <td><p>Return the mean of the values for the requested axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.melt" title="cudf.core.dataframe.DataFrame.melt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">melt</span></code></a>(self, \*\*kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.melt" title="cudf.core.dataframe.DataFrame.melt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">melt</span></code></a>(self, \*\*kwargs)</p></td>
 <td><p>Unpivots a DataFrame from wide format to long format, optionally leaving identifier variables set.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.merge" title="cudf.core.dataframe.DataFrame.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge</span></code></a>(self, right[, on, how, left_on, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.merge" title="cudf.core.dataframe.DataFrame.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge</span></code></a>(self, right[, on, how, left_on, …])</p></td>
 <td><p>Merge GPU DataFrame objects by performing a database-style join operation by columns or indexes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.nans_to_nulls" title="cudf.core.dataframe.DataFrame.nans_to_nulls"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nans_to_nulls</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.nans_to_nulls" title="cudf.core.dataframe.DataFrame.nans_to_nulls"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nans_to_nulls</span></code></a>(self)</p></td>
 <td><p>Convert nans (if any) to nulls.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.nlargest" title="cudf.core.dataframe.DataFrame.nlargest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nlargest</span></code></a>(self, n, columns[, keep])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.nlargest" title="cudf.core.dataframe.DataFrame.nlargest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nlargest</span></code></a>(self, n, columns[, keep])</p></td>
 <td><p>Get the rows of the DataFrame sorted by the n largest value of <em>columns</em></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.nsmallest" title="cudf.core.dataframe.DataFrame.nsmallest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nsmallest</span></code></a>(self, n, columns[, keep])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.nsmallest" title="cudf.core.dataframe.DataFrame.nsmallest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nsmallest</span></code></a>(self, n, columns[, keep])</p></td>
 <td><p>Get the rows of the DataFrame sorted by the n smallest value of <em>columns</em></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.one_hot_encoding" title="cudf.core.dataframe.DataFrame.one_hot_encoding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">one_hot_encoding</span></code></a>(self, column, prefix, cats)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.one_hot_encoding" title="cudf.core.dataframe.DataFrame.one_hot_encoding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">one_hot_encoding</span></code></a>(self, column, prefix, cats)</p></td>
 <td><p>Expand a column with one-hot-encoding.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.partition_by_hash" title="cudf.core.dataframe.DataFrame.partition_by_hash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">partition_by_hash</span></code></a>(self, columns, nparts[, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.partition_by_hash" title="cudf.core.dataframe.DataFrame.partition_by_hash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">partition_by_hash</span></code></a>(self, columns, nparts[, …])</p></td>
 <td><p>Partition the dataframe by the hashed value of data in <em>columns</em>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.pop" title="cudf.core.dataframe.DataFrame.pop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code></a>(self, item)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.pop" title="cudf.core.dataframe.DataFrame.pop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code></a>(self, item)</p></td>
 <td><p>Return a column and drop it from the DataFrame.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.prod" title="cudf.core.dataframe.DataFrame.prod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prod</span></code></a>(self[, axis])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.prod" title="cudf.core.dataframe.DataFrame.prod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prod</span></code></a>(self[, axis])</p></td>
 <td><p>Alias for product.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.quantile" title="cudf.core.dataframe.DataFrame.quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantile</span></code></a>(self[, q, axis, numeric_only, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.quantile" title="cudf.core.dataframe.DataFrame.quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantile</span></code></a>(self[, q, axis, numeric_only, …])</p></td>
 <td><p>Return values at the given quantile.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.quantiles" title="cudf.core.dataframe.DataFrame.quantiles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantiles</span></code></a>(self[, q, interpolation])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.quantiles" title="cudf.core.dataframe.DataFrame.quantiles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantiles</span></code></a>(self[, q, interpolation])</p></td>
 <td><p>Return values at the given quantile.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.query" title="cudf.core.dataframe.DataFrame.query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query</span></code></a>(self, expr[, local_dict])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.query" title="cudf.core.dataframe.DataFrame.query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query</span></code></a>(self, expr[, local_dict])</p></td>
 <td><p>Query with a boolean expression using Numba to compile a GPU kernel.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.reindex" title="cudf.core.dataframe.DataFrame.reindex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reindex</span></code></a>(self[, labels, axis, index, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.reindex" title="cudf.core.dataframe.DataFrame.reindex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reindex</span></code></a>(self[, labels, axis, index, …])</p></td>
 <td><p>Return a new DataFrame whose axes conform to a new index</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.rename" title="cudf.core.dataframe.DataFrame.rename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename</span></code></a>(self[, mapper, columns, copy, inplace])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.rename" title="cudf.core.dataframe.DataFrame.rename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename</span></code></a>(self[, mapper, columns, copy, inplace])</p></td>
 <td><p>Alter column labels.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.replace" title="cudf.core.dataframe.DataFrame.replace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace</span></code></a>(self, to_replace, replacement)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.replace" title="cudf.core.dataframe.DataFrame.replace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace</span></code></a>(self, to_replace, replacement)</p></td>
 <td><p>Replace values given in <em>to_replace</em> with <em>replacement</em>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.rolling" title="cudf.core.dataframe.DataFrame.rolling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rolling</span></code></a>(self, window[, min_periods, center, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.rolling" title="cudf.core.dataframe.DataFrame.rolling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rolling</span></code></a>(self, window[, min_periods, center, …])</p></td>
 <td><p>Rolling window calculations.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.scatter_by_map" title="cudf.core.dataframe.DataFrame.scatter_by_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter_by_map</span></code></a>(self, map_index[, map_size, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.scatter_by_map" title="cudf.core.dataframe.DataFrame.scatter_by_map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatter_by_map</span></code></a>(self, map_index[, map_size, …])</p></td>
 <td><p>Scatter to a list of dataframes.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.select_dtypes" title="cudf.core.dataframe.DataFrame.select_dtypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_dtypes</span></code></a>(self[, include, exclude])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.select_dtypes" title="cudf.core.dataframe.DataFrame.select_dtypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_dtypes</span></code></a>(self[, include, exclude])</p></td>
 <td><p>Return a subset of the DataFrame’s columns based on the column dtypes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.set_index" title="cudf.core.dataframe.DataFrame.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_index</span></code></a>(self, index[, drop])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.set_index" title="cudf.core.dataframe.DataFrame.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_index</span></code></a>(self, index[, drop])</p></td>
 <td><p>Return a new DataFrame with a new index</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.sort_index" title="cudf.core.dataframe.DataFrame.sort_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_index</span></code></a>(self[, ascending])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.sort_index" title="cudf.core.dataframe.DataFrame.sort_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_index</span></code></a>(self[, ascending])</p></td>
 <td><p>Sort by the index</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.sort_values" title="cudf.core.dataframe.DataFrame.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_values</span></code></a>(self, by[, ascending, na_position])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.sort_values" title="cudf.core.dataframe.DataFrame.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_values</span></code></a>(self, by[, ascending, na_position])</p></td>
 <td><p>Sort by the values row-wise.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.stack" title="cudf.core.dataframe.DataFrame.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack</span></code></a>(self[, level, dropna])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.stack" title="cudf.core.dataframe.DataFrame.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack</span></code></a>(self[, level, dropna])</p></td>
 <td><p>Stack the prescribed level(s) from columns to index</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.tail" title="cudf.core.dataframe.DataFrame.tail"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tail</span></code></a>(self[, n])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.tail" title="cudf.core.dataframe.DataFrame.tail"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tail</span></code></a>(self[, n])</p></td>
 <td><p>Returns the last n rows as a new DataFrame</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.take" title="cudf.core.dataframe.DataFrame.take"><code class="xref py py-obj docutils literal notranslate"><span class="pre">take</span></code></a>(self, positions)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.take" title="cudf.core.dataframe.DataFrame.take"><code class="xref py py-obj docutils literal notranslate"><span class="pre">take</span></code></a>(self, positions)</p></td>
 <td><p>Return a new DataFrame containing the rows specified by <em>positions</em></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_arrow" title="cudf.core.dataframe.DataFrame.to_arrow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_arrow</span></code></a>(self[, preserve_index])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_arrow" title="cudf.core.dataframe.DataFrame.to_arrow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_arrow</span></code></a>(self[, preserve_index])</p></td>
 <td><p>Convert to a PyArrow Table.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_csv" title="cudf.core.dataframe.DataFrame.to_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_csv</span></code></a>(self[, path, sep, na_rep, columns, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_csv" title="cudf.core.dataframe.DataFrame.to_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_csv</span></code></a>(self[, path, sep, na_rep, columns, …])</p></td>
 <td><p>Write a dataframe to csv file format.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_dlpack" title="cudf.core.dataframe.DataFrame.to_dlpack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dlpack</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_dlpack" title="cudf.core.dataframe.DataFrame.to_dlpack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dlpack</span></code></a>(self)</p></td>
 <td><p>Converts a cuDF object into a DLPack tensor.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_feather" title="cudf.core.dataframe.DataFrame.to_feather"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_feather</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_feather" title="cudf.core.dataframe.DataFrame.to_feather"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_feather</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
 <td><p>Write a DataFrame to the feather format.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_gpu_matrix" title="cudf.core.dataframe.DataFrame.to_gpu_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_gpu_matrix</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_gpu_matrix" title="cudf.core.dataframe.DataFrame.to_gpu_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_gpu_matrix</span></code></a>(self)</p></td>
 <td><p>Convert to a numba gpu ndarray</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_hdf" title="cudf.core.dataframe.DataFrame.to_hdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdf</span></code></a>(self, path_or_buf, key, \*args, …)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_hdf" title="cudf.core.dataframe.DataFrame.to_hdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdf</span></code></a>(self, path_or_buf, key, \*args, …)</p></td>
 <td><p>Write the contained data to an HDF5 file using HDFStore.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_json" title="cudf.core.dataframe.DataFrame.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>(self[, path_or_buf])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_json" title="cudf.core.dataframe.DataFrame.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>(self[, path_or_buf])</p></td>
 <td><p>Convert the cuDF object to a JSON string.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_orc" title="cudf.core.dataframe.DataFrame.to_orc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_orc</span></code></a>(self, fname[, compression])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_orc" title="cudf.core.dataframe.DataFrame.to_orc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_orc</span></code></a>(self, fname[, compression])</p></td>
 <td><p>Write a DataFrame to the ORC format.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_pandas" title="cudf.core.dataframe.DataFrame.to_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pandas</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_pandas" title="cudf.core.dataframe.DataFrame.to_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pandas</span></code></a>(self)</p></td>
 <td><p>Convert to a Pandas DataFrame.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_parquet" title="cudf.core.dataframe.DataFrame.to_parquet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_parquet</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_parquet" title="cudf.core.dataframe.DataFrame.to_parquet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_parquet</span></code></a>(self, path, \*args, \*\*kwargs)</p></td>
 <td><p>Write a DataFrame to the parquet format.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_records" title="cudf.core.dataframe.DataFrame.to_records"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_records</span></code></a>(self[, index])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_records" title="cudf.core.dataframe.DataFrame.to_records"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_records</span></code></a>(self[, index])</p></td>
 <td><p>Convert to a numpy recarray</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_string" title="cudf.core.dataframe.DataFrame.to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_string</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.to_string" title="cudf.core.dataframe.DataFrame.to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_string</span></code></a>(self)</p></td>
 <td><p>Convert to string</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.transpose" title="cudf.core.dataframe.DataFrame.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cudf.core.dataframe.DataFrame.transpose" title="cudf.core.dataframe.DataFrame.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>(self)</p></td>
 <td><p>Transpose index and columns.</p></td>
 </tr>
 </tbody>
@@ -547,76 +544,79 @@
 <tr class="row-odd"><td><p><strong>floordiv</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>kurtosis</strong></p></td>
+<tr class="row-even"><td><p><strong>groupby</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>mask</strong></p></td>
+<tr class="row-odd"><td><p><strong>kurtosis</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>max</strong></p></td>
+<tr class="row-even"><td><p><strong>mask</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>memory_usage</strong></p></td>
+<tr class="row-odd"><td><p><strong>max</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>min</strong></p></td>
+<tr class="row-even"><td><p><strong>memory_usage</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>mod</strong></p></td>
+<tr class="row-odd"><td><p><strong>min</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>mul</strong></p></td>
+<tr class="row-even"><td><p><strong>mod</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>pow</strong></p></td>
+<tr class="row-odd"><td><p><strong>mul</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>product</strong></p></td>
+<tr class="row-even"><td><p><strong>pow</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>radd</strong></p></td>
+<tr class="row-odd"><td><p><strong>product</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>reset_index</strong></p></td>
+<tr class="row-even"><td><p><strong>radd</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>rfloordiv</strong></p></td>
+<tr class="row-odd"><td><p><strong>reset_index</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>rmod</strong></p></td>
+<tr class="row-even"><td><p><strong>rfloordiv</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>rmul</strong></p></td>
+<tr class="row-odd"><td><p><strong>rmod</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>rpow</strong></p></td>
+<tr class="row-even"><td><p><strong>rmul</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>rsub</strong></p></td>
+<tr class="row-odd"><td><p><strong>rpow</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>rtruediv</strong></p></td>
+<tr class="row-even"><td><p><strong>rsub</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>serialize</strong></p></td>
+<tr class="row-odd"><td><p><strong>rtruediv</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>skew</strong></p></td>
+<tr class="row-even"><td><p><strong>serialize</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>std</strong></p></td>
+<tr class="row-odd"><td><p><strong>skew</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>sub</strong></p></td>
+<tr class="row-even"><td><p><strong>std</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>sum</strong></p></td>
+<tr class="row-odd"><td><p><strong>sub</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>truediv</strong></p></td>
+<tr class="row-even"><td><p><strong>sum</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>var</strong></p></td>
+<tr class="row-odd"><td><p><strong>truediv</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>var</strong></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -1195,41 +1195,6 @@ If None, the default index is used.</p>
 pulls quadrents based off of some known parameters then style for
 multiindex as well producing an efficient representative string
 for printing with the dataframe.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cudf.core.dataframe.DataFrame.groupby">
-<code class="sig-name descname">groupby</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">by=None</em>, <em class="sig-param">sort=True</em>, <em class="sig-param">as_index=True</em>, <em class="sig-param">method='hash'</em>, <em class="sig-param">level=None</em>, <em class="sig-param">group_keys=True</em>, <em class="sig-param">dropna=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.dataframe.DataFrame.groupby" title="Permalink to this definition">¶</a></dt>
-<dd><p>Groupby</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>by</strong><span class="classifier">list-of-str or str</span></dt><dd><p>Column name(s) to form that groups by.</p>
-</dd>
-<dt><strong>sort</strong><span class="classifier">bool, default True</span></dt><dd><p>Force sorting group keys.</p>
-</dd>
-<dt><strong>as_index</strong><span class="classifier">bool, default True</span></dt><dd><p>Indicates whether the grouped by columns become the index
-of the returned DataFrame</p>
-</dd>
-<dt><strong>method</strong><span class="classifier">str, optional</span></dt><dd><p>A string indicating the method to use to perform the group by.
-Valid values are “hash” or “cudf”.
-“cudf” method may be deprecated in the future, but is currently
-the only method supporting group UDFs via the <cite>apply</cite> function.</p>
-</dd>
-<dt><strong>dropna</strong><span class="classifier">bool, optional</span></dt><dd><p>If True (default), drop null keys.
-If False, perform grouping by keys containing null(s).</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>The groupby object</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>No empty rows are returned.  (For categorical keys, pandas returns
-rows for all categories even if they are no corresponding values.)</p>
 </dd></dl>
 
 <dl class="method">
@@ -5037,42 +5002,66 @@ corresponding Series locations is null the result will be null</p>
 <dl class="method">
 <dt id="cudf.core.groupby.groupby.DataFrameGroupBy.agg">
 <code class="sig-prename descclassname">DataFrameGroupBy.</code><code class="sig-name descname">agg</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">func</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.groupby.groupby.DataFrameGroupBy.agg" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cudf.core.groupby.groupby.DataFrameGroupBy.count">
-<code class="sig-prename descclassname">DataFrameGroupBy.</code><code class="sig-name descname">count</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.groupby.groupby.DataFrameGroupBy.count" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cudf.core.groupby.groupby.DataFrameGroupBy.max">
-<code class="sig-prename descclassname">DataFrameGroupBy.</code><code class="sig-name descname">max</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.groupby.groupby.DataFrameGroupBy.max" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cudf.core.groupby.groupby.DataFrameGroupBy.mean">
-<code class="sig-prename descclassname">DataFrameGroupBy.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.groupby.groupby.DataFrameGroupBy.mean" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cudf.core.groupby.groupby.DataFrameGroupBy.min">
-<code class="sig-prename descclassname">DataFrameGroupBy.</code><code class="sig-name descname">min</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.groupby.groupby.DataFrameGroupBy.min" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cudf.core.groupby.groupby.DataFrameGroupBy.quantile">
-<code class="sig-prename descclassname">DataFrameGroupBy.</code><code class="sig-name descname">quantile</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">q=0.5</em>, <em class="sig-param">interpolation='linear'</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.groupby.groupby.DataFrameGroupBy.quantile" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Apply aggregation(s) to the groups.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>func</strong><span class="classifier">str, callable, list or dict</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>A Series or DataFrame containing the combined results of the</dt><dd></dd>
+<dt>aggregation.</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cudf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cudf</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+<span class="go">   b</span>
+<span class="go">a</span>
+<span class="go">1  3</span>
+<span class="go">2  3</span>
+</pre></div>
+</div>
+<p>Specifying a list of aggregations to perform on each column.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;sum&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">])</span>
+<span class="go">    b       c</span>
+<span class="go">  sum min sum min</span>
+<span class="go">a</span>
+<span class="go">1   3   1   4   2</span>
+<span class="go">2   3   3   1   1</span>
+</pre></div>
+</div>
+<p>Using a dict to specify aggregations to perform per column.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">]})</span>
+<span class="go">    a   b</span>
+<span class="go">  max min mean</span>
+<span class="go">a</span>
+<span class="go">1   1   1  1.5</span>
+<span class="go">2   2   3  3.0</span>
+</pre></div>
+</div>
+<p>Using lambdas/callables to specify aggregations taking parameters.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.5</span><span class="p">);</span> <span class="n">f1</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;q0.5&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">);</span> <span class="n">f2</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;q0.75&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">])</span>
+<span class="go">     b          c</span>
+<span class="go">  q0.5 q0.75 q0.5 q0.75</span>
+<span class="go">a</span>
+<span class="go">1  1.5  1.75  2.0   2.0</span>
+<span class="go">2  3.0  3.00  1.0   1.0</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="cudf.core.groupby.groupby.DataFrameGroupBy.size">
 <code class="sig-prename descclassname">DataFrameGroupBy.</code><code class="sig-name descname">size</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.groupby.groupby.DataFrameGroupBy.size" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cudf.core.groupby.groupby.DataFrameGroupBy.sum">
-<code class="sig-prename descclassname">DataFrameGroupBy.</code><code class="sig-name descname">sum</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cudf.core.groupby.groupby.DataFrameGroupBy.sum" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Return the size of each group.</p>
+</dd></dl>
 
 </div>
 <div class="section" id="legacy-groupby">

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libcudf: cudf::experimental::groupby::detail::reduce_functor&lt; k &gt; Struct Template Reference</title>
+<title>libcudf: cudf::experimental::groupby::detail::reduce_functor&lt; K &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,27 +71,27 @@ $(function() {
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="structcudf_1_1experimental_1_1groupby_1_1detail_1_1reduce__functor-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">cudf::experimental::groupby::detail::reduce_functor&lt; k &gt; Struct Template Reference</div>  </div>
+<div class="title">cudf::experimental::groupby::detail::reduce_functor&lt; K &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a74642e3e63bdd777aebf4328284659ac"><td class="memTemplParams" colspan="2"><a id="a74642e3e63bdd777aebf4328284659ac"></a>
+<tr class="memitem:a5ef367286cd37fea89027a915678f713"><td class="memTemplParams" colspan="2"><a id="a5ef367286cd37fea89027a915678f713"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a74642e3e63bdd777aebf4328284659ac"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; is_supported&lt; T &gt;), std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;values, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;group_sizes, rmm::device_vector&lt; cudf::size_type &gt; const &amp;group_labels, rmm::mr::device_memory_resource *mr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
-<tr class="separator:a74642e3e63bdd777aebf4328284659ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eec377ab44e020ebfdea9728482048e"><td class="memTemplParams" colspan="2"><a id="a6eec377ab44e020ebfdea9728482048e"></a>
+<tr class="memitem:a5ef367286cd37fea89027a915678f713"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; is_supported&lt; T &gt;), std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;values, size_type num_groups, rmm::device_vector&lt; cudf::size_type &gt; const &amp;group_labels, rmm::mr::device_memory_resource *mr, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream)</td></tr>
+<tr class="separator:a5ef367286cd37fea89027a915678f713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad23317d7de65a11376b056f3cf119b8e"><td class="memTemplParams" colspan="2"><a id="ad23317d7de65a11376b056f3cf119b8e"></a>
 template&lt;typename T , typename... Args&gt; </td></tr>
-<tr class="memitem:a6eec377ab44e020ebfdea9728482048e"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; not is_supported&lt; T &gt;), std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (Args &amp;&amp;... args)</td></tr>
-<tr class="separator:a6eec377ab44e020ebfdea9728482048e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad23317d7de65a11376b056f3cf119b8e"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; not is_supported&lt; T &gt;), std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (Args &amp;&amp;... args)</td></tr>
+<tr class="separator:ad23317d7de65a11376b056f3cf119b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a970ba4e86422ee62ed8036e4b4bd4cea"><td class="memTemplParams" colspan="2"><a id="a970ba4e86422ee62ed8036e4b4bd4cea"></a>
+<tr class="memitem:a57ee1676a3b9a9581a9a2fbb88847a70"><td class="memTemplParams" colspan="2"><a id="a57ee1676a3b9a9581a9a2fbb88847a70"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a970ba4e86422ee62ed8036e4b4bd4cea"><td class="memTemplItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>is_supported</b> ()</td></tr>
-<tr class="separator:a970ba4e86422ee62ed8036e4b4bd4cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57ee1676a3b9a9581a9a2fbb88847a70"><td class="memTemplItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>is_supported</b> ()</td></tr>
+<tr class="separator:a57ee1676a3b9a9581a9a2fbb88847a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>group_single_pass_reduction_util.cuh</li>

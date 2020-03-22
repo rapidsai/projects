@@ -126,9 +126,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a153cea524647191bb58223d3ee1761f0"><td class="memItemLeft" align="right" valign="top"><a id="a153cea524647191bb58223d3ee1761f0"></a>
 <a class="el" href="classcudf_1_1column__device__view.html">column_device_view</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classcudf_1_1column__device__view.html">column_device_view</a> &amp;&amp;)=default</td></tr>
 <tr class="separator:a153cea524647191bb58223d3ee1761f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f74ac17ef9049a96cab4662910bac83"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column__device__view.html#a8f74ac17ef9049a96cab4662910bac83">column_device_view</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> <a class="el" href="classcudf_1_1column.html">column</a>, ptrdiff_t h_ptr, ptrdiff_t d_ptr)</td></tr>
-<tr class="memdesc:a8f74ac17ef9049a96cab4662910bac83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of this class using the specified host memory pointer (h_ptr) to store child objects and the device memory pointer (d_ptr) as a base for any child object pointers.  <a href="classcudf_1_1column__device__view.html#a8f74ac17ef9049a96cab4662910bac83">More...</a><br /></td></tr>
-<tr class="separator:a8f74ac17ef9049a96cab4662910bac83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed1bc313e4a71a2f3cf4c12ddafadfd1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column__device__view.html#aed1bc313e4a71a2f3cf4c12ddafadfd1">column_device_view</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> <a class="el" href="classcudf_1_1column.html">column</a>, void *h_ptr, void *d_ptr)</td></tr>
+<tr class="memdesc:aed1bc313e4a71a2f3cf4c12ddafadfd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an instance of this class using the specified host memory pointer (h_ptr) to store child objects and the device memory pointer (d_ptr) as a base for any child object pointers.  <a href="classcudf_1_1column__device__view.html#aed1bc313e4a71a2f3cf4c12ddafadfd1">More...</a><br /></td></tr>
+<tr class="separator:aed1bc313e4a71a2f3cf4c12ddafadfd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c08e09e855c14258972ac6e179c7a1f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a2c08e09e855c14258972ac6e179c7a1f"><td class="memTemplItemLeft" align="right" valign="top">__device__ const T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcudf_1_1column__device__view.html#a2c08e09e855c14258972ac6e179c7a1f">element</a> (size_type element_index) const noexcept</td></tr>
 <tr class="memdesc:a2c08e09e855c14258972ac6e179c7a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference to element at the specified index.  <a href="classcudf_1_1column__device__view.html#a2c08e09e855c14258972ac6e179c7a1f">More...</a><br /></td></tr>
@@ -223,9 +223,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a0b517e1a232074845382eee0ba9d31eb"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classcudf_1_1column__device__view.html">column_device_view</a>, std::function&lt; void(<a class="el" href="classcudf_1_1column__device__view.html">column_device_view</a> *)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column__device__view.html#a0b517e1a232074845382eee0ba9d31eb">create</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> source_view, <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
 <tr class="memdesc:a0b517e1a232074845382eee0ba9d31eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory to construct a column view that is usable in device memory.  <a href="classcudf_1_1column__device__view.html#a0b517e1a232074845382eee0ba9d31eb">More...</a><br /></td></tr>
 <tr class="separator:a0b517e1a232074845382eee0ba9d31eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2e9342c5f3ae996992fe4c2ac5b667d"><td class="memItemLeft" align="right" valign="top">static size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column__device__view.html#ac2e9342c5f3ae996992fe4c2ac5b667d">extent</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> source_view)</td></tr>
-<tr class="memdesc:ac2e9342c5f3ae996992fe4c2ac5b667d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the size in bytes of the amount of memory needed to hold a device view of the specified column and it's children.  <a href="classcudf_1_1column__device__view.html#ac2e9342c5f3ae996992fe4c2ac5b667d">More...</a><br /></td></tr>
-<tr class="separator:ac2e9342c5f3ae996992fe4c2ac5b667d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2b97b61f180c71d7157870a77058070"><td class="memItemLeft" align="right" valign="top">static std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcudf_1_1column__device__view.html#ab2b97b61f180c71d7157870a77058070">extent</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;source_view)</td></tr>
+<tr class="memdesc:ab2b97b61f180c71d7157870a77058070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the size in bytes of the amount of memory needed to hold a device view of the specified column and it's children.  <a href="classcudf_1_1column__device__view.html#ab2b97b61f180c71d7157870a77058070">More...</a><br /></td></tr>
+<tr class="separator:ab2b97b61f180c71d7157870a77058070"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -270,7 +270,7 @@ size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An immutable, non-owning view of device data as a column of elements. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md201"></a>
+<h2><a class="anchor" id="autotoc_md200"></a>
 that is trivially copyable and usable in CUDA device code.</h2>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a6ba2524280de16bad20259f274579b45"></a>
@@ -287,7 +287,7 @@ template&lt;typename T , bool has_nulls&gt; </div>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md224"></a>
+<h2><a class="anchor" id="autotoc_md223"></a>
 @brief Pair iterator for navigating this column</h2>
 
 </div>
@@ -304,14 +304,14 @@ template&lt;typename T , bool has_nulls&gt; </div>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md221"></a>
+<h2><a class="anchor" id="autotoc_md220"></a>
 @brief Iterator for navigating this column</h2>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8f74ac17ef9049a96cab4662910bac83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f74ac17ef9049a96cab4662910bac83">&#9670;&nbsp;</a></span>column_device_view() <span class="overload">[1/2]</span></h2>
+<a id="aed1bc313e4a71a2f3cf4c12ddafadfd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed1bc313e4a71a2f3cf4c12ddafadfd1">&#9670;&nbsp;</a></span>column_device_view() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -325,13 +325,13 @@ template&lt;typename T , bool has_nulls&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ptrdiff_t&#160;</td>
+          <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>h_ptr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ptrdiff_t&#160;</td>
+          <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>d_ptr</em>&#160;</td>
         </tr>
         <tr>
@@ -350,7 +350,7 @@ template&lt;typename T , bool has_nulls&gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md219"></a>
+<h2><a class="anchor" id="autotoc_md218"></a>
 @param d_ptr Device memory pointer on which to base any child pointers.</h2>
 
 </div>
@@ -381,7 +381,7 @@ template&lt;typename T , bool has_nulls&gt; </div>
 
 <p>Construct's a <code><a class="el" href="classcudf_1_1column__device__view.html" title="An immutable, non-owning view of device data as a column of elements.">column_device_view</a></code> from a <code><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></code> populating all but the children. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>This constructor is for internal use only. To create a <code><a class="el" href="classcudf_1_1column__device__view.html" title="An immutable, non-owning view of device data as a column of elements.">column_device_view</a></code> from a <code><a class="el" href="classcudf_1_1column__view.html" title="A non-owning, immutable view of device data as a column of elements, some of which may be null as ind...">column_view</a></code>, the </dd></dl>
-<h2><a class="anchor" id="autotoc_md231"></a>
+<h2><a class="anchor" id="autotoc_md230"></a>
 &lt;tt&gt;column_device_view::create()&lt;/tt&gt; function should be used.</h2>
 
 </div>
@@ -414,7 +414,7 @@ template&lt;typename T &gt; </div>
 
 <p>Return an iterator to the first element of the column. </p>
 <p>------------------------------------------------------------------------&mdash;* This iterator only supports columns where <code><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#afdbb4714998dd8649e3813b20a70b91a" title="Indicates whether the column contains null elements, i.e., null_count() &gt; 0">has_nulls()</a> == false</code>. For columns with null elements, use <code>make_null_replacement_iterator</code>. </p>
-<h2><a class="anchor" id="autotoc_md222"></a>
+<h2><a class="anchor" id="autotoc_md221"></a>
 @throws &lt;tt&gt;cudf::logic_error&lt;/tt&gt; if &lt;tt&gt;has_nulls() == true&lt;/tt&gt;</h2>
 
 </div>
@@ -450,7 +450,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md230"></a>
+<h2><a class="anchor" id="autotoc_md229"></a>
 @return column_view The requested child &lt;tt&gt;column_view&lt;/tt&gt;</h2>
 
 </div>
@@ -502,7 +502,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <code>unique_ptr</code> to a <code><a class="el" href="classcudf_1_1column__device__view.html" title="An immutable, non-owning view of device data as a column of elements.">column_device_view</a></code> that makes the data from </dd></dl>
-<h2><a class="anchor" id="autotoc_md227"></a>
+<h2><a class="anchor" id="autotoc_md226"></a>
 &lt;tt&gt;source_view&lt;/tt&gt; available in device memory.</h2>
 
 </div>
@@ -524,7 +524,7 @@ template&lt;typename T &gt; </div>
 
 <p>Destroy the <code>device_column_view</code> object. </p>
 <p>------------------------------------------------------------------------&mdash;* </p><dl class="section note"><dt>Note</dt><dd>Does not free the column data, simply free's the device memory </dd></dl>
-<h2><a class="anchor" id="autotoc_md228"></a>
+<h2><a class="anchor" id="autotoc_md227"></a>
 allocated to hold the child views.</h2>
 
 </div>
@@ -564,7 +564,7 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md220"></a>
+<h2><a class="anchor" id="autotoc_md219"></a>
 @param element_index Position of the desired element</h2>
 
 </div>
@@ -604,7 +604,7 @@ template&lt;&gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md203"></a>
+<h2><a class="anchor" id="autotoc_md202"></a>
 @return string_view instance representing this element at this index</h2>
 
 </div>
@@ -682,13 +682,13 @@ template&lt;typename T &gt; </div>
 
 <p>Return an iterator to the element following the last element of the column. </p>
 <p>------------------------------------------------------------------------&mdash;* This iterator only supports columns where <code><a class="el" href="classcudf_1_1detail_1_1column__device__view__base.html#afdbb4714998dd8649e3813b20a70b91a" title="Indicates whether the column contains null elements, i.e., null_count() &gt; 0">has_nulls()</a> == false</code>. &#160; * For columns with null elements, use <code>make_null_replacement_iterator</code>. </p>
-<h2><a class="anchor" id="autotoc_md223"></a>
+<h2><a class="anchor" id="autotoc_md222"></a>
 @throws &lt;tt&gt;cudf::logic_error&lt;/tt&gt; if &lt;tt&gt;has_nulls() == true&lt;/tt&gt;</h2>
 
 </div>
 </div>
-<a id="ac2e9342c5f3ae996992fe4c2ac5b667d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2e9342c5f3ae996992fe4c2ac5b667d">&#9670;&nbsp;</a></span>extent()</h2>
+<a id="ab2b97b61f180c71d7157870a77058070"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2b97b61f180c71d7157870a77058070">&#9670;&nbsp;</a></span>extent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -697,9 +697,9 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_type cudf::column_device_view::extent </td>
+          <td class="memname">std::size_t cudf::column_device_view::extent </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classcudf_1_1column__view.html">column_view</a> const &amp;&#160;</td>
           <td class="paramname"><em>source_view</em></td><td>)</td>
           <td></td>
         </tr>
@@ -713,7 +713,7 @@ template&lt;typename T &gt; </div>
 
 <p>Return the size in bytes of the amount of memory needed to hold a device view of the specified column and it's children. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md229"></a>
+<h2><a class="anchor" id="autotoc_md228"></a>
 @param source_view The &lt;tt&gt;column_view&lt;/tt&gt; to use for this calculation.</h2>
 
 </div>
@@ -753,7 +753,7 @@ template&lt;typename T , bool has_nulls&gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md225"></a>
+<h2><a class="anchor" id="autotoc_md224"></a>
 @throws &lt;tt&gt;cudf::logic_error&lt;/tt&gt; if column datatype and Element type mismatch.</h2>
 
 </div>
@@ -790,7 +790,7 @@ template&lt;typename T , bool has_nulls&gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md226"></a>
+<h2><a class="anchor" id="autotoc_md225"></a>
 @throws &lt;tt&gt;cudf::logic_error&lt;/tt&gt; if column datatype and Element type mismatch.</h2>
 
 </div>

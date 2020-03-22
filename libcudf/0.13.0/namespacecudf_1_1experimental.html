@@ -330,6 +330,9 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1aggregation
 <tr class="memitem:a92dcc219332f9b308133acedaf7ad301"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1column.html">column</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a92dcc219332f9b308133acedaf7ad301">binary_operation</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;lhs, <a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;rhs, std::string const  &amp;ptx, <a class="el" href="classcudf_1_1data__type.html">data_type</a> output_type, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a92dcc219332f9b308133acedaf7ad301"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a binary operation between two columns using a user-defined PTX function.  <a href="namespacecudf_1_1experimental.html#a92dcc219332f9b308133acedaf7ad301">More...</a><br /></td></tr>
 <tr class="separator:a92dcc219332f9b308133acedaf7ad301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40d5e95ec7d9ab8b6b011e2bc392c281"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a40d5e95ec7d9ab8b6b011e2bc392c281">concatenate</a> (std::vector&lt; <a class="el" href="classcudf_1_1table__view.html">table_view</a> &gt; const  &amp;tables_to_concat, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
+<tr class="memdesc:a40d5e95ec7d9ab8b6b011e2bc392c281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Columns of <code>tables_to_concat</code> are concatenated vertically to return a single <a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a>.  <a href="namespacecudf_1_1experimental.html#a40d5e95ec7d9ab8b6b011e2bc392c281">More...</a><br /></td></tr>
+<tr class="separator:a40d5e95ec7d9ab8b6b011e2bc392c281"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5865ad6c683aa22832c7d74f36a52c1b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structcudf_1_1experimental_1_1contiguous__split__result.html">contiguous_split_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a5865ad6c683aa22832c7d74f36a52c1b">contiguous_split</a> (<a class="el" href="classcudf_1_1table__view.html">cudf::table_view</a> const  &amp;input, std::vector&lt; size_type &gt; const  &amp;splits, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:a5865ad6c683aa22832c7d74f36a52c1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a deep-copy split of a <code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code> into a set of <code><a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a></code>s into a single contiguous block of memory.  <a href="namespacecudf_1_1experimental.html#a5865ad6c683aa22832c7d74f36a52c1b">More...</a><br /></td></tr>
 <tr class="separator:a5865ad6c683aa22832c7d74f36a52c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -516,9 +519,6 @@ std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html"
 <tr class="memitem:ae7934432d5ebe72540d3362dd4e5dea3"><td class="memItemLeft" align="right" valign="top"><a id="ae7934432d5ebe72540d3362dd4e5dea3"></a>
 std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">experimental::table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>drop_nulls</b> (<a class="el" href="classcudf_1_1table__view.html">table_view</a> const &amp;input, std::vector&lt; size_type &gt; const &amp;keys, rmm::mr::device_memory_resource *mr)</td></tr>
 <tr class="separator:ae7934432d5ebe72540d3362dd4e5dea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b56089ab0490194a96cdfd249a72181"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcudf_1_1experimental_1_1table.html">table</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#a1b56089ab0490194a96cdfd249a72181">concatenate</a> (std::vector&lt; <a class="el" href="classcudf_1_1table__view.html">table_view</a> &gt; const  &amp;tables_to_concat, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource(), <a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a> stream=0)</td></tr>
-<tr class="memdesc:a1b56089ab0490194a96cdfd249a72181"><td class="mdescLeft">&#160;</td><td class="mdescRight">Columns of <code>tables_to_concat</code> are concatenated vertically to return a single <a class="el" href="classcudf_1_1table__view.html" title="A set of column_views of the same size.">table_view</a>.  <a href="namespacecudf_1_1experimental.html#a1b56089ab0490194a96cdfd249a72181">More...</a><br /></td></tr>
-<tr class="separator:a1b56089ab0490194a96cdfd249a72181"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf23e8ea75238ff81d762d0d1e336a4c"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::unique_ptr&lt; rmm::device_buffer &gt;, cudf::size_type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf_1_1experimental.html#acf23e8ea75238ff81d762d0d1e336a4c">bools_to_mask</a> (<a class="el" href="classcudf_1_1column__view.html">column_view</a> const  &amp;input, rmm::mr::device_memory_resource *mr=rmm::mr::get_default_resource())</td></tr>
 <tr class="memdesc:acf23e8ea75238ff81d762d0d1e336a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a bitmask from a column of boolean elements.  <a href="namespacecudf_1_1experimental.html#acf23e8ea75238ff81d762d0d1e336a4c">More...</a><br /></td></tr>
 <tr class="separator:acf23e8ea75238ff81d762d0d1e336a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -633,7 +633,7 @@ template&lt;cudf::type_id Id&gt; </div>
 
 <p>Maps a <code><a class="el" href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59b">cudf::type_id</a></code> to it's corresponding concrete C++ type. </p>
 <p>------------------------------------------------------------------------&mdash;* Example: </p><div class="fragment"><div class="line">static_assert(std::is_same&lt;int32_t, id_to_type&lt;INT32&gt;);</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md568"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md567"></a>
 @tparam t The &lt;tt&gt;cudf::type_id&lt;/tt&gt; to map</h2>
 
 </div>
@@ -829,7 +829,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md287"></a>
+<h2><a class="anchor" id="autotoc_md289"></a>
 @brief Indicates when to allocate a mask, based on an existing mask.</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad483c874f6010437111325063b87daefa443475558f0168dff92ecde26b98ae5a"></a>NEVER&#160;</td><td class="fielddoc"><p>Do not allocate a null mask, regardless of input. </p>
@@ -1699,8 +1699,8 @@ containing copy of all rows of <code>input</code> passing the filter defined by 
 
 </div>
 </div>
-<a id="a1b56089ab0490194a96cdfd249a72181"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b56089ab0490194a96cdfd249a72181">&#9670;&nbsp;</a></span>concatenate()</h2>
+<a id="a40d5e95ec7d9ab8b6b011e2bc392c281"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40d5e95ec7d9ab8b6b011e2bc392c281">&#9670;&nbsp;</a></span>concatenate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1715,13 +1715,7 @@ containing copy of all rows of <code>input</code> passing the filter defined by 
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">rmm::mr::device_memory_resource *&#160;</td>
-          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="types_8hpp.html#a27a677c66bef483a40f3d65c02b09e0f">cudaStream_t</a>&#160;</td>
-          <td class="paramname"><em>stream</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>mr</em> = <code>rmm::mr::get_default_resource()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1737,7 +1731,7 @@ containing copy of all rows of <code>input</code> passing the filter defined by 
 <div class="line">table_view t0{{c0, c0}};</div>
 <div class="line">table_view t1{{c1, c1}};</div>
 <div class="line">...</div>
-<div class="line">auto t = <a class="code" href="namespacecudf_1_1experimental.html#a1b56089ab0490194a96cdfd249a72181">concatenate</a>({t0.view(), t1.view()});</div>
+<div class="line">auto t = <a class="code" href="namespacecudf_1_1experimental.html#a40d5e95ec7d9ab8b6b011e2bc392c281">concatenate</a>({t0.view(), t1.view()});</div>
 <div class="line">column_view tc0 = (t-&gt;view()).column(0); <span class="comment">//Contains {0,1,2,3,4,5,6,7}</span></div>
 <div class="line">column_view tc1 = (t-&gt;view()).column(1); <span class="comment">//Contains {0,1,2,3,4,5,6,7}</span></div>
 </div><!-- fragment --><dl class="exception"><dt>Exceptions</dt><dd>
@@ -1750,12 +1744,11 @@ containing copy of all rows of <code>input</code> passing the filter defined by 
   <table class="params">
     <tr><td class="paramname">tables_to_concat</td><td>The table views to be concatenated into a single table </td></tr>
     <tr><td class="paramname">mr</td><td>Optional The resource to use for all allocations </td></tr>
-    <tr><td class="paramname">stream</td><td>Optional The stream on which to execute all allocations and copies </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Unique pointer to a single table having all the rows from the </dd></dl>
-<h2><a class="anchor" id="autotoc_md486"></a>
+<h2><a class="anchor" id="autotoc_md286"></a>
 elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order.</h2>
 
 </div>
@@ -2185,7 +2178,7 @@ elements of &lt;tt&gt;tables_to_concat&lt;/tt&gt; respectively in the same order
 
 <p>Defines all of the mappings between C++ types and their corresponding. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md570"></a>
+<h2><a class="anchor" id="autotoc_md569"></a>
 &lt;tt&gt;cudf::type_id&lt;/tt&gt; values.</h2>
 
 </div>
@@ -2404,7 +2397,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md342"></a>
+<h2><a class="anchor" id="autotoc_md343"></a>
 @return std::unique_ptr&lt;column&gt; The result output column</h2>
 
 </div>
@@ -2468,7 +2461,7 @@ template&lt;typename Element , std::enable_if_t&lt; std::is_floating_point&lt; E
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md341"></a>
+<h2><a class="anchor" id="autotoc_md342"></a>
 @return void</h2>
 
 </div>
@@ -3601,7 +3594,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md343"></a>
+<h2><a class="anchor" id="autotoc_md344"></a>
 @return std::unique_ptr&lt;table&gt; The result table containing the repetitions</h2>
 
 </div>
@@ -3658,7 +3651,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md344"></a>
+<h2><a class="anchor" id="autotoc_md345"></a>
 @return std::unique_ptr&lt;table&gt; The result table containing the repetitions</h2>
 
 </div>
@@ -4119,7 +4112,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md286"></a>
+<h2><a class="anchor" id="autotoc_md288"></a>
 @return Result of scattering values from source to target</h2>
 
 </div>
@@ -4189,7 +4182,7 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md285"></a>
+<h2><a class="anchor" id="autotoc_md287"></a>
 @return Result of scattering values from source to target</h2>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2rapids_2cudf_2cpp_2include_2cudf_2copying_8hpp-example.html#a1">/rapids/cudf/cpp/include/cudf/copying.hpp</a>.</dd>
 </dl>
@@ -4421,10 +4414,10 @@ the &lt;tt&gt;lhs&lt;/tt&gt; and &lt;tt&gt;rhs&lt;/tt&gt; columns.</h2>
 
 <p>Creates a new column by shifting all values by an offset. </p>
 <p>Elements will be determined by <code>output[idx] = input[idx - offset]</code>. Some elements in the output may be indeterminable from the input. For those elements, the value will be determined by <code>fill_values</code>.</p>
-<h2><a class="anchor" id="autotoc_md288"></a>
+<h2><a class="anchor" id="autotoc_md290"></a>
 Examples</h2>
 <p>input = [0, 1, 2, 3, 4] offset = 3 fill_values = @ </p>
-<h2><a class="anchor" id="autotoc_md289"></a>
+<h2><a class="anchor" id="autotoc_md291"></a>
 return      = [@, @, @, 0, 1]</h2>
 <p>input = [5, 4, 3, 2, 1] offset = -2 fill_values = 7 return = [3, 2, 1, 7, 7]</p>
 <dl class="section note"><dt>Note</dt><dd>if the input is nullable, the output will be nullable. </dd>
@@ -4930,7 +4923,7 @@ template &lt; typename ColumnType,
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md571"></a>
+<h2><a class="anchor" id="autotoc_md570"></a>
 @return Whatever is returned by the callable's &lt;tt&gt;operator()&lt;/tt&gt;</h2>
 
 </div>
@@ -4964,7 +4957,7 @@ template&lt;typename T &gt; </div>
 <p>------------------------------------------------------------------------&mdash;* When explicitly passed a template argument of a given type, returns the appropriate <code>type_id</code> enum for the specified C++ type.</p>
 <p>For example:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">return</span> cudf::type_to_id&lt;int32_t&gt;();        <span class="comment">// Returns INT32</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md567"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md566"></a>
 @tparam T The type to map to a &lt;tt&gt;cudf::type_id&lt;/tt&gt;</h2>
 
 </div>
@@ -5133,9 +5126,9 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="anamespacecudf_1_1experimental_html_a1b56089ab0490194a96cdfd249a72181"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a1b56089ab0490194a96cdfd249a72181">cudf::experimental::concatenate</a></div><div class="ttdeci">std::unique_ptr&lt; table &gt; concatenate(std::vector&lt; table_view &gt; const &amp;tables_to_concat, rmm::mr::device_memory_resource *mr, cudaStream_t stream)</div><div class="ttdoc">Columns of tables_to_concat are concatenated vertically to return a single table_view.</div><div class="ttdef"><b>Definition:</b> table.cpp:96</div></div>
 <div class="ttc" id="aclasscudf_1_1data__type_html"><div class="ttname"><a href="classcudf_1_1data__type.html">cudf::data_type</a></div><div class="ttdoc">Indicator for the logical data type of an element in a column.</div><div class="ttdef"><b>Definition:</b> types.hpp:190</div></div>
 <div class="ttc" id="anamespacecudf_html_acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae"><div class="ttname"><a href="namespacecudf.html#acd4cd7157c4379954b5772936f89c59ba723129325728a81a880ac3df63c567ae">cudf::INT32</a></div><div class="ttdoc">4 byte signed integer</div><div class="ttdef"><b>Definition:</b> types.hpp:168</div></div>
+<div class="ttc" id="anamespacecudf_1_1experimental_html_a40d5e95ec7d9ab8b6b011e2bc392c281"><div class="ttname"><a href="namespacecudf_1_1experimental.html#a40d5e95ec7d9ab8b6b011e2bc392c281">cudf::experimental::concatenate</a></div><div class="ttdeci">std::unique_ptr&lt; table &gt; concatenate(std::vector&lt; table_view &gt; const &amp;tables_to_concat, rmm::mr::device_memory_resource *mr)</div><div class="ttdoc">Columns of tables_to_concat are concatenated vertically to return a single table_view.</div><div class="ttdef"><b>Definition:</b> copying/concatenate.cu:420</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
