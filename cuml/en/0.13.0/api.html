@@ -5812,7 +5812,7 @@ estimated covariance of X.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.PCA.fit" title="cuml.PCA.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, _transform])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.PCA.fit" title="cuml.PCA.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, y])</p></td>
 <td><p>Fit the model with X.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.PCA.fit_transform" title="cuml.PCA.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X[, y])</p></td>
@@ -5831,7 +5831,7 @@ estimated covariance of X.</p>
 </table>
 <dl class="attribute">
 <dt id="cuml.PCA.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">_transform=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.PCA.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.PCA.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model with X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -5840,6 +5840,7 @@ estimated covariance of X.</p>
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
+<dt><strong>y</strong><span class="classifier">ignored</span></dt><dd></dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -6070,10 +6071,10 @@ For additional documentation, see <a class="reference external" href="http://sci
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.TruncatedSVD.fit" title="cuml.TruncatedSVD.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, _transform])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.TruncatedSVD.fit" title="cuml.TruncatedSVD.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, y])</p></td>
 <td><p>Fit LSI model on training cudf DataFrame X.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.TruncatedSVD.fit_transform" title="cuml.TruncatedSVD.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.TruncatedSVD.fit_transform" title="cuml.TruncatedSVD.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X[, y])</p></td>
 <td><p>Fit LSI model to X and perform dimensionality reduction on X.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.TruncatedSVD.get_param_names" title="cuml.TruncatedSVD.get_param_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_param_names</span></code></a>(self)</p></td>
@@ -6089,16 +6090,19 @@ For additional documentation, see <a class="reference external" href="http://sci
 </table>
 <dl class="attribute">
 <dt id="cuml.TruncatedSVD.fit">
-<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">_transform=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.fit" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
 <div><p>Fit LSI model on training cudf DataFrame X.</p>
 </div></blockquote>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+<dd class="field-odd"><dl>
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><blockquote>
+<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
+</div></blockquote>
+<p>y : ignored</p>
 </dd>
 </dl>
 </dd>
@@ -6107,7 +6111,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 
 <dl class="attribute">
 <dt id="cuml.TruncatedSVD.fit_transform">
-<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.fit_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fit_transform</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.TruncatedSVD.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit LSI model to X and perform dimensionality reduction on X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -6116,6 +6120,7 @@ ndarray, cuda array interface compliant array like CuPy</p>
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
 </dd>
+<dt><strong>y</strong><span class="classifier">ignored</span></dt><dd></dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
