@@ -353,6 +353,17 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ab15567f1034536ae6f7f14179334a19b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Types of unary operations that can be performed on data.  <a href="namespacecudf.html#ab15567f1034536ae6f7f14179334a19b">More...</a><br /></td></tr>
 <tr class="separator:ab15567f1034536ae6f7f14179334a19b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b10429fb5d86af4db72da1118f2ad5d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a1b10429fb5d86af4db72da1118f2ad5d">rank_method</a> { <br />
+&#160;&#160;<a class="el" href="namespacecudf.html#a1b10429fb5d86af4db72da1118f2ad5da2c2624a5059934a947d6e25fe8332ade">rank_method::FIRST</a>, 
+<a class="el" href="namespacecudf.html#a1b10429fb5d86af4db72da1118f2ad5da16de38737a9f8366e9b2042b4e9b6290">rank_method::AVERAGE</a>, 
+<a class="el" href="namespacecudf.html#a1b10429fb5d86af4db72da1118f2ad5dace31e2a082d17e038fcc6e3006166653">rank_method::MIN</a>, 
+<a class="el" href="namespacecudf.html#a1b10429fb5d86af4db72da1118f2ad5da26a4b44a837bf97b972628509912b4a5">rank_method::MAX</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacecudf.html#a1b10429fb5d86af4db72da1118f2ad5da0706fbbd929bd8abc4de386c53d439ff">rank_method::DENSE</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a1b10429fb5d86af4db72da1118f2ad5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tie-breaker method to use for ranking the column.  <a href="namespacecudf.html#a1b10429fb5d86af4db72da1118f2ad5d">More...</a><br /></td></tr>
+<tr class="separator:a1b10429fb5d86af4db72da1118f2ad5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a750f02016b046079f7062d334890b4fc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fc">order</a> : bool { <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fca83ec681a20197326c163ea3b39ef7c32">order::ASCENDING</a>, 
 <a class="el" href="namespacecudf.html#a750f02016b046079f7062d334890b4fcacff818f0ae4cef845577e39283886a53">order::DESCENDING</a>
  }</td></tr>
@@ -1168,7 +1179,7 @@ typedef".</p>
 
 <p>Type alias representing an int32_t duration of days since the unix. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md574"></a>
+<h2><a class="anchor" id="autotoc_md575"></a>
 epoch.</h2>
 
 </div>
@@ -1187,7 +1198,7 @@ epoch.</h2>
 
 <p>Type alias representing an int64_t duration of milliseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md576"></a>
+<h2><a class="anchor" id="autotoc_md577"></a>
 the unix epoch.</h2>
 
 </div>
@@ -1206,7 +1217,7 @@ the unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of nanoseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md578"></a>
+<h2><a class="anchor" id="autotoc_md579"></a>
 the unix epoch.</h2>
 
 </div>
@@ -1225,7 +1236,7 @@ the unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of seconds since the. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md575"></a>
+<h2><a class="anchor" id="autotoc_md576"></a>
 unix epoch.</h2>
 
 </div>
@@ -1244,7 +1255,7 @@ unix epoch.</h2>
 
 <p>Type alias representing an int64_t duration of microseconds since. </p>
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md577"></a>
+<h2><a class="anchor" id="autotoc_md578"></a>
 the unix epoch.</h2>
 
 </div>
@@ -1347,7 +1358,7 @@ the unix epoch.</h2>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md523"></a>
+<h2><a class="anchor" id="autotoc_md524"></a>
 @brief Controls the allocation/initialization of a null mask.</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4daf20c000ab374d76f4d56f0ddb7b26a628732521c22dcf8a24bf1a0326bde80"></a>UNALLOCATED&#160;</td><td class="fielddoc"><p>Null mask not allocated, (all elements are valid) </p>
@@ -1382,7 +1393,7 @@ the unix epoch.</h2>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md520"></a>
+<h2><a class="anchor" id="autotoc_md521"></a>
 @brief Indicates how null values compare against all other values.</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a058e6d6e8a21583ce0e85ee73e5abb31ac130fda0cb93540bf1574912e78964fb"></a>AFTER&#160;</td><td class="fielddoc"><p>NULL values ordered <em>after</em> all other values. </p>
@@ -1413,12 +1424,48 @@ the unix epoch.</h2>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md519"></a>
+<h2><a class="anchor" id="autotoc_md520"></a>
 @brief Indicates the order in which elements should be sorted.</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a750f02016b046079f7062d334890b4fca83ec681a20197326c163ea3b39ef7c32"></a>ASCENDING&#160;</td><td class="fielddoc"><p>Elements ordered from small to large. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a750f02016b046079f7062d334890b4fcacff818f0ae4cef845577e39283886a53"></a>DESCENDING&#160;</td><td class="fielddoc"><p>Elements ordered from large to small. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a1b10429fb5d86af4db72da1118f2ad5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b10429fb5d86af4db72da1118f2ad5d">&#9670;&nbsp;</a></span>rank_method</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacecudf.html#a1b10429fb5d86af4db72da1118f2ad5d">cudf::rank_method</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tie-breaker method to use for ranking the column. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1b10429fb5d86af4db72da1118f2ad5da2c2624a5059934a947d6e25fe8332ade"></a>FIRST&#160;</td><td class="fielddoc"><p>stable sort order ranking (no ties) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1b10429fb5d86af4db72da1118f2ad5da16de38737a9f8366e9b2042b4e9b6290"></a>AVERAGE&#160;</td><td class="fielddoc"><p>mean of first in the group </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1b10429fb5d86af4db72da1118f2ad5dace31e2a082d17e038fcc6e3006166653"></a>MIN&#160;</td><td class="fielddoc"><p>min of first in the group </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1b10429fb5d86af4db72da1118f2ad5da26a4b44a837bf97b972628509912b4a5"></a>MAX&#160;</td><td class="fielddoc"><p>max of first in the group </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1b10429fb5d86af4db72da1118f2ad5da0706fbbd929bd8abc4de386c53d439ff"></a>DENSE&#160;</td><td class="fielddoc"><p>rank always increases by 1 between groups </p>
 </td></tr>
 </table>
 
@@ -1444,7 +1491,7 @@ the unix epoch.</h2>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md521"></a>
+<h2><a class="anchor" id="autotoc_md522"></a>
 @brief Indicates whether a collection of values is known to be sorted.</h2>
 
 </div>
@@ -1461,7 +1508,7 @@ the unix epoch.</h2>
       </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md524"></a>
+<h2><a class="anchor" id="autotoc_md525"></a>
 @brief Identifies a column's logical element type</h2>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acd4cd7157c4379954b5772936f89c59bab2c14e467fcbf9a215ccc679f35bb027"></a>EMPTY&#160;</td><td class="fielddoc"><p>Always null with no underlying data. </p>
@@ -2196,7 +2243,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true The specified bit is <code>1</code> </dd></dl>
-<h2><a class="anchor" id="autotoc_md533"></a>
+<h2><a class="anchor" id="autotoc_md534"></a>
 @return false  The specified bit is &lt;tt&gt;0&lt;/tt&gt;</h2>
 
 </div>
@@ -2367,7 +2414,7 @@ if <code>input.num_rows()</code> is zero, there is no error, and an empty table 
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md532"></a>
+<h2><a class="anchor" id="autotoc_md533"></a>
 @param bit_index The index of the bit to clear</h2>
 
 </div>
@@ -3580,7 +3627,7 @@ template&lt;typename T &gt; </div>
 <p>------------------------------------------------------------------------&mdash;* When explicitly passed a template argument of a given type, returns the appropriate <code>gdf_dtype</code> for the specified C++ type.</p>
 <p>For example: </p><div class="fragment"><div class="line"><span class="keywordflow">return</span> gdf_dtype_of&lt;int32_t&gt;();        <span class="comment">// Returns GDF_INT32</span></div>
 <div class="line"><span class="keywordflow">return</span> gdf_dtype_of&lt;cudf::category&gt;(); <span class="comment">// Returns GDF_CATEGORY</span></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md542"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md543"></a>
 @tparam T The type to map to a &lt;tt&gt;gdf_dtype&lt;/tt&gt;</h2>
 
 </div>
@@ -4094,7 +4141,7 @@ template&lt;typename T , typename BinaryOp &gt; </div>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md502"></a>
+<h2><a class="anchor" id="autotoc_md503"></a>
 @return boolean comparison result</h2>
 
 </div>
@@ -4123,7 +4170,7 @@ template&lt;typename T , typename BinaryOp &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md530"></a>
+<h2><a class="anchor" id="autotoc_md531"></a>
 @brief Returns the position within a word of the specified bit.</h2>
 
 </div>
@@ -4162,7 +4209,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is Boolean </dd></dl>
-<h2><a class="anchor" id="autotoc_md556"></a>
+<h2><a class="anchor" id="autotoc_md557"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not Boolean</h2>
 
 </div>
@@ -4200,7 +4247,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a Boolean </dd></dl>
-<h2><a class="anchor" id="autotoc_md557"></a>
+<h2><a class="anchor" id="autotoc_md558"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not a Boolean</h2>
 
 </div>
@@ -4277,7 +4324,7 @@ false <code>T</code> corresponds to a "simple" type </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a compound type </dd></dl>
-<h2><a class="anchor" id="autotoc_md562"></a>
+<h2><a class="anchor" id="autotoc_md563"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is a simple type</h2>
 
 </div>
@@ -4316,7 +4363,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a fixed-width element type </dd></dl>
-<h2><a class="anchor" id="autotoc_md560"></a>
+<h2><a class="anchor" id="autotoc_md561"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a variable-width element type</h2>
 
 </div>
@@ -4354,7 +4401,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is fixed-width </dd></dl>
-<h2><a class="anchor" id="autotoc_md561"></a>
+<h2><a class="anchor" id="autotoc_md562"></a>
 @return false  &lt;tt&gt;type&lt;/tt&gt; is variable-width</h2>
 
 </div>
@@ -4446,7 +4493,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> is numeric </dd></dl>
-<h2><a class="anchor" id="autotoc_md554"></a>
+<h2><a class="anchor" id="autotoc_md555"></a>
 @return false  &lt;tt&gt;T&lt;/tt&gt; is not numeric</h2>
 
 </div>
@@ -4484,7 +4531,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is numeric </dd></dl>
-<h2><a class="anchor" id="autotoc_md555"></a>
+<h2><a class="anchor" id="autotoc_md556"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not numeric</h2>
 
 </div>
@@ -4524,7 +4571,7 @@ template&lt;typename L , typename R &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true Objects of types <code>L</code> and <code>R</code> can be relationally be compared </dd></dl>
-<h2><a class="anchor" id="autotoc_md553"></a>
+<h2><a class="anchor" id="autotoc_md554"></a>
 @return false Objects of types &lt;tt&gt;L&lt;/tt&gt; and &lt;tt&gt;R&lt;/tt&gt; cannot be compared</h2>
 
 </div>
@@ -4563,7 +4610,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> corresponds to a simple type </dd></dl>
-<h2><a class="anchor" id="autotoc_md563"></a>
+<h2><a class="anchor" id="autotoc_md564"></a>
 @return false &lt;tt&gt;T&lt;/tt&gt; corresponds to a compound type</h2>
 
 </div>
@@ -4601,7 +4648,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a simple type </dd></dl>
-<h2><a class="anchor" id="autotoc_md564"></a>
+<h2><a class="anchor" id="autotoc_md565"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is a compound type</h2>
 
 </div>
@@ -4684,7 +4731,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>T</code> is a timestamp </dd></dl>
-<h2><a class="anchor" id="autotoc_md558"></a>
+<h2><a class="anchor" id="autotoc_md559"></a>
 @return false  &lt;tt&gt;T&lt;/tt&gt; is not a timestamp</h2>
 
 </div>
@@ -4722,7 +4769,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>type</code> is a timestamp </dd></dl>
-<h2><a class="anchor" id="autotoc_md559"></a>
+<h2><a class="anchor" id="autotoc_md560"></a>
 @return false &lt;tt&gt;type&lt;/tt&gt; is not a timestamp</h2>
 
 </div>
@@ -6485,7 +6532,7 @@ template&lt;typename B &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true <code>lhs</code> is equal to <code>rhs</code> </dd></dl>
-<h2><a class="anchor" id="autotoc_md526"></a>
+<h2><a class="anchor" id="autotoc_md527"></a>
 @return false &lt;tt&gt;lhs&lt;/tt&gt; is not equal to &lt;tt&gt;rhs&lt;/tt&gt;</h2>
 
 </div>
@@ -7252,7 +7299,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md531"></a>
+<h2><a class="anchor" id="autotoc_md532"></a>
 @param bit_index Index of the bit to set</h2>
 
 </div>
@@ -7289,7 +7336,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md534"></a>
+<h2><a class="anchor" id="autotoc_md535"></a>
 @return A bitmask word with &lt;tt&gt;n&lt;/tt&gt; least significant bits set</h2>
 
 </div>
@@ -7326,7 +7373,7 @@ an exclusive scan if false.</h2>
   </table>
   </dd>
 </dl>
-<h2><a class="anchor" id="autotoc_md535"></a>
+<h2><a class="anchor" id="autotoc_md536"></a>
 @return A bitmask word with &lt;tt&gt;n&lt;/tt&gt; most significant bits set</h2>
 
 </div>
@@ -8074,7 +8121,7 @@ template&lt;typename bit_container , typename predicate , typename size_type &gt
 </table>
 </div><div class="memdoc">
 <p>------------------------------------------------------------------------&mdash;* </p>
-<h2><a class="anchor" id="autotoc_md529"></a>
+<h2><a class="anchor" id="autotoc_md530"></a>
 @brief Returns the index of the word containing the specified bit.</h2>
 
 </div>

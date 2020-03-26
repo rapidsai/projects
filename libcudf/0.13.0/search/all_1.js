@@ -54,9 +54,10 @@ var searchData=
   ['attach_5fdict_5fchunk_63',['attach_dict_chunk',['../classcudf_1_1io_1_1orc_1_1orc__column.html#aef7eb929cc991e1c4256e1960dfde7e0',1,'cudf::io::orc::orc_column::attach_dict_chunk()'],['../classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1orc__column__view.html#a675de40e2ff7c664f9981a463153c91e',1,'cudf::experimental::io::detail::orc::orc_column_view::attach_dict_chunk()']]],
   ['attach_5fstripe_5fdict_64',['attach_stripe_dict',['../classcudf_1_1io_1_1orc_1_1orc__column.html#a8adec19e261905af66ad3f3ad53d2959',1,'cudf::io::orc::orc_column::attach_stripe_dict()'],['../classcudf_1_1experimental_1_1io_1_1detail_1_1orc_1_1orc__column__view.html#a075ba60b86f4cc87486352a0c4a634cd',1,'cudf::experimental::io::detail::orc::orc_column_view::attach_stripe_dict()']]],
   ['auto_65',['AUTO',['../namespacecudf_1_1experimental_1_1io.html#a748faef899f436d65047ac2241261457ae1f2d5134ed2543d38a0de9751cf75d9',1,'cudf::experimental::io']]],
-  ['avg_5fresult_5ftype_66',['avg_result_type',['../structcudf_1_1groupby_1_1avg__result__type.html',1,'cudf::groupby']]],
-  ['avro_5fmetadata_67',['avro_metadata',['../classcudf_1_1io_1_1avro_1_1avro__metadata.html',1,'cudf::io::avro']]],
-  ['avro_5fread_5farg_68',['avro_read_arg',['../structcudf_1_1avro__read__arg.html',1,'cudf']]],
-  ['reader_5fimpl_2ecu_69',['reader_impl.cu',['../avro_2reader__impl_8cu.html',1,'']]],
-  ['reader_5fimpl_2ehpp_70',['reader_impl.hpp',['../avro_2reader__impl_8hpp.html',1,'']]]
+  ['average_66',['AVERAGE',['../namespacecudf.html#a1b10429fb5d86af4db72da1118f2ad5da16de38737a9f8366e9b2042b4e9b6290',1,'cudf']]],
+  ['avg_5fresult_5ftype_67',['avg_result_type',['../structcudf_1_1groupby_1_1avg__result__type.html',1,'cudf::groupby']]],
+  ['avro_5fmetadata_68',['avro_metadata',['../classcudf_1_1io_1_1avro_1_1avro__metadata.html',1,'cudf::io::avro']]],
+  ['avro_5fread_5farg_69',['avro_read_arg',['../structcudf_1_1avro__read__arg.html',1,'cudf']]],
+  ['reader_5fimpl_2ecu_70',['reader_impl.cu',['../avro_2reader__impl_8cu.html',1,'']]],
+  ['reader_5fimpl_2ehpp_71',['reader_impl.hpp',['../avro_2reader__impl_8hpp.html',1,'']]]
 ];

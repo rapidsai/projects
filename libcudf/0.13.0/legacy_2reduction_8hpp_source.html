@@ -103,8 +103,8 @@ $(function() {
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span>reduction {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">enum</span> operators {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  SUM = 0,        </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  MIN,            </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  MAX,            </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="namespacecudf.html#a1b10429fb5d86af4db72da1118f2ad5dace31e2a082d17e038fcc6e3006166653">MIN</a>,            </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="namespacecudf.html#a1b10429fb5d86af4db72da1118f2ad5da26a4b44a837bf97b972628509912b4a5">MAX</a>,            </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  PRODUCT,        </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  SUMOFSQUARES,   </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  MEAN,           </div>
@@ -137,7 +137,9 @@ $(function() {
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">#endif  // REDUCTION_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespacecudf_html_a1b10429fb5d86af4db72da1118f2ad5da26a4b44a837bf97b972628509912b4a5"><div class="ttname"><a href="namespacecudf.html#a1b10429fb5d86af4db72da1118f2ad5da26a4b44a837bf97b972628509912b4a5">cudf::rank_method::MAX</a></div><div class="ttdoc">max of first in the group</div></div>
 <div class="ttc" id="astructgdf__column___html"><div class="ttname"><a href="structgdf__column__.html">gdf_column_</a></div><div class="ttdoc">The C representation of a column in CUDF. This is the main unit of operation.</div><div class="ttdef"><b>Definition:</b> types.h:138</div></div>
+<div class="ttc" id="anamespacecudf_html_a1b10429fb5d86af4db72da1118f2ad5dace31e2a082d17e038fcc6e3006166653"><div class="ttname"><a href="namespacecudf.html#a1b10429fb5d86af4db72da1118f2ad5dace31e2a082d17e038fcc6e3006166653">cudf::rank_method::MIN</a></div><div class="ttdoc">min of first in the group</div></div>
 <div class="ttc" id="anamespacecudf_html_aab7d308aae78cd6323814732ec4a2278"><div class="ttname"><a href="namespacecudf.html#aab7d308aae78cd6323814732ec4a2278">cudf::group_std</a></div><div class="ttdeci">std::pair&lt; cudf::table, cudf::table &gt; group_std(cudf::table const &amp;keys, cudf::table const &amp;values, cudf::size_type ddof)</div><div class="ttdoc">Computes a group wise standard deviation.</div><div class="ttdef"><b>Definition:</b> reductions/legacy/group_std.cu:188</div></div>
 <div class="ttc" id="anamespacecudf_html_afdab46512f8d4cf604ed983c02556bf4"><div class="ttname"><a href="namespacecudf.html#afdab46512f8d4cf604ed983c02556bf4">cudf::reduce</a></div><div class="ttdeci">gdf_scalar reduce(const gdf_column *col, cudf::reduction::operators op, gdf_dtype output_dtype, cudf::size_type ddof)</div><div class="ttdoc">Computes the reduction of the values in all rows of a column This function does not detect overflows ...</div><div class="ttdef"><b>Definition:</b> reductions.cu:21</div></div>
 <div class="ttc" id="anamespacecudf_html_a534d665f0890f93214d43f494fe907b1"><div class="ttname"><a href="namespacecudf.html#a534d665f0890f93214d43f494fe907b1">cudf::group_var</a></div><div class="ttdeci">std::pair&lt; cudf::table, cudf::table &gt; group_var(cudf::table const &amp;keys, cudf::table const &amp;values, cudf::size_type ddof)</div><div class="ttdoc">Computes a group wise variance.</div><div class="ttdef"><b>Definition:</b> reductions/legacy/group_std.cu:196</div></div>
