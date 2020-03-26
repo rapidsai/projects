@@ -3374,16 +3374,19 @@ Only relevant for GLOBAL_QUANTILE split_algo.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.predict" title="cuml.ensemble.RandomForestClassifier.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(self, X[, predict_model, …])</p></td>
 <td><p>Predicts the labels for X.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.print_detailed" title="cuml.ensemble.RandomForestClassifier.print_detailed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_detailed</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.predict_proba" title="cuml.ensemble.RandomForestClassifier.predict_proba"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict_proba</span></code></a>(self, X[, output_class, …])</p></td>
+<td><p>Predicts class probabilites for X.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.print_detailed" title="cuml.ensemble.RandomForestClassifier.print_detailed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_detailed</span></code></a>(self)</p></td>
 <td><p>prints the detailed information about the forest used to train and test the Random Forest model</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.print_summary" title="cuml.ensemble.RandomForestClassifier.print_summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_summary</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.print_summary" title="cuml.ensemble.RandomForestClassifier.print_summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_summary</span></code></a>(self)</p></td>
 <td><p>prints the summary of the forest used to train and test the model</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.score" title="cuml.ensemble.RandomForestClassifier.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, threshold, algo, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.score" title="cuml.ensemble.RandomForestClassifier.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, threshold, algo, …])</p></td>
 <td><p>Calculates the accuracy metric score of the model for X.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.set_params" title="cuml.ensemble.RandomForestClassifier.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.set_params" title="cuml.ensemble.RandomForestClassifier.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(self, **params)</p></td>
 <td><p>Sets the value of parameters required to configure this estimator, it functions similar to the sklearn set_params.</p></td>
 </tr>
 </tbody>
@@ -3575,6 +3578,71 @@ True - create a sparse forest, requires algo=’naive’</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>y</strong><span class="classifier">NumPy</span></dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cuml.ensemble.RandomForestClassifier.predict_proba">
+<code class="sig-name descname">predict_proba</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">output_class=True</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">num_classes=2</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">fil_sparse_format=u'auto'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.predict_proba" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicts class probabilites for X. This function uses the GPU
+implementation of predict. Therefore, data with ‘dtype = np.float32’
+and ‘num_classes = 2’ should be used while using this function.
+The option to use predict_proba for multi_class classification is not
+currently implemented. Please check cuml issue #1679 for more
+information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
+ndarray, cuda array interface compliant array like CuPy</p>
+</dd>
+<dt><strong>output_class: boolean (default = True)</strong></dt><dd><p>This is optional and required only while performing the
+predict operation on the GPU.
+If true, return a 1 or 0 depending on whether the raw
+prediction exceeds the threshold. If False, just return
+the raw prediction.</p>
+</dd>
+<dt><strong>algo</strong><span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
+predict operation on the GPU.
+‘naive’ - simple inference using shared memory
+‘tree_reorg’ - similar to naive but trees rearranged to be more
+coalescing-friendly
+‘batch_tree_reorg’ - similar to tree_reorg but predicting
+multiple rows per thread block
+<cite>auto</cite> - choose the algorithm automatically. Currently
+‘batch_tree_reorg’ is used for dense storage
+and ‘naive’ for sparse storage</p>
+</dd>
+<dt><strong>threshold</strong><span class="classifier">float (default = 0.5)</span></dt><dd><p>Threshold used for classification. Optional and required only
+while performing the predict operation on the GPU.
+It is applied if output_class == True, else it is ignored</p>
+</dd>
+<dt><strong>num_classes</strong><span class="classifier">int (default = 2)</span></dt><dd><p>number of different classes present in the dataset</p>
+</dd>
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
+the input to the data type which was used to train the model. This
+will increase memory used for the method.</p>
+</dd>
+<dt><strong>fil_sparse_format</strong><span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
+created in the Forest Inference Library. It is not required
+while using predict_model=’CPU’.
+‘auto’ - choose the storage type automatically
+(currently True is chosen by auto)
+False - create a dense forest
+True - create a sparse forest, requires algo=’naive’
+or algo=’auto’</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">(same as the input datatype)</span></dt><dd><p>Dense vector (float) of shape (n_samples, 1). The datatype of y
+depend on the value of ‘output_type’ varaible specified by the
+user while intializing the model.</p>
 </dd>
 </dl>
 </dd>
@@ -6355,17 +6423,30 @@ Reduction
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.UMAP.fit" title="cuml.UMAP.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, y, convert_dtype, knn_graph])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.UMAP.find_ab_params" title="cuml.UMAP.find_ab_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_ab_params</span></code></a>(spread, min_dist)</p></td>
+<td><p>Function taken from UMAP-learn : <a class="reference external" href="https://github.com/lmcinnes/umap">https://github.com/lmcinnes/umap</a> Fit a, b params for the differentiable curve used in lower dimensional fuzzy simplicial complex construction.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.UMAP.fit" title="cuml.UMAP.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(self, X[, y, convert_dtype, knn_graph])</p></td>
 <td><p>Fit X into an embedded space.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.UMAP.fit_transform" title="cuml.UMAP.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X[, y, convert_dtype, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.UMAP.fit_transform" title="cuml.UMAP.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(self, X[, y, convert_dtype, …])</p></td>
 <td><p>Fit X into an embedded space and return that transformed output.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.UMAP.transform" title="cuml.UMAP.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X[, convert_dtype, knn_graph])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#cuml.UMAP.transform" title="cuml.UMAP.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(self, X[, convert_dtype, knn_graph])</p></td>
 <td><p>Transform X into the existing embedded space and return that transformed output.</p></td>
 </tr>
 </tbody>
 </table>
+<dl class="attribute">
+<dt id="cuml.UMAP.find_ab_params">
+<code class="sig-name descname">find_ab_params</code><span class="sig-paren">(</span><em class="sig-param">spread</em>, <em class="sig-param">min_dist</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.find_ab_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function taken from UMAP-learn : <a class="reference external" href="https://github.com/lmcinnes/umap">https://github.com/lmcinnes/umap</a>
+Fit a, b params for the differentiable curve used in lower
+dimensional fuzzy simplicial complex construction. We want the
+smooth curve (from a pre-defined family with simple gradient) that
+best matches an offset exponential decay.</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="cuml.UMAP.fit">
 <code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y=None</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">knn_graph=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.UMAP.fit" title="Permalink to this definition">¶</a></dt>
