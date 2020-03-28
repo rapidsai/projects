@@ -3275,7 +3275,7 @@ reduce memory consumption.</p></li>
 </dd>
 <dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
 </dd>
-<dt><strong>split_criterion: The criterion used to split nodes.</strong></dt><dd><p>0 for GINI, 1 for ENTROPY
+<dt><strong>split_criterion</strong><span class="classifier">The criterion used to split nodes.</span></dt><dd><p>0 for GINI, 1 for ENTROPY
 2 and 3 not valid for classification
 (default = 0)</p>
 </dd>
@@ -3312,7 +3312,7 @@ If ‘log2’ then max_features=log2(n_features)/n_features.</p>
 <dt><strong>n_bins</strong><span class="classifier">int (default = 8)</span></dt><dd><p>Number of bins used by the split algorithm.</p>
 </dd>
 <dt><strong>min_rows_per_node</strong><span class="classifier">int or float (default = 2)</span></dt><dd><p>The minimum number of samples (rows) needed to split a node.
-If int then number of sample rows
+If int then number of sample rows.
 If float the min_rows_per_sample*n_rows</p>
 </dd>
 <dt><strong>min_impurity_decrease</strong><span class="classifier">float (default = 0.0)</span></dt><dd><p>Minimum decrease in impurity requried for
@@ -3353,12 +3353,6 @@ Only relevant for GLOBAL_QUANTILE split_algo.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.concatenate_model_bytes" title="cuml.ensemble.RandomForestClassifier.concatenate_model_bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate_model_bytes</span></code></a>(self, …)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.concatenate_treelite_handle" title="cuml.ensemble.RandomForestClassifier.concatenate_treelite_handle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate_treelite_handle</span></code></a>(self, …)</p></td>
-<td><p></p></td>
-</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.convert_to_fil_model" title="cuml.ensemble.RandomForestClassifier.convert_to_fil_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_to_fil_model</span></code></a>(self[, output_class, …])</p></td>
 <td><p>Create a Forest Inference (FIL) model from the trained cuML Random Forest model.</p></td>
 </tr>
@@ -3378,10 +3372,10 @@ Only relevant for GLOBAL_QUANTILE split_algo.</p>
 <td><p>Predicts class probabilites for X.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.print_detailed" title="cuml.ensemble.RandomForestClassifier.print_detailed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_detailed</span></code></a>(self)</p></td>
-<td><p>prints the detailed information about the forest used to train and test the Random Forest model</p></td>
+<td><p>Prints the detailed information about the forest used to train and test the Random Forest model</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.print_summary" title="cuml.ensemble.RandomForestClassifier.print_summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_summary</span></code></a>(self)</p></td>
-<td><p>prints the summary of the forest used to train and test the model</p></td>
+<td><p>Prints the summary of the forest used to train and test the model</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestClassifier.score" title="cuml.ensemble.RandomForestClassifier.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, threshold, algo, …])</p></td>
 <td><p>Calculates the accuracy metric score of the model for X.</p></td>
@@ -3392,24 +3386,14 @@ Only relevant for GLOBAL_QUANTILE split_algo.</p>
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="cuml.ensemble.RandomForestClassifier.concatenate_model_bytes">
-<code class="sig-name descname">concatenate_model_bytes</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">concat_model_handle</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.concatenate_model_bytes" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="cuml.ensemble.RandomForestClassifier.concatenate_treelite_handle">
-<code class="sig-name descname">concatenate_treelite_handle</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">treelite_handle</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.concatenate_treelite_handle" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
 <dt id="cuml.ensemble.RandomForestClassifier.convert_to_fil_model">
 <code class="sig-name descname">convert_to_fil_model</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">output_class=True</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">fil_sparse_format=u'auto'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.convert_to_fil_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a Forest Inference (FIL) model from the trained cuML
 Random Forest model.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
-<dt><strong>output_class: boolean (default = True)</strong></dt><dd><p>This is optional and required only while performing the
+<dd class="field-odd"><dl class="simple">
+<dt><strong>output_class</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
 If true, return a 1 or 0 depending on whether the raw
 prediction exceeds the threshold. If False, just return
@@ -3418,17 +3402,13 @@ the raw prediction.</p>
 <dt><strong>algo</strong><span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
 ‘naive’ - simple inference using shared memory
-‘tree_reorg’ - similar to naive but trees rearranged to be more</p>
-<blockquote>
-<div><p>coalescing-friendly</p>
-</div></blockquote>
-<dl class="simple">
-<dt>‘batch_tree_reorg’ - similar to tree_reorg but predicting</dt><dd><p>multiple rows per thread block</p>
-</dd>
-<dt><cite>auto</cite> - choose the algorithm automatically. Currently</dt><dd><p>‘batch_tree_reorg’ is used for dense storage
+‘tree_reorg’ - similar to naive but trees rearranged to be more
+coalescing-friendly
+‘batch_tree_reorg’ - similar to tree_reorg but predicting
+multiple rows per thread block
+<cite>auto</cite> - choose the algorithm automatically. Currently
+‘batch_tree_reorg’ is used for dense storage
 and ‘naive’ for sparse storage</p>
-</dd>
-</dl>
 </dd>
 <dt><strong>threshold</strong><span class="classifier">float (default = 0.5)</span></dt><dd><p>Threshold used for classification. Optional and required only
 while performing the predict operation on the GPU.
@@ -3437,21 +3417,17 @@ It is applied if output_class == True, else it is ignored</p>
 <dt><strong>fil_sparse_format</strong><span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
 created in the Forest Inference Library. It is not required
 while using predict_model=’CPU’.
-‘auto’ - choose the storage type automatically</p>
-<blockquote>
-<div><blockquote>
-<div><p>(currently True is chosen by auto)</p>
-</div></blockquote>
-<p>False - create a dense forest
-True - create a sparse forest, requires algo=’naive’</p>
-<blockquote>
-<div><p>or algo=’auto’</p>
-</div></blockquote>
-</div></blockquote>
+‘auto’ - choose the storage type automatically
+(currently True is chosen by auto)
+False - create a dense forest
+True - create a sparse forest, requires algo=’naive’
+or algo=’auto’</p>
 </dd>
-<dt><strong>Returns</strong></dt><dd></dd>
-<dt><strong>———-</strong></dt><dd></dd>
-<dt><strong>fil_model :</strong></dt><dd><p>A Forest Inference model which can be used to perform
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>fil_model :</dt><dd><p>A Forest Inference model which can be used to perform
 inferencing on the random forest model.</p>
 </dd>
 </dl>
@@ -3489,8 +3465,8 @@ ndarray, cuda array interface compliant array like CuPy
 These labels should be contiguous integers from 0 to n_classes.</p>
 </dd>
 <dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = False)</span></dt><dd><p>When set to True, the fit method will, when necessary, convert
-y to be the same data type as X if they differ. This
-will increase memory used for the method.</p>
+y to be the same data type as X if they differ. This will increase
+memory used for the method.</p>
 </dd>
 </dl>
 </dd>
@@ -3515,9 +3491,9 @@ required to configure this estimator as a dictionary.</p>
 <dt id="cuml.ensemble.RandomForestClassifier.predict">
 <code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">predict_model=u'GPU'</em>, <em class="sig-param">output_class=True</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">num_classes=2</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">fil_sparse_format=u'auto'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the labels for X.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
@@ -3527,7 +3503,7 @@ be used if the model was trained on float32 data and <cite>X</cite> is float32
 or convert_dtype is set to True. Also the ‘GPU’ should only be
 used for binary classification problems.</p>
 </dd>
-<dt><strong>output_class: boolean (default = True)</strong></dt><dd><p>This is optional and required only while performing the
+<dt><strong>output_class</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
 If true, return a 1 or 0 depending on whether the raw
 prediction exceeds the threshold. If False, just return
@@ -3536,17 +3512,13 @@ the raw prediction.</p>
 <dt><strong>algo</strong><span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
 ‘naive’ - simple inference using shared memory
-‘tree_reorg’ - similar to naive but trees rearranged to be more</p>
-<blockquote>
-<div><p>coalescing-friendly</p>
-</div></blockquote>
-<dl class="simple">
-<dt>‘batch_tree_reorg’ - similar to tree_reorg but predicting</dt><dd><p>multiple rows per thread block</p>
-</dd>
-<dt><cite>auto</cite> - choose the algorithm automatically. Currently</dt><dd><p>‘batch_tree_reorg’ is used for dense storage
+‘tree_reorg’ - similar to naive but trees rearranged to be more
+coalescing-friendly
+‘batch_tree_reorg’ - similar to tree_reorg but predicting
+multiple rows per thread block
+<cite>auto</cite> - choose the algorithm automatically. Currently
+‘batch_tree_reorg’ is used for dense storage
 and ‘naive’ for sparse storage</p>
-</dd>
-</dl>
 </dd>
 <dt><strong>threshold</strong><span class="classifier">float (default = 0.5)</span></dt><dd><p>Threshold used for classification. Optional and required only
 while performing the predict operation on the GPU.
@@ -3561,17 +3533,11 @@ will increase memory used for the method.</p>
 <dt><strong>fil_sparse_format</strong><span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
 created in the Forest Inference Library. It is not required
 while using predict_model=’CPU’.
-‘auto’ - choose the storage type automatically</p>
-<blockquote>
-<div><blockquote>
-<div><p>(currently True is chosen by auto)</p>
-</div></blockquote>
-<p>False - create a dense forest
-True - create a sparse forest, requires algo=’naive’</p>
-<blockquote>
-<div><p>or algo=’auto’</p>
-</div></blockquote>
-</div></blockquote>
+‘auto’ - choose the storage type automatically
+(currently True is chosen by auto)
+False - create a dense forest
+True - create a sparse forest, requires algo=’naive’
+or algo=’auto’</p>
 </dd>
 </dl>
 </dd>
@@ -3652,23 +3618,23 @@ user while intializing the model.</p>
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestClassifier.print_detailed">
 <code class="sig-name descname">print_detailed</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.print_detailed" title="Permalink to this definition">¶</a></dt>
-<dd><p>prints the detailed information about the forest used to
+<dd><p>Prints the detailed information about the forest used to
 train and test the Random Forest model</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestClassifier.print_summary">
 <code class="sig-name descname">print_summary</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.print_summary" title="Permalink to this definition">¶</a></dt>
-<dd><p>prints the summary of the forest used to train and test the model</p>
+<dd><p>Prints the summary of the forest used to train and test the model</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestClassifier.score">
 <code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">num_classes=2</em>, <em class="sig-param">predict_model=u'GPU'</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">fil_sparse_format=u'auto'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestClassifier.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the accuracy metric score of the model for X.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
@@ -3678,17 +3644,13 @@ ndarray, cuda array interface compliant array like CuPy</p>
 <dt><strong>algo</strong><span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
 ‘naive’ - simple inference using shared memory
-‘tree_reorg’ - similar to naive but trees rearranged to be more</p>
-<blockquote>
-<div><p>coalescing-friendly</p>
-</div></blockquote>
-<dl class="simple">
-<dt>‘batch_tree_reorg’ - similar to tree_reorg but predicting</dt><dd><p>multiple rows per thread block</p>
-</dd>
-<dt><cite>auto</cite> - choose the algorithm automatically. Currently</dt><dd><p>‘batch_tree_reorg’ is used for dense storage
+‘tree_reorg’ - similar to naive but trees rearranged to be more
+coalescing-friendly
+‘batch_tree_reorg’ - similar to tree_reorg but predicting
+multiple rows per thread block
+<cite>auto</cite> - choose the algorithm automatically. Currently
+‘batch_tree_reorg’ is used for dense storage
 and ‘naive’ for sparse storage</p>
-</dd>
-</dl>
 </dd>
 <dt><strong>threshold</strong><span class="classifier">float</span></dt><dd><p>threshold is used to for classification
 This is optional and required only while performing the
@@ -3706,23 +3668,17 @@ used for binary classification problems.</p>
 <dt><strong>fil_sparse_format</strong><span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
 created in the Forest Inference Library. It is not required
 while using predict_model=’CPU’.
-‘auto’ - choose the storage type automatically</p>
-<blockquote>
-<div><blockquote>
-<div><p>(currently True is chosen by auto)</p>
-</div></blockquote>
-<p>False - create a dense forest
-True - create a sparse forest, requires algo=’naive’</p>
-<blockquote>
-<div><p>or algo=’auto’</p>
-</div></blockquote>
-</div></blockquote>
+‘auto’ - choose the storage type automatically
+(currently True is chosen by auto)
+False - create a dense forest
+True - create a sparse forest, requires algo=’naive’
+or algo=’auto’</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>float</dt><dd><p>Accuracy of the model [0.0 - 1.0]</p>
+<dt><strong>accuracy</strong><span class="classifier">float</span></dt><dd><p>Accuracy of the model [0.0 - 1.0]</p>
 </dd>
 </dl>
 </dd>
@@ -3760,7 +3716,7 @@ Random Forest code. It contains a few known limitations:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>GPU-based inference is only supported if the model was trained
-with 32-bit (float32) datatypes CPU-based inference may be used
+with 32-bit (float32) datatypes. CPU-based inference may be used
 in this case as a slower fallback.</p></li>
 <li><p>Very deep / very wide models may exhaust available GPU memory.
 Future versions of cuML will provide an alternative algorithm to
@@ -3779,7 +3735,7 @@ reduce memory consumption.</p></li>
 tree-building algorithm so GLOBAL_QUANTILE is recommended for most
 cases.</p>
 </dd>
-<dt><strong>split_criterion: int (default = 2)</strong></dt><dd><p>The criterion used to split nodes.
+<dt><strong>split_criterion</strong><span class="classifier">int (default = 2)</span></dt><dd><p>The criterion used to split nodes.
 0 for GINI, 1 for ENTROPY,
 2 for MSE, or 3 for MAE
 0 and 1 not valid for regression</p>
@@ -3810,8 +3766,8 @@ if -1.</p>
 per node split.
 If int then max_features/n_features.
 If float then max_features is used as a fraction.
-If ‘auto’ then max_features=1/sqrt(n_features).
-If ‘sqrt’ then max_features=1.0.
+If ‘auto’ then max_features=1.0.
+If ‘sqrt’ then max_features=1/sqrt(n_features).
 If ‘log2’ then max_features=log2(n_features)/n_features.</p>
 </dd>
 </dl>
@@ -3864,12 +3820,6 @@ currently fully guarantee the exact same results.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.concatenate_model_bytes" title="cuml.ensemble.RandomForestRegressor.concatenate_model_bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate_model_bytes</span></code></a>(self, …)</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.concatenate_treelite_handle" title="cuml.ensemble.RandomForestRegressor.concatenate_treelite_handle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate_treelite_handle</span></code></a>(self, …)</p></td>
-<td><p></p></td>
-</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.convert_to_fil_model" title="cuml.ensemble.RandomForestRegressor.convert_to_fil_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_to_fil_model</span></code></a>(self[, output_class, …])</p></td>
 <td><p>Create a Forest Inference (FIL) model from the trained cuML Random Forest model.</p></td>
 </tr>
@@ -3886,10 +3836,10 @@ currently fully guarantee the exact same results.</p>
 <td><p>Predicts the labels for X.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.print_detailed" title="cuml.ensemble.RandomForestRegressor.print_detailed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_detailed</span></code></a>(self)</p></td>
-<td><p>prints the detailed information about the forest used to train and test the Random Forest model</p></td>
+<td><p>Prints the detailed information about the forest used to train and test the Random Forest model</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.print_summary" title="cuml.ensemble.RandomForestRegressor.print_summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_summary</span></code></a>(self)</p></td>
-<td><p>prints the summary of the forest used to train and test the model</p></td>
+<td><p>Prints the summary of the forest used to train and test the model</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#cuml.ensemble.RandomForestRegressor.score" title="cuml.ensemble.RandomForestRegressor.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(self, X, y[, algo, convert_dtype, …])</p></td>
 <td><p>Calculates the accuracy metric score of the model for X.</p></td>
@@ -3900,24 +3850,14 @@ currently fully guarantee the exact same results.</p>
 </tbody>
 </table>
 <dl class="attribute">
-<dt id="cuml.ensemble.RandomForestRegressor.concatenate_model_bytes">
-<code class="sig-name descname">concatenate_model_bytes</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">concat_model_handle</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.concatenate_model_bytes" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="cuml.ensemble.RandomForestRegressor.concatenate_treelite_handle">
-<code class="sig-name descname">concatenate_treelite_handle</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">treelite_handle</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.concatenate_treelite_handle" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
 <dt id="cuml.ensemble.RandomForestRegressor.convert_to_fil_model">
 <code class="sig-name descname">convert_to_fil_model</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">output_class=False</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">fil_sparse_format=u'auto'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.convert_to_fil_model" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a Forest Inference (FIL) model from the trained cuML
 Random Forest model.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
-<dt><strong>output_class: boolean (default = True)</strong></dt><dd><p>This is optional and required only while performing the
+<dd class="field-odd"><dl class="simple">
+<dt><strong>output_class</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
 If true, return a 1 or 0 depending on whether the raw
 prediction exceeds the threshold. If False, just return
@@ -3926,36 +3866,28 @@ the raw prediction.</p>
 <dt><strong>algo</strong><span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
 ‘naive’ - simple inference using shared memory
-‘tree_reorg’ - similar to naive but trees rearranged to be more</p>
-<blockquote>
-<div><p>coalescing-friendly</p>
-</div></blockquote>
-<dl class="simple">
-<dt>‘batch_tree_reorg’ - similar to tree_reorg but predicting</dt><dd><p>multiple rows per thread block</p>
-</dd>
-<dt><cite>auto</cite> - choose the algorithm automatically. Currently</dt><dd><p>‘batch_tree_reorg’ is used for dense storage
+‘tree_reorg’ - similar to naive but trees rearranged to be more
+coalescing-friendly
+‘batch_tree_reorg’ - similar to tree_reorg but predicting
+multiple rows per thread block
+<cite>auto</cite> - choose the algorithm automatically. Currently
+‘batch_tree_reorg’ is used for dense storage
 and ‘naive’ for sparse storage</p>
-</dd>
-</dl>
 </dd>
 <dt><strong>fil_sparse_format</strong><span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
 created in the Forest Inference Library. It is not required
 while using predict_model=’CPU’.
-‘auto’ - choose the storage type automatically</p>
-<blockquote>
-<div><blockquote>
-<div><p>(currently True is chosen by auto)</p>
-</div></blockquote>
-<p>False - create a dense forest
-True - create a sparse forest, requires algo=’naive’</p>
-<blockquote>
-<div><p>or algo=’auto’</p>
-</div></blockquote>
-</div></blockquote>
+‘auto’ - choose the storage type automatically
+(currently True is chosen by auto)
+False - create a dense forest
+True - create a sparse forest, requires algo=’naive’
+or algo=’auto’</p>
 </dd>
-<dt><strong>Returns</strong></dt><dd></dd>
-<dt><strong>———-</strong></dt><dd></dd>
-<dt><strong>fil_model :</strong></dt><dd><p>A Forest Inference model which can be used to perform
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>fil_model :</dt><dd><p>A Forest Inference model which can be used to perform
 inferencing on the random forest model.</p>
 </dd>
 </dl>
@@ -4001,66 +3933,62 @@ These labels should be contiguous integers from 0 to n_classes.</p>
 <dt id="cuml.ensemble.RandomForestRegressor.get_params">
 <code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the value of all parameters
-required to configure this estimator as a dictionary.
-Parameters
-———–
-deep : boolean (default = True)</p>
+required to configure this estimator as a dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>deep</strong><span class="classifier">boolean (default = True)</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestRegressor.predict">
 <code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">predict_model=u'GPU'</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">fil_sparse_format=u'auto'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.predict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Predicts the labels for X.
-Parameters
-———-
-X : array-like (device or host) shape = (n_samples, n_features)</p>
-<blockquote>
-<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+<dd><p>Predicts the labels for X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
-</div></blockquote>
-<dl>
-<dt>predict_model<span class="classifier">String (default = ‘GPU’)</span></dt><dd><p>‘GPU’ to predict using the GPU, ‘CPU’ otherwise. The GPU can only
+</dd>
+<dt><strong>predict_model</strong><span class="classifier">String (default = ‘GPU’)</span></dt><dd><p>‘GPU’ to predict using the GPU, ‘CPU’ otherwise. The GPU can only
 be used if the model was trained on float32 data and <cite>X</cite> is float32
 or convert_dtype is set to True.</p>
 </dd>
-<dt>algo<span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
+<dt><strong>algo</strong><span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
 ‘naive’ - simple inference using shared memory
-‘tree_reorg’ - similar to naive but trees rearranged to be more</p>
-<blockquote>
-<div><p>coalescing-friendly</p>
-</div></blockquote>
-<dl class="simple">
-<dt>‘batch_tree_reorg’ - similar to tree_reorg but predicting</dt><dd><p>multiple rows per thread block</p>
-</dd>
-<dt><cite>auto</cite> - choose the algorithm automatically. Currently</dt><dd><p>‘batch_tree_reorg’ is used for dense storage
+‘tree_reorg’ - similar to naive but trees rearranged to be more
+coalescing-friendly
+‘batch_tree_reorg’ - similar to tree_reorg but predicting
+multiple rows per thread block
+<cite>auto</cite> - choose the algorithm automatically. Currently
+‘batch_tree_reorg’ is used for dense storage
 and ‘naive’ for sparse storage</p>
 </dd>
-</dl>
-</dd>
-<dt>convert_dtype<span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
+<dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
 the input to the data type which was used to train the model. This
 will increase memory used for the method.</p>
 </dd>
-<dt>fil_sparse_format<span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
+<dt><strong>fil_sparse_format</strong><span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
 created in the Forest Inference Library. It is not required
 while using predict_model=’CPU’.
-‘auto’ - choose the storage type automatically</p>
-<blockquote>
-<div><blockquote>
-<div><p>(currently True is chosen by auto)</p>
-</div></blockquote>
-<p>False - create a dense forest
-True - create a sparse forest, requires algo=’naive’</p>
-<blockquote>
-<div><p>or algo=’auto’</p>
-</div></blockquote>
-</div></blockquote>
+‘auto’ - choose the storage type automatically
+(currently True is chosen by auto)
+False - create a dense forest
+True - create a sparse forest, requires algo=’naive’
+or algo=’auto’</p>
 </dd>
 </dl>
-<dl class="simple">
-<dt>y: NumPy</dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">NumPy</span></dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -4068,69 +3996,65 @@ True - create a sparse forest, requires algo=’naive’</p>
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestRegressor.print_detailed">
 <code class="sig-name descname">print_detailed</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.print_detailed" title="Permalink to this definition">¶</a></dt>
-<dd><p>prints the detailed information about the forest used to
+<dd><p>Prints the detailed information about the forest used to
 train and test the Random Forest model</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestRegressor.print_summary">
 <code class="sig-name descname">print_summary</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.print_summary" title="Permalink to this definition">¶</a></dt>
-<dd><p>prints the summary of the forest used to train and test the model</p>
+<dd><p>Prints the summary of the forest used to train and test the model</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cuml.ensemble.RandomForestRegressor.score">
 <code class="sig-name descname">score</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">y</em>, <em class="sig-param">algo=u'auto'</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">fil_sparse_format=u'auto'</em>, <em class="sig-param">predict_model=u'GPU'</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.score" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculates the accuracy metric score of the model for X.
-Parameters
-———-
-X : array-like (device or host) shape = (n_samples, n_features)</p>
-<blockquote>
-<div><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+<dd><p>Calculates the accuracy metric score of the model for X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">array-like (device or host) shape = (n_samples, n_features)</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Acceptable formats: cuDF DataFrame, NumPy ndarray, Numba device
 ndarray, cuda array interface compliant array like CuPy</p>
-</div></blockquote>
-<dl>
-<dt>y: NumPy</dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
 </dd>
-<dt>algo<span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
+<dt><strong>y</strong><span class="classifier">NumPy</span></dt><dd><p>Dense vector (int) of shape (n_samples, 1)</p>
+</dd>
+<dt><strong>algo</strong><span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
 ‘naive’ - simple inference using shared memory
 ‘tree_reorg’ - similar to naive but trees rearranged to be more
 coalescing-friendly
 ‘batch_tree_reorg’ - similar to tree_reorg but predicting
 multiple rows per thread block
-<cite>auto</cite> - choose the algorithm automatically. Currently</p>
-<blockquote>
-<div><p>‘batch_tree_reorg’ is used for dense storage
+<cite>auto</cite> - choose the algorithm automatically. Currently
+‘batch_tree_reorg’ is used for dense storage
 and ‘naive’ for sparse storage</p>
-</div></blockquote>
 </dd>
-<dt>convert_dtype<span class="classifier">boolean, default=True</span></dt><dd><p>whether to convert input data to correct dtype automatically</p>
+<dt><strong>convert_dtype</strong><span class="classifier">boolean, default=True</span></dt><dd><p>whether to convert input data to correct dtype automatically</p>
 </dd>
-<dt>predict_model<span class="classifier">String (default = ‘GPU’)</span></dt><dd><p>‘GPU’ to predict using the GPU, ‘CPU’ otherwise. The GPU can only
+<dt><strong>predict_model</strong><span class="classifier">String (default = ‘GPU’)</span></dt><dd><p>‘GPU’ to predict using the GPU, ‘CPU’ otherwise. The GPU can only
 be used if the model was trained on float32 data and <cite>X</cite> is float32
 or convert_dtype is set to True.</p>
 </dd>
-<dt>fil_sparse_format<span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
+<dt><strong>fil_sparse_format</strong><span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
 created in the Forest Inference Library. It is not required
 while using predict_model=’CPU’.
-‘auto’ - choose the storage type automatically</p>
-<blockquote>
-<div><blockquote>
-<div><p>(currently True is chosen by auto)</p>
-</div></blockquote>
-<p>False - create a dense forest
-True - create a sparse forest, requires algo=’naive’</p>
-<blockquote>
-<div><p>or algo=’auto’</p>
-</div></blockquote>
-</div></blockquote>
+‘auto’ - choose the storage type automatically
+(currently True is chosen by auto)
+False - create a dense forest
+True - create a sparse forest, requires algo=’naive’
+or algo=’auto’</p>
 </dd>
 </dl>
-<p>mean_square_error : float or
-median_abs_error : float or
-mean_abs_error : float</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>mean_square_error</strong><span class="classifier">float or</span></dt><dd></dd>
+<dt><strong>median_abs_error</strong><span class="classifier">float or</span></dt><dd></dd>
+<dt><strong>mean_abs_error</strong><span class="classifier">float</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
@@ -4138,10 +4062,14 @@ mean_abs_error : float</p>
 <code class="sig-name descname">set_params</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.ensemble.RandomForestRegressor.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the value of parameters required to
 configure this estimator, it functions similar to
-the sklearn set_params.
-Parameters
-———–
-params : dict of new params</p>
+the sklearn set_params.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>params</strong><span class="classifier">dict of new params</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -8381,15 +8309,11 @@ from a training set.</p>
 model which fits multiple decision tree classifiers in an
 ensemble. This uses Dask to partition data over multiple GPUs
 (possibly on different nodes).</p>
-<dl class="simple">
-<dt>Currently, this API makes the following assumptions:</dt><dd><ul class="simple">
-<li><p>The set of Dask workers used between instantiation, fit,
-and predict are all consistent</p></li>
-<li><p>Training data comes in the form of cuDF dataframes,
-distributed so that each worker has at least one partition.</p></li>
-</ul>
-</dd>
-</dl>
+<p>Currently, this API makes the following assumptions:
+* The set of Dask workers used between instantiation, fit,
+and predict are all consistent
+* Training data comes in the form of cuDF dataframes,
+distributed so that each worker has at least one partition.</p>
 <p>Future versions of the API will support more flexible data
 distribution and additional input types.</p>
 <p>The distributed algorithm uses an embarrassingly-parallel
@@ -8411,14 +8335,14 @@ classifier for more information about the underlying algorithm.</p>
 </dd>
 <dt><strong>handle</strong><span class="classifier">cuml.Handle</span></dt><dd><p>If it is None, a new one is created just for this class.</p>
 </dd>
-<dt><strong>split_criterion: The criterion used to split nodes.</strong></dt><dd><p>0 for GINI, 1 for ENTROPY, 4 for CRITERION_END.
+<dt><strong>split_criterion</strong><span class="classifier">The criterion used to split nodes.</span></dt><dd><p>0 for GINI, 1 for ENTROPY, 4 for CRITERION_END.
 2 and 3 not valid for classification
 (default = 0)</p>
 </dd>
 <dt><strong>split_algo</strong><span class="classifier">0 for HIST and 1 for GLOBAL_QUANTILE</span></dt><dd><p>(default = 1)
 the algorithm to determine how nodes are split in the tree.</p>
 </dd>
-<dt><strong>split_criterion: The criterion used to split nodes.</strong></dt><dd><p>0 for GINI, 1 for ENTROPY, 4 for CRITERION_END.
+<dt><strong>split_criterion</strong><span class="classifier">The criterion used to split nodes.</span></dt><dd><p>0 for GINI, 1 for ENTROPY, 4 for CRITERION_END.
 2 and 3 not valid for classification
 (default = 0)</p>
 </dd>
@@ -8432,19 +8356,16 @@ If features are drawn with or without replacement</p>
 </dd>
 <dt><strong>rows_sample</strong><span class="classifier">float (default = 1.0)</span></dt><dd><p>Ratio of dataset rows used while fitting each tree.</p>
 </dd>
-<dt><strong>max_depth</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum tree depth. Unlimited (i.e, until leaves are pure),
-if -1.</p>
+<dt><strong>max_depth</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum tree depth. Unlimited (i.e, until leaves are pure), if -1.</p>
 </dd>
-<dt><strong>max_leaves</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum leaf nodes per tree. Soft constraint. Unlimited,
-if -1.</p>
+<dt><strong>max_leaves</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum leaf nodes per tree. Soft constraint. Unlimited, if -1.</p>
 </dd>
 <dt><strong>max_features</strong><span class="classifier">float (default = ‘auto’)</span></dt><dd><p>Ratio of number of features (columns) to consider
 per node split.</p>
 </dd>
 <dt><strong>n_bins</strong><span class="classifier">int (default = 8)</span></dt><dd><p>Number of bins used by the split algorithm.</p>
 </dd>
-<dt><strong>min_rows_per_node</strong><span class="classifier">int (default = 2)</span></dt><dd><p>The minimum number of samples (rows) needed
-to split a node.</p>
+<dt><strong>min_rows_per_node</strong><span class="classifier">int (default = 2)</span></dt><dd><p>The minimum number of samples (rows) needed to split a node.</p>
 </dd>
 <dt><strong>quantile_per_tree</strong><span class="classifier">boolean (default = False)</span></dt><dd><p>Whether quantile is computed for individual RF trees.
 Only relevant for GLOBAL_QUANTILE split_algo.</p>
@@ -8552,13 +8473,13 @@ required to configure this estimator as a dictionary.</p>
 <dt id="cuml.dask.ensemble.RandomForestClassifier.predict">
 <code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">output_class=True</em>, <em class="sig-param">algo='auto'</em>, <em class="sig-param">threshold=0.5</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">predict_model='GPU'</em>, <em class="sig-param">fil_sparse_format='auto'</em>, <em class="sig-param">delayed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestClassifier.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the labels for X.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>X</strong><span class="classifier">Dask cuDF dataframe  or CuPy backed Dask Array (n_rows, n_features)</span></dt><dd><p>Distributed dense matrix (floats or doubles) of shape
 (n_samples, n_features).</p>
 </dd>
-<dt><strong>output_class: boolean (default = True)</strong></dt><dd><p>This is optional and required only while performing the
+<dt><strong>output_class</strong><span class="classifier">boolean (default = True)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
 If true, return a 1 or 0 depending on whether the raw
 prediction exceeds the threshold. If False, just return
@@ -8567,17 +8488,13 @@ the raw prediction.</p>
 <dt><strong>algo</strong><span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
 ‘naive’ - simple inference using shared memory
-‘tree_reorg’ - similar to naive but trees rearranged to be more</p>
-<blockquote>
-<div><p>coalescing-friendly</p>
-</div></blockquote>
-<dl class="simple">
-<dt>‘batch_tree_reorg’ - similar to tree_reorg but predicting</dt><dd><p>multiple rows per thread block</p>
-</dd>
-<dt><cite>algo</cite> - choose the algorithm automatically. Currently</dt><dd><p>‘batch_tree_reorg’ is used for dense storage
+‘tree_reorg’ - similar to naive but trees rearranged to be more
+coalescing-friendly
+‘batch_tree_reorg’ - similar to tree_reorg but predicting
+multiple rows per thread block
+<cite>algo</cite> - choose the algorithm automatically. Currently
+‘batch_tree_reorg’ is used for dense storage
 and ‘naive’ for sparse storage</p>
-</dd>
-</dl>
 </dd>
 <dt><strong>threshold</strong><span class="classifier">float (default = 0.5)</span></dt><dd><p>Threshold used for classification. Optional and required only
 while performing the predict operation on the GPU, that is for,
@@ -8595,17 +8512,11 @@ or convert_dtype is set to True.</p>
 <dt><strong>fil_sparse_format</strong><span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
 created in the Forest Inference Library. It is not required
 while using predict_model=’CPU’.
-‘auto’ - choose the storage type automatically</p>
-<blockquote>
-<div><blockquote>
-<div><p>(currently True is chosen by auto)</p>
-</div></blockquote>
-<p>False - create a dense forest
-True - create a sparse forest, requires algo=’naive’</p>
-<blockquote>
-<div><p>or algo=’auto’</p>
-</div></blockquote>
-</div></blockquote>
+‘auto’ - choose the storage type automatically
+(currently True is chosen by auto)
+False - create a dense forest
+True - create a sparse forest, requires algo=’naive’
+or algo=’auto’</p>
 </dd>
 <dt><strong>delayed</strong><span class="classifier">bool (default = True)</span></dt><dd><p>Whether to do a lazy prediction (and return Delayed objects) or an
 eagerly executed one.  It is not required  while using
@@ -8615,7 +8526,7 @@ predict_model=’CPU’.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>y</strong><span class="classifier">Dask cuDF dataframe  or CuPy backed Dask Array (n_rows, 1)</span></dt><dd></dd>
+<dt><strong>y</strong><span class="classifier">Dask cuDF dataframe or CuPy backed Dask Array (n_rows, 1)</span></dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -8651,15 +8562,11 @@ the sklearn set_params.</p>
 model which fits multiple decision tree classifiers in an
 ensemble. This uses Dask to partition data over multiple GPUs
 (possibly on different nodes).</p>
-<dl class="simple">
-<dt>Currently, this API makes the following assumptions:</dt><dd><ul class="simple">
-<li><p>The set of Dask workers used between instantiation, fit,
-and predict are all consistent</p></li>
-<li><p>Training data is comes in the form of cuDF dataframes,
-distributed so that each worker has at least one partition.</p></li>
-</ul>
-</dd>
-</dl>
+<p>Currently, this API makes the following assumptions:
+* The set of Dask workers used between instantiation, fit,
+and predict are all consistent
+* Training data is comes in the form of cuDF dataframes,
+distributed so that each worker has at least one partition.</p>
 <p>Future versions of the API will support more flexible data
 distribution and additional input types. User-facing APIs are
 expected to change in upcoming versions.</p>
@@ -8685,7 +8592,7 @@ classifier for more information about the underlying algorithm.</p>
 <dt><strong>split_algo</strong><span class="classifier">int (default = 1)</span></dt><dd><p>0 for HIST, 1 for GLOBAL_QUANTILE
 The type of algorithm to be used to create the trees.</p>
 </dd>
-<dt><strong>split_criterion: int (default = 2)</strong></dt><dd><p>The criterion used to split nodes.
+<dt><strong>split_criterion</strong><span class="classifier">int (default = 2)</span></dt><dd><p>The criterion used to split nodes.
 0 for GINI, 1 for ENTROPY,
 2 for MSE, 3 for MAE and 4 for CRITERION_END.
 0 and 1 not valid for regression</p>
@@ -8700,11 +8607,9 @@ If features are drawn with or without replacement</p>
 </dd>
 <dt><strong>rows_sample</strong><span class="classifier">float (default = 1.0)</span></dt><dd><p>Ratio of dataset rows used while fitting each tree.</p>
 </dd>
-<dt><strong>max_depth</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum tree depth. Unlimited (i.e, until leaves are pure),
-if -1.</p>
+<dt><strong>max_depth</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum tree depth. Unlimited (i.e, until leaves are pure), if -1.</p>
 </dd>
-<dt><strong>max_leaves</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum leaf nodes per tree. Soft constraint. Unlimited,
-if -1.</p>
+<dt><strong>max_leaves</strong><span class="classifier">int (default = -1)</span></dt><dd><p>Maximum leaf nodes per tree. Soft constraint. Unlimited, if -1.</p>
 </dd>
 <dt><strong>max_features</strong><span class="classifier">int or float or string or None (default = ‘auto’)</span></dt><dd><p>Ratio of number of features (columns) to consider
 per node split.
@@ -8717,13 +8622,11 @@ If None, then max_features=n_features which is 1.0.</p>
 </dd>
 <dt><strong>n_bins</strong><span class="classifier">int (default = 8)</span></dt><dd><p>Number of bins used by the split algorithm.</p>
 </dd>
-<dt><strong>min_rows_per_node</strong><span class="classifier">int or float (default = 2)</span></dt><dd><p>The minimum number of samples (rows) needed
-to split a node.
+<dt><strong>min_rows_per_node</strong><span class="classifier">int or float (default = 2)</span></dt><dd><p>The minimum number of samples (rows) needed to split a node.
 If int then number of sample rows
 If float the min_rows_per_sample*n_rows</p>
 </dd>
-<dt><strong>accuracy_metric</strong><span class="classifier">string (default = ‘mse’)</span></dt><dd><p>Decides the metric used to evaluate the performance
-of the model.
+<dt><strong>accuracy_metric</strong><span class="classifier">string (default = ‘mse’)</span></dt><dd><p>Decides the metric used to evaluate the performance of the model.
 for median of abs error : ‘median_ae’
 for mean of abs error : ‘mean_ae’
 for mean square error’ : ‘mse’</p>
@@ -8788,13 +8691,17 @@ y_dask_cudf=workers
 </dl>
 </dd>
 </dl>
-<dl class="simple">
-<dt>X<span class="classifier">dask_cudf.Dataframe</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>X</strong><span class="classifier">dask_cudf.Dataframe</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, n_features).
 Features of training examples.</p>
 </dd>
-<dt>y<span class="classifier">dask_cudf.Dataframe</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, 1)
+<dt><strong>y</strong><span class="classifier">dask_cudf.Dataframe</span></dt><dd><p>Dense matrix (floats or doubles) of shape (n_samples, 1)
 Labels of training examples.
 y must be partitioned the same way as X</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
@@ -8817,26 +8724,22 @@ required to configure this estimator as a dictionary.</p>
 <dt id="cuml.dask.ensemble.RandomForestRegressor.predict">
 <code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">X</em>, <em class="sig-param">predict_model='GPU'</em>, <em class="sig-param">algo='auto'</em>, <em class="sig-param">convert_dtype=True</em>, <em class="sig-param">fil_sparse_format='auto'</em>, <em class="sig-param">delayed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cuml.dask.ensemble.RandomForestRegressor.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predicts the regressor outputs for X.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>X</strong><span class="classifier">Dask cuDF dataframe  or CuPy backed Dask Array (n_rows, n_features)</span></dt><dd><p>Distributed dense matrix (floats or doubles) of shape
 (n_samples, n_features).</p>
 </dd>
 <dt><strong>algo</strong><span class="classifier">string (default = ‘auto’)</span></dt><dd><p>This is optional and required only while performing the
 predict operation on the GPU.
 ‘naive’ - simple inference using shared memory
-‘tree_reorg’ - similar to naive but trees rearranged to be more</p>
-<blockquote>
-<div><p>coalescing-friendly</p>
-</div></blockquote>
-<dl class="simple">
-<dt>‘batch_tree_reorg’ - similar to tree_reorg but predicting</dt><dd><p>multiple rows per thread block</p>
-</dd>
-<dt><cite>algo</cite> - choose the algorithm automatically. Currently</dt><dd><p>‘batch_tree_reorg’ is used for dense storage
+‘tree_reorg’ - similar to naive but trees rearranged to be more
+coalescing-friendly
+‘batch_tree_reorg’ - similar to tree_reorg but predicting
+multiple rows per thread block
+<cite>algo</cite> - choose the algorithm automatically. Currently
+‘batch_tree_reorg’ is used for dense storage
 and ‘naive’ for sparse storage</p>
-</dd>
-</dl>
 </dd>
 <dt><strong>convert_dtype</strong><span class="classifier">bool, optional (default = True)</span></dt><dd><p>When set to True, the predict method will, when necessary, convert
 the input to the data type which was used to train the model. This
@@ -8849,17 +8752,11 @@ or convert_dtype is set to True.</p>
 <dt><strong>fil_sparse_format</strong><span class="classifier">boolean or string (default = auto)</span></dt><dd><p>This variable is used to choose the type of forest that will be
 created in the Forest Inference Library. It is not required
 while using predict_model=’CPU’.
-‘auto’ - choose the storage type automatically</p>
-<blockquote>
-<div><blockquote>
-<div><p>(currently True is chosen by auto)</p>
-</div></blockquote>
-<p>False - create a dense forest
-True - create a sparse forest, requires algo=’naive’</p>
-<blockquote>
-<div><p>or algo=’auto’</p>
-</div></blockquote>
-</div></blockquote>
+‘auto’ - choose the storage type automatically
+(currently True is chosen by auto)
+False - create a dense forest
+True - create a sparse forest, requires algo=’naive’
+or algo=’auto’</p>
 </dd>
 <dt><strong>delayed</strong><span class="classifier">bool (default = True)</span></dt><dd><p>Whether to do a lazy prediction (and return Delayed objects) or an
 eagerly executed one.</p>
